@@ -13,8 +13,8 @@ And ashes creep beneath the tightest mind.\
 The scars are deep like bone,
 
 And all the ancient empty tomes\
-Provide no lasting prize,\
-But point to things we cannot know.
+Provide no lasting prize.\
+They point to things we cannot know.
 
 From ache for bluer skies,\
 To ache for home,\
