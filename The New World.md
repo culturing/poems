@@ -14,7 +14,7 @@ They bore a fierce wind and were bold.
 
 As one with one purpose\
 &nbsp;&nbsp;&nbsp;&nbsp;they built there together\
-foundations to last all weather.
+foundations to outlast all weather.
 
 That edifice fell,\
 &nbsp;&nbsp;&nbsp;&nbsp;but the ruins remain.\
