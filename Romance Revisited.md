@@ -10,7 +10,7 @@ There we were again.
 More than sounds were heard,\
 more said than words\
 as we relieved the burn\
-that's itched for all these years.
+that itched for all those years.
 
 Something in that breeze\
 put love at ease,\
@@ -63,7 +63,7 @@ to die, and not trace ways\
 across that sky\
 where the Immortals lie.
 
-We belong implanted\
+We belong here planted\
 where the bloom that Spring provides\
 by Autumn flees, and we get by\
 on hardened leaves.
