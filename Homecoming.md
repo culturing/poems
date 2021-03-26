@@ -6,7 +6,7 @@
 I walk down the streets I never knew.\
 They are familiar, but I, the knower, have changed.\
 I did not know what little I knew.\
-Maybe this is what the poets mean by recurrence,\
+Maybe this is what poets mean by recurrence,\
 why they return so often to the same things.\
 I did not know the familiar streets\
 because I, the knower, had not yet been changed.\
