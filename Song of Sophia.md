@@ -1,6 +1,6 @@
 ### Song of Sophia
 
-I. Akrasia
+#### I. Akrasia
 
     When there were no depths, I was brought forth,
         When there were no springs abounding with water.
@@ -24,7 +24,7 @@ For the ground had been well-tread \
 by tanks and wise men\
 teaching shadows
 
-HEY\
+*HEY\
 &nbsp;&nbsp;&nbsp;THIS JUST IN \
 HEY\
 &nbsp;&nbsp;&nbsp;ERECTILE  \
@@ -42,9 +42,9 @@ HEY\
 &nbsp;&nbsp;&nbsp;&nbsp;I LOVE YOU. \
 HEY\
 &nbsp;&nbsp;&nbsp;&nbsp;LOVE ME <3\
-HEY    \
+HEY*
 
-II. Nostoi
+#### II. Nostoi
 
     Does not wisdom cry out,
         And understanding lift up her voice?
@@ -59,7 +59,7 @@ and drinks,
 
 So too I flee the wasteland.
 
-III. Paideia
+#### III. Paideia
 
     To you, O men, I call,
         and my voice is to the sons of men.
