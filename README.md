@@ -15,13 +15,13 @@
 #### January
 - [The Choir](Poems/The%20Choir.md)
 
+#### August
+- [Valediction to Images](Poems/Valediction%20to%20Images.md)
+
 #### September
 - [Only Begin](Poems/Only%20Begin.md)
 - [Another ending](Poems/Another%20ending.md)
 - [Child you are the water](Poems/Child%20you%20are%20the%20water.md)
-
-#### August
-- [Valediction to Images](Poems/Valediction%20to%20Images.md)
 
 #### October
 - [Longing](Poems/Longing.md)
