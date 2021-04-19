@@ -10,6 +10,9 @@
 #### May
 - [Romance Revisited](Poems/Romance%20Revisited.md)
 
+#### October
+- [Fragments Shored Against Ruin](Poems/Fragments%20Shored%20Against%20Ruin.md)
+
 ### 2016
 
 #### January
