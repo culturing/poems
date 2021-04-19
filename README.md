@@ -74,8 +74,10 @@
 
 #### August
 - [Lady in the Temple](Poems/Lady%20in%20the%20Temple.md)
+- [Lincoln's Memory](Poems/Lincoln's%20Memory.md)
 
 #### September
+- [After Lincoln](Poems/After%20Lincoln.md)
 - [Tradition](Poems/Tradition.md)
 
 ### 2020
