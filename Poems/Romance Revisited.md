@@ -21,7 +21,7 @@ some demand.
 
 But lives diverge,\
 conform to their courses,\
-drive toward their ends.
+drive towards their ends.
 
 This, then, too must end.
 
@@ -40,7 +40,7 @@ ignore all time and place?
 
 --
 
-Rage I've had for futility,\
+Rage for futility,\
 Rage for bleared horizons,
 
 For rage itself,\
@@ -63,7 +63,7 @@ to die, and not trace ways\
 across that sky\
 where the Immortals lie.
 
-We belong here planted\
+We belong implanted\
 where the bloom that Spring provides\
 by Autumn flees, and we get by\
 on hardened leaves.
