@@ -113,7 +113,7 @@ harmonies and form.
 There can be no freedom in extravagance.
 
 Love is the beginning but not the fruition, \
-which only comes through discipline \
+which comes only through discipline \
 and a kind of violence.
 
 Once we have established ourselves \
