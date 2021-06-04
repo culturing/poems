@@ -35,8 +35,8 @@ I say be such\
 that every longing touch\
 *remembers* love,
 
-But do step cautiously \
+And do step cautiously \
 through darkened rooms,\
-and listen for that horn.
+but listen for that horn.
 
 *14 September 2020*
