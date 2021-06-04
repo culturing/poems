@@ -33,9 +33,10 @@ in some forgotten tongue.
 
 I say be such\
 that every longing touch\
-remembers love,
+*remembers* love,
 
-But do step cautiously through darkened rooms,\
+But do step cautiously \
+through darkened rooms,\
 and listen for that horn.
 
 *14 September 2020*
