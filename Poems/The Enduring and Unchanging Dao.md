@@ -37,6 +37,6 @@ that every longing touch\
 
 And do step cautiously \
 through darkened rooms,\
-but listen for that horn.
+and listen for that horn.
 
 *14 September 2020*
