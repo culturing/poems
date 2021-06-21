@@ -12,7 +12,7 @@ Put down thy burden.
 
 Remember once the wigwam,\
 Old coyote and the moon,\
-Relieve the sorrow,
+Relive the sorrow,
 
 Leave the pain.\
 Put down thy burden.
