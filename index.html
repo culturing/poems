@@ -8,9 +8,8 @@
 
     #container { display: flex; flex-direction: row; justify-content: center; }
     #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
-
-    #index { padding-right: 24px; }
-    #chronology { padding-left: 24px; }
+    #container-index { padding-right: 24px; }
+    #container-chronology { padding-left: 24px; }
         
     .hide { display: none; }
 </style>
@@ -18,20 +17,38 @@
 <script>
     async function onLoad() {        
         var res = await fetch('https://api.github.com/repos/culturing/Poems/contents/Poems')
-        var data = await res.json();
+        var poems = await res.json();
 
-        for (var poem of data) {
+        res = await fetch('https://raw.githubusercontent.com/culturing/Poems/main/README.md')
+        var readme = await res.text();
+
+        var index = document.getElementById('container-index');
+
+        var poemsByPath = {}
+
+        for (var poem of poems) {
             var div = document.createElement('div');
             div.innerHTML = `<a href='${window.location.href}poem.html?download_url=${poem.download_url}'>${poem.name.replace('.md', '')}</a>`;
             index.appendChild(div);
+            poemsByPath[encodeURIComponent(poem.path)] = poem;
         }
 
-        var res = await fetch('https://raw.githubusercontent.com/culturing/Poems/main/README.md')
-        var readme = await res.text();
-
         var div = document.createElement('div');
-        div.innerHTML = marked(readme).replaceAll('<a', '<div').replaceAll('</a', '</div');
-        document.getElementById('chronology').appendChild(div);
+        div.innerHTML = marked(readme); //.replaceAll('<a', '<div').replaceAll('</a', '</div');        
+        for (var anchor of div.querySelectorAll('a'))
+        {
+            if (anchor.href != null)
+            {
+                var path = encodeURIComponent(anchor.attributes.href.value);
+                var poem = poemsByPath[path];
+                if (poem != null)
+                {
+                    anchor.href = `${window.location.href}poem.html?download_url=${poem.download_url}`
+                }
+            }
+        }
+
+        document.getElementById('container-chronology').appendChild(div);
 
         for (var node of document.querySelectorAll('.hide'))
         {
@@ -45,10 +62,10 @@
     <h1 class="hide">Poems</h1>
     <div id="container-parent">
         <div id="container">
-            <div id="index">
+            <div id="container-index">
                 <h2 class="hide">Index</h2>
             </div>
-            <div id="chronology">
+            <div id="container-chronology">
             </div>
         </div>
     </div>
