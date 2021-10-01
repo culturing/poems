@@ -1,0 +1,56 @@
+<html>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quattrocento" />
+<style>
+    body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
+    div { padding-bottom: 4px; }
+    h1 { margin-bottom: 8px; }
+    a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickness: 0;}
+
+    #container { display: flex; flex-direction: row; justify-content: center; }
+    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
+
+    #index { padding-right: 24px; }
+    #chronology { padding-left: 24px; }
+        
+    .hide { display: none; }
+</style>
+<script src="scripts/marked.min.js"></script>
+<script>
+    async function onLoad() {        
+        var res = await fetch('https://api.github.com/repos/culturing/Poems/contents/Poems')
+        var data = await res.json();
+
+        for (var poem of data) {
+            var div = document.createElement('div');
+            div.innerHTML = `<a href='${window.location.href}poem.html?download_url=${poem.download_url}'>${poem.name.replace('.md', '')}</a>`;
+            index.appendChild(div);
+        }
+
+        var res = await fetch('https://raw.githubusercontent.com/culturing/Poems/main/README.md')
+        var readme = await res.text();
+
+        var div = document.createElement('div');
+        div.innerHTML = marked(readme).replaceAll('<a', '<div').replaceAll('</a', '</div');
+        document.getElementById('chronology').appendChild(div);
+
+        for (var node of document.querySelectorAll('.hide'))
+        {
+            node.classList.remove('hide');
+        }
+    }
+    onLoad();
+</script>
+
+<body>
+    <h1 class="hide">Poems</h1>
+    <div id="container-parent">
+        <div id="container">
+            <div id="index">
+                <h2 class="hide">Index</h2>
+            </div>
+            <div id="chronology">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quattrocento" />
+<style>
+    body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
+    #container { display: flex; flex-direction: row; justify-content: center; }
+    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); }
+</style>
+<script src="scripts/marked.min.js"></script>
+<script>
+    async function onLoad() {
+        var params = new URLSearchParams(window.location.search);
+        var url = params.get("download_url");
+
+        var res = await fetch(url);
+        var md = await res.text();
+
+        var container = document.getElementById('container');
+
+        var div = document.createElement('div');
+        div.innerHTML = marked(md);
+        container.appendChild(div);
+    }
+    onLoad();
+</script>
+
+<body>
+    <div id="container-parent">
+        <div id="container"></div>
+    </div>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+</body>
+</html>
