@@ -1,15 +1,18 @@
 <html>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quattrocento" />
 <style>
-    body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
+    body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; margin: 0; padding: 1rem; }
     div { padding-bottom: 4px; }
-    h1 { margin-bottom: 8px; }
+    h1 { margin: 0; padding: 1rem; }
+    h2 { margin: 0; padding-bottom: 1rem; }
+    h3 { margin: 0; padding-top: 1rem; padding-bottom: 0.5rem; }
     a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickness: 0;}
 
     #container { display: flex; flex-direction: row; justify-content: center; }
     #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
     #container-index { padding-right: 24px; }
-    #container-chronology { padding-left: 24px;}
+    #container-chronology { padding-left: 24px; }
+    #container-chronology h2 { padding-bottom: 0; }
         
     .hide { display: none; }
 </style>
@@ -63,6 +66,8 @@
         }
     }
     onLoad();
+    
+    console.log("Like looking under the hood? https://github.com/culturing/Poems");
 </script>
 
 <body>
