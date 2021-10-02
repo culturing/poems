@@ -21,7 +21,7 @@ if that will set you free,
 
 but I will not be free.
 
-For there is yet truth in old books,\
+For there is still truth in old books,\
 and the walls will not fall for sly looks.
 
 Indeed, there is room at all tables.
