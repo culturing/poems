@@ -35,7 +35,7 @@ I say be such\
 that every longing touch\
 *remembers* love,
 
-And do step cautiously \
+But do step cautiously \
 through darkened rooms,\
 and listen for that horn.
 

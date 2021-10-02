@@ -8,7 +8,7 @@ That’s not to say\
 that this one way\
 will do,
 
-but here is one example.\
+but here is *one* example.
 
 There are others,\
 have been others,\
