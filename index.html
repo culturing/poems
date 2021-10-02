@@ -29,7 +29,8 @@
 
         for (var poem of poems) {
             var div = document.createElement('div');
-            div.innerHTML = `<a href='${window.location.href}poem.html?download_url=${poem.download_url}'>${poem.name.replace('.md', '')}</a>`;
+            var href = `${window.location.href}poem.html?download_url=${(poem.download_url)}`
+            div.innerHTML = `<a href="${href}">${poem.name.replace('.md', '')}</a>`;
             indexDiv.appendChild(div);
             poemsByPath[encodeURIComponent(poem.path)] = poem;
         }
