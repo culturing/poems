@@ -9,7 +9,7 @@
     #container { display: flex; flex-direction: row; justify-content: center; }
     #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
     #container-index { padding-right: 24px; }
-    #container-chronology { padding-left: 24px; }
+    #container-chronology { padding-left: 24px;}
         
     .hide { display: none; }
 </style>
@@ -22,20 +22,25 @@
         res = await fetch('https://raw.githubusercontent.com/culturing/Poems/main/README.md')
         var readme = await res.text();
 
-        var index = document.getElementById('container-index');
-
         var poemsByPath = {}
+        var poemDivs = []
+
+        var indexDiv = document.createElement('div');
 
         for (var poem of poems) {
             var div = document.createElement('div');
             div.innerHTML = `<a href='${window.location.href}poem.html?download_url=${poem.download_url}'>${poem.name.replace('.md', '')}</a>`;
-            index.appendChild(div);
+            indexDiv.appendChild(div);
             poemsByPath[encodeURIComponent(poem.path)] = poem;
         }
 
-        var div = document.createElement('div');
-        div.innerHTML = marked(readme); //.replaceAll('<a', '<div').replaceAll('</a', '</div');        
-        for (var anchor of div.querySelectorAll('a'))
+        var chronologyDiv = document.createElement('div');
+        chronologyDiv.innerHTML = marked(readme)
+            .replaceAll('%20', ' ')
+            .replaceAll('<li', '<div').replaceAll('</li', '</div')
+            .replaceAll('<ul', '<div').replaceAll('</ul', '</div');
+
+        for (var anchor of chronologyDiv.querySelectorAll('a'))
         {
             if (anchor.href != null)
             {
@@ -48,7 +53,8 @@
             }
         }
 
-        document.getElementById('container-chronology').appendChild(div);
+        document.getElementById('container-index').appendChild(indexDiv);
+        document.getElementById('container-chronology').appendChild(chronologyDiv);
 
         for (var node of document.querySelectorAll('.hide'))
         {
