@@ -4,9 +4,9 @@ Day turns into day. Each fades.\
 All things become another.
 
 But can this always be so,\
-or does this change?
+or does *this* change?
 
-What use is predication?\
+What use is predication?
 
 This is true, not that, for now,\
 and who can know another?
