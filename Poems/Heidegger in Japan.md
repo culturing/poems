@@ -1,5 +1,5 @@
 ### Heidegger in Japan
-<p style="margin:0; margin-top: -0.5rem">
+<p style="margin:0; margin-top: -1.25rem">
   <em>
     <small><small>07 January 2021</small></small>
   </em>

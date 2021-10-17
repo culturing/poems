@@ -1,5 +1,5 @@
 ### “Romance Revisited,” revisited
-<p style="margin:0; margin-top: -0.5rem">
+<p style="margin:0; margin-top: -1.25rem">
   <em>
     <small><small>14 November 2018</small></small>
   </em>

@@ -1,5 +1,5 @@
 ### Planting Time
-<p style="margin:0; margin-top: -0.5rem">
+<p style="margin:0; margin-top: -1.25rem">
   <em>
     <small><small>14 February 2021</small></small>
   </em>

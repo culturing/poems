@@ -1,5 +1,5 @@
 ### Song of Sophia
-<p style="margin:0; margin-top: -0.5rem">
+<p style="margin:0; margin-top: -1.25rem">
   <em>
     <small><small>24 July 2014</small></small>
   </em>

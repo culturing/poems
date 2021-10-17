@@ -1,5 +1,5 @@
 ### All the Tender Pathos
-<p style="margin:0; margin-top: -0.5rem">
+<p style="margin:0; margin-top: -1.25rem">
   <em>
     <small><small>20 April 2021</small></small>
   </em>

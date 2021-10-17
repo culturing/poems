@@ -1,4 +1,4 @@
-<p style="margin:0; margin-top: -0.5rem">
+<p style="margin:0; margin-top: -1.25rem">
   <em>
     <small><small>16 October 2017</small></small>
   </em>

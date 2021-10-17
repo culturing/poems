@@ -1,5 +1,5 @@
 ### The Lady
-<p style="margin:0; margin-top: -0.5rem">
+<p style="margin:0; margin-top: -1.25rem">
   <em>
     <small><small>06 May 2019</small></small>
   </em>
