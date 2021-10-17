@@ -1,4 +1,10 @@
 ### The Secrets of Country Living
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>21 April 2018</small></small>
+  </em>
+</p>
+
 *For Robert Penn Warren*
 
 I do not know\
@@ -12,5 +18,3 @@ but I have once \
 heard an eagle call out its name.
 
 It was a sound like Truth.
-
-*21 April 2018*

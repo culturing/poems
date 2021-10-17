@@ -1,4 +1,9 @@
 ### A poem
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>28 October 2016</small></small>
+  </em>
+</p>
 
 begins like this:\
 a note, a phrase,
@@ -8,5 +13,3 @@ seeps just under,\
 slakes upon a thirst,
 
 and ends in growth.
-
-*28 October 2016*

@@ -1,4 +1,9 @@
 ### Fragments Shored Against Ruin 
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>24 October 2015</small></small>
+  </em>
+</p>
 
 #### 1
 
@@ -139,5 +144,3 @@ and to hope with poise
 
 The truth of which \
 *is There is There is There.*
-
-*24 October 2015*

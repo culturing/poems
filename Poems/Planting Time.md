@@ -1,4 +1,9 @@
 ### Planting Time
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>14 February 2021</small></small>
+  </em>
+</p>
 
 In the spring time of the year,\
 as dawn rises, dusty, over the fields,\
@@ -26,5 +31,3 @@ I plant days and years
 
 And see strange fruit come harvest time.\
 I wait for what will grow.
-
-*14 February 2021*

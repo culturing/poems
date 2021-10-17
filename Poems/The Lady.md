@@ -1,4 +1,9 @@
 ### The Lady
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>06 May 2019</small></small>
+  </em>
+</p>
 
 I dreamed I saw a Lady\
 perched atop a milk-white stair,\
@@ -34,5 +39,3 @@ She looked at all our nakedness,\
 saw through our praise and plight,\
 and said, “Fools, get yourselves together,\
 or else get out of my sight!”
-
-*06 May 2019*

@@ -1,3 +1,9 @@
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>27 March 2019</small></small>
+  </em>
+</p>
+
 I have withdrawn from the world\
 &nbsp;&nbsp;&nbsp;&nbsp;for the world’s own good,\
 I have bound my own hands.
@@ -25,5 +31,3 @@ and the vagabonds grow old.
 I say only this,\
 that is this not sure bliss,\
 to belong, to behold, and to bless?
-
-*27 March 2019*

@@ -1,4 +1,9 @@
 ### Tradition
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>25 September 2019</small></small>
+  </em>
+</p>
 
 I think the future \
 does not belong to the past,\
@@ -17,5 +22,3 @@ future or past,
 
 those most the old things \
 which are known to last.
-
-*25 September 2019*

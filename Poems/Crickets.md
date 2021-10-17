@@ -1,4 +1,9 @@
 ### Crickets
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>28 June 2019</small></small>
+  </em>
+</p>
 
 Up upon a hill I heard\
 the crickets chirping words:\
@@ -24,5 +29,3 @@ Upon the backs of those cold crickets,\
 on the hill, who chirped with words,\
 for as they chirped about salvation,\
 they made sure that I had heard.
-
-*28 June 2019*

@@ -1,3 +1,9 @@
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>16 October 2017</small></small>
+  </em>
+</p>
+
 Out came a cry\
 &nbsp;&nbsp;&nbsp;&nbsp;from beneath the great Nothing,\
 but no one was there to believe it.
@@ -9,5 +15,3 @@ and no one was there to retrieve it.
 And day was like sand,\
 &nbsp;&nbsp;&nbsp;&nbsp;and the moon went away,\
 and nobody was there to be free with.
-
-*16 October 2017*

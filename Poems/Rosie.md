@@ -1,4 +1,9 @@
 ### Rosie
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>31 March 2019</small></small>
+  </em>
+</p>
 
 Rosie works\
 so hard\
@@ -22,5 +27,3 @@ for it is a matter of time,
 
 though she does know\
 the way things grow.
-
-*31 March 2019*

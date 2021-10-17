@@ -1,4 +1,9 @@
 ### All the Tender Pathos
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>20 April 2021</small></small>
+  </em>
+</p>
 
 > *Every human heart is human.* \
 &nbsp;&nbsp;&nbsp;&nbsp;Longfellow, *Song of Hiawatha*
@@ -52,5 +57,3 @@ On its journey to the ocean,
 And be human.\
 Leave behind thy burden, \
 Leave behind thy burden.
-
-*20 April 2021*

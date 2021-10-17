@@ -1,4 +1,9 @@
 ### Romance Revisited
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>07 May 2015</small></small>
+  </em>
+</p>
 
 Unsurprised when she appeared \
 atop the stair,\
@@ -67,5 +72,3 @@ We belong implanted\
 where the bloom that Spring provides\
 by Autumn flees, and we get by\
 on hardened leaves.
-
-*07 May 2015*

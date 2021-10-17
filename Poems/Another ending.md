@@ -1,4 +1,9 @@
 ### Another ending
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>22 September 2016</small></small>
+  </em>
+</p>
 
 I guess this is the end.\
 I'm not sure what of. \
@@ -17,5 +22,3 @@ or gone some other way,
 
 But within is the promised stay of woe,\
 and that is where the old roads go.
-
-*22 September 2016*

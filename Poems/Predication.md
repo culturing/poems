@@ -1,4 +1,9 @@
 ### Predication
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>30 June 2021</small></small>
+  </em>
+</p>
 
 Day turns into day. Each fades.\
 All things become another.
@@ -13,5 +18,3 @@ and who can know another?
 
 Therefore say it is true,\
 if not for me, say it for you.
-
-*30 June 2021*

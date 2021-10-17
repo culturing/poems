@@ -1,3 +1,9 @@
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>28 April 2021</small></small>
+  </em>
+</p>
+
 I pause before the church\
 and wonder,
 
@@ -16,5 +22,3 @@ will be others, sure.
 
 But here is one example\
 of the best that man can do.
-
-*28 April 2021*

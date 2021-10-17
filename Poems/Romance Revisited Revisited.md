@@ -1,4 +1,9 @@
 ### “Romance Revisited,” revisited
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>14 November 2018</small></small>
+  </em>
+</p>
 
 I saw you there\
 atop the stair,\
@@ -21,5 +26,3 @@ upon a husk, a lifeless stump,
 
 and there will be no going on\
 without new songs from flesh and blood.
-
-*14 November 2018*

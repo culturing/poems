@@ -1,4 +1,9 @@
 ### Longing
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>17 October 2016</small></small>
+  </em>
+</p>
 
 I long for things I've never known.\
 The shadows curse my eyes.\
@@ -20,5 +25,3 @@ The ache for bluer skies,\
 The ache for home,\
 The scars that run through bone,\
 The longing is the only thing we know.
-
-*17 October 2016*

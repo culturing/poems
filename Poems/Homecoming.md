@@ -1,4 +1,9 @@
 ### Homecoming
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>22 April 2020</small></small>
+  </em>
+</p>
 
 *Awaking comes in turns,*\
 &nbsp;&nbsp;&nbsp;&nbsp;*the day is bright before it burns.*
@@ -24,5 +29,3 @@ If change comes it comes only for now, not forever,\
 and so I walk down streets I never knew,\
 the same streets, but I, the knower, have changed,\
 and so have they.
-
-*22 April 2020*

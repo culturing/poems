@@ -1,4 +1,9 @@
 ### The Choir
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>18 January 2016</small></small>
+  </em>
+</p>
 
 By silent seas we sit and sing\
 Of life's unwrought enamelling\
@@ -48,5 +53,3 @@ For we have feared the shades of steel,\
 But harbor dreams of living well,\
 And dream of lifting off this pyre,\
 And lift this chorus as a choir.
-
-*18 January 2016*

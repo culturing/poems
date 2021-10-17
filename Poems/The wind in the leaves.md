@@ -1,4 +1,9 @@
 ### The wind in the leaves
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>13 April 2021</small></small>
+  </em>
+</p>
 
 Thunders crash,\
 The wind moves through the leaves,
@@ -26,5 +31,3 @@ Thunder, why \
 O thunder
 
 move through wind and leaves.
-
-*13 April 2021*

@@ -1,4 +1,9 @@
 ### After Lincoln
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>24 September 2019</small></small>
+  </em>
+</p>
 
 Alas, there came more wars, \
 at least as brutal, \
@@ -41,5 +46,3 @@ it‘s true, we cannot quarrel long,
 
 But oh, your song, your song! \
 it will need rearranging before long.
-
-*24 September 2019*

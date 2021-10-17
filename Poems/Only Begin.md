@@ -1,4 +1,10 @@
 ### Only Begin
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>22 September 2016</small></small>
+  </em>
+</p>
+
 *For J. Alfred Prufrock and his admirers*
 
 If I could only begin,\
@@ -21,5 +27,3 @@ To speak in both sound and sight\
 of ample groves and measured flight.\
 But time is riddled with sin,\
 so I could only begin.
-
-*22 September 2016*

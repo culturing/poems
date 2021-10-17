@@ -1,4 +1,9 @@
 ### Mysteries
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>01 August 2018</small></small>
+  </em>
+</p>
 
 O stolen time,\
 wandering there by the sea,
@@ -25,5 +30,3 @@ For there is still truth in old books,\
 and the walls will not fall for sly looks.
 
 Indeed, there is room at all tables.
-
-*01 August 2018*

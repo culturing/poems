@@ -1,4 +1,9 @@
 ### The New Bird
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>09 March 2019</small></small>
+  </em>
+</p>
 
 The idea waits upon a bough.\
 The bird is in the parlor though.\
@@ -48,6 +53,3 @@ The song, what song, whose singing? \
 Let us know the things we know. \
 For after all has come and gone, \
 We still are earthen bound.
-
-
-*09 March 2019*

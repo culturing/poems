@@ -1,4 +1,9 @@
 ### Nixon at the Threshold of the Lincoln Memorial
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>13 January 2019</small></small>
+  </em>
+</p>
 
 What language could there have been\
 between that tiger, battle-scarred,\
@@ -35,5 +40,3 @@ keep them moving.
 And as for the children, well, \
 they’ve never mattered much to us,\
 and who could build a home from such raw material?
-
-*13 January 2019*

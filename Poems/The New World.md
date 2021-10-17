@@ -1,4 +1,9 @@
 ### The New World
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>25 April 2017</small></small>
+  </em>
+</p>
 
 Raised among wolves,\
 &nbsp;&nbsp;&nbsp;&nbsp;we've learned both bite and howl,\
@@ -19,5 +24,3 @@ foundations to outlast all weather.
 That edifice fell,\
 &nbsp;&nbsp;&nbsp;&nbsp;but the ruins remain.\
 Do any dare build there again?
-
-*25 April 2017*

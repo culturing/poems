@@ -1,4 +1,9 @@
 ### Valediction to Images
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>06 August 2016</small></small>
+  </em>
+</p>
 
 Image of forgotten beauty,\
 Face of fire, flesh of music,\
@@ -17,5 +22,3 @@ You dying fall withholding all,\
 And I will hear you long,\
 For I can hear you call \
 &nbsp;&nbsp;&nbsp;&nbsp;From deep within the altar of my heart.
-
-*06 August 2016*

@@ -1,4 +1,9 @@
 ### The Enduring and Unchanging Dao
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>14 September 2020</small></small>
+  </em>
+</p>
 
 People die, new people are born.\
 The timbre of civilization changes,\
@@ -38,5 +43,3 @@ that every longing touch\
 But do step cautiously \
 through darkened rooms,\
 and listen for that horn.
-
-*14 September 2020*

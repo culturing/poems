@@ -1,4 +1,9 @@
 ### Lincoln’s Memory
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>29 August 2019</small></small>
+  </em>
+</p>
 
 So favored forms of power \
 shall not perish from the earth, \
@@ -112,5 +117,3 @@ and to the horror not quite heeded,
 
 To man’s ultimate obedience, \
 friend History, give song.
-
-*29 August 2019*

@@ -1,4 +1,9 @@
 ### Old House
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>09 July 2021</small></small>
+  </em>
+</p>
 
 I walk down the old avenues,\
 aware again of impermanence,\
@@ -22,11 +27,9 @@ If not the Thames, the Mississippi?\
 Say the Susquehanna, rolling slow?
 
 And yet, don’t answer.\
-Let us linger here, and grieve,\
+Let me linger here, and grieve,\
 until our waters are surpassed.
 
 Old house made new,\
 another world’s anxieties\
 are haunting you.
-
-*09 July 2021*

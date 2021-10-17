@@ -1,4 +1,9 @@
 ### Song of Sophia
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>24 July 2014</small></small>
+  </em>
+</p>
 
 #### I. Akrasia
 
@@ -71,5 +76,3 @@ who has not failed to rise. I grip the scythe,
 And take upon myself beginnings\
 and their ends, and find this meaning\
 *sicut erat in principio.*
-
-*24 July 2014*

@@ -1,4 +1,9 @@
 ### The New Science
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>06 April 2017</small></small>
+  </em>
+</p>
 
 Under the stars a hundred bards\
 &nbsp;&nbsp;&nbsp;&nbsp;drop still, dead silent,\
@@ -25,5 +30,3 @@ Can we place blame \
 Might it be just \
 &nbsp;&nbsp;&nbsp;&nbsp;that in spite of stars\
 Man hasn't come that far?
-
-*06 April 2017*

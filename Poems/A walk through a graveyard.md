@@ -1,3 +1,9 @@
+<p style="margin:0; margin-top: -0.5rem">
+  <em>
+    <small><small>01 April 2018</small></small>
+  </em>
+</p>
+
 A walk\
 through a graveyard\
 reveals a peculiar slumber —
@@ -19,5 +25,3 @@ and we cannot tolerate weeds.
 
 Tomorrow, then, comes anyway.\
 This is a walk through a graveyard.
-
-*01 April 2018*
