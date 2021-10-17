@@ -9,7 +9,7 @@ I long for things I've never known.\
 The shadows curse my eyes.\
 The scars run deep. They run at least to bone.
 
-Although thunder grants atonement,\
+And though thunder grants atonement,\
 Questions always come from other skies.\
 I long for things I've never known,
 
@@ -19,9 +19,9 @@ The scars are deep like bone,
 
 And all the ancient empty tomes\
 Provide no lasting prize,\
-But only point out things we cannot know.
+But point to things we cannot know.
 
-The ache for bluer skies,\
-The ache for home,\
-The scars that run through bone,\
-The longing is the only thing we know.
+To ache for bluer skies,\
+To ache for home,\
+To scars that run through bone,\
+To longing as the only thing we know.
