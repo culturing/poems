@@ -14,14 +14,14 @@ All young people feel the same.\
 They mix themselves with power’s blessings.
 
 Some find laurels, others cling\
-To love and childhood games.\
+To lovely fleeting games.\
 Thus they lose themselves in singing,
 
-Thus they fall before the morning,\
-Thus they are to blame.\
-But power brings at best mixed blessings,
+Thus all fall before the morning,\
+Thus all are to blame.\
+But power brings them such mixed blessings,
 
-Power puts off dusk and dying,\
+Power puts off pain and dying,\
 Power’s light must wane.\
 Therefore find thyself in singing,
 
