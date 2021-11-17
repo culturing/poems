@@ -18,6 +18,8 @@
 </style>
 <script src="scripts/marked.min.js"></script>
 <script>
+    var root_download_url = "https://raw.githubusercontent.com/culturing/Poems/main/Poems/";
+
     async function onLoad() {        
         var res = await fetch('https://api.github.com/repos/culturing/Poems/contents/Poems')
         var poems = await res.json();
@@ -31,9 +33,10 @@
         var indexDiv = document.createElement('div');
 
         for (var poem of poems) {
-            var div = document.createElement('div');
-            var href = `${window.location.href}poem.html?download_url=${(poem.download_url)}`
-            div.innerHTML = `<a href="${href}">${poem.name.replace('.md', '')}</a>`;
+            var div = document.createElement('div');            
+            var title = poem.name.replace('.md', '');
+            var href = `${window.location.href}poem.html?title=${encodeURIComponent(title)}`
+            div.innerHTML = `<a href="${href}">${title}</a>`;
             indexDiv.appendChild(div);
             poemsByPath[encodeURIComponent(poem.path)] = poem;
         }
@@ -52,7 +55,8 @@
                 var poem = poemsByPath[path];
                 if (poem != null)
                 {
-                    anchor.href = `${window.location.href}poem.html?download_url=${poem.download_url}`
+                    var title = poem.name.replace('.md', '');
+                    anchor.href = `${window.location.href}poem.html?title=${encodeURIComponent(title)}`
                 }
             }
         }

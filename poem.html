@@ -9,7 +9,8 @@
 <script>
     async function onLoad() {
         var params = new URLSearchParams(window.location.search);
-        var url = params.get("download_url");
+        var title = params.get("title");
+        var url = `https://raw.githubusercontent.com/culturing/Poems/main/Poems/${title}.md`;
 
         var res = await fetch(url);
         var md = await res.text();
