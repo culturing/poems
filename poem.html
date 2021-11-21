@@ -10,7 +10,9 @@
     async function onLoad() {
         var params = new URLSearchParams(window.location.search);
         var title = params.get("title");
-        var url = `https://raw.githubusercontent.com/culturing/Poems/main/Poems/${title}.md`;
+        var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
+        
+        var text_url = `${root_url}/Poems/${title}.md`;
 
         var res = await fetch(url);
         var md = await res.text();
@@ -19,6 +21,17 @@
 
         var div = document.createElement('div');
         div.innerHTML = marked(md);
+
+        var audio_url = `${root_url}/Audio/${title}.m4a`;
+        res = await fetch(audio_url)
+        if (res.ok)
+        {
+            var audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = audio_url;
+            div.appendChild(audio);
+        }
+                
         container.appendChild(div);
     }
     onLoad();
