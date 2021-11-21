@@ -21,7 +21,7 @@ And all the ancient empty tomes\
 Provide no lasting prize,\
 But point to things we cannot know.
 
-To ache for bluer skies,\
+From ache for bluer skies,\
 To ache for home,\
 To scars that run through bone,\
-To longing as the only thing we know.
+The longing is the only thing we know.
