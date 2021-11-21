@@ -14,7 +14,7 @@
         
         var text_url = `${root_url}/Poems/${title}.md`;
 
-        var res = await fetch(url);
+        var res = await fetch(text_url);
         var md = await res.text();
 
         var container = document.getElementById('container');
