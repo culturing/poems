@@ -29,9 +29,10 @@
             var audio = document.createElement('audio');
             audio.controls = true;
             audio.src = audio_url;
+            audio.style = "width: 100%";
             div.appendChild(audio);
         }
-                
+
         container.appendChild(div);
     }
     onLoad();

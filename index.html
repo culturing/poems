@@ -39,6 +39,11 @@
             div.innerHTML = `<a href="${href}">${title}</a>`;
             indexDiv.appendChild(div);
             poemsByPath[encodeURIComponent(poem.path)] = poem;
+
+        // load poem into browser cache
+            var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
+            var text_url = `${root_url}/Poems/${title}.md`;
+            fetch(text_url);
         }
 
         var chronologyDiv = document.createElement('div');
