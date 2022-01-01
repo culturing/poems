@@ -36,20 +36,3 @@ The song is not for those
 who sing of things one cannot know.  
 The new bird sings, alas!  
 for those who have no other sound.
-
----
-
-Idea stoops upon a bough.   
-The bird has left the parlor now.   
-Tomorrow came and went,   
-But his song still is ringing here.
-
-For over near the capital,   
-The trees fall circumspect,   
-And all the old songs of communion   
-Are not something we can trust.
-
-The song, what song, whose singing?   
-Let us know the things we know.   
-For after all has come and gone,   
-We still are earthen bound.

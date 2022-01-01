@@ -1,36 +1,12 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preload" href="../fonts/quattrocento-latin.woff2" as="font" type="font/woff2">
 <link rel="stylesheet" type="text/css" href="../fonts/fonts.css" />
 <style>
     body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
     #container { display: flex; flex-direction: row; justify-content: center; }
-    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); }
+    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); } 
 </style>
-<script>
-    async function onLoad() {
-        var path = window.location.pathname.split('/');
-        var title = path[path.length - 1].replace(".html", "");
-
-        var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
-
-        var audio_url = `${root_url}/Audio/${title}.m4a`;
-        res = await fetch(audio_url)
-        if (res.ok)
-        {
-            var audio = document.createElement('audio');
-            audio.controls = true;
-            audio.src = audio_url;
-            audio.style = "width: 100%";
-            document.getElementById('poem').appendChild(audio);
-        }
-
-        container.appendChild(div);
-    }
-    onLoad();
-    
-    console.log("Like looking under the hood? https://github.com/culturing/Poems");
-</script>
-
 <body>
     <div id="container-parent">
         <div id="container">
@@ -74,26 +50,31 @@ where all love is held in trust.</p>
 who sing of things one cannot know.<br />
 The new bird sings, alas!<br />
 for those who have no other sound.</p>
-
-<hr />
-
-<p>Idea stoops upon a bough.<br />
-The bird has left the parlor now.<br />
-Tomorrow came and went,<br />
-But his song still is ringing here.</p>
-
-<p>For over near the capital,<br />
-The trees fall circumspect,<br />
-And all the old songs of communion<br />
-Are not something we can trust.</p>
-
-<p>The song, what song, whose singing?<br />
-Let us know the things we know.<br />
-For after all has come and gone,<br />
-We still are earthen bound.</p>
             </div>
         </div>
     </div>
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 </body>
+<script>
+    async function onLoad() {
+        var path = window.location.pathname.split('/');
+        var title = path[path.length - 1].replace(".html", "");
+
+        var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
+
+        var audio_url = `${root_url}/Audio/${title}.m4a`;
+        res = await fetch(audio_url)
+        if (res.ok)
+        {
+            var audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = audio_url;
+            audio.style = "width: 100%";
+            document.getElementById('poem').appendChild(audio);
+        }
+    }
+    onLoad();
+    
+    console.log("Like looking under the hood? https://github.com/culturing/Poems");
+</script>
 </html>

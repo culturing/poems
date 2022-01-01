@@ -20,5 +20,5 @@ What else could they do?
 Their story is ugly,  
 But this much is true:  
   
-The bird must now learn how to live with clipped wings.  
-Indeed, that may be why he sings.  
+The bird has to learn how to live with clipped wings.  
+Indeed, this may be why he sings.  

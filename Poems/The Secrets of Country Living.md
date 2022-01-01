@@ -5,7 +5,7 @@
   </em>
 </p>
 
-*For Robert Penn Warren*
+<small>*For Robert Penn Warren*</small>
 
 I do not know  
 what

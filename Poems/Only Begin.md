@@ -5,7 +5,7 @@
   </em>
 </p>
 
-*For J. Alfred Prufrock and his admirers*
+<small>*For J. Alfred Prufrock and his admirers*</small>
 
 If I could only begin,  
 I would end alright.  

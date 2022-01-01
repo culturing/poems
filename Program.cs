@@ -11,7 +11,7 @@ namespace Poems
     {
         public string Link { get; set; }
         public DateTime CompositionDate { get; set; }
-        public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novermber", "December" };
+        public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     }
 
     class Program

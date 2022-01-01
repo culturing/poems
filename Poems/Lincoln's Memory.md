@@ -26,7 +26,7 @@ our hope in days to come,
 arose, O History! through violence,   
 and herein lies its song.
 
-—
+---
 
 Twas eighteen-fifty-eight, whereon a Senate seat contended   
 led the folks of Illinois to dream they saw a President.   
@@ -77,7 +77,7 @@ As the sureness grew,
 he pondered long   
 and nursed a budding song.
 
-—
+---
 
 This Lincoln after many years   
 appeared before the dead   
@@ -91,7 +91,7 @@ where many died and killed.
 Thus Lincoln willed,   
 and thus we must obey.
 
-—
+---
 
 But Oh, how Declaration   
 had sent shocks across the sea   
@@ -105,7 +105,7 @@ there was Paine in every head,
 and ‘twas ideas, sir, ideas!   
 which would leave so many dead.
 
-—
+---
 
 Lord, such war and terror   
 bled from North down through the South   

@@ -1,11 +1,49 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preload" href="../fonts/quattrocento-latin.woff2" as="font" type="font/woff2">
 <link rel="stylesheet" type="text/css" href="../fonts/fonts.css" />
 <style>
     body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
     #container { display: flex; flex-direction: row; justify-content: center; }
-    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); }
+    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); } 
 </style>
+<body>
+    <div id="container-parent">
+        <div id="container">
+            <div id="poem">
+                <h3>Longing</h3>
+
+<p style="margin:0; margin-top: -1.25rem">  
+  <em>  
+    <small><small>17 October 2016</small></small>  
+  </em>  
+</p>  
+
+<p>I long for things I've never known.<br />
+The shadows curse my eyes.<br />
+The scars run deep. They run at least to bone.  </p>
+
+<p>And though thunder grants atonement,<br />
+Always questions come from other skies.<br />
+I long for things I've never known,  </p>
+
+<p>And candles burn and scholars moan<br />
+And ashes creep beneath the tightest mind.<br />
+The scars are deep like bone,  </p>
+
+<p>And all the ancient empty tomes<br />
+Provide no lasting prize,<br />
+But only point to things we cannot know.  </p>
+
+<p>The ache for bluer skies,<br />
+The ache for home,<br />
+The scars that run through bone,<br />
+The longing is the surest thing we know.  </p>
+            </div>
+        </div>
+    </div>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+</body>
 <script>
     async function onLoad() {
         var path = window.location.pathname.split('/');
@@ -23,49 +61,9 @@
             audio.style = "width: 100%";
             document.getElementById('poem').appendChild(audio);
         }
-
-        container.appendChild(div);
     }
     onLoad();
     
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
 </script>
-
-<body>
-    <div id="container-parent">
-        <div id="container">
-            <div id="poem">
-                <h3>Longing</h3>
-
-<p style="margin:0; margin-top: -1.25rem">
-  <em>
-    <small><small>17 October 2016</small></small>
-  </em>
-</p>
-
-<p>I long for things I've never known.<br />
-The shadows curse my eyes.<br />
-The scars run deep. They run at least to bone.</p>
-
-<p>And though thunder grants atonement,<br />
-Questions always come from other skies.<br />
-I long for things I've never known,</p>
-
-<p>And candles burn and scholars moan,<br />
-And ashes creep beneath the tightest mind.<br />
-The scars are deep like bone,</p>
-
-<p>And all the ancient empty tomes<br />
-Provide no lasting prize,<br />
-But point to things we cannot know.</p>
-
-<p>From ache for bluer skies,<br />
-To ache for home,<br />
-To scars that run through bone,<br />
-The longing is the only thing we know.</p>
-            </div>
-        </div>
-    </div>
-    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
-</body>
 </html>

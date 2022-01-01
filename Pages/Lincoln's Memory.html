@@ -1,36 +1,12 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preload" href="../fonts/quattrocento-latin.woff2" as="font" type="font/woff2">
 <link rel="stylesheet" type="text/css" href="../fonts/fonts.css" />
 <style>
     body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
     #container { display: flex; flex-direction: row; justify-content: center; }
-    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); }
+    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); } 
 </style>
-<script>
-    async function onLoad() {
-        var path = window.location.pathname.split('/');
-        var title = path[path.length - 1].replace(".html", "");
-
-        var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
-
-        var audio_url = `${root_url}/Audio/${title}.m4a`;
-        res = await fetch(audio_url)
-        if (res.ok)
-        {
-            var audio = document.createElement('audio');
-            audio.controls = true;
-            audio.src = audio_url;
-            audio.style = "width: 100%";
-            document.getElementById('poem').appendChild(audio);
-        }
-
-        container.appendChild(div);
-    }
-    onLoad();
-    
-    console.log("Like looking under the hood? https://github.com/culturing/Poems");
-</script>
-
 <body>
     <div id="container-parent">
         <div id="container">
@@ -64,7 +40,7 @@ our hope in days to come,<br />
 arose, O History! through violence,<br />
 and herein lies its song.</p>
 
-<p>—</p>
+<hr />
 
 <p>Twas eighteen-fifty-eight, whereon a Senate seat contended<br />
 led the folks of Illinois to dream they saw a President.<br />
@@ -115,7 +91,7 @@ and Lincoln found his affirmation.</p>
 he pondered long<br />
 and nursed a budding song.</p>
 
-<p>—</p>
+<hr />
 
 <p>This Lincoln after many years<br />
 appeared before the dead<br />
@@ -129,7 +105,7 @@ where many died and killed.</p>
 <p>Thus Lincoln willed,<br />
 and thus we must obey.</p>
 
-<p>—</p>
+<hr />
 
 <p>But Oh, how Declaration<br />
 had sent shocks across the sea<br />
@@ -143,7 +119,7 @@ there was Paine in every head,<br />
 and ‘twas ideas, sir, ideas!<br />
 which would leave so many dead.</p>
 
-<p>—</p>
+<hr />
 
 <p>Lord, such war and terror<br />
 bled from North down through the South<br />
@@ -160,4 +136,26 @@ friend History, give song.</p>
     </div>
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 </body>
+<script>
+    async function onLoad() {
+        var path = window.location.pathname.split('/');
+        var title = path[path.length - 1].replace(".html", "");
+
+        var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
+
+        var audio_url = `${root_url}/Audio/${title}.m4a`;
+        res = await fetch(audio_url)
+        if (res.ok)
+        {
+            var audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = audio_url;
+            audio.style = "width: 100%";
+            document.getElementById('poem').appendChild(audio);
+        }
+    }
+    onLoad();
+    
+    console.log("Like looking under the hood? https://github.com/culturing/Poems");
+</script>
 </html>

@@ -20,7 +20,7 @@ And ache for poison salesmen sell,
 And whirl in this ungrateful gyre  
 To placate pioneering fire.
 
---
+---
 
 What is this? What is my own?  
 What good is a peopled home  
@@ -37,7 +37,7 @@ Pandora's vessel once again? What's left?
 All can see that Zeus has scorned  
 Those Foresight has adorned.
 
---
+---
 
 But summon those old voices hither.  
 Sing some song against the dither.  
