@@ -10,11 +10,20 @@
     h3 { margin: 0; padding-top: 1rem; padding-bottom: 0.5rem; }
     a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickness: 0;}
 
-    #container { display: flex; flex-direction: row; justify-content: center; }
-    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
-    #container-index { padding-right: 24px; }
-    #container-chronology { padding-left: 24px; }
-    #container-chronology h2 { padding-bottom: 0; }        
+    #container-chronology h2 { padding-bottom: 0; }
+
+    @media only screen and (min-width : 1025px)
+    {
+        #container { display: flex; flex-direction: row; justify-content: center; }
+        #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
+        #container-chronology { padding-right: 24px; }
+        #container-index { padding-left: 24px; }
+    }
+    @media only screen and (max-width : 1024px)
+    {
+        h1 { padding-left: 0; }
+        #container-index h2 { padding-top: 2rem; }
+    }
 </style>
 <script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
@@ -24,51 +33,6 @@
     <h1>Poems</h1>
     <div id="container-parent">
         <div id="container">
-            <div id="container-index">
-                <h2>Index</h2>
-                <div><a href="Pages/A poem.html">A poem</a></div>
-<div><a href="Pages/A walk through a graveyard.html">A walk through a graveyard</a></div>
-<div><a href="Pages/After Lincoln.html">After Lincoln</a></div>
-<div><a href="Pages/Aftermath.html">Aftermath</a></div>
-<div><a href="Pages/Another ending.html">Another ending</a></div>
-<div><a href="Pages/Child you are the water.html">Child you are the water</a></div>
-<div><a href="Pages/Crickets.html">Crickets</a></div>
-<div><a href="Pages/Fragments Shored Against Ruin.html">Fragments Shored Against Ruin</a></div>
-<div><a href="Pages/Homecoming.html">Homecoming</a></div>
-<div><a href="Pages/I have withdrawn from the world.html">I have withdrawn from the world</a></div>
-<div><a href="Pages/Lady in the Temple.html">Lady in the Temple</a></div>
-<div><a href="Pages/Lincoln's Memory.html">Lincoln's Memory</a></div>
-<div><a href="Pages/Longing.html">Longing</a></div>
-<div><a href="Pages/Lost Forest.html">Lost Forest</a></div>
-<div><a href="Pages/Love is made.html">Love is made</a></div>
-<div><a href="Pages/Making Sausage.html">Making Sausage</a></div>
-<div><a href="Pages/Mysteries.html">Mysteries</a></div>
-<div><a href="Pages/Nixon at the Threshold of the Lincoln Memorial.html">Nixon at the Threshold of the Lincoln Memorial</a></div>
-<div><a href="Pages/Old House.html">Old House</a></div>
-<div><a href="Pages/Only Begin.html">Only Begin</a></div>
-<div><a href="Pages/Out came a cry.html">Out came a cry</a></div>
-<div><a href="Pages/Planting Time.html">Planting Time</a></div>
-<div><a href="Pages/Power.html">Power</a></div>
-<div><a href="Pages/Predication.html">Predication</a></div>
-<div><a href="Pages/Romance Revisited Revisited.html">Romance Revisited Revisited</a></div>
-<div><a href="Pages/Romance Revisited.html">Romance Revisited</a></div>
-<div><a href="Pages/Rosie.html">Rosie</a></div>
-<div><a href="Pages/Song of Sophia.html">Song of Sophia</a></div>
-<div><a href="Pages/The Bird in the Glue Trap.html">The Bird in the Glue Trap</a></div>
-<div><a href="Pages/The Choir.html">The Choir</a></div>
-<div><a href="Pages/The Enduring and Unchanging Dao.html">The Enduring and Unchanging Dao</a></div>
-<div><a href="Pages/The Lady.html">The Lady</a></div>
-<div><a href="Pages/The New Bird.html">The New Bird</a></div>
-<div><a href="Pages/The New Science.html">The New Science</a></div>
-<div><a href="Pages/The New World.html">The New World</a></div>
-<div><a href="Pages/The Secrets of Country Living.html">The Secrets of Country Living</a></div>
-<div><a href="Pages/The wind in the leaves.html">The wind in the leaves</a></div>
-<div><a href="Pages/Think Again.html">Think Again</a></div>
-<div><a href="Pages/Tradition.html">Tradition</a></div>
-<div><a href="Pages/Valediction to Images.html">Valediction to Images</a></div>
-<div><a href="Pages/White Shade.html">White Shade</a></div>
-
-            </div>
             <div id="container-chronology">
                 <h2>Chronology</h2>
                 <h3>November 2021</h3>
@@ -141,6 +105,51 @@
 <div><a href="Pages/Romance Revisited.html">Romance Revisited</a></div>
 <h3>July 2014</h3>
 <div><a href="Pages/Song of Sophia.html">Song of Sophia</a></div>
+
+            </div>
+            <div id="container-index">
+                <h2>Index</h2>
+                <div><a href="Pages/A poem.html">A poem</a></div>
+<div><a href="Pages/A walk through a graveyard.html">A walk through a graveyard</a></div>
+<div><a href="Pages/After Lincoln.html">After Lincoln</a></div>
+<div><a href="Pages/Aftermath.html">Aftermath</a></div>
+<div><a href="Pages/Another ending.html">Another ending</a></div>
+<div><a href="Pages/Child you are the water.html">Child you are the water</a></div>
+<div><a href="Pages/Crickets.html">Crickets</a></div>
+<div><a href="Pages/Fragments Shored Against Ruin.html">Fragments Shored Against Ruin</a></div>
+<div><a href="Pages/Homecoming.html">Homecoming</a></div>
+<div><a href="Pages/I have withdrawn from the world.html">I have withdrawn from the world</a></div>
+<div><a href="Pages/Lady in the Temple.html">Lady in the Temple</a></div>
+<div><a href="Pages/Lincoln's Memory.html">Lincoln's Memory</a></div>
+<div><a href="Pages/Longing.html">Longing</a></div>
+<div><a href="Pages/Lost Forest.html">Lost Forest</a></div>
+<div><a href="Pages/Love is made.html">Love is made</a></div>
+<div><a href="Pages/Making Sausage.html">Making Sausage</a></div>
+<div><a href="Pages/Mysteries.html">Mysteries</a></div>
+<div><a href="Pages/Nixon at the Threshold of the Lincoln Memorial.html">Nixon at the Threshold of the Lincoln Memorial</a></div>
+<div><a href="Pages/Old House.html">Old House</a></div>
+<div><a href="Pages/Only Begin.html">Only Begin</a></div>
+<div><a href="Pages/Out came a cry.html">Out came a cry</a></div>
+<div><a href="Pages/Planting Time.html">Planting Time</a></div>
+<div><a href="Pages/Power.html">Power</a></div>
+<div><a href="Pages/Predication.html">Predication</a></div>
+<div><a href="Pages/Romance Revisited Revisited.html">Romance Revisited Revisited</a></div>
+<div><a href="Pages/Romance Revisited.html">Romance Revisited</a></div>
+<div><a href="Pages/Rosie.html">Rosie</a></div>
+<div><a href="Pages/Song of Sophia.html">Song of Sophia</a></div>
+<div><a href="Pages/The Bird in the Glue Trap.html">The Bird in the Glue Trap</a></div>
+<div><a href="Pages/The Choir.html">The Choir</a></div>
+<div><a href="Pages/The Enduring and Unchanging Dao.html">The Enduring and Unchanging Dao</a></div>
+<div><a href="Pages/The Lady.html">The Lady</a></div>
+<div><a href="Pages/The New Bird.html">The New Bird</a></div>
+<div><a href="Pages/The New Science.html">The New Science</a></div>
+<div><a href="Pages/The New World.html">The New World</a></div>
+<div><a href="Pages/The Secrets of Country Living.html">The Secrets of Country Living</a></div>
+<div><a href="Pages/The wind in the leaves.html">The wind in the leaves</a></div>
+<div><a href="Pages/Think Again.html">Think Again</a></div>
+<div><a href="Pages/Tradition.html">Tradition</a></div>
+<div><a href="Pages/Valediction to Images.html">Valediction to Images</a></div>
+<div><a href="Pages/White Shade.html">White Shade</a></div>
 
             </div>
         </div>
