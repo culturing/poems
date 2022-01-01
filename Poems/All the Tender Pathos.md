@@ -5,55 +5,55 @@
   </em>
 </p>
 
-> *Every human heart is human.* \
+> *Every human heart is human.*   
 &nbsp;&nbsp;&nbsp;&nbsp;Longfellow, *Song of Hiawatha*
 
-Remember how the river moves, \
-Remember warm embracing,\
+Remember how the river moves,   
+Remember warm embracing,  
 Bring them here, to this steel jungle,
 
-And know love.\
+And know love.  
 Put down thy burden.
 
-Remember once the wigwam,\
-Old coyote and the moon,\
+Remember once the wigwam,  
+Old coyote and the moon,  
 Relive the sorrow,
 
-Leave the pain.\
+Leave the pain.  
 Put down thy burden.
 
-See the old black faces,\
-Out of place in this steel jungle,\
+See the old black faces,  
+Out of place in this steel jungle,  
 Housed in spite of fear and hatred,
 
-See them here.\
+See them here.  
 Put down thy burden.
 
-Know the pain of ages,\
-Know the sorrow of the moon,\
+Know the pain of ages,  
+Know the sorrow of the moon,  
 The midnight moon that every age sees,
 
-Warmed by tears.\
+Warmed by tears.  
 Put down thy burden.
 
-Dream as one soul dreaming,\
-Move toward the common dream,\
+Dream as one soul dreaming,  
+Move toward the common dream,  
 And in the moonlight,
 
-Build a home.\
+Build a home.  
 Put down thy burden.
 
-Wait for dawn, and as she rises\
-Greet her with her own surprises,\
+Wait for dawn, and as she rises  
+Greet her with her own surprises,  
 As a people wildly singing
 
-In the river’s cool disguises.\
+In the river’s cool disguises.  
 Thus forget thy burden.
 
-Hear the coursing river,\
-Hear it coursing, hear it roaring\
+Hear the coursing river,  
+Hear it coursing, hear it roaring  
 On its journey to the ocean,
 
-And be human.\
-Leave behind thy burden, \
+And be human.  
+Leave behind thy burden,   
 Leave behind thy burden.

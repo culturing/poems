@@ -5,29 +5,29 @@
   </em>
 </p>
 
-Thunders crash,\
+Thunders crash,  
 The wind moves through the leaves,
 
-The paths grow walls,\
+The paths grow walls,  
 curve into cages,
 
-Thunder asks,\
-A certain volume of man,\
+Thunder asks,  
+A certain volume of man,  
 suffices?
 
 No, it never suffices,
 
-Always more\
+Always more  
 past overflowing
 
-Thunder crashes,\
+Thunder crashes,  
 Floods tear down the trees,
 
-The wind moves through the leaves,\
-A certain volume of man,\
+The wind moves through the leaves,  
+A certain volume of man,  
 so certain
 
-Thunder, why \
+Thunder, why   
 O thunder
 
 move through wind and leaves.

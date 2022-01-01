@@ -5,23 +5,23 @@
   </em>
 </p>
 
-I long for things I've never known.\
-The shadows curse my eyes.\
+I long for things I've never known.  
+The shadows curse my eyes.  
 The scars run deep. They run at least to bone.
 
-And though thunder grants atonement,\
-Questions always come from other skies.\
+And though thunder grants atonement,  
+Questions always come from other skies.  
 I long for things I've never known,
 
-And candles burn and scholars moan,\
-And ashes creep beneath the tightest mind.\
+And candles burn and scholars moan,  
+And ashes creep beneath the tightest mind.  
 The scars are deep like bone,
 
-And all the ancient empty tomes\
-Provide no lasting prize,\
+And all the ancient empty tomes  
+Provide no lasting prize,  
 But point to things we cannot know.
 
-From ache for bluer skies,\
-To ache for home,\
-To scars that run through bone,\
+From ache for bluer skies,  
+To ache for home,  
+To scars that run through bone,  
 The longing is the only thing we know.

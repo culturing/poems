@@ -1,0 +1,69 @@
+<html>
+<link rel="preload" href="../fonts/quattrocento-latin.woff2" as="font" type="font/woff2">
+<link rel="stylesheet" type="text/css" href="../fonts/fonts.css" />
+<style>
+    body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
+    #container { display: flex; flex-direction: row; justify-content: center; }
+    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); }
+</style>
+<script>
+    async function onLoad() {
+        var path = window.location.pathname.split('/');
+        var title = path[path.length - 1].replace(".html", "");
+
+        var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
+
+        var audio_url = `${root_url}/Audio/${title}.m4a`;
+        res = await fetch(audio_url)
+        if (res.ok)
+        {
+            var audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = audio_url;
+            audio.style = "width: 100%";
+            document.getElementById('poem').appendChild(audio);
+        }
+
+        container.appendChild(div);
+    }
+    onLoad();
+    
+    console.log("Like looking under the hood? https://github.com/culturing/Poems");
+</script>
+
+<body>
+    <div id="container-parent">
+        <div id="container">
+            <div id="poem">
+                <h3>The Bird in the Glue Trap</h3>
+
+<p style="margin:0; margin-top: -1.25rem">
+  <em>
+    <small><small>06 April 2017</small></small>
+  </em>
+</p>
+
+<p>It wasn't meant for you,<br />
+that much is clear. But how<br />
+those little wings beat such<br />
+a fearsome rhythm<br />
+just to pull you<br />
+those two-hundred bird-lengths,<br />
+sticky trap in tow,<br />
+I'll never know,</p>
+
+<p>Or how you ripped your body free<br />
+to soar on lighter wing.</p>
+
+<p>Ah, those feathers left behind<br />
+were not worth dying over.</p>
+
+<p>I am only glad, my friend,<br />
+that I did not extinguish you<br />
+to put an end to pain.</p>
+            </div>
+        </div>
+    </div>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+</body>
+</html>

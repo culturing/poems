@@ -1,26 +1,17 @@
 <html>
-<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="preload" href="../fonts/quattrocento-latin.woff2" as="font" type="font/woff2">
+<link rel="stylesheet" type="text/css" href="../fonts/fonts.css" />
 <style>
     body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
     #container { display: flex; flex-direction: row; justify-content: center; }
     #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); }
 </style>
-<script src="scripts/marked.min.js"></script>
 <script>
     async function onLoad() {
-        var params = new URLSearchParams(window.location.search);
-        var title = params.get("title");
+        var path = window.location.pathname.split('/');
+        var title = path[path.length - 1].replace(".html", "");
+
         var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
-        
-        var text_url = `${root_url}/Poems/${title}.md`;
-
-        var res = await fetch(text_url);
-        var md = await res.text();
-
-        var container = document.getElementById('container');
-
-        var div = document.createElement('div');
-        div.innerHTML = marked(md);
 
         var audio_url = `${root_url}/Audio/${title}.m4a`;
         res = await fetch(audio_url)
@@ -30,7 +21,7 @@
             audio.controls = true;
             audio.src = audio_url;
             audio.style = "width: 100%";
-            div.appendChild(audio);
+            document.getElementById('poem').appendChild(audio);
         }
 
         container.appendChild(div);
@@ -42,7 +33,31 @@
 
 <body>
     <div id="container-parent">
-        <div id="container"></div>
+        <div id="container">
+            <div id="poem">
+                <h3>Predication</h3>
+
+<p style="margin:0; margin-top: -1.25rem">
+  <em>
+    <small><small>30 June 2021</small></small>
+  </em>
+</p>
+
+<p>Day turns into day. Each fades.<br />
+All things become another.</p>
+
+<p>But can this always be so,<br />
+or does <em>this</em> change?</p>
+
+<p>What use is predication?</p>
+
+<p>This is true, not that, for now,<br />
+and who can know another?</p>
+
+<p>Therefore say it is true,<br />
+if not for me, say it for you.</p>
+            </div>
+        </div>
     </div>
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 </body>

@@ -1,4 +1,5 @@
 <html>
+<link rel="preload" href="fonts/quattrocento-latin.woff2" as="font" type="font/woff2">
 <link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
 <style>
     body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; margin: 0; padding: 1rem; }
@@ -16,77 +17,141 @@
         
     .hide { display: none; }
 </style>
-<script src="scripts/marked.min.js"></script>
-<script>
-    var root_download_url = "https://raw.githubusercontent.com/culturing/Poems/main/Poems/";
-
-    async function onLoad() {        
-        var res = await fetch('https://api.github.com/repos/culturing/Poems/contents/Poems')
-        var poems = await res.json();
-
-        res = await fetch('https://raw.githubusercontent.com/culturing/Poems/main/README.md')
-        var readme = await res.text();
-
-        var poemsByPath = {}
-        var poemDivs = []
-
-        var indexDiv = document.createElement('div');
-
-        for (var poem of poems) {
-            var div = document.createElement('div');            
-            var title = poem.name.replace('.md', '');
-            var href = `${window.location.href}poem.html?title=${encodeURIComponent(title)}`
-            div.innerHTML = `<a href="${href}">${title}</a>`;
-            indexDiv.appendChild(div);
-            poemsByPath[encodeURIComponent(poem.path)] = poem;
-
-        // load poem into browser cache
-            var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
-            var text_url = `${root_url}/Poems/${title}.md`;
-            fetch(text_url);
-        }
-
-        var chronologyDiv = document.createElement('div');
-        chronologyDiv.innerHTML = marked(readme)
-            .replaceAll('%20', ' ')
-            .replaceAll('<li', '<div').replaceAll('</li', '</div')
-            .replaceAll('<ul', '<div').replaceAll('</ul', '</div');
-
-        for (var anchor of chronologyDiv.querySelectorAll('a'))
-        {
-            if (anchor.href != null)
-            {
-                var path = encodeURIComponent(anchor.attributes.href.value);
-                var poem = poemsByPath[path];
-                if (poem != null)
-                {
-                    var title = poem.name.replace('.md', '');
-                    anchor.href = `${window.location.href}poem.html?title=${encodeURIComponent(title)}`
-                }
-            }
-        }
-
-        document.getElementById('container-index').appendChild(indexDiv);
-        document.getElementById('container-chronology').appendChild(chronologyDiv);
-
-        for (var node of document.querySelectorAll('.hide'))
-        {
-            node.classList.remove('hide');
-        }
-    }
-    onLoad();
-    
+<script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
 </script>
 
 <body>
-    <h1 class="hide">Poems</h1>
+    <h1>Poems</h1>
     <div id="container-parent">
         <div id="container">
             <div id="container-index">
-                <h2 class="hide">Index</h2>
+                <h2>Index</h2>
+                <div><a href="Pages/A poem.html">A poem</a></div>
+<div><a href="Pages/A walk through a graveyard.html">A walk through a graveyard</a></div>
+<div><a href="Pages/After Lincoln.html">After Lincoln</a></div>
+<div><a href="Pages/Aftermath.html">Aftermath</a></div>
+<div><a href="Pages/All the Tender Pathos.html">All the Tender Pathos</a></div>
+<div><a href="Pages/Another ending.html">Another ending</a></div>
+<div><a href="Pages/Child you are the water.html">Child you are the water</a></div>
+<div><a href="Pages/Crickets.html">Crickets</a></div>
+<div><a href="Pages/Flowering.html">Flowering</a></div>
+<div><a href="Pages/Fragments Shored Against Ruin.html">Fragments Shored Against Ruin</a></div>
+<div><a href="Pages/Heidegger in Japan.html">Heidegger in Japan</a></div>
+<div><a href="Pages/Homecoming.html">Homecoming</a></div>
+<div><a href="Pages/I have withdrawn from the world.html">I have withdrawn from the world</a></div>
+<div><a href="Pages/I pause before the church.html">I pause before the church</a></div>
+<div><a href="Pages/Lady in the Temple.html">Lady in the Temple</a></div>
+<div><a href="Pages/Lincoln's Memory.html">Lincoln's Memory</a></div>
+<div><a href="Pages/Longing.html">Longing</a></div>
+<div><a href="Pages/Lost Forest.html">Lost Forest</a></div>
+<div><a href="Pages/Love is made.html">Love is made</a></div>
+<div><a href="Pages/Making Sausage.html">Making Sausage</a></div>
+<div><a href="Pages/Mysteries.html">Mysteries</a></div>
+<div><a href="Pages/Nixon at the Threshold of the Lincoln Memorial.html">Nixon at the Threshold of the Lincoln Memorial</a></div>
+<div><a href="Pages/Old House.html">Old House</a></div>
+<div><a href="Pages/Only Begin.html">Only Begin</a></div>
+<div><a href="Pages/Out came a cry.html">Out came a cry</a></div>
+<div><a href="Pages/Planting Time.html">Planting Time</a></div>
+<div><a href="Pages/Power.html">Power</a></div>
+<div><a href="Pages/Predication.html">Predication</a></div>
+<div><a href="Pages/Romance Revisited Revisited.html">Romance Revisited Revisited</a></div>
+<div><a href="Pages/Romance Revisited.html">Romance Revisited</a></div>
+<div><a href="Pages/Rosie.html">Rosie</a></div>
+<div><a href="Pages/Song of Sophia.html">Song of Sophia</a></div>
+<div><a href="Pages/The Bird in the Glue Trap.html">The Bird in the Glue Trap</a></div>
+<div><a href="Pages/The Choir.html">The Choir</a></div>
+<div><a href="Pages/The Enduring and Unchanging Dao.html">The Enduring and Unchanging Dao</a></div>
+<div><a href="Pages/The Lady.html">The Lady</a></div>
+<div><a href="Pages/The New Bird.html">The New Bird</a></div>
+<div><a href="Pages/The New Science.html">The New Science</a></div>
+<div><a href="Pages/The New World.html">The New World</a></div>
+<div><a href="Pages/The Secrets of Country Living.html">The Secrets of Country Living</a></div>
+<div><a href="Pages/The wind in the leaves.html">The wind in the leaves</a></div>
+<div><a href="Pages/Think Again.html">Think Again</a></div>
+<div><a href="Pages/Tradition.html">Tradition</a></div>
+<div><a href="Pages/Valediction to Images.html">Valediction to Images</a></div>
+<div><a href="Pages/White Shade.html">White Shade</a></div>
+
             </div>
             <div id="container-chronology">
+                <h2>Chronology</h2>
+                <h3>Novermber 2021</h3>
+<div><a href="Pages/Love is made.html">Love is made</a></div>
+<h3>October 2021</h3>
+<div><a href="Pages/Lost Forest.html">Lost Forest</a></div>
+<h3>September 2021</h3>
+<div><a href="Pages/Making Sausage.html">Making Sausage</a></div>
+<div><a href="Pages/Think Again.html">Think Again</a></div>
+<h3>July 2021</h3>
+<div><a href="Pages/Old House.html">Old House</a></div>
+<h3>June 2021</h3>
+<div><a href="Pages/Predication.html">Predication</a></div>
+<h3>May 2021</h3>
+<div><a href="Pages/Power.html">Power</a></div>
+<h3>April 2021</h3>
+<div><a href="Pages/I pause before the church.html">I pause before the church</a></div>
+<div><a href="Pages/All the Tender Pathos.html">All the Tender Pathos</a></div>
+<div><a href="Pages/The wind in the leaves.html">The wind in the leaves</a></div>
+<div><a href="Pages/Flowering.html">Flowering</a></div>
+<h3>February 2021</h3>
+<div><a href="Pages/Planting Time.html">Planting Time</a></div>
+<h3>January 2021</h3>
+<div><a href="Pages/Heidegger in Japan.html">Heidegger in Japan</a></div>
+<h3>September 2020</h3>
+<div><a href="Pages/The Enduring and Unchanging Dao.html">The Enduring and Unchanging Dao</a></div>
+<h3>April 2020</h3>
+<div><a href="Pages/Homecoming.html">Homecoming</a></div>
+<h3>September 2019</h3>
+<div><a href="Pages/Tradition.html">Tradition</a></div>
+<div><a href="Pages/After Lincoln.html">After Lincoln</a></div>
+<h3>August 2019</h3>
+<div><a href="Pages/Lincoln's Memory.html">Lincoln's Memory</a></div>
+<div><a href="Pages/Lady in the Temple.html">Lady in the Temple</a></div>
+<h3>July 2019</h3>
+<div><a href="Pages/White Shade.html">White Shade</a></div>
+<h3>June 2019</h3>
+<div><a href="Pages/Crickets.html">Crickets</a></div>
+<h3>May 2019</h3>
+<div><a href="Pages/The Lady.html">The Lady</a></div>
+<h3>March 2019</h3>
+<div><a href="Pages/Rosie.html">Rosie</a></div>
+<div><a href="Pages/I have withdrawn from the world.html">I have withdrawn from the world</a></div>
+<div><a href="Pages/The New Bird.html">The New Bird</a></div>
+<h3>January 2019</h3>
+<div><a href="Pages/Nixon at the Threshold of the Lincoln Memorial.html">Nixon at the Threshold of the Lincoln Memorial</a></div>
+<h3>Novermber 2018</h3>
+<div><a href="Pages/Romance Revisited Revisited.html">Romance Revisited Revisited</a></div>
+<h3>August 2018</h3>
+<div><a href="Pages/Mysteries.html">Mysteries</a></div>
+<h3>April 2018</h3>
+<div><a href="Pages/Aftermath.html">Aftermath</a></div>
+<div><a href="Pages/The Secrets of Country Living.html">The Secrets of Country Living</a></div>
+<div><a href="Pages/A walk through a graveyard.html">A walk through a graveyard</a></div>
+<h3>October 2017</h3>
+<div><a href="Pages/Out came a cry.html">Out came a cry</a></div>
+<h3>April 2017</h3>
+<div><a href="Pages/The New World.html">The New World</a></div>
+<div><a href="Pages/The Bird in the Glue Trap.html">The Bird in the Glue Trap</a></div>
+<div><a href="Pages/The New Science.html">The New Science</a></div>
+<h3>October 2016</h3>
+<div><a href="Pages/A poem.html">A poem</a></div>
+<div><a href="Pages/Longing.html">Longing</a></div>
+<h3>September 2016</h3>
+<div><a href="Pages/Another ending.html">Another ending</a></div>
+<div><a href="Pages/Child you are the water.html">Child you are the water</a></div>
+<div><a href="Pages/Only Begin.html">Only Begin</a></div>
+<h3>August 2016</h3>
+<div><a href="Pages/Valediction to Images.html">Valediction to Images</a></div>
+<h3>January 2016</h3>
+<div><a href="Pages/The Choir.html">The Choir</a></div>
+<h3>October 2015</h3>
+<div><a href="Pages/Fragments Shored Against Ruin.html">Fragments Shored Against Ruin</a></div>
+<h3>May 2015</h3>
+<div><a href="Pages/Romance Revisited.html">Romance Revisited</a></div>
+<h3>July 2014</h3>
+<div><a href="Pages/Song of Sophia.html">Song of Sophia</a></div>
+
             </div>
         </div>
     </div>

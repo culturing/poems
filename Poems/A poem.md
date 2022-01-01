@@ -5,11 +5,11 @@
   </em>
 </p>
 
-begins like this:\
+begins like this:  
 a note, a phrase,
 
-But then goes deeper,\
-seeps just under,\
+But then goes deeper,  
+seeps just under,  
 slakes upon a thirst,
 
 and ends in growth.
