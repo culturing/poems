@@ -49,26 +49,7 @@ to belong, to behold, and to bless?</p>
     </div>
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 </body>
-<script>
-    async function onLoad() {
-        var path = window.location.pathname.split('/');
-        var title = path[path.length - 1].replace(".html", "");
-
-        var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
-
-        var audio_url = `${root_url}/Audio/${title}.m4a`;
-        res = await fetch(audio_url)
-        if (res.ok)
-        {
-            var audio = document.createElement('audio');
-            audio.controls = true;
-            audio.src = audio_url;
-            audio.style = "width: 100%";
-            document.getElementById('poem').appendChild(audio);
-        }
-    }
-    onLoad();
-    
+<script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
 </script>
 </html>
