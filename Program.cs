@@ -24,8 +24,7 @@ namespace Poems
 
             List<Poem> poems = new List<Poem>();
 
-            // Generate html
-            string poemTemplate = File.ReadAllText("Templates/poem.html");
+            string contentTemplate = File.ReadAllText("Templates/content.html");
             string indexHtml = string.Empty;
             foreach (var file in Directory.EnumerateFiles("Poems"))
             {
@@ -38,7 +37,7 @@ namespace Poems
                     contentHtml += $"<audio controls src='{rootUrl}/Audio/{filename}.m4a' style='width:100%'></audio>";
                 }
 
-                string finalPoemHtml = poemTemplate.Replace("{{poem}}", contentHtml);
+                string finalPoemHtml = contentTemplate.Replace("{{content}}", contentHtml);
 
                 string finalPath = $"Pages/{filename}.html";
                 File.WriteAllText(finalPath, finalPoemHtml);
@@ -79,6 +78,16 @@ namespace Poems
                 .Replace("{{chronology}}", chronologyHtml);
 
             File.WriteAllText("index.html", finalIndexHtml);
+
+            string whyPoetryText = File.ReadAllText("Other/Why Poetry.md");
+            string whyPoetryHtml = md.Transform(whyPoetryText);
+            whyPoetryHtml = contentTemplate.Replace("{{content}}", whyPoetryHtml);
+            File.WriteAllText("Other/Why Poetry.html", whyPoetryHtml);
+
+            string favoritePoemsText = File.ReadAllText("Other/Favorite Poems.md");
+            string favoritePoemsHtml = md.Transform(favoritePoemsText);
+            favoritePoemsHtml = contentTemplate.Replace("{{content}}", favoritePoemsHtml);
+            File.WriteAllText("Other/Favorite Poems.html", favoritePoemsHtml);
         }
     }
 }

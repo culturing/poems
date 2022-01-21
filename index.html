@@ -18,11 +18,14 @@
         #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
         #container-chronology { padding-right: 24px; }
         #container-index { padding-left: 24px; }
+        #header { display: flex; flex-direction: row; align-items: baseline; }
+        #header a { margin-left: 1rem; }
     }
     @media only screen and (max-width : 1024px)
     {
         h1 { padding-left: 0; }
         #container-index h2 { padding-top: 2rem; }
+        #container-chronology { padding-top: 1rem;}
     }
 </style>
 <script>    
@@ -30,7 +33,12 @@
 </script>
 
 <body>
-    <h1>Poems</h1>
+    <div id="header">
+        <h1>Poems</h1>
+        <div style="margin-left: auto"></div>
+        <div><a href="Other/Why Poetry.html">Why Poetry?</a></div>
+        <div><a href="Other/Favorite Poems.html">Favorite Poems</a></div>
+    </div>
     <div id="container-parent">
         <div id="container">
             <div id="container-chronology">
