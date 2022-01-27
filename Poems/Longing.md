@@ -24,5 +24,5 @@ But only point to things we cannot know.
 The ache for bluer skies,  
 The ache for home,  
 The scars that run through bone,  
-The longing is the surest thing we know.  
+The longing is the only thing we know.  
   
