@@ -1,15 +1,9 @@
-### Think Again
+### Wandering Sheep
 <p style="margin:0; margin-top: -1.25rem">  
   <em>  
     <small><small>09 September 2021</small></small>  
   </em>  
 </p>  
-  
-The beginning of another day,  
-this one not unlike the last,  
-and yet as though some child  
-forgets the form,  
-it differs.  
   
 Up upon a hill,  
 the sheep go wandering.  
@@ -29,13 +23,13 @@ They are still sheep,
 though silly ones.  
   
 I think that they should think again.  
-The hillside is still there,  
-though it has changed.  
+The hillside is still there.  
+It has not changed.  
   
 It grows less full,  
 but some say  
 this is part of its purpose.  
   
-The cars must make their noise  
+The cars make terrible noise
 where wandering sheep once spoke  
 of pleasing vistas, unknown springs.  

@@ -13,7 +13,7 @@ And reasons with our untold ire.
 Rise fair song and banish woe  
 For we must fear the foreman’s blow  
 For though our fathers built with stone  
-We build the world again each morn,
+We build the world anew each morn,
 
 And tremble in the shade of steel,  
 And ache for poison salesmen sell,  
@@ -34,7 +34,7 @@ There are only bog and mire.
 
 Who would dare to ope  
 Pandora's vessel once again? What's left?  
-All can see that Zeus has scorned  
+All can see that Zeus has spurned  
 Those Foresight has adorned.
 
 ---
@@ -51,5 +51,5 @@ Embrace the courage of the calling horn.
 
 For we have feared the shades of steel,  
 But harbor dreams of living well,  
-And dream of lifting off this pyre,  
+And dream of lifting off the pyre,  
 And lift this chorus as a choir.

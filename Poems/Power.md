@@ -19,11 +19,11 @@ Thus they lose themselves in singing,
   
 Thus they fall before the morning,  
 Thus they are to blame.  
-But power brings at most mixed blessings,  
+But power brings them such mixed blessings,
   
-Power puts off dark and dying,  
+Power puts off dark of dying,  
 Power’s light must wane.  
-Therefore find thyself in singing,  
+Therefore, find thyself in singing,  
   
 Make thine own some other name,  
 And know I feel the same,  
