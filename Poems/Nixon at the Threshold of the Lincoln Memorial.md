@@ -6,7 +6,7 @@
 </p>
 
 *Something that is completely clean can also be completely sterile*  
-&nbsp;&nbsp;&nbsp;&nbsp;- Richard Nixon, Dictabelt 075, May 1970
+&nbsp;&nbsp;&nbsp;&nbsp;- Richard Nixon, <a href="https://www.nixonlibrary.gov/sites/default/files/virtuallibrary/recordings/dictabelts/DB075_01.mp3">Dictabelt 75</a>, May 1970
 
 What language could there have been  
 between that tiger, battle-scarred,  

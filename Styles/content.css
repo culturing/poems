@@ -1,0 +1,9 @@
+body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; margin: 0; padding: 1rem; }
+a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickness: 0;}
+#container { display: flex; flex-direction: row; justify-content: center; }
+#container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); } 
+
+@media only screen and (min-width : 1025px)
+{
+    #content { max-width: 61.8% }
+}
