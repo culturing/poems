@@ -30,6 +30,6 @@ It grows less full,
 but some say  
 this is part of its purpose.  
   
-The cars make terrible noise
+The cars make terrible noise  
 where wandering sheep once spoke  
 of pleasing vistas, unknown springs.  
