@@ -1,4 +1,7 @@
 ## Favorite Poems
+<p style="margin:0; margin-top: -1.25rem">
+    <small>by other writers</small>
+</p>
 
 ### Bob Dylan 
 ["Jokerman"](https://www.youtube.com/watch?v=foVjD4xPT1I)  
@@ -86,13 +89,15 @@
 
 ### Robert Penn Warren 
 "Dragon Tree"  
-"Dream, Dump-heap, and Civilization"  
 "I Know a Place Where All is Real"  
 "Natural History"  
+"Mistal in the Night"  
+"Riddle in the Garden"  
 "Shoes in Rain Jungle"  
-"The Jet Must Be Hunting for Something"  
 "The Leaf"  
-"Waiting" 
+"The Red Mullet"  
+"What Day Is"  
+"Where Purples Now the Fig"  
 
 ### Robinson Jeffers 
 "Shine, Perishing Republic"  

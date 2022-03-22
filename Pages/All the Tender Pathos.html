@@ -1,40 +1,12 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preload" href="../Styles/quattrocento-latin.woff2" as="font" type="font/woff2">
 <link rel="stylesheet" type="text/css" href="../Styles/fonts.css" />
-<style>
-    body { font-family: Quattrocento; background-color: black; color: whitesmoke; line-height: 1.25rem; }
-    #container { display: flex; flex-direction: row; justify-content: center; }
-    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 31px); }
-</style>
-<script>
-    async function onLoad() {
-        var path = window.location.pathname.split('/');
-        var title = path[path.length - 1].replace(".html", "");
-
-        var root_url = `https://raw.githubusercontent.com/culturing/Poems/main`;
-
-        var audio_url = `${root_url}/Audio/${title}.m4a`;
-        res = await fetch(audio_url)
-        if (res.ok)
-        {
-            var audio = document.createElement('audio');
-            audio.controls = true;
-            audio.src = audio_url;
-            audio.style = "width: 100%";
-            document.getElementById('poem').appendChild(audio);
-        }
-
-        container.appendChild(div);
-    }
-    onLoad();
-    
-    console.log("Like looking under the hood? https://github.com/culturing/Poems");
-</script>
-
+<link rel="stylesheet" type="text/css" href="../Styles/content.css" />
 <body>
     <div id="container-parent">
         <div id="container">
-            <div id="poem">
+            <div id="content">
                 <h3>All the Tender Pathos</h3>
 
 <p style="margin:0; margin-top: -1.25rem">
@@ -43,63 +15,68 @@
   </em>
 </p>
 
-<p><small>
-  "Every human heart is human."<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;Longfellow, <em>Song of Hiawatha</em>
-</small></p>
+<p><em>
+    <small>
+        Every human heart is human</br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://naxosaudiobooks.com/hiawatha-unabridged/">"Hiawatha, Introduction"</a>
+    </small>
+</em></p>
 
 <p>Remember how the river moves,<br />
 Remember warm embracing,<br />
-Bring them here, to this steel jungle,</p>
+Bring them here, to this steel jungle,  </p>
 
 <p>And know love.<br />
-Put down thy burden.</p>
+Put down thy burden.  </p>
 
 <p>Remember once the wigwam,<br />
-Old coyote and the moon,<br />
-Relive the sorrow,</p>
+Old coyote and the moon.<br />
+Relive the sorrow,  </p>
 
 <p>Leave the pain.<br />
-Put down thy burden.</p>
+Put down thy burden.  </p>
 
-<p>See the old black faces,<br />
+<p>See the colored faces,<br />
 Out of place in this steel jungle,<br />
-Housed in spite of fear and hatred,</p>
+Housed in spite of fear and hatred,  </p>
 
 <p>See them here.<br />
-Put down thy burden.</p>
+Put down thy burden.  </p>
 
 <p>Know the pain of ages,<br />
 Know the sorrow of the moon,<br />
-The midnight moon that every age sees,</p>
+The midnight moon that every age sees,  </p>
 
 <p>Warmed by tears.<br />
-Put down thy burden.</p>
+Put down thy burden.  </p>
 
 <p>Dream as one soul dreaming,<br />
 Move toward the common dream,<br />
-And in the moonlight,</p>
+And in the moonlight,  </p>
 
 <p>Build a home.<br />
-Put down thy burden.</p>
+Put down thy burden.  </p>
 
 <p>Wait for dawn, and as she rises<br />
 Greet her with her own surprises,<br />
-As a people wildly singing</p>
+As a people wildly singing  </p>
 
 <p>In the river’s cool disguises.<br />
-Thus forget thy burden.</p>
+Thus forget thy burden.  </p>
 
 <p>Hear the coursing river,<br />
 Hear it coursing, hear it roaring<br />
-On its journey to the ocean,</p>
+On its journey to the ocean,  </p>
 
 <p>And be human.<br />
 Leave behind thy burden,<br />
-Leave behind thy burden.</p>
+Leave behind thy burden.  </p>
             </div>
         </div>
     </div>
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 </body>
+<script>    
+    console.log("Like looking under the hood? https://github.com/culturing/Poems");
+</script>
 </html>

@@ -7,3 +7,9 @@ a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickn
 {
     #content { max-width: 61.8% }
 }
+
+@media only print
+{
+    body { color: black; }
+    #license { display: none; }
+}

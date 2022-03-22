@@ -1,4 +1,4 @@
-### Power  
+### What we find by singing  
 <p style="margin:0; margin-top: -1.25rem">  
   <em>  
     <small><small>07 May 2021</small></small>  
@@ -14,7 +14,7 @@ All young people feel the same.
 They mix themselves with power’s blessings.  
   
 Some find laurels, others cling  
-To lovely childhood games.  
+To lovely children's games.  
 Thus they lose themselves in singing,  
   
 Thus they fall before the morning,  

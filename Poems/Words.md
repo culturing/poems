@@ -21,5 +21,3 @@ I say these words choose me.
 And when they ask directions,  
 well, I think the words are lost,  
 and I must find them.  
-
-I must guide them.  
