@@ -1,4 +1,3 @@
-### The woman I love is near
 <p style="margin:0; margin-top: -1.25rem">
   <em>
     <small><small>01 November 2021</small></small>
@@ -14,12 +13,11 @@ with the alluring sound
 of sacred fire, for she  
 has privileged access.  
 
-Our hands, then more,  
-must meet,  
+More than hands must meet,  
 and Dawn will come  
 when it comes,  
 
 But as for me,  
-the woman I love  
+the woman I love 
 is near,  
-I know her smell.  
+this is her smell.  

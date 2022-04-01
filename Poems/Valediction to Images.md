@@ -17,7 +17,7 @@ O, sculpture of amazing graces,
 Shatter. There are empty places  
 &nbsp;&nbsp;&nbsp;&nbsp;Deep within my heart.
 
-Come instead, you hidden song,  
+Come again, you hidden song,  
 You dying fall withholding all,  
 And I will hear you long,  
 For I can hear you call   
