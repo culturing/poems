@@ -88,6 +88,11 @@ namespace Poems
             string favoritePoemsHtml = md.Transform(favoritePoemsText);
             favoritePoemsHtml = contentTemplate.Replace("{{content}}", favoritePoemsHtml);
             File.WriteAllText("Other/Favorite Poems.html", favoritePoemsHtml);
+
+            string faqText = File.ReadAllText("Other/FAQ.md");
+            string faqHtml = md.Transform(faqText);
+            faqHtml = contentTemplate.Replace("{{content}}", faqHtml);
+            File.WriteAllText("Other/FAQ.html", faqHtml);
         }
     }
 }
