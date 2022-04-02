@@ -21,9 +21,9 @@ and noticed lying at her feet
 a fallen breast of stone,  
 hers surely, lying prone,  
 as though some vandal  
-strove to make her pure.  
+made her pure.  
 
-I put it back where it belongs  
+I put it back in place
 and held it there,  
 until her firmness made me sure,  
 
@@ -32,7 +32,7 @@ I do not know.
 
 I thought I could discern  
 the faintest sigh,  
-but she alone would know  
+but only she would know  
 who fills the mind with wonder,  
 
 so I wondered  
