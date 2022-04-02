@@ -1,6 +1,6 @@
 ## Frequently Asked Questions
 
-### Why do you write poetry?
+### Why poetry?
 
 Because I want you to think like you've never thought before
 
