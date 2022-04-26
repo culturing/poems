@@ -20,10 +20,10 @@ I came to her side
 and noticed lying at her feet  
 a fallen breast of stone,  
 hers surely, lying prone,  
-as though some vandal  
-made her pure.  
+as though some vandal strove  
+to make her pure.  
 
-I put it back in place
+I put it back where it belongs,  
 and held it there,  
 until her firmness made me sure,  
 
@@ -38,4 +38,4 @@ who fills the mind with wonder,
 so I wondered  
 if the earth could be her home,  
 or if she comes from some far-whispered plane  
-that only poets know.  
+that only dreamers know.  
