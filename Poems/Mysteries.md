@@ -20,7 +20,6 @@ steps in and whisks fidelity away.
 O vanity of vanities,  
 great necromancing age!
 
-
 Tear down thy veils with rage  
 if that will set you free,
 

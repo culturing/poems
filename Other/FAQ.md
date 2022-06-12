@@ -12,9 +12,11 @@ A few come to mind:
 - "The Auroras of Autumn" by Wallace Stevens  
 - "Directive" by Robert Frost   
 
+A fuller list is availble <a href="Favorite Poems.html">here</a>.
+
 ### Who are you?
 
-It depends who's asking
+That depends on who's asking
 
 ### Can I contact you?
 

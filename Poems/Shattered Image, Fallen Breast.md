@@ -38,4 +38,4 @@ who fills the mind with wonder,
 so I wondered  
 if the earth could be her home,  
 or if she comes from some far-whispered plane  
-that only dreamers know.  
+that only makers know.  

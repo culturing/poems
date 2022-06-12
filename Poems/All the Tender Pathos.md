@@ -23,7 +23,7 @@ Remember once the wigwam,
 Old coyote and the moon.  
 Relive the sorrow,  
 
-Leave the pain.  
+Breathe the pain.  
 Put down thy burden.  
 
 See the colored faces,  

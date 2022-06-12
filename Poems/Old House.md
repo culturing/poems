@@ -5,14 +5,14 @@
   </em>
 </p>
 
-I walk down the old avenues,  
+I walk down old avenues,  
 aware again of impermanence,  
 perennial friend of the weary,  
 and stop before the family house.
 
 What otherworldly dominion is this,  
 where manflesh met with womanflesh  
-to make me?
+to make *me*?
 
 Yet other worlds must be,  
 or else our high anxiety  
