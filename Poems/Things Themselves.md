@@ -9,7 +9,7 @@ Until I met a woman,
 and her presence strengthened me,  
 I did not know that God lives  
 not in books, as Calvin claims,  
-but inside things themselves.  
+but in the world of things themselves.  
 
 What mystery lies here  
 remains to nourish those who care  

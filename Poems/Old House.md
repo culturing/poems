@@ -24,7 +24,7 @@ with memories of forest?
 
 What cold river brought us here?  
 If not the Thames, the Mississippi?  
-Say the Susquehanna, rolling slow?
+Say the Susquehanna, rolling slow.
 
 And yet, don’t answer.  
 Let me linger here, and grieve,  
