@@ -37,7 +37,7 @@ that banishes any adversity.
 How now, take heart and oppose this new ocean of troubles,  
 or else turn to brooding for future's sake?  
 
-I sing from the belly of a whale,  
+I sing from the belly of the whale,  
 which pursues its perfection for all,  
 which leaves open no quarter for others,  
 which swallows each culture in all,  
@@ -46,4 +46,4 @@ whose whiteness is barely a memory,
 whose grayness is given by all.  
 
 With the hour now hidden but late,  
-I cry out, that the sea-foam alone may hear me.  
+I cry out from the sea-foam that others may hear me.

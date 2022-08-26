@@ -14,8 +14,8 @@ Surely not here, where we bind
 ourselves freely to change, and await  
 the next Mind, with its talk  
 about how all is fine.  
-But ennui is outdated when we  
-feel confined by ourselves,  
-when our origins, soaking with brine,  
+But ennui is outdated, and we  
+feel confined by ourselves  
+and our origins, soaking with brine,  
 emerge fresh from the foam to remind us  
-that we know God changes his mind.  
+how we know God changes his mind.  
