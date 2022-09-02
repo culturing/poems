@@ -18,7 +18,7 @@ But there never has been any going back.
 
 And the life urge resigns itself  
 to smallness,  
-and this too is good!
+and this too is good,
 
 For too much growth makes weeds,  
 and we cannot tolerate weeds.

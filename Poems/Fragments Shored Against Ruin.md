@@ -143,4 +143,4 @@ awakened noise which learns to balance
 and to hope with poise
 
 The truth of which   
-*is There is There is There.*
+is There is There is There.

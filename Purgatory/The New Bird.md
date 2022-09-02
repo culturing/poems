@@ -20,7 +20,7 @@ and only know the words I know.
 But for who would still hear,  
 I have endeavored to show how.
 
----
+--
 
 Idea waits upon a bough.  
 The bird is in the parlor though.  

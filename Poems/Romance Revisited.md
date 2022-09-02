@@ -30,7 +30,7 @@ drive towards their ends.
 
 This, then, too must end.
 
----
+--
 
 But if we flee from time,  
 abandon all but dreams,
@@ -43,7 +43,7 @@ Would we weary of the world we’d made?
 Must immortal Love's embrace  
 ignore all time and place?
 
----
+--
 
 Rage for futility,  
 Rage for bleared horizons,
@@ -61,7 +61,7 @@ Though it is right.
 
 For time flows suddenly to exit youth.
 
----
+--
 
 Let us go then, you and I,  
 to die, and not trace ways  

@@ -13,14 +13,14 @@ And reasons with our untold ire.
 Rise fair song and banish woe  
 For we must fear the foreman’s blow  
 For though our fathers built with stone  
-We build the world anew each morn,
+We build the world again each morn,
 
 And tremble in the shade of steel,  
 And ache for poison salesmen sell,  
 And whirl in this ungrateful gyre  
 To placate pioneering fire.
 
----
+--
 
 What is this? What is my own?  
 What good is a peopled home  
@@ -34,13 +34,13 @@ There are only bog and mire.
 
 Who would dare to ope  
 Pandora's vessel once again? What's left?  
-All can see that Zeus has spurned  
+All can see that Zeus has scorned  
 Those Foresight has adorned.
 
----
+--
 
 But summon those old voices hither.  
-Sing some song against the dither.  
+Sing a song against the dither.  
 Won’t a mythic world reborn  
 Reclassify revealed desire?
 

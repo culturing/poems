@@ -9,8 +9,8 @@ I long for things I've never known.
 The shadows curse my eyes.  
 The scars run deep. They run at least to bone.  
   
-Although thunder grants atonement,  
-Questions always come from other skies.  
+And though thunder grants atonement,  
+Always questions come from other skies.  
 I long for things I've never known,  
   
 And candles burn and scholars moan  

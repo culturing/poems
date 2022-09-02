@@ -19,8 +19,8 @@ I bring new thoughts to table,
 and as far as I am able,  
 guide our way. But beggars all  
 would trade their place for one  
-in heaven, yet to me that path is barred.  
-So I use reason in new ways,  
+in heaven, yet to me that path is barred,  
+so I use reason in new ways,  
 feet deep in earth, head free of daemons,  
 closing in on what it means to be here now,  
 where I awoke, at journey's end.  
@@ -34,5 +34,6 @@ I say, deception is insidious.
 I tell this lonesome image  
 to release my gaze to this shore,  
 where I make my only home.  
+
 But what home is, I cannot say,  
 nor can this homely image tell me.  

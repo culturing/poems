@@ -28,5 +28,5 @@ I've yet to stumble through Eden
 but I've heard her song,  
 I’ve seen blossoms rise.  
 
-If there is a balm  
-it lies behind still-naked eyes.  
+If there is a balm, it lies  
+behind still-naked eyes.  
