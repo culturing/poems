@@ -5,8 +5,8 @@
   </em>
 </p>
 
-"It is and is not, and, therefore, is"  
-&nbsp;&nbsp;&nbsp;&nbsp;- Wallace Stevens, *Page from a Tale*
+"It is and it is not, and, therefore, is"  
+&nbsp;&nbsp;&nbsp;&nbsp;- Wallace Stevens, *A Primitive Like an Orb*
 
 What have we learned in seventy years?  
 What are the lessons of that war
