@@ -1,9 +1,5 @@
 ### Why Poetry?
-<p style="margin:0; margin-top: -1.25rem">
-  <em>
-    <small><small>01 November 2021</small></small>
-  </em>
-</p>
+01 November 2021
 
 Ah, poetry, the silly enterprise of leisured men with nothing better to do. Why read it? Why have anything to do with it?
 

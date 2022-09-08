@@ -1,45 +1,41 @@
-### The Enduring and Unchanging Dao
-<p style="margin:0; margin-top: -1.25rem">
-  <em>
-    <small><small>14 September 2020</small></small>
-  </em>
-</p>
+The Enduring and Unchanging Dao
+14 September 2020
 
-People die, new people are born.  
-The timbre of civilization changes,  
-like always, and we, those merely progenitors,  
+People die, new people are born.
+The timbre of civilization changes,
+like always, and we, those merely progenitors,
 progenerate, again, at the horn.
 
-What beast,   
-what rough or otherwise, comes forth  
+What beast, 
+what rough or otherwise, comes forth
 to taste the light of day?
 
-This surely is no newer way  
-than all the old ways,  
+This surely is no newer way
+than all the old ways,
 dying, dead, or buried.
 
 So what special hurry?
 
-Those come forth go under,  
-this is so, and temple shrouds,  
-once rent asunder, can be made,  
+Those come forth go under,
+this is so, and temple shrouds,
+once rent asunder, can be made,
 remade, again, again.
 
-If vanity, then vanity.  
-The proposition’s chord  
-strikes hard, and oh,   
+If vanity, then vanity.
+The proposition’s chord
+strikes hard, and oh, 
 we grow so bored. 
 
 What light from yonder room?
 
-‘Tis Juliet? Nay, knave,  
-just one once loved  
+‘Tis Juliet? Nay, knave,
+just one once loved
 in some forgotten tongue.
 
-I say be such  
-that every longing touch  
+I say be such
+that every longing touch
 *remembers* love,
 
-But do step cautiously   
-through darkened rooms,  
+But do step cautiously 
+through darkened rooms,
 and listen for that horn.

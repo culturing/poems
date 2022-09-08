@@ -1,30 +1,26 @@
-### Phenomenology of Science
-<p style="margin:0; margin-top: -1.25rem">
-  <em>
-    <small><small>25 December 2021</small></small>
-  </em>
-</p>
+Phenomenology of Science
+25 December 2021
 
-From Hegel's brain  
-thou, spluttering,  
-spreadst thy wings.  
+From Hegel's brain
+thou, spluttering,
+spreadst thy wings.
 
-Thou art one more  
-mythology,  
-nothing more.  
+Thou art one more
+mythology,
+nothing more.
 
-Thou cannot transcend  
-culture, or fly  
-as Zeitgeist.  
+Thou cannot transcend
+culture, or fly
+as Zeitgeist.
 
-No, thy thinking is  
-primitive, alas,  
-just like thy body.  
+No, thy thinking is
+primitive, alas,
+just like thy body.
 
-So give up the geist.  
-Make way for some new  
-mode of knowing,  
+So give up the geist.
+Make way for some new
+mode of knowing,
 
-Or rather, some old,  
-deep-rooted thought, the kind  
+Or rather, some old,
+deep-rooted thought, the kind
 you were made to destroy.  

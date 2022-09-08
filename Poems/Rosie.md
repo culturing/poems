@@ -1,29 +1,25 @@
-### Rosie
-<p style="margin:0; margin-top: -1.25rem">
-  <em>
-    <small><small>31 March 2019</small></small>
-  </em>
-</p>
+Rosie
+31 March 2019
 
-Rosie works  
-so hard  
+Rosie works
+so hard
 to please the factory man.
 
 It is a matter of time.
 
-She has been on hands and knees  
+She has been on hands and knees
 since seventeen,
 
-And does not know  
+And does not know
 what moves her so,
 
 To longing, maybe, for something.
 
-Meanwhile  
+Meanwhile
 somewhere blossoms,
 
-but she cannot go,  
+but she cannot go,
 for it is a matter of time,
 
-though she does know  
+though she does know
 the way things grow.

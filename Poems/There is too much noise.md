@@ -1,32 +1,28 @@
-<p style="margin:0; margin-top: -1.25rem">  
-  <em>  
-    <small><small>15 July 2015</small></small>  
-  </em>  
-</p>  
+15 July 2015
 
-There is too much noise  
-inside, between walls,  
-reverberating through skulls  
+There is too much noise
+inside, between walls,
+reverberating through skulls
 
-Which grow empty.  
+Which grow empty.
 
-Is there not solace, rest  
-from Self?  
+Is there not solace, rest
+from Self?
 
-Is there a balm?  
+Is there a balm?
 
-I have heard of places,  
-heard tunes of theogony,  
-but is there any calm?  
+I have heard of places,
+heard tunes of theogony,
+but is there any calm?
 
-What remains are ashes,  
-What remains are gems?  
+What remains are ashes,
+What remains are gems?
 
-And must we know the difference?  
+And must we know the difference?
 
-I've yet to stumble through Eden  
-but I've heard her song,  
-I’ve seen blossoms rise.  
+I've yet to stumble through Eden
+but I've heard her song,
+I’ve seen blossoms rise.
 
-If there is a balm, it lies  
+If there is a balm, it lies
 behind still-naked eyes.  

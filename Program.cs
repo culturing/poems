@@ -28,8 +28,23 @@ namespace Poems
             string indexHtml = string.Empty;
             foreach (var file in Directory.EnumerateFiles("Poems"))
             {
+                var poem = new Poem();
                 string filename = Path.GetFileNameWithoutExtension(file);
-                string content = File.ReadAllText(file);
+                string[] lines = File.ReadAllLines(file);
+                
+                try
+                {
+                    poem.CompositionDate = System.DateTime.Parse(lines[1]);
+                    lines[0] = $"### {lines[0]}";
+                    lines[1] = $"<p style='margin:0; margin-top: -1.25rem'><em><small><small>{lines[1]}</small></small></em></p>";                
+                }
+                catch(FormatException)
+                {
+                    poem.CompositionDate = System.DateTime.Parse(lines[0]);
+                    lines[0] = $"<p style='margin:0; margin-top: -1.25rem'><em><small><small>{lines[0]}</small></small></em></p>";                
+                }
+                
+                string content = String.Join("  \n", lines);
                 string contentHtml = md.Transform(content);
 
                 // if (File.Exists($"Audio/{filename}.m4a"))
@@ -42,20 +57,10 @@ namespace Poems
                 string finalPath = $"Pages/{filename}.html";
                 File.WriteAllText(finalPath, finalPoemHtml);
 
-                string link = $"<a href=\"{finalPath}\">{filename}</a>";
-                indexHtml += $"<div>{link}</div>\n";
+                poem.Link = $"<a href=\"{finalPath}\">{filename}</a>";
+                indexHtml += $"<div>{poem.Link}</div>\n";
 
-                var match = Regex.Match(content, @"<small><small>(.*)<\/small><\/small>");
-                if (match.Success)
-                {
-                    string date = match.Groups[1].Value;
-                    var poem = new Poem
-                    {
-                        Link = link,
-                        CompositionDate = System.DateTime.Parse(date)
-                    };
-                    poems.Add(poem);
-                }
+                poems.Add(poem);
             }
 
             string chronologyHtml = string.Empty;

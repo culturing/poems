@@ -132,6 +132,7 @@
 "The Auroras of Autumn"  
 ["The Idea of Order at Key West"](https://www.poetryfoundation.org/poems/43431/the-idea-of-order-at-key-west)  
 ["The Snow Man"](https://www.poetryfoundation.org/poems/45235/the-snow-man-56d224a6d4e90)  
+"This Solitude of Cataracts"  
 
 ### Walt Whitman 
 ["A Woman Waits for Me"](https://poets.org/poem/woman-waits-me)  
