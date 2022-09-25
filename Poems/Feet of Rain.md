@@ -11,7 +11,7 @@ but others press in from all sides,
 demanding a show. You hesitate,
 not being a dancer, not being
 at all. The way is through the rain.
-You will think you have heard this before,
+You think you have heard this before,
 but the words change. Why won't they
 stay still? Why can't they remain? 
 They are not, that is why, and they never were.
