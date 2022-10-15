@@ -11,7 +11,7 @@ these few are hidden, too, unnoticed in the roaring crowd,
 the crowd as blind as ever, and no less so for their service.
 Oh, the Aletheians have endeavors too, like maybe breaking through
 the cycle of hereditary bullying, which, for Caesar,
-would make servants of us all. But serving why?
+would make servants of us all. But serving whom?
 But more than this, these simply watch for signs,
 believing that a god, or something, speaks
 and can be heard. I like this last pursuit
