@@ -10,4 +10,4 @@ Answer softly, my sweet, when I ask you
 to be near me now as things fade.
 We are dying as sure as we're living.
 But listen for me past the hearth flare, in chill air.
-I wait there for you in all silence.
+I wait for you there in all silence.

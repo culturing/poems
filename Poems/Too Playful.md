@@ -14,6 +14,6 @@ I write to remind you, though it is no use,
 because patients are sick, because clients are angry,
 and dragons are burning down villages, but you
 are too busy to play with me. If only you knew
-that your play is play too, we'd grow wiser together
+that your play is play too, we'd grow wiser together,
 and maybe you'd learn about truth
-and its too-playful hold over you.
+and its too playful hold over you.

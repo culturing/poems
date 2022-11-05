@@ -8,7 +8,7 @@ all who will hear. Walk here with me,
 where gods can die, and often do.
 Walk here, but slowly. Know those waves,
 the ones you've learned how not to hear.
-You hear them now, so gently falling down
+You'll hear them now, so gently falling down
 upon all things. So time falls, so it goes,
 and so we go, into the crypt of time,
 where all days are reborn, are born, and die.
