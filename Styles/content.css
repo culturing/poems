@@ -10,6 +10,7 @@ a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickn
 
 @media only print
 {
-    body { color: black; }
+    body { background-color: white; color: black; }
     #license { display: none; }
+    a { text-decoration-color: black; color: black; }
 }

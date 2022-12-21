@@ -16,9 +16,17 @@ a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickn
     #header { display: flex; flex-direction: row; align-items: baseline; }
     #header a { margin-left: 1rem; }
 }
+
 @media only screen and (max-width : 1024px)
 {
     h1 { padding-left: 0; }
     #container-index h2 { padding-top: 2rem; }
     #container-chronology { padding-top: 1rem;}
+}
+
+@media only print
+{
+    body { background-color: white; color: black; }
+    #license { display: none; }
+    a { text-decoration-color: black; color: black; }
 }
