@@ -49,6 +49,7 @@ namespace Poems
                 indexHtml += $"<div>{poem.Link}</div>\n";
             }
 
+        // Build Chronology
             string chronologyHtml = string.Empty;
             foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => kvp.Key))
             {
@@ -65,20 +66,9 @@ namespace Poems
 
             File.WriteAllText("index.html", finalIndexHtml);
 
-            string whyPoetryText = File.ReadAllText("Other/Why Poetry.md");
-            string whyPoetryHtml = md.Transform(whyPoetryText);
-            whyPoetryHtml = ContentTemplate.Replace("{{content}}", whyPoetryHtml);
-            File.WriteAllText("Other/Why Poetry.html", whyPoetryHtml);
-
-            string favoritePoemsText = File.ReadAllText("Other/Favorite Poems.md");
-            string favoritePoemsHtml = md.Transform(favoritePoemsText);
-            favoritePoemsHtml = ContentTemplate.Replace("{{content}}", favoritePoemsHtml);
-            File.WriteAllText("Other/Favorite Poems.html", favoritePoemsHtml);
-
-            string faqText = File.ReadAllText("Other/FAQ.md");
-            string faqHtml = md.Transform(faqText);
-            faqHtml = ContentTemplate.Replace("{{content}}", faqHtml);
-            File.WriteAllText("Other/FAQ.html", faqHtml);
+            RenderOtherPage("Other/Why Poetry.md");
+            RenderOtherPage("Other/Favorite Poems.md");
+            RenderOtherPage("Other/FAQ.md");
 
         // Render Pdf
             // ChromePdfRenderer renderer = GetPdfRenderer();
@@ -107,7 +97,7 @@ namespace Poems
             string filename = Path.GetFileNameWithoutExtension(filepath);
             string[] lines = File.ReadAllLines(filepath);
             
-            filename = Regex.Replace(filename, "^[0-9][0-9]", "");
+            filename = Regex.Replace(filename, "^[0-9][0-9] ", "");
             poem.Title = filename;
             
             try
@@ -145,6 +135,14 @@ namespace Poems
             if (!PoemsByDate.ContainsKey(key))
                 PoemsByDate[key] = new List<Poem>();
             PoemsByDate[key].Add(poem);
+        }
+
+        static void RenderOtherPage(string filepath)
+        {
+            string text = File.ReadAllText(filepath);
+            string html = ContentTemplate.Replace("{{content}}", md.Transform(text));
+            string htmlpath = filepath.Replace(Path.GetExtension(filepath), ".html");
+            File.WriteAllText(htmlpath, html);   
         }
 
         static ChromePdfRenderer GetPdfRenderer()
