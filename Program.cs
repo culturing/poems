@@ -110,7 +110,7 @@ namespace Poems
             string finalPath = $"Output/Poems/{filename}.html";
             File.WriteAllText(finalPath, finalPoemHtml);
 
-            poem.Link = $"<a href=\"{finalPath}\">{filename}</a>";
+            poem.Link = $"<a href=\"{finalPath}\">{poem.Title}</a>";
             poem.FilePath = finalPath;
 
             Poems.Add(poem);
@@ -132,35 +132,64 @@ namespace Poems
 
         static async Task RenderPdf(string outpath)
         {
+            using PdfDocument pdf = new PdfDocument();
+
             using IPlaywright playwright = await Playwright.CreateAsync();
             await using IBrowser browser = await playwright.Chromium.LaunchAsync();
             IPage page = await browser.NewPageAsync();
+            PagePdfOptions pdfRenderOptions = new PagePdfOptions 
+            { 
+                Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
+            };
 
-            using PdfDocument pdf = new PdfDocument();
+        // Add title
+            pdfRenderOptions.Path = $"Output/Pdfs/Title.pdf";
+            await page.GotoAsync("file:///" + Path.GetFullPath($"Templates/title.html"));                    
+            await page.PdfAsync(pdfRenderOptions);
+            using (PdfDocument titlePdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
+            {
+                MergePdfs(titlePdf, pdf);
+            }
+            pdf.Outlines.Add("Title", pdf.Pages[pdf.PageCount - 1]);
+
+        // Add copyright
+            string copyrightHtml = File.ReadAllText("Templates/copyright.html")
+                .Replace("{{year}}", DateTime.Now.ToString("yyyy"));
+            string copyrightPath = $"Output/Other/Copyright.html";
+            File.WriteAllText(copyrightPath, copyrightHtml);
+
+            pdfRenderOptions.Path = $"Output/Pdfs/Copyright.pdf";
+            await page.GotoAsync("file:///" + Path.GetFullPath(copyrightPath));                    
+            await page.PdfAsync(pdfRenderOptions);
+            using (PdfDocument copyrightPdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
+            {
+                MergePdfs(copyrightPdf, pdf);
+            }
+            pdf.Outlines.Add("Copyright", pdf.Pages[pdf.PageCount - 1]);
             
+        // Add temporary table of contents
+            int tableOfContentsStart = pdf.PageCount;
+            int tableOfContentsPageCount = 0;
             await RenderTableOfContents(page);
             using (PdfDocument tableOfContentsPdf = PdfReader.Open("Output/Pdfs/TableOfContents.pdf", PdfDocumentOpenMode.Import))
             {
+                tableOfContentsPageCount = tableOfContentsPdf.PageCount;
                 MergePdfs(tableOfContentsPdf, pdf);
             }
 
-            PdfOutline contentsOutline = pdf.Outlines.Add("Contents", pdf.Pages[0]);
-            PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[0]);
+        // Add poems
+            PdfOutline contentsOutline = pdf.Outlines.Add("Contents", pdf.Pages[tableOfContentsStart]);
+            PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[pdf.PageCount - 1]);
             foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => kvp.Key))
             {
                 Directory.CreateDirectory($"Output/Pdfs/{kvp.Key}");
                 foreach(Poem poem in kvp.Value)
-                {
-                    string pdfpath = $"Output/Pdfs/{kvp.Key}/{Path.GetFileNameWithoutExtension(poem.FilePath)}.pdf";
-                    await page.GotoAsync("file:///" + Path.GetFullPath(poem.FilePath));
-                    PagePdfOptions options = new PagePdfOptions 
-                    { 
-                        Path = pdfpath, 
-                        Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
-                    };
-                    await page.PdfAsync(options);
+                {                    
+                    pdfRenderOptions.Path = $"Output/Pdfs/{kvp.Key}/{Path.GetFileNameWithoutExtension(poem.FilePath)}.pdf";
+                    await page.GotoAsync("file:///" + Path.GetFullPath(poem.FilePath));                    
+                    await page.PdfAsync(pdfRenderOptions);
 
-                    using (PdfDocument poemPdf = PdfReader.Open(pdfpath, PdfDocumentOpenMode.Import))
+                    using (PdfDocument poemPdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
                     {
                         poem.Page = pdf.PageCount;
                         MergePdfs(poemPdf, pdf);
@@ -169,10 +198,11 @@ namespace Poems
                 }
             }
 
+        // Render final table of contents
             await RenderTableOfContents(page);
             using (PdfDocument tableOfContentsPdf = PdfReader.Open("Output/Pdfs/TableOfContents.pdf", PdfDocumentOpenMode.Import))
             {
-                int i = 0;
+                int i = tableOfContentsStart;
                 foreach (PdfPage pdfPage in tableOfContentsPdf.Pages)
                 {
                     pdf.Pages.RemoveAt(i);
@@ -180,8 +210,8 @@ namespace Poems
                     AddPageNumber(insertedPage, i + 1);
                     ++i;
                 }
-                contentsOutline.DestinationPage = pdf.Pages[0];
-                poemsOutline.DestinationPage = pdf.Pages[tableOfContentsPdf.PageCount];
+                contentsOutline.DestinationPage = pdf.Pages[tableOfContentsStart];
+                poemsOutline.DestinationPage = pdf.Pages[tableOfContentsStart + tableOfContentsPdf.PageCount];
             }
 
             pdf.Save(outpath);
