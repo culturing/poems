@@ -20,16 +20,21 @@ namespace Poems
         public DateTime PublicationDate { get; set; }
         public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         public string FilePath { get; set; }
+        public int Page { get; set; }
     }
 
     class Program
     {
         static Markdown md = new Markdown();
         static string ContentTemplate = File.ReadAllText("Templates/content.html");
+        static string TableOfContentsTemplate = File.ReadAllText("Templates/toc.html");
         static List<Poem> Poems { get; set; } = new List<Poem>();
         static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
+        static XFont Font = new XFont("Quattrocento", 12.0);
+
         static async Task Main(string[] args)
         {            
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             Directory.Delete("Output", true);
             Directory.CreateDirectory("Output/Poems");  
             Directory.CreateDirectory("Output/Pdfs");  
@@ -127,58 +132,115 @@ namespace Poems
 
         static async Task RenderPdf(string outpath)
         {
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-
             using IPlaywright playwright = await Playwright.CreateAsync();
             await using IBrowser browser = await playwright.Chromium.LaunchAsync();
             IPage page = await browser.NewPageAsync();
 
-            using (PdfDocument pdf = new PdfDocument())
+            using PdfDocument pdf = new PdfDocument();
+            
+            await RenderTableOfContents(page);
+            using (PdfDocument tableOfContentsPdf = PdfReader.Open("Output/Pdfs/TableOfContents.pdf", PdfDocumentOpenMode.Import))
             {
-                XFont font = new XFont("Quattrocento", 12.0);
-                XBrush brush = XBrushes.Black;
+                MergePdfs(tableOfContentsPdf, pdf);
+            }
 
-                pdf.AddPage(new PdfPage());
-                PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[0]);
-                foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => kvp.Key))
+            PdfOutline contentsOutline = pdf.Outlines.Add("Contents", pdf.Pages[0]);
+            PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[0]);
+            foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => kvp.Key))
+            {
+                Directory.CreateDirectory($"Output/Pdfs/{kvp.Key}");
+                foreach(Poem poem in kvp.Value)
                 {
-                    Directory.CreateDirectory($"Output/Pdfs/{kvp.Key}");
-                    foreach(Poem poem in kvp.Value)
-                    {
-                        string pdfpath = $"Output/Pdfs/{kvp.Key}/{Path.GetFileNameWithoutExtension(poem.FilePath)}.pdf";
-                        await page.GotoAsync("file:///" + Path.GetFullPath(poem.FilePath));
-                        PagePdfOptions options = new PagePdfOptions 
-                        { 
-                            Path = pdfpath, 
-                            Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
-                        };
-                        await page.PdfAsync(options);
+                    string pdfpath = $"Output/Pdfs/{kvp.Key}/{Path.GetFileNameWithoutExtension(poem.FilePath)}.pdf";
+                    await page.GotoAsync("file:///" + Path.GetFullPath(poem.FilePath));
+                    PagePdfOptions options = new PagePdfOptions 
+                    { 
+                        Path = pdfpath, 
+                        Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
+                    };
+                    await page.PdfAsync(options);
 
-                        using (PdfDocument poemPdf = PdfReader.Open(pdfpath, PdfDocumentOpenMode.Import))
-                        {
-                            foreach (PdfPage pdfPage in poemPdf.Pages)
-                            {
-                                PdfPage addedPage = pdf.AddPage(pdfPage);
-                            
-                            // Add page number
-                                using (XGraphics gfx = XGraphics.FromPdfPage(addedPage))
-                                {
-                                    double x = 0;
-                                    double y = addedPage.Height - font.Height - new XUnit(0.5, XGraphicsUnit.Inch);
-                                    double width = addedPage.Width - new XUnit(0.5, XGraphicsUnit.Inch);
-                                    double height = font.Height;
-                                    gfx.DrawString($"{pdf.PageCount}", font, brush, new XRect(x, y, width, height), XStringFormats.CenterRight);
-                                }
-                            }
-                            poemsOutline.Outlines.Add(poem.Title, pdf.Pages[pdf.PageCount - poemPdf.PageCount]);
-                        }
+                    using (PdfDocument poemPdf = PdfReader.Open(pdfpath, PdfDocumentOpenMode.Import))
+                    {
+                        poem.Page = pdf.PageCount;
+                        MergePdfs(poemPdf, pdf);
+                        poemsOutline.Outlines.Add(poem.Title, pdf.Pages[pdf.PageCount - poemPdf.PageCount]);
                     }
                 }
-                PdfPage indexPage = pdf.AddPage();
-                pdf.Outlines.Add("Index", pdf.Pages[pdf.PageCount - 1]);
-
-                pdf.Save(outpath);
             }
+
+            await RenderTableOfContents(page);
+            using (PdfDocument tableOfContentsPdf = PdfReader.Open("Output/Pdfs/TableOfContents.pdf", PdfDocumentOpenMode.Import))
+            {
+                int i = 0;
+                foreach (PdfPage pdfPage in tableOfContentsPdf.Pages)
+                {
+                    pdf.Pages.RemoveAt(i);
+                    PdfPage insertedPage = pdf.Pages.Insert(i, pdfPage);
+                    AddPageNumber(insertedPage, i + 1);
+                    ++i;
+                }
+                contentsOutline.DestinationPage = pdf.Pages[0];
+                poemsOutline.DestinationPage = pdf.Pages[tableOfContentsPdf.PageCount];
+            }
+
+            pdf.Save(outpath);
+        }
+
+        static void MergePdfs(PdfDocument source, PdfDocument destination)
+        {
+            foreach (PdfPage pdfPage in source.Pages)
+            {
+                PdfPage addedPage = destination.AddPage(pdfPage);
+                AddPageNumber(addedPage, destination.PageCount);
+            }
+        }
+
+        static void AddPageNumber(PdfPage page, int pageNumber)
+        {
+            using (XGraphics gfx = XGraphics.FromPdfPage(page))
+            {
+                double x = 0;
+                double y = page.Height - Font.Height - new XUnit(0.5, XGraphicsUnit.Inch);
+                double width = page.Width - new XUnit(0.5, XGraphicsUnit.Inch);
+                double height = Font.Height;
+                gfx.DrawString($"{pageNumber}", Font, XBrushes.Black, new XRect(x, y, width, height), XStringFormats.CenterRight);
+            }
+        }
+
+        static async Task RenderTableOfContents(IPage page)
+        {
+            string toc = string.Empty;
+            foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => kvp.Key))
+            {
+                toc += $"<div class='toc-section'>";
+                toc += $"  <div class='toc-flex toc-section-header'>";
+                toc += $"    <span>{kvp.Key}</span>";
+                toc += $"    <span class='page'>{kvp.Value.FirstOrDefault()?.Page}</span>";
+                toc += $"  </div>";
+                foreach(Poem poem in kvp.Value)
+                {
+                    toc += $"  <div class='toc-flex toc-poem'>";
+                    toc += $"    <span>{poem.Title}</span>";
+                    toc += $"    <span class='page'>{poem.Page}</span>";
+                    toc += $"  </div>";
+                }
+                toc += $"</div>";
+            }
+
+            string tocHtml = TableOfContentsTemplate.Replace("{{toc}}", toc);
+            string filepath = "Output/Other/TableOfContents.html";
+            File.WriteAllText(filepath, tocHtml);
+
+            await page.GotoAsync("file:///" + Path.GetFullPath(filepath));
+
+            string pdfPath = "Output/Pdfs/TableOfContents.pdf";
+            PagePdfOptions options = new PagePdfOptions 
+            { 
+                Path = pdfPath,
+                Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
+            };         
+            await page.PdfAsync(options);
         }
     }
 }

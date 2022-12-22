@@ -1,0 +1,34 @@
+body {
+    font-family: Quattrocento;
+    background-color: white;
+    color: black;
+    line-height: 1.25rem;
+    margin: 0;
+    padding: 1rem;
+    white-space: nowrap;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+h1 {
+    margin: 0;
+    padding: 0 1rem 0 1rem;
+}
+
+.toc-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 1rem 0 1rem;
+}
+
+.toc-section .toc-poem:nth-child(odd) {
+    background-color: rgb(240, 240, 240);
+}
+
+.toc-section-header {
+    margin-top: 1rem;
+    font-weight: bold;
+    background-color: rgb(225, 225, 225);
+}
