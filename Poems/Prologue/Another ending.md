@@ -1,4 +1,4 @@
-Another ending
+*Another ending
 22 September 2016
 
 I guess this is the end.

@@ -1,4 +1,4 @@
-Lady in the Temple
+*Lady in the Temple
 10 August 2019
 
 She looked around 

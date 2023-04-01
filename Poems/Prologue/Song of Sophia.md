@@ -1,4 +1,4 @@
-Song of Sophia
+*Song of Sophia
 24 July 2014
 
 #### I. Akrasia

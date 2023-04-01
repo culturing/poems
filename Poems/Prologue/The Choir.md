@@ -1,4 +1,4 @@
-The Choir
+*The Choir
 18 January 2016
 
 By silent seas we sit and sing

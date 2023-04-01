@@ -13,7 +13,6 @@ body {
 h1 {
     margin: 0;
     padding: 0 1rem 0 1rem;
-    margin-bottom: 1rem;
 }
 
 .toc-flex {
@@ -24,11 +23,16 @@ h1 {
     padding: 0 1rem 0 1rem;
 }
 
+.toc-section {
+    margin-top: 1rem;
+}
+
 .toc-section .toc-poem:nth-child(odd) {
     background-color: rgb(240, 240, 240);
 }
 
 .toc-section-header {
     font-weight: bold;
+    font-size: large;
     background-color: rgb(225, 225, 225);
 }

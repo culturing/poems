@@ -17,10 +17,23 @@ class Poem
     public string Title { get; set; }
     public int Index { get; set; }
     public string Link { get; set; }
+    public bool Bold { get; set; } = false;
     public DateTime PublicationDate { get; set; }
     public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     public string FilePath { get; set; }
     public int Page { get; set; }
+    public string Style()
+    {
+        if (string.IsNullOrEmpty(_Style))
+        {
+            _Style = string.Empty;
+            if (Bold)
+                _Style += "font-weight: bold;";
+        }
+        return _Style;
+    }
+
+    protected string _Style;
 }
 
 class Program
@@ -56,7 +69,7 @@ class Program
         string indexHtml = string.Empty;
         foreach(Poem poem in Poems.OrderBy(p => Regex.Replace(p.Title, @"[^\w\s]", "")))
         {
-            indexHtml += $"<div>{poem.Link}</div>\n";
+            indexHtml += $"<div style='{poem.Style()}'>{poem.Link}</div>\n";
         }
 
     // Build Chronology
@@ -66,7 +79,7 @@ class Program
             chronologyHtml += $"<h3>{kvp.Key}</h3>\n";
             foreach(Poem poem in kvp.Value)
             {
-                chronologyHtml += $"<div>{poem.Link}</div>\n";
+                chronologyHtml += $"<div style='{poem.Style()}'>{poem.Link}</div>\n";                    
             }
         }
 
@@ -91,6 +104,12 @@ class Program
         
         filename = Regex.Replace(filename, "^[0-9][0-9] ", "");
         poem.Title = filename;
+
+        if (lines[0].StartsWith("*"))
+        {
+            poem.Bold = true;
+            lines[0] = lines[0].Substring(1);
+        }
         
         try
         {
@@ -260,7 +279,7 @@ class Program
             foreach(Poem poem in kvp.Value)
             {
                 toc += $"  <div class='toc-flex toc-poem'>";
-                toc += $"    <span>{poem.Title}</span>";
+                toc += $"    <span style='{poem.Style()}'>{poem.Title}</span>";
                 toc += $"    <span class='toc-page'>{poem.Page}</span>";
                 toc += $"  </div>";
             }
@@ -290,7 +309,7 @@ class Program
         foreach(Poem poem in Poems.OrderBy(p => Regex.Replace(p.Title, @"[^\w\s]", "")))
         {
             index += $"<div class='toc-flex toc-poem'>";
-            index += $"  <span>{poem.Title}</span>";
+            index += $"  <span style='{poem.Style()}'>{poem.Title}</span>";
             index += $"  <span class='toc-page'>{poem.Page}</span>";
             index += $"</div>";
         }

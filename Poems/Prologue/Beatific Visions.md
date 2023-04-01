@@ -1,4 +1,4 @@
-Beatific Visions
+*Beatific Visions
 16 July 2022
 
 I doubt those people on television 
@@ -23,7 +23,7 @@ to be *lost* in a *place* that is lost?
 It means everything. Stand here with me
 and observe that at last 
 all the cracks in the firmament
-outline a God-shaped void.
+outline a God-shaped hole.
 
 We are ready for solid food,
 culled from earth,

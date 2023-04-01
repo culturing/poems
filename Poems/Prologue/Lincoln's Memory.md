@@ -1,4 +1,4 @@
-Lincoln’s Memory
+*Lincoln’s Memory
 29 August 2019
 
 So favored forms of power 

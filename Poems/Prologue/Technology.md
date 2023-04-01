@@ -1,4 +1,4 @@
-Technology
+*Technology
 12 April 2022
 
 The Word

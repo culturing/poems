@@ -1,4 +1,4 @@
-Scents of the Divine
+*Scents of the Divine
 14 January 2016
 
 Wonder is the pollen of belief,

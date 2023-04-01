@@ -1,4 +1,4 @@
-Theodicy
+*Theodicy
 16 July 2022
 
 The Nazis proved that God's law

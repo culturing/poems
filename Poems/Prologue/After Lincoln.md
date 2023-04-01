@@ -1,4 +1,4 @@
-After Lincoln
+*After Lincoln
 24 September 2019
 
 Alas, there came more wars, 

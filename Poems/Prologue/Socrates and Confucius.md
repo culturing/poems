@@ -1,4 +1,4 @@
-Socrates and Confucius
+*Socrates and Confucius
 16 July 2022
 
 In Persia, some say the great thinkers
