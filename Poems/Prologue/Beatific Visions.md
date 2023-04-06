@@ -23,7 +23,7 @@ to be *lost* in a *place* that is lost?
 It means everything. Stand here with me
 and observe that at last 
 all the cracks in the firmament
-outline a God-shaped hole.
+outline a God-shaped void.
 
 We are ready for solid food,
 culled from earth,
