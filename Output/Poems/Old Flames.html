@@ -4,12 +4,19 @@
 <link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
 <link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
 <body>
+    <div class="navbar">
+        <a class="nav" href="/Poems/index.html">home</a>
+        <div>
+            <a id="previous" class="nav" href="Too Playful.html">prev</a>
+            <a id="next" class="nav" href="One of Us.html">next</a>
+        </div>
+    </div>
     <div id="container-parent">
-        <div id="container">
+        <div id="container">          
             <div id="content">
                 <h3>Old Flames</h3>
 
-<p style='margin:0; margin-top: -1.25rem'><em><small><small>12 September 2022</small></small></em></p>  
+<p style='margin:0;'><em><small><small>12 September 2022</small></small></em></p>  
 
 <p>As I sit, I remember the point of the story,<br />
 the struggle to keep out the cold.<br />
@@ -38,5 +45,13 @@ We must ask where the old flames have gone.</p>
 </body>
 <script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
 </script>
 </html>

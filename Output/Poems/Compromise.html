@@ -4,12 +4,19 @@
 <link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
 <link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
 <body>
+    <div class="navbar">
+        <a class="nav" href="/Poems/index.html">home</a>
+        <div>
+            <a id="previous" class="nav" href="Vortex Afterglow.html">prev</a>
+            <a id="next" class="nav" href="Marxists.html">next</a>
+        </div>
+    </div>
     <div id="container-parent">
-        <div id="container">
+        <div id="container">          
             <div id="content">
                 <h3>Compromise</h3>
 
-<p style='margin:0; margin-top: -1.25rem'><em><small><small>15 December 2022</small></small></em></p>  
+<p style='margin:0;'><em><small><small>15 December 2022</small></small></em></p>  
 
 <p>The schools are at it again, with their furor<br />
 to make a new movement, or else make an old one.<br />
@@ -24,5 +31,13 @@ and I am not now willing to compromise.</p>
 </body>
 <script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
 </script>
 </html>

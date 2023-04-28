@@ -4,12 +4,19 @@
 <link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
 <link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
 <body>
+    <div class="navbar">
+        <a class="nav" href="/Poems/index.html">home</a>
+        <div>
+            <a id="previous" class="nav" href="They May Be Right.html">prev</a>
+            <a id="next" class="nav" href="Wait, Think, Speak.html">next</a>
+        </div>
+    </div>
     <div id="container-parent">
-        <div id="container">
+        <div id="container">          
             <div id="content">
                 <h3>Where They Can See You</h3>
 
-<p style='margin:0; margin-top: -1.25rem'><em><small><small>26 April 2023</small></small></em></p>  
+<p style='margin:0;'><em><small><small>26 April 2023</small></small></em></p>  
 
 <p>Your feelings may threaten their power,<br />
 but always remember that they<br />
@@ -23,5 +30,13 @@ and do not cross where they can see you.</p>
 </body>
 <script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
 </script>
 </html>

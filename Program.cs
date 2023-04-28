@@ -83,6 +83,29 @@ class Program
             }
         }
 
+    // Set previous and next links
+        List<Poem> OrderedPoems = Poems.OrderBy(poem => poem.PublicationDate).ToList();
+        for (int i = 0; i < OrderedPoems.Count; ++i)
+        {
+            Poem poem = OrderedPoems[i];
+            string previousPath = string.Empty;
+            string nextPath = string.Empty;
+            if (i > 0)
+            {
+                Poem prev = OrderedPoems[i-1];
+                previousPath = Path.GetFileName(prev.FilePath);
+            }
+            if (i < OrderedPoems.Count - 1)
+            {
+                Poem next = OrderedPoems[i+1];
+                nextPath = Path.GetFileName(next.FilePath);
+            }
+            string contents = File.ReadAllText(poem.FilePath);
+            contents = contents.Replace("{{previous}}", previousPath);
+            contents = contents.Replace("{{next}}", nextPath);
+            File.WriteAllText(poem.FilePath, contents);
+        }
+
         string finalIndexHtml = File.ReadAllText("Templates/index.html")
             .Replace("{{index}}", indexHtml)
             .Replace("{{chronology}}", chronologyHtml);
@@ -116,12 +139,12 @@ class Program
             poem.PublicationDate = System.DateTime.Parse(lines[1]);
             poem.Title = lines[0];
             lines[0] = $"### {lines[0]}";
-            lines[1] = $"<p style='margin:0; margin-top: -1.25rem'><em><small><small>{lines[1]}</small></small></em></p>";                
+            lines[1] = $"<p style='margin:0;'><em><small><small>{lines[1]}</small></small></em></p>";                
         }
         catch(FormatException)
         {
             poem.PublicationDate = System.DateTime.Parse(lines[0]);
-            lines[0] = $"<p style='margin:0; margin-top: -1.25rem'><em><small><small>{lines[0]}</small></small></em></p>";                
+            lines[0] = $"<p style='margin:0;'><em><small><small>{lines[0]}</small></small></em></p>";                
         }
         
         string content = String.Join("  \n", lines);

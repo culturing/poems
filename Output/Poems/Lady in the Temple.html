@@ -4,12 +4,19 @@
 <link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
 <link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
 <body>
+    <div class="navbar">
+        <a class="nav" href="/Poems/index.html">home</a>
+        <div>
+            <a id="previous" class="nav" href="Lady in the Dark.html">prev</a>
+            <a id="next" class="nav" href="Lincoln's Memory.html">next</a>
+        </div>
+    </div>
     <div id="container-parent">
-        <div id="container">
+        <div id="container">          
             <div id="content">
                 <h3>Lady in the Temple</h3>
 
-<p style='margin:0; margin-top: -1.25rem'><em><small><small>10 August 2019</small></small></em></p>  
+<p style='margin:0;'><em><small><small>10 August 2019</small></small></em></p>  
 
 <p>She looked around<br />
 like one bound<br />
@@ -26,5 +33,13 @@ of the holes in the roof.</p>
 </body>
 <script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
 </script>
 </html>

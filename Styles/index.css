@@ -18,7 +18,7 @@ a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickn
     #header a { margin-left: 1rem; }
 }
 
-@media only screen and (max-width : 1024px)
+@media only screen and (max-width : 1024.99px)
 {
     h1 { padding-left: 0; }
     #container-index h2 { padding-top: 2rem; }

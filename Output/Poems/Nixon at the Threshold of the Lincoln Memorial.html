@@ -4,12 +4,19 @@
 <link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
 <link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
 <body>
+    <div class="navbar">
+        <a class="nav" href="/Poems/index.html">home</a>
+        <div>
+            <a id="previous" class="nav" href="Romance Revisited Revisited.html">prev</a>
+            <a id="next" class="nav" href="I have withdrawn from the world.html">next</a>
+        </div>
+    </div>
     <div id="container-parent">
-        <div id="container">
+        <div id="container">          
             <div id="content">
                 <h3>Nixon at the Threshold of the Lincoln Memorial</h3>
 
-<p style='margin:0; margin-top: -1.25rem'><em><small><small>13 January 2019</small></small></em></p>  
+<p style='margin:0;'><em><small><small>13 January 2019</small></small></em></p>  
 
 <p><em>Something that is completely clean can also be completely sterile</em><br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Richard Nixon, <a href="https://www.nixonlibrary.gov/sites/default/files/virtuallibrary/recordings/dictabelts/DB075_01.mp3">Dictabelt 75</a>, May 1970  </p>
@@ -56,5 +63,13 @@ and who could build a home from such raw material?</p>
 </body>
 <script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
 </script>
 </html>
