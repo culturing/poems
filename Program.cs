@@ -40,6 +40,7 @@ class Program
 {
     static Markdown md = new Markdown();
     static string ContentTemplate = File.ReadAllText("Templates/content.html");
+    static string OtherTemplate = File.ReadAllText("Templates/other.html");
     static string TableOfContentsTemplate = File.ReadAllText("Templates/toc.html");
     static string PdfIndexTemplate = File.ReadAllText("Templates/pdf-index.html");
     static List<Poem> Poems { get; set; } = new List<Poem>();
@@ -168,7 +169,7 @@ class Program
     static void RenderOtherPage(string filepath)
     {
         string text = File.ReadAllText(filepath);
-        string html = ContentTemplate.Replace("{{content}}", md.Transform(text));
+        string html = OtherTemplate.Replace("{{content}}", md.Transform(text));
         string htmlpath = $"Output/Other/{Path.GetFileNameWithoutExtension(filepath)}.html";
         File.WriteAllText(htmlpath, html);   
     }
@@ -223,7 +224,7 @@ class Program
     // Add poems
         PdfOutline contentsOutline = pdf.Outlines.Add("Contents", pdf.Pages[tableOfContentsStart]);
         PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[pdf.PageCount - 1]);
-        foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => DateTime.Parse(kvp.Key)))
+        foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
         {
             Directory.CreateDirectory($"Output/Pdfs/{kvp.Key}");
             foreach(Poem poem in kvp.Value)
@@ -292,7 +293,7 @@ class Program
     static async Task<string> RenderTableOfContents(IPage page)
     {
         string toc = string.Empty;
-        foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => DateTime.Parse(kvp.Key)))
+        foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
         {
             toc += $"<div class='toc-section'>";
             toc += $"  <div class='toc-flex toc-section-header'>";

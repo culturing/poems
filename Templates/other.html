@@ -7,8 +7,6 @@
     <div class="navbar">
         <div>
             <a class="nav" href="/Poems/index.html">home</a>
-            <a id="previous" class="nav" href="Emptiness That None Can Understand.html">prev</a>
-            <a id="next" class="nav" href="Nutrition by Faith Alone.html">next</a>
         </div>  
         <div>
             <a id="print" class="nav" href="javascript:window.print()">print</a>
@@ -18,16 +16,7 @@
     <div id="container-parent">
         <div id="container">          
             <div id="content">
-                <h3>Rest Unassured</h3>
-
-<p style='margin:0;'><em><small><small>21 February 2023</small></small></em></p>  
-
-<p>With the shadows dawning, with dawn descending,<br />
-I call for you, weeping, alone in the meadow,<br />
-with words for renewal. I say rest unassured,<br />
-be aware but not pure. There are days on horizons<br />
-not noticed before. As for us, it could be that<br />
-this setting defines us, but that is no reason to wallow.</p>
+                {{content}}
             </div>
         </div>
     </div>
@@ -35,13 +24,5 @@ this setting defines us, but that is no reason to wallow.</p>
 </body>
 <script>    
     console.log("Like looking under the hood? https://github.com/culturing/Poems");
-
-    document.onkeydown = function(e) {
-        if (e.keyCode == 37) {
-            document.getElementById("previous").click();
-        } else if (e.keyCode == 39) {
-            document.getElementById("next").click();
-        }
-    }
 </script>
 </html>

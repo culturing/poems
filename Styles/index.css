@@ -4,9 +4,11 @@ h1 { margin: 0; padding: 1rem; }
 h2 { margin: 0; padding-bottom: 1rem; }
 h3 { margin: 0; padding-top: 1rem; padding-bottom: 0.5rem; }
 a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickness: 0;}
-
 #container-chronology h2 { padding-bottom: 0; }
 #container-chronology h3:first-child { padding-top: 0; }
+.navbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+.nav { padding: 0.5rem; text-decoration: none; color: rgba(245,245,245,0.5) }
+.nav:hover { background-color: rgb(245,245,245,0.25); }
 
 @media only screen and (min-width : 1025px)
 {
@@ -30,4 +32,5 @@ a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickn
     body { background-color: white; color: black; }
     #license { display: none; }
     a { text-decoration-color: black; color: black; }
+    .navbar { display: none; }
 }
