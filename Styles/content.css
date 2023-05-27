@@ -12,10 +12,16 @@ h3 { margin: 0; }
     #content { max-width: 61.8% }
 }
 
+@media only screen
+{
+    /* #footer { display: none; } */
+}
+
 @media only print
 {
     body { background-color: white; color: black; }
     #license { display: none; }
     a { text-decoration-color: black; color: black; }
     .navbar { display: none; }
+    /* #footer { position: fixed; bottom: 0; width: 100%; text-align: center; } */
 }
