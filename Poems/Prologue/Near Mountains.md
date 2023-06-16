@@ -11,7 +11,7 @@ but surely these things are our gods.
 
 How have we gone astray? Is it maybe
 that no one is driving the ship, that our voyage,
-once rudderless, now must be captained?
+once rudderless, must now be captained?
 Or is it that someone *is* driving, and driving badly,
 and therefore the crew must resist?
 Or is it that both have been tried and retried,
