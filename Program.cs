@@ -78,7 +78,7 @@ class Program
         foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => DateTime.Parse(kvp.Key)))
         {
             chronologyHtml += $"<h3>{kvp.Key}</h3>\n";
-            foreach(Poem poem in kvp.Value)
+            foreach(Poem poem in Enumerable.Reverse(kvp.Value))
             {
                 chronologyHtml += $"<div style='{poem.Style()}'>{poem.Link}</div>\n";                    
             }
