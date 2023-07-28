@@ -1,0 +1,56 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="../../Styles/quattrocento-latin.woff2" as="font" type="font/woff2">
+<link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
+<body>
+    <div class="navbar">
+        <div>
+            <a class="nav" href="/Poems/index.html">home</a>
+            <a id="previous" class="nav" href="To Even Have a Dream.html">prev</a>
+            <a id="next" class="nav" href="A Raid on Delphi.html">next</a>
+        </div>  
+        <div>
+            <a id="print" class="nav" href="javascript:window.print()">print</a>
+            <a id="faq" class="nav" href="../Other/FAQ.html">faq</a>
+        </div>
+    </div>
+    <div id="container-parent">
+        <div id="container">          
+            <div id="content">
+                <h3>I have known women</h3>
+
+<p style='margin:0;'><em><small><small>28 July 2023</small></small></em></p>  
+
+<p>I have known women (I have known them well)<br />
+but what women are thinking I never shall tell,<br />
+for one dreams of a home as one dreams to be free,<br />
+and another is cursed by the blessings in me.<br />
+I shall answer with questions and this much avow,<br />
+that the life of the living is death anyhow,<br />
+but the solitude curses the wanderer fair<br />
+with the foul and pestilent, pitiless, bare,<br />
+until ragged or richly he comes to surmise<br />
+that with women he was at least somewhat prized.<br />
+But too late, alas, they have all found their homes,<br />
+as he sups with the misers and picks at the bones.</p>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="footer"></div> -->
+    <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+</body>
+<script>    
+    console.log("Like looking under the hood? https://github.com/culturing/Poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
+
+    // document.getElementById('footer').innerText = window.location;
+</script>
+</html>
