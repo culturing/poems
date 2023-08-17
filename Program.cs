@@ -235,7 +235,7 @@ class Program
 
                 using (PdfDocument poemPdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
                 {
-                    poem.Page = pdf.PageCount;
+                    poem.Page = pdf.PageCount + 1;
                     MergePdfs(poemPdf, pdf);
                     poemsOutline.Outlines.Add(poem.Title, pdf.Pages[pdf.PageCount - poemPdf.PageCount]);
                 }
