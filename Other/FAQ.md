@@ -21,7 +21,3 @@ It depends who asks
 ### Can I contact you?
 
 Only if you can solve this riddle: culturing at protonmail dot com
-
-### Who killed JFK?
-
-Probably Carlos Marcello

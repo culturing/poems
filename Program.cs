@@ -15,7 +15,6 @@ namespace Poems;
 class Poem
 {
     public string Title { get; set; }
-    public int Index { get; set; }
     public string Link { get; set; }
     public bool Bold { get; set; } = false;
     public DateTime PublicationDate { get; set; }

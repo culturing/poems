@@ -1,0 +1,52 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="../../Styles/quattrocento-latin.woff2" as="font" type="font/woff2">
+<link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
+<body>
+    <div class="navbar">
+        <div>
+            <a class="nav" href="/Poems/index.html">home</a>
+            <a id="previous" class="nav" href="Kennedy's Peace.html">prev</a>
+            <a id="next" class="nav" href="We Silly Mammals.html">next</a>
+        </div>  
+        <div>
+            <a id="print" class="nav" href="javascript:window.print()">print</a>
+            <a id="faq" class="nav" href="../Other/FAQ.html">faq</a>
+        </div>
+    </div>
+    <div id="container-parent">
+        <div id="container">          
+            <div id="content">
+                <h3>A Typical Day</h3>
+
+<p style='margin:0;'><em><small><small>23 September 2023</small></small></em></p>  
+
+<p>On a typical day, all the typical people<br />
+go down to the river to play, the most<br />
+normal of folk, acting normally, day by day.<br />
+But outside of the current one stands<br />
+on firm ground, with strong legs, and skips rocks<br />
+to learn how much the current can say,<br />
+and to test its vibrations for permanance,<br />
+longing for such, disappointed so far,<br />
+one who knows one must learn in this way,<br />
+because soon comes a time of the flood,<br />
+and somebody must watch night and day.</p>
+            </div>
+        </div>
+    </div>
+    <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+</body>
+<script>    
+    console.log("Like looking under the hood? https://github.com/culturing/Poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
+</script>
+</html>
