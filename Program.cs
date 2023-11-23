@@ -38,6 +38,8 @@ class Poem
 class Program
 {
     static Markdown md = new Markdown();
+    static string IndexTemplate = File.ReadAllText("Templates/index.html");
+    static string BestTemplate = File.ReadAllText("Templates/best.html");
     static string ContentTemplate = File.ReadAllText("Templates/content.html");
     static string OtherTemplate = File.ReadAllText("Templates/other.html");
     static string TableOfContentsTemplate = File.ReadAllText("Templates/toc.html");
@@ -67,19 +69,28 @@ class Program
 
     // Build Index
         string indexHtml = string.Empty;
+        string bestIndexHtml = string.Empty;
         foreach(Poem poem in Poems.OrderBy(p => Regex.Replace(p.Title, @"[^\w\s]", "")))
         {
             indexHtml += $"<div style='{poem.Style()}'>{poem.Link}</div>\n";
+            if (poem.Bold)
+                bestIndexHtml += $"<div>{poem.Link}</div>\n";
         }
 
     // Build Chronology
         string chronologyHtml = string.Empty;
+        string bestChronologyHtml = string.Empty;
         foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => DateTime.Parse(kvp.Key)))
         {
             chronologyHtml += $"<h3>{kvp.Key}</h3>\n";
+            if (kvp.Value.Any(poem => poem.Bold))
+                bestChronologyHtml += $"<h3>{kvp.Key}</h3>\n";
+
             foreach(Poem poem in Enumerable.Reverse(kvp.Value))
             {
                 chronologyHtml += $"<div style='{poem.Style()}'>{poem.Link}</div>\n";                    
+                if (poem.Bold)
+                    bestChronologyHtml += $"<div>{poem.Link}</div>\n";
             }
         }
 
@@ -106,17 +117,23 @@ class Program
             File.WriteAllText(poem.FilePath, contents);
         }
 
-        string finalIndexHtml = File.ReadAllText("Templates/index.html")
+        string finalIndexHtml = IndexTemplate
             .Replace("{{index}}", indexHtml)
             .Replace("{{chronology}}", chronologyHtml);
 
         File.WriteAllText("index.html", finalIndexHtml);
 
+        string finalBestIndexHtml = BestTemplate
+            .Replace("{{index}}", bestIndexHtml)
+            .Replace("{{chronology}}", bestChronologyHtml);
+
+        File.WriteAllText("best.html", finalBestIndexHtml);
+
         RenderOtherPage("Other/FAQ.md");
         RenderOtherPage("Other/Favorite Poems.md");
         RenderOtherPage("Other/Why Poetry.md");
 
-        await RenderPdf("Poems.pdf");
+        //await RenderPdf("Poems.pdf");
     }
 
     static void AddPoem(string filepath)
