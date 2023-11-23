@@ -41,7 +41,7 @@ class Program
     static string IndexTemplate = File.ReadAllText("Templates/index.html");
     static string BestTemplate = File.ReadAllText("Templates/best.html");
     static string ContentTemplate = File.ReadAllText("Templates/content.html");
-    static string OtherTemplate = File.ReadAllText("Templates/other.html");
+    static string FaqTemplate = File.ReadAllText("Templates/faq.html");
     static string TableOfContentsTemplate = File.ReadAllText("Templates/toc.html");
     static string PdfIndexTemplate = File.ReadAllText("Templates/pdf-index.html");
     static List<Poem> Poems { get; set; } = new List<Poem>();
@@ -133,7 +133,7 @@ class Program
         RenderOtherPage("Other/Favorite Poems.md");
         RenderOtherPage("Other/Why Poetry.md");
 
-        //await RenderPdf("Poems.pdf");
+        await RenderPdf("Poems.pdf");
     }
 
     static void AddPoem(string filepath)
@@ -185,7 +185,7 @@ class Program
     static void RenderOtherPage(string filepath)
     {
         string text = File.ReadAllText(filepath);
-        string html = OtherTemplate.Replace("{{content}}", md.Transform(text));
+        string html = FaqTemplate.Replace("{{content}}", md.Transform(text));
         string htmlpath = $"Output/Other/{Path.GetFileNameWithoutExtension(filepath)}.html";
         File.WriteAllText(htmlpath, html);   
     }
