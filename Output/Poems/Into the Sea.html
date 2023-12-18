@@ -1,0 +1,59 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="../../Styles/quattrocento-latin.woff2" as="font" type="font/woff2">
+<link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
+<body>
+    <div class="navbar">
+        <div>
+            <a class="nav" href="/poems/index.html">home</a>
+            <a class="nav" href="/poems/best.html">best</a>
+            <a id="previous" class="nav" href="Rule By Consent.html">prev</a>
+            <a id="next" class="nav" href="Barrel of Monkeys.html">next</a>
+        </div>  
+        <div>
+            <a id="print" class="nav" href="javascript:window.print()">print</a>
+            <a id="faq" class="nav" href="../Other/FAQ.html">faq</a>
+        </div>
+    </div>
+    <div id="container-parent">
+        <div id="container">          
+            <div id="content">
+                <h3>Into the Sea</h3>
+
+<p style='margin:0;'><em><small><small>18 December 2023</small></small></em></p>  
+
+<p>Into the sea, the Mediterranean Sea,<br />
+swim with me, past commander and legionary,<br />
+past Athens, all temples of Zeus,<br />
+and Jerusalem too; swim past Crete<br />
+and the legends of Homer, and rest<br />
+on the sea's cold floor. Here find solace,<br />
+long sought by all moderns, and here find<br />
+the end of all law and obedience,<br />
+chthonic remonstrances, pulsing through time<br />
+and the hearts of all men, underneath<br />
+all ideals, in the bosom of earth,<br />
+in the womb of all worlds. Under here,<br />
+to the core, thirst no more, for these waters<br />
+will satisfy, unlike those others<br />
+that rain from the sky. But thus nourished,<br />
+return and build shelters for you, and for others,<br />
+to live in as much peace as possible.</p>
+            </div>
+        </div>
+    </div>
+    <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+</body>
+<script>    
+    console.log("Like looking under the hood? https://github.com/culturing/poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
+</script>
+</html>

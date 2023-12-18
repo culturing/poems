@@ -1,0 +1,57 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="../../Styles/quattrocento-latin.woff2" as="font" type="font/woff2">
+<link rel="stylesheet" type="text/css" href="../../Styles/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../../Styles/content.css" />
+<body>
+    <div class="navbar">
+        <div>
+            <a class="nav" href="/poems/index.html">home</a>
+            <a class="nav" href="/poems/best.html">best</a>
+            <a id="previous" class="nav" href="Vesta.html">prev</a>
+            <a id="next" class="nav" href="Rule By Consent.html">next</a>
+        </div>  
+        <div>
+            <a id="print" class="nav" href="javascript:window.print()">print</a>
+            <a id="faq" class="nav" href="../Other/FAQ.html">faq</a>
+        </div>
+    </div>
+    <div id="container-parent">
+        <div id="container">          
+            <div id="content">
+                <h3>Touch</h3>
+
+<p style='margin:0;'><em><small><small>18 December 2023</small></small></em></p>  
+
+<p>Let us walk, if you will, through the avenues<br />
+of time, to the clarity of iron, a firmness<br />
+once realized and never forgotten. Its age<br />
+lives within us, with all ages past, in a soup<br />
+we call history, in a place we call home.<br />
+If we walk, we shall see that all men<br />
+are the same, whether born now or later,<br />
+that Progress is groundless, it swims in the aether.<br />
+Machines have not changed what we are, nor has money,<br />
+nor charity, law, or iron. The <em>sperma</em> remains what it was,<br />
+is now, and ever shall be, implanted by Vesta, a yearning<br />
+for fullness, which all mammals know, though we may<br />
+know it best. How has this been forgotten?<br />
+How have we illustrious mammals<br />
+lost <em>touch</em> with those things that define us?</p>
+            </div>
+        </div>
+    </div>
+    <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+</body>
+<script>    
+    console.log("Like looking under the hood? https://github.com/culturing/poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
+</script>
+</html>
