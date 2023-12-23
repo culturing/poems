@@ -1,0 +1,54 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="../../../Styles/quattrocento-latin.woff2" as="font" type="font/woff2">
+<link rel="stylesheet" type="text/css" href="../../../Styles/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../../../Styles/content.css" />
+<title>Time</title>
+<body>
+    <div class="navbar">
+        <div>
+            <a class="nav" href="../../../index.html">home</a>
+            <a class="nav" href="../../../best.html">best</a>
+            <a id="previous" class="nav" href="../2022-10/as-ever.html">prev</a>
+            <a id="next" class="nav" href="../2022-10/no-reason.html">next</a>
+        </div>  
+        <div>
+            <a id="print" class="nav" href="javascript:window.print()">print</a>
+            <a id="faq" class="nav" href="../../../Other/FAQ.html">faq</a>
+        </div>
+    </div>
+    <div id="container-parent">
+        <div id="container">          
+            <div id="content">
+                <h3>Time</h3>
+
+<p style='margin:0;'><em><small><small>14 October 2022</small></small></em></p>  
+
+<p>Walk here on this beach with me,<br />
+where time is, in the evening of<br />
+its missionary gaze, the goal to save<br />
+all who will hear. Walk here with me,<br />
+where gods can die, and often do.<br />
+Walk here, but slowly. Know these waves,<br />
+the ones you've learned how not to hear.<br />
+You'll hear them now, so gently falling down<br />
+upon all things. So time falls, so it goes,<br />
+and so we go, into the crypt of time,<br />
+where all days are reborn, are born, and die.</p>
+            </div>
+        </div>
+    </div>
+    <a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+</body>
+<script>    
+    console.log("Like looking under the hood? https://github.com/culturing/poems");
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            document.getElementById("previous").click();
+        } else if (e.keyCode == 39) {
+            document.getElementById("next").click();
+        }
+    }
+</script>
+</html>

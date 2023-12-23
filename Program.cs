@@ -105,12 +105,12 @@ class Program
             if (i > 0)
             {
                 Poem prev = OrderedPoems[i-1];
-                previousPath = Path.GetFileName(prev.FilePath);
+                previousPath = $"../{prev.PublicationDate.ToString("yyyy-MM")}/{Path.GetFileName(prev.FilePath)}";
             }
             if (i < OrderedPoems.Count - 1)
             {
                 Poem next = OrderedPoems[i+1];
-                nextPath = Path.GetFileName(next.FilePath);
+                nextPath = $"../{next.PublicationDate.ToString("yyyy-MM")}/{Path.GetFileName(next.FilePath)}";
             }
             string contents = File.ReadAllText(poem.FilePath);
             contents = contents.Replace("{{previous}}", previousPath);
@@ -164,11 +164,15 @@ class Program
             poem.PublicationDate = System.DateTime.Parse(lines[0]);
             lines[0] = $"<p style='margin:0;'><em><small><small>{lines[0]}</small></small></em></p>";                
         }
+
+        string dirPath = $"Output/Poems/{poem.PublicationDate.ToString("yyyy-MM")}";
+        Directory.CreateDirectory(dirPath);
         
         string content = String.Join("  \n", lines);
         string contentHtml = md.Transform(content);
-        string finalPoemHtml = ContentTemplate.Replace("{{content}}", contentHtml);
-        string finalPath = $"Output/Poems/{filename}.html";
+        string finalPoemHtml = ContentTemplate.Replace("{{content}}", contentHtml).Replace("{{title}}", poem.Title);
+        string finalFileName = Regex.Replace(filename.ToLower().Replace(" ", "-"), @"[^0-9a-zA-Z\-]", "");
+        string finalPath = $"{dirPath}/{finalFileName}.html";
         File.WriteAllText(finalPath, finalPoemHtml);
 
         poem.Link = $"<a href=\"{finalPath}\">{poem.Title}</a>";
