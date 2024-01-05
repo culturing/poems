@@ -9,6 +9,7 @@ using Microsoft.Playwright;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 using PdfSharp.Drawing;
+using System.Diagnostics;
 
 namespace Poems;
 
@@ -135,6 +136,8 @@ class Program
         RenderOtherPage("Other/Why Poetry.md");
 
         await RenderPdf("Poems.pdf");
+
+        RenderVideo();
     }
 
     static void AddPoem(string filepath)
@@ -374,5 +377,29 @@ class Program
         await page.PdfAsync(options);
 
         return pdfPath;
+    }
+
+    static void RenderVideo()
+    {
+        if (!Directory.Exists("Video"))
+            Directory.CreateDirectory("Video");
+
+        foreach(string dirpath in Directory.GetDirectories("Audio"))
+        {
+            string dir = Path.GetFileName(dirpath);
+            Directory.CreateDirectory($"Video/{dir}");
+            foreach(string filepath in Directory.GetFiles(dirpath))
+            {
+                string file = Path.GetFileNameWithoutExtension(filepath);
+                string outpath = Path.GetFullPath($"Video/{dir}/{file}.mp4");
+                string bgpath = Path.GetFullPath("Audio/bg.png");
+                if (!File.Exists(outpath))
+                {
+                    string args = $" -n -i \"{bgpath}\" -i \"{Path.GetFullPath(filepath)}\" \"{outpath}\"";
+                    Process p = Process.Start("ffmpeg", args);
+                    p.WaitForExit();
+                }
+            }
+        }
     }
 }
