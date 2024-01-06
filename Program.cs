@@ -200,6 +200,9 @@ class Program
 
     static async Task RenderPdf(string outpath)
     {
+        if (File.Exists(outpath))
+            return; 
+            
         using PdfDocument pdf = new PdfDocument();
 
         using IPlaywright playwright = await Playwright.CreateAsync();

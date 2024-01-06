@@ -27,6 +27,11 @@ a { text-decoration-color: whitesmoke; color: whitesmoke; text-decoration-thickn
     #container-chronology { padding-top: 1rem;}
 }
 
+@media only screen and (max-width : 512px)
+{
+    #pdf, #previous, #next { display: none; }
+}
+
 @media only print
 {
     body { background-color: white; color: black; }
