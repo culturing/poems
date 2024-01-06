@@ -60,13 +60,14 @@ class Program
     
     // Parse Poems
         foreach (string dirpath in Directory.EnumerateDirectories("Poems"))
-        foreach (string filepath in Directory.EnumerateFiles(dirpath))
         {
-            AddPoem(filepath);
-        }
-        foreach (string filepath in Directory.EnumerateFiles("Poems"))
-        {
-            AddPoem(filepath);
+            if (Path.GetFileName(dirpath) == "Purgatory")
+                continue;
+            
+            foreach (string filepath in Directory.EnumerateFiles(dirpath))
+            {
+                AddPoem(filepath);
+            }
         }
 
     // Build Index

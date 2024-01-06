@@ -8,22 +8,22 @@ document.onkeydown = function(e) {
     }
 }
 
-var startX = 0;
-document.ontouchstart = function(e) {
-    if (e.changedTouches.length > 0){
-        startX = e.changedTouches[0].screenX;
-    }        
-}
+// var startX = 0;
+// document.ontouchstart = function(e) {
+//     if (e.changedTouches.length > 0){
+//         startX = e.changedTouches[0].screenX;
+//     }        
+// }
 
-var swipeThreshold = 300;
-document.ontouchend = function(e) {
-    if (e.changedTouches.length > 0){
-        var changeX = e.changedTouches[0].screenX - startX;
+// var swipeThreshold = 300;
+// document.ontouchend = function(e) {
+//     if (e.changedTouches.length > 0){
+//         var changeX = e.changedTouches[0].screenX - startX;
 
-        if (changeX > swipeThreshold) {
-            document.getElementById("previous").click();
-        } else if (changeX < -swipeThreshold) {
-            document.getElementById("next").click();
-        }
-    }
-}
+//         if (changeX > swipeThreshold) {
+//             document.getElementById("previous").click();
+//         } else if (changeX < -swipeThreshold) {
+//             document.getElementById("next").click();
+//         }
+//     }
+// }
