@@ -396,7 +396,7 @@ class Program
             {
                 string file = Path.GetFileNameWithoutExtension(filepath);
                 string outpath = Path.GetFullPath($"Video/{dir}/{file}.mp4");
-                string bgpath = Path.GetFullPath("Audio/bg.png");
+                string bgpath = Path.GetFullPath("Video/bg.png");
                 if (!File.Exists(outpath))
                 {
                     string args = $" -n -i \"{bgpath}\" -i \"{Path.GetFullPath(filepath)}\" \"{outpath}\"";
