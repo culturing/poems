@@ -6,34 +6,40 @@
 <style>
     body {
         font-family: Quattrocento;
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: whitesmoke;
         line-height: 1.25rem;
         margin: 0;
         padding: 1rem;
+        width: 1920px;
+        height: 1080px;
     }
 
-    .container {
+    .container-parent {
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 100%;
     }
 
-    .copyright {
-        white-space: pre;
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 3rem;
+        font-weight: bolder;
     }
 </style>
 
 <body>
-    <div class="container">
-        <div class="copyright">
-© 2024 by culturing
-
-All rights reserved
-
-This book may be printed for personal use
-All other reproduction is prohibited
-        </div>
-    </div>
+    <div class="container-parent">
+        <div class="container">
+            <div class="title"></div>
+        </div>  
+    </div>  
 </body>

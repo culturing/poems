@@ -138,7 +138,7 @@ class Program
 
         await RenderPdf("Poems.pdf");
 
-        RenderVideo();
+        await RenderVideo();
     }
 
     static void AddPoem(string filepath)
@@ -383,10 +383,17 @@ class Program
         return pdfPath;
     }
 
-    static void RenderVideo()
+    static async Task RenderVideo()
     {
         if (!Directory.Exists("Video"))
-            Directory.CreateDirectory("Video");
+            Directory.CreateDirectory("Video");            
+        if (!Directory.Exists("Output/Video"))
+            Directory.CreateDirectory("Output/Video");            
+
+        using IPlaywright playwright = await Playwright.CreateAsync();
+        await using IBrowser browser = await playwright.Chromium.LaunchAsync();
+        IPage page = await browser.NewPageAsync();
+        await page.GotoAsync("file:///" + Path.GetFullPath("Templates/video.html"));
 
         foreach(string dirpath in Directory.GetDirectories("Audio"))
         {
@@ -394,16 +401,33 @@ class Program
             Directory.CreateDirectory($"Video/{dir}");
             foreach(string filepath in Directory.GetFiles(dirpath))
             {
-                string file = Path.GetFileNameWithoutExtension(filepath);
-                string outpath = Path.GetFullPath($"Video/{dir}/{file}.mp4");
-                string bgpath = Path.GetFullPath("Video/bg.png");
+                string title = Path.GetFileNameWithoutExtension(filepath);
+                string outpath = Path.GetFullPath($"Video/{dir}/{title}.mp4");
                 if (!File.Exists(outpath))
                 {
-                    string args = $" -n -i \"{bgpath}\" -i \"{Path.GetFullPath(filepath)}\" \"{outpath}\"";
+                    // Generate video
+                    // ffmpeg codec help: https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
+                    // youtube format help: https://support.google.com/youtube/answer/4603579?hl=en                    
+                    string titleImgFilePath = await RenderVideoSplash(page, title);
+                    string audioCodec = "-c:a copy"; 
+                    string videoCodec = "-c:v libx264 -r 24 -qp 0 -preset veryslow -s 1920x1080 -tune stillimage"; // H.264 24fps lossless compressed
+                    string args = $" -threads 4 -n -i \"{titleImgFilePath}\" -i \"{Path.GetFullPath(filepath)}\" {audioCodec} {videoCodec} \"{outpath}\"";
                     Process p = Process.Start("ffmpeg", args);
                     p.WaitForExit();
                 }
             }
         }
+    }
+
+    static async Task<string> RenderVideoSplash(IPage page, string title)
+    {
+        await page.EvaluateAsync($"document.querySelector('.title').innerHTML = '{title}'");
+        
+        PageScreenshotOptions options = new PageScreenshotOptions();
+        options.FullPage = true;
+        options.Path = $"Output/Video/{title}.png";
+        await page.ScreenshotAsync(options);
+        
+        return options.Path;
     }
 }
