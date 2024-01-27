@@ -402,18 +402,13 @@ class Program
             foreach(string filepath in Directory.GetFiles(dirpath))
             {
                 string title = Path.GetFileNameWithoutExtension(filepath);
-                string outpath = Path.GetFullPath($"Video/{dir}/{title}.mp4");
+                string outpath = Path.GetFullPath($"Video/{dir}/{title}.flv");
                 if (!File.Exists(outpath))
                 {
-                    // Generate video
-                    // ffmpeg codec help: https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
-                    // youtube format help: https://support.google.com/youtube/answer/4603579?hl=en                    
-                    string titleImgFilePath = await RenderVideoSplash(page, title);
-                    string audioCodec = "-c:a copy"; 
-                    string videoCodec = "-c:v libx264 -r 24 -qp 0 -preset veryslow -s 1920x1080 -tune stillimage"; // H.264 24fps lossless compressed
-                    string args = $" -threads 4 -n -i \"{titleImgFilePath}\" -i \"{Path.GetFullPath(filepath)}\" {audioCodec} {videoCodec} \"{outpath}\"";
-                    Process p = Process.Start("ffmpeg", args);
-                    p.WaitForExit();
+                // Generate youtube-compatible video. https://superuser.com/a/1041820
+                    string titleImgFilePath = await RenderVideoSplash(page, title);                    
+                    string args = $"-r 1 -loop 1 -i \"{titleImgFilePath}\" -i \"{Path.GetFullPath(filepath)}\" -acodec copy -r 1 -shortest -vf scale=1920:1080 \"{outpath}\"";
+                    Process.Start("ffmpeg", args).WaitForExit();              
                 }
             }
         }
