@@ -43,8 +43,9 @@ class Program
     static string BestTemplate = File.ReadAllText("Templates/best.html");
     static string ContentTemplate = File.ReadAllText("Templates/content.html");
     static string FaqTemplate = File.ReadAllText("Templates/faq.html");
-    static string TableOfContentsTemplate = File.ReadAllText("Templates/toc.html");
-    static string PdfIndexTemplate = File.ReadAllText("Templates/pdf-index.html");
+    static string PdfCopyrightTemplate = File.ReadAllText("Templates/pdf/copyright.html");
+    static string PdfTableOfContentsTemplate = File.ReadAllText("Templates/pdf/toc.html");
+    static string PdfIndexTemplate = File.ReadAllText("Templates/pdf/index.html");
     static List<Poem> Poems { get; set; } = new List<Poem>();
     static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
     static XFont Font = new XFont("Quattrocento", 12.0);
@@ -216,7 +217,7 @@ class Program
 
     // Add title
         pdfRenderOptions.Path = $"Output/Pdfs/Title.pdf";
-        await page.GotoAsync("file:///" + Path.GetFullPath($"Templates/title.html"));                    
+        await page.GotoAsync("file:///" + Path.GetFullPath($"Templates/pdf/title.html"));                    
         await page.PdfAsync(pdfRenderOptions);
         using (PdfDocument titlePdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
         {
@@ -225,8 +226,7 @@ class Program
         pdf.Outlines.Add("Title", pdf.Pages[pdf.PageCount - 1]);
 
     // Add copyright
-        string copyrightHtml = File.ReadAllText("Templates/copyright.html")
-            .Replace("{{year}}", DateTime.Now.ToString("yyyy"));
+        string copyrightHtml = PdfCopyrightTemplate.Replace("{{year}}", DateTime.Now.ToString("yyyy"));
         string copyrightPath = $"Output/Other/Copyright.html";
         File.WriteAllText(copyrightPath, copyrightHtml);
 
@@ -338,7 +338,7 @@ class Program
             toc += $"</div>";
         }
 
-        string tocHtml = TableOfContentsTemplate.Replace("{{toc}}", toc);
+        string tocHtml = PdfTableOfContentsTemplate.Replace("{{toc}}", toc);
         string filepath = "Output/Other/TableOfContents.html";
         File.WriteAllText(filepath, tocHtml);
 
@@ -406,7 +406,7 @@ class Program
                 if (!File.Exists(outpath))
                 {
                 // Generate youtube-compatible video. https://superuser.com/a/1041820
-                    string titleImgFilePath = await RenderVideoSplash(page, title);                    
+                    string titleImgFilePath = await RenderVideoSplash(page, dir, title);                    
                     string args = $"-r 1 -loop 1 -i \"{titleImgFilePath}\" -i \"{Path.GetFullPath(filepath)}\" -acodec copy -r 1 -shortest -vf scale=1920:1080 \"{outpath}\"";
                     Process.Start("ffmpeg", args).WaitForExit();              
                 }
@@ -414,13 +414,13 @@ class Program
         }
     }
 
-    static async Task<string> RenderVideoSplash(IPage page, string title)
+    static async Task<string> RenderVideoSplash(IPage page, string dir, string title)
     {
         await page.EvaluateAsync($"document.querySelector('.title').innerHTML = '{title}'");
         
         PageScreenshotOptions options = new PageScreenshotOptions();
         options.FullPage = true;
-        options.Path = $"Output/Video/{title}.png";
+        options.Path = $"Output/Video/{dir}/{title}.png";
         await page.ScreenshotAsync(options);
         
         return options.Path;
