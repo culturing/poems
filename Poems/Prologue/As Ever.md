@@ -1,4 +1,4 @@
-*As Ever
+As Ever
 14 October 2022
 
 We no more renew the song

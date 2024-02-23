@@ -22,18 +22,14 @@ class Poem
     public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     public string FilePath { get; set; }
     public int Page { get; set; }
-    public string Style()
+    public string Style(bool bestOnly = false)
     {
-        if (string.IsNullOrEmpty(_Style))
-        {
-            _Style = string.Empty;
-            if (Bold)
-                _Style += "font-weight: bold;";
-        }
-        return _Style;
+        string style = string.Empty;
+        if (Bold && !bestOnly)
+            style += "font-weight: bold;";
+        return style;
     }
-
-    protected string _Style;
+    public Dictionary<string, string> Variables { get; set; } = new();
 }
 
 class Program
@@ -48,6 +44,7 @@ class Program
     static string PdfIndexTemplate = File.ReadAllText("Templates/pdf/index.html");
     static List<Poem> Poems { get; set; } = new List<Poem>();
     static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
+    static Dictionary<string, IEnumerable<Poem>> FilteredPoemsByDate;
     static XFont Font = new XFont("Quattrocento", 12.0);
 
     static async Task Main(string[] args)
@@ -139,6 +136,8 @@ class Program
 
         await RenderPdf("Poems.pdf");
 
+        //await RenderPdf("Submission.pdf", true, new DateTime(2021, 02, 01), new DateTime(2022, 10, 31));
+
         await RenderVideo();
     }
 
@@ -200,10 +199,26 @@ class Program
         File.WriteAllText(htmlpath, html);   
     }
 
-    static async Task RenderPdf(string outpath)
+    static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime start = default, DateTime end = default)
     {
         if (File.Exists(outpath))
             return; 
+
+        if (start == default)
+            start = DateTime.MinValue;
+        if (end == default)
+            end = DateTime.MaxValue;
+
+        FilteredPoemsByDate = new();
+        foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate)
+        {
+            IEnumerable<Poem> filteredPoems = kvp.Value.Where(poem => poem.PublicationDate > start && poem.PublicationDate < end);
+            if (bestOnly)
+                filteredPoems = filteredPoems.Where(poem => poem.Bold);
+
+            if (filteredPoems.Count() > 0)
+                FilteredPoemsByDate[kvp.Key] = filteredPoems;                
+        }
             
         using PdfDocument pdf = new PdfDocument();
 
@@ -242,7 +257,7 @@ class Program
     // Add temporary table of contents
         int tableOfContentsStart = pdf.PageCount;
         int tableOfContentsPageCount = 0;
-        await RenderTableOfContents(page);
+        await RenderTableOfContents(page, bestOnly);
         using (PdfDocument tableOfContentsPdf = PdfReader.Open("Output/Pdfs/TableOfContents.pdf", PdfDocumentOpenMode.Import))
         {
             tableOfContentsPageCount = tableOfContentsPdf.PageCount;
@@ -252,10 +267,14 @@ class Program
     // Add poems
         PdfOutline contentsOutline = pdf.Outlines.Add("Contents", pdf.Pages[tableOfContentsStart]);
         PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[pdf.PageCount - 1]);
-        foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
+        foreach(KeyValuePair<string, IEnumerable<Poem>> kvp in FilteredPoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
         {
+            IEnumerable<Poem> poems = kvp.Value.Where(poem => poem.PublicationDate > start && poem.PublicationDate < end);
+            if (bestOnly)
+                poems = poems.Where(poem => poem.Bold);
+
             Directory.CreateDirectory($"Output/Pdfs/{kvp.Key}");
-            foreach(Poem poem in kvp.Value)
+            foreach(Poem poem in poems)
             {                    
                 pdfRenderOptions.Path = $"Output/Pdfs/{kvp.Key}/{Path.GetFileNameWithoutExtension(poem.FilePath)}.pdf";
                 await page.GotoAsync("file:///" + Path.GetFullPath(poem.FilePath));                    
@@ -271,7 +290,7 @@ class Program
         }
 
     // Render final table of contents
-        string tocPath = await RenderTableOfContents(page);
+        string tocPath = await RenderTableOfContents(page, bestOnly);
         using (PdfDocument tableOfContentsPdf = PdfReader.Open(tocPath, PdfDocumentOpenMode.Import))
         {
             int i = tableOfContentsStart;
@@ -287,7 +306,7 @@ class Program
         }
 
     // Add index
-        string indexPath = await RenderPdfIndex(page);
+        string indexPath = await RenderPdfIndex(page, bestOnly, start, end);
         using (PdfDocument indexPdf = PdfReader.Open(indexPath, PdfDocumentOpenMode.Import))
         {
             MergePdfs(indexPdf, pdf);
@@ -318,10 +337,10 @@ class Program
         }
     }
 
-    static async Task<string> RenderTableOfContents(IPage page)
+    static async Task<string> RenderTableOfContents(IPage page, bool bestOnly)
     {
         string toc = string.Empty;
-        foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
+        foreach(KeyValuePair<string, IEnumerable<Poem>> kvp in FilteredPoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
         {
             toc += $"<div class='toc-section'>";
             toc += $"  <div class='toc-flex toc-section-header'>";
@@ -331,7 +350,7 @@ class Program
             foreach(Poem poem in kvp.Value)
             {
                 toc += $"  <div class='toc-flex toc-poem'>";
-                toc += $"    <span style='{poem.Style()}'>{poem.Title}</span>";
+                toc += $"    <span style='{poem.Style(bestOnly)}'>{poem.Title}</span>";
                 toc += $"    <span class='toc-page'>{poem.Page}</span>";
                 toc += $"  </div>";
             }
@@ -355,15 +374,21 @@ class Program
         return pdfPath;
     }
 
-    static async Task<string> RenderPdfIndex(IPage page)
+    static async Task<string> RenderPdfIndex(IPage page, bool bestOnly, DateTime start, DateTime end)
     {
         string index = string.Empty;
         foreach(Poem poem in Poems.OrderBy(p => Regex.Replace(p.Title, @"[^\w\s]", "")))
         {
+            if (bestOnly && !poem.Bold)
+                continue; 
+
+            if (poem.PublicationDate > start && poem.PublicationDate < end)
+        {
             index += $"<div class='toc-flex toc-poem'>";
-            index += $"  <span style='{poem.Style()}'>{poem.Title}</span>";
+                index += $"  <span style='{poem.Style(bestOnly)}'>{poem.Title}</span>";
             index += $"  <span class='toc-page'>{poem.Page}</span>";
             index += $"</div>";
+            }
         }
 
         string indexHtml = PdfIndexTemplate.Replace("{{index}}", index);
