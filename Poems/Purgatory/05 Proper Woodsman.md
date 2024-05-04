@@ -1,11 +1,11 @@
-*Proper Woodsman
+Proper Woodsman
 12 January 2024
 
 I am writing to tell you a secret,
 learned time and again by all lovers,
 that lies serve to fertilize women,
 and men have their gardens to tend.
-There will be no escaping it, for it you do
+There will be no escaping it, for if you do
 dare engage, you will find no more truth,
 no more clarity, working for love as your wage,
 and your love, ever growing, a comfort through life
