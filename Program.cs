@@ -426,14 +426,25 @@ class Program
             Directory.CreateDirectory($"Video/{dir}");
             foreach(string filepath in Directory.GetFiles(dirpath))
             {
+                string audioWav = Path.GetFullPath(filepath);
                 string title = Path.GetFileNameWithoutExtension(filepath);
-                string outpath = Path.GetFullPath($"Video/{dir}/{title}.flv");
+                string outpath = Path.GetFullPath($"Video/{dir}/{title}.mov");
                 if (!File.Exists(outpath))
                 {
-                // Generate youtube-compatible video. https://superuser.com/a/1041820
-                    string titleImgFilePath = await RenderVideoSplash(page, dir, title);                    
-                    string args = $"-r 1 -loop 1 -i \"{titleImgFilePath}\" -i \"{Path.GetFullPath(filepath)}\" -acodec copy -r 1 -shortest -vf scale=1920:1080 \"{outpath}\"";
-                    Process.Start("ffmpeg", args).WaitForExit();              
+                    string titlePng = await RenderVideoSplash(page, dir, title);
+
+                    string args = string.Empty;
+                    args += $" -loop 1 -i \"{titlePng}\""; // add title
+                    args += $" -loop 1 -i black.png"; // add background
+                    args += $" -itsoffset 2.5s -i \"{audioWav}\""; // add audio after small delay
+                    args += $" -filter_complex";
+                    args += $" \"";
+                    args += $"  [0:v]fade=t=in:st=0s:d=0.5s,fade=t=out:st=4.5s:d=0.5s,scale=1920:1080[v0];"; // fade title in and out
+                    args += $"  [v0][1:v]concat=n=2:v=1:a=0,scale=1920:1080[outv];"; // concat title and background into one video stream
+                    args += $" \"";
+                    args += $" -map \"[outv]\" -map 2:a -shortest \"{outpath}\""; // map video to audio
+
+                    Process.Start("ffmpeg", args).WaitForExit();
                 }
             }
         }
@@ -445,8 +456,8 @@ class Program
         
         PageScreenshotOptions options = new PageScreenshotOptions();
         options.FullPage = true;
-        options.Path = $"Output/Video/{dir}/{title}.png";
-        await page.ScreenshotAsync(options);
+        options.Path = Path.GetFullPath($"Output/Video/{dir}/{title}.png");
+        await page.ScreenshotAsync(options);           
         
         return options.Path;
     }
