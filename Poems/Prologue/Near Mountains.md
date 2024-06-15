@@ -1,7 +1,7 @@
 *Near Mountains
 11 July 2022
 
-When I consider the electical wires,
+When I consider the electrical wires,
 the works of our hands, and when I consider
 the cars, and the buildings made of steel,
 I ask, what is God that we are mindful of him?

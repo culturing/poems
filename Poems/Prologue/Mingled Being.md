@@ -7,7 +7,7 @@ leap through flowers? I suspect it is
 like that which summons poetry,
 what one has called "the unreserve of mingled being."
 Hear now how the many voices speak
-of loved commeraderie,
+of loved camaraderie,
 as though this be essential to their frame.
 I do not know what calls if not
 enticement to the game of mixture,

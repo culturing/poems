@@ -3,7 +3,7 @@
 
 When I survey Industrial Man
 in his anxious glory, his endless
-competetiveness, I still doubt
+competitiveness, I still doubt
 that his station is final,
 that any part of his nature is fixed.
 If by now one knows not to assume

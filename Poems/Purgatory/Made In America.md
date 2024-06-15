@@ -21,7 +21,7 @@ America are we There yet?
 America where do Rights come from?
 I've turned off my mind but I won't float downstream.
 America why Columbine?
-America why Ted Kaszynski?
+America why Ted Kaczynski?
 America have you tried thinking about it?
 It must be those damn video games.
 America this is a problem.

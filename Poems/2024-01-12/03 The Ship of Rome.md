@@ -12,7 +12,7 @@ Did we not know the ship had crashed? That we, too, crash,
 and always crash, so long as we rely on only worn-out navigation?
 
 Let the augurs rest, no, let them die,
-and let all children of the sky fortell
+and let all children of the sky foretell
 their own fate, falling faster than sweet Icarus,
 to soon with Hades lie. But this old feud
 is not worth reappearing, will not settle on these terms.
@@ -38,7 +38,7 @@ by now there have been other ships.
 --
 
 Will you listen? I have seen behind the curtain
-and the man I saw is ugliger than imagined.
+and the man I saw is uglier than imagined.
 He spoke croakingly, without a point or purpose,
 flailing madly, with twin sceptres in his hands,
 and pedalled briskly on the bike that turns the world.

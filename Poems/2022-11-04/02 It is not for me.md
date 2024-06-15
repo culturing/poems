@@ -6,7 +6,7 @@ argument appear stronger, uneven in thinking,
 so tipsy in mind. What great folly, if even
 the end of historic progressions or else
 the result of some King's stiff command.
-We are tired by now and its reslessness,
+We are tired by now and its restlessness,
 drawn to all corners of the imagination
 by a call no less real than a fairy-tale
 and no more real than the earth. It has

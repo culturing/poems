@@ -41,7 +41,7 @@ He was a feckless Hegelian, couched in Biblical tones.
 He did not govern well. I've said it and will
 say it again, he cowed to violence, could not admit
 that states wished to secede. Oh, what a sneaky devil,
-blind in the face of the obvious. There is no forthcoming millenium
+blind in the face of the obvious. There is no forthcoming millennium
 where all peoples of all colors live as one. De Tocqueville
 said so. Yet we try and try and try. I do not know
 what else we could try, but we at least could notice the obvious,

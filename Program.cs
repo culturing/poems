@@ -242,7 +242,7 @@ class Program
 
     // Add copyright
         string copyrightHtml = PdfCopyrightTemplate.Replace("{{year}}", DateTime.Now.ToString("yyyy"));
-        string copyrightPath = $"Output/Other/Copyright.html";
+        string copyrightPath = $"Output/Pdfs/Copyright.html";
         File.WriteAllText(copyrightPath, copyrightHtml);
 
         pdfRenderOptions.Path = $"Output/Pdfs/Copyright.pdf";
@@ -358,7 +358,7 @@ class Program
         }
 
         string tocHtml = PdfTableOfContentsTemplate.Replace("{{toc}}", toc);
-        string filepath = "Output/Other/TableOfContents.html";
+        string filepath = "Output/Pdfs/TableOfContents.html";
         File.WriteAllText(filepath, tocHtml);
 
         await page.GotoAsync("file:///" + Path.GetFullPath(filepath));
@@ -392,7 +392,7 @@ class Program
         }
 
         string indexHtml = PdfIndexTemplate.Replace("{{index}}", index);
-        string filepath = "Output/Other/PdfIndex.html";
+        string filepath = "Output/Pdfs/Index.html";
         File.WriteAllText(filepath, indexHtml);
 
         await page.GotoAsync("file:///" + Path.GetFullPath(filepath));

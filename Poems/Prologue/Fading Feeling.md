@@ -1,7 +1,7 @@
 Fading Feeling
 18 June 2022
 
-In our pecular way,
+In our peculiar way,
 we were always ones
 striving for form, and by form
 we meant something enduring,

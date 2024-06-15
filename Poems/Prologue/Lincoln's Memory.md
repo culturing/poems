@@ -1,4 +1,4 @@
-*Lincoln’s Memory
+*Lincoln's Memory
 29 August 2019
 
 So favored forms of power 
@@ -30,39 +30,39 @@ One Lincoln-not-yet-Deity, preparing for debate,
 stood by a portrait of old Jefferson, to whom he could relate, 
 and said,
 
-“Old predecessor tongue with wings, remind me, 
+"Old predecessor tongue with wings, remind me, 
 whence came our brave truth, 
 that all men are created equal. 
-Knew you this in youth?”
+Knew you this in youth?"
 
 To which the painting said, 
-“It was a growth of many years, 
-first born on England’s hills 
-in faithful regicide.”
+"It was a growth of many years, 
+first born on England's hills 
+in faithful regicide."
 
 And Lincoln asked, 
-“But had you heard of man’s first disobedience 
-and the fruit?“
+"But had you heard of man's first disobedience 
+and the fruit?"
 
 Came quick reply: 
-“Our Massachusetts friends knew of such things, 
+"Our Massachusetts friends knew of such things, 
 but I did hope to purge all superstition, 
-and robe God in Nature.”
+and robe God in Nature."
 
-“Ah, in nature,” Lincoln said.
+"Ah, in nature," Lincoln said.
 
-”That’s right. For all can become noble 
-if they’re only left alone.”
+"That's right. For all can become noble 
+if they're only left alone."
 
-Great Lincoln, growing pond’rous, 
+Great Lincoln, growing ponderous, 
 stroked his chin 
 and paced before the painting, 
-murmuring, “If left alone…”
+murmuring, "If left alone…"
 
 He did not dare to broach the question, 
 burned on his and other minds, 
 of Slavery, but rather urged this thought: 
-“Suppose we find all men not equal. Who’s at fault?”
+"Suppose we find all men not equal. Who's at fault?"
 
 But there was no reply.
 
@@ -111,5 +111,5 @@ banished God and punished doubt.
 To devastation wrought, 
 and to the horror not quite heeded,
 
-To man’s ultimate obedience, 
+To man's ultimate obedience, 
 friend History, give song.

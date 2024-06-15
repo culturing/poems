@@ -3,7 +3,7 @@ Saving Earth
 
 We have taken lightning captive,
 &nbsp;&nbsp;&nbsp;&nbsp;we have made the sky our slave
-on our relentless quest for vengence
+on our relentless quest for vengeance
 &nbsp;&nbsp;&nbsp;&nbsp;on an Earth we cannot save.
 
 If all is lost, then songs
