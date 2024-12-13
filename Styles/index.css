@@ -29,7 +29,7 @@ a { text-decoration-color: rgb(245, 245, 245); color: rgb(245, 245, 245); text-d
 
 @media only screen and (max-width : 512px)
 {
-    #pdf, #previous, #next { display: none; }
+    #previous, #next { display: none; }
 }
 
 @media only print
