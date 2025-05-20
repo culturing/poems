@@ -10,6 +10,8 @@ using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 using PdfSharp.Drawing;
 using System.Diagnostics;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace Poems;
 
@@ -30,10 +32,21 @@ class Poem
         return style;
     }
     public Dictionary<string, string> Variables { get; set; } = new();
+
+    public string GetHash()
+    {
+        string contents = File.ReadAllText(FilePath);
+        using (SHA256 sha256Hash = SHA256.Create())
+        {
+            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contents));
+            return Convert.ToHexString(bytes).ToLowerInvariant();
+        }
+    }
 }
 
 class Program
 {
+    static public string BaseUrl = "https://poems.culturing.net";
     static Markdown md = new Markdown();
     static string IndexTemplate = File.ReadAllText("Templates/index.html");
     static string BestTemplate = File.ReadAllText("Templates/best.html");
@@ -135,6 +148,8 @@ class Program
         RenderOtherPage("Other/Why Poetry.md");
 
         await RenderPdf("Poems.pdf");
+
+        GenerateSitemap();
 
         //await RenderPdf("Submission.pdf", true, new DateTime(2021, 02, 01), new DateTime(2022, 10, 31));
 
@@ -461,4 +476,14 @@ class Program
         
         return options.Path;
     }
+
+    static void GenerateSitemap()
+    {
+        string filepath = "sitemap.xml";
+        if (File.Exists(filepath))
+            File.Delete(filepath);
+
+        string xmlString = SitemapGenerator.GenerateXmlString(Poems);
+        File.WriteAllText(filepath, xmlString, Encoding.UTF8);
+    }    
 }

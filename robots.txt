@@ -1,0 +1,11 @@
+User-agent: *
+
+Disallow: /
+
+Allow: /Output/Poems/
+Allow: /index.html
+Allow: /best.html
+Allow: /Poems.pdf
+Allow: /sitemap.xml
+
+Sitemap: https://poems.culturing.net/sitemap.xml
