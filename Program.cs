@@ -23,7 +23,6 @@ class Poem
     public DateTime PublicationDate { get; set; }
     public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     public string FilePath { get; set; }
-    public string Url { get; set; }
     public string FileName => Path.GetFileName(Path.GetDirectoryName(FilePath));
     public string UrlPath => $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}";
     public int Page { get; set; }
@@ -118,12 +117,12 @@ class Program
             if (i > 0)
             {
                 Poem prev = OrderedPoems[i-1];
-                previousPath = poem.UrlPath;
+                previousPath = prev.UrlPath;
             }
             if (i < OrderedPoems.Count - 1)
             {
                 Poem next = OrderedPoems[i+1];
-                nextPath = poem.UrlPath;
+                nextPath = next.UrlPath;
             }
             string contents = File.ReadAllText(poem.FilePath);
             contents = contents.Replace("{{previous}}", previousPath);
@@ -197,8 +196,7 @@ class Program
         File.WriteAllText(finalPath, finalPoemHtml);
 
         poem.FilePath = finalPath;
-        poem.Url = Path.GetDirectoryName(finalPath).Substring(5); // remove docs prefix and /index.html;
-        poem.Link = $"<a href=\"{poem.Url}\">{poem.Title}</a>";
+        poem.Link = $"<a href=\"{poem.UrlPath}\">{poem.Title}</a>";
 
         Poems.Add(poem);
 
@@ -513,7 +511,9 @@ class Program
             {
                 Directory.Delete(dir, true);
             }
-            foreach(string file in Directory.GetFiles("docs").Where(path => Path.GetExtension(path) != ".pdf"))
+
+            string[] exclude = ["culturing.pdf", "CNAME"];
+            foreach(string file in Directory.GetFiles("docs").Where(path => !exclude.Contains(Path.GetFileName(path))))
             {
                 File.Delete(file);
             }

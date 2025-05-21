@@ -111,24 +111,24 @@ class SitemapGenerator
         {
             string hash = poem.GetHash();
 
-            if (hashes.ContainsKey(poem.Url))
+            if (hashes.ContainsKey(poem.UrlPath))
             {
-                PoemHash prevHash = hashes[poem.Url];                
+                PoemHash prevHash = hashes[poem.UrlPath];                
                 if (prevHash.Hash == hash)
                 {
                     // no-op
                 }
                 else 
                 {
-                    hashes[poem.Url] = new PoemHash { Hash = hash, LastMod = now };
+                    hashes[poem.UrlPath] = new PoemHash { Hash = hash, LastMod = now };
                 }
             }
             else
             {
-                hashes[poem.Url] = new PoemHash { Hash = hash, LastMod = now };
+                hashes[poem.UrlPath] = new PoemHash { Hash = hash, LastMod = now };
             }
 
-            DateTime lastMod = hashes[poem.Url].LastMod;
+            DateTime lastMod = hashes[poem.UrlPath].LastMod;
             nodes.Add(new SitemapNode(poem, lastMod));
         }
 
