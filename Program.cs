@@ -24,7 +24,7 @@ class Poem
     public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     public string FilePath { get; set; }
     public string FileName => Path.GetFileName(Path.GetDirectoryName(FilePath));
-    public string UrlPath => $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}";
+    public string UrlPath => $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}/";
     public int Page { get; set; }
     public string Style(bool bestOnly = false)
     {
@@ -491,9 +491,6 @@ class Program
     static void CopyFilesToDocs()
     {
         List<string> filesToCopy = new List<string>();
-        filesToCopy.Add("robots.txt");
-        filesToCopy.Add("google84fcfca997bbbdc0.html");
-        filesToCopy.Add("favicon.ico");
         filesToCopy.AddRange(Directory.GetFiles("Styles"));
         filesToCopy.AddRange(Directory.GetFiles("Scripts"));
         
@@ -512,7 +509,7 @@ class Program
                 Directory.Delete(dir, true);
             }
 
-            string[] exclude = ["culturing.pdf", "CNAME"];
+            string[] exclude = ["culturing.pdf", "CNAME", "google84fcfca997bbbdc0.html", "robots.txt", "favicon.ico", "cc.png"];
             foreach(string file in Directory.GetFiles("docs").Where(path => !exclude.Contains(Path.GetFileName(path))))
             {
                 File.Delete(file);

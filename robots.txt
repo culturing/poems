@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://poems.culturing.net/sitemap.xml
