@@ -21,7 +21,7 @@ class SitemapNode
 
     public SitemapNode(Poem poem, DateTime lastMod)
     {
-        Url = $"{Program.BaseUrl}/{poem.FilePath}";
+        Url = Program.BaseUrl + poem.UrlPath;
         LastModified = lastMod;
         ChangeFrequency = SitemapChangeFrequency.Yearly;
         Priority = 0.9M;
@@ -100,7 +100,7 @@ class SitemapGenerator
             },            
             new SitemapNode
             {
-                Url = $"{Program.BaseUrl}/Poems.pdf",
+                Url = $"{Program.BaseUrl}/culturing.pdf",
                 LastModified = now,
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
@@ -111,24 +111,24 @@ class SitemapGenerator
         {
             string hash = poem.GetHash();
 
-            if (hashes.ContainsKey(poem.FilePath))
+            if (hashes.ContainsKey(poem.Url))
             {
-                PoemHash prevHash = hashes[poem.FilePath];                
+                PoemHash prevHash = hashes[poem.Url];                
                 if (prevHash.Hash == hash)
                 {
                     // no-op
                 }
                 else 
                 {
-                    hashes[poem.FilePath] = new PoemHash { Hash = hash, LastMod = now };
+                    hashes[poem.Url] = new PoemHash { Hash = hash, LastMod = now };
                 }
             }
             else
             {
-                hashes[poem.FilePath] = new PoemHash { Hash = hash, LastMod = now };
+                hashes[poem.Url] = new PoemHash { Hash = hash, LastMod = now };
             }
 
-            DateTime lastMod = hashes[poem.FilePath].LastMod;
+            DateTime lastMod = hashes[poem.Url].LastMod;
             nodes.Add(new SitemapNode(poem, lastMod));
         }
 

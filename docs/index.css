@@ -1,0 +1,41 @@
+body { font-family: Quattrocento; background-color: rgb(10, 10, 10); color: rgb(245, 245, 245); line-height: 1.25rem; margin: 0; padding: 1rem; }
+div { padding-bottom: 4px; }
+h1 { margin: 0; padding: 1rem; }
+h2 { margin: 0; padding-bottom: 1rem; }
+h3 { margin: 0; padding-top: 1rem; padding-bottom: 0.5rem; }
+a { text-decoration-color: rgb(245, 245, 245); color: rgb(245, 245, 245); text-decoration-thickness: 0;}
+#container-chronology h2 { padding-bottom: 0; }
+#container-chronology h3:first-child { padding-top: 0; }
+.navbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+.nav { padding: 0.5rem; text-decoration: none; color: rgba(245,245,245,0.5) }
+.nav:hover { background-color: rgb(245,245,245,0.25); }
+
+@media only screen and (min-width : 1025px)
+{
+    #container { display: flex; flex-direction: row; justify-content: center; }
+    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
+    #container-chronology { padding-right: 24px; }
+    #container-index { padding-left: 24px; }
+    #header { display: flex; flex-direction: row; align-items: baseline; }
+    #header a { margin-left: 1rem; }
+}
+
+@media only screen and (max-width : 1024.99px)
+{
+    h1 { padding-left: 0; }
+    #container-index h2 { padding-top: 2rem; }
+    #container-chronology { padding-top: 1rem;}
+}
+
+@media only screen and (max-width : 512px)
+{
+    #previous, #next { display: none; }
+}
+
+@media only print
+{
+    body { background-color: white; color: black; }
+    #license { display: none; }
+    a { text-decoration-color: black; color: black; }
+    .navbar { display: none; }
+}

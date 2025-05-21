@@ -23,6 +23,9 @@ class Poem
     public DateTime PublicationDate { get; set; }
     public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     public string FilePath { get; set; }
+    public string Url { get; set; }
+    public string FileName => Path.GetFileName(Path.GetDirectoryName(FilePath));
+    public string UrlPath => $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}";
     public int Page { get; set; }
     public string Style(bool bestOnly = false)
     {
@@ -63,11 +66,8 @@ class Program
     static async Task Main(string[] args)
     {            
         System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-        if (Directory.Exists("Output"))
-            Directory.Delete("Output", true);
-        Directory.CreateDirectory("Output/Poems");  
-        Directory.CreateDirectory("Output/Pdfs");  
-        Directory.CreateDirectory("Output/Other");  
+
+        CleanupPrevious();
     
     // Parse Poems
         foreach (string dirpath in Directory.EnumerateDirectories("Poems"))
@@ -118,12 +118,12 @@ class Program
             if (i > 0)
             {
                 Poem prev = OrderedPoems[i-1];
-                previousPath = $"../{prev.PublicationDate.ToString("yyyy-MM")}/{Path.GetFileName(prev.FilePath)}";
+                previousPath = poem.UrlPath;
             }
             if (i < OrderedPoems.Count - 1)
             {
                 Poem next = OrderedPoems[i+1];
-                nextPath = $"../{next.PublicationDate.ToString("yyyy-MM")}/{Path.GetFileName(next.FilePath)}";
+                nextPath = poem.UrlPath;
             }
             string contents = File.ReadAllText(poem.FilePath);
             contents = contents.Replace("{{previous}}", previousPath);
@@ -135,25 +135,25 @@ class Program
             .Replace("{{index}}", indexHtml)
             .Replace("{{chronology}}", chronologyHtml);
 
-        File.WriteAllText("index.html", finalIndexHtml);
+        File.WriteAllText("docs/index.html", finalIndexHtml);
 
         string finalBestIndexHtml = BestTemplate
             .Replace("{{index}}", bestIndexHtml)
             .Replace("{{chronology}}", bestChronologyHtml);
 
-        File.WriteAllText("best.html", finalBestIndexHtml);
+        Directory.CreateDirectory("docs/best");
+        File.WriteAllText("docs/best/index.html", finalBestIndexHtml);
 
-        RenderOtherPage("Other/FAQ.md");
-        RenderOtherPage("Other/Favorite Poems.md");
-        RenderOtherPage("Other/Why Poetry.md");
+        // RenderOtherPage("Other/FAQ.md");
+        // RenderOtherPage("Other/Favorite Poems.md");
+        // RenderOtherPage("Other/Why Poetry.md");
 
-        await RenderPdf("Poems.pdf");
-
+        await RenderPdf("docs/culturing.pdf");
+        //await RenderPdf("Submission.pdf", true, new DateTime(2021, 02, 01), new DateTime(2022, 10, 31));
+        await RenderVideo();
         GenerateSitemap();
 
-        //await RenderPdf("Submission.pdf", true, new DateTime(2021, 02, 01), new DateTime(2022, 10, 31));
-
-        await RenderVideo();
+        CopyFilesToDocs();
     }
 
     static void AddPoem(string filepath)
@@ -184,18 +184,21 @@ class Program
             lines[0] = $"<p style='margin:0;'><em><small><small>{lines[0]}</small></small></em></p>";                
         }
 
-        string dirPath = $"Output/Poems/{poem.PublicationDate.ToString("yyyy-MM")}";
-        Directory.CreateDirectory(dirPath);
+        string dirPath = $"docs/{poem.PublicationDate.ToString("yyyy")}/{poem.PublicationDate.ToString("MM")}";
         
         string content = String.Join("  \n", lines);
         string contentHtml = md.Transform(content);
         string finalPoemHtml = ContentTemplate.Replace("{{content}}", contentHtml).Replace("{{title}}", poem.Title);
         string finalFileName = Regex.Replace(filename.ToLower().Replace(" ", "-"), @"[^0-9a-zA-Z\-]", "");
-        string finalPath = $"{dirPath}/{finalFileName}.html";
+
+        dirPath += $"/{finalFileName}";
+        Directory.CreateDirectory(dirPath);        
+        string finalPath = $"{dirPath}/index.html";
         File.WriteAllText(finalPath, finalPoemHtml);
 
-        poem.Link = $"<a href=\"{finalPath}\">{poem.Title}</a>";
         poem.FilePath = finalPath;
+        poem.Url = Path.GetDirectoryName(finalPath).Substring(5); // remove docs prefix and /index.html;
+        poem.Link = $"<a href=\"{poem.Url}\">{poem.Title}</a>";
 
         Poems.Add(poem);
 
@@ -291,7 +294,7 @@ class Program
             Directory.CreateDirectory($"Output/Pdfs/{kvp.Key}");
             foreach(Poem poem in poems)
             {                    
-                pdfRenderOptions.Path = $"Output/Pdfs/{kvp.Key}/{Path.GetFileNameWithoutExtension(poem.FilePath)}.pdf";
+                pdfRenderOptions.Path = $"Output/Pdfs/{kvp.Key}/{poem.FileName}.pdf";
                 await page.GotoAsync("file:///" + Path.GetFullPath(poem.FilePath));                    
                 await page.PdfAsync(pdfRenderOptions);
 
@@ -479,11 +482,50 @@ class Program
 
     static void GenerateSitemap()
     {
-        string filepath = "sitemap.xml";
+        string filepath = "docs/sitemap.xml";
         if (File.Exists(filepath))
             File.Delete(filepath);
 
         string xmlString = SitemapGenerator.GenerateXmlString(Poems);
         File.WriteAllText(filepath, xmlString, Encoding.UTF8);
-    }    
+    } 
+
+    static void CopyFilesToDocs()
+    {
+        List<string> filesToCopy = new List<string>();
+        filesToCopy.Add("robots.txt");
+        filesToCopy.Add("google84fcfca997bbbdc0.html");
+        filesToCopy.Add("favicon.ico");
+        filesToCopy.AddRange(Directory.GetFiles("Styles"));
+        filesToCopy.AddRange(Directory.GetFiles("Scripts"));
+        
+        foreach(string file in filesToCopy)
+        {
+            File.Copy(file, $"docs/{Path.GetFileName(file)}");
+        }
+    }   
+
+    static void CleanupPrevious()
+    {
+        if (Directory.Exists("docs"))
+        {                   
+            foreach(string dir in Directory.GetDirectories("docs"))
+            {
+                Directory.Delete(dir, true);
+            }
+            foreach(string file in Directory.GetFiles("docs").Where(path => Path.GetExtension(path) != ".pdf"))
+            {
+                File.Delete(file);
+            }
+        }
+        else
+        {
+            Directory.CreateDirectory("docs");
+        }        
+        
+        if (Directory.Exists("Output"))
+            Directory.Delete("Output", true);
+        Directory.CreateDirectory("Output/Pdfs");  
+        Directory.CreateDirectory("Output/Other");  
+    }
 }
