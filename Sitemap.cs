@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using System.Globalization;
 using System.Text.Json;
+using System.Security.Cryptography;
 
 namespace Poems;
 
@@ -68,67 +69,55 @@ class SitemapGenerator
     static public List<SitemapNode> GetSitemapNodes(IEnumerable<Poem> poems)
     {
         string hashesJson;
-        Dictionary<string, PoemHash> hashes;
+        Dictionary<string, PageHash> hashes;
 
         if (File.Exists("hashes.json"))
         {
             hashesJson = File.ReadAllText("hashes.json");
-            hashes = JsonSerializer.Deserialize<Dictionary<string, PoemHash>>(hashesJson);
+            hashes = JsonSerializer.Deserialize<Dictionary<string, PageHash>>(hashesJson);
         }
         else 
         {
-            hashes = new Dictionary<string, PoemHash>();
+            hashes = new Dictionary<string, PageHash>();
         }
 
         DateTime now = DateTime.UtcNow;
 
-        var nodes = new List<SitemapNode>
+        List<SitemapNode> nodes = new List<SitemapNode>
         {
             new SitemapNode
             {
                 Url = $"{Program.BaseUrl}/",
-                LastModified = now,
+                LastModified = UpdateHash(hashes, "docs/index.html", "/", now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
             },
             new SitemapNode
             {
-                Url = $"{Program.BaseUrl}/best.html",
-                LastModified = now,
+                Url = $"{Program.BaseUrl}/best/",
+                LastModified = UpdateHash(hashes, "docs/best/index.html", "/best/", now),
+                ChangeFrequency = SitemapChangeFrequency.Monthly,
+                Priority = 1.0M
+            },            
+            new SitemapNode
+            {
+                Url = $"{Program.BaseUrl}/about/",
+                LastModified = UpdateHash(hashes, "docs/about/index.html", "/about/", now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
             },            
             new SitemapNode
             {
                 Url = $"{Program.BaseUrl}/culturing.pdf",
-                LastModified = now,
+                LastModified = UpdateHash(hashes, "docs/culturing.pdf", "/culturing.pdf", now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
             }
         };
 
         foreach (Poem poem in poems)
-        {
-            string hash = poem.GetHash();
-
-            if (hashes.ContainsKey(poem.UrlPath))
-            {
-                PoemHash prevHash = hashes[poem.UrlPath];                
-                if (prevHash.Hash == hash)
-                {
-                    // no-op
-                }
-                else 
-                {
-                    hashes[poem.UrlPath] = new PoemHash { Hash = hash, LastMod = now };
-                }
-            }
-            else
-            {
-                hashes[poem.UrlPath] = new PoemHash { Hash = hash, LastMod = now };
-            }
-
-            DateTime lastMod = hashes[poem.UrlPath].LastMod;
+        {            
+            DateTime lastMod = UpdateHash(hashes, poem.FilePath, poem.UrlPath, now);
             nodes.Add(new SitemapNode(poem, lastMod));
         }
 
@@ -137,9 +126,42 @@ class SitemapGenerator
 
         return nodes;
     }
+
+    static public DateTime UpdateHash(Dictionary<string, PageHash> hashes, string filePath, string urlPath, DateTime now)
+    {
+        string hash = GetHash(filePath);
+        if (hashes.ContainsKey(urlPath))
+        {
+            PageHash prevHash = hashes[urlPath];                
+            if (prevHash.Hash == hash)
+            {
+                return prevHash.LastMod;
+            }
+            else 
+            {
+                hashes[urlPath] = new PageHash { Hash = hash, LastMod = now };
+                return now;
+            }
+        }
+        else
+        {
+            hashes[urlPath] = new PageHash { Hash = hash, LastMod = now };
+            return now;
+        }
+    }
+
+    static public string GetHash(string filePath)
+    {
+        string contents = File.ReadAllText(filePath);
+        using (SHA256 sha256Hash = SHA256.Create())
+        {
+            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contents));
+            return Convert.ToHexString(bytes).ToLowerInvariant();
+        }
+    }
 }
 
-class PoemHash
+class PageHash
 {
     public string Hash { get; set; }
     public DateTime LastMod { get; set; }

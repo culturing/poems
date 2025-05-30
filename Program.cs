@@ -11,7 +11,6 @@ using PdfSharp.Pdf.IO;
 using PdfSharp.Drawing;
 using System.Diagnostics;
 using System.Text;
-using System.Security.Cryptography;
 
 namespace Poems;
 
@@ -34,16 +33,6 @@ class Poem
         return style;
     }
     public Dictionary<string, string> Variables { get; set; } = new();
-
-    public string GetHash()
-    {
-        string contents = File.ReadAllText(FilePath);
-        using (SHA256 sha256Hash = SHA256.Create())
-        {
-            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contents));
-            return Convert.ToHexString(bytes).ToLowerInvariant();
-        }
-    }
 }
 
 class Program
@@ -52,6 +41,7 @@ class Program
     static Markdown md = new Markdown();
     static string IndexTemplate = File.ReadAllText("Templates/index.html");
     static string BestTemplate = File.ReadAllText("Templates/best.html");
+    static string AboutTemplate = File.ReadAllText("Templates/about.html");
     static string ContentTemplate = File.ReadAllText("Templates/content.html");
     static string FaqTemplate = File.ReadAllText("Templates/faq.html");
     static string PdfCopyrightTemplate = File.ReadAllText("Templates/pdf/copyright.html");
@@ -143,6 +133,7 @@ class Program
         Directory.CreateDirectory("docs/best");
         File.WriteAllText("docs/best/index.html", finalBestIndexHtml);
 
+        RenderOtherPage("Other/about.md", AboutTemplate);
         // RenderOtherPage("Other/FAQ.md");
         // RenderOtherPage("Other/Favorite Poems.md");
         // RenderOtherPage("Other/Why Poetry.md");
@@ -207,11 +198,14 @@ class Program
         PoemsByDate[key].Add(poem);
     }
 
-    static void RenderOtherPage(string filepath)
+    static void RenderOtherPage(string filepath, string template)
     {
         string text = File.ReadAllText(filepath);
-        string html = FaqTemplate.Replace("{{content}}", md.Transform(text));
-        string htmlpath = $"Output/Other/{Path.GetFileNameWithoutExtension(filepath)}.html";
+        string html = template.Replace("{{content}}", md.Transform(text));
+        string dirpath = $"docs/{Path.GetFileNameWithoutExtension(filepath)}";
+        string htmlpath = $"{dirpath}/index.html";
+        
+        Directory.CreateDirectory(dirpath);
         File.WriteAllText(htmlpath, html);   
     }
 
