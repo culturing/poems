@@ -138,12 +138,12 @@ class Program
         // RenderOtherPage("Other/Favorite Poems.md");
         // RenderOtherPage("Other/Why Poetry.md");
 
+        CopyFilesToDocs();
+
         await RenderPdf("docs/culturing.pdf");
         //await RenderPdf("Submission.pdf", true, new DateTime(2021, 02, 01), new DateTime(2022, 10, 31));
         await RenderVideo();
         GenerateSitemap();
-
-        CopyFilesToDocs();
     }
 
     static void AddPoem(string filepath)
@@ -214,6 +214,12 @@ class Program
         if (File.Exists(outpath))
             return; 
 
+        Directory.CreateDirectory("docs/pdf");
+        foreach (string file in Directory.EnumerateFiles("Templates/pdf"))
+        {
+            File.Copy(file, $"docs/pdf/{Path.GetFileName(file)}");
+        }
+
         if (start == default)
             start = DateTime.MinValue;
         if (end == default)
@@ -233,8 +239,10 @@ class Program
         using PdfDocument pdf = new PdfDocument();
 
         using IPlaywright playwright = await Playwright.CreateAsync();
-        await using IBrowser browser = await playwright.Chromium.LaunchAsync();
-        IPage page = await browser.NewPageAsync();
+        await using IBrowser browser = await playwright.Chromium.LaunchAsync();        
+        BrowserNewPageOptions newPageOptions = new BrowserNewPageOptions { BaseURL = "http://127.0.0.1:5500" };
+        IPage page = await browser.NewPageAsync(newPageOptions);
+
         PagePdfOptions pdfRenderOptions = new PagePdfOptions 
         { 
             Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
@@ -242,7 +250,7 @@ class Program
 
     // Add title
         pdfRenderOptions.Path = $"Output/Pdfs/Title.pdf";
-        await page.GotoAsync("file:///" + Path.GetFullPath($"Templates/pdf/title.html"));                    
+        await page.GotoAsync("/pdf/title.html");
         await page.PdfAsync(pdfRenderOptions);
         using (PdfDocument titlePdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
         {
@@ -252,11 +260,11 @@ class Program
 
     // Add copyright
         string copyrightHtml = PdfCopyrightTemplate.Replace("{{year}}", DateTime.Now.ToString("yyyy"));
-        string copyrightPath = $"Output/Pdfs/Copyright.html";
+        string copyrightPath = $"docs/pdf/copyright.html";
         File.WriteAllText(copyrightPath, copyrightHtml);
 
         pdfRenderOptions.Path = $"Output/Pdfs/Copyright.pdf";
-        await page.GotoAsync("file:///" + Path.GetFullPath(copyrightPath));                    
+        await page.GotoAsync("/pdf/copyright.html");
         await page.PdfAsync(pdfRenderOptions);
         using (PdfDocument copyrightPdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
         {
@@ -277,6 +285,7 @@ class Program
     // Add poems
         PdfOutline contentsOutline = pdf.Outlines.Add("Contents", pdf.Pages[tableOfContentsStart]);
         PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[pdf.PageCount - 1]);
+
         foreach(KeyValuePair<string, IEnumerable<Poem>> kvp in FilteredPoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
         {
             IEnumerable<Poem> poems = kvp.Value.Where(poem => poem.PublicationDate > start && poem.PublicationDate < end);
@@ -287,7 +296,7 @@ class Program
             foreach(Poem poem in poems)
             {                    
                 pdfRenderOptions.Path = $"Output/Pdfs/{kvp.Key}/{poem.FileName}.pdf";
-                await page.GotoAsync("file:///" + Path.GetFullPath(poem.FilePath));                    
+                await page.GotoAsync(poem.UrlPath);
                 await page.PdfAsync(pdfRenderOptions);
 
                 using (PdfDocument poemPdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
@@ -324,6 +333,9 @@ class Program
         }
 
         pdf.Save(outpath);
+
+        if (Directory.Exists("docs/pdf"))
+            Directory.Delete("docs/pdf", true);
     }
 
     static void MergePdfs(PdfDocument source, PdfDocument destination)
@@ -368,10 +380,10 @@ class Program
         }
 
         string tocHtml = PdfTableOfContentsTemplate.Replace("{{toc}}", toc);
-        string filepath = "Output/Pdfs/TableOfContents.html";
+        string filepath = "docs/pdf/TableOfContents.html";
         File.WriteAllText(filepath, tocHtml);
 
-        await page.GotoAsync("file:///" + Path.GetFullPath(filepath));
+        await page.GotoAsync("/pdf/TableOfContents.html");
 
         string pdfPath = "Output/Pdfs/TableOfContents.pdf";
         PagePdfOptions options = new PagePdfOptions 
@@ -402,10 +414,10 @@ class Program
         }
 
         string indexHtml = PdfIndexTemplate.Replace("{{index}}", index);
-        string filepath = "Output/Pdfs/Index.html";
+        string filepath = "docs/pdf/index.html";
         File.WriteAllText(filepath, indexHtml);
 
-        await page.GotoAsync("file:///" + Path.GetFullPath(filepath));
+        await page.GotoAsync("/pdf/index.html");
 
         string pdfPath = "Output/Pdfs/Index.pdf";
         PagePdfOptions options = new PagePdfOptions 

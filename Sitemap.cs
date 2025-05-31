@@ -31,6 +31,7 @@ class SitemapNode
 
 class SitemapGenerator
 {
+    static public JsonSerializerOptions JsonOptions = new JsonSerializerOptions { WriteIndented = true };
     static public string GenerateXmlString(IEnumerable<Poem> poems)
     {
         List<SitemapNode> sitemapNodes = GetSitemapNodes(poems);
@@ -46,7 +47,7 @@ class SitemapGenerator
 
                         // Optional: <lastmod>
                         node.LastModified.HasValue ?
-                            new XElement(ns + "lastmod", node.LastModified.Value.ToString("yyyy-MM-dd")) :
+                            new XElement(ns + "lastmod", node.LastModified.Value.ToString("o")) :
                             null, // LINQ to XML conveniently skips null elements
 
                         // Optional: <changefreq>
@@ -121,7 +122,7 @@ class SitemapGenerator
             nodes.Add(new SitemapNode(poem, lastMod));
         }
 
-        hashesJson = JsonSerializer.Serialize(hashes);
+        hashesJson = JsonSerializer.Serialize(hashes, JsonOptions);
         File.WriteAllText("hashes.json", hashesJson);
 
         return nodes;
