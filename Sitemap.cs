@@ -67,7 +67,7 @@ class SitemapGenerator
         return sitemap.ToString(); // This includes the XML declaration
     }
 
-    static public List<SitemapNode> GetSitemapNodes(IEnumerable<Poem> poems)
+    static public Dictionary<string, PageHash> GetHashes()
     {
         string hashesJson;
         Dictionary<string, PageHash> hashes;
@@ -81,6 +81,13 @@ class SitemapGenerator
         {
             hashes = new Dictionary<string, PageHash>();
         }
+
+        return hashes;
+    }
+
+    static public List<SitemapNode> GetSitemapNodes(IEnumerable<Poem> poems)
+    {
+        Dictionary<string, PageHash> hashes = GetHashes();        
 
         DateTime now = DateTime.UtcNow;
 
@@ -122,7 +129,7 @@ class SitemapGenerator
             nodes.Add(new SitemapNode(poem, lastMod));
         }
 
-        hashesJson = JsonSerializer.Serialize(hashes, JsonOptions);
+        string hashesJson = JsonSerializer.Serialize(hashes, JsonOptions);
         File.WriteAllText("hashes.json", hashesJson);
 
         return nodes;

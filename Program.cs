@@ -11,6 +11,7 @@ using PdfSharp.Pdf.IO;
 using PdfSharp.Drawing;
 using System.Diagnostics;
 using System.Text;
+using Schema.NET;
 
 namespace Poems;
 
@@ -97,6 +98,8 @@ class Program
             }
         }
 
+        Dictionary<string, PageHash> hashes = SitemapGenerator.GetHashes();
+
     // Set previous and next links
         List<Poem> OrderedPoems = Poems.OrderBy(poem => poem.PublicationDate).ToList();
         for (int i = 0; i < OrderedPoems.Count; ++i)
@@ -117,6 +120,42 @@ class Program
             string contents = File.ReadAllText(poem.FilePath);
             contents = contents.Replace("{{previous}}", previousPath);
             contents = contents.Replace("{{next}}", nextPath);
+            
+            Person author = new Person()
+            {
+                Name = "culturing",
+                Url = new Uri(BaseUrl),
+                SameAs = new List<Uri>
+                {
+                    new Uri("https://bsky.app/profile/culturing.bsky.social"),
+                    new Uri("https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ"),
+                    new Uri("https://github.com/culturing"),
+                },
+                PublishingPrinciples = new Uri(BaseUrl + "/about/")
+            };
+
+            DateTime dateModified = poem.PublicationDate;
+            if (hashes.ContainsKey(poem.UrlPath))
+                dateModified = hashes[poem.UrlPath].LastMod;
+
+            CreativeWork poemSchema = new CreativeWork()
+            {
+                Url = new Uri(BaseUrl + poem.UrlPath),
+                Name = poem.Title,
+                Author = author,
+                CopyrightHolder = author,
+                CopyrightYear = poem.PublicationDate.Year,
+                Genre = "Poem",
+                IsAccessibleForFree = true,
+                InLanguage = "en-us",
+                PublishingPrinciples = new Uri(BaseUrl + "/about/"),
+                DatePublished = poem.PublicationDate,
+                DateModified = dateModified
+            };
+
+            string schema = poemSchema.ToHtmlEscapedString();
+            contents = contents.Replace("{{schema}}", schema);
+
             File.WriteAllText(poem.FilePath, contents);
         }
 
