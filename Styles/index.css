@@ -29,7 +29,7 @@ a { text-decoration-color: rgb(245, 245, 245); color: rgb(245, 245, 245); text-d
 
 @media only screen and (max-width : 512px)
 {
-    #previous, #next { display: none; }
+    .navbar { flex-direction: column;  align-items: flex-end; }
 }
 
 @media only print
