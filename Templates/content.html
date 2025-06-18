@@ -13,7 +13,7 @@
     <div class="navbar">
         <div>
             <a class="nav" href="/">home</a>
-            <a class="nav" href="/best">best</a>
+            <a class="nav" href="/best/">best</a>
             <a class="nav" href="/about/">about</a>
             <a id="previous" class="nav" href="{{previous}}">prev</a>
             <a id="next" class="nav" href="{{next}}">next</a>
@@ -29,10 +29,22 @@
             </div>
             <a id="print" class="nav" href="javascript:window.print()">print</a>
         </div>
-        <div id="prev-next-mobile">
-            <a id="previous-mobile" class="nav" href="{{previous}}">prev</a>
-            <a id="next-mobile" class="nav" href="{{next}}">next</a>
+    </div>
+    <div class="navbar mobile">
+        <a class="nav" href="/">home</a>
+        <a class="nav" href="/best/">best</a>
+        <a class="nav" href="/about/">about</a>
+        <div class="dropdown">
+            <div class="nav dropbtn">contact</div>
+            <div class="dropdown-content">
+                <a id="bsky" href="https://bsky.app/profile/culturing.bsky.social" target="_blank">bsky</a>
+                <a id="youtube" href="https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ" target="_blank">youtube</a>
+                <a id="email" href="mailto:author@culturing.net">email</a>
+            </div>
         </div>
+        <a id="print" class="nav" href="javascript:window.print()">print</a>
+        <a id="previous" class="nav" href="{{previous}}">prev</a>
+        <a id="next" class="nav mr-auto" href="{{next}}">next</a>
     </div>
     <div id="container-parent">
         <div id="container">          
