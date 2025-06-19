@@ -120,6 +120,7 @@ class Program
             string contents = File.ReadAllText(poem.FilePath);
             contents = contents.Replace("{{previous}}", previousPath);
             contents = contents.Replace("{{next}}", nextPath);
+            contents = contents.Replace("{{url}}", BaseUrl + poem.UrlPath);
             
             Person author = new Person()
             {
@@ -189,7 +190,7 @@ class Program
     {
         var poem = new Poem();
         string filename = Path.GetFileNameWithoutExtension(filepath);
-        string[] lines = File.ReadAllLines(filepath);
+        List<string> lines = File.ReadAllLines(filepath).ToList();
         
         filename = Regex.Replace(filename, "^[0-9][0-9] ", "");
         poem.Title = filename;
@@ -205,12 +206,14 @@ class Program
             poem.PublicationDate = System.DateTime.Parse(lines[1]);
             poem.Title = lines[0];
             lines[0] = $"### {lines[0]}";
-            lines[1] = $"<p style='margin:0;'><em><small><small>{lines[1]}</small></small></em></p>";                
+            lines[1] = $"<p style='margin:0;'><em><small><small>{lines[1]}</small></small></em></p>";
+            lines.Insert(2, $"<p class='url' style='margin:0;'><em><small><small>{{{{url}}}}</small></small></em></p>");
         }
         catch(FormatException)
         {
             poem.PublicationDate = System.DateTime.Parse(lines[0]);
             lines[0] = $"<p style='margin:0;'><em><small><small>{lines[0]}</small></small></em></p>";                
+            lines.Insert(1, $"<p class='url' style='margin:0;'><em><small><small>{{{{url}}}}</small></small></em></p>");
         }
 
         string dirPath = $"docs/{poem.PublicationDate.ToString("yyyy")}/{poem.PublicationDate.ToString("MM")}";
