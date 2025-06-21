@@ -1,0 +1,16 @@
+.navbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+.nav-group-left, .nav-group-main, .nav-group-pagination, .nav-group-right { display: flex; align-items: center; }
+.nav { padding: 0.5rem; text-decoration: none; color: rgba(245,245,245,0.5); }
+.nav:hover { background-color: rgb(245,245,245,0.25); }
+
+@media only screen and (max-width : 512px)
+{
+    .navbar { flex-wrap: wrap; }
+    .nav-group-left, .nav-group-main, .nav-group-right { display: contents; }
+    .nav-group-pagination { flex-basis: 100%; justify-content: space-between; order: 1; }
+}
+
+@media only print
+{
+    .navbar { display: none; }
+}

@@ -1,14 +1,10 @@
-body { font-family: Quattrocento; background-color: rgb(10, 10, 10); color: rgb(245, 245, 245); line-height: 1.25rem; margin: 0; padding: 1rem; }
 div { padding-bottom: 4px; }
 h1 { margin: 0; padding: 1rem; }
 h2 { margin: 0; padding-bottom: 1rem; }
-h3 { margin: 0; padding-top: 1rem; padding-bottom: 0.5rem; }
-a { text-decoration-color: rgb(245, 245, 245); color: rgb(245, 245, 245); text-decoration-thickness: 0;}
+h3 { padding-top: 1rem; padding-bottom: 0.5rem; }
 #container-chronology h2 { padding-bottom: 0; }
 #container-chronology h3:first-child { padding-top: 0; }
-.navbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
-.nav { padding: 0.5rem; text-decoration: none; color: rgba(245,245,245,0.5) }
-.nav:hover { background-color: rgb(245,245,245,0.25); }
+#print, .nav-group-pagination { display: none !important; }
 
 @media only screen and (min-width : 769px)
 {
@@ -27,22 +23,7 @@ a { text-decoration-color: rgb(245, 245, 245); color: rgb(245, 245, 245); text-d
     #container-chronology { padding-top: 1rem;}
 }
 
-@media only screen and (min-width : 513px)
-{
-    .navbar.mobile { display: none; }
-}
-
 @media only screen and (max-width : 512px)
 {
-    .navbar:not(.mobile) { display: none; }
-    .navbar.mobile { flex-wrap: wrap; }
     #container-parent { min-height: unset; }
-}
-
-@media only print
-{
-    body { background-color: white; color: black; }
-    #license { display: none; }
-    a { text-decoration-color: black; color: black; }
-    .navbar { display: none; }
 }

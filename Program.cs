@@ -48,6 +48,7 @@ class Program
     static string PdfCopyrightTemplate = File.ReadAllText("Templates/pdf/copyright.html");
     static string PdfTableOfContentsTemplate = File.ReadAllText("Templates/pdf/toc.html");
     static string PdfIndexTemplate = File.ReadAllText("Templates/pdf/index.html");
+    static string NavbarTemplate = File.ReadAllText("Templates/navbar.html");
     static List<Poem> Poems { get; set; } = new List<Poem>();
     static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
     static Dictionary<string, IEnumerable<Poem>> FilteredPoemsByDate;
@@ -162,13 +163,15 @@ class Program
 
         string finalIndexHtml = IndexTemplate
             .Replace("{{index}}", indexHtml)
-            .Replace("{{chronology}}", chronologyHtml);
+            .Replace("{{chronology}}", chronologyHtml)
+            .Replace("{{navbar}}", NavbarTemplate);
 
         File.WriteAllText("docs/index.html", finalIndexHtml);
 
         string finalBestIndexHtml = BestTemplate
             .Replace("{{index}}", bestIndexHtml)
-            .Replace("{{chronology}}", bestChronologyHtml);
+            .Replace("{{chronology}}", bestChronologyHtml)
+            .Replace("{{navbar}}", NavbarTemplate);
 
         Directory.CreateDirectory("docs/best");
         File.WriteAllText("docs/best/index.html", finalBestIndexHtml);
@@ -220,7 +223,7 @@ class Program
         
         string content = String.Join("  \n", lines);
         string contentHtml = md.Transform(content);
-        string finalPoemHtml = ContentTemplate.Replace("{{content}}", contentHtml).Replace("{{title}}", poem.Title);
+        string finalPoemHtml = ContentTemplate.Replace("{{content}}", contentHtml).Replace("{{title}}", poem.Title).Replace("{{navbar}}", NavbarTemplate);
         string finalFileName = Regex.Replace(filename.ToLower().Replace(" ", "-"), @"[^0-9a-zA-Z\-]", "");
 
         dirPath += $"/{finalFileName}";
@@ -243,7 +246,7 @@ class Program
     static void RenderOtherPage(string filepath, string template)
     {
         string text = File.ReadAllText(filepath);
-        string html = template.Replace("{{content}}", md.Transform(text));
+        string html = template.Replace("{{content}}", md.Transform(text)).Replace("{{navbar}}", NavbarTemplate);
         string dirpath = $"docs/{Path.GetFileNameWithoutExtension(filepath)}";
         string htmlpath = $"{dirpath}/index.html";
         
@@ -539,7 +542,7 @@ class Program
     static void CopyFilesToDocs()
     {
         List<string> filesToCopy = new List<string>();
-        filesToCopy.AddRange(Directory.GetFiles("Styles"));
+        filesToCopy.AddRange(Directory.GetFiles("Styles").Where(file => file != "toc.css"));
         filesToCopy.AddRange(Directory.GetFiles("Scripts"));
         
         foreach(string file in filesToCopy)
