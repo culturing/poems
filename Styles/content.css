@@ -1,7 +1,7 @@
 #container { display: flex; flex-direction: row; justify-content: center; }
 #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 67px); } 
 #content h3 { padding-top: 2rem; }
-.url, #pdf { display: none !important; }
+.url, #pdf { display: none; }
 
 @media only screen and (min-width : 769px)
 {
@@ -13,4 +13,9 @@
     #container { justify-content: flex-start; }
     #content:not(.wrap) { white-space: nowrap; overflow-x: auto; min-width: 0; }
     #container-parent { min-height: unset; }
+}
+
+@media only print
+{
+    .url { display: block; }
 }

@@ -7,5 +7,4 @@ h3 { margin: 0; }
     body { background-color: white; color: black; }
     a { text-decoration-color: black; color: black; }
     .navbar, #license { display: none; }
-    .url { display: block; }
 }
