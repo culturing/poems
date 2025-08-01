@@ -1504,20 +1504,20 @@
     "LastMod": "2025-06-21T02:24:09.752756Z"
   },
   "/": {
-    "Hash": "e8cf4ff0eb8e63cb84252180120b3ca2cec0232bc127ea0cdc774449e3a8b571",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "d451360e99d1e5236b8d2d16652f9b306ce62b759f2240675313d8dc0d914034",
+    "LastMod": "2025-08-01T21:28:21.2281489Z"
   },
   "/best/": {
-    "Hash": "89be7f805be4e351d40d565484cf49061a026ca2a5bcbd2431a3d00cbb605a03",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "8bd957745a690f9ce2dc062538b446a681d6edd3567cc4bd5ca2e22cf605dcf1",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/about/": {
     "Hash": "7e33545ec44d0bc907e72228804049a81c9e1d7fd1678ea9e071b3ceb796f994",
     "LastMod": "2025-06-21T02:24:49.1600232Z"
   },
   "/culturing.pdf": {
-    "Hash": "01af889cc4498f7469738547cc338b668946dc6df1923576332d8d4e10039545",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "5d3f2121047b1ad47003de62f15f4857709af329ba20d5a1aa58ba2d12ba5650",
+    "LastMod": "2025-08-01T21:28:21.2281489Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "318eb5e1f233f0bb91604345e9e98c9bd0db19c2262469cafbe17c06d64ed7bb",
@@ -1568,51 +1568,71 @@
     "LastMod": "2025-06-21T02:24:09.752756Z"
   },
   "/2025/05/labor-pains/": {
-    "Hash": "5aecc518051d68e1f5481c9eb88bd6188af6a844712833023d447ff78ebfc57b",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "d674b6c7a6e4208e4979e34bc316acc89a63d93eaff1be2f357529ec9153b118",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/that-hollow-moon/": {
-    "Hash": "fe78953b83f4be958799a67353f5ac74e5f125443c1947e83eba6fd694cab900",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "d6a142a7e66e22db2f5b407042a0e0f07406afa81b09b8c5b059ca97cecead2b",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/i-could-go-to-her/": {
-    "Hash": "b3aa0b3809bdf9bebd44d5ba57cfc73a6c0dabc1fdf9b36ba712a2f69da7358d",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "bb90dbc64ff2154397e2fa02c9f72cd035eed1de80b0292cef0c39432445f97a",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/awaken-to-storms/": {
-    "Hash": "3532cee2877a2e7207376db6a16bce90670987836c01518e99feeaebbd5b3527",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "c2245df8be513b6e0a2791f73f1a05affca17dc54949fb330eb5edf6f404ec70",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/just-one-moment-more/": {
-    "Hash": "b6bb66cd40d44506a0b7c8873ccecec771c9556264554260340039215d46babd",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "0b0633381b5af4863e88129ba3709c6f67a915850ac42fe7e42edf376dab390a",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/passion-chokes-out-thinking/": {
-    "Hash": "5d85578f2274670c210c47ce8226cda6b990ee69d1ce7913339cb598c6f6d29a",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "135ea3ef2312c819ad70290ce9c924a67b7696c4b59df7902507de78135a6bb9",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/the-presence-of-love/": {
-    "Hash": "92a8502227f4d88f2a29d06873c36e5f9bb7490d37fe7615bd41310c6914c2d1",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "a3391169aef4e6038e60473442ce6880d78df7c04cc9124f29f3c82ef61b95b3",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/how-much-love/": {
-    "Hash": "0fa459981a8b50bc32cc5eeb1df615b649a706afd75ebe4dbb772622c0f2c818",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "41ca54f7fb525745152a51e3d0facd9909d93d3c4be872f319f124de2e2151f3",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/daylight/": {
-    "Hash": "75356ebfc55a0145336520c50465fe0efa075e0b5a2c018ee26f5bc633f8e42c",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "a415d414aaa3aea971be1db692f83bb96ff846e50849d1e009270550a428af14",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/make-my-dreams-true/": {
-    "Hash": "d7e996d398dd82614c93bdd127e452172536c51b25479745a3a907fc70525637",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "25a9c2eb9661d1a470ce3d2501bdfcf62c76a4541cc8b88a9302557366e30df0",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/as-only-you-can/": {
-    "Hash": "37525e04dff594093acdd1f8acae44b376ce2f9156746ac7e1c8a3b616e5bed1",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "02b2465ebc0cc97f5f7a6c9f1377ecb9c35adf6a256cfde01855438e8476d045",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/the-land-of-the-same/": {
-    "Hash": "1228b99287d2089a0aa18ad3d84a41c982138c21f8499b3c50934d22cd7ef2db",
-    "LastMod": "2025-07-03T00:35:24.8358202Z"
+    "Hash": "e9d3a0099a5243a0ad25a79328f89644880cfcca637bdf9128c598758c93fcdd",
+    "LastMod": "2025-08-01T21:21:09.9894941Z"
+  },
+  "/2025/08/the-one-who-will-understand/": {
+    "Hash": "894fbc3c4c2c44e65ac9afb8448bc5a455d0a461ec7d4bb6312b6b3230adaef1",
+    "LastMod": "2025-08-01T21:19:30.7186024Z"
+  },
+  "/2025/08/less-perfect-than-it-seemed/": {
+    "Hash": "bc5eec0e8627db5626af3ea8a6774267b4263832003645621a7ae488756597ed",
+    "LastMod": "2025-08-01T21:28:21.2281489Z"
+  },
+  "/2025/08/vassals-of-despair/": {
+    "Hash": "c3eb96aed2dd19ed4df56330dd10cd695683915e8a19aa0f0ad2619afbabc4b1",
+    "LastMod": "2025-08-01T21:23:19.2295554Z"
+  },
+  "/2025/08/farewell-isis/": {
+    "Hash": "29b777793608711fee8aaf0b441f18f92ff475bf109d79bc5c3ad7cf4d598f5e",
+    "LastMod": "2025-08-01T21:19:30.7186024Z"
+  },
+  "/2025/08/growth/": {
+    "Hash": "9a0770d3c732cb53ba4066f7b7ef166daf1874b309e54805ec5588852611ca90",
+    "LastMod": "2025-08-01T21:19:30.7186024Z"
   }
 }
