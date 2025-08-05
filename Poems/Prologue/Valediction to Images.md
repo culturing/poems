@@ -1,4 +1,4 @@
-Valediction to Images
+*Valediction to Images
 06 August 2016
 
 Image of forgotten beauty,

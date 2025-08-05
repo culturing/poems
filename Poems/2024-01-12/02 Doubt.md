@@ -17,7 +17,7 @@ but in fact, I doubt, as is now the fashion,
 but doubt that this doubt could reach certainty,
 clarity, truth, or obedience, all of which go 
 into care. Does my doctor doubt? For if so,
-he will not be must trusted. If not,
+he will not be much trusted. If not,
 he shall not follow science.
 I go now to bed, to the sweeter rest,
 free from doubt and its faithful unfaithfulness,
