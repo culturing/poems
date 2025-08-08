@@ -10,7 +10,7 @@ many hungry, some devoted, some misguided, one or two
 with hope to spare – in other words, they were a people
 like the rest. True, they owned slaves, or those 
 before them did, but this fact cannot be washed away
-with any amount of blood. We ought to know by know
+with any amount of blood. We ought to know by now
 that history is fickle, and remains despite our sternest glare.
 There is no way to make it vanish. Nonetheless,
 we can move forward, and have done it, though
