@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2025-08-08T21:40:42.8691372Z</lastmod>
+    <lastmod>2025-08-17T16:44:26.4110362Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2025-08-05T21:44:49.5326967Z</lastmod>
+    <lastmod>2025-08-17T16:44:26.4110362Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2025-08-08T21:40:42.8691372Z</lastmod>
+    <lastmod>2025-08-17T17:08:54.3604353Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -985,7 +985,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2023/12/vesta/</loc>
-    <lastmod>2025-06-21T02:24:09.7527560Z</lastmod>
+    <lastmod>2025-08-17T16:44:26.4110362Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1711,7 +1711,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/07/daylight/</loc>
-    <lastmod>2025-08-05T21:47:31.6393120Z</lastmod>
+    <lastmod>2025-08-17T16:44:26.4110362Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1735,7 +1735,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/08/the-one-who-will-understand/</loc>
-    <lastmod>2025-08-01T21:19:30.7186024Z</lastmod>
+    <lastmod>2025-08-17T16:44:26.4110362Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1759,7 +1759,85 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/08/growth/</loc>
-    <lastmod>2025-08-01T21:19:30.7186024Z</lastmod>
+    <lastmod>2025-08-17T16:44:26.4110362Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/angry-solid-blue/</loc>
+    <lastmod>2025-08-17T17:02:47.0361723Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/ariadne/</loc>
+    <lastmod>2025-08-17T16:36:45.0792797Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/marriage-bed/</loc>
+    <lastmod>2025-08-17T16:36:45.0792797Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/love-is-a-flame/</loc>
+    <lastmod>2025-08-17T16:36:45.0792797Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/broken-wing/</loc>
+    <lastmod>2025-08-17T16:36:45.0792797Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/face-the-day/</loc>
+    <lastmod>2025-08-17T17:02:47.0361723Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/plant-it/</loc>
+    <lastmod>2025-08-17T16:36:45.0792797Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/civilization-for-the-first-time/</loc>
+    <lastmod>2025-08-17T16:36:45.0792797Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/no-way-out/</loc>
+    <lastmod>2025-08-17T16:50:32.5910119Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/love-conquers-little/</loc>
+    <lastmod>2025-08-17T16:36:45.0792797Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/all-that-could-be-lost-again/</loc>
+    <lastmod>2025-08-17T16:44:26.4110362Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/if-tomorrow-will-be-any-better/</loc>
+    <lastmod>2025-08-17T17:02:47.0361723Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/08/how-to-garden/</loc>
+    <lastmod>2025-08-17T16:36:45.0792797Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>

@@ -640,8 +640,8 @@
     "LastMod": "2025-06-21T02:24:09.752756Z"
   },
   "/2023/12/vesta/": {
-    "Hash": "6461627d33dafaa552129839c271a245149c6ef9e68a442478055db727136157",
-    "LastMod": "2025-06-21T02:24:09.752756Z"
+    "Hash": "467a12c597d15f3d2481076e433559d597ad9bf2693f905797f863b1af2d0feb",
+    "LastMod": "2025-08-17T16:44:26.4110362Z"
   },
   "/2023/12/touch/": {
     "Hash": "e5a62ac41fd5926c2c816566d9b231b94cc27c5046677db5bcfd0499417708ea",
@@ -1504,20 +1504,20 @@
     "LastMod": "2025-06-21T02:24:09.752756Z"
   },
   "/": {
-    "Hash": "37816fc3529425ee5839a89bcaf561d88cdd9b1de8c47bcafea5f53b0beca278",
-    "LastMod": "2025-08-08T21:40:42.8691372Z"
+    "Hash": "9bf4ed3f0d37a24d8cc0c2348e6878c8e595007743bbb9384b8cd65525ae1a5e",
+    "LastMod": "2025-08-17T16:44:26.4110362Z"
   },
   "/best/": {
-    "Hash": "8519baa35b63054cb2d514be1d4b9320444e3556d7c7762feb45ff76f50bde44",
-    "LastMod": "2025-08-05T21:44:49.5326967Z"
+    "Hash": "43c7c10ca7e6d911fad0c9dec4782f7f59f8655093acf3243bb83b3f2eb6d846",
+    "LastMod": "2025-08-17T16:44:26.4110362Z"
   },
   "/about/": {
     "Hash": "7e33545ec44d0bc907e72228804049a81c9e1d7fd1678ea9e071b3ceb796f994",
     "LastMod": "2025-06-21T02:24:49.1600232Z"
   },
   "/culturing.pdf": {
-    "Hash": "18e2c5ce95278c1056df0df2fb3f1dd8af7a40a4d4de1d7c3b8f6c32f4b8ce17",
-    "LastMod": "2025-08-08T21:40:42.8691372Z"
+    "Hash": "ad3bd9536533fa4154f9925f6bef03ccce75198fd188bd9c71464e648c4671cf",
+    "LastMod": "2025-08-17T17:08:54.3604353Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "318eb5e1f233f0bb91604345e9e98c9bd0db19c2262469cafbe17c06d64ed7bb",
@@ -1600,8 +1600,8 @@
     "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/07/daylight/": {
-    "Hash": "f6afb793675d24111e8599c74370c8b152db03364c7d2b9237cd026a4a884ac9",
-    "LastMod": "2025-08-05T21:47:31.639312Z"
+    "Hash": "276a2698e776e2d3481a1b6fb035011651b88f79ccf6d955d4dd7cfe68448af3",
+    "LastMod": "2025-08-17T16:44:26.4110362Z"
   },
   "/2025/07/make-my-dreams-true/": {
     "Hash": "25a9c2eb9661d1a470ce3d2501bdfcf62c76a4541cc8b88a9302557366e30df0",
@@ -1616,8 +1616,8 @@
     "LastMod": "2025-08-01T21:21:09.9894941Z"
   },
   "/2025/08/the-one-who-will-understand/": {
-    "Hash": "894fbc3c4c2c44e65ac9afb8448bc5a455d0a461ec7d4bb6312b6b3230adaef1",
-    "LastMod": "2025-08-01T21:19:30.7186024Z"
+    "Hash": "39fd27aa75592c80e5c7f3f7ef60e03be403f1588ae9458258149a82b47ece82",
+    "LastMod": "2025-08-17T16:44:26.4110362Z"
   },
   "/2025/08/less-perfect-than-it-seemed/": {
     "Hash": "bc5eec0e8627db5626af3ea8a6774267b4263832003645621a7ae488756597ed",
@@ -1632,7 +1632,59 @@
     "LastMod": "2025-08-01T21:19:30.7186024Z"
   },
   "/2025/08/growth/": {
-    "Hash": "9a0770d3c732cb53ba4066f7b7ef166daf1874b309e54805ec5588852611ca90",
-    "LastMod": "2025-08-01T21:19:30.7186024Z"
+    "Hash": "203282e78a220fa8fc2c70704150b73690d94834a7478b2ee26a80df2f6596fe",
+    "LastMod": "2025-08-17T16:44:26.4110362Z"
+  },
+  "/2025/08/angry-solid-blue/": {
+    "Hash": "8c974a4db5949624656d987284ba28a2c9fdf078f459366db6ae58730e74d6af",
+    "LastMod": "2025-08-17T17:02:47.0361723Z"
+  },
+  "/2025/08/ariadne/": {
+    "Hash": "80d4e2131f0975423baafd44497ede1e9aed0ba2e3de6d20a84517e6a4d76bb6",
+    "LastMod": "2025-08-17T16:36:45.0792797Z"
+  },
+  "/2025/08/marriage-bed/": {
+    "Hash": "77d0a0bff090cdf7b8f2700ab2c072e732b21dac6d4c91644375b1d2e18afaac",
+    "LastMod": "2025-08-17T16:36:45.0792797Z"
+  },
+  "/2025/08/love-is-a-flame/": {
+    "Hash": "c73e783ba58067f49108078d34086af2a2a87d7254ad207bea6afa6bd2a9e8d0",
+    "LastMod": "2025-08-17T16:36:45.0792797Z"
+  },
+  "/2025/08/broken-wing/": {
+    "Hash": "6d1d5cfe0488836a8616475c0854f176cdf147ea35021612bf040759f696ca30",
+    "LastMod": "2025-08-17T16:36:45.0792797Z"
+  },
+  "/2025/08/face-the-day/": {
+    "Hash": "2d131ca46bad364b9127d5a7a879cd42cdb503b6618e604319f6e915dd031d32",
+    "LastMod": "2025-08-17T17:02:47.0361723Z"
+  },
+  "/2025/08/plant-it/": {
+    "Hash": "042bf99e4aadb367ba081bc4e350d19ea02e11e173869b9c1daf25bb89017e4b",
+    "LastMod": "2025-08-17T16:36:45.0792797Z"
+  },
+  "/2025/08/civilization-for-the-first-time/": {
+    "Hash": "c84245c1965c1b1c837f282f895628be22f154f33fc5772fbb3af959394b65ce",
+    "LastMod": "2025-08-17T16:36:45.0792797Z"
+  },
+  "/2025/08/no-way-out/": {
+    "Hash": "3c41a7f75b10ede33a12bcea126316e99b7465157fccf3c421957e38d12064c9",
+    "LastMod": "2025-08-17T16:50:32.5910119Z"
+  },
+  "/2025/08/love-conquers-little/": {
+    "Hash": "bbea7472926417384d98e8eca0919c19eb66c13c9a9f802f7fbc9bec8fd5e3f1",
+    "LastMod": "2025-08-17T16:36:45.0792797Z"
+  },
+  "/2025/08/all-that-could-be-lost-again/": {
+    "Hash": "cf71d59dcd0445eaf21b97ef16f7a89f9215c0612befcef2313325a98f24882e",
+    "LastMod": "2025-08-17T16:44:26.4110362Z"
+  },
+  "/2025/08/if-tomorrow-will-be-any-better/": {
+    "Hash": "4106fb808b9c6fa9b01bfd39840df91e3b3d5ab8a653902d0d2afd32c5645846",
+    "LastMod": "2025-08-17T17:02:47.0361723Z"
+  },
+  "/2025/08/how-to-garden/": {
+    "Hash": "b78d610bc1e42c3e3af7e24e3be44867328310deb5e4058ea7c279b89c6161d6",
+    "LastMod": "2025-08-17T16:36:45.0792797Z"
   }
 }
