@@ -1,4 +1,4 @@
-Afterthought on the Romantics
+*Afterthought on the Romantics
 21 September 2022
 
 They strove to bring the dark into the light.
