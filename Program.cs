@@ -316,6 +316,16 @@ class Program
             MergePdfs(copyrightPdf, pdf);
         }
         pdf.Outlines.Add("Copyright", pdf.Pages[pdf.PageCount - 1]);
+
+    // Add about
+        pdfRenderOptions.Path = $"Output/Pdfs/About.pdf";
+        await page.GotoAsync("/about/index.html");
+        await page.PdfAsync(pdfRenderOptions);
+        using (PdfDocument aboutPdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
+        {
+            MergePdfs(aboutPdf, pdf);
+        }
+        pdf.Outlines.Add("About", pdf.Pages[pdf.PageCount - 1]);
         
     // Add temporary table of contents
         int tableOfContentsStart = pdf.PageCount;
