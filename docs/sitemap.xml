@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2025-09-07T20:56:11.1332589Z</lastmod>
+    <lastmod>2025-09-26T23:29:50.6931534Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2025-09-07T20:56:11.1332589Z</lastmod>
+    <lastmod>2025-09-26T23:29:50.6931534Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2025-09-07T21:01:41.9750067Z</lastmod>
+    <lastmod>2025-09-26T23:29:50.6931534Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1843,7 +1843,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/08/what-waiting-means/</loc>
-    <lastmod>2025-08-27T23:26:21.7473310Z</lastmod>
+    <lastmod>2025-09-26T23:20:02.7740580Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1867,7 +1867,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/08/wander-stormy-seas/</loc>
-    <lastmod>2025-09-07T20:47:11.2608753Z</lastmod>
+    <lastmod>2025-09-26T23:20:02.7740580Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1951,7 +1951,61 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/09/excavation/</loc>
-    <lastmod>2025-09-07T20:56:11.1332589Z</lastmod>
+    <lastmod>2025-09-26T23:20:02.7740580Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/few-and-far-between/</loc>
+    <lastmod>2025-09-26T23:18:48.1898865Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/beatrice-and-penelope/</loc>
+    <lastmod>2025-09-26T23:18:48.1898865Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/scheduled-procreation/</loc>
+    <lastmod>2025-09-26T23:18:48.1898865Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/wane-and-dwindle/</loc>
+    <lastmod>2025-09-26T23:18:48.1898865Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/bones-on-the-inside/</loc>
+    <lastmod>2025-09-26T23:18:48.1898865Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/whatever-this-call-entails/</loc>
+    <lastmod>2025-09-26T23:26:43.2370755Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/the-center-contra-hegel/</loc>
+    <lastmod>2025-09-26T23:18:48.1898865Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/the-hard-rock-of-reality/</loc>
+    <lastmod>2025-09-26T23:18:48.1898865Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/09/a-home-of-my-own-design/</loc>
+    <lastmod>2025-09-26T23:26:43.2370755Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>

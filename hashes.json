@@ -1504,20 +1504,20 @@
     "LastMod": "2025-06-21T02:24:09.752756Z"
   },
   "/": {
-    "Hash": "6bc0eba2cb964014732df4da45f399f2ffee97d3dbdb82de46be035ce3d5d1ac",
-    "LastMod": "2025-09-07T20:56:11.1332589Z"
+    "Hash": "3e915f5128c008a5c19dfe5e1cbb6f637901ba975f40967a688faf1c9cd96ced",
+    "LastMod": "2025-09-26T23:29:50.6931534Z"
   },
   "/best/": {
-    "Hash": "ab21e1b097b7f6cc3b4fc1de28cc90516aaca796ade420ac594d7b9d7e6737de",
-    "LastMod": "2025-09-07T20:56:11.1332589Z"
+    "Hash": "6d6673c1fbf5c9c76148e52443121340cb7d5b2721100af25a553cd525e7cda5",
+    "LastMod": "2025-09-26T23:29:50.6931534Z"
   },
   "/about/": {
     "Hash": "516c4440b713eb0dad07261f2e1c8884b202c7fe046451110d98f6bed817826c",
     "LastMod": "2025-08-28T00:18:03.3308867Z"
   },
   "/culturing.pdf": {
-    "Hash": "8a2446f9fd81162ab2b183fecd0173988127a3dcdacecb4ac1f363f584b17745",
-    "LastMod": "2025-09-07T21:01:41.9750067Z"
+    "Hash": "77b2d9dc72f4acd29d24992ccca3d5448dd636dadacb69674a7fcf484796eefb",
+    "LastMod": "2025-09-26T23:29:50.6931534Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "318eb5e1f233f0bb91604345e9e98c9bd0db19c2262469cafbe17c06d64ed7bb",
@@ -1692,8 +1692,8 @@
     "LastMod": "2025-08-27T23:17:58.2391146Z"
   },
   "/2025/08/what-waiting-means/": {
-    "Hash": "3a60f6f05925465a945b85df2f832ece8240bf2c326f4371c549eddb4b435482",
-    "LastMod": "2025-08-27T23:26:21.747331Z"
+    "Hash": "4e3d91f93a634f3eea0c0b7056c36617a3d8a42602998141678811d7d20bd246",
+    "LastMod": "2025-09-26T23:20:02.774058Z"
   },
   "/2025/08/rest-and-recover/": {
     "Hash": "bebbe688761061a12610410a4c7f169746bac9e1e961d07dce1dff0b83df5074",
@@ -1708,8 +1708,8 @@
     "LastMod": "2025-08-27T23:17:58.2391146Z"
   },
   "/2025/08/wander-stormy-seas/": {
-    "Hash": "d0af0564c2d0a49e7e7a2f7ee20022814a3d2ac04e65912ee67a1c44f5141ef2",
-    "LastMod": "2025-09-07T20:47:11.2608753Z"
+    "Hash": "989c2362f565795e4a0b71ba9b87f2930899cf62906f5bcc65dab36353dcc389",
+    "LastMod": "2025-09-26T23:20:02.774058Z"
   },
   "/2025/09/i-could-do-no-other/": {
     "Hash": "eeee3071fcb693650677d05e8cebdbf7772f94af9e592bdbb91d464607de70ab",
@@ -1764,7 +1764,43 @@
     "LastMod": "2025-09-07T20:41:46.4432313Z"
   },
   "/2025/09/excavation/": {
-    "Hash": "3819e5b52d950968b6121e88cd18a7bfd3b16ef55fbb9e14610350ad09d411ec",
-    "LastMod": "2025-09-07T20:56:11.1332589Z"
+    "Hash": "1fe1ffa6126216385edaacf93f57b854596288d51f4940a89fb65ca5a4293a67",
+    "LastMod": "2025-09-26T23:20:02.774058Z"
+  },
+  "/2025/09/few-and-far-between/": {
+    "Hash": "d44f8a41de4a1e0b60cbe01c5d865863c9f753cdb9002b70b91889085606c504",
+    "LastMod": "2025-09-26T23:18:48.1898865Z"
+  },
+  "/2025/09/beatrice-and-penelope/": {
+    "Hash": "a92ce1c0aa7cdc35fd3bb2dbb3311051782a3be194b31c67d9b4f9e6747baa3e",
+    "LastMod": "2025-09-26T23:18:48.1898865Z"
+  },
+  "/2025/09/scheduled-procreation/": {
+    "Hash": "aa282f37d5a2decd5d97dcca36669d2d1d7abac86e4feea940b657091628e5a2",
+    "LastMod": "2025-09-26T23:18:48.1898865Z"
+  },
+  "/2025/09/wane-and-dwindle/": {
+    "Hash": "ba97e098810ea2dbc82117ec2a6181c697b04af31f3d329a92415fce08103565",
+    "LastMod": "2025-09-26T23:18:48.1898865Z"
+  },
+  "/2025/09/bones-on-the-inside/": {
+    "Hash": "a7d9722f64eb8f7101f0e2721b703e490ca86378103cc4885126a750c161948a",
+    "LastMod": "2025-09-26T23:18:48.1898865Z"
+  },
+  "/2025/09/whatever-this-call-entails/": {
+    "Hash": "eee52abe885df1d43fb87fe1769eee9f1734814fdbeda812beacff30840ed541",
+    "LastMod": "2025-09-26T23:26:43.2370755Z"
+  },
+  "/2025/09/the-center-contra-hegel/": {
+    "Hash": "81f3a950923f3f31a84fbeb374451a558c06c2fdd7d284d547a422d38ec77575",
+    "LastMod": "2025-09-26T23:18:48.1898865Z"
+  },
+  "/2025/09/the-hard-rock-of-reality/": {
+    "Hash": "317adf9ae2f3d9d3ef0402687cae63f45eefe15d6f46325b98e44ea6a8c3695b",
+    "LastMod": "2025-09-26T23:18:48.1898865Z"
+  },
+  "/2025/09/a-home-of-my-own-design/": {
+    "Hash": "a205254c432bfa537a1cb16ddae5421c4aad0cc239dc718ba9cd2291d35b7ff3",
+    "LastMod": "2025-09-26T23:26:43.2370755Z"
   }
 }
