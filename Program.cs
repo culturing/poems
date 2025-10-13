@@ -15,27 +15,6 @@ using Schema.NET;
 
 namespace Poems;
 
-class Poem
-{
-    public string Title { get; set; }
-    public string Link { get; set; }
-    public bool Bold { get; set; } = false;
-    public DateTime PublicationDate { get; set; }
-    public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-    public string FilePath { get; set; }
-    public string FileName => Path.GetFileName(Path.GetDirectoryName(FilePath));
-    public string UrlPath => $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}/";
-    public int Page { get; set; }
-    public string Style(bool bestOnly = false)
-    {
-        string style = string.Empty;
-        if (Bold && !bestOnly)
-            style += "font-weight: bold;";
-        return style;
-    }
-    public Dictionary<string, string> Variables { get; set; } = new();
-}
-
 class Program
 {
     static public string BaseUrl = "https://poems.culturing.net";
@@ -52,7 +31,11 @@ class Program
     static List<Poem> Poems { get; set; } = new List<Poem>();
     static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
     static Dictionary<string, IEnumerable<Poem>> FilteredPoemsByDate;
+    static List<Analysis> Analyses { get; set; } = new List<Analysis>();
+    static Dictionary<string, List<Analysis>> AnalysesByDate = new Dictionary<string, List<Analysis>>();
+    static Dictionary<string, IEnumerable<Analysis>> FilteredAnalysesByDate;
     static XFont Font = new XFont("Quattrocento", 12.0);
+    public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
     static async Task Main(string[] args)
     {            
@@ -71,6 +54,15 @@ class Program
                 AddPoem(filepath);
             }
         }
+
+    // Parse Analyses
+        // foreach (string dirpath in Directory.EnumerateDirectories("Analyses"))
+        // {            
+        //     foreach (string filepath in Directory.EnumerateFiles(dirpath))
+        //     {
+        //         AddAnalysis(filepath);
+        //     }
+        // }
 
     // Build Index
         string indexHtml = string.Empty;
@@ -237,10 +229,48 @@ class Program
         Poems.Add(poem);
 
     // Sort for chronology
-        string key = $"{Poem.Months[poem.PublicationDate.Month]} {poem.PublicationDate.Year}";
+        string key = $"{Months[poem.PublicationDate.Month]} {poem.PublicationDate.Year}";
         if (!PoemsByDate.ContainsKey(key))
             PoemsByDate[key] = new List<Poem>();
         PoemsByDate[key].Add(poem);
+    }
+
+    static void AddAnalysis(string filepath)
+    {
+        var analysis = new Analysis();
+        string filename = Path.GetFileNameWithoutExtension(filepath);
+        List<string> lines = File.ReadAllLines(filepath).ToList();
+        
+        filename = Regex.Replace(filename, "^[0-9][0-9] ", "");
+        analysis.Title = filename;
+        
+        analysis.PublicationDate = System.DateTime.Parse(lines[2]);
+        analysis.Title = lines[0];
+        lines[0] = $"### {lines[0]}";
+        lines[2] = $"<p style='margin:0;'><em><small><small>{lines[2]}</small></small></em></p>";
+
+        string dirPath = $"docs/analysis/{analysis.PublicationDate.ToString("yyyy")}/{analysis.PublicationDate.ToString("MM")}";
+        
+        string content = String.Join("  \n", lines);
+        string contentHtml = md.Transform(content);
+        string finalPoemHtml = ContentTemplate.Replace("{{content}}", contentHtml).Replace("{{title}}", analysis.Title).Replace("{{navbar}}", NavbarTemplate);
+        string finalFileName = Regex.Replace(filename.ToLower().Replace(" ", "-"), @"[^0-9a-zA-Z\-]", "");
+
+        dirPath += $"/{finalFileName}";
+        Directory.CreateDirectory(dirPath);        
+        string finalPath = $"{dirPath}/index.html";
+        File.WriteAllText(finalPath, finalPoemHtml);
+
+        analysis.FilePath = finalPath;
+        analysis.Link = $"<a href=\"{analysis.UrlPath}\">{analysis.Title}</a>";
+
+        Analyses.Add(analysis);
+
+    // Sort for chronology
+        string key = $"{Months[analysis.PublicationDate.Month]} {analysis.PublicationDate.Year}";
+        if (!AnalysesByDate.ContainsKey(key))
+            AnalysesByDate[key] = new List<Analysis>();
+        AnalysesByDate[key].Add(analysis);
     }
 
     static void RenderOtherPage(string filepath, string template)
