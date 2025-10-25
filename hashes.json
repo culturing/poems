@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "a310e69f696dc44c7b0f2e658795c275fa78f1ec99e51da1a14c7074a8c46a95",
-    "LastMod": "2025-10-13T01:46:31.0878876Z"
+    "Hash": "82673585168c0e43d442e6a6de1de4329d6f2c1f4db022546d4f1cf0cf43c2ae",
+    "LastMod": "2025-10-24T22:52:56.1215242Z"
   },
   "/best/": {
-    "Hash": "e3a81a5d8786ec72aa81478d4689ac5eec5e026729996f6e80eae76f24eb35d0",
-    "LastMod": "2025-10-13T01:46:31.0878876Z"
+    "Hash": "e27f9389d2fc0be0b3d3d7c8517dafbbc8cf8a8b51e780199c0f6c11ccafa973",
+    "LastMod": "2025-10-24T22:52:56.1215242Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "0e9d34e634b4467d06e156a82cc3ad2178bb51163450e31264b033dfece37f44",
-    "LastMod": "2025-10-13T01:53:58.1418122Z"
+    "Hash": "c7c3bd82e36a8bb8db42b596df32037a6d7eb1d852d3b26161eaf17311a39439",
+    "LastMod": "2025-10-24T22:58:44.6330096Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -1848,7 +1848,31 @@
     "LastMod": "2025-10-13T01:48:54.964134Z"
   },
   "/2025/10/where-true-power-lies/": {
-    "Hash": "a7686e3e170f5835e8cc18f86be905c0608cd1f443fa10d3a27e834aa13510a5",
-    "LastMod": "2025-10-13T01:51:05.8186398Z"
+    "Hash": "88551892b738e087cdcfb974cba7166dc04d99fd296f663aa43058e8151e74d0",
+    "LastMod": "2025-10-24T22:58:44.6330096Z"
+  },
+  "/2025/10/amidst-the-shadows/": {
+    "Hash": "c10cc0d77ce6e413307948d0a198f463d492282fe2c68ec02ba5306ecd3423d8",
+    "LastMod": "2025-10-24T22:52:56.1215242Z"
+  },
+  "/2025/10/help-and-not-harm/": {
+    "Hash": "b7039cad04a0448f64c2ad04ace8191cfb1bdd165595ace22011082b64c62d2b",
+    "LastMod": "2025-10-24T22:58:44.6330096Z"
+  },
+  "/2025/10/blossom/": {
+    "Hash": "68068af8eb01d4ff8792513e37de2b4a45765c7cce84f3dd42ddc91017544f9b",
+    "LastMod": "2025-10-24T22:52:56.1215242Z"
+  },
+  "/2025/10/maybe-for-the-last-time/": {
+    "Hash": "067beb10887431eec9e0441b2f4bca1df6ad3f2a820245860b88728ccfcbe5af",
+    "LastMod": "2025-10-24T22:58:44.6330096Z"
+  },
+  "/2025/10/love-must-come-true/": {
+    "Hash": "acc981df12278eb94f15a5f28f3f97c99fc399b1ab5a5815ffba7479a8112bbb",
+    "LastMod": "2025-10-24T22:58:44.6330096Z"
+  },
+  "/2025/10/enveloping/": {
+    "Hash": "7d4e6ce6352e82c45ec39df83d502d654d1a0c13de023da37289729683e9c937",
+    "LastMod": "2025-10-24T22:52:56.1215242Z"
   }
 }
