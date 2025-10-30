@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2025-10-24T22:52:56.1215242Z</lastmod>
+    <lastmod>2025-10-30T00:31:54.6326551Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2025-10-24T22:52:56.1215242Z</lastmod>
+    <lastmod>2025-10-30T00:31:54.6326551Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2025-10-24T22:58:44.6330096Z</lastmod>
+    <lastmod>2025-10-30T03:07:43.9436181Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1879,7 +1879,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/09/quiet-quiet-river/</loc>
-    <lastmod>2025-10-12T22:51:33.7175739Z</lastmod>
+    <lastmod>2025-10-30T03:06:10.7264559Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2113,7 +2113,43 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/10/enveloping/</loc>
-    <lastmod>2025-10-24T22:52:56.1215242Z</lastmod>
+    <lastmod>2025-10-30T03:06:10.7264559Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/10/chiaroscuro-girl/</loc>
+    <lastmod>2025-10-30T03:06:10.7264559Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/10/silent-repose/</loc>
+    <lastmod>2025-10-30T03:06:10.7264559Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/10/the-girl-and-the-stag/</loc>
+    <lastmod>2025-10-30T03:07:43.9436181Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/10/dark-abyss/</loc>
+    <lastmod>2025-10-30T03:06:10.7264559Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/10/not-meant-for-this-world/</loc>
+    <lastmod>2025-10-30T03:06:10.7264559Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/10/for-once/</loc>
+    <lastmod>2025-10-30T03:06:10.7264559Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
