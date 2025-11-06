@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2025-10-30T00:31:54.6326551Z</lastmod>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2025-10-30T00:31:54.6326551Z</lastmod>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2025-10-30T03:07:43.9436181Z</lastmod>
+    <lastmod>2025-11-06T22:41:37.2275317Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2149,7 +2149,85 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/10/for-once/</loc>
-    <lastmod>2025-10-30T03:06:10.7264559Z</lastmod>
+    <lastmod>2025-11-06T22:41:37.2275317Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/a-resonant-ordeal/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/not-quite-at-peace/</loc>
+    <lastmod>2025-11-06T22:41:37.2275317Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/elsewhere/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/not-what-i-hoped/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/who-you-are-out-of-the-chrysalis/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/the-dream-of-the-birds/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/opened-door/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/a-blend-of-struggles/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/an-ear-to-the-whole/</loc>
+    <lastmod>2025-11-06T22:41:37.2275317Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/not-too-soon/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/hardly-beginning/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/both-true-and-false/</loc>
+    <lastmod>2025-11-06T22:41:37.2275317Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/11/as-she-was/</loc>
+    <lastmod>2025-11-06T22:36:07.8771055Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
