@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "c6f422d7aa212a56ad08d6bd0f942fcb943355985759a31de0cc904338deb3e3",
-    "LastMod": "2025-11-06T22:36:07.8771055Z"
+    "Hash": "e439eefc0bf87dba8cc04ffce1d70f62c9d9a545eebea3cb9003e924d051a9de",
+    "LastMod": "2025-11-17T02:20:50.9440726Z"
   },
   "/best/": {
-    "Hash": "bc9c96b87322a90f0d6d24d9a6fba4b31764db1b394dee8e4cc9a12f50057b9a",
-    "LastMod": "2025-11-06T22:36:07.8771055Z"
+    "Hash": "1d30065d633e338d07b47b05b66b6827e2384f89e64c114802d172c8dea088ba",
+    "LastMod": "2025-11-17T02:20:50.9440726Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "ba1a57e2b2843f5d653ac388bade06009f7e952a62070ce014ebc4f12e2efce7",
-    "LastMod": "2025-11-06T22:41:37.2275317Z"
+    "Hash": "4a95244735937fae2cb9e21f5d5db08c255f9625877a34f7e91f11fa598517a6",
+    "LastMod": "2025-11-17T03:02:47.5326459Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -1904,8 +1904,8 @@
     "LastMod": "2025-11-06T22:36:07.8771055Z"
   },
   "/2025/11/not-quite-at-peace/": {
-    "Hash": "b6c3136d7f52e68bbed2ec7fbe2b5f936a6f60bb85168351248a595f82399fbc",
-    "LastMod": "2025-11-06T22:41:37.2275317Z"
+    "Hash": "32cdb36ee5ee881164d3f585fde37b745a301ec8b268db9e8d2e6a1054d4ef47",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
   },
   "/2025/11/elsewhere/": {
     "Hash": "1c4db3f2dd55578a8eb8987dd08f1619cd87330f33de523aecfc0657d2a6684b",
@@ -1948,7 +1948,63 @@
     "LastMod": "2025-11-06T22:41:37.2275317Z"
   },
   "/2025/11/as-she-was/": {
-    "Hash": "551df645d1db385aff0ba6f31f10727d396df21b17d7b4b5fb9226f1b696e3c3",
-    "LastMod": "2025-11-06T22:36:07.8771055Z"
+    "Hash": "fc01786f3ec2dd7ddee4f4089b848231b32c49c7ce0f9fc70824392001494eee",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
+  },
+  "/2025/11/phoenix/": {
+    "Hash": "f0d52692cf27b83e9526f4452ee45c6fe854064e9e0e35b2c5dc22f904d79d21",
+    "LastMod": "2025-11-17T03:02:47.5326459Z"
+  },
+  "/2025/11/when-a-man-loves/": {
+    "Hash": "57553275be5289c0b1fe341ae2f3fc5526ba577472a963dbe2c8054f410a2ab3",
+    "LastMod": "2025-11-16T23:11:52.8014841Z"
+  },
+  "/2025/11/not-sole-composer/": {
+    "Hash": "e8a814cf706b9bcc2439a6ccc0321f8aa51b4e21d6ee3d51a654021089709500",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
+  },
+  "/2025/11/calling/": {
+    "Hash": "54d3301379783c9430f3fccfa25d314529704eb3291b028d7f881e74f1b59dde",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
+  },
+  "/2025/11/her-sky-new-at-last/": {
+    "Hash": "55a5c237b68b1df608cec8a3f6a5f4a6bd73ec953017954c5b39e49e67f03bd6",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
+  },
+  "/2025/11/through-her-i-see/": {
+    "Hash": "a2771716b96d8f10324e76e34a13c320facc89f01e429ff89f9feeda8ce41ce8",
+    "LastMod": "2025-11-16T23:11:52.8014841Z"
+  },
+  "/2025/11/cracks-forming/": {
+    "Hash": "3894f87c7d6f3318df69ff239d7c6423ddbb6414f4d35cae6aeccd47c0fc040b",
+    "LastMod": "2025-11-17T03:02:47.5326459Z"
+  },
+  "/2025/11/the-soil-we-have-tilled/": {
+    "Hash": "b0bbcfba3218d950d051ef43aedc467440926c41f49788f14399dc0f9fc4054e",
+    "LastMod": "2025-11-16T23:11:52.8014841Z"
+  },
+  "/2025/11/a-seat-at-the-table/": {
+    "Hash": "a4c60925a910a7db36f1bef4df4d79f17e164f6e7b95225fceffd56d52a97f74",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
+  },
+  "/2025/11/so-was-i/": {
+    "Hash": "61593614ea8c948ab15de5c14ee70cfa3fad7ce9e5638d823da599b2b60f4495",
+    "LastMod": "2025-11-16T23:11:52.8014841Z"
+  },
+  "/2025/11/this-and-no-other/": {
+    "Hash": "ca8a02c6f12d0b027675c927184a05b8a0dfd573ee90e4bd0deeb1f1ac34a6d7",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
+  },
+  "/2025/11/one-too-few/": {
+    "Hash": "bab4139107c74c7c6f538ce5bfca07b90acdd05351c75eb6b62bcaacae8661ef",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
+  },
+  "/2025/11/coauthor/": {
+    "Hash": "f4d0526720a658fa6d0d165d9112fef2fef893298c9de6d9303eb289dd8a4d80",
+    "LastMod": "2025-11-16T23:11:52.8014841Z"
+  },
+  "/2025/11/meant-for-your-ears/": {
+    "Hash": "48c583a6716b4040d056c073e25f08015699b45e2ee78a57527afe4ee0eb7b9b",
+    "LastMod": "2025-11-16T23:19:52.8947223Z"
   }
 }

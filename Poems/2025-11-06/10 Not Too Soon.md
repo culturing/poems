@@ -1,4 +1,4 @@
-Not Too Soon
+*Not Too Soon
 06 November 2025
 
 Was I really in earnest, and really awaiting new love,
