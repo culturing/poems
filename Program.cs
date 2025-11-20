@@ -229,7 +229,8 @@ class Program
         Poems.Add(poem);
 
     // Sort for chronology
-        string key = $"{Months[poem.PublicationDate.Month]} {poem.PublicationDate.Year}";
+        DateTime pub = poem.PublicationDate;
+        string key = $"{pub.Day.ToString("D2")} {Months[pub.Month]} {pub.Year}";
         if (!PoemsByDate.ContainsKey(key))
             PoemsByDate[key] = new List<Poem>();
         PoemsByDate[key].Add(poem);

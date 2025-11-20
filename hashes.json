@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "e439eefc0bf87dba8cc04ffce1d70f62c9d9a545eebea3cb9003e924d051a9de",
-    "LastMod": "2025-11-17T02:20:50.9440726Z"
+    "Hash": "a8ee9a401cf49db1998aa217e4c8946e4abd81627d7fb5bbe8b828e490b4ea78",
+    "LastMod": "2025-11-20T23:31:50.7459733Z"
   },
   "/best/": {
-    "Hash": "1d30065d633e338d07b47b05b66b6827e2384f89e64c114802d172c8dea088ba",
-    "LastMod": "2025-11-17T02:20:50.9440726Z"
+    "Hash": "929928ef9131d865a556f23744c7fe073a3ff1bc765aa776bedfacb24329280f",
+    "LastMod": "2025-11-20T23:31:50.7459733Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "4a95244735937fae2cb9e21f5d5db08c255f9625877a34f7e91f11fa598517a6",
-    "LastMod": "2025-11-17T03:02:47.5326459Z"
+    "Hash": "f9c03226a0f3e928b8e2d4e1fb7b03f029342883d684a72fc6ba9965016fa02e",
+    "LastMod": "2025-11-20T23:41:59.4266563Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2004,7 +2004,31 @@
     "LastMod": "2025-11-16T23:11:52.8014841Z"
   },
   "/2025/11/meant-for-your-ears/": {
-    "Hash": "48c583a6716b4040d056c073e25f08015699b45e2ee78a57527afe4ee0eb7b9b",
-    "LastMod": "2025-11-16T23:19:52.8947223Z"
+    "Hash": "9e1b1ce1ad370627837a05869a3c919dcf3faa1b150c398ed9de42a3aedc13d1",
+    "LastMod": "2025-11-20T23:31:50.7459733Z"
+  },
+  "/2025/11/another-life-beckons/": {
+    "Hash": "c914febfe3e48d18576a652b1f7a79b79cc03e781d398c71c58d02dbf6aeef75",
+    "LastMod": "2025-11-20T23:31:50.7459733Z"
+  },
+  "/2025/11/only-in-the-waiting/": {
+    "Hash": "2c80ab9185376b2dc3506317a03cfea5d1d28532bf62ca1ff2e21f218b088e81",
+    "LastMod": "2025-11-20T23:35:10.8151273Z"
+  },
+  "/2025/11/just-let-me-know/": {
+    "Hash": "17eeb60d65683951a65244e728751df97b9d36d1f08943e7223caa6a23fb8e5c",
+    "LastMod": "2025-11-20T23:31:50.7459733Z"
+  },
+  "/2025/11/in-this-field/": {
+    "Hash": "e1a3a03a45f8e90436a8ae62de820e911c9227aa8cfe35ccc12cbf5ebe529adb",
+    "LastMod": "2025-11-20T23:40:25.8959918Z"
+  },
+  "/2025/11/spelunking/": {
+    "Hash": "406ca06f380d22df4dd58512a0949643cb079f4483e4cdc27c0b5e2e2ffa9b29",
+    "LastMod": "2025-11-20T23:37:40.0910914Z"
+  },
+  "/2025/11/love-calls/": {
+    "Hash": "2b596ad23dd4581a3f3252bd784f4d2ae336a1d6456774a08b95e661aca5e258",
+    "LastMod": "2025-11-20T23:31:50.7459733Z"
   }
 }
