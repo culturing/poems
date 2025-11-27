@@ -25,6 +25,7 @@ class Program
     static string ContentTemplate = File.ReadAllText("Templates/content.html");
     static string FaqTemplate = File.ReadAllText("Templates/faq.html");
     static string PdfCopyrightTemplate = File.ReadAllText("Templates/pdf/copyright.html");
+    static string PdfEpigraphTemplate = File.ReadAllText("Templates/pdf/epigraph.html");
     static string PdfTableOfContentsTemplate = File.ReadAllText("Templates/pdf/toc.html");
     static string PdfIndexTemplate = File.ReadAllText("Templates/pdf/index.html");
     static string NavbarTemplate = File.ReadAllText("Templates/navbar.html");
@@ -347,6 +348,20 @@ class Program
             MergePdfs(copyrightPdf, pdf);
         }
         pdf.Outlines.Add("Copyright", pdf.Pages[pdf.PageCount - 1]);
+
+    // Add epigraph
+        string epigraphHtml = PdfEpigraphTemplate.Replace("{{year}}", DateTime.Now.ToString("yyyy"));
+        string epigraphPath = $"docs/pdf/epigraph.html";
+        File.WriteAllText(epigraphPath, epigraphHtml);
+
+        pdfRenderOptions.Path = $"Output/Pdfs/Epigraph.pdf";
+        await page.GotoAsync("/pdf/epigraph.html");
+        await page.PdfAsync(pdfRenderOptions);
+        using (PdfDocument epigraphPdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
+        {
+            MergePdfs(epigraphPdf, pdf);
+        }
+        pdf.Outlines.Add("Epigraph", pdf.Pages[pdf.PageCount - 1]);
 
     // Add about
         pdfRenderOptions.Path = $"Output/Pdfs/About.pdf";
