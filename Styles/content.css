@@ -2,6 +2,8 @@
 #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: calc(100% - 67px); } 
 #content h3 { padding-top: 2rem; }
 .url, #pdf { display: none; }
+blockquote { margin: 0; font-size: small; font-style: italic; }
+figcaption { text-align: right; font-size: small; margin-top: 0.25rem; }
 
 @media only screen and (min-width : 769px)
 {

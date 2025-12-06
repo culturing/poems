@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2025-11-27T15:55:56.5993141Z</lastmod>
+    <lastmod>2025-12-05T23:01:54.8844254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2025-11-27T15:55:56.5993141Z</lastmod>
+    <lastmod>2025-12-05T23:01:54.8844254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2025-11-27T16:09:20.6670479Z</lastmod>
+    <lastmod>2025-12-05T23:56:31.9177750Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2413,13 +2413,85 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/11/what-your-longing-requires/</loc>
-    <lastmod>2025-11-27T16:09:20.6670479Z</lastmod>
+    <lastmod>2025-12-05T23:46:28.4613057Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/11/teach-me-how-to-love-you/</loc>
-    <lastmod>2025-11-27T15:55:56.5993141Z</lastmod>
+    <lastmod>2025-12-05T23:20:56.1112456Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/not-today/</loc>
+    <lastmod>2025-12-05T23:20:56.1112456Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/live-wire/</loc>
+    <lastmod>2025-12-05T23:46:28.4613057Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/puella-aeterna/</loc>
+    <lastmod>2025-12-05T23:01:54.8844254Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/another-hand/</loc>
+    <lastmod>2025-12-05T23:20:56.1112456Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/no-longer-sand/</loc>
+    <lastmod>2025-12-05T23:01:54.8844254Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/if-any-vigor-remains/</loc>
+    <lastmod>2025-12-05T23:56:31.9177750Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/no-matter-how-civilized/</loc>
+    <lastmod>2025-12-05T23:01:54.8844254Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/debut/</loc>
+    <lastmod>2025-12-05T23:01:54.8844254Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/shadow-wherever-light-shines/</loc>
+    <lastmod>2025-12-05T23:56:31.9177750Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/twin-eagles/</loc>
+    <lastmod>2025-12-05T23:01:54.8844254Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/make-ourselves-anew/</loc>
+    <lastmod>2025-12-05T23:56:31.9177750Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/your-eyes/</loc>
+    <lastmod>2025-12-05T23:34:05.3681516Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>

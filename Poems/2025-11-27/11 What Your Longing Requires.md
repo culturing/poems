@@ -10,6 +10,6 @@ into hope eternal, the steady flame of an earnest love.
 All of this can be yours, as you know, yet
 you hesitate, pausing perhaps one last time
 at the doorway of childhood, where some early love
-leaves you cold. It has been foretold that you rise
-and become what your longing requires.
+leaves you cold. It has been foretold 
+that you rise and become what your longing requires.
 You will not forever be burdened by unmet desires.

@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "9a4d8b00df03192b662d88cf6cb21f3db5790f73d16e23ace39b575818e1754a",
-    "LastMod": "2025-11-27T15:55:56.5993141Z"
+    "Hash": "1f5190748a509b4e5d9f0c2cbc4f02ab7477a6525abc1b6c42d7cc6f9592d634",
+    "LastMod": "2025-12-05T23:01:54.8844254Z"
   },
   "/best/": {
-    "Hash": "a1c902aab09ea78b87c2e143e711c537df9407d204e55560e126ed59009b9a20",
-    "LastMod": "2025-11-27T15:55:56.5993141Z"
+    "Hash": "280e7b3f3ba560c261b1eeaf6a0fb5bc02c42deba966183adcb386e3bcaab917",
+    "LastMod": "2025-12-05T23:01:54.8844254Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "b03eaaa954fd1d25a6b51844740ab9420e035c2f7bdfcc3f837d8fd0c1802ad7",
-    "LastMod": "2025-11-27T16:09:20.6670479Z"
+    "Hash": "970d81051e3cd3960bb1e8bab3f10d027d23862da09209bd545d4be8c75582c8",
+    "LastMod": "2025-12-05T23:56:31.917775Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2072,11 +2072,59 @@
     "LastMod": "2025-11-27T15:55:56.5993141Z"
   },
   "/2025/11/what-your-longing-requires/": {
-    "Hash": "e855ea3681578ffed6f9f8dd82b2c0db95633e8e251cb91f885b4ead7d35f8d9",
-    "LastMod": "2025-11-27T16:09:20.6670479Z"
+    "Hash": "f204cb2bf328650cafa6a69876c5500bdb645b2424b97933b45aad5867e50e1e",
+    "LastMod": "2025-12-05T23:46:28.4613057Z"
   },
   "/2025/11/teach-me-how-to-love-you/": {
-    "Hash": "4b769bfed8722c280c9a331a3fda9edcd9e48399c4dda96a1c19ac20bcbf28f0",
-    "LastMod": "2025-11-27T15:55:56.5993141Z"
+    "Hash": "5c8b5db01e7eeb4ae3ad4a1db9b363135723547a3f0ffc3baaa61299955b8e32",
+    "LastMod": "2025-12-05T23:20:56.1112456Z"
+  },
+  "/2025/12/not-today/": {
+    "Hash": "7c2a85eb52a2bf11c604ca83873d0db6f2389edf5cef97f9feee750d5cb17cb3",
+    "LastMod": "2025-12-05T23:20:56.1112456Z"
+  },
+  "/2025/12/live-wire/": {
+    "Hash": "561d5332d3fb123652b4b88c99e10410d03f825fdd645d6adf8bb402ce25124f",
+    "LastMod": "2025-12-05T23:46:28.4613057Z"
+  },
+  "/2025/12/puella-aeterna/": {
+    "Hash": "07c8843d966ba56ee68a67b69dba71963c24f8a3a4f1f4ed25ff67057fecd719",
+    "LastMod": "2025-12-05T23:01:54.8844254Z"
+  },
+  "/2025/12/another-hand/": {
+    "Hash": "8edb2882f08333db56183dbad983e6e8d56d8364f134f3c55e0eeb3ae1291a4b",
+    "LastMod": "2025-12-05T23:20:56.1112456Z"
+  },
+  "/2025/12/no-longer-sand/": {
+    "Hash": "be0157d9b6b595578fdc4cb12c1a87bccec7409786a6e6c33a6770f5c347c8dc",
+    "LastMod": "2025-12-05T23:01:54.8844254Z"
+  },
+  "/2025/12/if-any-vigor-remains/": {
+    "Hash": "c093f691ce5189bd504988eb2df5ba9bcc95ab15ac2fab0b0f251997a844d861",
+    "LastMod": "2025-12-05T23:56:31.917775Z"
+  },
+  "/2025/12/no-matter-how-civilized/": {
+    "Hash": "8c19f25891e67d2677d86203545d4a391bed344314fc876e18de0bc7edcbaaf6",
+    "LastMod": "2025-12-05T23:01:54.8844254Z"
+  },
+  "/2025/12/debut/": {
+    "Hash": "81adb6affe5de6df0075713ea56daae0ff8b1e825140a29a7df76f2a23d6483e",
+    "LastMod": "2025-12-05T23:01:54.8844254Z"
+  },
+  "/2025/12/shadow-wherever-light-shines/": {
+    "Hash": "4290e4bca0b385c2c1b279bcfbdfee42c19c836ddcfee8674a4d3841849f2605",
+    "LastMod": "2025-12-05T23:56:31.917775Z"
+  },
+  "/2025/12/twin-eagles/": {
+    "Hash": "d3df23d4f8611b39b823ad07565f86804a80a4e312b313b47fa8d6b9f0108498",
+    "LastMod": "2025-12-05T23:01:54.8844254Z"
+  },
+  "/2025/12/make-ourselves-anew/": {
+    "Hash": "05f845532603ee2a98cef37b9fd028ce3017054921c12bf142ee6594dbaa5cc8",
+    "LastMod": "2025-12-05T23:56:31.917775Z"
+  },
+  "/2025/12/your-eyes/": {
+    "Hash": "637e84a5b2857fa83ebaf9b2ad864d7f15cef3e4132aaa31cf6989377f67efe8",
+    "LastMod": "2025-12-05T23:34:05.3681516Z"
   }
 }
