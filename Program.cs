@@ -70,7 +70,11 @@ class Program
         string bestIndexHtml = string.Empty;
         foreach(Poem poem in Poems.OrderBy(p => Regex.Replace(p.Title, @"[^\w\s]", "")))
         {
-            indexHtml += $"<div style='{poem.Style()}'>{poem.Link}</div>\n";
+            string style = poem.Style();
+            if (string.IsNullOrEmpty(style))
+                indexHtml += $"<div>{poem.Link}</div>\n";
+            else
+                indexHtml += $"<div style='{style}'>{poem.Link}</div>\n";
             if (poem.Bold)
                 bestIndexHtml += $"<div>{poem.Link}</div>\n";
         }
@@ -508,7 +512,7 @@ class Program
             if (poem.PublicationDate > start && poem.PublicationDate < end)
         {
             index += $"<div class='toc-flex toc-poem'>";
-                index += $"  <span style='{poem.Style(bestOnly)}'>{poem.Title}</span>";
+            index += $"  <span style='{poem.Style(bestOnly)}'>{poem.Title}</span>";
             index += $"  <span class='toc-page'>{poem.Page}</span>";
             index += $"</div>";
             }
