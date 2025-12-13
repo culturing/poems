@@ -1,8 +1,12 @@
 All the Tender Pathos
 20 April 2021
 
-*Every human heart is human*
-&nbsp;&nbsp;&nbsp;&nbsp;- ["Hiawatha", Introduction](https://naxosaudiobooks.com/hiawatha-unabridged/)
+<figure>
+    <blockquote>
+        Every human heart is human
+    </blockquote>
+    <figcaption>Longfellow, <cite><a href="https://naxosaudiobooks.com/hiawatha-unabridged/"  target="_blank">Hiawatha</a></cite></figcaption>
+</figure>
 
 Remember how the river moves,
 Remember warm embracing,

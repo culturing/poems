@@ -1,8 +1,12 @@
 The New Frontier
 02 August 2022
 
-"It is and it is not, and, therefore, is"
-&nbsp;&nbsp;&nbsp;&nbsp;- Wallace Stevens, *A Primitive Like an Orb*
+<figure>
+    <blockquote>
+        It is and it is not, and, therefore, is.
+    </blockquote>
+    <figcaption>Wallace Stevens, <cite>A Primitive Like an Orb</cite></figcaption>
+</figure>
 
 What have we learned in seventy years?
 What are the lessons of that war
