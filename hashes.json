@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "2db35c7ecb0f83fdc8ed3257ab61cd554c955452eef0329816a7ef816a75865a",
-    "LastMod": "2025-12-13T01:11:00.442348Z"
+    "Hash": "bc55df5e521499042cadd544fb85b5adb7ce29ad6acf7273ba04b42837f276da",
+    "LastMod": "2025-12-15T02:13:24.8002488Z"
   },
   "/best/": {
-    "Hash": "1800249e7a2ef970809ce1403c6017cd8104e86e9edebdccf87abdd3a702f40c",
-    "LastMod": "2025-12-13T01:11:00.442348Z"
+    "Hash": "0b061c1f3fc210ddc09d996a14aa01f035deaf66cd09afe607ab29ef09e03370",
+    "LastMod": "2025-12-15T02:13:24.8002488Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "c0604749bf43da68865ac52ee806abd8c6cfaa1b0262ab78441213de32c3d252",
-    "LastMod": "2025-12-13T01:11:00.442348Z"
+    "Hash": "1fa765e5c45966c4044c70c93871ec3a7ba12e7f8079e1f5593f7bcbb418222b",
+    "LastMod": "2025-12-15T02:41:51.5019476Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2180,8 +2180,8 @@
     "LastMod": "2025-12-12T23:48:11.4193265Z"
   },
   "/2025/12/calypso/": {
-    "Hash": "d060409aded7ed70c11dd3c7890694a451f592027fc0040bb9e4d29a7b2ba34f",
-    "LastMod": "2025-12-12T23:22:59.1112491Z"
+    "Hash": "ea4e866ac4403b7f14cff05420c111f47b6fe15eea80a3c866c68d03e9264cd4",
+    "LastMod": "2025-12-15T02:19:05.1163354Z"
   },
   "/2016/09/a-place-we-can-still-go/": {
     "Hash": "61e7ede0db8a71570c4be7e14643594ccbb51cdf82f315ac1c77be3fca59fd92",
@@ -2478,5 +2478,21 @@
   "/2010/08/the-man-who-knows/": {
     "Hash": "29a0eef4b9b23ee040e32244f1da852409ffbbe61d605a573ddb75e427228cb7",
     "LastMod": "2025-12-13T01:07:14.1161736Z"
+  },
+  "/2025/12/plant-in-the-dark/": {
+    "Hash": "424ce20a8df374cc57033d245a5ee94090a747cd816e555d155bec376d2d4776",
+    "LastMod": "2025-12-15T02:41:51.5019476Z"
+  },
+  "/2025/12/whats-best-for-you/": {
+    "Hash": "2e180b74706b8da47db0356bccadcf91509640283b9b081beedb5f483497ffcc",
+    "LastMod": "2025-12-15T02:19:05.1163354Z"
+  },
+  "/2025/12/carried-away/": {
+    "Hash": "75c545e72a35fe59260559ed2b621217aae0fee88061d98b258e6ab158d760a8",
+    "LastMod": "2025-12-15T02:41:51.5019476Z"
+  },
+  "/2025/12/two-black-sheep/": {
+    "Hash": "2c5bb98cee70dd37e5aecfdb37d1af08063527c4566b174aac46bb9bcced86af",
+    "LastMod": "2025-12-15T02:19:05.1163354Z"
   }
 }
