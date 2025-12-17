@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "bc55df5e521499042cadd544fb85b5adb7ce29ad6acf7273ba04b42837f276da",
-    "LastMod": "2025-12-15T02:13:24.8002488Z"
+    "Hash": "f043c154c95ee05050541b81634d7624955c6dd247956372574b83f2b47feb6d",
+    "LastMod": "2025-12-17T01:16:37.5899852Z"
   },
   "/best/": {
-    "Hash": "0b061c1f3fc210ddc09d996a14aa01f035deaf66cd09afe607ab29ef09e03370",
-    "LastMod": "2025-12-15T02:13:24.8002488Z"
+    "Hash": "e3cb4105748bf16039ec2244304a2c9c999c9334fca83b0a9ceccd8e085e051e",
+    "LastMod": "2025-12-17T01:16:37.5899852Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "1fa765e5c45966c4044c70c93871ec3a7ba12e7f8079e1f5593f7bcbb418222b",
-    "LastMod": "2025-12-15T02:41:51.5019476Z"
+    "Hash": "69ba91e42ee4f2d96b2e9ff299a2d4ce9b799fb72058b72c46b2127abed618cf",
+    "LastMod": "2025-12-17T01:41:23.3015238Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2120,8 +2120,8 @@
     "LastMod": "2025-12-05T23:01:54.8844254Z"
   },
   "/2025/12/make-ourselves-anew/": {
-    "Hash": "05f845532603ee2a98cef37b9fd028ce3017054921c12bf142ee6594dbaa5cc8",
-    "LastMod": "2025-12-05T23:56:31.917775Z"
+    "Hash": "9fe1c77046b7c3cbbdd233530da2c7e7e67ee3f5ccf1b14fbda19f343defd995",
+    "LastMod": "2025-12-17T01:41:23.3015238Z"
   },
   "/2025/12/your-eyes/": {
     "Hash": "65b37df1e72c9ff26c6130e23b315bfa1cf97422e0e86bf9b977a37fd971288d",
@@ -2492,7 +2492,35 @@
     "LastMod": "2025-12-15T02:41:51.5019476Z"
   },
   "/2025/12/two-black-sheep/": {
-    "Hash": "2c5bb98cee70dd37e5aecfdb37d1af08063527c4566b174aac46bb9bcced86af",
-    "LastMod": "2025-12-15T02:19:05.1163354Z"
+    "Hash": "c08c13ce6990be6d6ba6d973b79d1f600588eab95830431f6fd3c5f7744f2cf4",
+    "LastMod": "2025-12-17T01:23:31.6323304Z"
+  },
+  "/2025/12/getting-there/": {
+    "Hash": "64b9e1ae85f6895732b28e32a0e702502cc97eef3f1544eb344dd1561779b8a0",
+    "LastMod": "2025-12-17T01:31:36.7048588Z"
+  },
+  "/2025/12/am-i-right/": {
+    "Hash": "f9cdad8bae657f38b8b292fd022478080f8732b98e0e323be9eab8ebb184c110",
+    "LastMod": "2025-12-17T01:23:31.6323304Z"
+  },
+  "/2025/12/fetch-it/": {
+    "Hash": "cf1af8a13fb76d4ba35b201da3e0e54e1bf6e041272f1e82958f245c1f421149",
+    "LastMod": "2025-12-17T01:23:31.6323304Z"
+  },
+  "/2025/12/no-other-way/": {
+    "Hash": "44932059b761d25aaad4fe88c5948def4e7ba0acb9d037932900e0175f4a6f5d",
+    "LastMod": "2025-12-17T01:23:31.6323304Z"
+  },
+  "/2025/12/clothes-back-on/": {
+    "Hash": "b6ffbe406eff9c154cf6d8df95d0bf0cac1d6323b30d9c553a0e56f6b33301a7",
+    "LastMod": "2025-12-17T01:23:31.6323304Z"
+  },
+  "/2025/12/cant-be-put-out/": {
+    "Hash": "1d54867334886235215a315b6fec2a5056ffa732451513859d966bb5054e7eea",
+    "LastMod": "2025-12-17T01:23:31.6323304Z"
+  },
+  "/2025/12/cant-wait/": {
+    "Hash": "4e4b1e6b1f3c33bd6f2e8d2c677ba5a930d99ed49ba4ba9a529363adb17ade39",
+    "LastMod": "2025-12-17T01:23:31.6323304Z"
   }
 }
