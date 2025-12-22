@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "474530ac5a22fbcda359e0e3294e16b2c3094db86c0b4487a2429d0a06ae24d7",
-    "LastMod": "2025-12-18T23:06:41.3149957Z"
+    "Hash": "520ebe63db6f22c7d3706d28af0ffb7f98bc4395dd074c355ea32dc327f92d12",
+    "LastMod": "2025-12-22T01:35:41.1229468Z"
   },
   "/best/": {
-    "Hash": "45577a012cb0c6574c32d836fa871e59076e628b91714d32d7e61965ed7c18ae",
-    "LastMod": "2025-12-18T23:06:41.3149957Z"
+    "Hash": "4bcb98e5b62db9cec69213129b982a2e480d7074f306aa177e2a016578cfc294",
+    "LastMod": "2025-12-22T01:29:10.4836995Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "3474e3f10be2a6a0e4bd94b8b026dfd50c9069c7e9f0f4065fce4d03ecb8d35c",
-    "LastMod": "2025-12-18T23:06:41.3149957Z"
+    "Hash": "b90ce4ec3aaf57c81ced7d5ce4363c2af68af2ff0ded65f7a12d0b5ea0d36925",
+    "LastMod": "2025-12-22T01:35:41.1229468Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2576,11 +2576,59 @@
     "LastMod": "2025-12-18T22:42:18.370316Z"
   },
   "/2025/12/farewell/": {
-    "Hash": "af06570ce60507f8ac0810bf22a40f77301f46fba3990fba93302f0c60358451",
-    "LastMod": "2025-12-18T22:32:29.6670081Z"
+    "Hash": "28bae4f64af314bdeb5b9c6cba3d569b458ba5686733528cac49a832389dc52d",
+    "LastMod": "2025-12-22T01:24:16.2425224Z"
   },
   "/2025/12/to-rest-at-all/": {
     "Hash": "ba8513600c74b26c4a2bf0b40631bfa4e06db997cfc2a4fc17c3444afe0dcf63",
     "LastMod": "2025-12-18T22:42:18.370316Z"
+  },
+  "/2025/12/touch-and-soothe/": {
+    "Hash": "db53abe303e2e1f7aef38ca44b0dbf5a6bcf4366997584f6c5c9569c59037805",
+    "LastMod": "2025-12-22T01:24:16.2425224Z"
+  },
+  "/2025/12/seeds-of-you/": {
+    "Hash": "d0affb05fcb1fcb5c8d1498899acf54bfdc035c6df7442f71ca78e3ef6770577",
+    "LastMod": "2025-12-22T01:35:41.1229468Z"
+  },
+  "/2025/12/trust-and-open-dialog/": {
+    "Hash": "0fe2b0d132853ca547a37069ae64d5695454f6fa1ba4e2c1fcc6105bc1512bec",
+    "LastMod": "2025-12-22T01:24:16.2425224Z"
+  },
+  "/2025/12/burning-burning-burning/": {
+    "Hash": "ecf89072d8b466b90445626a6bcd4962dfeed3cd1e99c79d27a6301b3175447c",
+    "LastMod": "2025-12-22T01:35:41.1229468Z"
+  },
+  "/2025/12/schedule/": {
+    "Hash": "66cec4c58cf77d7a84ad484ff5985417125ece5b70b77f21d7d8fde2c0b3179e",
+    "LastMod": "2025-12-22T01:24:16.2425224Z"
+  },
+  "/2025/12/handkerchief/": {
+    "Hash": "43f052fbf64051d61c97b19f0b1ee48365d7e4fa1d6df1fdeafbc7d8cf2b7da7",
+    "LastMod": "2025-12-22T01:24:16.2425224Z"
+  },
+  "/2025/12/from-afar/": {
+    "Hash": "9517b47aa14d4320e5e1f636f2375d672c6db65dbee56e91a667d452a32b21da",
+    "LastMod": "2025-12-22T01:24:16.2425224Z"
+  },
+  "/2025/12/i-believe/": {
+    "Hash": "9823893508da09f337aaf7f1027656ee76fbb6e84fd9f60d90a9e828e0835cf1",
+    "LastMod": "2025-12-22T01:29:10.4836995Z"
+  },
+  "/2025/12/feet-planted-firmly-on-earth/": {
+    "Hash": "ebb0b9f8c89c609c50df629ae635a6b7f783a4bb4f46a73ec27005e6af325604",
+    "LastMod": "2025-12-22T01:24:16.2425224Z"
+  },
+  "/2025/12/finally-alive/": {
+    "Hash": "986ddae08160312f51a48a2d559d255bcf1cc185954953aecd2689fd683b9e63",
+    "LastMod": "2025-12-22T01:29:10.4836995Z"
+  },
+  "/2025/12/feet-firmly-planted-on-earth/": {
+    "Hash": "1f49360cf9015867768edc0425b69a5dfdc332ec6ab66618c2eb85d814ae59d6",
+    "LastMod": "2025-12-22T01:35:41.1229468Z"
+  },
+  "/2025/12/trust-and-open-dialogue/": {
+    "Hash": "3df09af0d0ea000a95531461eab43bd0ef3e79b2e6cb79524544510e5f8ff5be",
+    "LastMod": "2025-12-22T01:35:41.1229468Z"
   }
 }

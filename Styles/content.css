@@ -4,7 +4,7 @@
 .url, #pdf { display: none; }
 blockquote { margin: 0; font-size: small; font-style: italic; }
 figcaption { text-align: right; font-size: small; margin-top: 0.25rem; }
-figure { max-width: 300px; }
+figure { max-width: 400px; }
 
 @media only screen and (min-width : 769px)
 {
