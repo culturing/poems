@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "520ebe63db6f22c7d3706d28af0ffb7f98bc4395dd074c355ea32dc327f92d12",
-    "LastMod": "2025-12-22T01:35:41.1229468Z"
+    "Hash": "79489079376f8435c29cb2ad1d93d232135303627f80c29ca3033cc5e30a742f",
+    "LastMod": "2025-12-23T19:23:08.1274031Z"
   },
   "/best/": {
-    "Hash": "4bcb98e5b62db9cec69213129b982a2e480d7074f306aa177e2a016578cfc294",
-    "LastMod": "2025-12-22T01:29:10.4836995Z"
+    "Hash": "807604a2b4dc9f2402b0d3609dcd6ca669ed1a1d453d78e61888ebcd307e4877",
+    "LastMod": "2025-12-23T19:23:08.1274031Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "b90ce4ec3aaf57c81ced7d5ce4363c2af68af2ff0ded65f7a12d0b5ea0d36925",
-    "LastMod": "2025-12-22T01:35:41.1229468Z"
+    "Hash": "20c3a4e57b98168fe6c7f2f85702202b787ba2bd7d7a9c46c32896953aac2b14",
+    "LastMod": "2025-12-23T19:27:05.3987213Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2620,15 +2620,39 @@
     "LastMod": "2025-12-22T01:24:16.2425224Z"
   },
   "/2025/12/finally-alive/": {
-    "Hash": "986ddae08160312f51a48a2d559d255bcf1cc185954953aecd2689fd683b9e63",
-    "LastMod": "2025-12-22T01:29:10.4836995Z"
+    "Hash": "94847437f6147ec00c36c8bb85365eb0baf774275b4fba834b65430399c30a6d",
+    "LastMod": "2025-12-23T19:27:05.3987213Z"
   },
   "/2025/12/feet-firmly-planted-on-earth/": {
     "Hash": "1f49360cf9015867768edc0425b69a5dfdc332ec6ab66618c2eb85d814ae59d6",
     "LastMod": "2025-12-22T01:35:41.1229468Z"
   },
   "/2025/12/trust-and-open-dialogue/": {
-    "Hash": "3df09af0d0ea000a95531461eab43bd0ef3e79b2e6cb79524544510e5f8ff5be",
-    "LastMod": "2025-12-22T01:35:41.1229468Z"
+    "Hash": "ee05b9874ef467800d25cb5ca12a603c344253f865a778e81329cba8a0a089a0",
+    "LastMod": "2025-12-23T19:27:05.3987213Z"
+  },
+  "/2025/12/dual-polarity/": {
+    "Hash": "0d7622c96d01a00cabce9261b67e8d63b051a3942d5f9366fddca68f9b9bfde2",
+    "LastMod": "2025-12-23T19:27:05.3987213Z"
+  },
+  "/2025/12/the-central-dream/": {
+    "Hash": "0c6a2e225e0e4726513c7e1f94c1c37373afc116b0da0f3858ef02bf60bcf1b0",
+    "LastMod": "2025-12-23T19:23:08.1274031Z"
+  },
+  "/2025/12/talking-to-myself/": {
+    "Hash": "7be7c093e9c0a5564cea21c497c2ca47d5873ffe4292689f8ab956ce580483e6",
+    "LastMod": "2025-12-23T19:23:08.1274031Z"
+  },
+  "/2025/12/deciding-what-to-do/": {
+    "Hash": "988b0f9b4e04afa898ca417fbfad1ab5ef4b0cfb75ccef9374e3815b61d9e0e5",
+    "LastMod": "2025-12-23T19:23:08.1274031Z"
+  },
+  "/2025/12/demonstration/": {
+    "Hash": "312ea41b5a84573fa599719dc77c436c7d3b91763acfd3681672380ea72fe03f",
+    "LastMod": "2025-12-23T19:23:08.1274031Z"
+  },
+  "/2025/12/jungle/": {
+    "Hash": "00e3942af21b02fa205ff57c63149a71e5b42be330ba8f5e4c8aba83b5812913",
+    "LastMod": "2025-12-23T19:23:08.1274031Z"
   }
 }
