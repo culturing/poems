@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2025-12-26T19:31:12.4428329Z</lastmod>
+    <lastmod>2025-12-28T22:23:47.0081149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2025-12-26T19:31:12.4428329Z</lastmod>
+    <lastmod>2025-12-28T22:23:47.0081149Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2025-12-26T20:13:24.0393311Z</lastmod>
+    <lastmod>2025-12-28T22:26:25.8552375Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2341,7 +2341,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/11/spelunking/</loc>
-    <lastmod>2025-11-20T23:37:40.0910914Z</lastmod>
+    <lastmod>2025-12-28T22:26:25.8552375Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -2887,7 +2887,43 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/12/life-is-strange/</loc>
-    <lastmod>2025-12-26T19:47:14.4031228Z</lastmod>
+    <lastmod>2025-12-28T22:23:47.0081149Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/synchronicities/</loc>
+    <lastmod>2025-12-28T21:56:28.9657204Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/matine/</loc>
+    <lastmod>2025-12-28T21:56:28.9657204Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/struggle-promethea/</loc>
+    <lastmod>2025-12-28T21:56:28.9657204Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/if-i-can/</loc>
+    <lastmod>2025-12-28T21:56:28.9657204Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/yet-to-be-named/</loc>
+    <lastmod>2025-12-28T21:56:28.9657204Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2025/12/toward-some-ithaca/</loc>
+    <lastmod>2025-12-28T22:23:47.0081149Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>

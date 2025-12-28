@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "65eea7c6718fe7171563485a236790c4c274e2fa939dab15cd26756da6a2a369",
-    "LastMod": "2025-12-26T19:31:12.4428329Z"
+    "Hash": "9c4a32fcfc6af03d005e2c4acbd65017714d4e9a0b417f30e017930c45e8a0a8",
+    "LastMod": "2025-12-28T22:23:47.0081149Z"
   },
   "/best/": {
-    "Hash": "fce4808cdee015e78f9bb0054e24eb3b9ce1d6034a796cc7eacd5eccdfc8632b",
-    "LastMod": "2025-12-26T19:31:12.4428329Z"
+    "Hash": "b7cdeb059c6f8cfbe95c41a22629918c5c41c20d5b58441e2b63b7461a496c79",
+    "LastMod": "2025-12-28T22:23:47.0081149Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "f6cfec6f0197d613ff72a40f9501639db18e0a48b0b0d0d75833da2a48f525ab",
-    "LastMod": "2025-12-26T20:13:24.0393311Z"
+    "Hash": "1b8909c3cc4290d21e4ab18130a1b25b3d9d1843654b220be3360487cf563442",
+    "LastMod": "2025-12-28T22:26:25.8552375Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2024,8 +2024,8 @@
     "LastMod": "2025-11-20T23:40:25.8959918Z"
   },
   "/2025/11/spelunking/": {
-    "Hash": "406ca06f380d22df4dd58512a0949643cb079f4483e4cdc27c0b5e2e2ffa9b29",
-    "LastMod": "2025-11-20T23:37:40.0910914Z"
+    "Hash": "2f17d7b8a9212f776d89fe5ed80f02064cb4dd68b31ddf38da303a15ea8b303b",
+    "LastMod": "2025-12-28T22:26:25.8552375Z"
   },
   "/2025/11/love-calls/": {
     "Hash": "2f68be5109e42ddac095ce1e9192003b09a162bb4bb048ecb0d46559a1d5695c",
@@ -2696,7 +2696,31 @@
     "LastMod": "2025-12-26T19:47:14.4031228Z"
   },
   "/2025/12/life-is-strange/": {
-    "Hash": "56f79413669c8340af65a7b432393987560b464501bb263675d3ecafbfa89cda",
-    "LastMod": "2025-12-26T19:47:14.4031228Z"
+    "Hash": "abaeb0cadfed023caee8c5488033fc562515063dd5d303ed48e33935f6674d58",
+    "LastMod": "2025-12-28T22:23:47.0081149Z"
+  },
+  "/2025/12/synchronicities/": {
+    "Hash": "520d90d3adb94290e134df5035bb05c84efd23521304e0aef2d3d570dfbaa611",
+    "LastMod": "2025-12-28T21:56:28.9657204Z"
+  },
+  "/2025/12/matine/": {
+    "Hash": "1acb8528add8c5a54f1936a7566a93b42c11ee91608258f3ba99e9dc9e120d77",
+    "LastMod": "2025-12-28T21:56:28.9657204Z"
+  },
+  "/2025/12/struggle-promethea/": {
+    "Hash": "98b3771d2288b5d855e3b681648f350ca067ec9a6997fda9cbab3284a0653b4f",
+    "LastMod": "2025-12-28T21:56:28.9657204Z"
+  },
+  "/2025/12/if-i-can/": {
+    "Hash": "426d5e0bcd32b9a80eee4a78f05a7bcdf7ca13a06bdd4929403838a07bce4c89",
+    "LastMod": "2025-12-28T21:56:28.9657204Z"
+  },
+  "/2025/12/yet-to-be-named/": {
+    "Hash": "b29e10e1247e5897c54253cbb17a8e483c0a2c4542f32e021b9f333cf7a44e7f",
+    "LastMod": "2025-12-28T21:56:28.9657204Z"
+  },
+  "/2025/12/toward-some-ithaca/": {
+    "Hash": "8e271ab12fee711eac73e018c9e6c0bdd9160fe258e9f8cb3a329f50f3e3f79c",
+    "LastMod": "2025-12-28T22:23:47.0081149Z"
   }
 }

@@ -6,7 +6,7 @@ What gave me the right?
 You did, when you opened the door.
 I have touched the floor,
 and you cried out for more,
-but you must decide what follows.
+but what follows is up to you.
 
 --
 
