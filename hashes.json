@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "fadd81638bf046e37b9dc86aacb5c3bb8171419b6cc5e56425d01465b8a17954",
-    "LastMod": "2026-01-01T17:09:28.449504Z"
+    "Hash": "596f8772695fefe7bda2990f388145911ef7e34f47804ee00fb72754602d5fb3",
+    "LastMod": "2026-01-14T02:32:45.6051446Z"
   },
   "/best/": {
-    "Hash": "5c815630167abc1252dc963dbb920ff29e57f7bb27e29cf47860d24ac29f11ad",
-    "LastMod": "2026-01-01T17:09:28.449504Z"
+    "Hash": "d5dfb00303fa28a5fc44dcebfabf741cd14bfe761e8fc5c1de87f3488454b44f",
+    "LastMod": "2026-01-14T02:32:45.6051446Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "0aded2ba6ba470adf83f465e8bdc9cd1151b11ed8b251e730d722abdc97bcff4",
-    "LastMod": "2026-01-01T18:03:06.5201179Z"
+    "Hash": "ab77615f5d0c709f73a9ee4c98778e9ba4975baf4b2912849e5713af527c2786",
+    "LastMod": "2026-01-14T02:32:45.6051446Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2544,8 +2544,8 @@
     "LastMod": "2025-12-18T22:33:40.1190878Z"
   },
   "/2025/12/starting-again/": {
-    "Hash": "56d3284dc09f905dfd9c53877971cf8dc33cd8bec9b0ad1bea2d35e670c43ad1",
-    "LastMod": "2025-12-18T22:32:29.6670081Z"
+    "Hash": "37ef11893bdf3a5eab2ea1a4b070b2ddb7d65d87d301d6feeec9994cd27b65d6",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
   },
   "/2025/12/not-so-useful-anymore/": {
     "Hash": "ddbdea9dc7e2195bfb0a50f610714f5514cfdf51c1693918b70a55ff3d1e5dba",
@@ -2760,8 +2760,8 @@
     "LastMod": "2025-12-30T23:23:04.091901Z"
   },
   "/2025/12/abundant-fuel/": {
-    "Hash": "6c2f932add470a525bbe5f446e9ddabf9df0299b60f1f497f6757c273fe16cec",
-    "LastMod": "2026-01-01T17:12:31.9164689Z"
+    "Hash": "89d24a829255c1169fb815186c71b19d9db6a7946d83b43f5ea857ec30634294",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
   },
   "/2026/01/critical-velocity/": {
     "Hash": "8526d255cab0b22a69a8e10005aa8bdd10069248672d230c4e6584a7b539b657",
@@ -2772,11 +2772,111 @@
     "LastMod": "2026-01-01T17:12:31.9164689Z"
   },
   "/2026/01/uncharted-waters/": {
-    "Hash": "130c0db2b52a23f8b24f60e77581f1bd3150b15fc8173402bfe11dfa80fb2890",
-    "LastMod": "2026-01-01T17:09:28.449504Z"
+    "Hash": "339ba62ce1d87eaa44e3cd52daddab643befc4440cac533a2ae18934e6aa5235",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
   },
   "/2026/01/eccentricities/": {
-    "Hash": "e2b2a1bb1e6191816e41c2ea32609bea6ff39a01328051f6a2b3c49592880f21",
-    "LastMod": "2026-01-01T18:03:06.5201179Z"
+    "Hash": "9a9243714e45838dd40337c4441477bb78a7b8cfa737776de6fce33ce279944e",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
+  },
+  "/2026/01/waking-dreamlike/": {
+    "Hash": "c7ae044bbc279f4cbc87710a04937bdf53add2bae182593ed8ee803c22dc1dbe",
+    "LastMod": "2026-01-14T02:17:16.1310212Z"
+  },
+  "/2026/01/ariadne-ii/": {
+    "Hash": "a32915f9bee8a3067c3f98d0beaace375728f3681112551a3bd319a80125b5a5",
+    "LastMod": "2026-01-14T02:28:02.5034451Z"
+  },
+  "/2026/01/friend-to-nothing/": {
+    "Hash": "8e55e45ca555488e91b9f0041b1e1a6f8d5655e90fd101dfc44202470474824d",
+    "LastMod": "2026-01-14T02:28:02.5034451Z"
+  },
+  "/2026/01/nearly-bound/": {
+    "Hash": "af717e6761384e4355c9f92dd4a95b2dd0d7a6c6deca8a177738a31fe3b6a159",
+    "LastMod": "2026-01-14T00:29:33.5391101Z"
+  },
+  "/2026/01/live-by-dying/": {
+    "Hash": "6455d963eaf224e5b98bde6b42ada71e00a9c93875657019fb8d878d6a033e1d",
+    "LastMod": "2026-01-14T00:29:33.5391101Z"
+  },
+  "/2026/01/governed-not-destroyed/": {
+    "Hash": "3756b427c0930dc3dcc10250d88b0af3ff6cd6ed9e618e2fd45f2f75613263ac",
+    "LastMod": "2026-01-14T00:29:33.5391101Z"
+  },
+  "/2026/01/ebb-and-flow/": {
+    "Hash": "04b8e8fca0dd4d9cebf831620522a90a5207ce20f89a5dec0e67424084946446",
+    "LastMod": "2026-01-14T00:29:33.5391101Z"
+  },
+  "/2026/01/flirting-with-danger/": {
+    "Hash": "40636b8d33456a43cc9fffd7f9f9489e7d920a557c810359d1239a536ba1d050",
+    "LastMod": "2026-01-14T00:29:33.5391101Z"
+  },
+  "/2026/01/tell-me-about-yourself/": {
+    "Hash": "9cf03432b1d22ad60816e0ecbdb7ff589910213498d4ab99a2350877298bda74",
+    "LastMod": "2026-01-14T00:29:33.5391101Z"
+  },
+  "/2026/01/love-left-unsaid/": {
+    "Hash": "3e9a87e687284a78559939aa52fd32cb87398696521223eb02fc388cd6ae9756",
+    "LastMod": "2026-01-14T02:17:16.1310212Z"
+  },
+  "/2026/01/two-together/": {
+    "Hash": "74c9159027e0ea8540d90a1878f2ef93d4c0e26da4d53b2098c75223a2b3b517",
+    "LastMod": "2026-01-14T02:17:16.1310212Z"
+  },
+  "/2026/01/overflowing/": {
+    "Hash": "1e424c823d6e91458e9b9166e3a2acc2fd2a2eeaba949439284bf170e3a6c774",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
+  },
+  "/2026/01/whatever-the-numbers-say/": {
+    "Hash": "8460d2c8c3a569faa654969778923a331e089e647bef8fa94c47631d0bb04f48",
+    "LastMod": "2026-01-14T02:28:02.5034451Z"
+  },
+  "/2026/01/two-birds/": {
+    "Hash": "36512ad4b5c0f9f9e973e37e55aea142f57813f4c08cb44e763002e52ccdccf9",
+    "LastMod": "2026-01-14T02:17:16.1310212Z"
+  },
+  "/2026/01/the-other-half/": {
+    "Hash": "f6f83b4e864667e62f3149df85e6436d86438002d854a02c09986d320555a666",
+    "LastMod": "2026-01-14T02:28:02.5034451Z"
+  },
+  "/2026/01/mind-sit-down/": {
+    "Hash": "9936315d13c37d088f3699bb010caa73a0a8135b1c08d7186feaecb93cd2db3b",
+    "LastMod": "2026-01-14T02:17:16.1310212Z"
+  },
+  "/2026/01/crown-jewel/": {
+    "Hash": "3b5c685e89a367197d17725362d198918dd9002480ab159ec9a2c64879815b02",
+    "LastMod": "2026-01-14T02:28:02.5034451Z"
+  },
+  "/2026/01/not-without-fuel/": {
+    "Hash": "974d6a6a35b11d4ec5ab2a659c13e63c7de740475ba5b4a522523508b1314ed7",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
+  },
+  "/2026/01/from-the-tropics/": {
+    "Hash": "c2c027416d979978cbf0e51ea79e2fe70ee29ef6c1657d4d0b643dd15615f531",
+    "LastMod": "2026-01-14T02:17:16.1310212Z"
+  },
+  "/2026/01/motivated/": {
+    "Hash": "4179e1816c9c458ed89137a7657742e7b1dbdb0addc3150151aef84080f87298",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
+  },
+  "/2026/01/regular-release/": {
+    "Hash": "bb9fb11f02af0a7c5cdf1a9c97485e9aa76cf76c244d67aa1ea74b742cfbd979",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
+  },
+  "/2026/01/without-fear-and-trembling/": {
+    "Hash": "8553ed3cb61b34378456d27002748b6094609e15c8bdbcd06425ce11b1f3c184",
+    "LastMod": "2026-01-14T02:17:16.1310212Z"
+  },
+  "/2026/01/come-what-may/": {
+    "Hash": "9c51b3309cc27db90c7360ec5e4eb92b623baa7916fa8ab5c03649f55ffe8336",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
+  },
+  "/2026/01/only-solid-things/": {
+    "Hash": "7ea2b3279bd7bd93ea4eac2ae6872a2aee1d14e1be2722c43b709be11a88b7c7",
+    "LastMod": "2026-01-14T00:26:59.6796041Z"
+  },
+  "/2026/01/the-path-of-an-insect/": {
+    "Hash": "a1daeab3fea74a2302aa3176e416c850930ba27d923a348bd389d21aa2d9e591",
+    "LastMod": "2026-01-14T02:30:59.8897983Z"
   }
 }
