@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2026-01-14T02:32:45.6051446Z</lastmod>
+    <lastmod>2026-01-17T00:52:33.5380509Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2026-01-14T02:32:45.6051446Z</lastmod>
+    <lastmod>2026-01-17T00:52:33.5380509Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2026-01-14T02:32:45.6051446Z</lastmod>
+    <lastmod>2026-01-17T04:11:35.5222207Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -3019,7 +3019,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/ariadne-ii/</loc>
-    <lastmod>2026-01-14T02:28:02.5034451Z</lastmod>
+    <lastmod>2026-01-17T02:13:41.6903910Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3049,7 +3049,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/ebb-and-flow/</loc>
-    <lastmod>2026-01-14T00:29:33.5391101Z</lastmod>
+    <lastmod>2026-01-17T00:52:33.5380509Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3061,13 +3061,13 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/tell-me-about-yourself/</loc>
-    <lastmod>2026-01-14T00:29:33.5391101Z</lastmod>
+    <lastmod>2026-01-16T22:47:18.8907067Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/love-left-unsaid/</loc>
-    <lastmod>2026-01-14T02:17:16.1310212Z</lastmod>
+    <lastmod>2026-01-17T00:39:50.4883439Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3085,7 +3085,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/whatever-the-numbers-say/</loc>
-    <lastmod>2026-01-14T02:28:02.5034451Z</lastmod>
+    <lastmod>2026-01-17T00:52:33.5380509Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3121,37 +3121,97 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/from-the-tropics/</loc>
-    <lastmod>2026-01-14T02:17:16.1310212Z</lastmod>
+    <lastmod>2026-01-17T00:39:50.4883439Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/motivated/</loc>
-    <lastmod>2026-01-14T00:26:59.6796041Z</lastmod>
+    <lastmod>2026-01-17T01:12:05.2584665Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/regular-release/</loc>
-    <lastmod>2026-01-14T00:26:59.6796041Z</lastmod>
+    <lastmod>2026-01-17T01:12:05.2584665Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/without-fear-and-trembling/</loc>
-    <lastmod>2026-01-14T02:17:16.1310212Z</lastmod>
+    <lastmod>2026-01-17T00:39:50.4883439Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/come-what-may/</loc>
-    <lastmod>2026-01-14T00:26:59.6796041Z</lastmod>
+    <lastmod>2026-01-17T00:39:50.4883439Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://poems.culturing.net/2026/01/only-solid-things/</loc>
-    <lastmod>2026-01-14T00:26:59.6796041Z</lastmod>
+    <loc>https://poems.culturing.net/2026/01/beyond-me/</loc>
+    <lastmod>2026-01-17T00:39:50.4883439Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/strong-enough-now/</loc>
+    <lastmod>2026-01-17T00:39:50.4883439Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/a-new-here/</loc>
+    <lastmod>2026-01-16T23:18:08.2437342Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/hors-doeuvres/</loc>
+    <lastmod>2026-01-17T00:29:25.1142492Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/eyes-open/</loc>
+    <lastmod>2026-01-16T23:18:08.2437342Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/remember-the-ladies/</loc>
+    <lastmod>2026-01-16T23:18:08.2437342Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/soon-will-i-love-you-in-return/</loc>
+    <lastmod>2026-01-16T23:29:01.4656657Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/much-more-down-below/</loc>
+    <lastmod>2026-01-17T00:39:50.4883439Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/mere-dream/</loc>
+    <lastmod>2026-01-16T23:18:08.2437342Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/practicing/</loc>
+    <lastmod>2026-01-17T00:29:25.1142492Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/01/make-it-last/</loc>
+    <lastmod>2026-01-16T23:18:08.2437342Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>

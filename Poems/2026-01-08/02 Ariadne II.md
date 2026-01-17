@@ -3,9 +3,9 @@
 
 Ariadne, I liked you better
 before you became a goddess, with Theseus,
-not Dionysius, though I did intend to invert the ending
+not Dionysus, though I do intend to invert the ending
 and not leave you stranded on Naxos.
-Still I can see why you'd like Dionysius
+Still I can see why you'd like Dionysus
 after years as the mistress of the labyrinth, where your father the King
 enforced holy order despite all winding ways.
 But the god of wine is unlikely to fill your cup for long

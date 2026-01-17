@@ -12,5 +12,5 @@ disgusting we find it? Where does this "love" come from, ubiquitous
 and yet still shameful? The body cannot be controlled,
 not completely, though we wish it could...
 Who's to say whether even the greatest love
-can overcome a man's need for release, on a regular cadence,
+can overcome a man's need for release, on a regular cadence
 defined by the gods?

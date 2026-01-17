@@ -4,5 +4,5 @@ Love Left Unsaid
 I think we both know how we both feel.
 The question is: what shall we do?
 
-Love left unsaid is unreal.
-Love put in words can come true.
+Love left unsaid is forever unreal.
+Love put into words can come true.

@@ -8,5 +8,5 @@ warmth, ensured by the equatorial sun. I'm only passing through,
 and all my thoughts return to you and my deepest wish,
 that you were here. For now I'll sit here sipping rum
 and feel at ease, but if it please you, please consider
-whether you would not like to join me here next time.
+whether you would like to join me here next time.
 I'd like that very much.

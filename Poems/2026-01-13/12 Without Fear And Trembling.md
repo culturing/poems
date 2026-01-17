@@ -12,7 +12,7 @@ I would like to say yes, but I doubt my own willpower
 against the imperatives of flesh, the strict tensions
 demanding release, and the damage to health should I disobey.
 What then can I say? I would love you, and truly,
-and bodily, but not with a promise to bring my own body
-under a rule that would damage it. I don't need other women,
+and bodily, but not with a promise to bend my own body
+by a rule that would damage it. I do not need other women,
 but I do need freedom, and understanding, as I find my salvation
 without fear and trembling.

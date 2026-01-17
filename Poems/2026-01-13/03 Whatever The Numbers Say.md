@@ -16,7 +16,7 @@ are experienced at sea and can see the storms coming. One hopes
 for a mutiny, perhaps from above, from those pulling the strings,
 under whose banner all our ships sail. But it may be
 that honor is profitable only for so long, that eventually growth
-is an end in itself, once the victims no longer can escape.
+is an end in itself, once the victims can no longer escape.
 Have we spun a neat web for them, made from false promises
 and years of good treatment, such that now they will stay either way?
 Shall we make leaving hard, then abuse them? Such is the way
@@ -25,7 +25,7 @@ to ruin, whatever the numbers say.
 --
 
 Time will tell, but for now I am loyal to those I have seen do good
-over many years. It will be a sight to see if new evil collides
+over many years. It will be something to see if new evil collides
 with old good, entrenched and habitual, but lacking executive support.
 It's the old cosmic struggle. But how could I leave, knowing
 nowhere is free from this struggle forever, that virtue breeds growth
