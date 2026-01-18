@@ -37,4 +37,4 @@ if left unfulfilled, than even the worst troubles of love.
 I would have her and can't explain why.
 We have looked twice into the same sky.
 If an answer should come from above, let it burn
-until nothing remains here but love.
+until nothing remains but our love.

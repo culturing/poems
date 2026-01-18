@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "7581fa9e94f85f228438b6ac9b532347ece0a6787d3a2073284d794fa1994092",
-    "LastMod": "2026-01-17T00:52:33.5380509Z"
+    "Hash": "ca7337a39adc395ee94811b693a10c3da40292a803e994c052761f95d68085b0",
+    "LastMod": "2026-01-18T19:24:14.7422108Z"
   },
   "/best/": {
-    "Hash": "f41bd2d83f06adaf89b905f2ccd50e2d93abc630ef6daa5c61b937187db7f51b",
-    "LastMod": "2026-01-17T00:52:33.5380509Z"
+    "Hash": "930e984cde385465792df2e9e27311e45c34277ddc12d14729e348ae116be733",
+    "LastMod": "2026-01-18T19:24:14.7422108Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "2ae60ed6532abb873ff576a1c7d0c320c3829a1f64cc9a3dd55a2bb30044b21c",
-    "LastMod": "2026-01-17T04:11:35.5222207Z"
+    "Hash": "dce1024c9c3e3052d64fb08118b72678b3e86ae5c4c57aec30064ff2bab30c81",
+    "LastMod": "2026-01-18T20:40:30.4408626Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2164,8 +2164,8 @@
     "LastMod": "2025-12-12T23:33:46.3218399Z"
   },
   "/2025/12/the-troubles-of-love/": {
-    "Hash": "5c2dc76bfb3da9ad6673f5264d836b116db576241f9f14552cd236c109cbf45d",
-    "LastMod": "2025-12-12T23:33:46.3218399Z"
+    "Hash": "7832c754c190bfe420cfba6df76c781312aac006d637d9bf3d497eb46df38463",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
   },
   "/2025/12/only-your-heart/": {
     "Hash": "b3fcd6522315dcc5b98aad187510618d6d6eb5afe4341227dd92cad1dd388bea",
@@ -2804,8 +2804,8 @@
     "LastMod": "2026-01-14T00:29:33.5391101Z"
   },
   "/2026/01/ebb-and-flow/": {
-    "Hash": "5ca19bc3f3fea87c4d813121cb58192e62b97272f0321500d6bbda0226a3ad13",
-    "LastMod": "2026-01-17T00:52:33.5380509Z"
+    "Hash": "f05eb71800912b93cb5f76e3b645a3f011beabb1dd2416b88c6d9e609c59520c",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
   },
   "/2026/01/flirting-with-danger/": {
     "Hash": "40636b8d33456a43cc9fffd7f9f9489e7d920a557c810359d1239a536ba1d050",
@@ -2860,8 +2860,8 @@
     "LastMod": "2026-01-17T01:12:05.2584665Z"
   },
   "/2026/01/regular-release/": {
-    "Hash": "fdfc01efaf91975f11c4390c9d83ce0bf4aeccfc68cafb30eb9ee842e4da2493",
-    "LastMod": "2026-01-17T01:12:05.2584665Z"
+    "Hash": "bd34af60530e358bd1abd48381d640886c5f1d80d938307333fc9a4f0477a94e",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
   },
   "/2026/01/without-fear-and-trembling/": {
     "Hash": "6a5f59902d74f928397a729ed24e8d26df1195385fba1d426cd736e0572c30c4",
@@ -2888,12 +2888,12 @@
     "LastMod": "2026-01-16T23:18:08.2437342Z"
   },
   "/2026/01/hors-doeuvres/": {
-    "Hash": "5a5e6c1f530a407f4d32a4d3b672be84a49a74467d543b047ed97bdc150aa1af",
-    "LastMod": "2026-01-17T00:29:25.1142492Z"
+    "Hash": "05be2772d9e2290dc8cf41c113ef08ed8ebbfadf79c7370fa63c058bbd77b580",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
   },
   "/2026/01/eyes-open/": {
-    "Hash": "4ca8717f8b0d389eecbd92f88885741148e598e80c164ffd60c12230f87549aa",
-    "LastMod": "2026-01-16T23:18:08.2437342Z"
+    "Hash": "cb4f628b892a03b02cd8462876522455898c282e5d361d2d7da74fa8ec8dc51c",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
   },
   "/2026/01/remember-the-ladies/": {
     "Hash": "7631c5c822c093878014d69c7203e9a8514413ddb8122c638d470f71f5ef75b5",
@@ -2904,23 +2904,27 @@
     "LastMod": "2026-01-16T23:29:01.4656657Z"
   },
   "/2026/01/much-more-down-below/": {
-    "Hash": "b23f9bcbf4e59439c5c951282c472efe04c401162652180a4b4ebcc3853829bf",
-    "LastMod": "2026-01-17T00:39:50.4883439Z"
+    "Hash": "0084731a14fb640bd8387acd7dfb85587a13af85a1c20b7094357b89acda9bd6",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
   },
   "/2026/01/mere-dream/": {
-    "Hash": "23ce8ec41319fe6c13e494583b307d7ea8588d973ca89b1a9a27b7e7a6707d7e",
-    "LastMod": "2026-01-16T23:18:08.2437342Z"
+    "Hash": "25e22080c7ad9b737d91fbd5733b5b68822c35893f5f766ca324171eafd8269e",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
   },
   "/2026/01/practicing/": {
     "Hash": "403b8c58d51eb5db00f23361ddeb0a55aae9c786214f678f45a7007cfe4d6291",
     "LastMod": "2026-01-17T00:29:25.1142492Z"
   },
   "/2026/01/make-it-last/": {
-    "Hash": "3cd2256c8238825f3bf8225aec1e8594273b44c7f5052b13b6c0c2d16097fb48",
-    "LastMod": "2026-01-16T23:18:08.2437342Z"
+    "Hash": "f945bdff459f2b5002466deed26d7936813c792d149bc2285f8cbbbaa78c1c0c",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
   },
   "/2026/01/beyond-me/": {
-    "Hash": "439fef771bcffa21834dc0c762353c5b98a4451f48f8bb5b890aee2c5c9e32db",
-    "LastMod": "2026-01-17T00:39:50.4883439Z"
+    "Hash": "4d3cbddd0f3d1f293407fc83189449db7385011a8ec88f0534bc1fece2457dac",
+    "LastMod": "2026-01-18T19:30:05.0146641Z"
+  },
+  "/2026/01/paper-tower/": {
+    "Hash": "c12cd6af9aea78cb5842c1a114a7e2d4dab16ff3ecae20ea7d34eaf1c674c9b8",
+    "LastMod": "2026-01-18T20:40:30.4408626Z"
   }
 }

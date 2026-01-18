@@ -7,5 +7,5 @@ among the other ghosts that soothe me while I sleep.
 It is a welcome thing (you are), but it is not enough.
 We must be friends as well, and we must fight,
 and we must disagree, because we live on earth.
-But I can see you, even now, beneath my eyelids.
-I just wish to see you even with eyes open.
+But I can see you, even now, beneath my eyelids,
+and I wish to see you even with eyes open.

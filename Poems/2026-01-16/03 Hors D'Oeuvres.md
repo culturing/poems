@@ -11,4 +11,4 @@ to retire to your room, it will be understood, not resented.
 But when these fine foods are presented, you may find
 your appetite grows and your body strengthens, more so
 than from any hors d'oeuvre, and you may feel your hunger
-alive at last. You may even come back for more.
+allowed at last. You may even come back for more.
