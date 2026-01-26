@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "f49ddb9840c444ca49f7e11cb8a7456431861f17bec04f3a8eb41c6a63cf159b",
-    "LastMod": "2026-01-22T23:59:53.2774253Z"
+    "Hash": "45f862b11c51cc707e77af9ec91dd9c4e1b1d8113021ef7e131e60987d4f9307",
+    "LastMod": "2026-01-25T23:56:04.7988754Z"
   },
   "/best/": {
-    "Hash": "6b838382f8bf4ead3bd5c1ebfbcef333bf577e39c78ade43e4247a952a2c545f",
-    "LastMod": "2026-01-22T23:59:53.2774253Z"
+    "Hash": "435d087e13370768ce0807a6d3b4354f4566c79cae5c6023939de107c0740650",
+    "LastMod": "2026-01-25T23:56:04.7988754Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "3d8fb454f233cb76c84a065d76b25ce2810038ae11ccefdf76a44c068988cbb0",
-    "LastMod": "2026-01-23T00:27:14.7102481Z"
+    "Hash": "79ce419beaae3715f1b448f971742e6fcb52896ace99a57b85003b4137d90194",
+    "LastMod": "2026-01-26T00:55:46.0126377Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2968,11 +2968,43 @@
     "LastMod": "2026-01-23T00:27:14.7102481Z"
   },
   "/2026/01/field/": {
-    "Hash": "a02c9d93bb2c9efabfbcc3c66a30fdfb21876878cde774e8ce637814953d01a4",
-    "LastMod": "2026-01-23T00:27:14.7102481Z"
+    "Hash": "39132c2ce261dc62ee0145fe0363cb328b33c8d24fd46e01891098f7faf0071d",
+    "LastMod": "2026-01-26T00:35:55.009489Z"
   },
   "/2026/01/the-night-of-the-pigtails/": {
-    "Hash": "76397b5d1639b41bc5efdaaad5985e80c14e904c0c2f48146281b4dc1bfa748d",
-    "LastMod": "2026-01-23T00:18:16.8660383Z"
+    "Hash": "148b2ef3265fc6f3538c5375307f5ef94b3d471c539929a1e1995d7144295cf8",
+    "LastMod": "2026-01-26T00:35:55.009489Z"
+  },
+  "/2026/01/the-sexual-development-of-exceptional-people/": {
+    "Hash": "520ae6914f13526b38b661e0282d4792275db1f3468e3bed02b594204aca04f4",
+    "LastMod": "2026-01-26T00:35:55.009489Z"
+  },
+  "/2026/01/prepared-to-make-good/": {
+    "Hash": "72d49e5a69e3fe6076c6a269a7d35c76b17d667efa7b557264243ac95c1720d4",
+    "LastMod": "2026-01-26T00:55:46.0126377Z"
+  },
+  "/2026/01/entropy/": {
+    "Hash": "0c6b62cbe20088572c688802ff1022baa055578c0de7a57d0f3d8a0652388a91",
+    "LastMod": "2026-01-25T23:56:04.7988754Z"
+  },
+  "/2026/01/presence/": {
+    "Hash": "f7e9d64afc37a9b8198429c3d1dd8e74d2d9703091493ef8e3824ff0b4fff124",
+    "LastMod": "2026-01-25T23:56:04.7988754Z"
+  },
+  "/2026/01/odds-of-success/": {
+    "Hash": "08c5a0c784b64a6e96af6eede5aae8f8df6e68419a2d2e2b7c10e539bb744546",
+    "LastMod": "2026-01-25T23:56:04.7988754Z"
+  },
+  "/2026/01/new-mountain/": {
+    "Hash": "9d66c3d4097e54e39168e017ed5b76ed3ce35f317dcdb3c9a02a90305196135e",
+    "LastMod": "2026-01-25T23:56:04.7988754Z"
+  },
+  "/2026/01/access/": {
+    "Hash": "3bbf670cc92db26f60d057cec6fa44f248227b6037b0c76fd285630c6175f22c",
+    "LastMod": "2026-01-25T23:56:04.7988754Z"
+  },
+  "/2026/01/very-lucky/": {
+    "Hash": "c7f3851bb77a689d251e4aec3b429549758f24edf01947b5aa265c5a270c98f7",
+    "LastMod": "2026-01-25T23:56:04.7988754Z"
   }
 }
