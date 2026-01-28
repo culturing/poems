@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "45f862b11c51cc707e77af9ec91dd9c4e1b1d8113021ef7e131e60987d4f9307",
-    "LastMod": "2026-01-25T23:56:04.7988754Z"
+    "Hash": "38948b2f150c3c936f463ba8c1381f1201205dba13600a790ba092d933820658",
+    "LastMod": "2026-01-27T23:58:29.2424808Z"
   },
   "/best/": {
-    "Hash": "435d087e13370768ce0807a6d3b4354f4566c79cae5c6023939de107c0740650",
-    "LastMod": "2026-01-25T23:56:04.7988754Z"
+    "Hash": "f036a47353d65b9cffe994d8b26293af6e3ecb08a85eb7abdaf7150376cab48c",
+    "LastMod": "2026-01-27T23:58:29.2424808Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "79ce419beaae3715f1b448f971742e6fcb52896ace99a57b85003b4137d90194",
-    "LastMod": "2026-01-26T00:55:46.0126377Z"
+    "Hash": "422a95dc752a215bb406218fe32cb3fa03729b7cc35ba63d23773f30640849da",
+    "LastMod": "2026-01-28T00:35:58.6269529Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -3004,7 +3004,27 @@
     "LastMod": "2026-01-25T23:56:04.7988754Z"
   },
   "/2026/01/very-lucky/": {
-    "Hash": "c7f3851bb77a689d251e4aec3b429549758f24edf01947b5aa265c5a270c98f7",
-    "LastMod": "2026-01-25T23:56:04.7988754Z"
+    "Hash": "3909c700af391c1e601a94596ad4582ac47617317bfcc3d92e3a50cb5b677a84",
+    "LastMod": "2026-01-28T00:35:58.6269529Z"
+  },
+  "/2026/01/healing/": {
+    "Hash": "9c005a6b9d5d0604db49aef3192167bf7b4043458b341090b5c9cf9972d692cd",
+    "LastMod": "2026-01-27T23:58:29.2424808Z"
+  },
+  "/2026/01/absence-of-leadership/": {
+    "Hash": "7fa250cb55a3e1cf0c40ec32168edb962dfd9ce21ff07627a241bb5d18f0ed0f",
+    "LastMod": "2026-01-28T00:35:58.6269529Z"
+  },
+  "/2026/01/feeling-dry-a-pain-from-long-ago/": {
+    "Hash": "c649af0e27d9e9864bf70c6e7d2f0af959a7fb069afb1506756dc96611ebcfd9",
+    "LastMod": "2026-01-28T00:35:58.6269529Z"
+  },
+  "/2026/01/contra-kant/": {
+    "Hash": "edba5407806976df9e1ec4b3a2208e355d9340929199098330d59cf09dd86dc5",
+    "LastMod": "2026-01-27T23:58:29.2424808Z"
+  },
+  "/2026/01/culture-the-past/": {
+    "Hash": "8138f31f4e2bad631f57a89df20604875cfb05a13b1621a317ebdc7880f3a8bf",
+    "LastMod": "2026-01-28T00:35:58.6269529Z"
   }
 }
