@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "63b3c45b9069ddf94f82ef06cb08884185bdcd4125dcd2e1752ed684b962dcba",
-    "LastMod": "2026-02-05T23:40:45.2562017Z"
+    "Hash": "3d59b2c6968ea0c081c19b6e08caa234dfdc62d7aa584f1a941d5d477c81b49f",
+    "LastMod": "2026-02-07T22:54:46.7117376Z"
   },
   "/best/": {
-    "Hash": "da4dfc8a1d780fc7aac5ee94f1353e9679fb96f2b98362d11c8a53bc21a472be",
-    "LastMod": "2026-02-05T23:40:45.2562017Z"
+    "Hash": "b3de03f975784e2c272ac6f92c2252aa35213ac58aac47a448fd608e5e67c139",
+    "LastMod": "2026-02-07T22:54:46.7117376Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "f4eec472d56375c0fabee3d1cb0bc08b1c204ad87ef897d7b5543a43fa52d387",
-    "LastMod": "2026-02-06T02:29:43.4918921Z"
+    "Hash": "db5b846aa249c12fc5874f4a143b29c0ddafb2a9e70ad1c9c011ddcddaee1b9f",
+    "LastMod": "2026-02-07T23:52:53.6229944Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -3188,7 +3188,51 @@
     "LastMod": "2026-02-06T02:29:43.4918921Z"
   },
   "/2026/02/whole-complete/": {
-    "Hash": "cdda94443f9956790f73ec1247ec7259285c37bb2eaf8be9500e41fea06980ab",
-    "LastMod": "2026-02-06T02:29:43.4918921Z"
+    "Hash": "a885e1f2deae7efe83ee7cc6a768d543de90101459cfd22adfbbb154360b016a",
+    "LastMod": "2026-02-07T22:41:11.7121809Z"
+  },
+  "/2026/02/cruelty/": {
+    "Hash": "2fd1b5414fecde5994e13d977afca70efdd42dc97d8da0e565c34ea68952a51e",
+    "LastMod": "2026-02-07T22:54:46.7117376Z"
+  },
+  "/2026/02/the-reason-for-discipline/": {
+    "Hash": "6b3e7677b651815983fba5d53968e88a51d2ee978e23ce1ddec713ddcf1a03e4",
+    "LastMod": "2026-02-07T23:01:24.9711267Z"
+  },
+  "/2026/02/second-nature/": {
+    "Hash": "7dbea694ff99b9c44ffb3b539bba8a8aa1d3749a699ecd734631ca56294151bc",
+    "LastMod": "2026-02-07T23:01:24.9711267Z"
+  },
+  "/2026/02/not-truly-unconditional/": {
+    "Hash": "5b269a8a44ed4aad024d14bbcecf299ff0780c99c4cfb36c72386b7b0f1be641",
+    "LastMod": "2026-02-07T22:41:11.7121809Z"
+  },
+  "/2026/02/the-habit-of-loving/": {
+    "Hash": "3d2aa4bf65581339f9215d91c1b1c765fe0cae9f3bf1c9fba9cba94dbce9bd12",
+    "LastMod": "2026-02-07T22:54:46.7117376Z"
+  },
+  "/2026/02/hard-to-tell/": {
+    "Hash": "979cfd55f15b207bfc59f070ad30e09c8430d4eaa52c74241cf016d2936720c7",
+    "LastMod": "2026-02-07T23:52:53.6229944Z"
+  },
+  "/2026/02/parts-of-vanda/": {
+    "Hash": "78dba58c9adc1dc6c1800e83029e5a8a8e8b53d3b3706b79dcf651f0a7e53d94",
+    "LastMod": "2026-02-07T23:01:24.9711267Z"
+  },
+  "/2026/02/catalyst-and-observer/": {
+    "Hash": "5b0d97bee320210ad7f88a76460aacad3604f95bd233abd9321b61537f37049d",
+    "LastMod": "2026-02-07T22:41:11.7121809Z"
+  },
+  "/2026/02/the-pain-of-reality/": {
+    "Hash": "6678ffa1d033fb646443c703173adefdb6fffdf0b8948ee91f90cb2929b22890",
+    "LastMod": "2026-02-07T22:54:46.7117376Z"
+  },
+  "/2026/02/who-youd-like-to-be/": {
+    "Hash": "65bc3a0eb0900dae1c365467ed62929857c968b864a87e6521248fff890ac584",
+    "LastMod": "2026-02-07T22:33:35.3946552Z"
+  },
+  "/2026/02/extraordinary-discipline/": {
+    "Hash": "8011413a2557ac2f2224ea4291ec3e9b34ffe7759561901319878e3c5224c6d1",
+    "LastMod": "2026-02-07T22:54:46.7117376Z"
   }
 }
