@@ -16,7 +16,7 @@ if the story had reached the news. So what could I do
 but walk away, and leave this poor girl more discouraged
 than before. I could have helped her, and no, not with sex,
 but with *words* and kindness, the kind she was lacking,
-the kind that her mother kept hidden from her. By my own life
+the kind that her mother kept hidden from her. But my own life
 imperiled, I fled, and I do not regret it, though I am ashamed
 that I did not defend my honor. But there was no use.
 Even false accusations destroy. And what man can stand

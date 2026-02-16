@@ -4,7 +4,7 @@
 Into your eternal bosom, let me come and rest,
 that we might find ourselves enlightened and immured
 by what beats in your breast. You are the field, and I
-the meager cultivator, making plans and plowing
+the measly cultivator, making plans and plowing
 so that you might come to life. You nourish both of us
 and all who know your bounty. I will take good care
 to keep you fed and watered, add a trellis here and there,

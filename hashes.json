@@ -1504,20 +1504,20 @@
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/": {
-    "Hash": "4b9d292d4b48c5e8c7eae22093a931c83f6ba902e433c66efb02e6250ed4cfc4",
-    "LastMod": "2026-02-15T00:24:04.5719991Z"
+    "Hash": "241b1372f9e6dd7c0d837512e94b9ce9b32e6811e8dbcf9704a932c0f2abb174",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
   },
   "/best/": {
-    "Hash": "d2587cc3ca7f8f55bb31b25b1cbceaf6c4b5fa200d2b686ef79c9b936bf2b68e",
-    "LastMod": "2026-02-15T00:13:58.6747955Z"
+    "Hash": "8ddaa086f456dc1b097c340ed41cd012367c4a1501733ea021b9e4116659ab12",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
   },
   "/about/": {
     "Hash": "a380a08fb53f844fac28fcd7fa351e30a12035d67b882054ef2e2e8df4437ee0",
     "LastMod": "2025-10-12T22:51:33.7175739Z"
   },
   "/culturing.pdf": {
-    "Hash": "a5ec569b86c96dd1ede5807438ea829c5a26b0332c7dc837be835c2e7e2ded63",
-    "LastMod": "2026-02-15T00:24:04.5719991Z"
+    "Hash": "4e554eee540c4e1c3818bb8a90b40f95fd84ca8f776d9a8cab220d8cb4f75e10",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "aec4fa7abaa9fa869b93185ad40a50409c74ba26d4b4b424bcb09e9806c2c39f",
@@ -2968,8 +2968,8 @@
     "LastMod": "2026-01-23T00:27:14.7102481Z"
   },
   "/2026/01/field/": {
-    "Hash": "39132c2ce261dc62ee0145fe0363cb328b33c8d24fd46e01891098f7faf0071d",
-    "LastMod": "2026-01-26T00:35:55.009489Z"
+    "Hash": "f9622bde8c6c1f7b29b112081c1acf34be3a586e2dc0db77ce8897a8384122b6",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
   },
   "/2026/01/the-night-of-the-pigtails/": {
     "Hash": "148b2ef3265fc6f3538c5375307f5ef94b3d471c539929a1e1995d7144295cf8",
@@ -3016,8 +3016,8 @@
     "LastMod": "2026-01-31T22:56:06.0993507Z"
   },
   "/2026/01/feeling-dry-a-pain-from-long-ago/": {
-    "Hash": "c649af0e27d9e9864bf70c6e7d2f0af959a7fb069afb1506756dc96611ebcfd9",
-    "LastMod": "2026-01-28T00:35:58.6269529Z"
+    "Hash": "fb3c26d3464f3fedf2407a08e6e8123afe392ecbd22366c7f4bfd385142a9ce7",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
   },
   "/2026/01/contra-kant/": {
     "Hash": "edba5407806976df9e1ec4b3a2208e355d9340929199098330d59cf09dd86dc5",
@@ -3152,8 +3152,8 @@
     "LastMod": "2026-02-05T23:28:06.0705013Z"
   },
   "/2026/02/strength/": {
-    "Hash": "d2c142d6fd0fc56229c5d08b399d540674a8478d0e788e690dd679019f12f973",
-    "LastMod": "2026-02-05T23:40:45.2562017Z"
+    "Hash": "9389ec108598669fcab69b92644a52741dce50765bbcc45543736286bd32211c",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
   },
   "/2026/02/the-one-you-will-be/": {
     "Hash": "4f79c3eda9bd7861381207aa0157c476329fd512997bcc7d9da081e9c41197cc",
@@ -3356,7 +3356,43 @@
     "LastMod": "2026-02-15T00:20:08.4797621Z"
   },
   "/2026/02/whitman/": {
-    "Hash": "421620f423fba82b654c0078dccbb1dd80d5759fbaf06b8c83de452f77ed97e5",
-    "LastMod": "2026-02-15T00:20:08.4797621Z"
+    "Hash": "58cb1df6375f499798e5377f6b52fbef914d2b439f77b3f8dbbf39eff8d71efb",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
+  },
+  "/2026/02/more-than-power/": {
+    "Hash": "abba81e3881aef8ddc39330469e898e81f3b4932258993da4ecdcdb7e3c2cec6",
+    "LastMod": "2026-02-16T23:13:46.8479527Z"
+  },
+  "/2026/02/at-the-entrance/": {
+    "Hash": "f0c968e0bb7fc9a181b9aad9a30b4fbb66f0eebce69af1bb9b07aa9b5ab2936a",
+    "LastMod": "2026-02-16T23:13:46.8479527Z"
+  },
+  "/2026/02/no-ken-at-all/": {
+    "Hash": "89a01bf60cb6f9e18539269e256f8c0291fce880c345e329ca41b2520826bf15",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
+  },
+  "/2026/02/do-what-i-say/": {
+    "Hash": "04fd320de0af8c05bac1ac5427d3b09a3bdb9db3f33b82307c8854a6313535af",
+    "LastMod": "2026-02-16T23:13:46.8479527Z"
+  },
+  "/2026/02/forgive-my-sternness/": {
+    "Hash": "212121efa82f90e9fe526f0adf6a3859531859e1adc07ab4fdac29fd7dfff0e7",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
+  },
+  "/2026/02/inexperienced/": {
+    "Hash": "04dd4c57c87e40dd59e2c1b390e35306c1446d3fcba350435a3f18c08c4e1c8b",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
+  },
+  "/2026/02/master-slave-dialectic/": {
+    "Hash": "f22291e4c783ce710a8a68c1ff91558549ecbd4b5661565096d88c34c4bb2ff0",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
+  },
+  "/2026/02/velocity/": {
+    "Hash": "a6908bcf91383c9a78b91ea3c149b54a22bef1b818e41a158e7e3e26c5432123",
+    "LastMod": "2026-02-16T23:13:46.8479527Z"
+  },
+  "/2026/02/strength-ii/": {
+    "Hash": "bef3d4c7a3e052c7fdea979f01c4e88a0dc4dd9ba650d9bf1fa9c6656f93500a",
+    "LastMod": "2026-02-16T23:25:12.5880909Z"
   }
 }

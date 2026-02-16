@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2026-02-15T00:24:04.5719991Z</lastmod>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2026-02-15T00:13:58.6747955Z</lastmod>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2026-02-15T00:24:04.5719991Z</lastmod>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -3283,7 +3283,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/field/</loc>
-    <lastmod>2026-01-26T00:35:55.0094890Z</lastmod>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3355,7 +3355,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/01/feeling-dry-a-pain-from-long-ago/</loc>
-    <lastmod>2026-01-28T00:35:58.6269529Z</lastmod>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3559,7 +3559,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/02/strength/</loc>
-    <lastmod>2026-02-05T23:40:45.2562017Z</lastmod>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -3853,7 +3853,61 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/02/whitman/</loc>
-    <lastmod>2026-02-15T00:20:08.4797621Z</lastmod>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/more-than-power/</loc>
+    <lastmod>2026-02-16T23:13:46.8479527Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/at-the-entrance/</loc>
+    <lastmod>2026-02-16T23:13:46.8479527Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/no-ken-at-all/</loc>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/do-what-i-say/</loc>
+    <lastmod>2026-02-16T23:13:46.8479527Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/forgive-my-sternness/</loc>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/inexperienced/</loc>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/strength-ii/</loc>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/master-slave-dialectic/</loc>
+    <lastmod>2026-02-16T23:25:12.5880909Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/02/velocity/</loc>
+    <lastmod>2026-02-16T23:13:46.8479527Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
