@@ -7,8 +7,8 @@ where I went wrong, and which pieces remain
 to be put back together in new configurations,
 respecting their origins but never again as they were.
 It's a crime to be free, too free, and to dishonor
-life and love with a cruelty not even animals know.
-Only we can make lust a religion, and power its handmaiden.
+life and love with a cruelty not even animals know,
+to make lust a religion, and power its handmaiden.
 Thus in the spirit of chivalry let me remind you:
 aim higher, and dream better dreams than those found
 in pornography. You are still human after all,
