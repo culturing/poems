@@ -2,6 +2,6 @@
 25 February 2026
 
 Narcissist, vulnerable type.
-Pronounced God-complex.
+Pronounced god complex.
 Highly manipulative.
 Approach with caution.
