@@ -26,7 +26,7 @@ Could she be a *recovering* succubus, who truly
 means it this time, but carries the old habits,
 the old desires? It's possible. Perhaps this fits the facts
 more than anything else...a Blanche DuBois
-to my Mitchell, but that story doesn't end well for her...
+to my Mitch, but that story doesn't end well for her...
 
 --
 
