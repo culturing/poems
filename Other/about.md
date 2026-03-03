@@ -8,6 +8,6 @@ Poems grow out of other poems, as lives grow out of other lives. Cut off from th
 
 The name "culturing" comes from a surprising source. In "On the Origin of Species", Darwin notices differences between birds kept "under culture" and birds left in the wild. The phrase "under culture" troubles me. I don't want to be *under* culture. I want to *culture*. I want to participate in culture, to *make* culture. Thus "culturing" is the perfect manifesto for my poetry project.
 
-From this, perhaps it will be obvious that I am an American, but I wish to remain anonymous in other ways. This leaves me free to speak the truth. But I wouldn't mind <a href="mailto:author@culturing.net">hearing from you</a>. And please spread these poems far and wide, by posting links on social media, or even <a href="https://poems.culturing.net/culturing.pdf" target="_blank">printing them</a>.
+From this, perhaps it will be obvious that I am an American, but I wish to remain anonymous in other ways. This leaves me free to speak the truth. But I wouldn't mind <a href="mailto:author@culturing.net">hearing from you</a>. And please spread these poems far and wide, by posting links on social media, or even <a href="https://drive.google.com/file/d/1hpgUweilXJJ94Ra_pQyyH4eKB-5N-8sL/view?usp=drive_link" target="_blank">printing them</a>.
 
 There is more to come. Like Whitman, "hoping to cease not till death," I welcome you to this life's work in progress. 

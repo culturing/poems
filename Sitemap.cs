@@ -116,7 +116,7 @@ class SitemapGenerator
             },            
             new SitemapNode
             {
-                Url = $"{Program.BaseUrl}/culturing.pdf",
+                Url = $"https://static.culturing.net/culturing.pdf",
                 LastModified = UpdateHash(hashes, "docs/culturing.pdf", "/culturing.pdf", now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
