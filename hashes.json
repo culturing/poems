@@ -1504,20 +1504,20 @@
     "LastMod": "2026-03-03T02:17:41.702748Z"
   },
   "/": {
-    "Hash": "b79170a571cf6539faf27d2ad5777959ebd9fe092f965638d90cc000dba16ffd",
-    "LastMod": "2026-03-03T02:17:41.702748Z"
+    "Hash": "46e9c6dbb03bf6fa283847432036aeccb6c804c66c9d2834720ba8c9a1d17f02",
+    "LastMod": "2026-03-03T23:24:50.3502525Z"
   },
   "/best/": {
-    "Hash": "1ddfbe099018d61396cde60d049019cc8cdf51692f1d03da1a00d440a3ac8dc0",
-    "LastMod": "2026-03-03T02:17:41.702748Z"
+    "Hash": "3efd2e7c17b86188c25c2478ddf2644e76416f8774c3ba6f82c69a1e98285302",
+    "LastMod": "2026-03-03T23:24:50.3502525Z"
   },
   "/about/": {
     "Hash": "430dfe56e3d97f892638d65ea4574cbb3afffaa08fe7b2799cab3ab191b9b2ce",
     "LastMod": "2026-03-03T02:17:41.702748Z"
   },
   "/culturing.pdf": {
-    "Hash": "bafbc7ee5a19d81b0d3db97326c726ad2d3e9c44e7266cab961d1425427dc058",
-    "LastMod": "2026-03-03T00:45:33.7806836Z"
+    "Hash": "2b380a6ea199cf08e7835b714a95c3d6e28bd46f535b777c7135cd918dda518e",
+    "LastMod": "2026-03-03T23:35:15.1126844Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "1a9840115ec4283398af4f60e6aa80edbf1bc551a7497e0800b6e520aac35f01",
@@ -3652,7 +3652,19 @@
     "LastMod": "2026-03-03T02:17:41.702748Z"
   },
   "/2026/03/sophia-again/": {
-    "Hash": "93ee34e22a33a84d924172e79c46dcbc9a28e4f00dbe8371f07dcdf3599974f6",
-    "LastMod": "2026-03-03T02:17:41.702748Z"
+    "Hash": "f0f2c9af8922e30e9e45c9d7253ebbdf59fa8d45757be0751e8aaf692558d3ea",
+    "LastMod": "2026-03-03T23:24:50.3502525Z"
+  },
+  "/2026/03/sexual-cannibalism/": {
+    "Hash": "87cd5a2b17b90b795fa666ec7a45e403b53068b39ebe9bb2e645a52b5e0bbec8",
+    "LastMod": "2026-03-03T23:24:50.3502525Z"
+  },
+  "/2026/03/paper-tower-ii/": {
+    "Hash": "50e06cbb07508dd1bdff571ef92ea854c12a256b6ed6ce0e6802e8c8045781a0",
+    "LastMod": "2026-03-03T23:24:50.3502525Z"
+  },
+  "/2026/03/worth-fighting-for/": {
+    "Hash": "e7e73ae90b30b3079c6f311fc4a54b26a5cd6943b7381cab258a671499934fe8",
+    "LastMod": "2026-03-03T23:35:15.1126844Z"
   }
 }
