@@ -71,10 +71,15 @@ class Program
         foreach(Poem poem in Poems.OrderBy(p => Regex.Replace(p.Title, @"[^\w\s]", "")))
         {
             string style = poem.Style();
+            if (string.IsNullOrWhiteSpace(style))
+                style = "";
+            else
+                style = $" style='{style}'";
+
             if (string.IsNullOrEmpty(style))
                 indexHtml += $"<div>{poem.Link}</div>\n";
             else
-                indexHtml += $"<div style='{style}'>{poem.Link}</div>\n";
+                indexHtml += $"<div{style}>{poem.Link}</div>\n";
             if (poem.Bold)
                 bestIndexHtml += $"<div>{poem.Link}</div>\n";
         }
@@ -90,7 +95,13 @@ class Program
 
             foreach(Poem poem in Enumerable.Reverse(kvp.Value))
             {
-                chronologyHtml += $"<div style='{poem.Style()}'>{poem.Link}</div>\n";                    
+                string style = poem.Style();
+                if (string.IsNullOrWhiteSpace(style))
+                    style = "";
+                else
+                    style = $" style='{style}'";
+
+                chronologyHtml += $"<div{style}>{poem.Link}</div>\n";                    
                 if (poem.Bold)
                     bestChronologyHtml += $"<div>{poem.Link}</div>\n";
             }
@@ -216,7 +227,9 @@ class Program
             lines.Insert(1, $"<p class='url' style='margin:0;'><em><small><small>{{{{url}}}}</small></small></em></p>");
         }
 
-        string dirPath = $"docs/{poem.PublicationDate.ToString("yyyy")}/{poem.PublicationDate.ToString("MM")}";
+        string dirPath = (poem.PublicationDate > new DateTime(2026, 03, 04))
+            ? $"docs/{poem.PublicationDate.ToString("yyyy")}/{poem.PublicationDate.ToString("MM")}/{poem.PublicationDate.ToString("dd")}"
+            : $"docs/{poem.PublicationDate.ToString("yyyy")}/{poem.PublicationDate.ToString("MM")}";
         
         string content = String.Join("  \n", lines);
         string contentHtml = md.Transform(content);
@@ -255,7 +268,7 @@ class Program
         lines[0] = $"### {lines[0]}";
         lines[2] = $"<p style='margin:0;'><em><small><small>{lines[2]}</small></small></em></p>";
 
-        string dirPath = $"docs/analysis/{analysis.PublicationDate.ToString("yyyy")}/{analysis.PublicationDate.ToString("MM")}";
+        string dirPath = $"docs/analysis/{analysis.PublicationDate.ToString("yyyy")}/{analysis.PublicationDate.ToString("MM")}/{analysis.PublicationDate.ToString("dd")}";
         
         string content = String.Join("  \n", lines);
         string contentHtml = md.Transform(content);

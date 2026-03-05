@@ -16,7 +16,10 @@ class Content
 class Poem : Content
 {
     public bool Bold { get; set; } = false;
-    public string UrlPath => $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}/";
+    public string UrlPath => (PublicationDate > new DateTime(2026, 03, 04))
+        ? $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{PublicationDate.ToString("dd")}/{FileName}/"
+        : $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}/";
+
     public string Style(bool bestOnly = false)
     {
         string style = string.Empty;
