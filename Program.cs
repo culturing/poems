@@ -303,7 +303,7 @@ class Program
         File.WriteAllText(htmlpath, html);   
     }
 
-    static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime start = default, DateTime end = default)
+static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime start = default, DateTime end = default)
     {
         if (File.Exists(outpath))
             return; 
@@ -311,7 +311,7 @@ class Program
         Directory.CreateDirectory("docs/pdf");
         foreach (string file in Directory.EnumerateFiles("Templates/pdf"))
         {
-            File.Copy(file, $"docs/pdf/{Path.GetFileName(file)}");
+            File.Copy(file, $"docs/pdf/{Path.GetFileName(file)}", true);
         }
 
         if (start == default)
@@ -333,13 +333,20 @@ class Program
         using PdfDocument pdf = new PdfDocument();
 
         using IPlaywright playwright = await Playwright.CreateAsync();
-        await using IBrowser browser = await playwright.Chromium.LaunchAsync();        
+        await using IBrowser browser = await playwright.Chromium.LaunchAsync( new BrowserTypeLaunchOptions
+        {
+            Args = new List<string>
+            {
+                "--disable-export-tagged-pdf"
+            }
+        });        
         BrowserNewPageOptions newPageOptions = new BrowserNewPageOptions { BaseURL = "http://127.0.0.1:5500" };
         IPage page = await browser.NewPageAsync(newPageOptions);
 
         PagePdfOptions pdfRenderOptions = new PagePdfOptions 
         { 
             Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
+            Tagged = false
         };
 
     // Add title
@@ -404,25 +411,94 @@ class Program
         PdfOutline contentsOutline = pdf.Outlines.Add("Contents", pdf.Pages[tableOfContentsStart]);
         PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[pdf.PageCount - 1]);
 
+        List<Poem> flatPoems = new List<Poem>();
         foreach(KeyValuePair<string, IEnumerable<Poem>> kvp in FilteredPoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
         {
             IEnumerable<Poem> poems = kvp.Value.Where(poem => poem.PublicationDate > start && poem.PublicationDate < end);
             if (bestOnly)
                 poems = poems.Where(poem => poem.Bold);
 
-            Directory.CreateDirectory($"Output/Pdfs/{kvp.Key}");
-            foreach(Poem poem in poems)
-            {                    
-                pdfRenderOptions.Path = $"Output/Pdfs/{kvp.Key}/{poem.FileName}.pdf";
-                await page.GotoAsync(poem.UrlPath);
-                await page.PdfAsync(pdfRenderOptions);
+            flatPoems.AddRange(poems);
+        }
 
-                using (PdfDocument poemPdf = PdfReader.Open(pdfRenderOptions.Path, PdfDocumentOpenMode.Import))
-                {
-                    poem.Page = pdf.PageCount + 1;
-                    MergePdfs(poemPdf, pdf);
-                    poemsOutline.Outlines.Add(poem.Title, pdf.Pages[pdf.PageCount - poemPdf.PageCount]);
-                }
+        StringBuilder allPoemsHtml = new StringBuilder();
+        allPoemsHtml.AppendLine("<!DOCTYPE html>\n<html>\n<head>\n<meta charset='utf-8'/>");
+        
+        int headStart = ContentTemplate.IndexOf("<head>", StringComparison.OrdinalIgnoreCase) + 6;
+        int headEnd = ContentTemplate.IndexOf("</head>", StringComparison.OrdinalIgnoreCase);
+        if(headStart >= 6 && headEnd > headStart) 
+        {
+            allPoemsHtml.AppendLine(ContentTemplate.Substring(headStart, headEnd - headStart));
+        }
+        allPoemsHtml.AppendLine("<style>.poem-page { display: flex; flex-direction: column; justify-content: center; min-height: 100vh; page-break-after: always; break-after: page; box-sizing: border-box; } body { margin: 0; padding: 0; }</style>");
+        allPoemsHtml.AppendLine("</head>\n<body>");
+
+        for (int i = 0; i < flatPoems.Count; i++)
+        {
+            Poem poem = flatPoems[i];
+            string poemHtml = File.ReadAllText(poem.FilePath);
+            int bodyStart = poemHtml.IndexOf("<body>", StringComparison.OrdinalIgnoreCase) + 6;
+            int bodyEnd = poemHtml.IndexOf("</body>", StringComparison.OrdinalIgnoreCase);
+            
+            if(bodyStart >= 6 && bodyEnd > bodyStart)
+            {
+                string bodyContent = poemHtml.Substring(bodyStart, bodyEnd - bodyStart);
+                
+                // Strip Navbar and Creative Commons image before rendering
+                string navbarRegex = @"<div[^>]*class\s*=\s*['""][^'""]*\bnavbar\b[^'""]*['""][^>]*>(?>[^<]+|<(?!/?div\b)|<div[^>]*>(?<DEPTH>)|</div\s*>(?<-DEPTH>))*(?(DEPTH)(?!))</div\s*>";
+                bodyContent = Regex.Replace(bodyContent, navbarRegex, "", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                bodyContent = Regex.Replace(bodyContent, @"<img[^>]*cc\.png[^>]*>", "", RegexOptions.IgnoreCase);
+                bodyContent = Regex.Replace(bodyContent, @"<a[^>]*creativecommons[^>]*>.*?</a>", "", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+                allPoemsHtml.AppendLine($"<div class='poem-page' id='poem_{i}'>");
+                allPoemsHtml.AppendLine(bodyContent);
+                allPoemsHtml.AppendLine("</div>");
+            }
+        }
+        allPoemsHtml.AppendLine("</body>\n</html>");
+        File.WriteAllText("docs/pdf/all_poems.html", allPoemsHtml.ToString());
+
+        await page.GotoAsync("/pdf/all_poems.html");
+        
+        // Force the browser layout engine to behave exactly as if it's printing
+        await page.EmulateMediaAsync(new PageEmulateMediaOptions { Media = Media.Print });
+
+        // Instantly measure physical DOM height to determine accurate PDF page spanning
+        var jsCode = @"() => {
+            let counts =[];
+            let elements = document.querySelectorAll('.poem-page');
+            for (let el of elements) {
+                let style = window.getComputedStyle(el);
+                let mt = parseFloat(style.marginTop) || 0;
+                let mb = parseFloat(style.marginBottom) || 0;
+                let height = el.getBoundingClientRect().height + mt + mb;
+                
+                // 11in page - 2in margins = 9in printable height. 9in * 96 DPI = 864 pixels.
+                let pages = Math.ceil(height / 864);
+                if (pages === 0) pages = 1;
+                counts.push(pages);
+            }
+            return counts;
+        }";
+
+        int[] pageSpans = await page.EvaluateAsync<int[]>(jsCode);
+
+        int currentPoemPage = pdf.PageCount + 1;
+        for (int i = 0; i < flatPoems.Count; i++)
+        {
+            flatPoems[i].Page = currentPoemPage;
+            currentPoemPage += pageSpans[i];
+        }
+        
+        pdfRenderOptions.Path = "Output/Pdfs/AllPoems.pdf";
+        await page.PdfAsync(pdfRenderOptions);
+
+        using (PdfDocument poemsPdf = PdfReader.Open("Output/Pdfs/AllPoems.pdf", PdfDocumentOpenMode.Import))
+        {
+            MergePdfs(poemsPdf, pdf);
+            foreach (Poem poem in flatPoems)
+            {
+                poemsOutline.Outlines.Add(poem.Title, pdf.Pages[poem.Page - 1]);
             }
         }
 
@@ -450,7 +526,23 @@ class Program
             pdf.Outlines.Add("Index", pdf.Pages[pdf.PageCount - indexPdf.PageCount]);
         }
 
-        pdf.Save(outpath);
+        pdf.Save("Output/Pdfs/culturing.pdf");
+
+        List<string> args = new List<string>
+        {
+            $"-sDEVICE=pdfwrite",
+            $"-dCompatibilityLevel=1.5",
+            $"-dEmbedAllFonts=false",
+            $"-dSubsetFonts=false",
+            $"-dQUIET",
+            $"-o {outpath}",
+            $"Output/Pdfs/culturing.pdf"
+        };
+
+        using (Process process = Process.Start("gswin64c", string.Join(" ", args)))
+        {
+            process.WaitForExit();
+        }
 
         if (Directory.Exists("docs/pdf"))
             Directory.Delete("docs/pdf", true);
@@ -508,6 +600,7 @@ class Program
         { 
             Path = pdfPath,
             Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
+            Tagged = false
         };         
         await page.PdfAsync(options);
         
@@ -542,6 +635,7 @@ class Program
         { 
             Path = pdfPath,
             Margin = new Margin { Left = "1in", Top = "1in", Right = "1in", Bottom = "1in" },
+            Tagged = false
         };         
         await page.PdfAsync(options);
 

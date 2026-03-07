@@ -1,8 +1,10 @@
 Nutrition by Faith Alone
 21 February 2023
 
-*Dinner options: (1) Take it (2) Leave it*
-&nbsp;&nbsp;- Local Sign
+<figure style="max-width:225px">
+    <blockquote>Dinner options: (1) Take it (2) Leave it</blockquote>
+    <figcaption><cite>Local Sign</cite></figcaption>
+</figure>
 
 In America we believe God somehow powers
 our food with his majesty, making infallible
