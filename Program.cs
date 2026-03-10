@@ -306,7 +306,7 @@ class Program
 static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime start = default, DateTime end = default)
     {
         if (File.Exists(outpath))
-            return; 
+            File.Delete(outpath);
 
         Directory.CreateDirectory("docs/pdf");
         foreach (string file in Directory.EnumerateFiles("Templates/pdf"))
@@ -443,12 +443,6 @@ static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime star
             if(bodyStart >= 6 && bodyEnd > bodyStart)
             {
                 string bodyContent = poemHtml.Substring(bodyStart, bodyEnd - bodyStart);
-                
-                // Strip Navbar and Creative Commons image before rendering
-                string navbarRegex = @"<div[^>]*class\s*=\s*['""][^'""]*\bnavbar\b[^'""]*['""][^>]*>(?>[^<]+|<(?!/?div\b)|<div[^>]*>(?<DEPTH>)|</div\s*>(?<-DEPTH>))*(?(DEPTH)(?!))</div\s*>";
-                bodyContent = Regex.Replace(bodyContent, navbarRegex, "", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                bodyContent = Regex.Replace(bodyContent, @"<img[^>]*cc\.png[^>]*>", "", RegexOptions.IgnoreCase);
-                bodyContent = Regex.Replace(bodyContent, @"<a[^>]*creativecommons[^>]*>.*?</a>", "", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
                 allPoemsHtml.AppendLine($"<div class='poem-page' id='poem_{i}'>");
                 allPoemsHtml.AppendLine(bodyContent);
@@ -460,6 +454,12 @@ static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime star
 
         await page.GotoAsync("/pdf/all_poems.html");
         
+        // Strip Navbar and Creative Commons links/images via JavaScript in the browser
+        await page.EvaluateAsync(@"() => {
+            const elements = document.querySelectorAll('.navbar, img[src*=\'cc.png\'], a[href*=\'creativecommons\']');
+            elements.forEach(el => el.remove());
+        }");
+
         // Force the browser layout engine to behave exactly as if it's printing
         await page.EmulateMediaAsync(new PageEmulateMediaOptions { Media = Media.Print });
 
@@ -727,7 +727,7 @@ static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime star
                 Directory.Delete(dir, true);
             }
 
-            string[] exclude = ["culturing.pdf", "CNAME", "google84fcfca997bbbdc0.html", "robots.txt", "favicon.ico", "cc.png"];
+            string[] exclude =["culturing.pdf", "CNAME", "google84fcfca997bbbdc0.html", "robots.txt", "favicon.ico", "cc.png"];
             foreach(string file in Directory.GetFiles("docs").Where(path => !exclude.Contains(Path.GetFileName(path))))
             {
                 File.Delete(file);

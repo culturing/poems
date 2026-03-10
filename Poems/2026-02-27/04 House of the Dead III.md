@@ -13,7 +13,7 @@ then stopped at a certain point, and plateaued.
 This is no longer reciprocity, no longer evenly efforted.
 *Was* it a trick? Was it not Isis at all, but some god
 of deception, insulting me all the way? I have been mocked
-back into living form, that's truth enough, and this prophecy
+back into living form, that's true enough, and this prophecy
 from years ago has come to pass. Although it did not last,
 it held my face to a glass in which I see myself reflected
 as a man who can do better, who deserves better, than phony love,
