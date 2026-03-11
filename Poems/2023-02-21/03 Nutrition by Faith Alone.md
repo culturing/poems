@@ -12,5 +12,5 @@ all of our culinary experiments.
 Call it Nutrition by Faith Alone. All that matters
 is that *we believe*, as if no thing has substance,
 as if, to use Plato mistakenly, thoughts are more real than things.
-But we doubt that, and say so, but know of know other.
+But we doubt that, and say so, but know of no other.
 I wonder what Asia would think?
