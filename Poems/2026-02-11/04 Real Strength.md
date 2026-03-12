@@ -27,7 +27,7 @@ The darkness can neither be killed nor fully embraced, but it can
 be integrated into a dance between light and shadow, a chiaroscuro
 that gives men and women real strength.
 
---
+***
 
 Not only could you be made a slave, you could be made
 to like it, to see yourself suited and suitable to degradation only
@@ -41,7 +41,7 @@ but that is why it is worth it. Thereby you will prove
 that you cannot be beaten down, that the power within you
 is real and a force to be reckoned with.
 
---
+***
 
 But you also must offer only this same strength to others,
 and not use your strength to deprive them of theirs. The fight

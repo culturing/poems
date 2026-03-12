@@ -14,7 +14,7 @@ Invite me into your presence.
 I will not break down the door.
 But I will enter if you open it.
 
---
+***
 
 But maybe the door is stuck, jammed
 with memories and bruises. Even so, I maintain
@@ -25,7 +25,7 @@ But I have not the power nor the inclination
 to break down doors, and I think you would find
 that life with no door is far worse than the life you have now.
 
---
+***
 
 You can choose to let me in, even for wild reasons,
 to set free a wildness within. It is true, I have known doorbreakers
@@ -36,7 +36,7 @@ to the worst kind of monster, a man in heat. You must keep your door,
 with a fresh handle, clear of obstructions, but locked
 until the time of your choosing.
 
---
+***
 
 It would not take much, I could squeeze through
 even a narrow opening, and begin the work

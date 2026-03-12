@@ -10,7 +10,7 @@ I have not had the chance to know, but these signals,
 if merely a shadow game, would be cruel.
 I have stayed in the hope they were something more.
 
---
+***
 
 On the other hand, it remains possible
 that you are a narcissist, enticing my love
@@ -23,7 +23,7 @@ is invigorating...even with a careless partner.
 But once they are shown to be careless,
 it's better to leave them alone.
 
---
+***
 
 It would have been nice to know you,
 but if you have made your choice,
@@ -33,14 +33,14 @@ If my words have meant something to you,
 keep them,
 but don't ask for more.
 
---
+***
 
 Yet I can't believe that you're Vanda,
 or, if you are, that it's not just a phase.
 Is that really the "love" you prefer?
 You know better.
 
---
+***
 
 Must you try on black to darken the hue of appalling white?
 Must you go to extremes just to find the center?

@@ -47,7 +47,7 @@ The words of a long-dead philosopher? Whatever it was, she knows now
 that the walls had been made from things meant to move.
 So she goes out in search of a place where her fire can burn.
 
---
+***
 
 She doesn't find one, not for a long time, and she feels
 the danger of hunger, the pang of thirst. She returns to the tower
@@ -57,7 +57,7 @@ with some potted plants and a bit of dancing.
 But this is no longer a home for her, if it ever was.
 She needs another to knock on her door.
 
---
+***
 
 He came with a torch and instructions on how to use it.
 He knew the way to a place where all fire is admired.

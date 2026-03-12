@@ -28,7 +28,7 @@ and if it was one, then all of my criticism stands.
 But if you explain this one thing, I think
 all else could be forgiven.
 
---
+***
 
 I have entered the bargaining phase of grief.
 Let us see what will come of it.

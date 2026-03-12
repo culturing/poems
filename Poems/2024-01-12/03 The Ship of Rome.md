@@ -35,7 +35,7 @@ The ship, alas! may hold more corpses than we know.
 But this will grow: take heart from this:
 by now there have been other ships.
 
---
+***
 
 Will you listen? I have seen behind the curtain
 and the man I saw is uglier than imagined.
@@ -66,7 +66,7 @@ so long ago. So you must go
 into the night the knowers know
 with many histories in tow.
 
---
+***
 
 Augustus abolished wonder, that much is clear,
 and he did steer the ship of Rome for many years.
@@ -82,7 +82,7 @@ Let us wonder at this process, but think also
 that the ship's wreck has been salvaged not in full, but in part only,
 and that we may be still captive to its thrall.
 
---
+***
 
 The ships from the East were a welcome sight,
 carrying treasure instead of soldiers, intending to awe

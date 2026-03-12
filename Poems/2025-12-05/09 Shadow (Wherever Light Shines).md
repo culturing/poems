@@ -23,7 +23,7 @@ What do I know? How little is truly revealed!
 The way is dark and lonely. I will make a home
 and live in it alone.
 
---
+***
 
 Who knows the answers more thoroughly
 than a madman? Who craves desire

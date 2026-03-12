@@ -12,7 +12,7 @@ I would show you how worthy you are.
 I would call you strong and brave.
 I would tell you until you believe me.
 
---
+***
 
 It doesn't have to be a walk in the park.
 It could be an experiment, designed to trigger growth.
@@ -25,7 +25,7 @@ But sometimes the growth has already begun
 and must be seen through, given space to grow,
 or else it becomes a cancer.
 
---
+***
 
 Shall I apologize for giving you space to grow?
 It almost seems necessary. It has not been painless.
@@ -33,7 +33,7 @@ But I think I shall not. I think you will thank me too.
 Still, love is not built on pain. I wish you quick healing,
 but not so quick as to leave the work undone.
 
---
+***
 
 I believe I have seen this performance before,
 or one like it. The delivery indeed is "strange".

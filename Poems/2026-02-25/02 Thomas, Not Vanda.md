@@ -16,7 +16,7 @@ as a symbol of awakening. It seems to me obvious now.
 You are in your own good hands, but I
 have had a part to play.
 
---
+***
 
 But does that make *me* Vanda?! It is hard
 to keep straight, maybe that is the point.

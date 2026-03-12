@@ -20,7 +20,7 @@ Your most serious dogmas,
 for me put them there.
 What a curious bird.
 
---
+***
 
 All I want
 is mystical union
@@ -28,7 +28,7 @@ with the Absolute --
 
 is that too much to ask?
 
---
+***
 
 Augustine doles out freely
 fruits of Temple and Academy

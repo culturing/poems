@@ -31,7 +31,7 @@ but you may do well to stop reading. It will likely
 be bittersweet at best. It has been a pleasure
 almost knowing you. Now, to rest.
 
---
+***
 
 Is it cruelty, or is it the perception of cruelty?
 So much depends on the answer...or is it what I asked for,

@@ -34,7 +34,7 @@ and be released at last from pain. Could we oblige them?
 I think so, though it would take a serious effort
 and one not like what we've dared to try before.
 
---
+***
 
 I do not believe in Lincoln. I cannot.
 He was a feckless Hegelian, couched in Biblical tones.
@@ -50,7 +50,7 @@ We are here, as we have always been, as prone to hate as love.
 It will not change. What wars are necessary to teach this once and for all?
 I fear the answer as I fear the blight of winter.
 
---
+***
 
 Why am I here, able neither to remember
 nor forget? To absorb solemnity left
@@ -59,7 +59,7 @@ about how little we know? These men,
 brave men no doubt, died hard, but why?
 Should we dare also to die? Again? But why?
 
---
+***
 
 Had Freedom died? Or was it just then mortally struck?
 Why was the new birth *necessary*, and could it be needed again?

@@ -28,7 +28,7 @@ Or one looking forward, which has travelled back,
 with a prayer of thanksgiving, a new apprehension
 for what every thought must lack?
 
---
+***
 
 In the East Room, Dionysians revel
 agnostically, thrilled to find God

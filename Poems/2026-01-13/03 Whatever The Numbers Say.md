@@ -22,7 +22,7 @@ and years of good treatment, such that now they will stay either way?
 Shall we make leaving hard, then abuse them? Such is the way
 to ruin, whatever the numbers say.
 
---
+***
 
 Time will tell, but for now I am loyal to those I have seen do good
 over many years. It will be something to see if new evil collides

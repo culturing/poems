@@ -10,7 +10,7 @@ on praise? It was poisoned, my love, all along,
 and now you have digested so much of it
 I fear for your health more than mine.
 
---
+***
 
 It seems we were playing the same game
 or at most half-playing, if you read
@@ -20,7 +20,7 @@ of my words, or an actual dream in my mind.
 But that dream lives on and prospers
 no matter your fate.
 
---
+***
 
 You have stared into the abyss, and now
 the abyss is at home in you, slowly growing,
@@ -28,7 +28,7 @@ dissolving your organs, devouring what remains
 of a heart which I still maintain is not *wholly* bad,
 but more bad than good by the looks of things.
 
---
+***
 
 Did you think I would never notice, or that
 it would come as a surprise that some women play games?

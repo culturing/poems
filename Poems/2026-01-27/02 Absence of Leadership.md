@@ -19,7 +19,7 @@ the hollow dreams of an empty man. Who
 will save us? Who will bring back good sense
 before it's too late?
 
---
+***
 
 A good leader lets people do what they do,
 he does not interfere, he does not see himself
@@ -27,7 +27,7 @@ as the source of success...he makes moves
 to remove obstacles. How then do so many rise
 who make numbers go up, without any humanity?
 
---
+***
 
 He failed to explain or to even attempt to explain.
 He said, "what got you here won't get you there," without saying just where "there" is,

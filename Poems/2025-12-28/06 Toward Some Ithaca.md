@@ -24,7 +24,7 @@ She has needs, but so do we, and ours must be our priority
 to honor the true meaning of motherhood. She has not failed,
 but she has wounded and must not be given a chance to wound again.
 
---
+***
 
 Elektra, it is I, your Oedipus.
 Surely we understand each other.

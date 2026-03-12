@@ -28,7 +28,7 @@ a prison for both of us. I do want you, and I do want love
 to come true, but some labor remains to ensure that we are not just lost
 in that ether of blue, but have four feet firmly planted on earth.
 
---
+***
 
 But are dreams not their own door to reality?
 If so, then the answer is clear: we are meant to be.
@@ -45,7 +45,7 @@ then I think we should trust it, because in the final analysis
 this *is* the earth into which we are planted, and which grows in us,
 as in all men and women, when the time is right.
 
---
+***
 
 And the time *is* right, that is hard to ignore or deny,
 but I look one last time to a desolate sky

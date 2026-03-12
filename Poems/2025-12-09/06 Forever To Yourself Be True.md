@@ -13,7 +13,7 @@ a birth of love, but now, in either case,
 let's praise the gods that brought us here
 and see them face to face.
 
---
+***
 
 These gods were jealous, and they would not
 let things be, and now for you and me

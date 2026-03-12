@@ -30,7 +30,7 @@ War consumes Light,
 begetting Scream;
 congeals to Shadow.
 
---
+***
 
 We are children of Abram.
 
@@ -59,7 +59,7 @@ And Blazeless, blinded,
 We shiver, huddled in masses,
 Fearing sparks.
 
---
+***
 
 Who will relearn the melody
 under the memory,

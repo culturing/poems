@@ -13,7 +13,7 @@ was a mere demonstration. The rest of the operation
 is in her hands, and they are such good hands
 that I hope against hope for success.
 
---
+***
 
 Can I really claim to have been in control?
 Yes and no. It was not the control of a scientist
@@ -27,7 +27,7 @@ She deserves to be happy, if only she can find
 the strength that is lacking, perhaps through better care
 of her body, perhaps through better care of her soul.
 
---
+***
 
 But I *did* destroy, didn't I? Only the shadow, I hope,
 not the ego, unless the ego was so tightly bound to shadow

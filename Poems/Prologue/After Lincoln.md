@@ -21,7 +21,7 @@ but don’t listen for too long,
 because too many have got stuck there 
 and we may have got it wrong.
 
---
+***
 
 Wrong and wrong and wrong. 
 Must we go back to 1619?
@@ -29,7 +29,7 @@ Must we go back to 1619?
 Cease your wailing, History! 
 That brutal, trifling song!
 
---
+***
 
 If back we go, then back, 
 but all the way, 

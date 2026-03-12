@@ -12,7 +12,7 @@ that this would be the case, but the pull was too strong
 to resist. What follows? Could there be a second act
 years hence, when she's ready to settle down?
 
---
+***
 
 It's not *impossible*,
 but I must direct my energies elsewhere,

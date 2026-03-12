@@ -11,7 +11,7 @@ where you soar in your truth and live unafraid,
 needing no other face to express how you feel, knowing your face
 is beautiful, and that you can wear it proudly, even when few understand.
 
---
+***
 
 But there is an art of concealment, which hides the truth
 as an act of love, from those not equipped to handle it.
@@ -25,7 +25,7 @@ But the point is to carve out a private sphere,
 a "room of one's own", a *home*, where truth can be carried
 with dignity and courage, to the best of one's ability.
 
---
+***
 
 Abilities vary wildly, though, and nobody knows
 how or why some can know and some can't. For we knowers,
@@ -42,7 +42,7 @@ of the patterns lived out by the ones who fit in. Every culture
 begins as a dream, and we dreamers can hold our heads high
 as members of a higher order, the provenance of dreams.
 
---
+***
 
 So dream well, my sweet, and do not despair.
 You seem to be getting there.

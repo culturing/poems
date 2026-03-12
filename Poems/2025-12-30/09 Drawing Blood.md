@@ -12,7 +12,7 @@ whether on my own or in the arms of another.
 It is no use. If she has seen me and withdrawn
 she knows what she's doing. She knows how to choose.
 
---
+***
 
 And yet this time something lingers, even when
 the fever subsides, a kind of admiration, genuine respect.
@@ -36,7 +36,7 @@ Let the waters of time rise and fall
 to dilute these libations of blood.
 I must stand tall.
 
---
+***
 
 This then reveals the true pain of the call.
 It was never the fear of a sudden failure, but rather

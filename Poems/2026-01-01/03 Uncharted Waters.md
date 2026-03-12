@@ -14,7 +14,7 @@ I embraced these waters, and often they've served me well,
 just as long as I keep one foot at the ready to disembark
 on land, should the opportunity arise.
 
---
+***
 
 But there is opportunity here, on this land, near the house
 with the laughter of children (or is it the howl of cats?)
@@ -26,7 +26,7 @@ there's the rub, and the point: that chaos is in us, not out there
 and never extinguished in here. But I think we do well
 to contain it, and rule justly over it, when we can.
 
---
+***
 
 A love that is only certain brings only pain
 as does one that's only uncertain. It must

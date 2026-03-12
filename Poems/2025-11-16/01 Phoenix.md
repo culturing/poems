@@ -14,7 +14,7 @@ It has had a good life, and the next hope,
 which must be its child, will have much to be thankful for
 when it looks back at what came before.
 
---
+***
 
 And yet like a phoenix this hope is reborn
 and ascends from the ashes of its own pyre.

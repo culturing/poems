@@ -8,7 +8,7 @@ where a dream can thrive, without constant embitterment?
 There is still the road, but the road is long, and not really a home.
 What of building a new home, in time, after healing?
 
---
+***
 
 Of course one could never endeavor to be alone,
 it just happens that way sometimes, because in its disguises
@@ -18,7 +18,7 @@ and to which they return. All these walls we so carefully build
 are a clear delusion, protecting our minds from the brutal reality
 that all things fade into another, given enough time.
 
---
+***
 
 So we have waged war against time in pursuit of stasis,
 eternal stasis, the worst of all possible worlds, because lacking
@@ -29,7 +29,7 @@ Many are born, but not many become fully grown,
 and why should they? Perhaps for the joy of it,
 as some men tend gardens despite having plenty to eat.
 
---
+***
 
 But the garden now feels under siege, and the few
 who have good ones must fight tooth and nail to defend them
@@ -38,7 +38,7 @@ for empires to topple. But there is one hope, that the hordes
 may be charmed, for a moment at least, by words and songs
 sung skillfully or played upon a lyre.
 
---
+***
 
 But this hope is a foolish one, foolish because
 most barbarians cling to barbarity as a totem

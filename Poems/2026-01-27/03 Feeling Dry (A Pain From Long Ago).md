@@ -22,7 +22,7 @@ that I did not defend my honor. But there was no use.
 Even false accusations destroy. And what man can stand
 against pain, plain and simple, when put on display?
 
---
+***
 
 This was my final break with Christianity.
 I tried to love my neighbor and it cost me dearly.
@@ -37,7 +37,7 @@ rooted in weakness instead of strength. No, all Christian churches
 require an admixture of Greek and Roman ideals
 to have any staying power. That is my final answer.
 
---
+***
 
 I turn now to you, muse of many poems, mercurial
 sprite of the night of the pigtails, and ask: does my violent reaction
@@ -51,7 +51,7 @@ I do not know what role I played in her life, if any,
 but despite my own confusion and immaturity, my conscience is clear.
 I intended to help her. But I would do more than help you.
 
---
+***
 
 Can you swallow this, digest it, then live with it?
 I have no choice, but you could walk away
@@ -63,7 +63,7 @@ But I know that the cost is high.
 So look to the sky, and answer.
 Are you feeling dry?
 
---
+***
 
 Am I to be crucified for caring about the soul of another?
 Whence comes this hysteria, the fear that all caring means sex
@@ -90,7 +90,7 @@ for try as we might, who can say when experience crosses over
 from good into bad? Is it not always both? But sometimes
 it's more one than the other...
 
---
+***
 
 There was no sex, and there would not have been any sex.
 But there were erotic feelings, on her part at least. Perhaps I was foolish
@@ -100,7 +100,7 @@ to develop, and surely we all would be better off
 if more people grew up. But can I be trusted to maintain
 a safe distance? If I erred, it was hubris, not lust.
 
---
+***
 
 Strange to remember these long-dead memories
 on the cusp of my own maturity. Perhaps I see now
@@ -112,7 +112,7 @@ who assume no development is possible, that questions are fruitless,
 that growth and adulthood are myths enforced by power and violence
 rather than real achievements...such people will ruin us, if we let them.
 
---
+***
 
 But part of the problem lies deep in the Christian idea of love,
 of a love so pure and chaste that no danger can overcome it.
@@ -124,7 +124,7 @@ unidirectional love, like the so-called love of God, a love free
 from human needs and confusions, a love built on lies? And this love,
 as we know well by now, is despotic, mere tyranny in disguise.
 
---
+***
 
 But absent such love, what remains of the church?
 Some hard fragments of Roman law and a flowering of Greek philosophy,
@@ -138,7 +138,7 @@ Their victims are primed in advance to receive the abuse
 of a love that denies their autonomy. I will have none of this love. I will not.
 And my heart will be healthier, even if I must go alone.
 
---
+***
 
 But must I go alone? I can see now over the horizon
 one approaching my lonely encampment, who perhaps has felt these things before.
