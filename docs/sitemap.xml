@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2026-03-12T21:31:27.0405445Z</lastmod>
+    <lastmod>2026-03-13T21:47:35.1167504Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2026-03-12T21:31:27.0405445Z</lastmod>
+    <lastmod>2026-03-13T21:47:35.1167504Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2026-03-12T21:44:16.7226613Z</lastmod>
+    <lastmod>2026-03-13T22:02:53.5630762Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -4471,7 +4471,31 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/03/12/bitter-taste/</loc>
-    <lastmod>2026-03-12T21:42:00.6280006Z</lastmod>
+    <lastmod>2026-03-13T21:50:29.8280603Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/03/13/parting-words-reconsidered/</loc>
+    <lastmod>2026-03-13T22:02:53.5630762Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/03/13/participation-mystique/</loc>
+    <lastmod>2026-03-13T21:47:35.1167504Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/03/13/on-the-meaning-of-blue-at-the-matinee/</loc>
+    <lastmod>2026-03-13T21:47:35.1167504Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/03/13/strange-that-i-do-not-regret/</loc>
+    <lastmod>2026-03-13T21:47:35.1167504Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>

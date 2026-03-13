@@ -1504,20 +1504,20 @@
     "LastMod": "2026-03-07T21:14:48.1730946Z"
   },
   "/": {
-    "Hash": "6d8d42e56d18acf395ceb116408ee06faf9364692a83f8a5a4258ef1551fb3d0",
-    "LastMod": "2026-03-12T21:31:27.0405445Z"
+    "Hash": "c16d0b733991f12ed0582257e39e2b207de484361300a5ea94bbd217c27b0ae7",
+    "LastMod": "2026-03-13T21:47:35.1167504Z"
   },
   "/best/": {
-    "Hash": "3474012dd2afa027aca05ec3dc553727eec7612f4fc47019efc935fd6e72df81",
-    "LastMod": "2026-03-12T21:31:27.0405445Z"
+    "Hash": "55811061ce822a9e3730b7f57bae207e37a2d37c214c7cf9eca6be2e8bc9a15c",
+    "LastMod": "2026-03-13T21:47:35.1167504Z"
   },
   "/about/": {
     "Hash": "c2703c0f92f3ee83d42f1339b351e5bde8f852954c0a5088de887690fe8681a6",
     "LastMod": "2026-03-07T21:12:47.6398685Z"
   },
   "/culturing.pdf": {
-    "Hash": "0a2e7e95b1e73a9bf8d17432ad89d01a2d497a90fd861323e8677ab080eb9372",
-    "LastMod": "2026-03-12T21:44:16.7226613Z"
+    "Hash": "b2d5cb478a69ae6d10503216df0a2a526a5085dd34b807394f34d6711b80f87a",
+    "LastMod": "2026-03-13T22:02:53.5630762Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "e452c6df9851da748b36d2c6d0f2dc9c2debe751edba3987574ef4c1de037625",
@@ -3800,7 +3800,23 @@
     "LastMod": "2026-03-12T21:31:27.0405445Z"
   },
   "/2026/03/12/bitter-taste/": {
-    "Hash": "d9a0d41280a7f774c2ab0b92f09d369eec3562922b396deb089c4a39252df4d6",
-    "LastMod": "2026-03-12T21:42:00.6280006Z"
+    "Hash": "6acce40e388262899ad9a6084f035801efa7894b1fa8409755c254ca08f5c705",
+    "LastMod": "2026-03-13T21:50:29.8280603Z"
+  },
+  "/2026/03/13/parting-words-reconsidered/": {
+    "Hash": "9b7e919a3e1210dafc9a11d77680d8f715d27392167aa80131f15669d66164f8",
+    "LastMod": "2026-03-13T22:02:53.5630762Z"
+  },
+  "/2026/03/13/participation-mystique/": {
+    "Hash": "c32b65070b7076362e418c4d60ef572a082fbfb7e1f1f5da7fe6914b4c3ee4d4",
+    "LastMod": "2026-03-13T21:47:35.1167504Z"
+  },
+  "/2026/03/13/on-the-meaning-of-blue-at-the-matinee/": {
+    "Hash": "15cd9ac2243b6aebae825a074d6909023cf67f2349ed9c2d17d091e0b966fa70",
+    "LastMod": "2026-03-13T21:47:35.1167504Z"
+  },
+  "/2026/03/13/strange-that-i-do-not-regret/": {
+    "Hash": "172005323639e0304d1dcc982a7f566f12303f44f31ca20b394249cedf51ee39",
+    "LastMod": "2026-03-13T21:47:35.1167504Z"
   }
 }
