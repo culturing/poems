@@ -34,4 +34,4 @@ step off the stage and into the body of a real girl,
 or, better, the body of a real woman, ready to meet life's demands,
 then I can do no more for you. I am done watching. I've seen
 all I needed to see. I would try to love you.
-But not if you don't try too.
+But only if you try too.
