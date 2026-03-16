@@ -7,7 +7,7 @@ who did not know that these things were not done in sport
 but grow out of the ugly, urgent need for ugly, urgent souls to make manifest
 their ugliness, exposing the darkness within. Has this girl
 been replaced by one who sees clearly herself and her place in a world
-run by wolves? This is no place for innocence. Oh,
+full of wolves? This is no place for innocence. Oh,
 she would like to grow up...will it cost her
 herself? She would be a prized commodity in some circles,
 at least until her innocence dies. Is there another way?

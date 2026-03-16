@@ -3,4 +3,4 @@ You Have Helped Me
 
 I'm not sure who used who. Dreaming of love
 is never a mistake for a poet. You have helped me.
-Have you helped yourself?
+Have I helped you?

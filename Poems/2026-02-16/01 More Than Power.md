@@ -1,4 +1,4 @@
-More Than Power
+*More Than Power
 16 February 2026
 
 To hear my suit, and perhaps my life's work,
@@ -19,6 +19,6 @@ but a serious one too. Is there more here than power,
 humiliation, degradation? Is sex ever more than these things?
 I say yes, and I intend to prove it.
 But you are *learning*. You sound in this moment like one
-who has sat at a table with strangers and struggles to fit in.
+who has sat at the wrong table, struggling to fit in.
 You must give yourself room to make mistakes.
 I will give you that room. Here it is.

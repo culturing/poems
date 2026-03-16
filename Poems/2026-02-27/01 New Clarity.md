@@ -4,7 +4,7 @@ New Clarity
 New clarity after the expulsion of demons.
 The attraction was real, but she and I
 are in different phases of life, and would want different things
-from love. So she was *very* serious, but playing 
+from love. She was *very* serious, but playing 
 the game of self-discovery, not the game of building a home.
 It remains a bit tragic, but at least not evil.
 It should have been clear (and in fact it was clear)

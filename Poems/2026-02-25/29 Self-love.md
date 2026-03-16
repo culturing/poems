@@ -7,5 +7,5 @@ to puff you up. Are you well-puffed now?
 Perhaps a bit too inflated?
 
 I get to walk away,
-but you are stuck with you
+but you are stuck with yourself
 and likely to burst someday.

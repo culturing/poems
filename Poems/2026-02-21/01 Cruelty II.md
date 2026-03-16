@@ -18,7 +18,7 @@ this backhanded cruelty is a form of survival
 in a world that won't let you be cruel outright.
 Well, I see it at least, but the sight of it
 moves my heart out of orbit. There is no decision
-to make, I fear the thing has accomplished itself.
+to be made, I fear the thing has accomplished itself.
 I wish you safe passage, as I did from the start,
 and I think you have much to accomplish in life
 and will accomplish it. I have no regrets.

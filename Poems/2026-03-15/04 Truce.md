@@ -4,7 +4,7 @@
 Was Vanda a test? Did you want me to bare my teeth,
 to prove that I won't take abuse, that I'm stronger than you
 and can therefore protect you? This would prove Masoch's original true.
-The currents of the unconscious may indeed move something like this.
+The currents of the unconscious may indeed move somewhat like this.
 You are not the first woman to test me so. But I don't know.
 I still wonder how such a beginning could be overcome
 when it comes time for trust and real love. It's a shaky start.

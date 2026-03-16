@@ -8,8 +8,8 @@ an inflated ego and let the unconscious do its thing?
 If so, this is more than okay. It was very brave
 to ask for this kind of help. In hindsight, perhaps
 you were asking for this all along. Did my fire
-leave a scar on your body that will never heal?
-Has the goddess slithered off of her pedestal
+leave a scar on your body that no amount of time will heal?
+Has the goddess slithered off her pedestal
 enraptured, ravished, finally free? Are you human now?
 
 ***
