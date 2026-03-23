@@ -1,4 +1,4 @@
-*A Woman You Can Admire
+*A Woman Whom You Can Admire
 11 March 2026
 
 There is still some libido in the tank,

@@ -13,7 +13,7 @@ and be sure, but our stars float awry,
 too disturbed by each other
 to fly or to guide human eyes.
 
--- 
+***
 
 Is it Dawn, and if so, does she come
 from the East, or have we been deceived
