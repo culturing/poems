@@ -17,7 +17,7 @@ namespace Poems;
 
 class Program
 {
-    static public string BaseUrl = "https://poems.culturing.net";
+    static public string BaseUrl = "https://book.culturing.net";
     static Markdown md = new Markdown();
     static string IndexTemplate = File.ReadAllText("Templates/index.html");
     static string BestTemplate = File.ReadAllText("Templates/best.html");
