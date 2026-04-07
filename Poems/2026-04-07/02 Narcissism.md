@@ -23,5 +23,5 @@ But although you meant evil, the Lord
 works good, for by showing me
 just what I wanted, you melted the ice
 around my heart. I have got all
-I needed form you, and I'll keep it,
+I needed from you, and I'll keep it,
 because it was mine all along.
