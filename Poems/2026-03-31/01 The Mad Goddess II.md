@@ -1,4 +1,4 @@
-The Mad Goddess II
+*The Mad Goddess II
 31 March 2026
 
 The mad goddess no longer speaks,
