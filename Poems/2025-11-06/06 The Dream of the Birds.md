@@ -13,4 +13,4 @@ not really, for only in the dream of the birds
 such thoughts roost. I once dreamed of flying too,
 but now I think ground suits my feet,
 and besides, there are worms to eat,
-and our hunger for worms is unquenched.
+and our hunger for worms is unquenchable.

@@ -13,7 +13,7 @@ I remember when we met, the fire
 that burned behind your eyes, in need
 of structure and direction. Have I given some?
 A bit of cultivation, just a taste...the answer
-lives in you, and always did. You have
+lives in you, and always has. You have
 the things you need, and I do not.
 
 ***
@@ -32,7 +32,7 @@ and both our hearts must travel on
 and not get stuck in wistful hoping,
 dreaming dreams that cannot be. You will get free,
 I have no doubt, but when? It's too late now
-to pretend that I don't care, but I just cannot keep on
+to pretend I don't care, but I just cannot keep on
 standing there, with a bouquet of dying roses.
 
 ***

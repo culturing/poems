@@ -5,8 +5,7 @@ On second thought, my thoughts turn away,
 toward healthier fields. Three times now you have devalued my suit
 in the midst of mixed signals. Three times may be enough
 to establish a pattern. I have told you I do not find you
-unworthy of love, but unbridled cruelty might change that, 
-at least in the short term,
+unworthy of love, but unbridled cruelty might change that,
 even if it wears a mask. It was never the cruelty
 that bound me to you. There was something else,
 something wonderful, and I still remember it, in fact
@@ -14,7 +13,7 @@ I still *see* it, but the picture is complicated now.
 I wanted to wish away these slights
 as the clumsy confusion of naivete, but maybe
 you know *exactly* what you're doing, and maybe
-this backhanded cruelty is a form of survival
+this backhanded cruelty is a form of survival, or even of *pleasure*,
 in a world that won't let you be cruel outright.
 Well, I see it at least, but the sight of it
 moves my heart out of orbit. There is no decision

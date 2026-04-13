@@ -10,7 +10,7 @@ in spite of (and often because of) those rules.
 There's no stopping it. But I for one
 say no sometimes, when I know better
 than the proselytizing adherents, which happens
-quite often I'm afraid. But as long
+quite often. But as long
 as they let me say no, we'll have peace,
 but uncomfortable peace, the peace of a truce,
 which rests on a razor's edge.

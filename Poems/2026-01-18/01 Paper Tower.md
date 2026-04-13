@@ -64,4 +64,3 @@ He knew the way to a place where all fire is admired.
 He offered to show her and waited until she was ready.
 
 They went together.
-Some say they lived happily ever after.

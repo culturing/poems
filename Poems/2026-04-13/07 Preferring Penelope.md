@@ -1,4 +1,4 @@
-Preferring Penelope
+*Preferring Penelope
 13 April 2026
 
 Odysseus stands on Calypso's shores,

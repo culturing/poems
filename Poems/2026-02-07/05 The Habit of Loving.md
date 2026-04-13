@@ -9,6 +9,6 @@ in the land of dreams, where our fantasies
 train us with monsters that are yet to come.
 We can study well enough to master ourselves,
 the hardest victory, as Aristotle says,
-but the true test is the real world,
+but the true test is in the real world,
 where the training is put to use 
 and the trainee survives or fails.

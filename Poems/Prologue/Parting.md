@@ -7,7 +7,7 @@ but for grace --
 that we should live at all
 to know the embrace --
 
-Alas, parting -- the sweet sorrow --
+Alas, parting — the sweet sorrow --
 ever pitted between truth and marrow,
 which bends fate, concedes,
 

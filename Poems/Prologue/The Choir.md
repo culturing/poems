@@ -24,8 +24,8 @@ When urge and urge and urge inspire
 Epitomes forlorn?
 
 Hope, where are your lovely feathers?
-All your crumbs are swept -- this weathered
-Leaf deceives -- these grasses wither.
+All your crumbs are swept — this weathered
+Leaf deceives — these grasses wither.
 There are only bog and mire.
 
 Who would dare to ope

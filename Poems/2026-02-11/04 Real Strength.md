@@ -37,7 +37,7 @@ that you remain strong, that you love yourself,
 that you care for your body and spirit, and simply refuse
 any invitations to lower yourself below strength,
 no matter the offer. It will not be easy,
-but that is why it is worth it. Thereby you will prove
+but that is why it is worth it. Thereby you prove
 that you cannot be beaten down, that the power within you
 is real and a force to be reckoned with.
 

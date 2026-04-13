@@ -8,7 +8,7 @@ Are things under skin
 worth time?
 
 Nay,
-Whatever -- "
+Whatever — "
 
 This, our kind sucked dry,
 dissolves all hope of lives combined

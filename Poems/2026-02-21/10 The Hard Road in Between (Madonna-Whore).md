@@ -3,7 +3,7 @@
 
 I cannot determine if she
 is sweet and mildly repressed
-(with a few dark fantasies)
+(but full of dark fantasies)
 or a succubus who likes to play naive.
 It's a winning strategy, if the goal
 is total desolation

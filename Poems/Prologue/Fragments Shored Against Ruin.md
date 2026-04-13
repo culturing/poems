@@ -31,7 +31,7 @@ who will?
 #### 2
 
 The executive has surrendered 
-all -- anarchy ensues.
+all — anarchy ensues.
 
 The state in which one cannot say no,
 when one cannot stop,
@@ -56,7 +56,7 @@ take and live.
 
 My body waffling through space 
 and undigested time conceives 
-Idea -- floats, as it were, above itself 
+Idea — floats, as it were, above itself 
 into ethereal otherlands
 
 and waits.
@@ -100,7 +100,7 @@ how far! deep within our bowels
 We cannot digest 
 or swallow.
 
-There is only us -- only the rage 
+There is only us — only the rage 
 and the cold, swollen cage. 
 The bruised age.
 
