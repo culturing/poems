@@ -60,7 +60,7 @@ She needs another to knock on her door.
 ***
 
 He came with a torch and instructions on how to use it.
-He knew the way to a place where all fire is admired.
+He knew the way to a place where all fire is admirable.
 He offered to show her and waited until she was ready.
 
 They went together.
