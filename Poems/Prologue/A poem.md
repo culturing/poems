@@ -1,4 +1,4 @@
-A poem
+*A poem
 28 October 2016
 
 begins like this:

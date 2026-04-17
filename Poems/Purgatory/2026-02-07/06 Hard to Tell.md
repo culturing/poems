@@ -1,4 +1,4 @@
-*Hard to Tell
+Hard to Tell
 07 February 2026
 
 Now, having laid out my position

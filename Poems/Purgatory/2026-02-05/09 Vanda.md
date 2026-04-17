@@ -16,7 +16,9 @@ On the other hand, it remains possible
 that you are a narcissist, enticing my love
 for the sake of mockery or to teach me some lesson.
 Is that your purpose? If so, you are strangely
-committed to it. If so, we can drop the charade.
+committed to it, so much so that I think
+you do love me in spite of your self. If so, 
+we can drop the charade.
 Consider my lesson learned, the lesson
 that love, if done right,
 is invigorating...even with a careless partner.
