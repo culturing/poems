@@ -14,5 +14,5 @@ you crave danger, and this
 is why only *you* can answer
 the questions that life is asking you.
 
-This is the alarm.
+I am the alarm.
 How will you answer?

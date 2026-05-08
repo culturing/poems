@@ -7,4 +7,4 @@ through the dark woods of passion.
 I hope you can find your way now.
 I will never forget you.
 L'amour n'est pas un long fleuve tranquille.
-But only the rapids allow us to heal.
+But it is the rapids that allow us to heal.
