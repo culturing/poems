@@ -1,4 +1,4 @@
-*A Woman Whom You Can Admire
+*A Woman You Admire
 11 March 2026
 
 There is still some libido in the tank,
@@ -32,4 +32,4 @@ when I couldn't. I wish you well, forever.
 You have a chance to be strong, and I hope
 you will take it. I hope you will grow
 into the woman I imagined you could be, or at least
-a woman whom you can admire.
+a woman you admire.

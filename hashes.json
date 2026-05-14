@@ -1504,20 +1504,20 @@
     "LastMod": "2026-04-07T21:38:44.4665776Z"
   },
   "/": {
-    "Hash": "2142183f2c7a220bad4482ecc92218b7579782e69085d16002efbc9e032fb5b3",
-    "LastMod": "2026-05-08T21:45:00.3378822Z"
+    "Hash": "9ca563d5245d6ac8f1ac70c697aad1c40b76102a8924b2576a9ec014c1a8fe0c",
+    "LastMod": "2026-05-14T22:58:13.0983825Z"
   },
   "/best/": {
-    "Hash": "8c84025a026882627f3b0da4375ee6a3cf7b012385a230cbac102400cb08f361",
-    "LastMod": "2026-05-08T21:45:00.3378822Z"
+    "Hash": "f20ff729887c208183ee819bd9f7517b3ba838052557a49ce1db848a2fe2379f",
+    "LastMod": "2026-05-14T21:40:13.2872187Z"
   },
   "/about/": {
     "Hash": "c2703c0f92f3ee83d42f1339b351e5bde8f852954c0a5088de887690fe8681a6",
     "LastMod": "2026-03-07T21:12:47.6398685Z"
   },
   "/culturing.pdf": {
-    "Hash": "ca884c2d2625013ab8a85634a698d61c65d75c7fffd4c20cb962cb2ecda7961f",
-    "LastMod": "2026-05-08T21:51:58.8052197Z"
+    "Hash": "50686e0de5913ccce0b5cbeadffb356d5d87cb08e738bc1187a75b0bd766eeb1",
+    "LastMod": "2026-05-14T23:04:32.6513032Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "f188ea1c5548a8bec8b540f55a5271f339b12093d46740cb2d03e59511871de7",
@@ -3848,8 +3848,8 @@
     "LastMod": "2026-05-08T21:51:58.8052197Z"
   },
   "/2026/03/11/a-woman-whom-you-can-admire/": {
-    "Hash": "d864caf3318fabc5dfdc067c08395efd7835bc939833d25885903d903b0e5491",
-    "LastMod": "2026-03-23T21:46:31.8522793Z"
+    "Hash": "171ebea9a18b95b03f07fdf95cb5c886e500bc9ca7c4592f39f892e2be975cd5",
+    "LastMod": "2026-05-14T21:47:35.3102339Z"
   },
   "/2026/03/23/earnest-contemplation/": {
     "Hash": "4513bddea4f9c8ab1f396352c81e31f793277e56c1874741f1df60cb51e1fece",
@@ -4236,7 +4236,59 @@
     "LastMod": "2026-05-08T21:45:00.3378822Z"
   },
   "/2026/05/08/love-yourself/": {
-    "Hash": "26f6dde2be7e9aceb19535d92b3bfc45dae0b26f60a0a7e12f869ad088a9ca1b",
-    "LastMod": "2026-05-08T21:45:00.3378822Z"
+    "Hash": "e7466e507ea8b62479d155657fa413e101017edafa6860d93dbe41e8c302f940",
+    "LastMod": "2026-05-14T21:47:35.3102339Z"
+  },
+  "/2026/05/14/this-and-no-other-as-well/": {
+    "Hash": "be51380ac95a6d767af66b604f98ff6680711653fe2026a39950a256a7af6c57",
+    "LastMod": "2026-05-14T21:40:13.2872187Z"
+  },
+  "/2026/05/14/against-the-cold/": {
+    "Hash": "67d830e63b85ae431c0ed735b15c8213c204a3e7356459b69da6a09b3306e245",
+    "LastMod": "2026-05-14T21:40:13.2872187Z"
+  },
+  "/2026/05/14/wrong-turn/": {
+    "Hash": "f94bb977be48f437e860a6a858d8595931b7ac2733fb3f2809295fb6d53b9568",
+    "LastMod": "2026-05-14T21:47:35.3102339Z"
+  },
+  "/2026/05/14/better-things/": {
+    "Hash": "95522048d867e5809a8ad11db1516874b90ba7d974e9ed1de7f144bf86f2d858",
+    "LastMod": "2026-05-14T23:04:32.6513032Z"
+  },
+  "/2026/05/14/who-is-the-one/": {
+    "Hash": "e92cc3d3243fd8947ce6a74f85e6e901ef9ceae3b78d9ec8f9ac99f45f92ffc8",
+    "LastMod": "2026-05-14T21:40:13.2872187Z"
+  },
+  "/2026/05/14/ghosts-from-another-room/": {
+    "Hash": "728cd73b77553f926ba17f554aea2da82968ee976442fdbaa06c814d4c70e7bc",
+    "LastMod": "2026-05-14T21:40:13.2872187Z"
+  },
+  "/2026/05/14/children-of-earth-and-sky/": {
+    "Hash": "0e7f97dd529dbfc110c46299f23ba314dc6b329b04e56360f56ddb613116d8c5",
+    "LastMod": "2026-05-14T21:47:35.3102339Z"
+  },
+  "/2026/05/14/savage-humanity/": {
+    "Hash": "9e1afdb722a703e65e101cb5b9a61358e96e1c9278be11d11999c80b75d66c48",
+    "LastMod": "2026-05-14T21:40:13.2872187Z"
+  },
+  "/2026/05/14/fuller-integration/": {
+    "Hash": "2db9bba4ddad183df91de17e17dc69bf5893244777865f2a9ec572571eef58c7",
+    "LastMod": "2026-05-14T21:40:13.2872187Z"
+  },
+  "/2026/05/14/the-alchemy-of-ourselves/": {
+    "Hash": "876dc97efdf4a2186e6be3861146992ac9ba01ff5ae332eb6d0fac213ddd7399",
+    "LastMod": "2026-05-14T21:40:13.2872187Z"
+  },
+  "/2026/05/14/light-and-shadow/": {
+    "Hash": "c81b3cf1e2093162819f8e9be7b1551bdcdcb6c7d955882e53978a0c6e37bcb1",
+    "LastMod": "2026-05-14T22:58:13.0983825Z"
+  },
+  "/2026/05/14/female-deity/": {
+    "Hash": "bbe23a39b85409e18f6997c049997e2da866ab6ee88b100e9a4f1302259471f9",
+    "LastMod": "2026-05-14T22:59:42.713207Z"
+  },
+  "/2026/05/14/female-deities/": {
+    "Hash": "d87620154c62baed90d1601c97b8fe47f8dfd109f258ca3edfba2124efd93863",
+    "LastMod": "2026-05-14T22:20:14.6205569Z"
   }
 }
