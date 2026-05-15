@@ -6,7 +6,7 @@ Savage Humanity
         My mind is intact, but the shapes</br>
         of the world change, the peach</br>
         has released the bough and at last</br>
-        makes full confession, its pudeur</br>
+        makes full confession, its <i>pudeur</i></br>
         had departed like peach-fuzz wiped off, and</br>
     </br>
         We now know how the hot sweet-</br>
@@ -21,7 +21,7 @@ Savage Humanity
         put the finger to your lips for relief—oh, do</br>
         be careful not to break that soft</br>
     </br>
-        Gray bulge of blister like fruit-skin, for</br>
+        Gray bulge of fruit-skin of blister, for</br>
         exposing that inwardness will</br>
         increase your pain, for you</br>
         are part of this world. You think</br>
