@@ -13,5 +13,5 @@ but makes herself suited only to vacuuming up energy
 wherever she finds it. One day her time would come,
 but until then she only can bring destruction. A wise man
 will see what she is and flee. A brave one may stay
-for a while, to enjoy the show, and to learn her lesson. But all men,
+for a while, to enjoy the show, and to learn her lessons. But all men,
 though tempted, must one day move on to better things.

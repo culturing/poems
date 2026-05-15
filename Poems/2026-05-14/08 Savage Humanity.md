@@ -24,7 +24,7 @@ Savage Humanity
         Gray bulge of fruit-skin of blister, for</br>
         exposing that inwardness will</br>
         increase your pain, for you</br>
-        are part of this world. You think</br>
+        are part of the world. You think</br>
         I am speaking in riddles. But I am not, for</br>
     </br>
         The world means only itself.</br>
