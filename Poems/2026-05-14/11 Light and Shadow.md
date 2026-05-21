@@ -32,8 +32,8 @@ alone. I would love one who also arrives.
 
 ---
 
-Light and shadow interplay nicely on the windowsill.
-Beyond the window, outside the house,
+Light and shadow interplay nicely on the windowsill,
+but beyond the window, outside the house,
 they are violent, gnawing, tormenting
 each other, at times to the point of devastation.
 
