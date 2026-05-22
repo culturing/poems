@@ -10,7 +10,7 @@ was something beautiful, awareness of her own condition,
 the capacity to display it in art and even
 in her public persona. This was her chiaroscuro,
 this deeper earnestness, a deep desire
-for authentic connection in spite of the knowledge of her flaws.
+for authentic connection in spite of knowledge of her flaws.
 How many narcissists can name their narcissism?
 Only the rarest, only those destined to heal.
 This was my hope, and what I waited for.

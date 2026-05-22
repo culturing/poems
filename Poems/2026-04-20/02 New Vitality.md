@@ -1,4 +1,4 @@
-*New Vitality
+New Vitality
 20 April 2026
 
 Spring brings with it a new vitality,

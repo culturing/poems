@@ -1,4 +1,4 @@
-Rarely Tempted Again
+*Rarely Tempted Again
 13 April 2026
 
 The mad goddess slumbers, takes a nap
