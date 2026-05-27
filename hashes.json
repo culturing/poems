@@ -1504,20 +1504,20 @@
     "LastMod": "2026-04-07T21:38:44.4665776Z"
   },
   "/": {
-    "Hash": "1d54290ac705577f57215596ec4b4d2e4d4ddd748a61818679478a9d8aacc40d",
-    "LastMod": "2026-05-22T01:35:53.1816667Z"
+    "Hash": "4731214dcd54dda245ab841b35bd20821b5e37bb124cbc44c0180bf6a2730c78",
+    "LastMod": "2026-05-27T22:14:22.4413732Z"
   },
   "/best/": {
-    "Hash": "a8fd5778925817efb7a20c5add47ccaac8a59bc68a010a67bdf4204959b8bde8",
-    "LastMod": "2026-05-22T01:35:53.1816667Z"
+    "Hash": "11d147157c4ef417aa32589e71ee79356e45ebda6faadfac0401307ab68b9b16",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/about/": {
     "Hash": "c2703c0f92f3ee83d42f1339b351e5bde8f852954c0a5088de887690fe8681a6",
     "LastMod": "2026-03-07T21:12:47.6398685Z"
   },
   "/culturing.pdf": {
-    "Hash": "670e4ce78dae618d16fcf9cea17c28afb7b646d73ed12c00353cd6515214c202",
-    "LastMod": "2026-05-22T01:35:53.1816667Z"
+    "Hash": "e5392ee4134882ec827574211279aa826b2fe65c1e3ce76f7c07d946cf39a136",
+    "LastMod": "2026-05-27T22:14:22.4413732Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "f188ea1c5548a8bec8b540f55a5271f339b12093d46740cb2d03e59511871de7",
@@ -2576,16 +2576,16 @@
     "LastMod": "2026-04-07T21:38:44.4665776Z"
   },
   "/2025/12/farewell/": {
-    "Hash": "9b8b2a568704083f5920279b57cc06bed4c902b712db05ffa4f1ea1a1670781c",
-    "LastMod": "2026-04-20T22:38:47.328092Z"
+    "Hash": "0eb7198461d5ec740a8474dec85a5b6cf88c39310922ee0fe7a8cb7b28e0e88d",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/2025/12/to-rest-at-all/": {
     "Hash": "89767bcce53eeb101a610c2d4abd3dcd9b3377f307ecf809b5fb44d8667121d6",
     "LastMod": "2026-03-07T21:14:48.1730946Z"
   },
   "/2025/12/touch-and-soothe/": {
-    "Hash": "1ba428d716ad8cf7a0abef9bca8850fc7eed16c603f4ec0414afafb17f1030ff",
-    "LastMod": "2026-03-07T21:14:48.1730946Z"
+    "Hash": "1ca2a9f47798cc87e2f70606230dec31aa24a12b45768f008d3901ed7c1c6736",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/2025/12/seeds-of-you/": {
     "Hash": "f9ee22c872bca82673e4e9834907715c6b5ec8961f1aef80aafe347984438248",
@@ -2628,8 +2628,8 @@
     "LastMod": "2026-04-20T22:38:47.328092Z"
   },
   "/2025/12/trust-and-open-dialogue/": {
-    "Hash": "4645a8c91416cd85f2b6253e71465c92f7a0b6153ca174c4b5d4abe05ada838b",
-    "LastMod": "2026-04-20T22:38:47.328092Z"
+    "Hash": "b141ddbd4e66f190f02ff2bd6d9f1651ee6676ee999443824b114c563241f0f8",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/2025/12/dual-polarity/": {
     "Hash": "30f005675880ea970226ecc029e38e01fe2d63a3a663e61445de1ade6e40fdbe",
@@ -3884,8 +3884,8 @@
     "LastMod": "2026-03-23T21:40:06.0998958Z"
   },
   "/2026/03/23/theseus-says-goodbye/": {
-    "Hash": "836641c27bff334f806948149b37c28d17ca9d816d3165f02f7b6ad88e2bfd37",
-    "LastMod": "2026-05-22T01:35:53.1816667Z"
+    "Hash": "3186c0bbacc81e2324674e1dc1369b244e6a89f9d125f75db905fe4c56f89925",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/2026/03/31/the-mad-goddess-ii/": {
     "Hash": "2cea5891e9d0676c9abf3916dd66417de41ccfe6ed3773cc6254fed56003f777",
@@ -3988,8 +3988,8 @@
     "LastMod": "2026-04-07T21:32:28.5838468Z"
   },
   "/2026/04/07/sturdy-example/": {
-    "Hash": "f2beae46c80a25f742cf1c5422d643cd21e155000c296fceec0ebba7c020b702",
-    "LastMod": "2026-05-22T01:35:53.1816667Z"
+    "Hash": "a763910bd7978059da77f2f8c882dc0d1d55811c082e764e70fa07c3519a7ce5",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/2026/04/07/nothing-to-her/": {
     "Hash": "25ef8006688e02eec9846967e8abd6dd2ba58747856515bfa6416505872d03a0",
@@ -4000,8 +4000,8 @@
     "LastMod": "2026-04-15T21:29:44.7762806Z"
   },
   "/2026/04/07/finding-sophia/": {
-    "Hash": "62fa27bd0343c1285c404f063b3042e4fbad45ecb597bb32c3b046a15a140983",
-    "LastMod": "2026-05-22T01:35:53.1816667Z"
+    "Hash": "531419bae37c0ad3ebf1157c877e8a6b6d697105da1543af56a1595d7ff1d78c",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/2026/04/07/hetaera/": {
     "Hash": "c08724761402b99281feff07b8f89de9f4d690d14df2a9d2fbd0309abeb28ae1",
@@ -4104,8 +4104,8 @@
     "LastMod": "2026-04-15T21:25:37.7144199Z"
   },
   "/2026/04/15/what-waiting-meant/": {
-    "Hash": "8e41c78490f54f47be95c0f4a84542aba77f3e66511d6aebba116190da4a8fa3",
-    "LastMod": "2026-05-22T01:35:53.1816667Z"
+    "Hash": "489cb8ce65d047ecb3cb0bb17657da4ebb497f72e4321e370b3a37ab5c5fdf70",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/2026/04/15/strange-bedfellows/": {
     "Hash": "29b10ebfe9021e23097f4015d6224b55223a562e9512a619c1cd34674b013221",
@@ -4128,8 +4128,8 @@
     "LastMod": "2026-04-20T22:38:47.328092Z"
   },
   "/2026/04/20/animus-possession/": {
-    "Hash": "b318b6d8b4ace0b83e15e304efe70ffc7982b6f993b9363ac99132cb9d28a1ef",
-    "LastMod": "2026-05-22T01:35:53.1816667Z"
+    "Hash": "a74c3f27c80d7ab8c4698132a9d436db20e02ef639a6fd16c717ba4c45bbd4d9",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
   },
   "/2026/04/20/mild-bitterness/": {
     "Hash": "a17c0fd3273f6be602bb3ac03a1a81505d95a1465faf7cde9a1a61eb6cc484a5",
@@ -4300,7 +4300,47 @@
     "LastMod": "2026-05-21T21:53:11.5305415Z"
   },
   "/2026/05/21/this-holy-place/": {
-    "Hash": "cabb77e74a158118549c43eea6f39d4eae3a66b5392ad18ed0c68db95c70e560",
-    "LastMod": "2026-05-21T21:54:18.5370168Z"
+    "Hash": "11a20fc63e59f96b2a5a46cdca25aabaf8b3c9ba575c3bda3151b5a9aa25f772",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
+  },
+  "/2026/05/27/truer-higher-deeper/": {
+    "Hash": "2142259b03e847202965934d4debd85d829751f4b123ecb786375d365b22064a",
+    "LastMod": "2026-05-27T22:14:22.4413732Z"
+  },
+  "/2026/05/27/openness-to-pain/": {
+    "Hash": "742b010d99eda6b241e708f825a1baefdfd218976b64a25bfad3cbd4632a1b56",
+    "LastMod": "2026-05-27T22:07:02.6262786Z"
+  },
+  "/2026/05/27/motivation/": {
+    "Hash": "3cb66b39ae7075f2cad0cb31f04dd9d291f20dbbe4269a9dbd802dfa3052f00b",
+    "LastMod": "2026-05-27T22:07:02.6262786Z"
+  },
+  "/2026/05/27/christian-narcissism/": {
+    "Hash": "d1c3a9c0fb3eeb5a9e0d80e5b112ed07fd5a00320aff0cd660427826538969b9",
+    "LastMod": "2026-05-27T22:07:02.6262786Z"
+  },
+  "/2026/05/27/the-right-occasion-to-strike/": {
+    "Hash": "f33edcd1f77d93eb733f902181f669d5ac47e845d29e99ef185a64dfaefd7bd9",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
+  },
+  "/2026/05/27/unveiling/": {
+    "Hash": "e001ca8d76587184d3aace394248fbf369602f573b0b88e0a6ec65ae757c5e77",
+    "LastMod": "2026-05-27T22:07:02.6262786Z"
+  },
+  "/2026/05/27/another-new-day/": {
+    "Hash": "cabeda8330f46dd4798d45ca6f09cbd7222c5d1b5340b78813f099944a7eb349",
+    "LastMod": "2026-05-27T22:07:02.6262786Z"
+  },
+  "/2026/05/27/strength-for-love/": {
+    "Hash": "3484c6bc50ffda9cf41c7d5034d04e44824f06af92de3531cb78abfc11ea9de6",
+    "LastMod": "2026-05-27T22:09:06.5882121Z"
+  },
+  "/2026/05/27/hiccupping-whisky/": {
+    "Hash": "28e8a49a5361a03957fa269a468c9ac87eb987869c0b26ba4546a8fe05322cbd",
+    "LastMod": "2026-05-27T22:14:22.4413732Z"
+  },
+  "/2026/05/27/that-door/": {
+    "Hash": "d4c89d5942331c05b291984e8b7d727f826fb1cf22753a46aa7056dda590b949",
+    "LastMod": "2026-05-27T22:07:02.6262786Z"
   }
 }
