@@ -13,4 +13,4 @@ and the cooling power of rain. Time past and future
 collide right here, to decide my path.
 It will be a slow journey. Love waits for those
 who are ready. They find their way to each other,
-having found their way to themselves.
+having found their ways to themselves.

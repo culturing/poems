@@ -1,7 +1,7 @@
 Postscript to Venus in Fur
 20 April 2026
 
-Vanda has her way with him,
+Venus has her way with him,
 then leaves him dangling in pain, half-crucified.
 But then comes the resurrection,
 Thomas enlivened with newfound strength,
