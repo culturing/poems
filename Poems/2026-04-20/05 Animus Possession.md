@@ -8,4 +8,4 @@ forever. But somewhere in her
 something stirs, remembering warmth,
 remembering how she believed
 in herself and in others, so long ago,
-still within reach.
+but still within reach.
