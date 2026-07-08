@@ -12,4 +12,4 @@ my formlessness.
 I feel warmly for him,
 though my pantheon grows,
 for the seeds he sowed
-are now ripe for harvest.
+have grown ripe for harvest.

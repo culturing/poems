@@ -2,7 +2,7 @@
 07 July 2026
 
 There is a blinding kind of faith
-that I have known all too well,
+that I have known too well,
 a faith that refuses to be human,
 refuses to admit that our weaknesses
 never entirely vanish, not even with age.
@@ -12,7 +12,7 @@ of a certain kind.
 
 ---
 
-But there is a middle way between certain
+But there is a middle way between certain strength
 and *real* strength, the latter always knowing
 that falling is possible, the former refusing to concede
 that we are not perfect. The complex dissolves,
@@ -33,7 +33,7 @@ I thought you did too.
 
 I am finding my way
 through the undergrowth, tangled in canopies
-for far too long. There are monsters lurking,
+far too long. There are monsters lurking,
 shadows that need to be heard. I will
 hear them, and utter their truths. I see more
 than some certainties allow.

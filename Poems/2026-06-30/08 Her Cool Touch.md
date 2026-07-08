@@ -4,7 +4,7 @@
 The mad goddess drifts in and out of time,
 reminding of lessons learned, and the pain
 of negligence, the pain of forgetting
-her place in the heart. We did start
+her place in my heart. We did start
 to remember, she says, and yet now
 you begin to forget. And she does not
 ask nicely for supplicants, does not pretend
