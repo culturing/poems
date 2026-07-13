@@ -1504,20 +1504,20 @@
     "LastMod": "2026-04-07T21:38:44.4665776Z"
   },
   "/": {
-    "Hash": "d3ea13ebf0ca9e7120eca903ebed7c083ee7195482f5d75ded9bcf08d89d5bbe",
-    "LastMod": "2026-07-07T23:57:28.4472689Z"
+    "Hash": "b163e544c5a6d142ad7fa41a896fc80886251cc69f4b2b24ba3d414dc402d814",
+    "LastMod": "2026-07-13T23:17:09.571058Z"
   },
   "/best/": {
-    "Hash": "bf12d51b39e4942e551dbaebbeaecee6a871b044006b378ca7744c88d86aa5e2",
-    "LastMod": "2026-07-07T23:57:28.4472689Z"
+    "Hash": "e865b24fde4aeaeb168d862c2837248a09461bb573066dc58917ef3dc133395e",
+    "LastMod": "2026-07-13T23:17:09.571058Z"
   },
   "/about/": {
     "Hash": "c2703c0f92f3ee83d42f1339b351e5bde8f852954c0a5088de887690fe8681a6",
     "LastMod": "2026-03-07T21:12:47.6398685Z"
   },
   "/culturing.pdf": {
-    "Hash": "b8ecc4bd35fd8337cfdba1f23f3dded2902a8cf749d25ccd9babca06e023668a",
-    "LastMod": "2026-07-08T22:45:49.6693282Z"
+    "Hash": "06b5a293240bbebf527071a3fe92895b4301a9abe54d630437157e95423c8f36",
+    "LastMod": "2026-07-13T23:17:09.571058Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "f188ea1c5548a8bec8b540f55a5271f339b12093d46740cb2d03e59511871de7",
@@ -4428,8 +4428,8 @@
     "LastMod": "2026-06-30T23:02:20.1584307Z"
   },
   "/2026/06/30/her-cool-touch/": {
-    "Hash": "2f4a8d6662459954314491c828a34ed78ec19baddedf954f095a562accaf488a",
-    "LastMod": "2026-07-08T22:45:49.6693282Z"
+    "Hash": "42f304ca7c557a245ccbcc8b4095a4b4ceb8f8db2638d9bba1cbfd1e9d507b9a",
+    "LastMod": "2026-07-13T23:17:09.571058Z"
   },
   "/2026/06/30/ongoing-flow-of-dreams/": {
     "Hash": "e1bc436628f4f53d17bc687f858a2e7847ebb512a1258c87fe262a8cb9aa6f86",
@@ -4452,11 +4452,23 @@
     "LastMod": "2026-07-07T23:57:28.4472689Z"
   },
   "/2026/07/07/jesus-again/": {
-    "Hash": "1f6c3788632062164c5591e11f929274fa81da5ecc913fa775c3f6aa311e1ca5",
-    "LastMod": "2026-07-08T22:45:49.6693282Z"
+    "Hash": "588a6b9b843f2dcf1f526c4a962db3254462f40669a0957f6560e86624cc7939",
+    "LastMod": "2026-07-13T23:17:09.571058Z"
   },
   "/2026/07/07/life-of-a-certain-kind/": {
-    "Hash": "1a8e89fbfac047796a674fb0072ef45695471c0c3daeb811ded09f6e85ab4238",
-    "LastMod": "2026-07-08T22:45:49.6693282Z"
+    "Hash": "1fba540bba71fad7960035e4de6ba1080398725136b41f0825956aac87f70ab4",
+    "LastMod": "2026-07-13T23:17:09.571058Z"
+  },
+  "/2026/07/13/too-many-nightingales/": {
+    "Hash": "414dca64d373593699fea340ffa63980094d90075693d3f3775f82335817b5e0",
+    "LastMod": "2026-07-13T23:16:05.0690205Z"
+  },
+  "/2026/07/13/meaning/": {
+    "Hash": "895fbc38b02c5e0c8c5c21a83b1bf57f852fb7c264e5bb1b5f4f0cd378dcd468",
+    "LastMod": "2026-07-13T23:16:05.0690205Z"
+  },
+  "/2026/07/13/the-man-who-speaks-plainly/": {
+    "Hash": "971c527752dab4b2ca7224506a68d52eef32fc52b331ecd108ffdd3b99d21bbe",
+    "LastMod": "2026-07-13T23:16:05.0690205Z"
   }
 }
