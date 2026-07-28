@@ -1504,20 +1504,20 @@
     "LastMod": "2026-04-07T21:38:44.4665776Z"
   },
   "/": {
-    "Hash": "b163e544c5a6d142ad7fa41a896fc80886251cc69f4b2b24ba3d414dc402d814",
-    "LastMod": "2026-07-13T23:17:09.571058Z"
+    "Hash": "711e9b538da6e97504d2a306461840e536b0040faa850972e378de15498a1b4e",
+    "LastMod": "2026-07-28T00:23:18.9191366Z"
   },
   "/best/": {
-    "Hash": "e865b24fde4aeaeb168d862c2837248a09461bb573066dc58917ef3dc133395e",
-    "LastMod": "2026-07-13T23:17:09.571058Z"
+    "Hash": "81bfd3d38445a06bd830c7fe6bfe88d9de1126705b2a68d07f0513dfbc5c3ef4",
+    "LastMod": "2026-07-28T00:23:18.9191366Z"
   },
   "/about/": {
     "Hash": "c2703c0f92f3ee83d42f1339b351e5bde8f852954c0a5088de887690fe8681a6",
     "LastMod": "2026-03-07T21:12:47.6398685Z"
   },
   "/culturing.pdf": {
-    "Hash": "8b5cd473dd06379057e24b39a6c479b6f5b76e4b62506501f52731bcf0186601",
-    "LastMod": "2026-07-16T22:23:35.5275324Z"
+    "Hash": "945350dafe19c9a1923d1789ec417e86c99f27700b31a3e13fc6f934889c1c7e",
+    "LastMod": "2026-07-28T00:36:08.9815375Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "f188ea1c5548a8bec8b540f55a5271f339b12093d46740cb2d03e59511871de7",
@@ -1844,8 +1844,8 @@
     "LastMod": "2026-04-13T20:56:40.8437636Z"
   },
   "/2025/10/not-all-is-lost/": {
-    "Hash": "30628ae5ee1464a6101a3cb032c085626bd4593a0d34953087c70dfedd87a8d9",
-    "LastMod": "2026-07-16T22:23:35.5275324Z"
+    "Hash": "5814c5b632eb26753051eb4c77537640b4c47f3cc1e70086f4d8abe7438163f9",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
   },
   "/2025/10/where-true-power-lies/": {
     "Hash": "22c276a1c14b352dcf84a5b6c99e65a6bdfd3f9d63459a5cea8088b47e3a8ee5",
@@ -4468,7 +4468,43 @@
     "LastMod": "2026-07-13T23:16:05.0690205Z"
   },
   "/2026/07/13/the-man-who-speaks-plainly/": {
-    "Hash": "971c527752dab4b2ca7224506a68d52eef32fc52b331ecd108ffdd3b99d21bbe",
-    "LastMod": "2026-07-13T23:16:05.0690205Z"
+    "Hash": "f074b1cce3931ca210e1cc55c949ac936eacd2ac9767a3040032fb1b7dda4a2a",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
+  },
+  "/2026/07/27/i-would/": {
+    "Hash": "573cfb06ada1d0dea8ec459e5d7a0214e95b5b38551b29815f48ec4b5f6cd081",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
+  },
+  "/2026/07/27/she-stands-for-something/": {
+    "Hash": "055f8c65c9f80d2d5ae8440a9648d509e1c5670675fd9066c41b39b820aba9d6",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
+  },
+  "/2026/07/27/two-lives/": {
+    "Hash": "f8920618936dbdacd2de006447c3204b3e3c65002f3ec8f0236f89da4445edc0",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
+  },
+  "/2026/07/27/sacred-candle/": {
+    "Hash": "dfea70ca0bbe8f0ba214578df1178f3af3d65fd0b304611760ae922ddbcf62ed",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
+  },
+  "/2026/07/27/whence-we-have-come/": {
+    "Hash": "cf912fc3879a3f8b392a29d216f406000359013e62f3f738e5a353944733e95e",
+    "LastMod": "2026-07-28T00:36:08.9815375Z"
+  },
+  "/2026/07/27/through-sacrifice/": {
+    "Hash": "ff27227dde3becff67f9a86169f0970f282a33d2c8786f7bb4417e1de4de8e64",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
+  },
+  "/2026/07/27/the-real-thing/": {
+    "Hash": "09728c071d10425057ca8360bd53e9d085154856b65b410d78f1c92ad01f3539",
+    "LastMod": "2026-07-28T00:36:08.9815375Z"
+  },
+  "/2026/07/27/heaven-and-hell/": {
+    "Hash": "62adf42f34771fb5a98555ee0e3443b49b3ffa45843a5a252a5d8bf468eb8ade",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
+  },
+  "/2026/07/27/a-sudden-joy/": {
+    "Hash": "3a58797cddb04e93fd5b63fda32aa766d9396e12f97fe00421808135d79a322d",
+    "LastMod": "2026-07-28T00:26:21.1570381Z"
   }
 }

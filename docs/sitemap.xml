@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2026-07-13T23:17:09.5710580Z</lastmod>
+    <lastmod>2026-07-28T00:23:18.9191366Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2026-07-13T23:17:09.5710580Z</lastmod>
+    <lastmod>2026-07-28T00:23:18.9191366Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2026-07-16T22:23:35.5275324Z</lastmod>
+    <lastmod>2026-07-28T00:36:08.9815375Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2071,7 +2071,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2025/10/not-all-is-lost/</loc>
-    <lastmod>2026-07-16T22:23:35.5275324Z</lastmod>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -5377,7 +5377,61 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/07/13/the-man-who-speaks-plainly/</loc>
-    <lastmod>2026-07-13T23:16:05.0690205Z</lastmod>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/i-would/</loc>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/she-stands-for-something/</loc>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/two-lives/</loc>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/sacred-candle/</loc>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/whence-we-have-come/</loc>
+    <lastmod>2026-07-28T00:36:08.9815375Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/through-sacrifice/</loc>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/the-real-thing/</loc>
+    <lastmod>2026-07-28T00:36:08.9815375Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/heaven-and-hell/</loc>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/07/27/a-sudden-joy/</loc>
+    <lastmod>2026-07-28T00:26:21.1570381Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
