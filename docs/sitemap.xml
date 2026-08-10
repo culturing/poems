@@ -1,13 +1,13 @@
 ﻿<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poems.culturing.net/</loc>
-    <lastmod>2026-08-03T23:08:24.8578925Z</lastmod>
+    <lastmod>2026-08-10T23:00:42.4863178Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poems.culturing.net/best/</loc>
-    <lastmod>2026-08-03T23:08:24.8578925Z</lastmod>
+    <lastmod>2026-08-10T23:00:42.4863178Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/culturing.pdf</loc>
-    <lastmod>2026-08-05T23:49:40.3722911Z</lastmod>
+    <lastmod>2026-08-10T23:15:14.9121150Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -5509,7 +5509,85 @@
   </url>
   <url>
     <loc>https://poems.culturing.net/2026/08/03/dark-passion/</loc>
-    <lastmod>2026-08-05T23:49:40.3722911Z</lastmod>
+    <lastmod>2026-08-10T22:50:43.5639242Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/the-end-of-it/</loc>
+    <lastmod>2026-08-10T22:53:25.1339644Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/heavens-feigned-bliss/</loc>
+    <lastmod>2026-08-10T22:50:04.3987478Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/nothing-says-i-love-you/</loc>
+    <lastmod>2026-08-10T23:00:42.4863178Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/flying-lessons-ii/</loc>
+    <lastmod>2026-08-10T23:00:42.4863178Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/under-the-sweetest-desire/</loc>
+    <lastmod>2026-08-10T23:00:42.4863178Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/her-darkness-drew-me/</loc>
+    <lastmod>2026-08-10T22:53:25.1339644Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/seeds-of-a-dying-rose/</loc>
+    <lastmod>2026-08-10T22:50:04.3987478Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/sweet-sophia/</loc>
+    <lastmod>2026-08-10T22:50:04.3987478Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/into-mortals/</loc>
+    <lastmod>2026-08-10T22:50:04.3987478Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/rainbow/</loc>
+    <lastmod>2026-08-10T23:15:14.9121150Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/i-dont-want-to-let-go/</loc>
+    <lastmod>2026-08-10T23:13:46.2000036Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/think/</loc>
+    <lastmod>2026-08-10T22:50:04.3987478Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://poems.culturing.net/2026/08/10/i-met-the-goddess/</loc>
+    <lastmod>2026-08-10T22:53:25.1339644Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
