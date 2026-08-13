@@ -11,6 +11,7 @@ using PdfSharp.Pdf.IO;
 using PdfSharp.Drawing;
 using System.Diagnostics;
 using System.Text;
+using System.Globalization;
 using Schema.NET;
 
 namespace Poems;
@@ -234,7 +235,7 @@ class Program
         string content = String.Join("  \n", lines);
         string contentHtml = md.Transform(content);
         string finalPoemHtml = ContentTemplate.Replace("{{content}}", contentHtml).Replace("{{title}}", poem.Title).Replace("{{navbar}}", NavbarTemplate);
-        string finalFileName = Regex.Replace(filename.ToLower().Replace(" ", "-"), @"[^0-9a-zA-Z\-]", "");
+        string finalFileName = Slugify(poem.Title);
 
         dirPath += $"/{finalFileName}";
         Directory.CreateDirectory(dirPath);        
@@ -252,6 +253,24 @@ class Program
         if (!PoemsByDate.ContainsKey(key))
             PoemsByDate[key] = new List<Poem>();
         PoemsByDate[key].Add(poem);
+    }
+
+    // Titles carry characters filenames cannot, so separate on them rather than deleting them
+    static string Slugify(string title)
+    {
+        StringBuilder unaccented = new StringBuilder();
+        foreach (char c in title.Normalize(NormalizationForm.FormD))
+        {
+            if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                unaccented.Append(c);
+        }
+
+        string slug = unaccented.ToString().Normalize(NormalizationForm.FormC).ToLowerInvariant();
+        slug = Regex.Replace(slug, @"[\s/\\_]+", "-");
+        slug = Regex.Replace(slug, @"[^0-9a-z\-]", "");
+        slug = Regex.Replace(slug, "-{2,}", "-");
+
+        return slug.Trim('-');
     }
 
     static void AddAnalysis(string filepath)
@@ -303,7 +322,7 @@ class Program
         File.WriteAllText(htmlpath, html);   
     }
 
-static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime start = default, DateTime end = default)
+    static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime start = default, DateTime end = default)
     {
         if (File.Exists(outpath))
             File.Delete(outpath);
