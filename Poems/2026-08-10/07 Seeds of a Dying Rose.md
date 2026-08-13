@@ -5,5 +5,5 @@ I take these seeds
 and replant them
 in soil now fertilized
 by decay. I wish you
-sweet progress, in moving
+sweet progress as you move
 towards light of day.

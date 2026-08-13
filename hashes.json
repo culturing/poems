@@ -1504,20 +1504,20 @@
     "LastMod": "2026-04-07T21:38:44.4665776Z"
   },
   "/": {
-    "Hash": "1a36ada3d51f8471b2e4882e9c5f0c12ea7a0078153a9c49e189c513b211b71d",
-    "LastMod": "2026-08-10T23:00:42.4863178Z"
+    "Hash": "e1232491cb7856cf1cafa4601ea62a78f7168c70e8ca81c2defb9745d7529089",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/best/": {
-    "Hash": "0db73f243d33a673892610eed1006581323b4c6159a1b8f1345db8c93a6d0693",
-    "LastMod": "2026-08-10T23:00:42.4863178Z"
+    "Hash": "f0a0c38247a8d11d36ba7c67ce0318b402910dfa8fab4e5e0bbd6f6baf0bdcf7",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/about/": {
     "Hash": "c2703c0f92f3ee83d42f1339b351e5bde8f852954c0a5088de887690fe8681a6",
     "LastMod": "2026-03-07T21:12:47.6398685Z"
   },
   "/culturing.pdf": {
-    "Hash": "31512daeec7b46ca04c1c8340aa77d034e9b550c7e292f5a9ea52181c5b62f6a",
-    "LastMod": "2026-08-10T23:15:14.912115Z"
+    "Hash": "608694b6fcbdaffc3c176c9159963c1c42dae5719e175e90dd7afd2760561a9e",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "f188ea1c5548a8bec8b540f55a5271f339b12093d46740cb2d03e59511871de7",
@@ -1716,12 +1716,12 @@
     "LastMod": "2026-04-07T21:38:44.4665776Z"
   },
   "/2025/09/quiet-quiet-river/": {
-    "Hash": "25184d5c3912757435ec4058be80d38a016a0bd8c32f93a20429ac5242719e07",
-    "LastMod": "2026-04-07T21:38:44.4665776Z"
+    "Hash": "1c325074d6dc18c2c12d0783e50df5a092167b526de689457f5735284734f0da",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/2025/09/to-be-me/": {
-    "Hash": "63fd3713241a7449dcd90f56eafc29175dde61579ae4159687f5373c2525164c",
-    "LastMod": "2026-04-07T21:38:44.4665776Z"
+    "Hash": "ef5ecf159f8cb3f58709cf3a8e0bf94811dc4b3e7789fdf4158af716c100b2a0",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/2025/09/connections-worth-having/": {
     "Hash": "4914956665891c7e86c28335bf5a4afaea7c475c24e41ba18757d0dc735a5aea",
@@ -1848,8 +1848,8 @@
     "LastMod": "2026-07-28T00:26:21.1570381Z"
   },
   "/2025/10/where-true-power-lies/": {
-    "Hash": "22c276a1c14b352dcf84a5b6c99e65a6bdfd3f9d63459a5cea8088b47e3a8ee5",
-    "LastMod": "2026-04-07T21:38:44.4665776Z"
+    "Hash": "c03c2cc7084120631430eeb1291a55846769fbc8e513836936fec89d1a31da8a",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/2025/10/amidst-the-shadows/": {
     "Hash": "87082b7ae3166c28626293685363effbe1a037bbfb6850a3dbf90739653273c0",
@@ -4548,8 +4548,8 @@
     "LastMod": "2026-08-03T23:05:30.711318Z"
   },
   "/2026/08/03/finding-herself/": {
-    "Hash": "f0ea673b1dae7ee87eb51055c02d7421ef8c9e6d75ca18ed1ffafc02c29187ff",
-    "LastMod": "2026-08-03T23:39:02.848852Z"
+    "Hash": "1e21dff4086b9cd73e8c4c25bd6e3a43a6742bd06ffeaa0153a0cacc4d4d1451",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/2026/08/03/thanks/": {
     "Hash": "5ae863cdc38e2ac06b2db84e2e1bc83ad4cf31002849ac665fccca4d35550456",
@@ -4576,16 +4576,16 @@
     "LastMod": "2026-08-10T22:50:04.3987478Z"
   },
   "/2026/08/10/under-the-sweetest-desire/": {
-    "Hash": "10fca8dc16a9bf441e079ecb3bb0e3d36578ea66e7ee681c3bfec3be6a31041b",
-    "LastMod": "2026-08-10T23:00:42.4863178Z"
+    "Hash": "e156fa3b400b39bec6befb551933db397f179424a5c84d877c946725df8c3ae4",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/2026/08/10/her-darkness-drew-me/": {
     "Hash": "5e48d7eeb8bb42dbf4901e560f04792fd85481ec7d487251d4a907b0301530ff",
     "LastMod": "2026-08-10T22:53:25.1339644Z"
   },
   "/2026/08/10/seeds-of-a-dying-rose/": {
-    "Hash": "b812d38932a57c1acbac3f1971dc6fdfa2dfab09166eea906c70e82e43cdfd85",
-    "LastMod": "2026-08-10T22:50:04.3987478Z"
+    "Hash": "6475c144838cb137dc6b3a25d265f3c9aee215973d743fcf951b03cd7bb5e2fc",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   },
   "/2026/08/10/sweet-sophia/": {
     "Hash": "22e54e386fdf1b355ac8f1ecaf8b4dde956b714f47fb5e1be61222b62edd774e",
@@ -4614,5 +4614,13 @@
   "/2026/08/10/flying-lessons-ii/": {
     "Hash": "74627a7e1e63f56f397cfb3d546fe87f0799170b4d8f00c5fd765fc7d060b53e",
     "LastMod": "2026-08-10T23:00:42.4863178Z"
+  },
+  "/2025/09/tools-in-the-soil/": {
+    "Hash": "c91955f15519e160164e47aa202040531e591e0b96dc5de9b157b126923b9a8a",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
+  },
+  "/2026/08/10/if-not-hers/": {
+    "Hash": "8ea63c6b43adbb65612b0b1274860d0abc930a74e14e9a3ef434f4af29fe241b",
+    "LastMod": "2026-08-13T21:14:49.7089972Z"
   }
 }
