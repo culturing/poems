@@ -1504,20 +1504,20 @@
     "LastMod": "2026-08-13T21:39:11.6334105Z"
   },
   "/": {
-    "Hash": "935fc3f6e9a1595c663fdf210101b4618c8965117d3c8e0c26244c579b558e25",
-    "LastMod": "2026-08-13T21:38:41.6909427Z"
+    "Hash": "2b8d0ea915038e29d1e5c7f45396ecb48764a80b2d05f2206fa9736e16604346",
+    "LastMod": "2026-08-18T00:43:17.1930782Z"
   },
   "/best/": {
-    "Hash": "4136ff219ac6056033d59e45ec2cefc11a718bd5528fc40b7625ccaf9a214086",
-    "LastMod": "2026-08-13T21:38:41.6909427Z"
+    "Hash": "d0d1f012bc7c8a9f9aab01cbc5c698e1c1ec2d2a51f65cce8fba693d169c12ae",
+    "LastMod": "2026-08-18T00:43:17.1930782Z"
   },
   "/about/": {
     "Hash": "c2703c0f92f3ee83d42f1339b351e5bde8f852954c0a5088de887690fe8681a6",
     "LastMod": "2026-03-07T21:12:47.6398685Z"
   },
   "/culturing.pdf": {
-    "Hash": "8a1491a96a829b3f7372ca20815a37767a90478483c4fa63601712f353838719",
-    "LastMod": "2026-08-13T21:39:11.6334105Z"
+    "Hash": "6c19939df8f7a5ac87dcb6df3e0da57c56a07f9e086efa21e52a479a52c99308",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
   },
   "/2025/05/all-rise/": {
     "Hash": "f188ea1c5548a8bec8b540f55a5271f339b12093d46740cb2d03e59511871de7",
@@ -1876,8 +1876,8 @@
     "LastMod": "2026-04-07T21:38:44.4665776Z"
   },
   "/2025/10/chiaroscuro-girl/": {
-    "Hash": "5cf2a955695af77cfb0f60eceef02d5081023bc081faf04f58e8982bb5c6e48d",
-    "LastMod": "2026-08-13T21:39:11.6334105Z"
+    "Hash": "37411eb953699da9264946d0d6668c6dc27ed7b0dd4ac4a275f39c8957c8e9e2",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
   },
   "/2025/10/silent-repose/": {
     "Hash": "06ecbb7243ea3c06813e4e04486223edcb29703af0b1994c3bffb84bf1d9e9cf",
@@ -4608,8 +4608,8 @@
     "LastMod": "2026-08-10T22:50:04.3987478Z"
   },
   "/2026/08/10/i-met-the-goddess/": {
-    "Hash": "3064b0fcc5cd0a6b3964438a1e776c497f88c488880aa6d6e602ccf3e9f99998",
-    "LastMod": "2026-08-10T22:53:25.1339644Z"
+    "Hash": "01483cc2af0ccf61c508b6850b1d02c9bc9a93828da7303b8ccda4a58d9f0797",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
   },
   "/2026/08/10/flying-lessons-ii/": {
     "Hash": "74627a7e1e63f56f397cfb3d546fe87f0799170b4d8f00c5fd765fc7d060b53e",
@@ -4694,5 +4694,53 @@
   "/2016/01/the-great-mortality-famine-death-rebirth/": {
     "Hash": "86633d9bf0fde85d6e64a066936e957984191da0f79f6d83caa6121d42684a4c",
     "LastMod": "2026-08-13T21:39:11.6334105Z"
+  },
+  "/2026/08/17/dry-no-more-real-enough/": {
+    "Hash": "adcfda777865920427ea32b030329c7c792d85d751a6a867960d6a090f40c6c2",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/a-culminating-of-destiny/": {
+    "Hash": "fbdf3ac752193f5349435e9c2eee686d0cb16e02f20986a9a2225ab2666f6e67",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/a-possible-salve/": {
+    "Hash": "27cb04cab80ed0207cec927a52817a381dec0102e089d9e652063acbfb384dbc",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/still-human-beings/": {
+    "Hash": "0aa02f3d17bf33a9e1d4bee0da31ccdd38758d0a5d1ed59a7ea7ed268455b233",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/for-eternity/": {
+    "Hash": "d3762647557ed709cbd153a927ed33244d3af796dabd11c0e1f61bb57b77a07c",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/the-right-person/": {
+    "Hash": "cc892f9fb1641f948288f3f71df583b6b3aa576c3c8872d6a31edc3a863ab997",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/saint-teresa/": {
+    "Hash": "9f826b55714c9feacef9151b27cfae7ddbebbed1e2b63849f450d305fa3ae654",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/we-have-to-believe/": {
+    "Hash": "a8daac3195f41e1e774987bc979e2f7c1ac2184be19176c36ddb40cef3523445",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/the-missing-piece/": {
+    "Hash": "ba347a06c70b16db1311f9c29a04709b9e213c66267abd77255fc5bcbf26180d",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/other-skies/": {
+    "Hash": "4dd2b7e409961a3fc9815c1ada47dc34ea90644235eefb80266abfd24740afd0",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/in-the-kitchen/": {
+    "Hash": "1a977703f1a3d12e963db1a4a144f7eaf30c152a7c11a9cf329b94de3ca366a9",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
+  },
+  "/2026/08/17/the-habit-of-silence/": {
+    "Hash": "c831c372eddb1c36e602dc8023997db214cacb4ad539c86bb1db8f20d3e99eec",
+    "LastMod": "2026-08-18T00:46:12.6539731Z"
   }
 }
