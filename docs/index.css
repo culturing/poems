@@ -7,6 +7,11 @@ h3 { padding-top: 1rem; padding-bottom: 0.5rem; }
 #print, .nav-group-pagination { display: none !important; }
 
 .archive h1 { padding: 0 0 1rem 0; font-size: 1.5em; }
+
+/* 31 themes in one column would scroll; columns keep the whole set on one screen */
+.theme-list { columns: 3; column-gap: 2.5rem; }
+.theme-list div { break-inside: avoid; }
+.theme-list .count { margin-left: 0.4rem; color: rgba(245,245,245,0.4); font-size: 0.72rem; }
 .archive .breadcrumb { margin: 0; padding-bottom: 0.5rem; color: rgba(245,245,245,0.5); }
 .archive .breadcrumb a { color: rgba(245,245,245,0.5); text-decoration-color: rgba(245,245,245,0.5); }
 
@@ -27,7 +32,13 @@ h3 { padding-top: 1rem; padding-bottom: 0.5rem; }
     #container-chronology { padding-top: 1rem;}
 }
 
+@media only screen and (max-width : 768.99px)
+{
+    .theme-list { columns: 2; }
+}
+
 @media only screen and (max-width : 512px)
 {
     #container-parent { flex: none; }
+    .theme-list { columns: 1; }
 }

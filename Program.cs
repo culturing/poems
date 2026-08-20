@@ -45,8 +45,12 @@ class Program
     static string NavbarTemplate = File.ReadAllText("Templates/navbar.html");
     static string SimpleNavbarTemplate = File.ReadAllText("Templates/navbar-simple.html");
     static List<Poem> Poems { get; set; } = new List<Poem>();
-    // Archive urls collected while rendering, so the sitemap can pick them up afterwards
-    static List<string> ArchiveUrls = new List<string>();
+    // Archive and theme urls collected while rendering, so the sitemap can pick them up
+    static List<string> ListPageUrls = new List<string>();
+
+    // A theme needs this many poems before it earns a page. Below the line the tag still
+    // travels in the poem's schema keywords, but the hub would be thin content.
+    const int MinimumThemePoems = 8;
     static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
     static Dictionary<string, IEnumerable<Poem>> FilteredPoemsByDate;
     static List<Analysis> Analyses { get; set; } = new List<Analysis>();
@@ -72,6 +76,8 @@ class Program
                 AddPoem(filepath);
             }
         }
+
+        LoadTags();
 
     // Parse Analyses
         // foreach (string dirpath in Directory.EnumerateDirectories("Analyses"))
@@ -172,6 +178,8 @@ class Program
                 CopyrightHolder = author,
                 CopyrightYear = poem.PublicationDate.Year,
                 Genre = "Poem",
+                // The themes travel here, machine-readable, with no rendered change
+                Keywords = string.Join(", ", poem.Tags),
                 IsAccessibleForFree = true,
                 InLanguage = "en-us",
                 PublishingPrinciples = new Uri(BaseUrl + "/about/"),
@@ -236,6 +244,7 @@ class Program
         // RenderOtherPage("Other/Why Poetry.md");
 
         RenderArchives();
+        RenderThemes();
         RenderRedirects();
         RenderNotFoundPage();
 
@@ -541,6 +550,108 @@ class Program
         File.WriteAllText(htmlpath, html);
     }
 
+    // Theme tags live in Other/tags.tsv, keyed by url, most salient tag first.
+    // Slugs derive from titles, so renaming a published poem orphans its row. That must
+    // fail loudly here rather than silently dropping the poem out of its theme pages.
+    static void LoadTags()
+    {
+        string path = "Other/tags.tsv";
+        if (!File.Exists(path))
+            return;
+
+        Dictionary<string, Poem> byUrl = Poems.ToDictionary(poem => poem.UrlPath);
+
+        foreach (string line in File.ReadAllLines(path))
+        {
+            string trimmed = line.Trim();
+            if (trimmed.Length == 0 || trimmed.StartsWith("#"))
+                continue;
+
+            string[] parts = trimmed.Split('\t');
+            if (parts.Length != 2)
+                throw new InvalidOperationException($"Malformed line in {path}: {line}");
+
+            if (!byUrl.TryGetValue(parts[0], out Poem poem))
+                throw new InvalidOperationException(
+                    $"{path} tags '{parts[0]}', which matches no poem. Did a title change? "
+                    + "Update the key here and add a line to Other/redirects.txt.");
+
+            poem.Tags = parts[1].Split(',')
+                .Select(tag => tag.Trim())
+                .Where(tag => tag.Length > 0)
+                .ToList();
+        }
+    }
+
+    // Theme hubs at /themes/<tag>/. These are the pages that can answer a search like
+    // "poems about grief" -- an individual poem never can. Poem pages carry no visible
+    // tag links; the hubs are fed by the navbar entry, which sits on every page.
+    static void RenderThemes()
+    {
+        Dictionary<string, List<Poem>> byTag = new Dictionary<string, List<Poem>>();
+        foreach (Poem poem in Poems.OrderBy(poem => poem.PublicationDate))
+        {
+            foreach (string tag in poem.Tags)
+            {
+                if (!byTag.ContainsKey(tag))
+                    byTag[tag] = new List<Poem>();
+                byTag[tag].Add(poem);
+            }
+        }
+
+        List<string> published = byTag.Keys
+            .Where(tag => byTag[tag].Count >= MinimumThemePoems)
+            .OrderBy(tag => tag)
+            .ToList();
+
+        foreach (string tag in byTag.Keys.Except(published).OrderBy(tag => tag))
+            Console.WriteLine($"theme '{tag}' held back: {byTag[tag].Count} poems, needs {MinimumThemePoems}");
+
+        var index = new StringBuilder();
+        foreach (string tag in published)
+        {
+            string name = ThemeName(tag);
+            string themePath = $"/themes/{Slugify(tag)}/";
+            int count = byTag[tag].Count;
+
+            WriteListPage(
+                themePath,
+                $"Poems about {name}",
+                $"{count} poems about {name} by {SiteName}, written between "
+                    + $"{byTag[tag].First().PublicationDate.Year} and {byTag[tag].Last().PublicationDate.Year}. Free to read in full.",
+                ArchivePoemLinks(byTag[tag]),
+                BuildThemeCrumbs(name, themePath),
+                titleOverride: $"Poems about {name} | {SiteName}");
+
+            index.AppendLine($"<div><a href=\"{themePath}\">{WebUtility.HtmlEncode(name)}</a>"
+                + $"<small class=\"count\">{count}</small></div>");
+        }
+
+        WriteListPage(
+            "/themes/",
+            "Themes",
+            $"Every theme in the collection, from love to war. {Poems.Count} poems by {SiteName}, "
+                + $"grouped by what they are about.",
+            $"<div class=\"theme-list\">{index}</div>",
+            BuildThemeCrumbs(null, null),
+            titleOverride: $"Themes | poems by {SiteName}");
+    }
+
+    // Tags are single lowercase words today, but a two-word tag would arrive hyphenated
+    static string ThemeName(string tag) => tag.Replace('-', ' ');
+
+    static List<KeyValuePair<string, string>> BuildThemeCrumbs(string name, string themePath)
+    {
+        var crumbs = new List<KeyValuePair<string, string>>
+        {
+            new KeyValuePair<string, string>(SiteName, "/"),
+            new KeyValuePair<string, string>("themes", "/themes/")
+        };
+        if (name != null)
+            crumbs.Add(new KeyValuePair<string, string>(name, themePath));
+        return crumbs;
+    }
+
     // Year, month and day index pages. Without them /2026/ and /2026/08/ are dead ends, and the
     // only path into any poem is the homepage. Every directory already exists from AddPoem.
     static void RenderArchives()
@@ -576,7 +687,7 @@ class Program
 
                     if (hasDayArchive)
                     {
-                        WriteArchive(
+                        WriteListPage(
                             dayPath,
                             dayLabel,
                             $"The {dayGroup.Count()} poems culturing published on {dayLabel}.",
@@ -585,7 +696,7 @@ class Program
                     }
                 }
 
-                WriteArchive(
+                WriteListPage(
                     monthPath,
                     $"{Months[month]} {year}",
                     $"The {monthGroup.Count()} poems culturing published in {Months[month]} {year}.",
@@ -593,7 +704,7 @@ class Program
                     BuildCrumbs(monthGroup.First().PublicationDate, false, null, null));
             }
 
-            WriteArchive(
+            WriteListPage(
                 yearPath,
                 $"Poems from {year}",
                 $"The {yearGroup.Count()} poems culturing published in {year}.",
@@ -622,9 +733,12 @@ class Program
 
     // titleText defaults to the heading; the year pages pass it separately so the <title> reads
     // "2026 | poems by culturing" rather than repeating "poems" on both sides of the bar
-    static void WriteArchive(string urlPath, string heading, string description, string body, List<KeyValuePair<string, string>> crumbs, string titleText = null)
+    static void WriteListPage(string urlPath, string heading, string description, string body, List<KeyValuePair<string, string>> crumbs, string titleText = null, string titleOverride = null)
     {
         titleText = titleText ?? heading;
+        // Archives read "August 2026 | poems by culturing"; theme hubs need the whole
+        // searchable phrase up front, so they supply the title outright.
+        string fullTitle = titleOverride ?? $"{titleText} | poems by {SiteName}";
         // Every crumb but the last is a link back up the tree
         string trail = string.Join(" &rsaquo; ", crumbs.Select((crumb, i) => i == crumbs.Count - 1
             ? WebUtility.HtmlEncode(crumb.Key)
@@ -632,11 +746,11 @@ class Program
 
         string html = ArchiveTemplate
             .Replace("{{navbar}}", SimpleNavbarTemplate)
-            .Replace("{{title}}", $"{WebUtility.HtmlEncode(titleText)} | poems by {SiteName}")
+            .Replace("{{title}}", WebUtility.HtmlEncode(fullTitle))
             .Replace("{{heading}}", WebUtility.HtmlEncode(heading))
             .Replace("{{breadcrumb}}", $"<p class=\"breadcrumb\"><small>{trail}</small></p>")
             .Replace("{{content}}", body)
-            .Replace("{{meta}}", BuildMetaTags(BaseUrl + urlPath, $"{titleText} | poems by {SiteName}", description, "website"))
+            .Replace("{{meta}}", BuildMetaTags(BaseUrl + urlPath, fullTitle, description, "website"))
             .Replace("{{schema}}", "[" + new CollectionPage()
             {
                 Url = new Uri(BaseUrl + urlPath),
@@ -649,7 +763,7 @@ class Program
         string dirpath = "docs" + urlPath.TrimEnd('/');
         Directory.CreateDirectory(dirpath);
         File.WriteAllText($"{dirpath}/index.html", html);
-        ArchiveUrls.Add(urlPath);
+        ListPageUrls.Add(urlPath);
     }
 
     // GitHub Pages cannot serve a 301, so a renamed url gets a stub carrying a meta refresh
@@ -1123,7 +1237,7 @@ class Program
         if (File.Exists(filepath))
             File.Delete(filepath);
 
-        string xmlString = SitemapGenerator.GenerateXmlString(Poems, ArchiveUrls);
+        string xmlString = SitemapGenerator.GenerateXmlString(Poems, ListPageUrls);
         File.WriteAllText(filepath, xmlString, new UTF8Encoding(false));
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Poems;
@@ -19,6 +20,9 @@ class Poem : Content
 
     // Short plain-text excerpt used for <meta name="description">, Open Graph and the RSS feed
     public string Description { get; set; }
+
+    // Theme tags from Other/tags.tsv, most salient first
+    public List<string> Tags { get; set; } = new List<string>();
 
     // Poems published after the cutoff live at /yyyy/MM/dd/slug/, earlier ones at /yyyy/MM/slug/
     public bool HasDayUrl => PublicationDate > Program.DayUrlCutoff;

@@ -32,9 +32,9 @@ class SitemapNode
 class SitemapGenerator
 {
     static public JsonSerializerOptions JsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    static public string GenerateXmlString(IEnumerable<Poem> poems, IEnumerable<string> archiveUrls)
+    static public string GenerateXmlString(IEnumerable<Poem> poems, IEnumerable<string> listPageUrls)
     {
-        List<SitemapNode> sitemapNodes = GetSitemapNodes(poems, archiveUrls);
+        List<SitemapNode> sitemapNodes = GetSitemapNodes(poems, listPageUrls);
         XNamespace ns = "http://www.sitemaps.org/schemas/sitemap/0.9";
 
         var sitemap = new XDocument(
@@ -85,7 +85,7 @@ class SitemapGenerator
         return hashes;
     }
 
-    static public List<SitemapNode> GetSitemapNodes(IEnumerable<Poem> poems, IEnumerable<string> archiveUrls)
+    static public List<SitemapNode> GetSitemapNodes(IEnumerable<Poem> poems, IEnumerable<string> listPageUrls)
     {
         Dictionary<string, PageHash> hashes = GetHashes();
 
@@ -119,12 +119,12 @@ class SitemapGenerator
         // culturing.pdf is deliberately absent: it reproduces every poem on the site, so
         // submitting it competes with the pages themselves. It stays linked from the navbar.
 
-        foreach (string archiveUrl in archiveUrls)
+        foreach (string listPageUrl in listPageUrls)
         {
             nodes.Add(new SitemapNode
             {
-                Url = Program.BaseUrl + archiveUrl,
-                LastModified = UpdateHash(hashes, $"docs{archiveUrl}index.html", archiveUrl, now),
+                Url = Program.BaseUrl + listPageUrl,
+                LastModified = UpdateHash(hashes, $"docs{listPageUrl}index.html", listPageUrl, now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 0.5M
             });

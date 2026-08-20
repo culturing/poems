@@ -11,6 +11,9 @@
     .navbar { flex-wrap: wrap; }
     .nav-group-left, .nav-group-main, .nav-group-right { display: contents; }
     .nav-group-pagination { flex-basis: 100%; justify-content: space-between; order: 1; }
+    /* Adding "themes" pushed the row over one line. Print and the 2MB pdf are the two
+       least useful controls on a phone, and both are reachable from the browser menu. */
+    #print, #pdf { display: none !important; }
 }
 
 @media only print

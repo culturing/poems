@@ -457,3 +457,6 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Tagging tooling (local working directory; Other/tags.tsv is the tracked output)
+Tagging/
