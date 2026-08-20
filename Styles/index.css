@@ -6,10 +6,14 @@ h3 { padding-top: 1rem; padding-bottom: 0.5rem; }
 #container-chronology h3:first-child { padding-top: 0; }
 #print, .nav-group-pagination { display: none !important; }
 
+.archive h1 { padding: 0 0 1rem 0; font-size: 1.5em; }
+.archive .breadcrumb { margin: 0; padding-bottom: 0.5rem; color: rgba(245,245,245,0.5); }
+.archive .breadcrumb a { color: rgba(245,245,245,0.5); text-decoration-color: rgba(245,245,245,0.5); }
+
 @media only screen and (min-width : 769px)
 {
     #container { display: flex; flex-direction: row; justify-content: center; }
-    #container-parent { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
+    #container-parent { display: flex; flex-direction: column; justify-content: center; flex: 1; }
     #container-chronology { padding-right: 24px; }
     #container-index { padding-left: 24px; }
     #header { display: flex; flex-direction: row; align-items: baseline; }
@@ -25,5 +29,5 @@ h3 { padding-top: 1rem; padding-bottom: 0.5rem; }
 
 @media only screen and (max-width : 512px)
 {
-    #container-parent { min-height: unset; }
+    #container-parent { flex: none; }
 }

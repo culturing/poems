@@ -1,0 +1,27 @@
+# Old url -> new url, one pair per line, whitespace separated.
+#
+# Slugs are derived from poem titles, so editing a title changes the url and
+# orphans the old one. GitHub Pages cannot serve a 301, so each line here
+# generates a stub page with a meta refresh and a rel=canonical to the target.
+# Add a line here whenever a published poem's title changes.
+#
+# Seeded with the 18 urls renamed in c0cf2ea5.
+
+/2016/01/the-great-mortality/               /2016/01/the-great-mortality-famine-death-rebirth/
+/2016/09/a-place-we-can-still-go/           /2016/09/if-god-speaks-he-whispers/
+/2021/12/phemonology-of-science/            /2021/12/phenomenology-of-science/
+/2022/12/to-tell-this-to-you/               /2022/12/to-tell-this-to-you-or-changing-of-the-gods/
+/2023/06/the-pain-that-one-calls-home/      /2023/06/pain-that-one-calls-home/
+/2024/01/all-man-has-once-been/             /2024/01/all-man-has-been/
+/2025/07/awaken-to-storms/                  /2025/07/woken-by-storms/
+/2025/08/wander-stormy-seas/                /2025/08/wander-on-stormy-seas/
+/2025/10/enveloping/                        /2025/10/envelop/
+/2025/12/matine/                            /2025/12/matinee/
+/2025/12/if-any-vigor-remains/              /2025/12/the-crucible-of-life-and-death/
+/2026/02/who-youd-like-to-be/               /2026/02/who-you-would-like-to-be/
+/2026/03/11/a-woman-whom-you-can-admire/    /2026/03/11/a-woman-you-admire/
+/2026/03/31/stillpoint-of-wholeness/        /2026/03/31/still-point-of-wholeness/
+/2026/04/15/strange-bedfellows/             /2026/04/15/some-happy-song/
+/2026/04/20/dionysus-at-the-matine/         /2026/04/20/dionysus-at-the-matinee/
+/2026/05/01/here-and-now-on-earth/          /2026/05/01/here-on-earth-and-now/
+/2026/05/27/hiccupping-whisky/              /2026/05/27/hiccupping-whiskey/

@@ -1,10 +1,20 @@
-body { font-family: Quattrocento; background-color: rgb(10, 10, 10); color: rgb(245, 245, 245); line-height: 1.25rem; margin: 0; padding: 1rem; }
+/* Full-height flex column so #container-parent can claim exactly the leftover space between
+   the navbar and the licence badge. Replaces a hardcoded offset that only added up in quirks
+   mode, which the doctype on every page has since turned off. */
+body { font-family: Quattrocento; background-color: rgb(10, 10, 10); color: rgb(245, 245, 245); line-height: 1.25rem; margin: 0; padding: 1rem; box-sizing: border-box; min-height: 100vh; display: flex; flex-direction: column; }
 a { text-decoration-color: rgb(245, 245, 245); color: rgb(245, 245, 245); text-decoration-thickness: 0;}
-h3 { margin: 0; }
+/* Dates that link to their archive stay plain text: the link is navigation, not emphasis */
+h3 a, #content time a { text-decoration: none; }
+h1, h3 { margin: 0; }
+
+/* Reachable by crawlers and screen readers, absent from the visual design */
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 
 @media only print
 {
-    body { background-color: white; color: black; }
+    /* Print stacks poem pages directly in body and centres each one itself, so the screen
+       flex column is undone here rather than fighting it */
+    body { background-color: white; color: black; display: block; min-height: 0; }
     a { text-decoration-color: black; color: black; }
     .navbar, #license { display: none; }
 }

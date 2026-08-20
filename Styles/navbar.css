@@ -2,6 +2,9 @@
 .nav-group-left, .nav-group-main, .nav-group-pagination, .nav-group-right { display: flex; align-items: center; }
 .nav { padding: 0.5rem; text-decoration: none; color: rgba(245,245,245,0.5); }
 .nav:hover { background-color: rgb(245,245,245,0.25); }
+/* First and last poem: keeps the pagination slot occupied without emitting a dead link */
+.nav-disabled { opacity: 0.35; }
+.nav-disabled:hover { background-color: transparent; }
 
 @media only screen and (max-width : 512px)
 {

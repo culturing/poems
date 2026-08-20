@@ -32,13 +32,12 @@ class SitemapNode
 class SitemapGenerator
 {
     static public JsonSerializerOptions JsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    static public string GenerateXmlString(IEnumerable<Poem> poems)
+    static public string GenerateXmlString(IEnumerable<Poem> poems, IEnumerable<string> archiveUrls)
     {
-        List<SitemapNode> sitemapNodes = GetSitemapNodes(poems);
+        List<SitemapNode> sitemapNodes = GetSitemapNodes(poems, archiveUrls);
         XNamespace ns = "http://www.sitemaps.org/schemas/sitemap/0.9";
 
         var sitemap = new XDocument(
-            new XDeclaration("1.0", "utf-8", "yes"),
             new XElement(ns + "urlset",
                 sitemapNodes.Select(node =>
                     new XElement(ns + "url",
@@ -64,7 +63,8 @@ class SitemapGenerator
             )
         );
 
-        return sitemap.ToString(); // This includes the XML declaration
+        // XDocument.ToString() drops the XDeclaration, so the prolog is written by hand
+        return "<?xml version=\"1.0\" encoding=\"utf-8\"?>" + Environment.NewLine + sitemap.ToString();
     }
 
     static public Dictionary<string, PageHash> GetHashes()
@@ -85,9 +85,9 @@ class SitemapGenerator
         return hashes;
     }
 
-    static public List<SitemapNode> GetSitemapNodes(IEnumerable<Poem> poems)
+    static public List<SitemapNode> GetSitemapNodes(IEnumerable<Poem> poems, IEnumerable<string> archiveUrls)
     {
-        Dictionary<string, PageHash> hashes = GetHashes();        
+        Dictionary<string, PageHash> hashes = GetHashes();
 
         DateTime now = DateTime.UtcNow;
 
@@ -113,15 +113,22 @@ class SitemapGenerator
                 LastModified = UpdateHash(hashes, "docs/about/index.html", "/about/", now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
-            },            
-            new SitemapNode
-            {
-                Url = $"{Program.BaseUrl}/culturing.pdf",
-                LastModified = UpdateHash(hashes, "docs/culturing.pdf", "/culturing.pdf", now),
-                ChangeFrequency = SitemapChangeFrequency.Monthly,
-                Priority = 1.0M
             }
         };
+
+        // culturing.pdf is deliberately absent: it reproduces every poem on the site, so
+        // submitting it competes with the pages themselves. It stays linked from the navbar.
+
+        foreach (string archiveUrl in archiveUrls)
+        {
+            nodes.Add(new SitemapNode
+            {
+                Url = Program.BaseUrl + archiveUrl,
+                LastModified = UpdateHash(hashes, $"docs{archiveUrl}index.html", archiveUrl, now),
+                ChangeFrequency = SitemapChangeFrequency.Monthly,
+                Priority = 0.5M
+            });
+        }
 
         foreach (Poem poem in poems)
         {            

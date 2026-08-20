@@ -11,6 +11,9 @@ using PdfSharp.Pdf.IO;
 using PdfSharp.Drawing;
 using System.Diagnostics;
 using System.Text;
+using System.Text.Json;
+using System.Net;
+using System.Xml.Linq;
 using System.Globalization;
 using Schema.NET;
 
@@ -19,18 +22,31 @@ namespace Poems;
 class Program
 {
     static public string BaseUrl = "https://poems.culturing.net";
+    static public string SiteName = "culturing";
+    static public string OgImageUrl = "https://poems.culturing.net/og-image.png";
+
+    // Poems published after this date live at /yyyy/MM/dd/slug/, earlier ones at /yyyy/MM/slug/.
+    // Archive generation and breadcrumbs have to honour the same split, so it lives in one place.
+    static public readonly DateTime DayUrlCutoff = new DateTime(2026, 03, 04);
+
     static Markdown md = new Markdown();
     static string IndexTemplate = File.ReadAllText("Templates/index.html");
     static string BestTemplate = File.ReadAllText("Templates/best.html");
     static string AboutTemplate = File.ReadAllText("Templates/about.html");
     static string ContentTemplate = File.ReadAllText("Templates/content.html");
+    static string ArchiveTemplate = File.ReadAllText("Templates/archive.html");
+    static string RedirectTemplate = File.ReadAllText("Templates/redirect.html");
+    static string NotFoundTemplate = File.ReadAllText("Templates/404.html");
     static string FaqTemplate = File.ReadAllText("Templates/faq.html");
     static string PdfCopyrightTemplate = File.ReadAllText("Templates/pdf/copyright.html");
     static string PdfEpigraphTemplate = File.ReadAllText("Templates/pdf/epigraph.html");
     static string PdfTableOfContentsTemplate = File.ReadAllText("Templates/pdf/toc.html");
     static string PdfIndexTemplate = File.ReadAllText("Templates/pdf/index.html");
     static string NavbarTemplate = File.ReadAllText("Templates/navbar.html");
+    static string SimpleNavbarTemplate = File.ReadAllText("Templates/navbar-simple.html");
     static List<Poem> Poems { get; set; } = new List<Poem>();
+    // Archive urls collected while rendering, so the sitemap can pick them up afterwards
+    static List<string> ArchiveUrls = new List<string>();
     static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
     static Dictionary<string, IEnumerable<Poem>> FilteredPoemsByDate;
     static List<Analysis> Analyses { get; set; } = new List<Analysis>();
@@ -90,9 +106,12 @@ class Program
         string bestChronologyHtml = string.Empty;
         foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => DateTime.Parse(kvp.Key)))
         {
-            chronologyHtml += $"<h3>{kvp.Key}</h3>\n";
+            // Each date heading links to its archive: the day's own page where one exists,
+            // otherwise the month it belongs to
+            string dateHeading = $"<h3><a href=\"{kvp.Value.First().DatePath}\">{kvp.Key}</a></h3>\n";
+            chronologyHtml += dateHeading;
             if (kvp.Value.Any(poem => poem.Bold))
-                bestChronologyHtml += $"<h3>{kvp.Key}</h3>\n";
+                bestChronologyHtml += dateHeading;
 
             foreach(Poem poem in Enumerable.Reverse(kvp.Value))
             {
@@ -111,39 +130,31 @@ class Program
         Dictionary<string, PageHash> hashes = SitemapGenerator.GetHashes();
 
     // Set previous and next links
+        Person author = BuildAuthor();
         List<Poem> OrderedPoems = Poems.OrderBy(poem => poem.PublicationDate).ToList();
         for (int i = 0; i < OrderedPoems.Count; ++i)
         {
             Poem poem = OrderedPoems[i];
-            string previousPath = string.Empty;
-            string nextPath = string.Empty;
-            if (i > 0)
-            {
-                Poem prev = OrderedPoems[i-1];
-                previousPath = prev.UrlPath;
-            }
-            if (i < OrderedPoems.Count - 1)
-            {
-                Poem next = OrderedPoems[i+1];
-                nextPath = next.UrlPath;
-            }
+            string canonicalUrl = BaseUrl + poem.UrlPath;
+
+            // At the ends of the sequence the slot becomes a span, so no link points nowhere
+            string previousLink = i > 0
+                ? $"<a id=\"previous\" class=\"nav\" href=\"{OrderedPoems[i-1].UrlPath}\">prev</a>"
+                : "<span id=\"previous\" class=\"nav nav-disabled\">prev</span>";
+            string nextLink = i < OrderedPoems.Count - 1
+                ? $"<a id=\"next\" class=\"nav\" href=\"{OrderedPoems[i+1].UrlPath}\">next</a>"
+                : "<span id=\"next\" class=\"nav nav-disabled\">next</span>";
+
             string contents = File.ReadAllText(poem.FilePath);
-            contents = contents.Replace("{{previous}}", previousPath);
-            contents = contents.Replace("{{next}}", nextPath);
-            contents = contents.Replace("{{url}}", BaseUrl + poem.UrlPath);
-            
-            Person author = new Person()
-            {
-                Name = "culturing",
-                Url = new Uri(BaseUrl),
-                SameAs = new List<Uri>
-                {
-                    new Uri("https://bsky.app/profile/culturing.bsky.social"),
-                    new Uri("https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ"),
-                    new Uri("https://github.com/culturing"),
-                },
-                PublishingPrinciples = new Uri(BaseUrl + "/about/")
-            };
+            contents = contents.Replace("{{previous}}", previousLink);
+            contents = contents.Replace("{{next}}", nextLink);
+            contents = contents.Replace("{{url}}", canonicalUrl);
+            contents = contents.Replace("{{meta}}", BuildMetaTags(
+                canonicalUrl,
+                $"{poem.Title} | a poem by {SiteName}",
+                poem.Description,
+                "article",
+                poem.PublicationDate));
 
             DateTime dateModified = poem.PublicationDate;
             if (hashes.ContainsKey(poem.UrlPath))
@@ -151,8 +162,12 @@ class Program
 
             CreativeWork poemSchema = new CreativeWork()
             {
-                Url = new Uri(BaseUrl + poem.UrlPath),
+                Url = new Uri(canonicalUrl),
                 Name = poem.Title,
+                Headline = poem.Title,
+                Description = poem.Description,
+                // Schema.NET has no Poem class; this narrows the type for consumers that look
+                AdditionalType = new Uri("https://schema.org/Poem"),
                 Author = author,
                 CopyrightHolder = author,
                 CopyrightYear = poem.PublicationDate.Year,
@@ -164,38 +179,74 @@ class Program
                 DateModified = dateModified
             };
 
-            string schema = poemSchema.ToHtmlEscapedString();
-            contents = contents.Replace("{{schema}}", schema);
+            string breadcrumbs = BuildBreadcrumbJson(
+                BuildCrumbs(poem.PublicationDate, poem.HasDayUrl, poem.Title, poem.UrlPath));
+            contents = contents.Replace("{{schema}}", $"[{poemSchema.ToHtmlEscapedString()},{breadcrumbs}]");
 
             File.WriteAllText(poem.FilePath, contents);
         }
 
+        int firstYear = OrderedPoems.First().PublicationDate.Year;
+        int bestCount = Poems.Count(poem => poem.Bold);
+
+        string homeDescription = $"A living tree of {Poems.Count} poems by culturing, published in order since {firstYear}. Free to read in full.";
         string finalIndexHtml = IndexTemplate
             .Replace("{{index}}", indexHtml)
             .Replace("{{chronology}}", chronologyHtml)
-            .Replace("{{navbar}}", NavbarTemplate);
+            .Replace("{{navbar}}", SimpleNavbarTemplate)
+            .Replace("{{title}}", $"{SiteName} | poems")
+            .Replace("{{meta}}", BuildMetaTags($"{BaseUrl}/", $"{SiteName} | poems", homeDescription, "website"))
+            .Replace("{{schema}}", new WebSite()
+            {
+                Url = new Uri(BaseUrl + "/"),
+                Name = SiteName,
+                Description = homeDescription,
+                Author = author,
+                CopyrightHolder = author,
+                InLanguage = "en-us",
+                IsAccessibleForFree = true,
+                PublishingPrinciples = new Uri(BaseUrl + "/about/")
+            }.ToHtmlEscapedString());
 
         File.WriteAllText("docs/index.html", finalIndexHtml);
 
+        string bestDescription = $"The {bestCount} poems culturing considers the best of {Poems.Count}. Free to read in full.";
         string finalBestIndexHtml = BestTemplate
             .Replace("{{index}}", bestIndexHtml)
             .Replace("{{chronology}}", bestChronologyHtml)
-            .Replace("{{navbar}}", NavbarTemplate);
+            .Replace("{{navbar}}", SimpleNavbarTemplate)
+            .Replace("{{title}}", $"{SiteName} | best")
+            .Replace("{{meta}}", BuildMetaTags($"{BaseUrl}/best/", $"{SiteName} | best", bestDescription, "website"))
+            .Replace("{{schema}}", new CollectionPage()
+            {
+                Url = new Uri(BaseUrl + "/best/"),
+                Name = $"Best poems by {SiteName}",
+                Description = bestDescription,
+                Author = author,
+                InLanguage = "en-us",
+                IsAccessibleForFree = true
+            }.ToHtmlEscapedString());
 
         Directory.CreateDirectory("docs/best");
         File.WriteAllText("docs/best/index.html", finalBestIndexHtml);
 
-        RenderOtherPage("Other/about.md", AboutTemplate);
+        RenderOtherPage("Other/about.md", AboutTemplate, $"{SiteName} | about", $"{SiteName} | about", author);
         // RenderOtherPage("Other/FAQ.md");
         // RenderOtherPage("Other/Favorite Poems.md");
         // RenderOtherPage("Other/Why Poetry.md");
 
-        CopyFilesToDocs();
+        RenderArchives();
+        RenderRedirects();
+        RenderNotFoundPage();
 
+        CopyFilesToDocs();
+        GenerateSitemap();
+        GenerateFeed(OrderedPoems);
+
+        // Playwright and ffmpeg run last: the html and the sitemap must not depend on them
         await RenderPdf("docs/culturing.pdf");
         //await RenderPdf("Submission.pdf", true, new DateTime(2021, 02, 01), new DateTime(2022, 10, 31));
         await RenderVideo();
-        GenerateSitemap();
     }
 
     static void AddPoem(string filepath)
@@ -213,33 +264,54 @@ class Program
             lines[0] = lines[0].Substring(1);
         }
         
+        bool titled;
+        int bodyStart;
         try
         {
             poem.PublicationDate = System.DateTime.Parse(lines[1]);
             poem.Title = lines[0];
-            lines[0] = $"### {lines[0]}";
-            lines[1] = $"<p style='margin:0;'><em><small><small>{lines[1]}</small></small></em></p>";
-            lines.Insert(2, $"<p class='url' style='margin:0;'><em><small><small>{{{{url}}}}</small></small></em></p>");
+            titled = true;
+            bodyStart = 2;
         }
         catch(FormatException)
         {
+            // Untitled poem: the date is the first line and the title comes from the filename
             poem.PublicationDate = System.DateTime.Parse(lines[0]);
-            lines[0] = $"<p style='margin:0;'><em><small><small>{lines[0]}</small></small></em></p>";                
-            lines.Insert(1, $"<p class='url' style='margin:0;'><em><small><small>{{{{url}}}}</small></small></em></p>");
+            titled = false;
+            bodyStart = 1;
         }
 
-        string dirPath = (poem.PublicationDate > new DateTime(2026, 03, 04))
-            ? $"docs/{poem.PublicationDate.ToString("yyyy")}/{poem.PublicationDate.ToString("MM")}/{poem.PublicationDate.ToString("dd")}"
-            : $"docs/{poem.PublicationDate.ToString("yyyy")}/{poem.PublicationDate.ToString("MM")}";
-        
+        poem.Description = BuildDescription(lines.Skip(bodyStart));
+
+        // Untitled poems open straight on their first line, so the h1 is there for structure only
+        string heading = titled
+            ? $"# {poem.Title}"
+            : $"<h1 class='visually-hidden'>{WebUtility.HtmlEncode(poem.Title)}</h1>";
+
+        lines.RemoveRange(0, bodyStart);
+        lines.InsertRange(0, new List<string>
+        {
+            heading,
+            $"<p style='margin:0;'><em><small><small>{BuildDateLine(poem)}</small></small></em></p>",
+            "<p class='url' style='margin:0;'><em><small><small>{{url}}</small></small></em></p>"
+        });
+
+        string dirPath = $"docs{poem.DatePath}".TrimEnd('/');
+
         string content = String.Join("  \n", lines);
         string contentHtml = md.Transform(content);
-        string finalPoemHtml = ContentTemplate.Replace("{{content}}", contentHtml).Replace("{{title}}", poem.Title).Replace("{{navbar}}", NavbarTemplate);
+        string finalPoemHtml = ContentTemplate
+            .Replace("{{content}}", contentHtml)
+            .Replace("{{title}}", $"{WebUtility.HtmlEncode(poem.Title)} | a poem by {SiteName}")
+            .Replace("{{navbar}}", NavbarTemplate);
         string finalFileName = Slugify(poem.Title);
 
         dirPath += $"/{finalFileName}";
-        Directory.CreateDirectory(dirPath);        
         string finalPath = $"{dirPath}/index.html";
+        if (File.Exists(finalPath))
+            throw new InvalidOperationException($"Two poems on {poem.PublicationDate:yyyy-MM-dd} share the slug '{finalFileName}'; the second would overwrite the first ({filepath})");
+
+        Directory.CreateDirectory(dirPath);
         File.WriteAllText(finalPath, finalPoemHtml);
 
         poem.FilePath = finalPath;
@@ -253,6 +325,127 @@ class Program
         if (!PoemsByDate.ContainsKey(key))
             PoemsByDate[key] = new List<Poem>();
         PoemsByDate[key].Add(poem);
+    }
+
+    // A short plain-text opening, used for the meta description, Open Graph and the feed.
+    // Built from the source lines before markdown runs, so there is no html to unpick.
+    static string BuildDescription(IEnumerable<string> bodyLines)
+    {
+        string text = string.Join(" ", bodyLines);
+        text = Regex.Replace(text, "<[^>]+>", " ");                     // inline html some poems carry
+        text = Regex.Replace(text, @"!?\[([^\]]*)\]\([^)]*\)", "$1");   // markdown links and images
+        text = Regex.Replace(text, @"[*_`#>]", "");                     // emphasis, headings, quotes
+        text = Regex.Replace(text, @"\s+", " ").Trim();
+
+        const int limit = 155;
+        if (text.Length > limit)
+        {
+            int cut = text.LastIndexOf(' ', limit);
+            if (cut < limit / 2)
+                cut = limit;
+            text = text.Substring(0, cut).TrimEnd(' ', ',', ';', ':', '-', '—') + "…";
+        }
+
+        return text;
+    }
+
+    // The date under the title doubles as the breadcrumb: the same text, now linking its archives
+    static string BuildDateLine(Poem poem)
+    {
+        DateTime pub = poem.PublicationDate;
+        string day = poem.HasDayUrl
+            ? $"<a href=\"{poem.DatePath}\">{pub.ToString("dd")}</a>"
+            : pub.ToString("dd");
+
+        return $"<time datetime=\"{pub.ToString("yyyy-MM-dd")}\">{day} "
+             + $"<a href=\"/{pub.ToString("yyyy")}/{pub.ToString("MM")}/\">{Months[pub.Month]}</a> "
+             + $"<a href=\"/{pub.ToString("yyyy")}/\">{pub.ToString("yyyy")}</a></time>";
+    }
+
+    static string BuildMetaTags(string canonicalUrl, string title, string description, string ogType, DateTime? published = null)
+    {
+        string encodedTitle = WebUtility.HtmlEncode(title);
+        string encodedDescription = WebUtility.HtmlEncode(description);
+
+        var meta = new List<string>
+        {
+            $"<link rel=\"canonical\" href=\"{canonicalUrl}\" />",
+            $"<meta name=\"description\" content=\"{encodedDescription}\" />",
+            $"<meta name=\"author\" content=\"{SiteName}\" />",
+            $"<meta property=\"og:site_name\" content=\"{SiteName}\" />",
+            $"<meta property=\"og:type\" content=\"{ogType}\" />",
+            $"<meta property=\"og:title\" content=\"{encodedTitle}\" />",
+            $"<meta property=\"og:description\" content=\"{encodedDescription}\" />",
+            $"<meta property=\"og:url\" content=\"{canonicalUrl}\" />",
+            $"<meta property=\"og:image\" content=\"{OgImageUrl}\" />",
+            $"<meta name=\"twitter:card\" content=\"summary_large_image\" />",
+            $"<meta name=\"twitter:title\" content=\"{encodedTitle}\" />",
+            $"<meta name=\"twitter:description\" content=\"{encodedDescription}\" />",
+            $"<meta name=\"twitter:image\" content=\"{OgImageUrl}\" />"
+        };
+
+        if (published.HasValue)
+            meta.Add($"<meta property=\"article:published_time\" content=\"{published.Value.ToString("yyyy-MM-dd")}\" />");
+
+        return string.Join("\n    ", meta);
+    }
+
+    // Written by hand rather than through Schema.NET: the shape is fixed and the generic
+    // Values<> wrappers add nothing here. JsonSerializer escapes < > & for safe <script> embedding.
+    static string BuildBreadcrumbJson(List<KeyValuePair<string, string>> crumbs)
+    {
+        var items = new List<Dictionary<string, object>>();
+        for (int i = 0; i < crumbs.Count; ++i)
+        {
+            items.Add(new Dictionary<string, object>
+            {
+                ["@type"] = "ListItem",
+                ["position"] = i + 1,
+                ["name"] = crumbs[i].Key,
+                ["item"] = BaseUrl + crumbs[i].Value
+            });
+        }
+
+        return JsonSerializer.Serialize(new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "BreadcrumbList",
+            ["itemListElement"] = items
+        });
+    }
+
+    static List<KeyValuePair<string, string>> BuildCrumbs(DateTime pub, bool includeDay, string leafName, string leafUrl)
+    {
+        var crumbs = new List<KeyValuePair<string, string>>
+        {
+            new KeyValuePair<string, string>(SiteName, "/"),
+            new KeyValuePair<string, string>(pub.ToString("yyyy"), $"/{pub.ToString("yyyy")}/"),
+            new KeyValuePair<string, string>(Months[pub.Month], $"/{pub.ToString("yyyy")}/{pub.ToString("MM")}/")
+        };
+
+        if (includeDay)
+            crumbs.Add(new KeyValuePair<string, string>(pub.ToString("dd"), $"/{pub.ToString("yyyy")}/{pub.ToString("MM")}/{pub.ToString("dd")}/"));
+
+        if (leafName != null)
+            crumbs.Add(new KeyValuePair<string, string>(leafName, leafUrl));
+
+        return crumbs;
+    }
+
+    static Person BuildAuthor()
+    {
+        return new Person()
+        {
+            Name = SiteName,
+            Url = new Uri(BaseUrl),
+            SameAs = new List<Uri>
+            {
+                new Uri("https://bsky.app/profile/culturing.bsky.social"),
+                new Uri("https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ"),
+                new Uri("https://github.com/culturing"),
+            },
+            PublishingPrinciples = new Uri(BaseUrl + "/about/")
+        };
     }
 
     // Titles carry characters filenames cannot, so separate on them rather than deleting them
@@ -269,8 +462,16 @@ class Program
         slug = Regex.Replace(slug, @"[\s/\\_]+", "-");
         slug = Regex.Replace(slug, @"[^0-9a-z\-]", "");
         slug = Regex.Replace(slug, "-{2,}", "-");
+        slug = slug.Trim('-');
 
-        return slug.Trim('-');
+        // An all-numeric slug would sit alongside the day directories under /yyyy/MM/ and could
+        // shadow one; a title with no ascii letters or digits would leave no slug at all.
+        if (slug.Length == 0)
+            slug = "untitled";
+        else if (!slug.Any(char.IsLetter))
+            slug = $"poem-{slug}";
+
+        return slug;
     }
 
     static void AddAnalysis(string filepath)
@@ -311,15 +512,214 @@ class Program
         AnalysesByDate[key].Add(analysis);
     }
 
-    static void RenderOtherPage(string filepath, string template)
+    static void RenderOtherPage(string filepath, string template, string titleHtml, string titleText, Person author)
     {
-        string text = File.ReadAllText(filepath);
-        string html = template.Replace("{{content}}", md.Transform(text)).Replace("{{navbar}}", NavbarTemplate);
-        string dirpath = $"docs/{Path.GetFileNameWithoutExtension(filepath)}";
+        List<string> lines = File.ReadAllLines(filepath).ToList();
+        string name = Path.GetFileNameWithoutExtension(filepath);
+        string url = $"{BaseUrl}/{name}/";
+        string description = BuildDescription(lines.Skip(1));
+
+        string html = template
+            .Replace("{{content}}", md.Transform(string.Join("\n", lines)))
+            .Replace("{{navbar}}", SimpleNavbarTemplate)
+            .Replace("{{title}}", titleHtml)
+            .Replace("{{meta}}", BuildMetaTags(url, titleText, description, "website"))
+            .Replace("{{schema}}", new AboutPage()
+            {
+                Url = new Uri(url),
+                Name = titleText,
+                Description = description,
+                Author = author,
+                InLanguage = "en-us",
+                IsAccessibleForFree = true
+            }.ToHtmlEscapedString());
+
+        string dirpath = $"docs/{name}";
         string htmlpath = $"{dirpath}/index.html";
-        
+
         Directory.CreateDirectory(dirpath);
-        File.WriteAllText(htmlpath, html);   
+        File.WriteAllText(htmlpath, html);
+    }
+
+    // Year, month and day index pages. Without them /2026/ and /2026/08/ are dead ends, and the
+    // only path into any poem is the homepage. Every directory already exists from AddPoem.
+    static void RenderArchives()
+    {
+        foreach (IGrouping<int, Poem> yearGroup in Poems.GroupBy(poem => poem.PublicationDate.Year).OrderBy(group => group.Key))
+        {
+            int year = yearGroup.Key;
+            string yearPath = $"/{year}/";
+            var yearBody = new StringBuilder();
+
+            foreach (IGrouping<int, Poem> monthGroup in yearGroup.GroupBy(poem => poem.PublicationDate.Month).OrderBy(group => group.Key))
+            {
+                int month = monthGroup.Key;
+                string monthPath = $"/{year}/{month.ToString("D2")}/";
+                yearBody.AppendLine($"<h3><a href=\"{monthPath}\">{Months[month]}</a></h3>");
+                yearBody.Append(ArchivePoemLinks(monthGroup));
+
+                var monthBody = new StringBuilder();
+
+                // A month can straddle the day-url cutoff, so group by date and let each date
+                // decide whether it has an archive of its own to link to
+                foreach (IGrouping<DateTime, Poem> dayGroup in monthGroup.GroupBy(poem => poem.PublicationDate.Date).OrderBy(group => group.Key))
+                {
+                    DateTime day = dayGroup.Key;
+                    string dayLabel = $"{day.ToString("dd")} {Months[month]} {year}";
+                    bool hasDayArchive = dayGroup.First().HasDayUrl;
+                    string dayPath = $"/{year}/{month.ToString("D2")}/{day.ToString("dd")}/";
+
+                    monthBody.AppendLine(hasDayArchive
+                        ? $"<h3><a href=\"{dayPath}\">{dayLabel}</a></h3>"
+                        : $"<h3>{dayLabel}</h3>");
+                    monthBody.Append(ArchivePoemLinks(dayGroup));
+
+                    if (hasDayArchive)
+                    {
+                        WriteArchive(
+                            dayPath,
+                            dayLabel,
+                            $"The {dayGroup.Count()} poems culturing published on {dayLabel}.",
+                            ArchivePoemLinks(dayGroup),
+                            BuildCrumbs(day, false, dayLabel, dayPath));
+                    }
+                }
+
+                WriteArchive(
+                    monthPath,
+                    $"{Months[month]} {year}",
+                    $"The {monthGroup.Count()} poems culturing published in {Months[month]} {year}.",
+                    monthBody.ToString(),
+                    BuildCrumbs(monthGroup.First().PublicationDate, false, null, null));
+            }
+
+            WriteArchive(
+                yearPath,
+                $"Poems from {year}",
+                $"The {yearGroup.Count()} poems culturing published in {year}.",
+                yearBody.ToString(),
+                new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>(SiteName, "/"),
+                    new KeyValuePair<string, string>(year.ToString(), yearPath)
+                },
+                year.ToString());
+        }
+    }
+
+    static string ArchivePoemLinks(IEnumerable<Poem> poems)
+    {
+        var html = new StringBuilder();
+        foreach (Poem poem in poems)
+        {
+            string style = poem.Style();
+            html.AppendLine(string.IsNullOrEmpty(style)
+                ? $"<div>{poem.Link}</div>"
+                : $"<div style='{style}'>{poem.Link}</div>");
+        }
+        return html.ToString();
+    }
+
+    // titleText defaults to the heading; the year pages pass it separately so the <title> reads
+    // "2026 | poems by culturing" rather than repeating "poems" on both sides of the bar
+    static void WriteArchive(string urlPath, string heading, string description, string body, List<KeyValuePair<string, string>> crumbs, string titleText = null)
+    {
+        titleText = titleText ?? heading;
+        // Every crumb but the last is a link back up the tree
+        string trail = string.Join(" &rsaquo; ", crumbs.Select((crumb, i) => i == crumbs.Count - 1
+            ? WebUtility.HtmlEncode(crumb.Key)
+            : $"<a href=\"{crumb.Value}\">{WebUtility.HtmlEncode(crumb.Key)}</a>"));
+
+        string html = ArchiveTemplate
+            .Replace("{{navbar}}", SimpleNavbarTemplate)
+            .Replace("{{title}}", $"{WebUtility.HtmlEncode(titleText)} | poems by {SiteName}")
+            .Replace("{{heading}}", WebUtility.HtmlEncode(heading))
+            .Replace("{{breadcrumb}}", $"<p class=\"breadcrumb\"><small>{trail}</small></p>")
+            .Replace("{{content}}", body)
+            .Replace("{{meta}}", BuildMetaTags(BaseUrl + urlPath, $"{titleText} | poems by {SiteName}", description, "website"))
+            .Replace("{{schema}}", "[" + new CollectionPage()
+            {
+                Url = new Uri(BaseUrl + urlPath),
+                Name = heading,
+                Description = description,
+                InLanguage = "en-us",
+                IsAccessibleForFree = true
+            }.ToHtmlEscapedString() + "," + BuildBreadcrumbJson(crumbs) + "]");
+
+        string dirpath = "docs" + urlPath.TrimEnd('/');
+        Directory.CreateDirectory(dirpath);
+        File.WriteAllText($"{dirpath}/index.html", html);
+        ArchiveUrls.Add(urlPath);
+    }
+
+    // GitHub Pages cannot serve a 301, so a renamed url gets a stub carrying a meta refresh
+    // and a rel=canonical to its new home. See Other/redirects.txt.
+    static void RenderRedirects()
+    {
+        string listPath = "Other/redirects.txt";
+        if (!File.Exists(listPath))
+            return;
+
+        foreach (string line in File.ReadAllLines(listPath))
+        {
+            string trimmed = line.Trim();
+            if (trimmed.Length == 0 || trimmed.StartsWith("#"))
+                continue;
+
+            string[] parts = Regex.Split(trimmed, @"\s+");
+            if (parts.Length != 2)
+                throw new InvalidOperationException($"Malformed redirect in {listPath}: {line}");
+
+            string dirpath = "docs" + parts[0].TrimEnd('/');
+            string filepath = $"{dirpath}/index.html";
+
+            // A later poem may legitimately have claimed the old url back
+            if (File.Exists(filepath))
+                continue;
+
+            Directory.CreateDirectory(dirpath);
+            File.WriteAllText(filepath, RedirectTemplate.Replace("{{target}}", BaseUrl + parts[1]));
+        }
+    }
+
+    static void RenderNotFoundPage()
+    {
+        File.WriteAllText("docs/404.html", NotFoundTemplate.Replace("{{navbar}}", SimpleNavbarTemplate));
+    }
+
+    static void GenerateFeed(List<Poem> orderedPoems)
+    {
+        const int feedLength = 50;
+        XNamespace atom = "http://www.w3.org/2005/Atom";
+        string description = $"Poems by culturing, newest first. {BaseUrl}/";
+
+        var items = orderedPoems
+            .OrderByDescending(poem => poem.PublicationDate)
+            .Take(feedLength)
+            .Select(poem => new XElement("item",
+                new XElement("title", poem.Title),
+                new XElement("link", BaseUrl + poem.UrlPath),
+                new XElement("guid", new XAttribute("isPermaLink", "true"), BaseUrl + poem.UrlPath),
+                new XElement("pubDate", poem.PublicationDate.ToString("ddd, dd MMM yyyy HH:mm:ss 'GMT'", CultureInfo.InvariantCulture)),
+                new XElement("description", poem.Description)));
+
+        var feed = new XDocument(
+            new XElement("rss",
+                new XAttribute("version", "2.0"),
+                new XAttribute(XNamespace.Xmlns + "atom", atom),
+                new XElement("channel",
+                    new XElement("title", $"{SiteName} | poems"),
+                    new XElement("link", BaseUrl + "/"),
+                    new XElement("description", description),
+                    new XElement("language", "en-us"),
+                    new XElement("lastBuildDate", DateTime.UtcNow.ToString("ddd, dd MMM yyyy HH:mm:ss 'GMT'", CultureInfo.InvariantCulture)),
+                    new XElement(atom + "link",
+                        new XAttribute("href", $"{BaseUrl}/feed.xml"),
+                        new XAttribute("rel", "self"),
+                        new XAttribute("type", "application/rss+xml")),
+                    items)));
+
+        File.WriteAllText("docs/feed.xml", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" + feed.ToString(), new UTF8Encoding(false));
     }
 
     static async Task RenderPdf(string outpath, bool bestOnly = false, DateTime start = default, DateTime end = default)
@@ -445,9 +845,11 @@ class Program
         
         int headStart = ContentTemplate.IndexOf("<head>", StringComparison.OrdinalIgnoreCase) + 6;
         int headEnd = ContentTemplate.IndexOf("</head>", StringComparison.OrdinalIgnoreCase);
-        if(headStart >= 6 && headEnd > headStart) 
+        if(headStart >= 6 && headEnd > headStart)
         {
-            allPoemsHtml.AppendLine(ContentTemplate.Substring(headStart, headEnd - headStart));
+            // Unsubstituted tokens would land in <head> as bare text, which ends the head early
+            string head = ContentTemplate.Substring(headStart, headEnd - headStart);
+            allPoemsHtml.AppendLine(Regex.Replace(head, @"\{\{\w+\}\}", ""));
         }
         allPoemsHtml.AppendLine("<style>.poem-page { display: flex; flex-direction: column; justify-content: center; min-height: 100vh; page-break-after: always; break-after: page; box-sizing: border-box; } body { margin: 0; padding: 0; }</style>");
         allPoemsHtml.AppendLine("</head>\n<body>");
@@ -721,21 +1123,29 @@ class Program
         if (File.Exists(filepath))
             File.Delete(filepath);
 
-        string xmlString = SitemapGenerator.GenerateXmlString(Poems);
-        File.WriteAllText(filepath, xmlString, Encoding.UTF8);
-    } 
+        string xmlString = SitemapGenerator.GenerateXmlString(Poems, ArchiveUrls);
+        File.WriteAllText(filepath, xmlString, new UTF8Encoding(false));
+    }
 
     static void CopyFilesToDocs()
     {
         List<string> filesToCopy = new List<string>();
-        filesToCopy.AddRange(Directory.GetFiles("Styles").Where(file => file != "toc.css"));
+        // Every stylesheet ships, toc.css included: RenderPdf loads it as /toc.css over the
+        // local server while rendering the table of contents and the index
+        filesToCopy.AddRange(Directory.GetFiles("Styles"));
         filesToCopy.AddRange(Directory.GetFiles("Scripts"));
-        
+
         foreach(string file in filesToCopy)
         {
             File.Copy(file, $"docs/{Path.GetFileName(file)}");
         }
-    }   
+
+        // The card image link previews use; 1920x1080 is near enough the 1.91:1 Open Graph ratio
+        File.Copy("culturing.png", "docs/og-image.png", true);
+
+        // Stops GitHub Pages running the content through Jekyll, which drops _-prefixed paths
+        File.WriteAllText("docs/.nojekyll", string.Empty);
+    }
 
     static void CleanupPrevious()
     {

@@ -10,15 +10,25 @@ class Content
     public DateTime PublicationDate { get; set; }
     public string FilePath { get; set; }
     public string FileName => Path.GetFileName(Path.GetDirectoryName(FilePath));
-    public int Page { get; set; }  
+    public int Page { get; set; }
 }
 
 class Poem : Content
 {
     public bool Bold { get; set; } = false;
-    public string UrlPath => (PublicationDate > new DateTime(2026, 03, 04))
-        ? $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{PublicationDate.ToString("dd")}/{FileName}/"
-        : $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}/";
+
+    // Short plain-text excerpt used for <meta name="description">, Open Graph and the RSS feed
+    public string Description { get; set; }
+
+    // Poems published after the cutoff live at /yyyy/MM/dd/slug/, earlier ones at /yyyy/MM/slug/
+    public bool HasDayUrl => PublicationDate > Program.DayUrlCutoff;
+
+    // The dated directory a poem lives in, shared by its url and its location under docs/
+    public string DatePath => HasDayUrl
+        ? $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{PublicationDate.ToString("dd")}/"
+        : $"/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/";
+
+    public string UrlPath => $"{DatePath}{FileName}/";
 
     public string Style(bool bestOnly = false)
     {
@@ -31,5 +41,5 @@ class Poem : Content
 
 class Analysis : Content
 {
-    public string UrlPath => $"/analysis/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}/";  
+    public string UrlPath => $"/analysis/{PublicationDate.ToString("yyyy")}/{PublicationDate.ToString("MM")}/{FileName}/";
 }

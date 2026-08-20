@@ -1,1 +1,4 @@
 .nav-group-pagination, #pdf { display: none !important; }
+
+/* Overrides content.css: the About heading keeps the h2 metrics it rendered at before */
+#content h1 { font-size: 1.5em; margin: 0.83em 0; padding-top: 0; }
