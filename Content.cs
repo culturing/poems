@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -16,7 +16,16 @@ class Content
 
 class Poem : Content
 {
-    public bool Bold { get; set; } = false;
+    // How highly a poem is rated. A source file opens with one asterisk per level, so the
+    // poems marked with a single "*" all arrive as 1. Three levels is what a brightness ramp
+    // on this ground actually carries -- see common.css, which also says what a fourth would
+    // have to look like if the scale ever needs one.
+    public const int MaxRating = 2;
+
+    public int Rating { get; set; } = 0;
+
+    // /best/, the chronology and the pdf's bestOnly filter still ask a yes/no question
+    public bool Bold => Rating > 0;
 
     // Short plain-text excerpt used for <meta name="description">, Open Graph and the RSS feed
     public string Description { get; set; }
@@ -34,13 +43,11 @@ class Poem : Content
 
     public string UrlPath => $"{DatePath}{FileName}/";
 
-    public string Style(bool bestOnly = false)
-    {
-        string style = string.Empty;
-        if (Bold && !bestOnly)
-            style += "font-weight: bold;";
-        return style;
-    }
+    // The rating is carried by the title's own weight and nothing else -- see the ramp in
+    // common.css and its paper twin in toc.css. A listing puts this on the row, a poem's own
+    // page puts it on the h1. Every one gets a class, unrated included: there is no sensible
+    // default for a stylesheet to fall back on.
+    public string RatingClass => $"rated-{Rating}";
 }
 
 class Analysis : Content

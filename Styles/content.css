@@ -3,6 +3,18 @@
 /* The poem title is an h1 for document structure; 1.17em is the h3 size it used to render at */
 #content h1 { padding-top: 2rem; font-size: 1.17em; font-weight: bold; }
 .url, #pdf { display: none; }
+
+/* The date above the poem and the themes below it are apparatus, not the poem, and they
+   frame it in one voice: both muted, both wearing the same <em><small><small>. As coloured
+   chips above the first line the themes were the first thing the eye landed on. */
+#content time, .tags { color: var(--muted); }
+#content time a, .tags a { color: var(--muted); text-decoration: none; }
+#content time a:hover, .tags a:hover { color: var(--accent); }
+/* Flush against the last line, the way the date sits flush under the title. The change of
+   font already says the line is not the poem's; a gap would only say it twice. :has() zeroes
+   whatever the poem ends on, so a closing blockquote is not pulled up by a fixed offset. */
+.tags { margin: 0; }
+#content > *:has(+ .tags) { margin-bottom: 0; }
 blockquote { margin: 0; font-size: small; font-style: italic; }
 figcaption { text-align: right; font-size: small; margin-top: 0.25rem; }
 figure { max-width: 400px; }
@@ -39,12 +51,16 @@ figure { max-width: 400px; }
         justify-content: center !important; 
     }
 
-    /* 3. Show URL */
+    /* 3. Show URL, and drop the themes -- they are navigation, and the pdf is built
+          through this stylesheet, so leaving them in would put theme links in the book */
     .url { display: block; }
+    .tags { display: none !important; }
 
     /* 4. The Ghost Page Killer: Remove bottom margin from the very last element */
     /* This ensures 100% height + 1em margin doesn't equal 100% + 1em (overflow) */
-    #content > *:last-child, .url:last-child { 
+    /* The themes are display:none above but still the last child, so the element they
+       follow is the last one that actually occupies space */
+    #content > *:last-child, .url:last-child, #content > *:has(+ .tags:last-child) { 
         margin-bottom: 0 !important; 
         padding-bottom: 0 !important; 
     }

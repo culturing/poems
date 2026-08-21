@@ -51,6 +51,10 @@ class Program
     // A theme needs this many poems before it earns a page. Below the line the tag still
     // travels in the poem's schema keywords, but the hub would be thin content.
     const int MinimumThemePoems = 8;
+
+    // A line of its own under the poem, in the same <em><small><small> the date wears, so
+    // the two close and open the text in one voice
+    const string TagLineToken = "<p class='tags'><em><small><small>{{tags}}</small></small></em></p>";
     static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
     static Dictionary<string, IEnumerable<Poem>> FilteredPoemsByDate;
     static List<Analysis> Analyses { get; set; } = new List<Analysis>();
@@ -93,18 +97,9 @@ class Program
         string bestIndexHtml = string.Empty;
         foreach(Poem poem in Poems.OrderBy(p => Regex.Replace(p.Title, @"[^\w\s]", "")))
         {
-            string style = poem.Style();
-            if (string.IsNullOrWhiteSpace(style))
-                style = "";
-            else
-                style = $" style='{style}'";
-
-            if (string.IsNullOrEmpty(style))
-                indexHtml += $"<div>{poem.Link}</div>\n";
-            else
-                indexHtml += $"<div{style}>{poem.Link}</div>\n";
+            indexHtml += $"<div class=\"{poem.RatingClass}\">{poem.Link}</div>\n";
             if (poem.Bold)
-                bestIndexHtml += $"<div>{poem.Link}</div>\n";
+                bestIndexHtml += $"<div class=\"{poem.RatingClass}\">{poem.Link}</div>\n";
         }
 
     // Build Chronology
@@ -121,15 +116,9 @@ class Program
 
             foreach(Poem poem in Enumerable.Reverse(kvp.Value))
             {
-                string style = poem.Style();
-                if (string.IsNullOrWhiteSpace(style))
-                    style = "";
-                else
-                    style = $" style='{style}'";
-
-                chronologyHtml += $"<div{style}>{poem.Link}</div>\n";                    
+                chronologyHtml += $"<div class=\"{poem.RatingClass}\">{poem.Link}</div>\n";
                 if (poem.Bold)
-                    bestChronologyHtml += $"<div>{poem.Link}</div>\n";
+                    bestChronologyHtml += $"<div class=\"{poem.RatingClass}\">{poem.Link}</div>\n";
             }
         }
 
@@ -155,6 +144,14 @@ class Program
             contents = contents.Replace("{{previous}}", previousLink);
             contents = contents.Replace("{{next}}", nextLink);
             contents = contents.Replace("{{url}}", canonicalUrl);
+
+            // The themes under the poem. These are what link the hubs from all 1,128
+            // poems; without them /themes/ is fed by the navbar alone.
+            string chips = string.Join(" &middot; ", poem.Tags.Select(tag =>
+                $"<a href=\"/themes/{Slugify(tag)}/\">{WebUtility.HtmlEncode(ThemeName(tag))}</a>"));
+            contents = poem.Tags.Count > 0
+                ? contents.Replace("{{tags}}", chips)
+                : contents.Replace(TagLineToken, string.Empty);
             contents = contents.Replace("{{meta}}", BuildMetaTags(
                 canonicalUrl,
                 $"{poem.Title} | a poem by {SiteName}",
@@ -267,11 +264,13 @@ class Program
         filename = Regex.Replace(filename, "^[0-9][0-9] ", "");
         poem.Title = filename;
 
-        if (lines[0].StartsWith("*"))
-        {
-            poem.Bold = true;
-            lines[0] = lines[0].Substring(1);
-        }
+        // One leading asterisk per level. Everything written before the scale existed carries
+        // at most one, so the collection arrives as a field of 1s and the top is filled in by hand.
+        int stars = lines[0].Length - lines[0].TrimStart('*').Length;
+        if (stars > Poem.MaxRating)
+            throw new InvalidOperationException($"{filepath} opens with {stars} asterisks; the scale runs to {Poem.MaxRating}");
+        poem.Rating = stars;
+        lines[0] = lines[0].Substring(stars);
         
         bool titled;
         int bodyStart;
@@ -292,9 +291,12 @@ class Program
 
         poem.Description = BuildDescription(lines.Skip(bodyStart));
 
-        // Untitled poems open straight on their first line, so the h1 is there for structure only
+        // Written out rather than left to markdown's "# ", so a title can never be read as
+        // markup. Untitled poems open straight on their first line, so their h1 is there for
+        // structure only. Neither carries the rating: that belongs to the listings, where a
+        // title has neighbours to be brighter or dimmer than.
         string heading = titled
-            ? $"# {poem.Title}"
+            ? $"<h1>{WebUtility.HtmlEncode(poem.Title)}</h1>"
             : $"<h1 class='visually-hidden'>{WebUtility.HtmlEncode(poem.Title)}</h1>";
 
         lines.RemoveRange(0, bodyStart);
@@ -304,6 +306,12 @@ class Program
             $"<p style='margin:0;'><em><small><small>{BuildDateLine(poem)}</small></small></em></p>",
             "<p class='url' style='margin:0;'><em><small><small>{{url}}</small></small></em></p>"
         });
+
+        // The themes close the poem rather than open it: ahead of the first line they were the
+        // first thing the eye landed on. The blank line keeps markdown reading them as their own
+        // block. Filled in on the second pass -- tags load only once every poem is parsed.
+        lines.Add(string.Empty);
+        lines.Add(TagLineToken);
 
         string dirPath = $"docs{poem.DatePath}".TrimEnd('/');
 
@@ -662,7 +670,7 @@ class Program
             string yearPath = $"/{year}/";
             var yearBody = new StringBuilder();
 
-            foreach (IGrouping<int, Poem> monthGroup in yearGroup.GroupBy(poem => poem.PublicationDate.Month).OrderBy(group => group.Key))
+            foreach (IGrouping<int, Poem> monthGroup in yearGroup.GroupBy(poem => poem.PublicationDate.Month).OrderByDescending(group => group.Key))
             {
                 int month = monthGroup.Key;
                 string monthPath = $"/{year}/{month.ToString("D2")}/";
@@ -673,7 +681,7 @@ class Program
 
                 // A month can straddle the day-url cutoff, so group by date and let each date
                 // decide whether it has an archive of its own to link to
-                foreach (IGrouping<DateTime, Poem> dayGroup in monthGroup.GroupBy(poem => poem.PublicationDate.Date).OrderBy(group => group.Key))
+                foreach (IGrouping<DateTime, Poem> dayGroup in monthGroup.GroupBy(poem => poem.PublicationDate.Date).OrderByDescending(group => group.Key))
                 {
                     DateTime day = dayGroup.Key;
                     string dayLabel = $"{day.ToString("dd")} {Months[month]} {year}";
@@ -718,16 +726,15 @@ class Program
         }
     }
 
+    // Newest first, the way the homepage chronology reads: an archive should open on its
+    // most recent poem rather than ask the reader to scroll to it. Poems/Prologue is named by
+    // title rather than by date, so the sort is explicit; reversing first leaves poems sharing
+    // a date in the same order the chronology puts them, since OrderByDescending is stable.
     static string ArchivePoemLinks(IEnumerable<Poem> poems)
     {
         var html = new StringBuilder();
-        foreach (Poem poem in poems)
-        {
-            string style = poem.Style();
-            html.AppendLine(string.IsNullOrEmpty(style)
-                ? $"<div>{poem.Link}</div>"
-                : $"<div style='{style}'>{poem.Link}</div>");
-        }
+        foreach (Poem poem in poems.Reverse().OrderByDescending(poem => poem.PublicationDate))
+            html.AppendLine($"<div class=\"{poem.RatingClass}\">{poem.Link}</div>");
         return html.ToString();
     }
 
@@ -933,7 +940,7 @@ class Program
     // Add temporary table of contents
         int tableOfContentsStart = pdf.PageCount;
         int tableOfContentsPageCount = 0;
-        await RenderTableOfContents(page, bestOnly);
+        await RenderTableOfContents(page);
         using (PdfDocument tableOfContentsPdf = PdfReader.Open("Output/Pdfs/TableOfContents.pdf", PdfDocumentOpenMode.Import))
         {
             tableOfContentsPageCount = tableOfContentsPdf.PageCount;
@@ -1038,7 +1045,7 @@ class Program
         }
 
     // Render final table of contents
-        string tocPath = await RenderTableOfContents(page, bestOnly);
+        string tocPath = await RenderTableOfContents(page);
         using (PdfDocument tableOfContentsPdf = PdfReader.Open(tocPath, PdfDocumentOpenMode.Import))
         {
             int i = tableOfContentsStart;
@@ -1104,7 +1111,7 @@ class Program
         }
     }
 
-    static async Task<string> RenderTableOfContents(IPage page, bool bestOnly)
+    static async Task<string> RenderTableOfContents(IPage page)
     {
         string toc = string.Empty;
         foreach(KeyValuePair<string, IEnumerable<Poem>> kvp in FilteredPoemsByDate.OrderBy(kvp => DateTime.Parse(kvp.Key)))
@@ -1117,7 +1124,7 @@ class Program
             foreach(Poem poem in kvp.Value)
             {
                 toc += $"  <div class='toc-flex toc-poem'>";
-                toc += $"    <span style='{poem.Style(bestOnly)}'>{poem.Title}</span>";
+                toc += $"    <span class='{poem.RatingClass}'>{poem.Title}</span>";
                 toc += $"    <span class='toc-page'>{poem.Page}</span>";
                 toc += $"  </div>";
             }
@@ -1153,7 +1160,7 @@ class Program
             if (poem.PublicationDate > start && poem.PublicationDate < end)
         {
             index += $"<div class='toc-flex toc-poem'>";
-            index += $"  <span style='{poem.Style(bestOnly)}'>{poem.Title}</span>";
+            index += $"  <span class='{poem.RatingClass}'>{poem.Title}</span>";
             index += $"  <span class='toc-page'>{poem.Page}</span>";
             index += $"</div>";
             }

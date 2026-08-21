@@ -1,4 +1,4 @@
-*The Habit of Silence
+﻿*The Habit of Silence
 17 August 2026
 
 The pain answers its own question.
