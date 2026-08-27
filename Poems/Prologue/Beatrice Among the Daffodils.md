@@ -1,4 +1,4 @@
-Beatrice Among the Daffodils
+*Beatrice Among the Daffodils
 22 July 2019
 
 I see the beloved, dancing

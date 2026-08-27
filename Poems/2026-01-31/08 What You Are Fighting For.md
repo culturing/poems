@@ -1,4 +1,4 @@
-*What You Are Fighting For
+**What You Are Fighting For
 31 January 2026
 
 You have spoken again. I will need some time

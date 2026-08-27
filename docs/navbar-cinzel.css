@@ -1,0 +1,138 @@
+/* -- generated: node Tools/weathering.js -- do not hand-edit ------------------
+   The lintel and the vine rooted in its fracture. Geometry is seeded (6180) and
+   reproducible; regenerating with the same seed yields byte-identical output.
+   --vine-root carries both the fracture and the growth in one image so the two can
+   never drift apart. The layer hangs at bottom: -10px, which is what puts every
+   stem exactly on the navbar's lower edge. */
+.navbar {
+    --stone-grain: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' seed='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='180' height='180' filter='url(%23g)' opacity='0.055'/></svg>");
+    --vine-stem: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='20' viewBox='0 0 64 20'><path d='M0,10C1.3,10.1 5.3,10.6 8,10.8C10.7,11 13.3,11.1 16,11.1C18.7,11.1 21.3,11 24,10.8C26.7,10.6 29.3,10.3 32,10C34.7,9.7 37.3,9.4 40,9.2C42.7,9 45.3,8.9 48,8.9C50.7,8.9 53.3,9 56,9.2C58.7,9.4 62.7,9.9 64,10' fill='none' stroke='%23414d3b' stroke-width='0.9' stroke-linecap='round' opacity='0.85'/></svg>");
+    --vine-root: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='182' height='48' viewBox='0 0 182 48'><path d='M119.4,1.4L117.9,2.4L116.2,3L114.5,3.6L113,4.6L111.3,5.4L109.6,5.9L108,6.7L106.5,7.7L105.1,8.9L103.9,10.3L102.4,11.3L100.9,12.3L99.3,13.2L98.1,14.6L96.7,15.7L95.5,17.1L94.2,18.3L93,19.7L91.7,21L90.9,22.6L89.6,23.8L88.4,25.2L87.2,26.6L86.5,28.2L85.1,29.5L83.5,30.3L82.3,31.6L80.7,32.6L79.6,33.9L78.3,35.2L76.7,36.2L75.4,37.4' fill='none' stroke='rgba(245,245,245,0.11)' stroke-width='0.6' stroke-linejoin='round'/><path d='M120,2L118.5,3L116.8,3.6L115.1,4.2L113.6,5.2L111.9,6L110.2,6.5L108.6,7.3L107.1,8.3L105.7,9.5L104.5,10.9L103,11.9L101.5,12.9L99.9,13.8L98.7,15.2L97.3,16.3L96.1,17.7L94.8,18.9L93.6,20.3L92.3,21.6L91.5,23.2L90.2,24.4L89,25.8L87.8,27.2L87.1,28.8L85.7,30.1L84.1,30.9L82.9,32.2L81.3,33.2L80.2,34.5L78.9,35.8L77.3,36.8L76,38' fill='none' stroke='%23000' stroke-width='1' stroke-linejoin='round' opacity='0.92'/><path d='M95.5,17.1L94,17.6L92.4,18.2L90.9,18.7L89.4,19.3L87.7,19.3L86.2,19.9L84.6,20.2L83,20.7L81.5,21.4L80.1,22.3L78.6,22.8L77,23.3L76,24.7L74.6,25.6L73.2,26.5L71.7,27.1' fill='none' stroke='rgba(245,245,245,0.11)' stroke-width='0.4' stroke-linejoin='round'/><path d='M96.1,17.7L94.6,18.2L93,18.8L91.5,19.3L90,19.9L88.3,19.9L86.8,20.5L85.2,20.8L83.6,21.3L82.1,22L80.7,22.9L79.2,23.4L77.6,23.9L76.6,25.3L75.2,26.2L73.8,27.1L72.3,27.7' fill='none' stroke='%23000' stroke-width='0.65' stroke-linejoin='round' opacity='0.92'/><path d='M91.7,21L91.1,21.3L90.4,21.3L89.9,21.8L89.4,22.2L89.2,22.9L89.1,23.6L88.6,24.1L88,24.5L88.1,25.2L88,25.9L87.6,26.6L87,27L86.7,27.7L86,28L85.4,28.3L84.7,28.4' fill='none' stroke='rgba(245,245,245,0.11)' stroke-width='0.4' stroke-linejoin='round'/><path d='M92.3,21.6L91.7,21.9L91,21.9L90.5,22.4L90,22.8L89.8,23.5L89.7,24.2L89.2,24.7L88.6,25.1L88.7,25.8L88.6,26.5L88.2,27.2L87.6,27.6L87.3,28.3L86.6,28.6L86,28.9L85.3,29' fill='none' stroke='%23000' stroke-width='0.65' stroke-linejoin='round' opacity='0.92'/><path d='M99.9,13.8L98.7,15.2L97.3,16.3L96.1,17.7L94.8,18.9L93.6,20.3L92.3,21.6L91.5,23.2L90.2,24.4L89,25.8L87.8,27.2L87.1,28.8L85.7,30.1L84.1,30.9L82.9,32.2L81.3,33.2L80.2,34.5L78.9,35.8L77.3,36.8L76,38' fill='none' stroke='%23000' stroke-width='1.8' stroke-linejoin='round' stroke-linecap='round' opacity='0.9'/><path d='M99.2,13.1L98,14.5L96.6,15.6L95.4,17L94.1,18.2L92.9,19.6L91.6,20.9L90.8,22.5L89.5,23.7L88.3,25.1L87.1,26.5L86.4,28.1L85,29.4L83.4,30.2L82.2,31.5L80.6,32.5L79.5,33.8L78.2,35.1L76.6,36.1L75.3,37.3' fill='none' stroke='rgba(245,245,245,0.13)' stroke-width='0.7' stroke-linejoin='round'/><ellipse cx='104.3' cy='9.8' rx='2.6' ry='1.7' fill='%23000' opacity='0.55'/><ellipse cx='110' cy='5.2' rx='1.1' ry='0.6' fill='%23000' opacity='0.55'/><ellipse cx='111.2' cy='5.5' rx='2' ry='1.3' fill='%23000' opacity='0.55'/><ellipse cx='97.8' cy='19.4' rx='2.3' ry='1.7' fill='%23000' opacity='0.55'/><ellipse cx='105.9' cy='8.7' rx='1.2' ry='0.9' fill='%23000' opacity='0.55'/><ellipse cx='86.8' cy='25.6' rx='1.2' ry='0.9' fill='%23000' opacity='0.55'/><defs><linearGradient id='s'><stop offset='0' stop-color='%235c6a51' stop-opacity='0'/><stop offset='0.16' stop-color='%235c6a51' stop-opacity='0.95'/><stop offset='0.84' stop-color='%235c6a51' stop-opacity='0.95'/><stop offset='1' stop-color='%235c6a51' stop-opacity='0'/></linearGradient></defs><path d='M-2,37.9C-0.2,37.9 5.3,38.2 9,38.4C12.7,38.6 16.3,38.9 20,38.9C23.7,38.8 27.3,38.3 31,38.1C34.7,37.9 38.3,37.9 42,37.8C45.7,37.7 49.3,37.3 53,37.3C56.7,37.3 60.3,37.6 64,37.8C67.7,37.9 71.3,38.1 75,38.3C78.7,38.5 82.3,38.9 86,38.9C89.7,39 93.3,38.8 97,38.6C100.7,38.4 104.3,38.1 108,37.8C111.7,37.6 115.3,37.2 119,37.1C122.7,37.1 126.3,37.5 130,37.7C133.7,37.8 137.3,37.8 141,38C144.7,38.1 148.3,38.4 152,38.6C155.7,38.8 159.3,39 163,38.9C166.7,38.9 172.2,38.2 174,38.1' fill='none' stroke='url(%23s)' stroke-width='2' stroke-linecap='round'/><path d='M78.2,38.3C78.3,37.8 78.8,36.2 79,35.2C79.2,34.1 79.3,33.1 79.3,32C79.3,30.9 79.2,29.8 79,28.8C78.7,27.8 78.3,26.7 77.8,25.8C77.2,24.9 76.4,24.1 75.6,23.5C74.7,22.9 73.1,22.4 72.6,22.2' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.9'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.8' transform='translate(72.6,22.2) rotate(336) scale(11.6)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.5' transform='translate(79,28.8) rotate(175) scale(9.3)'/><path d='M126.5,37.7C126.4,37.5 126.4,37 126.4,36.7C126.4,36.3 126.5,36 126.6,35.6C126.7,35.3 126.9,35 127.1,34.8C127.4,34.6 127.7,34.4 128.1,34.3C128.4,34.3 128.8,34.3 129.1,34.5C129.4,34.7 129.6,35.2 129.7,35.4' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.5'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.3' transform='translate(129.7,35.4) rotate(94) scale(8.5)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.3' transform='translate(127.1,34.8) rotate(70) scale(11)'/><path d='M99.8,38.6C99.8,38.3 99.8,37.5 99.8,37C99.9,36.5 99.9,36 100,35.5C100.1,34.9 100.2,34.4 100.4,33.9C100.6,33.5 100.9,33 101.2,32.6C101.5,32.1 101.8,31.7 102.2,31.4C102.7,31.1 103.4,30.8 103.6,30.7' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.7'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.6' transform='translate(103.6,30.7) rotate(25) scale(8.8)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.6' transform='translate(100.4,33.9) rotate(4) scale(11.3)'/><path d='M55.3,37.3C55.4,37 55.6,35.9 55.9,35.2C56.1,34.4 56.4,33.7 56.7,33.1C57,32.4 57.4,31.7 57.8,31.1C58.3,30.5 58.8,30 59.4,29.5C60,29.1 60.7,28.7 61.4,28.4C62.1,28.2 63.3,28.2 63.6,28.1' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.7'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.5' transform='translate(63.6,28.1) rotate(128) scale(8.9)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.5' transform='translate(57.8,31.1) rotate(168) scale(10.6)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.7' transform='translate(48.4,37.2) rotate(168) scale(11.6)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.6' transform='translate(94.5,39.2) rotate(21) scale(9.3)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.8' transform='translate(119.8,37.4) rotate(131) scale(11.6)'/></svg>");
+    --vine-mid: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='132' height='48' viewBox='0 0 132 48'><defs><linearGradient id='s'><stop offset='0' stop-color='%235c6a51' stop-opacity='0'/><stop offset='0.16' stop-color='%235c6a51' stop-opacity='0.95'/><stop offset='0.84' stop-color='%235c6a51' stop-opacity='0.95'/><stop offset='1' stop-color='%235c6a51' stop-opacity='0'/></linearGradient></defs><path d='M-2,37.8C-0.2,38 5.3,38.5 9,38.6C12.7,38.8 16.3,39 20,38.9C23.7,38.8 27.3,38.2 31,38C34.7,37.8 38.3,37.7 42,37.5C45.7,37.4 49.3,37.1 53,37.1C56.7,37 60.3,37.1 64,37.2C67.7,37.4 71.3,37.9 75,38.1C78.7,38.3 82.3,38.5 86,38.6C89.7,38.7 93.3,38.9 97,38.7C100.7,38.6 104.3,37.9 108,37.7C111.7,37.5 115.3,37.5 119,37.5C122.7,37.4 128.2,37.3 130,37.2' fill='none' stroke='url(%23s)' stroke-width='1.5' stroke-linecap='round'/><path d='M80.8,38.6C80.8,38.4 80.7,37.6 80.7,37.1C80.7,36.6 80.8,36.1 80.9,35.6C81.1,35.2 81.3,34.7 81.6,34.3C82,33.9 82.4,33.5 82.8,33.4C83.3,33.2 83.9,33.1 84.4,33.2C84.8,33.3 85.4,33.9 85.6,34' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.8'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.5' transform='translate(85.6,34) rotate(315) scale(8.2)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.5' transform='translate(81.6,34.3) rotate(288) scale(7)'/><path d='M128,37.2C128,37 128.1,36.4 128.1,36C128.2,35.6 128.2,35.2 128.1,34.8C128,34.4 127.9,34 127.8,33.6C127.6,33.3 127.4,32.9 127.1,32.6C126.8,32.3 126.5,32 126.1,31.9C125.7,31.7 125.1,31.7 124.9,31.7' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.5'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.4' transform='translate(124.9,31.7) rotate(204) scale(8.3)'/><path d='M25.1,38.9C25.1,38.7 25.2,38.2 25.2,37.9C25.2,37.6 25.2,37.2 25,36.9C24.9,36.6 24.8,36.3 24.5,36.1C24.3,35.9 24,35.7 23.7,35.6C23.4,35.6 23,35.6 22.7,35.8C22.5,36 22.3,36.5 22.2,36.6' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.7'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.6' transform='translate(22.2,36.6) rotate(142) scale(7.4)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.4' transform='translate(24.5,36.1) rotate(148) scale(6.5)'/><path d='M58.8,37.2C58.6,36.7 58.3,35 57.9,33.9C57.4,32.9 57,31.8 56.3,30.9C55.7,30 54.9,29.1 54,28.4C53.1,27.8 51.9,27.2 50.8,27C49.8,26.9 48.5,26.9 47.4,27.3C46.4,27.7 45.2,29.1 44.8,29.4' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.9'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.8' transform='translate(44.8,29.4) rotate(71) scale(8.6)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.8' transform='translate(54,28.4) rotate(82) scale(8.5)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.9' transform='translate(106.9,37.2) rotate(158) scale(8.7)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.6' transform='translate(25.5,38) rotate(52) scale(10)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.7' transform='translate(58.8,37.8) rotate(2) scale(7.6)'/></svg>");
+    --vine-late: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='48' viewBox='0 0 120 48'><defs><linearGradient id='s'><stop offset='0' stop-color='%235c6a51' stop-opacity='0'/><stop offset='0.16' stop-color='%235c6a51' stop-opacity='0.95'/><stop offset='0.84' stop-color='%235c6a51' stop-opacity='0.95'/><stop offset='1' stop-color='%235c6a51' stop-opacity='0'/></linearGradient></defs><path d='M-2,37.7C-0.2,37.8 5.3,38.3 9,38.5C12.7,38.7 16.3,38.9 20,38.9C23.7,38.9 27.3,38.7 31,38.5C34.7,38.3 38.3,37.9 42,37.7C45.7,37.5 49.3,37.3 53,37.4C56.7,37.4 60.3,37.7 64,37.8C67.7,38 71.3,38 75,38.2C78.7,38.3 82.3,38.7 86,38.8C89.7,38.9 93.3,39 97,38.8C100.7,38.6 104.3,37.9 108,37.7C111.7,37.4 117.2,37.5 119,37.5' fill='none' stroke='url(%23s)' stroke-width='1.4' stroke-linecap='round'/><path d='M34.4,38.5C34.4,38.2 34.5,37.3 34.4,36.7C34.3,36.2 34.2,35.6 34.1,35C33.9,34.5 33.7,33.9 33.3,33.5C33,33 32.6,32.5 32.1,32.2C31.6,31.9 31,31.7 30.5,31.6C29.9,31.5 29,31.8 28.8,31.8' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.8'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.7' transform='translate(28.8,31.8) rotate(87) scale(6.9)'/><path d='M52.1,37.4C52.1,37.2 52.1,36.6 52.1,36.2C52.1,35.8 52.2,35.4 52.4,35C52.5,34.7 52.8,34.3 53.1,34C53.3,33.8 53.7,33.6 54.1,33.5C54.5,33.4 55,33.5 55.3,33.7C55.6,33.9 55.9,34.5 56,34.6' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.9'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.7' transform='translate(56,34.6) rotate(215) scale(6.8)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.6' transform='translate(53.1,34) rotate(209) scale(6.1)'/><path d='M67.5,37.8C67.5,37.4 67.2,36.2 67.1,35.4C67.1,34.6 67.2,33.8 67.4,33C67.7,32.3 68.1,31.5 68.6,30.9C69.2,30.4 70,29.9 70.7,29.8C71.5,29.6 72.5,29.8 73.1,30.2C73.7,30.6 74.2,31.9 74.4,32.3' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.8'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.6' transform='translate(74.4,32.3) rotate(270) scale(8.8)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.7' transform='translate(68.6,30.9) rotate(184) scale(6)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.9' transform='translate(99,38.5) rotate(50) scale(9.2)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.6' transform='translate(84,38.7) rotate(172) scale(7.4)'/></svg>");
+    --vine-runner: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'><defs><linearGradient id='s'><stop offset='0' stop-color='%235c6a51' stop-opacity='0'/><stop offset='0.16' stop-color='%235c6a51' stop-opacity='0.95'/><stop offset='0.84' stop-color='%235c6a51' stop-opacity='0.95'/><stop offset='1' stop-color='%235c6a51' stop-opacity='0'/></linearGradient></defs><path d='M-2,37.7C-0.2,37.9 5.3,38.6 9,38.8C12.7,39 16.3,38.9 20,38.8C23.7,38.6 27.3,38.2 31,38.1C34.7,37.9 38.3,37.9 42,37.8C45.7,37.6 49.3,37.3 53,37.3C56.7,37.2 60.3,37.4 64,37.5C67.7,37.7 71.3,37.8 75,38.1C78.7,38.4 82.3,39.1 86,39.2C89.7,39.2 95.2,38.6 97,38.5' fill='none' stroke='url(%23s)' stroke-width='1.3' stroke-linecap='round'/><path d='M87.6,39.2C87.6,39 87.6,38.6 87.5,38.4C87.5,38.1 87.4,37.8 87.4,37.6C87.3,37.3 87.2,37.1 87.1,36.9C86.9,36.6 86.8,36.4 86.6,36.2C86.4,36 86.2,35.8 86,35.7C85.8,35.6 85.4,35.5 85.2,35.4' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.5'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.3' transform='translate(85.2,35.4) rotate(243) scale(8.1)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.4' transform='translate(87.1,36.9) rotate(282) scale(4.9)'/><path d='M40.9,37.8C40.8,37.5 40.4,36.5 40.1,35.9C39.8,35.3 39.4,34.7 38.9,34.3C38.5,33.8 37.9,33.3 37.3,33C36.7,32.8 36,32.6 35.3,32.6C34.7,32.6 33.9,32.9 33.4,33.2C32.9,33.6 32.4,34.6 32.2,34.9' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.9'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.7' transform='translate(32.2,34.9) rotate(101) scale(7.1)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.7' transform='translate(37.3,33) rotate(162) scale(5.2)'/><path d='M9,38.8C9.1,38.7 9.2,38.2 9.3,38C9.4,37.7 9.6,37.4 9.7,37.2C9.9,36.9 10.1,36.7 10.3,36.5C10.5,36.3 10.8,36.1 11.1,36C11.3,35.9 11.6,35.8 11.9,35.8C12.2,35.8 12.7,35.9 12.8,36' fill='none' stroke='%235c6a51' stroke-width='0.75' stroke-linecap='round' opacity='0.6'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%2378866b' opacity='0.6' transform='translate(12.8,36) rotate(195) scale(7.4)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.9' transform='translate(73.6,38.6) rotate(150) scale(6.8)'/><path d='M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z' fill='%234d5b44' opacity='0.9' transform='translate(24.9,39.2) rotate(2) scale(8.2)'/></svg>");
+    --stone-flaw: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='92' height='72' viewBox='0 0 92 72'><path d='M56.5,-0.5L54.3,3.4L52.6,7.6L50.8,11.7L48.4,15.5L46.9,19.8L44.8,23.8L43.3,28.1L42.2,32.4L41.1,36.8L40,41.2L38.5,45.4L37.3,49.7L35.8,54L34.2,58.2L32.2,62.2L30.8,66.5' fill='none' stroke='rgba(245,245,245,0.075)' stroke-width='0.45' stroke-linejoin='round'/><path d='M57,0L54.8,3.9L53.1,8.1L51.3,12.2L48.9,16L47.4,20.3L45.3,24.3L43.8,28.6L42.7,32.9L41.6,37.3L40.5,41.7L39,45.9L37.8,50.2L36.3,54.5L34.7,58.7L32.7,62.7L31.3,67' fill='none' stroke='%23000' stroke-width='0.6' stroke-linejoin='round' opacity='0.62'/><path d='M41.6,37.3L42.9,38.2L44.3,39.1L45.9,39.6L47.4,40.3L48.6,41.4L49.5,42.8L50.6,44L51.6,45.3' fill='none' stroke='%23000' stroke-width='0.45' stroke-linejoin='round' opacity='0.5'/><ellipse cx='48.1' cy='17.1' rx='0.9' ry='0.9' fill='%23000' opacity='0.32'/><ellipse cx='40.4' cy='39.8' rx='1.3' ry='1.1' fill='%23000' opacity='0.32'/><ellipse cx='39' cy='53.5' rx='1.5' ry='1.1' fill='%23000' opacity='0.32'/></svg>");
+}
+/* -- end generated ----------------------------------------------------------- */
+
+/* Sticky, so only the poem moves. top: 0 rather than the 1rem that would keep the
+   slab's inset while stuck: at 1rem the gap above it is transparent, and lines of
+   the poem would scroll up through the strip between the lintel and the top of the
+   window. Flush is the honest version -- the bar keeps its left and right inset,
+   and the content underneath it shares that inset exactly, so nothing ever slides
+   past its edges either.
+
+   z-index: 0 opens the stacking context that keeps the two weathering layers at
+   -1 behind the labels; being positioned, the whole bar still paints above the
+   in-flow content scrolling under it. */
+.navbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 0; }
+.nav-group-left, .nav-group-main, .nav-group-pagination, .nav-group-right { display: flex; align-items: center; }
+/* index.css pads every div by 4px to space the listing rows, and the nav groups nest
+   three deep, so a listing page's bar came out 48px tall against a poem page's 36px.
+   That did not matter until the fracture, which is drawn to a fixed 36px and would
+   otherwise appear to start halfway down the slab on half the site. .navbar div beats
+   a bare div on specificity, so this holds wherever index.css loads. */
+.navbar, .navbar div { padding-bottom: 0; }
+/* The vine hangs BASE px below the navbar box and the layout has to know about it.
+   Listing pages are what forced this: index.css starts both columns flush to the
+   top -- #container-chronology h3:first-child has padding-top: 0 by design -- so
+   the first heading came up under the leaves. 1.5rem is the 10px of overhang plus
+   air. Poem pages absorb it without moving: #container-parent is flex: 1 and
+   centres what it holds in whatever space is left. */
+.navbar { margin-bottom: 1.5rem; }
+
+/* The lintel. A slab a shade above the paper, lit along its top edge and shadowed
+   along its bottom, with grain over it. Both weathering layers sit at z-index -1
+   inside the stacking context .navbar opens, which puts them behind every label
+   without touching .nav at all -- and keeps dropdown.css's z-index: 100 working. */
+.navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--stone-grain) repeat 0 0, linear-gradient(178deg, #171717, #131313 55%, #0f0f0f);
+    box-shadow: inset 0 1px 0 rgba(245, 245, 245, 0.055), inset 0 -1px 0 #000;
+    pointer-events: none;
+}
+
+/* The fracture, and what got in through it. Percentages rather than pixels: the
+   images never scale, so no leaf is ever distorted, and a background positioned by
+   percentage cannot overflow its box, so none of this can force a scrollbar.
+   The -10px matches BASE in Tools/weathering.js and is load-bearing: it is what
+   puts the stem of all five images on the navbar's lower edge at once.
+
+   The last layer is the apron. The slab is opaque and hides whatever scrolls under
+   it, but the vine is not -- it is leaves on nothing, and once the bar went sticky
+   the poem showed through the gaps between them. This layer is transparent for the
+   38px the slab covers and paper for the 10px below it, so the text disappears
+   cleanly at the leaf tips instead of flickering between them. 38px is not the
+   navbar's height: it is this box's own height less the overhang, which is where
+   the navbar's lower edge falls whatever the bar measures. */
+.navbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 48px;
+    z-index: -1;
+    background:
+        var(--vine-root) no-repeat 24% bottom,
+        var(--vine-mid) no-repeat 45% bottom,
+        var(--vine-late) no-repeat 68% bottom,
+        var(--vine-runner) no-repeat 91% bottom,
+        var(--vine-stem) repeat-x 0 bottom,
+        linear-gradient(to bottom, transparent 38px, var(--paper) 38px);
+    pointer-events: none;
+}
+
+/* 0.82rem rather than the inherited size: capitals at a lowercase face's size read a good
+   deal larger than the text they sit above. Without the tracking, inscriptional capitals
+   close "home best themes about" into one word. */
+.nav, .dropbtn { font-family: 'Cinzel', Georgia, serif; font-weight: 400; font-size: 0.82rem; letter-spacing: 0.14em; }
+/* Wider left and right: the gap between words has to beat the tracking between letters */
+.nav { padding: 0.5rem 0.6rem; text-decoration: none; color: var(--muted); }
+.nav:hover { background-color: var(--hover); color: var(--ink); }
+/* First and last poem: keeps the pagination slot occupied without emitting a dead link */
+.nav-disabled { opacity: 0.35; }
+.nav-disabled:hover { background-color: transparent; }
+
+/* Each word is a block, the blocks have been in the wall a long time, and the wall
+   has moved. Everything here is under 0.6deg and under 2px: past that it stops
+   reading as settlement and starts reading as a broken stylesheet. Two of the
+   labels have had their tracking opened a thousandth as the joint widened.
+
+   These take effect because every .nav is a flex item and so blockified -- on a
+   bare inline <a> a transform is ignored outright. .dropbtn stands in for the
+   contact link, since transforming .dropdown itself would carry the menu with it. */
+.nav-group-main .nav:nth-child(1) { transform: translateY(0.5px) rotate(-0.4deg); }
+.nav-group-main .nav:nth-child(2) { transform: translateY(-0.5px) rotate(0.25deg); letter-spacing: 0.155em; }
+.nav-group-main .nav:nth-child(3) { transform: translateY(1.5px) rotate(0.55deg); }
+.nav-group-main .nav:nth-child(4) { transform: rotate(-0.2deg); }
+.nav-group-pagination .nav:nth-child(1) { transform: translateY(1px) rotate(0.35deg); }
+.nav-group-pagination .nav:nth-child(2) { transform: translateY(-0.5px) rotate(-0.3deg); }
+.dropbtn { transform: translateY(-1px) rotate(-0.3deg); }
+.nav-group-right .nav:nth-child(2) { transform: translateY(0.5px) rotate(0.45deg); letter-spacing: 0.128em; }
+.nav-group-right .nav:nth-child(3) { transform: translateY(-0.5px) rotate(-0.5deg); }
+
+@media only screen and (max-width : 512px)
+{
+    .navbar { flex-wrap: wrap; }
+    .nav-group-left, .nav-group-main, .nav-group-right { display: contents; }
+    .nav-group-pagination { flex-basis: 100%; justify-content: space-between; order: 1; }
+    /* "themes" pushed the row onto two lines; both of these are in the browser menu anyway */
+    #print, #pdf { display: none !important; }
+    /* The bar is two rows here and the vine has no single baseline left to follow,
+       so the growth is dropped rather than redrawn. The slab has no such problem --
+       it is a gradient, and stretches to whatever height the rows come to.
+       display: contents above also dissolves the groups, which takes the settling
+       nth-child selectors with it; the labels stand straight on a phone. */
+    .navbar::after { display: none; }
+    /* no vine here, so no overhang to leave room for */
+    .navbar { margin-bottom: 0.75rem; }
+}
+
+@media only print
+{
+    .navbar { display: none; }
+}

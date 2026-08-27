@@ -1,4 +1,4 @@
-*Offerings
+**Offerings
 07 April 2026
 
 <figure>

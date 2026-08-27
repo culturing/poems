@@ -1,4 +1,4 @@
-Without Fear And Trembling
+*Without Fear And Trembling
 13 January 2026
 
 I will repent, and I will swear to be chaste,

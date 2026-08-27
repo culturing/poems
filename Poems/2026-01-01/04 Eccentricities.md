@@ -1,4 +1,4 @@
-*Eccentricities
+**Eccentricities
 01 January 2026
 
 I know that you changed the words.

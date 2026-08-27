@@ -1,4 +1,4 @@
-Terror
+*Terror
 11 September 2018
 
 Planes, flames, wreckage.

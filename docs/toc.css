@@ -37,10 +37,8 @@ h1 {
     background-color: rgb(225, 225, 225);
 }
 
-/* The site's rating ramp, inverted for paper: on white the top of the scale is black rather
-   than the brightest grey. Half these rows sit on a grey stripe, so the floor stays a solid
-   reading grey rather than going as light as the screen's does. Three levels have room here
-   that five did not. */
+/* The site's rating ramp, inverted for paper. Half these rows sit on a grey stripe, so the
+   floor stays a solid reading grey rather than going as light as the screen's does. */
 .rated-0 { color: #5a5a5a; }
 .rated-1 { color: #2e2e2e; }
 .rated-2 { color: #000000; }

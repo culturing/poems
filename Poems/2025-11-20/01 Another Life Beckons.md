@@ -1,4 +1,4 @@
-Another Life Beckons
+*Another Life Beckons
 20 November 2025
 
 You are ready. You have weathered the storms.

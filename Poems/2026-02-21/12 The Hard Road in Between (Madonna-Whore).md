@@ -1,4 +1,4 @@
-*The Hard Road In Between (Madonna/Whore)
+**The Hard Road In Between (Madonna/Whore)
 21 February 2026
 
 I cannot determine if she

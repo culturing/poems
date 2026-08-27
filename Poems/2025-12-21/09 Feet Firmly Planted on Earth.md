@@ -1,4 +1,4 @@
-*Feet Firmly Planted on Earth
+**Feet Firmly Planted on Earth
 21 December 2025
 
 <figure>
@@ -34,7 +34,7 @@ But are dreams not their own door to reality?
 If so, then the answer is clear: we are meant to be.
 There are too many signs to ignore or write off as coincidence.
 Something is happening, something real,
-though the mind must play catchup and flail to understand...
+though the mind must play catch-up and flail to understand...
 can it be that understanding is not needed here,
 that the pull of some unseen gravity works its power
 in a way much stronger than any mind? If so,

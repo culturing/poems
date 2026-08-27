@@ -1,4 +1,4 @@
-Our Next Lives
+*Our Next Lives
 26 December 2025
 
 Let us go into our next lives

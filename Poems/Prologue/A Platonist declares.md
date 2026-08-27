@@ -1,3 +1,4 @@
+*A Platonist declares
 21 July 2022
 
 A Platonist declares that all is Soul,

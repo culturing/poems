@@ -1,4 +1,4 @@
-Paper Tower II
+*Paper Tower II
 03 March 2026
 
 They left the tower and started the long, winding road

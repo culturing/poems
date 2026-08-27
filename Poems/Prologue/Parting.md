@@ -1,4 +1,4 @@
-Parting
+*Parting
 02 April 2016
 
 Time takes. We weep.

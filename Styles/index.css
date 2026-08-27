@@ -1,9 +1,8 @@
-/* Listing pages are almost entirely links; underlining every one turns the page into a
-   grid of rules. The accent on hover carries the affordance instead, matching the date
-   headings. Loaded after common.css, so this wins. */
+/* Listing pages are almost entirely links; underlining every one turns the page into a grid
+   of rules. Loaded after common.css, so this wins. */
 a { text-decoration: none; }
-/* The rating ramp in common.css matches this rule's specificity exactly, and common.css loads
-   first, which is what lets a hover beat the rating it is hovering over */
+/* Same specificity as the rating ramp in common.css, which loads first -- that is what lets
+   a hover beat the rating underneath it */
 a:hover { color: var(--accent); }
 
 div { padding-bottom: 4px; }

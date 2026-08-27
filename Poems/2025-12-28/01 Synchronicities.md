@@ -1,4 +1,4 @@
-Synchronicities
+*Synchronicities
 28 December 2025
 
 It's amazing just how many signs, past and present,

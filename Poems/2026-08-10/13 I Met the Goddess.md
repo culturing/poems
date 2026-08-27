@@ -1,4 +1,4 @@
-*I Met the Goddess
+**I Met the Goddess
 10 August 2026
 
 I met the goddess and learned her name.

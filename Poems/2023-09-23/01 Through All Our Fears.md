@@ -1,4 +1,4 @@
-*Through All Our Fears
+**Through All Our Fears
 23 September 2023
 
 I have found my way now to the nether regions,
@@ -11,4 +11,4 @@ and it's never quite what you'd expect. Listen closely.
 The only way through is on *your* legs, with blood
 pumped by *your* heart, which comes from your parents.
 There is no deeper mystery than why we abide together,
-despite all our squabbling, despite all our fears.
+despite all our squabbling and through all our fears.

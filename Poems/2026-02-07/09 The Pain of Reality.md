@@ -1,4 +1,4 @@
-The Pain of Reality
+*The Pain of Reality
 07 February 2026
 
 <figure>

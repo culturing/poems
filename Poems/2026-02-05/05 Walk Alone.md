@@ -1,4 +1,4 @@
-Walk Alone
+*Walk Alone
 05 February 2026
 
 I must be prepared to walk alone. There is no road

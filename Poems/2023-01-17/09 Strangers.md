@@ -1,0 +1,23 @@
+**Strangers
+17 January 2023
+
+As I sit by candlelight,
+I know the strangers of the night
+who creep by windows fair and bright
+to haunt the streets of all delight,
+and all the days of love grown cold,
+and all the stories never told,
+and all the crying eyes behold
+the lying eyes both young and old.
+I see them in their shadows waiting,
+see their fearful forms debating
+whether love or lies abating
+offer respite to their waiting,
+whether love or lies can stir
+the shadows that have stolen her,
+the one whose love was soft as fur
+who bristles now with prickly hide.
+So come sit by my candlelight.
+Come feast your eyes upon the sight
+as strangers in the strangest night
+sit man and man, sit side by side.

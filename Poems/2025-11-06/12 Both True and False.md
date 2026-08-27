@@ -1,4 +1,4 @@
-Both True and False
+*Both True and False
 06 November 2025
 
 I recognized something that felt like home,

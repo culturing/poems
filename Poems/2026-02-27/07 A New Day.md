@@ -1,4 +1,4 @@
-A New Day
+*A New Day
 27 February 2026
 
 I am glad that you have awoken.

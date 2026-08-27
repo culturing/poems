@@ -1,4 +1,4 @@
-*Come What May
+**Come What May
 13 January 2026
 
 Even in paradise, one can find doubts, and these doubts

@@ -1,4 +1,4 @@
-Saint Teresa
+*Saint Teresa
 17 August 2026
 
 When the faithful discover eros

@@ -1,4 +1,4 @@
-Worth Fighting For
+*Worth Fighting For
 03 March 2026
 
 I see darkness in her, and it saddens me

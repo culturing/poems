@@ -1,4 +1,4 @@
-*The Eternal Dance
+**The Eternal Dance
 18 December 2025
 
 Tell me what I want, and I will

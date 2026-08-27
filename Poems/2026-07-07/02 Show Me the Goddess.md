@@ -1,4 +1,4 @@
-*Show Me the Goddess
+**Show Me the Goddess
 07 July 2026
 
 Show me the goddess in you

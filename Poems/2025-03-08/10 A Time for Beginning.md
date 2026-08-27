@@ -1,4 +1,4 @@
-A Time for Beginning
+**A Time for Beginning
 08 March 2025
 
 If there was ever a time for beginning, it's now,

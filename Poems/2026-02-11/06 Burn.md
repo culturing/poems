@@ -1,4 +1,4 @@
-*Burn
+Burn
 11 February 2026
 
 I feel your anger burn. Do you know who deserves it?

@@ -1,4 +1,4 @@
-Lord will it also be sweet
+*Lord will it also be sweet
 08 March 2025
 
 I have lived in a time when living

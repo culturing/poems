@@ -1,4 +1,4 @@
-The View Is Lovely
+**The View Is Lovely
 18 December 2025
 
 Your way is harder

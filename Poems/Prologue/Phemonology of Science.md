@@ -1,4 +1,4 @@
-Phenomenology of Science
+*Phenomenology of Science
 25 December 2021
 
 From Hegel's brain

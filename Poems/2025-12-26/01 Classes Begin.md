@@ -1,4 +1,4 @@
-Classes Begin
+*Classes Begin
 26 December 2025
 
 I have much to learn, but I am

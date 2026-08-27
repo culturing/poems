@@ -1,4 +1,4 @@
-*Risible Time
+Risible Time
 25 October 2022
 
 Born against odds in a risible time,

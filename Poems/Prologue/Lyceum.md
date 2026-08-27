@@ -1,4 +1,4 @@
-Lyceum
+*Lyceum
 28 June 2022
 
 Aristotle and friends walking amiably

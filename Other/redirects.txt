@@ -1,11 +1,8 @@
 # Old url -> new url, one pair per line, whitespace separated.
 #
-# Slugs are derived from poem titles, so editing a title changes the url and
-# orphans the old one. GitHub Pages cannot serve a 301, so each line here
-# generates a stub page with a meta refresh and a rel=canonical to the target.
-# Add a line here whenever a published poem's title changes.
-#
-# Seeded with the 18 urls renamed in c0cf2ea5.
+# Slugs derive from titles, so editing a published title orphans its url. GitHub Pages
+# cannot serve a 301, so each line here generates a stub page carrying a meta refresh
+# and a rel=canonical to the target. Seeded with the 18 urls renamed in c0cf2ea5.
 
 /2016/01/the-great-mortality/               /2016/01/the-great-mortality-famine-death-rebirth/
 /2016/09/a-place-we-can-still-go/           /2016/09/if-god-speaks-he-whispers/
@@ -16,8 +13,10 @@
 /2025/07/awaken-to-storms/                  /2025/07/woken-by-storms/
 /2025/08/wander-stormy-seas/                /2025/08/wander-on-stormy-seas/
 /2025/10/enveloping/                        /2025/10/envelop/
+/2025/11/what-your-desire-is-for/           /2025/11/the-ring-what-your-desire-is-for/
 /2025/12/matine/                            /2025/12/matinee/
-/2025/12/if-any-vigor-remains/              /2025/12/the-crucible-of-life-and-death/
+/2025/12/the-crucible-of-life-and-death/    /2025/12/if-any-vigor-remains/
+/2026/01/bloom/                             /2026/01/blossom-ii/
 /2026/02/who-youd-like-to-be/               /2026/02/who-you-would-like-to-be/
 /2026/03/11/a-woman-whom-you-can-admire/    /2026/03/11/a-woman-you-admire/
 /2026/03/31/stillpoint-of-wholeness/        /2026/03/31/still-point-of-wholeness/

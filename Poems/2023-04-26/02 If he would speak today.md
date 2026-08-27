@@ -1,0 +1,7 @@
+**If He Would Speak Today
+26 April 2023
+
+If he would speak today, the Poet
+must be modern, must be metal, but he
+must as well be living. He must
+vivify the modern soul.

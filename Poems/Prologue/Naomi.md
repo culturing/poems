@@ -1,4 +1,4 @@
-Naomi
+*Naomi
 10 May 2018
 
 What a sweet thing,

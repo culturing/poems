@@ -1,4 +1,4 @@
-*Theseus Says Goodbye
+**Theseus Says Goodbye
 23 March 2026
 
 Ariadne, it seems that you deserve your namesake.

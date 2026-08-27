@@ -1,4 +1,4 @@
-*If God Speaks, He Whispers
+**If God Speaks, He Whispers
 22 September 2016
 
 I have listened long

@@ -1,4 +1,4 @@
-*Forever To Yourself Be True
+**Forever To Yourself Be True
 09 December 2025
 
 All is quiet, and it's eerie

@@ -1,4 +1,4 @@
-The Ground is Lava
+*The Ground is Lava
 31 August 2022
 
 Late one morning, I ventured

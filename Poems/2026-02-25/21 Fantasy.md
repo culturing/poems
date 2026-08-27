@@ -1,4 +1,4 @@
-Fantasy
+*Fantasy
 25 February 2026
 
 Fantasy serves its purpose,

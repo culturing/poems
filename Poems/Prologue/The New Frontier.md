@@ -1,4 +1,4 @@
-The New Frontier
+*The New Frontier
 02 August 2022
 
 <figure>

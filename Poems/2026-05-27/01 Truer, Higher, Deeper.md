@@ -1,4 +1,4 @@
-Truer, Higher, Deeper
+*Truer, Higher, Deeper
 27 May 2026
 
 Drifting about, once more searching for myself

@@ -1,4 +1,4 @@
-*Life Is Strange
+**Life Is Strange
 26 December 2025
 
 Once more, with feeling, summoning

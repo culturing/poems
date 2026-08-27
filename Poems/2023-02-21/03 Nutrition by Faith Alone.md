@@ -1,4 +1,4 @@
-Nutrition by Faith Alone
+*Nutrition by Faith Alone
 21 February 2023
 
 <figure style="max-width:225px">

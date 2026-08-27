@@ -1,4 +1,4 @@
-*If I Can
+If I Can
 28 December 2025
 
 These are the harder poems, the darker truths

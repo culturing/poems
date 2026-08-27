@@ -1,4 +1,4 @@
-No Day But Today
+*No Day But Today
 18 December 2025
 
 <figure>

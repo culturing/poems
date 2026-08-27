@@ -1,4 +1,4 @@
-The Simple Self
+*The Simple Self
 31 March 2026
 
 The council of inner natures

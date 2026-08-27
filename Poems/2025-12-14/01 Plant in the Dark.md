@@ -1,4 +1,4 @@
-*Plant in the Dark
+**Plant in the Dark
 14 December 2025
 
 She was a plant in the dark.

@@ -1,4 +1,4 @@
-*Out of Myself
+**Out of Myself
 12 June 2026
 
 Out of myself, into reaches unknown,

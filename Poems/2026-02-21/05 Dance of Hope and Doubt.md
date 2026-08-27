@@ -1,4 +1,4 @@
-Dance of Hope and Doubt
+*Dance of Hope and Doubt
 21 February 2026
 
 The dance of hope and doubt

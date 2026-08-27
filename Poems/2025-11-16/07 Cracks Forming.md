@@ -1,4 +1,4 @@
-*Cracks Forming
+**Cracks Forming
 16 November 2025
 
 She watches the stars burn out, and each one

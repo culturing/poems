@@ -1,8 +1,81 @@
-/* latin */
+/* Cinzel sets the navbar and nothing else; Quattrocento sets everything else, poems included.
+   The third file is Greek, and wears the Quattrocento name rather than its own.
+
+   Cinzel is built from the upstream variable font with fontTools: a static instance pinned at
+   the axis value below, subset to the range that follows it, then compressed. Rebuilding it
+   means redoing all three steps -- a differently-pinned instance would change the weight of
+   every nav label. The unicode-ranges are generated rather than transcribed, and disjoint by
+   design. */
+
+/* -- the site ----------------------------------------------------------------- */
+
+/* A 2048 upem cut carrying its own hinting -- not built from the v2.000 TTFs sitting beside
+   it in this directory, which are upstream's 1000 upem. That difference is deliberate and was
+   measured: at 16px the 1000 upem cut renders less evenly, its x-height landing on 7.34px
+   where the hint program rounds neighbouring glyphs opposite ways and the line shimmers.
+   2048 is a power of two, so unit-to-pixel conversion adds no rounding of its own. Re-hinting
+   the 1000 upem cut with ttfautohint was tried and measured worse than either, so that is not
+   the way back if these ever need rebuilding.
+
+   This cut covers 230 codepoints, fewer than the ranges below declare -- dagger, minus,
+   per-mille and the carons among them. A character inside the range but absent from the font
+   drops through to Georgia rather than failing visibly, so the mismatch is quiet rather than
+   harmless. Nothing written so far uses one; the micro sign is the only near miss, and it is
+   routed to the Greek face on purpose. The real 700 is
+   here because without it the browser fakes bold from the regular, which is visibly not the
+   same letterforms. The family ships no italic, so every italic on the site is a slant the
+   browser computes -- a deliberate trade. Program.cs names this family for the PDF folios,
+   which come from the installed font rather than from here. */
 @font-face {
   font-family: 'Quattrocento';
   font-style: normal;
   font-weight: 400;
   src: url('quattrocento-regular-webfont.woff2') format('woff2'), url('quattrocento-regular-webfont.woff') format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+010C, U+010E, U+0110, U+011A, U+0131-0133, U+0143, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0237, U+0259, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2212, U+2215, U+2219, U+FB01-FB02;
+}
+
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: 700;
+  src: url('quattrocento-bold-webfont.woff2') format('woff2'), url('quattrocento-bold-webfont.woff') format('woff');
+  unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+010C, U+010E, U+0110, U+011A, U+0131-0133, U+0143, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0237, U+0259, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2212, U+2215, U+2219, U+FB01-FB02;
+}
+
+/* Alegreya's Greek, wearing the Quattrocento name so it resolves per character on the same
+   line. Quattrocento covers latin and latin-ext only -- its cmap reaches the Greek block for
+   the micro sign alone, and that codepoint is dropped from the ranges above so the two faces
+   never contend for a character.
+
+   Two exact weights, never the range '400 700': a range overlaps the regular's exact 400 and,
+   being declared later, wins the weight match outright, dropping every 400 on the site to the
+   browser's default serif while bold carries on working. The bold block serves a Greek word in
+   a title at regular weight, which is a far smaller fault than one arriving in Times. */
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: 400;
+  src: url('alegreya-greek-webfont.woff2') format('woff2'), url('alegreya-greek-webfont.woff') format('woff');
+  unicode-range: U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D1, U+03D5-03D7, U+03F0, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE;
+}
+
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: 700;
+  src: url('alegreya-greek-webfont.woff2') format('woff2'), url('alegreya-greek-webfont.woff') format('woff');
+  unicode-range: U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D1, U+03D5-03D7, U+03F0, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE;
+}
+
+/* -- the navbar --------------------------------------------------------------- */
+
+/* Roman inscriptional capitals, pinned at 400: the navbar never goes bold and never leans,
+   and with no heavier cut in the file a stray font-weight elsewhere cannot embolden it.
+   Cinzel has no true lowercase -- the small letters are small capitals. */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  src: url('cinzel-regular-webfont.woff2') format('woff2'), url('cinzel-regular-webfont.woff') format('woff');
+  unicode-range: U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+010C, U+010E, U+0110, U+011A, U+0131-0133, U+0143, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+2215, U+FB01-FB02;
 }

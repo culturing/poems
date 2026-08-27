@@ -1,4 +1,4 @@
-Emerge
+*Emerge
 11 July 2022
 
 In America, we know God

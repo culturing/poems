@@ -1,4 +1,4 @@
-*Toward Some Ithaca
+**Toward Some Ithaca
 28 December 2025
 
 The Mother's unwanted affections could ruin

@@ -1,4 +1,4 @@
-*A Seat at the Table
+**A Seat at the Table
 16 November 2025
 
 At the end of a long day, in the spaces between

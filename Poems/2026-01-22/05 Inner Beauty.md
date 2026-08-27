@@ -1,4 +1,4 @@
-*Inner Beauty
+Inner Beauty
 22 January 2026
 
 <figure style="max-width: 225px">

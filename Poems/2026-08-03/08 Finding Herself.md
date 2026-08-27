@@ -15,4 +15,4 @@ and powering her body's animation. This soul was still
 part of the world, still a holy shrine, still a part
 of the larger sacredness of life.
 But she now would fight harder and be more cautious
-to protect it from the life-destroying winds.
+to protect it from life-destroying winds.

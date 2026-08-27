@@ -1,4 +1,4 @@
-*Only to Strengthen
+**Only to Strengthen
 05 February 2026
 
 The ultimate degradation

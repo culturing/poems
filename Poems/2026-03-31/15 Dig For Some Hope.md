@@ -1,4 +1,4 @@
-*Dig For Some Hope
+**Dig For Some Hope
 31 March 2026
 
 He had finally arrived at the still point, the center

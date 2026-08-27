@@ -1,4 +1,4 @@
-Beyond Power
+*Beyond Power
 10 November 2021
 
 If Nietzsche were asked,

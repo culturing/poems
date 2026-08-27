@@ -1,4 +1,4 @@
-*Paper Tower
+**Paper Tower
 18 January 2026
 
 She sits at the center of her tower in prayer.

@@ -1,4 +1,4 @@
-*Quarter Moon
+**Quarter Moon
 26 December 2025
 
 A quarter moon dares me to ask bold questions,

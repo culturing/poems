@@ -1,4 +1,4 @@
-The End of Suffering
+*The End of Suffering
 06 August 2016
 
 I've heard that once there was suffering.

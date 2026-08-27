@@ -1,4 +1,4 @@
-*Will You Come?
+Will You Come?
 09 December 2025
 
 Will you come? I would like to

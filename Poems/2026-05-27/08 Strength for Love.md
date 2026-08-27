@@ -1,4 +1,4 @@
-Strength for Love
+*Strength for Love
 27 May 2026
 
 Sara was not my muse for long, though she did

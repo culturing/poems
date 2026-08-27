@@ -1,4 +1,4 @@
-Thinking Deeply
+**Thinking Deeply
 31 August 2022
 
 I have been to the place

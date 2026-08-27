@@ -1,4 +1,4 @@
-*Abundant Fuel
+**Abundant Fuel
 30 December 2025
 
 Still I return to this fire,

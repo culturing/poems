@@ -1,4 +1,4 @@
-*Next to the Flame
+**Next to the Flame
 10 February 2026
 
 Vanda is the Devourer, nemesis of every Oedipus,

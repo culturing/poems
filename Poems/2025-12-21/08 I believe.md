@@ -1,4 +1,4 @@
-I believe
+*I believe
 21 December 2025
 
 I believe it now, though it took a long time.

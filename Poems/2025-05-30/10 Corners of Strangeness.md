@@ -1,4 +1,4 @@
-Corners of Strangeness
+*Corners of Strangeness
 30 May 2025
 
 I am having the strangest life,

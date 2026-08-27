@@ -1,4 +1,4 @@
-*Paper Tower III
+**Paper Tower III
 12 March 2026
 
 They continued past the village,

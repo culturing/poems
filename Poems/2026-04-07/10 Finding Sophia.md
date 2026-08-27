@@ -1,4 +1,4 @@
-Finding Sophia
+*Finding Sophia
 07 April 2026
 
 It took me twelve years to find Sophia,

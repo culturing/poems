@@ -1,4 +1,4 @@
-Doubt
+*Doubt
 12 January 2024
 
 I have lived with this ache in my side
@@ -22,5 +22,5 @@ he shall not follow science.
 I go now to bed, to the sweeter rest,
 free from doubt and its faithful unfaithfulness,
 stewards of Science, but with this last hope,
-that some fruit of their labor may comfort me still
+that some fruit of their labor may comfort me
 even so.

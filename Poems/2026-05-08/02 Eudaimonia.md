@@ -1,4 +1,4 @@
-*Eudaimonia
+**Eudaimonia
 08 May 2026
 
 I am weaving a tapestry of the inner voices,

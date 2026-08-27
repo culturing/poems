@@ -1,4 +1,4 @@
-Closed Door
+*Closed Door
 25 February 2026
 
 The door remains closed,

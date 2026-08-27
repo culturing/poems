@@ -1,4 +1,4 @@
-*Anatomy of Shadows
+**Anatomy of Shadows
 31 January 2026
 
 Are you on the hunt, and am I the prey?

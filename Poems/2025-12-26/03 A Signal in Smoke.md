@@ -1,4 +1,4 @@
-*A Signal in Smoke
+**A Signal in Smoke
 26 December 2025
 
 A new pain, new decisions, the war of the magi

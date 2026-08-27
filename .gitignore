@@ -460,3 +460,9 @@ $RECYCLE.BIN/
 
 # Tagging tooling (local working directory; Other/tags.tsv is the tracked output)
 Tagging/
+
+# local scratch for the manual rating pass
+Tools/review-progress.json
+
+# Playwright MCP scratch (snapshots and console logs it writes beside the project)
+.playwright-mcp/

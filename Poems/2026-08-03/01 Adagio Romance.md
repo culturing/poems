@@ -1,4 +1,4 @@
-*Adagio Romance
+**Adagio Romance
 03 August 2026
 
 She wonders. He waits.

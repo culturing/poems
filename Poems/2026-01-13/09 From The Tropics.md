@@ -1,4 +1,4 @@
-From The Tropics
+*From The Tropics
 13 January 2026
 
 Greetings from the tropics, where love grows

@@ -1,4 +1,4 @@
-*Sacred Candle
+**Sacred Candle
 27 July 2026
 
 She carries a sacred candle

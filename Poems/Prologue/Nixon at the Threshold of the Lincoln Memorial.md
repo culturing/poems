@@ -1,4 +1,4 @@
-*Nixon at the Threshold of the Lincoln Memorial
+**Nixon at the Threshold of the Lincoln Memorial
 13 January 2019
 
 <figure>

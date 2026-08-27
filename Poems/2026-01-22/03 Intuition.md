@@ -1,4 +1,4 @@
-*Intuition
+Intuition
 22 January 2026
 
 You've come. No, not in real life, in that realer life,

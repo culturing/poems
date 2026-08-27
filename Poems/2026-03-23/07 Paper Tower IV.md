@@ -1,4 +1,4 @@
-Paper Tower IV
+*Paper Tower IV
 23 March 2026
 
 The hearth half-finished lies in a broken field.

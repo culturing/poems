@@ -1,0 +1,78 @@
+/* Part of the navbar, so it wears the navbar's greys */
+.dropbtn {
+    color: var(--muted);
+    cursor: pointer;
+  }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+}
+
+/* A fragment cut from the same block as the lintel: the same gradient, the same
+   grain, the same lit top edge and shadowed foot, and one fine flaw running down
+   from where it meets the bar. It takes the stone's vocabulary and none of the
+   vine's -- the growth in navbar.css belongs to the fracture it rooted in, and a
+   second colony on a menu that appears and disappears would say the wrong thing
+   about how long any of this took.
+
+   --stone-grain and --stone-flaw are declared on .navbar by the generated block in
+   navbar.css and reach here by inheritance, so the tablet cannot drift out of step
+   with the bar it hangs from. The drop shadow is the one thing the lintel has no
+   use for: this slab is the only piece of the wall standing away from it. */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    min-width: 100%;
+    background:
+        var(--stone-flaw) no-repeat 78% top,
+        var(--stone-grain) repeat 0 0,
+        linear-gradient(178deg, #171717, #131313 60%, #101010);
+    box-shadow:
+        inset 0 1px 0 rgba(245, 245, 245, 0.055),
+        inset 0 -1px 0 #000,
+        0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Cinzel at the navbar's own size and tracking. These sat in Quattrocento while
+   every label above them was inscriptional, which read as two different signs. */
+.dropdown-content a {
+    font-family: 'Cinzel', Georgia, serif;
+    font-weight: 400;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hover);
+    color: var(--ink);
+}
+
+/* Settled, on the same scale as the bar in navbar.css: under 0.4deg, under a pixel.
+   Three words in a column show a tilt far more readily than eight in a row, so
+   these run about half the amplitude of the ones upstairs. */
+.dropdown-content a:nth-child(1) { transform: translateY(0.5px) rotate(-0.3deg); }
+.dropdown-content a:nth-child(2) { transform: rotate(0.25deg); letter-spacing: 0.148em; }
+.dropdown-content a:nth-child(3) { transform: translateY(-0.5px) rotate(-0.15deg); }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media only screen and (max-width : 512px)
+{
+    /* The bar drops its weathering here -- see navbar.css -- so the tablet does too,
+       and goes back to being a plain panel on the paper. */
+    .dropdown-content { background: var(--paper); box-shadow: none; }
+    .dropdown-content a:nth-child(1),
+    .dropdown-content a:nth-child(2),
+    .dropdown-content a:nth-child(3) { transform: none; letter-spacing: 0.14em; }
+}

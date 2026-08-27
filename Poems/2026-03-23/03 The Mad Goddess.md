@@ -1,4 +1,4 @@
-*The Mad Goddess
+**The Mad Goddess
 23 March 2026
 
 He was not sure anymore that he understood anything.

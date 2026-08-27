@@ -1,4 +1,4 @@
-Blaze II
+*Blaze II
 14 February 2026
 
 I lack the words for how you make me feel.

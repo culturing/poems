@@ -1,4 +1,4 @@
-America or Aristotle
+*America or Aristotle
 13 January 2019
 
 O land of confusion, burning bright!

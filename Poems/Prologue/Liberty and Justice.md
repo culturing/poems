@@ -1,4 +1,4 @@
-Liberty and Justice
+*Liberty and Justice
 11 July 2022
 
 Someone should tell New England

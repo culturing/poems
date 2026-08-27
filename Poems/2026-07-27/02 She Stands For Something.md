@@ -1,4 +1,4 @@
-*She Stands For Something
+**She Stands For Something
 27 July 2026
 
 She stands for something celestial,

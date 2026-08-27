@@ -1,4 +1,4 @@
-Lone wolf howls
+*Lone wolf howls
 02 October 2018
 
 Lone wolf howls,

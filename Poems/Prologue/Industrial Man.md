@@ -1,4 +1,4 @@
-*Industrial Man
+**Industrial Man
 21 July 2022
 
 When I survey Industrial Man

@@ -1,4 +1,4 @@
-The Purpose of Power
+*The Purpose of Power
 02 June 2026
 
 The purpose of power is health,

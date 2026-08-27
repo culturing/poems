@@ -1,4 +1,4 @@
-A Glimpse
+*A Glimpse
 12 June 2026
 
 I glimpsed one

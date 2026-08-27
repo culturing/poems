@@ -1,4 +1,4 @@
-Struggle, Promethea
+*Struggle, Promethea
 28 December 2025
 
 I begin to understand, to see your burden.

@@ -1,4 +1,4 @@
-Succubus
+*Succubus
 21 February 2026
 
 So, you are a succubus, is that it? You're hardly the first.

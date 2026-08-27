@@ -1,0 +1,8 @@
+Clarity is like Death
+28 July 2023
+
+Clarity is like death, disallowing
+surprises, and hardly the one
+to revise what one knows,
+what one is, and the tragedy
+comes when one little expects it.

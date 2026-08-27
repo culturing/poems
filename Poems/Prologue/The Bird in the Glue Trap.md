@@ -1,4 +1,4 @@
-The Bird in the Glue Trap
+*The Bird in the Glue Trap
 06 April 2017
 
 It wasn't meant for you,

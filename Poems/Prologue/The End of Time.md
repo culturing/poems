@@ -1,4 +1,4 @@
-The End of Time
+*The End of Time
 17 October 2016
 
 I sing unto the end of time,

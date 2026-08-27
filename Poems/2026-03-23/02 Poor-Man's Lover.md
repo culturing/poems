@@ -1,4 +1,4 @@
-Poor Man's Lover
+*Poor Man's Lover
 23 March 2026
 
 A psychologist is a poor man's lover,

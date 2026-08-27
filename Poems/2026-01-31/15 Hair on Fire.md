@@ -1,4 +1,4 @@
-*Hair on Fire
+**Hair on Fire
 31 January 2026
 
 You are beautiful even with your hair on fire,

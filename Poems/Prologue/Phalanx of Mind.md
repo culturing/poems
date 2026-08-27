@@ -1,4 +1,4 @@
-Phalanx of Mind
+*Phalanx of Mind
 07 March 2022
 
 Those Reformers,

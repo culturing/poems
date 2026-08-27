@@ -1,4 +1,4 @@
-The Sexual Development of Exceptional People
+*The Sexual Development of Exceptional People
 25 January 2026
 
 It's well known that sexual development requires a spark,

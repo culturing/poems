@@ -1,4 +1,4 @@
-Rainbow
+*Rainbow
 10 August 2026
 
 A rainbow reminds of that other storm

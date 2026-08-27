@@ -1,4 +1,4 @@
-*The Great Motion
+The Great Motion
 25 October 2019
 
 Love is not it all, she said.

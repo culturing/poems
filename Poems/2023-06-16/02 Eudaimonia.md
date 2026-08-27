@@ -1,0 +1,17 @@
+*Eudaimonia
+16 June 2023
+
+In a room of thinkers, I was quiet,
+until each had taken his turn. I heard
+the arguments of Socrates and Zoroaster
+firmly interrupted by Confucius, who thought
+he might intervene and end the struggle.
+But all any of them wanted was to understand
+what man is, even Nietzsche, who embarrassed
+countless Germans, and his protegé, one
+Heidegger, who smoothed those rougher edges.
+Now all thinking ever was was thinking,
+this much we endorse, as thinkers,
+as the only ones. But what of friends
+sent from afar? Brought near by ritual?
+Is not this eudaimonia?

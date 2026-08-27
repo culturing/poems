@@ -1,4 +1,4 @@
-*Find Your Way Home
+**Find Your Way Home
 20 April 2026
 
 Lost and confused, too broken
@@ -13,8 +13,8 @@ of some other place, where dreams
 don't have to die or possess, where
 some thrive despite many impediments.
 She heard this call and responded.
-Together we walked a while, until
-I had to continue my journey elsewhere.
+Together we walked for a while, until
+we both had to journey elsewhere.
 
 I said to her:
 

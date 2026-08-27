@@ -46,6 +46,20 @@ h1, h3 { margin: 0; }
 .rated-1 a { color: #d2d2d2; }
 .rated-2 a { color: var(--ink); }
 
+/* The other end of the sticky pair in navbar.css: the lintel holds the top of the
+   window, this holds the foot, and only the poem between them moves. It is the last
+   flex item in the column, so it stretches to the full content width and the paper
+   fill becomes a band the text disappears behind -- without it the badge is an 88px
+   image with the poem sliding past on either side of it.
+
+   The fill is a gradient rather than a flat colour so the line of verse passing
+   under it fades out over 14px instead of being cut through the middle of its
+   letters. Invisible at rest: the band sits on paper and starts as paper. No rule
+   along its top either -- at rest that would be a new line on every page, and the
+   band is only ever a floor while you are actually scrolling. Nothing is lost
+   behind it, since sticky returns the badge to the flow once you reach the end. */
+#license { position: sticky; bottom: 0; padding-top: 0.75rem; background: linear-gradient(to bottom, transparent 0, var(--paper) 14px); }
+
 /* Reachable by crawlers and screen readers, absent from the visual design */
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 

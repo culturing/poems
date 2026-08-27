@@ -1,4 +1,4 @@
-Ursa Major
+*Ursa Major
 08 May 2026
 
 Anima rises,

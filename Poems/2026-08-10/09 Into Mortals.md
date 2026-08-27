@@ -1,4 +1,4 @@
-*Into Mortals
+**Into Mortals
 10 August 2026
 
 The mad goddess descends

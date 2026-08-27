@@ -1,4 +1,4 @@
-*Elsewhere
+**Elsewhere
 06 November 2025
 
 Fully aware of the absurdities of love,

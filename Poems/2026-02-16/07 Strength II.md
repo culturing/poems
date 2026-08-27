@@ -1,4 +1,4 @@
-*Strength II
+**Strength II
 16 February 2026
 
 I want your strength.
