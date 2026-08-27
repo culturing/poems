@@ -5,49 +5,188 @@ a { text-decoration: none; }
    a hover beat the rating underneath it */
 a:hover { color: var(--accent); }
 
-div { padding-bottom: 4px; }
-h1 { margin: 0; padding: 1rem; }
-h2 { margin: 0; padding-bottom: 1rem; }
-h3 { padding-top: 1rem; padding-bottom: 0.5rem; }
-#container-chronology h2 { padding-bottom: 0; }
-#container-chronology h3:first-child { padding-top: 0; }
-#print, .nav-group-pagination { display: none !important; }
+/* One column, centred, with the light pool in common.css sitting off to the left of it.
+   The asymmetry of the page comes from the light rather than from the column, which means
+   it survives every width without a single breakpoint moving it. */
+#container { display: flex; flex-direction: row; justify-content: center; }
+#container-parent { display: flex; flex-direction: column; flex: 1; padding-bottom: 7rem; }
+#container-chronology { width: 100%; max-width: 42rem; }
 
-.archive h1 { padding: 0 0 1rem 0; font-size: 1.5em; }
+/* Long lists end in the dark rather than at a hard edge. Fixed, so it is a property of the
+   window and not of the list, and paired with the padding above so that scrolling to the
+   end of a list always leaves the last title clear of it -- the band only ever covers
+   ground the list has already finished with. */
+#container-parent::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 7rem;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.85) 52%, var(--void) 100%);
+}
 
-/* 31 themes in one column would scroll; columns keep the whole set on one screen */
-.theme-list { columns: 3; column-gap: 2.5rem; }
-.theme-list div { break-inside: avoid; }
-.theme-list .count { margin-left: 0.4rem; color: var(--muted); font-size: 0.72rem; font-variant-numeric: tabular-nums; }
-.archive .breadcrumb { margin: 0; padding-bottom: 0.5rem; color: var(--muted); }
-.archive .breadcrumb a { color: var(--muted); text-decoration-color: var(--rule); }
+/* -- the stem ------------------------------------------------------------------ */
+
+/* Each date is a node on one continuous line. The line is a border on the node itself
+   rather than on a wrapper, so consecutive nodes abut into a single stroke and a page with
+   no dated groups -- a day archive, a one-year theme -- simply has no stem, rather than a
+   bare line down the side of a flat list.
+
+   The dot is filled with --paper, not left hollow: the border-left runs behind it, and an
+   unfilled dot would have the line drawn through its middle. */
+.node { position: relative; border-left: 1px solid var(--rule); padding: 0 0 2rem 2.75rem; }
+.node::before { content: ""; position: absolute; left: -4px; top: 0.4rem; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1px solid var(--muted); }
+.node::after { content: ""; position: absolute; left: 6px; top: 0.72rem; width: 1.5rem; height: 1px; background: var(--rule); }
+
+/* Cinzel here and in the navbar, and nowhere else: a date is a label on the structure, not
+   part of the writing. Small capitals at this size need the tracking to stay separable. */
+.node > h3 { font-family: 'Cinzel', Georgia, serif; font-size: 0.69rem; font-weight: 400; letter-spacing: 0.24em; color: var(--muted); }
+.node > h3 a { color: var(--muted); }
+.node > h3 a:hover { color: var(--ink); }
+
+.leaves { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; }
+/* fit-content keeps the row as wide as its title, so the hover target is the title and not
+   the empty half of the column beside it */
+.leaves > div { position: relative; width: fit-content; max-width: 100%; }
+
+/* The opening line, out of flow entirely: it takes no width, so nothing moves when it
+   arrives and the column stays the width of its titles. A whisper rather than a second
+   column -- it is there to make you curious about one poem, not to be read down. */
+.opening {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 1.5rem;
+    white-space: nowrap;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--whisper);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+.leaves > div:hover .opening { opacity: 1; }
+
+/* -- archives and headings ------------------------------------------------------ */
+
+h1 { margin: 0; }
+.archive h1 { padding: 0 0 2rem 0; font-size: 1.5em; color: var(--ink); }
+.archive .breadcrumb { margin: 0; padding-bottom: 0.6rem; color: var(--muted); }
+.archive .breadcrumb a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
 .archive .breadcrumb a:hover { text-decoration-color: var(--accent); }
-.archive h1 { color: var(--ink); }
+
+/* -- /themes/ -------------------------------------------------------------------- */
+
+/* Nine steps of size and grey carry the counts, so the field is a shape before it is a
+   list: what the collection is mostly about is legible without reading a number. Ordered
+   alphabetically rather than by size -- sorted, it would be a staircase, and the point is
+   that it looks grown. */
+.theme-list { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 1rem 1.9rem; max-width: 56rem; margin: 0 auto; padding: 2rem 0; }
+.theme { position: relative; }
+.theme a { color: inherit; }
+.theme a:hover { color: var(--accent); }
+
+/* The count stays in the markup for crawlers and screen readers and comes forward only
+   under the pointer. Out of flow, so a number appearing never reflows the field. */
+.theme .count { position: absolute; left: 100%; top: 0.1em; margin-left: 0.4rem; font-size: 0.62rem; color: var(--whisper); font-variant-numeric: tabular-nums; opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
+.theme:hover .count { opacity: 1; }
+
+.w1 { color: #6e6e6e; } .w2 { color: #7d7d7d; } .w3 { color: #8c8c8c; }
+.w4 { color: #9c9c9c; } .w5 { color: #ababab; } .w6 { color: #bababa; }
+.w7 { color: #c9c9c9; } .w8 { color: #d9d9d9; } .w9 { color: var(--ink); }
+
+.theme-list .w1 { font-size: 0.82rem; } .theme-list .w2 { font-size: 0.88rem; }
+.theme-list .w3 { font-size: 0.95rem; } .theme-list .w4 { font-size: 1.05rem; }
+.theme-list .w5 { font-size: 1.18rem; } .theme-list .w6 { font-size: 1.34rem; }
+.theme-list .w7 { font-size: 1.54rem; } .theme-list .w8 { font-size: 1.78rem; }
+.theme-list .w9 { font-size: 2.1rem; }
+
+/* -- a theme's own page ---------------------------------------------------------- */
+
+/* The rail is a shape as well as a set of jumps: the years a theme kept returning in are
+   the bright ones. Greys only, no size -- a column of numbers that changed size would
+   never settle into a straight edge to read down. */
+.railed { display: flex; flex-direction: row; align-items: flex-start; gap: 3.5rem; }
+.year-rail { position: sticky; top: 1rem; flex: 0 0 4rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.85rem; border-right: 1px solid var(--rule); padding-right: 1.4rem; font-size: 0.8rem; font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
+.year-rail a:hover { color: var(--accent); }
+.railed-body { flex: 1; min-width: 0; }
+/* The rail jumps to the node, and the node opens with its date, so the scroll has to stop
+   far enough down that the date is not under the navbar. The bar is sticky and about 3.25rem
+   tall -- 1rem of its own padding over a 2.25rem row -- so anything less than that put the
+   heading behind it and landed the eye on the first poem instead. The rest is air, so the
+   date arrives clear of the bar rather than tucked against it. */
+.railed-body .node, .railed-body .year { scroll-margin-top: 5rem; }
+
+/* A theme hub is a reference, not a reading column: three columns of titles beside the rail
+   rather than one column three times as long. No stem and no year headings in the body --
+   the rail is the heading, and a second set of years beside it would say it twice. */
+.theme-columns { columns: 3; column-gap: 3.5rem; }
+.theme-columns > div { break-inside: avoid; padding-bottom: 0.55rem; }
+.year { padding-bottom: 2.25rem; }
+
+/* The same Cinzel label the stem puts on a date, with the rule carrying the eye across the
+   full width of the columns beneath it -- the years are what the white space between the
+   sections was already marking, and this says so. */
+.year-mark { display: flex; align-items: center; gap: 1rem; font-family: 'Cinzel', Georgia, serif; font-size: 0.69rem; font-weight: 400; letter-spacing: 0.24em; color: var(--muted); padding-bottom: 1.2rem; }
+.year-mark::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+/* -- /index/ ---------------------------------------------------------------------- */
+
+/* Every letter is present whether or not it has poems: the rail is a fixed shape you learn
+   once, and dropping the empty ones would move every letter after them. */
+.rail { display: flex; flex-wrap: wrap; gap: 1.15rem; padding-bottom: 1.2rem; margin-bottom: 2.6rem; border-bottom: 1px solid var(--rule); font-family: 'Cinzel', Georgia, serif; font-size: 0.78rem; letter-spacing: 0.1em; }
+.rail a { color: var(--muted); }
+.rail a:hover { color: var(--accent); }
+.rail-empty { color: var(--rule); }
+
+.letters { display: flex; flex-direction: column; gap: 2.8rem; }
+/* Clears the sticky navbar, as the year rail does */
+.letter { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1.5rem; scroll-margin-top: 5rem; }
+.letter-mark { margin: 0; font-family: 'Cinzel', Georgia, serif; font-size: 1rem; font-weight: 400; color: var(--whisper); }
+.letter-list { columns: 3; column-gap: 2.5rem; }
+.letter-list > div { break-inside: avoid; padding-bottom: 0.45rem; }
+
+/* The index is the one page that wants to be wider than a column of verse: it is a
+   reference, and three columns of it beat one column three times as long. */
+.archive .rail, .archive .letters { max-width: none; }
 
 @media only screen and (min-width : 769px)
 {
-    #container { display: flex; flex-direction: row; justify-content: center; }
-    #container-parent { display: flex; flex-direction: column; justify-content: center; flex: 1; }
-    #container-chronology { padding-right: 24px; }
-    #container-index { padding-left: 24px; }
-    #header { display: flex; flex-direction: row; align-items: baseline; }
-    #header a { margin-left: 1rem; }
+    /* /index/ and /themes/ are reference pages rather than reading columns */
+    #container-chronology:has(.letters), #container-chronology:has(.theme-list) { max-width: 64rem; }
+    #container-chronology:has(.railed) { max-width: 52rem; }
+    #container-chronology:has(.theme-columns) { max-width: 64rem; }
 }
 
 @media only screen and (max-width : 768.99px)
 {
-    h1 { padding-left: 0; }
-    #container-index h2 { padding-top: 2rem; }
-    #container-chronology { padding-top: 1rem;}
-}
-
-@media only screen and (max-width : 768.99px)
-{
-    .theme-list { columns: 2; }
+    .letter-list { columns: 2; }
+    .theme-columns { columns: 2; column-gap: 2.5rem; }
+    .theme-list { gap: 0.9rem 1.5rem; }
+    .theme-list .w9 { font-size: 1.7rem; }
+    .theme-list .w8 { font-size: 1.5rem; }
+    .theme-list .w7 { font-size: 1.34rem; }
 }
 
 @media only screen and (max-width : 512px)
 {
-    #container-parent { flex: none; }
-    .theme-list { columns: 1; }
+    /* No pointer, no hover: the opening line and the theme counts have no way to be asked
+       for on a phone, and both would be sitting there permanently invisible. The count
+       comes back as ordinary text, since the field alone is a coarser signal on one column. */
+    .opening { display: none; }
+    .theme .count { position: static; opacity: 1; margin-left: 0.35rem; }
+    .theme-list { columns: 1; justify-content: flex-start; }
+    .letter-list { columns: 1; }
+    .theme-columns { columns: 1; }
+    .letter { grid-template-columns: 1.75rem minmax(0, 1fr); gap: 1rem; }
+    /* The rail goes entirely. Laid flat it was two rows of years above every list, which is
+       most of a phone screen spent on navigation before a single title; and a jump-to-year
+       matters least on the device where the whole page is one column anyway. */
+    .railed { display: block; }
+    .year-rail { display: none; }
+    .node { padding-left: 1.75rem; }
+    .node::after { width: 0.75rem; }
 }

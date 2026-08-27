@@ -30,6 +30,11 @@ class Poem : Content
     // Used for <meta name="description">, Open Graph and the RSS feed
     public string Description { get; set; }
 
+    // The poem's opening line, shown beside its title in a listing on hover. Short enough
+    // to sit on one row; a poem that opens on an epigraph or a blank line falls back to
+    // the first line that carries words.
+    public string Opening { get; set; } = string.Empty;
+
     // Theme tags from Other/tags.tsv, most salient first
     public List<string> Tags { get; set; } = new List<string>();
 

@@ -1,34 +1,67 @@
-/* Part of the navbar, so it wears the navbar's greys */
-.dropbtn {
-    color: var(--muted);
-    cursor: pointer;
-  }
-  
+/* A <details> rather than a hover panel. Hover was the wrong interaction twice over: a touch
+   device has no pointer to hover with and fires a synthetic one on tap, so the panel opened
+   and shut on the same gesture; and on a mouse it closed on the diagonal everyone actually
+   moves in -- out of the button and down towards the item they want, which briefly leaves
+   both. Click to open, click to close, identically on every device.
+
+   <details> also brings the keyboard for free: <summary> is focusable and toggles on Enter
+   and Space, which the old <div> could not do at all. */
 .dropdown {
     position: relative;
     display: inline-block;
     padding: 0;
 }
 
+/* The disclosure triangle goes -- twice, because the two engines hide it differently and
+   neither alone is enough. The label is the affordance; a marker beside it would be the
+   only glyph of its kind in the navbar. */
+.dropbtn {
+    display: block;
+    list-style: none;
+    cursor: pointer;
+    color: var(--muted);
+}
+.dropbtn::-webkit-details-marker { display: none; }
+.dropbtn::marker { content: ""; }
+.dropbtn:hover { background-color: var(--hover); color: var(--ink); }
+.dropdown[open] > .dropbtn { color: var(--ink); }
+
+/* Right-aligned rather than left: contact is the last item in the row, and a panel hanging
+   left from it would open off the edge of the window on a narrow screen. --loam rather than
+   --paper so the panel is legibly a surface in front of the page and not a hole in it; the
+   rule finishes the separation where the two are closest. */
 .dropdown-content {
-    display: none;
     position: absolute;
+    top: 100%;
+    right: 0;
     z-index: 100;
-    background-color: var(--paper);
+    background-color: var(--loam);
+    border: 1px solid var(--rule);
+    min-width: 100%;
 }
 
 .dropdown-content a {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 0.69rem;
+    letter-spacing: 0.26em;
     color: var(--muted);
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.1rem;
     text-decoration: none;
     display: block;
+    white-space: nowrap;
 }
 
-.dropdown-content a:hover {
-    background-color: var(--hover);
-    color: var(--ink);
+.dropdown-content a:hover { background-color: var(--hover); color: var(--ink); }
+
+@media only screen and (max-width : 512px)
+{
+    /* The panel would otherwise hang off the right edge of a 390px screen, where the row is
+       already spread to both margins */
+    .dropdown-content { right: auto; left: 50%; transform: translateX(-50%); }
+    .dropdown-content a { padding: 0.85rem 1.1rem; }
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+@media only print
+{
+    .dropdown { display: none; }
 }
