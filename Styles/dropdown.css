@@ -40,7 +40,13 @@
     min-width: 100%;
 }
 
-.dropdown-content a {
+/* Anchored to the left edge for the filter, which sits at the left end of the bar */
+.dropdown-left .dropdown-content { left: 0; right: auto; }
+
+/* Buttons and links share the panel: the filter's items do something rather than go
+   somewhere, but they are the same object to a reader and are built the same way. */
+.dropdown-content a,
+.dropdown-content button {
     font-family: 'Cinzel', Georgia, serif;
     font-size: 0.69rem;
     letter-spacing: 0.26em;
@@ -51,14 +57,18 @@
     white-space: nowrap;
 }
 
-.dropdown-content a:hover { background-color: var(--hover); color: var(--ink); }
+.dropdown-content button { width: 100%; text-align: left; background: none; border: 0; cursor: pointer; }
+.dropdown-content a:hover,
+.dropdown-content button:hover { background-color: var(--hover); color: var(--ink); }
 
 @media only screen and (max-width : 512px)
 {
     /* The panel would otherwise hang off the right edge of a 390px screen, where the row is
        already spread to both margins */
     .dropdown-content { right: auto; left: 50%; transform: translateX(-50%); }
-    .dropdown-content a { padding: 0.85rem 1.1rem; }
+    .dropdown-left .dropdown-content { left: 50%; }
+    .dropdown-content a,
+    .dropdown-content button { padding: 0.85rem 1.1rem; }
 }
 
 @media only print

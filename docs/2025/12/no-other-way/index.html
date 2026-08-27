@@ -31,12 +31,52 @@
     <script type="application/ld+json">[{"@context":"https://schema.org","@type":"CreativeWork","name":"No Other Way","description":"Life is funny, isn\u0027t it, but not always in a way that brings laughter, sometimes in a way that brings pain. I feel funny like that. But I trust the pain to\u2026","additionalType":"https://schema.org/Poem","url":"https://poems.culturing.net/2025/12/no-other-way/","author":{"@type":"Person","name":"culturing","sameAs":["https://bsky.app/profile/culturing.bsky.social","https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ","https://github.com/culturing"],"url":"https://poems.culturing.net","publishingPrinciples":"https://poems.culturing.net/about/"},"copyrightHolder":{"@type":"Person","name":"culturing","sameAs":["https://bsky.app/profile/culturing.bsky.social","https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ","https://github.com/culturing"],"url":"https://poems.culturing.net","publishingPrinciples":"https://poems.culturing.net/about/"},"copyrightYear":2025,"dateModified":"2026-08-27","datePublished":"2025-12-16","genre":"Poem","headline":"No Other Way","inLanguage":"en-us","isAccessibleForFree":true,"keywords":"healing, grief, hope","publishingPrinciples":"https://poems.culturing.net/about/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"culturing","item":"https://poems.culturing.net/"},{"@type":"ListItem","position":2,"name":"2025","item":"https://poems.culturing.net/2025/"},{"@type":"ListItem","position":3,"name":"December","item":"https://poems.culturing.net/2025/12/"},{"@type":"ListItem","position":4,"name":"No Other Way","item":"https://poems.culturing.net/2025/12/no-other-way/"}]}]</script>
 </head>
 <body>
-    <div class="navbar">
-    <a class="wordmark" href="/">culturing</a>
+    <script>
+// Runs at the top of the body, before any listing has been parsed, so the filter is applied
+// in the first paint rather than after one. Delegated from the document because the buttons
+// below it do not exist yet when this executes.
+(function () {
+    var root = document.documentElement;
+    root.className += " js";
+
+    var tier = "0";
+    try { tier = localStorage.getItem("tier") || "0"; } catch (e) { }
+    if (tier !== "1" && tier !== "2") tier = "0";
+    root.classList.add("tier-" + tier);
+
+    document.addEventListener("click", function (e) {
+        var button = e.target.closest && e.target.closest(".tier-btn");
+        if (!button) return;
+        var chosen = button.getAttribute("data-tier");
+        root.classList.remove("tier-0", "tier-1", "tier-2");
+        root.classList.add("tier-" + chosen);
+        try { localStorage.setItem("tier", chosen); } catch (e) { }
+
+        // <details> has no idea the choice was made inside it
+        var panel = button.closest("details");
+        if (panel) panel.open = false;
+    });
+})();
+</script>
+<div class="navbar">
+    <div class="nav-group-left">
+        <a class="wordmark" href="/">culturing</a>
+        <details class="dropdown dropdown-left tiers">
+            <summary class="nav dropbtn" aria-label="Filter poems by rating">
+                <span class="tier-name" data-tier="0">all</span>
+                <span class="tier-name" data-tier="1">better</span>
+                <span class="tier-name" data-tier="2">best</span>
+            </summary>
+            <div class="dropdown-content">
+                <button type="button" class="tier-btn" data-tier="0">all</button>
+                <button type="button" class="tier-btn" data-tier="1">better</button>
+                <button type="button" class="tier-btn" data-tier="2">best</button>
+            </div>
+        </details>
+    </div>
     <div class="nav-group-right">
-        <a class="nav" href="/best/">best</a>
-        <a class="nav" href="/themes/">themes</a>
         <a class="nav" href="/index/">index</a>
+        <a class="nav" href="/themes/">themes</a>
         <a class="nav" href="/about/">about</a>
         <a id="pdf" class="nav" href="/culturing.pdf">pdf</a>
         <details class="dropdown">
@@ -50,8 +90,8 @@
     </div>
 </div>
 
-    <a id="previous" class="edge edge-prev" rel="prev" href="/2025/12/fetch-it/"><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 8 12l6.5 7"/></svg><span class="edge-label">Fetch It</span></a>
-    <a id="next" class="edge edge-next" rel="next" href="/2025/12/clothes-back-on/"><span class="edge-label">Clothes Back On</span><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 16 12l-6.5 7"/></svg></a>
+    <a id="previous" class="edge edge-prev" data-edge="prev" data-tier="0" rel="prev" href="/2025/12/fetch-it/"><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 8 12l6.5 7"/></svg><span class="edge-label">Fetch It</span></a><a class="edge edge-prev" data-edge="prev" data-tier="1" rel="prev" href="/2025/12/am-i-right/"><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 8 12l6.5 7"/></svg><span class="edge-label">Am I Right?</span></a><a class="edge edge-prev" data-edge="prev" data-tier="2" rel="prev" href="/2025/12/two-black-sheep/"><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 8 12l6.5 7"/></svg><span class="edge-label">Two Black Sheep</span></a>
+    <a id="next" class="edge edge-next" data-edge="next" data-tier="0" rel="next" href="/2025/12/clothes-back-on/"><span class="edge-label">Clothes Back On</span><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 16 12l-6.5 7"/></svg></a><a class="edge edge-next" data-edge="next" data-tier="1" rel="next" href="/2025/12/cant-be-put-out/"><span class="edge-label">Can&#39;t Be Put Out</span><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 16 12l-6.5 7"/></svg></a><a class="edge edge-next" data-edge="next" data-tier="2" rel="next" href="/2025/12/the-view-is-lovely/"><span class="edge-label">The View Is Lovely</span><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 16 12l-6.5 7"/></svg></a>
     <div id="container-parent">
         <div id="container">
             <div id="content" class="poem">

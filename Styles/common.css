@@ -29,6 +29,14 @@
        Both are alphas, and both are zeroed under print and forced-colors below. */
     --glow:  0.055;
     --shade: 0.55;
+
+    /* The height of the sticky navbar, which anything scrolled to by anchor has to clear.
+       It is 1rem of the bar's own top padding over a 2.25rem row -- a 1.25rem line box with
+       0.5rem of padding above and below it -- so it moves only if the nav's padding or the
+       body's line-height does. Landing an anchor exactly here puts the heading flush against
+       the bar, with whatever precedes it hidden behind the solid part rather than showing
+       through the 12px the fill spends fading out. */
+    --bar: 3.25rem;
 }
 
 /* Full-height flex column so #container-parent can claim exactly the leftover space between

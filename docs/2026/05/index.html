@@ -30,12 +30,52 @@
     <script type="application/ld+json">[{"@context":"https://schema.org","@type":"CollectionPage","name":"May 2026","description":"The 43 poems culturing published in May 2026.","url":"https://poems.culturing.net/2026/05/","inLanguage":"en-us","isAccessibleForFree":true},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"culturing","item":"https://poems.culturing.net/"},{"@type":"ListItem","position":2,"name":"2026","item":"https://poems.culturing.net/2026/"},{"@type":"ListItem","position":3,"name":"May","item":"https://poems.culturing.net/2026/05/"}]}]</script>
 </head>
 <body>
-    <div class="navbar">
-    <a class="wordmark" href="/">culturing</a>
+    <script>
+// Runs at the top of the body, before any listing has been parsed, so the filter is applied
+// in the first paint rather than after one. Delegated from the document because the buttons
+// below it do not exist yet when this executes.
+(function () {
+    var root = document.documentElement;
+    root.className += " js";
+
+    var tier = "0";
+    try { tier = localStorage.getItem("tier") || "0"; } catch (e) { }
+    if (tier !== "1" && tier !== "2") tier = "0";
+    root.classList.add("tier-" + tier);
+
+    document.addEventListener("click", function (e) {
+        var button = e.target.closest && e.target.closest(".tier-btn");
+        if (!button) return;
+        var chosen = button.getAttribute("data-tier");
+        root.classList.remove("tier-0", "tier-1", "tier-2");
+        root.classList.add("tier-" + chosen);
+        try { localStorage.setItem("tier", chosen); } catch (e) { }
+
+        // <details> has no idea the choice was made inside it
+        var panel = button.closest("details");
+        if (panel) panel.open = false;
+    });
+})();
+</script>
+<div class="navbar">
+    <div class="nav-group-left">
+        <a class="wordmark" href="/">culturing</a>
+        <details class="dropdown dropdown-left tiers">
+            <summary class="nav dropbtn" aria-label="Filter poems by rating">
+                <span class="tier-name" data-tier="0">all</span>
+                <span class="tier-name" data-tier="1">better</span>
+                <span class="tier-name" data-tier="2">best</span>
+            </summary>
+            <div class="dropdown-content">
+                <button type="button" class="tier-btn" data-tier="0">all</button>
+                <button type="button" class="tier-btn" data-tier="1">better</button>
+                <button type="button" class="tier-btn" data-tier="2">best</button>
+            </div>
+        </details>
+    </div>
     <div class="nav-group-right">
-        <a class="nav" href="/best/">best</a>
-        <a class="nav" href="/themes/">themes</a>
         <a class="nav" href="/index/">index</a>
+        <a class="nav" href="/themes/">themes</a>
         <a class="nav" href="/about/">about</a>
         <a id="pdf" class="nav" href="/culturing.pdf">pdf</a>
         <details class="dropdown">

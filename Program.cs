@@ -35,7 +35,6 @@ class Program
 
     static Markdown md = new Markdown();
     static string IndexTemplate = File.ReadAllText("Templates/index.html");
-    static string BestTemplate = File.ReadAllText("Templates/best.html");
     static string AboutTemplate = File.ReadAllText("Templates/about.html");
     static string ContentTemplate = File.ReadAllText("Templates/content.html");
     static string ArchiveTemplate = File.ReadAllText("Templates/archive.html");
@@ -129,37 +128,38 @@ class Program
         // Seventeen years of a chronology is a long way to scroll to reach 2010
         string chronologyHtml = $"<div class=\"railed\">{YearRail(yearsSeen)}<div class=\"railed-body\">{chronology}</div></div>";
 
-    // Build Best
-        // Grouped by year rather than by date. At a poem or two a week the date headings
-        // outnumbered the poems left under them once everything unrated was filtered out.
-        var best = new StringBuilder();
-        foreach(IGrouping<int, Poem> yearGroup in Poems.Where(poem => poem.Bold)
-            .GroupBy(poem => poem.PublicationDate.Year).OrderByDescending(group => group.Key))
-        {
-            best.AppendLine($"<div class=\"node\"><h3><a href=\"/{yearGroup.Key}/\">{yearGroup.Key}</a></h3><div class=\"leaves\">");
-            foreach(Poem poem in yearGroup.OrderByDescending(poem => poem.PublicationDate))
-                best.AppendLine(PoemRow(poem, withOpening: true));
-            best.AppendLine("</div></div>");
-        }
-        string bestChronologyHtml = best.ToString();
-
         Dictionary<string, PageHash> hashes = SitemapGenerator.GetHashes();
 
     // Set previous and next links
         Person author = BuildAuthor();
         List<Poem> OrderedPoems = Poems.OrderBy(poem => poem.PublicationDate).ToList();
+
+        var previousAt = new int[3][];
+        var nextAt = new int[3][];
+        for (int tier = 0; tier < 3; tier++)
+            (previousAt[tier], nextAt[tier]) = NeighbourChain(OrderedPoems, tier);
+
         for (int i = 0; i < OrderedPoems.Count; ++i)
         {
             Poem poem = OrderedPoems[i];
             string canonicalUrl = BaseUrl + poem.UrlPath;
 
-            // At the ends of the sequence the slot becomes a span, so no link points nowhere
-            string previousLink = i > 0
-                ? EdgeLink("previous", "prev", OrderedPoems[i-1])
-                : EdgeDisabled("previous", "prev");
-            string nextLink = i < OrderedPoems.Count - 1
-                ? EdgeLink("next", "next", OrderedPoems[i+1])
-                : EdgeDisabled("next", "next");
+            // All three tiers ship with the page, and css shows the one the reader has
+            // chosen: switching filter is a class on <html>, never a request. At the ends of
+            // a chain the slot becomes a span, so no link points nowhere.
+            var previous = new StringBuilder();
+            var next = new StringBuilder();
+            for (int tier = 0; tier < 3; tier++)
+            {
+                previous.Append(previousAt[tier][i] >= 0
+                    ? EdgeLink("prev", tier, OrderedPoems[previousAt[tier][i]])
+                    : EdgeDisabled("prev", tier));
+                next.Append(nextAt[tier][i] >= 0
+                    ? EdgeLink("next", tier, OrderedPoems[nextAt[tier][i]])
+                    : EdgeDisabled("next", tier));
+            }
+            string previousLink = previous.ToString();
+            string nextLink = next.ToString();
 
             string contents = File.ReadAllText(poem.FilePath);
             contents = contents.Replace("{{previous}}", previousLink);
@@ -212,7 +212,6 @@ class Program
         }
 
         int firstYear = OrderedPoems.First().PublicationDate.Year;
-        int bestCount = Poems.Count(poem => poem.Bold);
 
         string homeDescription = $"A living tree of {Poems.Count} poems by culturing, published in order since {firstYear}. Free to read in full.";
         string finalIndexHtml = IndexTemplate
@@ -234,24 +233,11 @@ class Program
 
         File.WriteAllText("docs/index.html", finalIndexHtml);
 
-        string bestDescription = $"The {bestCount} poems culturing considers the best of {Poems.Count}. Free to read in full.";
-        string finalBestIndexHtml = BestTemplate
-            .Replace("{{chronology}}", bestChronologyHtml)
-            .Replace("{{navbar}}", SimpleNavbarTemplate)
-            .Replace("{{title}}", $"{SiteName} | best")
-            .Replace("{{meta}}", BuildMetaTags($"{BaseUrl}/best/", $"{SiteName} | best", bestDescription, "website"))
-            .Replace("{{schema}}", new CollectionPage()
-            {
-                Url = new Uri(BaseUrl + "/best/"),
-                Name = $"Best poems by {SiteName}",
-                Description = bestDescription,
-                Author = author,
-                InLanguage = "en-us",
-                IsAccessibleForFree = true
-            }.ToHtmlEscapedString());
-
+        // /best/ was a page of its own; it is one setting of the rating filter now. The url
+        // has been linked to from outside, so it keeps working and lands on the chronology
+        // it used to be a subset of.
         Directory.CreateDirectory("docs/best");
-        File.WriteAllText("docs/best/index.html", finalBestIndexHtml);
+        File.WriteAllText("docs/best/index.html", RedirectTemplate.Replace("{{target}}", BaseUrl + "/"));
 
         RenderOtherPage("Other/about.md", AboutTemplate, $"{SiteName} | about", $"{SiteName} | about", author);
         // RenderOtherPage("Other/FAQ.md");
@@ -848,11 +834,11 @@ class Program
         return html.ToString();
     }
 
-    // One row of a listing. The opening line rides along only on the two pages built for
-    // browsing -- the home chronology and /best/ -- where index.css holds it out of flow
-    // and fades it in under the pointer. Everywhere else it would be a thousand lines of
-    // markup nobody asked to see: the archives and the title index are for finding a poem
-    // you already have in mind, not for being tempted by one.
+    // One row of a listing. The opening line rides along only on the home chronology, the one
+    // page built for browsing, where index.css holds it out of flow and fades it in under the
+    // pointer. Everywhere else it would be a thousand lines of markup nobody asked to see:
+    // the archives and the title index are for finding a poem you already have in mind, not
+    // for being tempted by one.
     static string PoemRow(Poem poem, bool withOpening)
     {
         string opening = withOpening && poem.Opening.Length > 0
@@ -868,17 +854,55 @@ class Program
         $"<svg class=\"edge-mark\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">"
         + $"<path d=\"{(kind == "prev" ? "M14.5 5 8 12l6.5 7" : "M9.5 5 16 12l-6.5 7")}\"/></svg>";
 
-    static string EdgeLink(string id, string kind, Poem neighbour)
+    // For every position in the sequence, the nearest poem on each side that meets the tier.
+    // Written for positions rather than for members, because a poem below the tier is still
+    // shown normally -- so an unrated poem read while filtering to two stars still needs the
+    // two-star poems either side of it to page to.
+    static (int[] previous, int[] next) NeighbourChain(List<Poem> ordered, int tier)
+    {
+        var previous = new int[ordered.Count];
+        var next = new int[ordered.Count];
+
+        int seen = -1;
+        for (int i = 0; i < ordered.Count; i++)
+        {
+            previous[i] = seen;
+            if (ordered[i].Rating >= tier)
+                seen = i;
+        }
+
+        seen = -1;
+        for (int i = ordered.Count - 1; i >= 0; i--)
+        {
+            next[i] = seen;
+            if (ordered[i].Rating >= tier)
+                seen = i;
+        }
+
+        return (previous, next);
+    }
+
+    // The unfiltered pair keeps the id. review.js drives the arrow keys off #previous and
+    // #next, and three elements answering to one id is three answers to getElementById;
+    // content.js finds the others by tier instead.
+    static string EdgeId(string kind, int tier) => tier == 0
+        ? $" id=\"{(kind == "prev" ? "previous" : "next")}\""
+        : string.Empty;
+
+    static string EdgeLink(string kind, int tier, Poem neighbour)
     {
         string label = $"<span class=\"edge-label\">{WebUtility.HtmlEncode(neighbour.Title)}</span>";
         string inner = kind == "prev" ? EdgeChevron(kind) + label : label + EdgeChevron(kind);
-        return $"<a id=\"{id}\" class=\"edge edge-{kind}\" rel=\"{kind}\" href=\"{neighbour.UrlPath}\">{inner}</a>";
+        return $"<a{EdgeId(kind, tier)} class=\"edge edge-{kind}\" data-edge=\"{kind}\" data-tier=\"{tier}\""
+            + $" rel=\"{kind}\" href=\"{neighbour.UrlPath}\">{inner}</a>";
     }
 
-    // First and last poem: the slot stays occupied so the poem keeps its margins, but it
-    // emits no link and carries no title to point at.
-    static string EdgeDisabled(string id, string kind) =>
-        $"<span id=\"{id}\" class=\"edge edge-{kind} edge-disabled\" aria-hidden=\"true\">{EdgeChevron(kind)}</span>";
+    // The ends of a chain: the slot stays occupied so the poem keeps its margins, but it
+    // emits no link and carries no title to point at. The tighter the filter the sooner this
+    // happens -- at two stars the chain is 215 poems long, not 1132.
+    static string EdgeDisabled(string kind, int tier) =>
+        $"<span{EdgeId(kind, tier)} class=\"edge edge-{kind} edge-disabled\" data-edge=\"{kind}\""
+        + $" data-tier=\"{tier}\" aria-hidden=\"true\">{EdgeChevron(kind)}</span>";
 
     // Punctuation is dropped so "A poem" and "A Platonist declares" sort together and
     // "Am I Right?" lands under its own letter rather than after it.

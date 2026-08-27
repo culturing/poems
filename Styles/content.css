@@ -75,6 +75,13 @@ figure { max-width: 400px; }
    reads as absent rather than as unvisited */
 .edge-disabled .edge-mark { stroke: #262626; }
 
+/* All three tiers ship with every poem and css shows one. The poem itself never filters --
+   you can read anything at any setting -- so this only decides which sequence the chevrons
+   walk: at two stars they step between the 215, skipping whatever sits between. */
+.edge[data-tier="1"], .edge[data-tier="2"] { display: none; }
+html.tier-1 .edge[data-tier="0"], html.tier-2 .edge[data-tier="0"] { display: none; }
+html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: flex; }
+
 @media only screen and (min-width : 769px)
 {
     #content { max-width: 61.8% }
@@ -114,7 +121,8 @@ figure { max-width: 400px; }
     .edge-prev { align-self: flex-start; }
     .edge-next { align-self: flex-end; }
     .edge-label { display: block; opacity: 1; color: var(--muted); }
-    .edge-disabled { display: none; }
+    /* !important because the tier selectors above carry an attribute and outrank this */
+    .edge-disabled { display: none !important; }
 }
 
 @media only print

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Linq;
@@ -100,13 +100,6 @@ class SitemapGenerator
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
             },
-            new SitemapNode
-            {
-                Url = $"{Program.BaseUrl}/best/",
-                LastModified = UpdateHash(hashes, "docs/best/index.html", "/best/", now),
-                ChangeFrequency = SitemapChangeFrequency.Monthly,
-                Priority = 1.0M
-            },            
             new SitemapNode
             {
                 Url = $"{Program.BaseUrl}/about/",

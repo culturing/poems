@@ -70,6 +70,25 @@ a:hover { color: var(--accent); }
 }
 .leaves > div:hover .opening { opacity: 1; }
 
+/* -- the rating filter ----------------------------------------------------------- */
+
+/* The three tiers are the three ratings, and every listing row already carried its own, so
+   the filter is a class on <html> and nothing else. No page is fetched and no page is built
+   per tier: /best/ used to be a whole second tree of one of these settings.
+
+   A date group whose poems have all gone would otherwise stay as a heading with nothing
+   under it, so a group is hidden when none of its rows survive the filter. */
+html.tier-1 .rated-0,
+html.tier-2 .rated-0,
+html.tier-2 .rated-1 { display: none; }
+
+html.tier-1 .node:not(:has(.rated-1)):not(:has(.rated-2)),
+html.tier-1 .year:not(:has(.rated-1)):not(:has(.rated-2)),
+html.tier-1 .letter:not(:has(.rated-1)):not(:has(.rated-2)),
+html.tier-2 .node:not(:has(.rated-2)),
+html.tier-2 .year:not(:has(.rated-2)),
+html.tier-2 .letter:not(:has(.rated-2)) { display: none; }
+
 /* -- archives and headings ------------------------------------------------------ */
 
 h1 { margin: 0; }
@@ -110,15 +129,15 @@ h1 { margin: 0; }
    the bright ones. Greys only, no size -- a column of numbers that changed size would
    never settle into a straight edge to read down. */
 .railed { display: flex; flex-direction: row; align-items: flex-start; gap: 3.5rem; }
-.year-rail { position: sticky; top: 1rem; flex: 0 0 4rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.85rem; border-right: 1px solid var(--rule); padding-right: 1.4rem; font-size: 0.8rem; font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
+.year-rail { position: sticky; top: calc(var(--bar) + 1rem); flex: 0 0 4rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.85rem; border-right: 1px solid var(--rule); padding-right: 1.4rem; font-size: 0.8rem; font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
 .year-rail a:hover { color: var(--accent); }
 .railed-body { flex: 1; min-width: 0; }
-/* The rail jumps to the node, and the node opens with its date, so the scroll has to stop
-   far enough down that the date is not under the navbar. The bar is sticky and about 3.25rem
-   tall -- 1rem of its own padding over a 2.25rem row -- so anything less than that put the
-   heading behind it and landed the eye on the first poem instead. The rest is air, so the
-   date arrives clear of the bar rather than tucked against it. */
-.railed-body .node, .railed-body .year { scroll-margin-top: 5rem; }
+/* Flush against the navbar, exactly. Less and the date lands behind the bar; more and the
+   gap fills with the tail of the group above -- the last poem of the previous date, showing
+   in the band between the bar and the heading you asked for. The node carries 2rem of bottom
+   padding, so at flush that padding is what sits under the bar and the previous title is
+   above it, out of sight. */
+.railed-body .node, .railed-body .year { scroll-margin-top: var(--bar); }
 
 /* A theme hub is a reference, not a reading column: three columns of titles beside the rail
    rather than one column three times as long. No stem and no year headings in the body --
@@ -143,8 +162,8 @@ h1 { margin: 0; }
 .rail-empty { color: var(--rule); }
 
 .letters { display: flex; flex-direction: column; gap: 2.8rem; }
-/* Clears the sticky navbar, as the year rail does */
-.letter { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1.5rem; scroll-margin-top: 5rem; }
+/* Flush against the navbar, as the year rail lands */
+.letter { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1.5rem; scroll-margin-top: var(--bar); }
 .letter-mark { margin: 0; font-family: 'Cinzel', Georgia, serif; font-size: 1rem; font-weight: 400; color: var(--whisper); }
 .letter-list { columns: 3; column-gap: 2.5rem; }
 .letter-list > div { break-inside: avoid; padding-bottom: 0.45rem; }
@@ -187,6 +206,8 @@ h1 { margin: 0; }
        matters least on the device where the whole page is one column anyway. */
     .railed { display: block; }
     .year-rail { display: none; }
+    /* The navbar is static here, so an anchor has nothing to sit below */
+    :root { --bar: 1rem; }
     .node { padding-left: 1.75rem; }
     .node::after { width: 0.75rem; }
 }
