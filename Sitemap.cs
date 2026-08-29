@@ -109,8 +109,6 @@ class SitemapGenerator
             }
         };
 
-        // culturing.pdf is deliberately absent: it reproduces every poem on the site, so
-        // submitting it competes with the pages themselves. It stays linked from the navbar.
 
         foreach (string listPageUrl in listPageUrls)
         {

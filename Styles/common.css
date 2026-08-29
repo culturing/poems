@@ -1,16 +1,5 @@
-/* Ground and text are the originals: a neutral near-black and a neutral near-white.
-   Greys stay neutral with them -- a violet-biased grey reads purple next to neutral text.
-   One accent: rose, and only where it belongs to the poems themselves -- links inside a
-   poem, and the breadcrumb trail above an archive. Everything else -- the navbar, the theme
-   counts, the rating diamonds -- is grey, so nothing outside the writing competes with it.
-   The rose is warmed slightly off the mauve it could be, so it reads as red rather than
-   violet against a ground with no hue of its own.
+/* -- palette --------------------------------------------------------------------- */
 
-   --void, --loam and --whisper are the additions. Two of them are ends the ramp already
-   implied: --void is where a fade band lands once --paper has run out, and --whisper is one
-   step below --muted, dark enough that a line of verse beside a title reads as an aside
-   rather than a second column. --loam sits between paper and raise, for the rare surface
-   that needs to be off the ground without being lit. */
 :root {
     --void:   #050505;
     --paper:  rgb(10, 10, 10);
@@ -24,42 +13,25 @@
     --accent-soft: #dd8b9420;
     --hover:  rgba(232, 232, 232, 0.14);
 
-    /* The two atmosphere dials, in one place because they are the whole look. --glow is
-       the strength of the light the page is read by; --shade is how hard the edges close.
-       Both are alphas, and both are zeroed under print and forced-colors below. */
+    /* Alphas: the strength of the light, and how hard the edges close. Zeroed for
+       print and forced-colors below */
     --glow:  0.055;
     --shade: 0.55;
 
-    /* The height of the sticky navbar, which anything scrolled to by anchor has to clear.
-       It is 1rem of the bar's own top padding over a 2.25rem row -- a 1.25rem line box with
-       0.5rem of padding above and below it -- so it moves only if the nav's padding or the
-       body's line-height does. Landing an anchor exactly here puts the heading flush against
-       the bar, with whatever precedes it hidden behind the solid part rather than showing
-       through the 12px the fill spends fading out. */
+    /* The height of the sticky navbar: 1rem of its top padding over a 2.25rem row.
+       Anything scrolled to by anchor clears this */
     --bar: 3.25rem;
 }
 
-/* Full-height flex column so #container-parent can claim exactly the leftover space between
-   the navbar and the licence badge. Replaces a hardcoded offset that only added up in quirks
-   mode, which the doctype on every page has since turned off.
-
-   position: relative is what lets the two atmosphere layers below anchor to the page rather
-   than to the viewport; isolation opens a stacking context so they can sit at z-index 0 and
-   1 without reaching past the body for anything to paint over. */
+/* Full-height flex column, so #container-parent takes the space between navbar and licence.
+   relative anchors the atmosphere layers to the page; isolation keeps them in their own
+   stacking context */
 body { font-family: Quattrocento; background-color: var(--paper); color: var(--ink); line-height: 1.25rem; margin: 0; padding: 1rem; box-sizing: border-box; min-height: 100vh; display: flex; flex-direction: column; position: relative; isolation: isolate; }
 
-/* The page is lit rather than filled. A pool of light sits off centre, over the column that
-   is actually being read, and a vignette closes the edges; between them the ground stops
-   being one flat value and starts having a middle and an outside. Both are fixed, so the
-   light stays where the eye is rather than scrolling away with the text.
+/* -- atmosphere ------------------------------------------------------------------ */
 
-   ::before carries the light and the shadow together -- two gradients in one layer, the
-   vignette painted first in the list so the pool sits on top of it. ::after carries the
-   grain, which has to be a separate layer because it multiplies over both.
-
-   The grain is fractal noise at 0.75, which is fine enough to read as paper tooth rather
-   than as static at any zoom the site is likely to see. 4.5% is where it stops being
-   visible as noise and starts only taking the flatness off. */
+/* The pool of light and the vignette: two gradients in one layer, the vignette first in
+   the list so the pool sits over it */
 body::before {
     content: "";
     position: fixed;
@@ -71,6 +43,7 @@ body::before {
         radial-gradient(ellipse 92vw 88vh at 42% 46%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, var(--shade)) 100%);
 }
 
+/* The grain, on its own layer because it multiplies over both gradients above */
 body::after {
     content: "";
     position: fixed;
@@ -81,65 +54,34 @@ body::after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Everything the page actually says rides above both layers */
+/* Everything the page says rides above both layers */
 .navbar, #container-parent, #license, .edge { position: relative; z-index: 1; }
 
-/* Underlines sit at rule weight and warm to the accent on hover, so the link tells you
-   it is a link without shouting over the poem */
 a { color: var(--ink); text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:hover { text-decoration-color: var(--accent); }
-/* Dates that link to their archive stay plain text: the link is navigation, not emphasis */
 h3 a, #content time a { text-decoration: none; }
 h3 a:hover, #content time a:hover { color: var(--accent); }
 h1, h3 { margin: 0; }
 
-/* A poem's rating, spent on the one thing already on the row rather than on a mark beside it.
-   Nothing is drawn: the poems worth reading first are simply the ones that come forward.
-
-   Three levels, because three is what the channel carries. Below about #b0b0b0 a title reads
-   as dimmed rather than quiet, and --ink is the ceiling, which leaves 56 steps of grey to
-   spend; five levels put 14 between neighbours, under the point where two greys a line apart
-   can be told apart, while three put 28 there and are legible without comparing anything.
-   A fourth level would have to come from a second channel rather than a thinner slice of this
-   one -- .rated-3 at --ink and font-weight: 700, with the three below unchanged.
-
-   The ramp is pinned to --ink at the top and #b0b0b0 at the floor, so moving --ink means
-   moving the middle step with it. It was 245 and the middle 210; both came down together.
-
-   Listings only. A poem's own page has one title and no column to read it against, so it stays
-   at --ink whatever the rating. index.css loads after this and puts the accent hover last,
-   which is what lets a hover beat the rating underneath it. */
+/* The rating ramp, on listing rows only. Pinned to --ink at the top and #b0b0b0 at the
+   floor, so moving --ink moves the middle step with it. Its paper twin is in toc.css */
 .rated-0 a { color: #b0b0b0; }
 .rated-1 a { color: #cccccc; }
 .rated-2 a { color: var(--ink); }
 
-/* The other end of the sticky pair in navbar.css: the lintel holds the top of the
-   window, this holds the foot, and only the poem between them moves. It is the last
-   flex item in the column, so it stretches to the full content width and the paper
-   fill becomes a band the text disappears behind -- without it the badge is an 88px
-   image with the poem sliding past on either side of it.
-
-   The fill is a gradient rather than a flat colour so the line of verse passing
-   under it fades out over 14px instead of being cut through the middle of its
-   letters. Invisible at rest: the band sits on paper and starts as paper. No rule
-   along its top either -- at rest that would be a new line on every page, and the
-   band is only ever a floor while you are actually scrolling. Nothing is lost
-   behind it, since sticky returns the badge to the flow once you reach the end. */
-#license { position: sticky; bottom: 0; padding-top: 0.75rem; background: linear-gradient(to bottom, transparent 0, var(--paper) 14px); }
+/* The other end of the sticky pair in navbar.css. The negative side margins pull the fill
+   back out through the body's 1rem padding, which the inner padding then puts back */
+#license { position: sticky; bottom: 0; margin: 0 -1rem; padding: 0.75rem 1rem 0 1rem; background: linear-gradient(to bottom, transparent 0, var(--paper) 14px); }
 
 /* Reachable by crawlers and screen readers, absent from the visual design */
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 
-/* One reveal, done once. Everything that fades in on this site -- the opening line beside a
-   title, a theme's count -- shares this duration, and anyone who has asked their system for
-   less motion gets the end state with no transition rather than no reveal at all. */
+/* Every reveal on the site keeps its end state, without the transition */
 @media (prefers-reduced-motion: reduce)
 {
     * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
 
-/* High-contrast and forced-colours modes get the page with the atmosphere switched off:
-   a vignette is decoration, and it is the one thing here that removes contrast. */
 @media (forced-colors: active)
 {
     body::before, body::after { display: none; }
@@ -147,20 +89,9 @@ h1, h3 { margin: 0; }
 
 @media only print
 {
-    /* Print stacks poem pages directly in body and centres each one itself, so the screen
-       flex column is undone here rather than fighting it. The atmosphere goes with it --
-       a vignette is 40 pages of grey ink and buys nothing on paper.
-
-       position and isolation are undone too, and they matter more than they look. The pdf
-       is one document holding every poem, paginated to something over a thousand pages, and
-       a stacking context on body makes the whole of it one composited layer to be resolved
-       against. On a poem page you would never notice; on the book it is the difference
-       between a build that finishes and one that does not.
-
-       content: none rather than display: none on the two layers, so the pseudo-elements are
-       never generated at all. display: none still builds the box and, for the grain, still
-       has an SVG filter attached to it -- tiled, and repeated on every page of the book,
-       because a fixed element in Chromium's print path repeats per page. */
+    /* Print stacks and centres poem pages itself, so the screen flex column is undone,
+       along with the stacking context the book cannot afford. content: none rather than
+       display: none, so the atmosphere layers are never generated at all */
     body { background-color: white; color: black; display: block; min-height: 0; position: static; isolation: auto; }
     body::before, body::after { content: none; display: none; }
     a { text-decoration-color: black; color: black; }

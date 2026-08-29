@@ -25,12 +25,10 @@ class Program
     static public string SiteName = "culturing";
     static public string OgImageUrl = "https://poems.culturing.net/og-image.png";
 
-    // Poems after this date live at /yyyy/MM/dd/slug/, earlier ones at /yyyy/MM/slug/.
-    // Archives and breadcrumbs honour the same split, so it lives in one place.
+    // Poems after this date live at /yyyy/MM/dd/slug/, earlier ones at /yyyy/MM/slug/
     static public readonly DateTime DayUrlCutoff = new DateTime(2026, 03, 04);
 
-    // "dotnet run -- review" adds the rating widget to every poem page and writes the
-    // manifest that maps a page back to its source file.
+    // Set by "dotnet run -- review"
     static bool ReviewMode = false;
 
     static Markdown md = new Markdown();
@@ -51,7 +49,6 @@ class Program
     // Archive and theme urls collected while rendering, for the sitemap
     static List<string> ListPageUrls = new List<string>();
 
-    // Below this a hub would be thin content; the tag still travels in the poem's schema
     const int MinimumThemePoems = 8;
 
     const string TagLineToken = "<p class='tags'><em><small><small>{{tags}}</small></small></em></p>";
@@ -97,8 +94,6 @@ class Program
         // }
 
     // Build Chronology
-        // Every date becomes a node on the stem: the heading is the node itself and the
-        // poems hang off it. index.css draws the line and the dot; nothing here does.
         var chronology = new StringBuilder();
         Dictionary<int, int> poemsPerYear = Poems.GroupBy(poem => poem.PublicationDate.Year)
             .ToDictionary(group => group.Key, group => group.Count());
@@ -107,8 +102,7 @@ class Program
 
         foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => DateTime.Parse(kvp.Key)))
         {
-            // The first node of each year carries that year's anchor, so the rail lands on
-            // the date the year opens with rather than on a heading of its own
+            // The first node of each year carries that year's anchor
             int year = kvp.Value.First().PublicationDate.Year;
             string anchor = string.Empty;
             if (year != lastYear)
@@ -118,14 +112,12 @@ class Program
                 lastYear = year;
             }
 
-            // The day's own archive where one exists, otherwise the month it belongs to
             chronology.AppendLine($"<div class=\"node\"{anchor}><h3>{BuildDateLine(kvp.Value.First())}</h3><div class=\"leaves\">");
             foreach(Poem poem in Enumerable.Reverse(kvp.Value))
                 chronology.AppendLine(PoemRow(poem, withOpening: true));
             chronology.AppendLine("</div></div>");
         }
 
-        // Seventeen years of a chronology is a long way to scroll to reach 2010
         string chronologyHtml = $"<div class=\"railed\">{YearRail(yearsSeen)}<div class=\"railed-body\">{chronology}</div></div>";
 
         Dictionary<string, PageHash> hashes = SitemapGenerator.GetHashes();
@@ -144,9 +136,7 @@ class Program
             Poem poem = OrderedPoems[i];
             string canonicalUrl = BaseUrl + poem.UrlPath;
 
-            // All three tiers ship with the page, and css shows the one the reader has
-            // chosen: switching filter is a class on <html>, never a request. At the ends of
-            // a chain the slot becomes a span, so no link points nowhere.
+            // One pair per rating tier; css shows the reader's
             var previous = new StringBuilder();
             var next = new StringBuilder();
             for (int tier = 0; tier < 3; tier++)
@@ -166,8 +156,6 @@ class Program
             contents = contents.Replace("{{next}}", nextLink);
             contents = contents.Replace("{{url}}", canonicalUrl);
 
-            // These link the theme hubs from every poem; without them /themes/ is reachable
-            // from the navbar alone.
             string chips = string.Join(" &middot; ", poem.Tags.Select(tag =>
                 $"<a href=\"/themes/{Slugify(tag)}/\">{WebUtility.HtmlEncode(ThemeName(tag))}</a>"));
             contents = poem.Tags.Count > 0
@@ -175,7 +163,7 @@ class Program
                 : contents.Replace(TagLineToken, string.Empty);
             contents = contents.Replace("{{meta}}", BuildMetaTags(
                 canonicalUrl,
-                $"{poem.Title} | a poem by {SiteName}",
+                $"{poem.Title} | poems by {SiteName}",
                 poem.Description,
                 "article",
                 poem.PublicationDate));
@@ -190,7 +178,7 @@ class Program
                 Name = poem.Title,
                 Headline = poem.Title,
                 Description = poem.Description,
-                // Schema.NET has no Poem class; this narrows the type for consumers that look
+                // Schema.NET has no Poem class
                 AdditionalType = new Uri("https://schema.org/Poem"),
                 Author = author,
                 CopyrightHolder = author,
@@ -217,8 +205,8 @@ class Program
         string finalIndexHtml = IndexTemplate
             .Replace("{{chronology}}", chronologyHtml)
             .Replace("{{navbar}}", SimpleNavbarTemplate)
-            .Replace("{{title}}", $"{SiteName} | poems")
-            .Replace("{{meta}}", BuildMetaTags($"{BaseUrl}/", $"{SiteName} | poems", homeDescription, "website"))
+            .Replace("{{title}}", $"poems by {SiteName}")
+            .Replace("{{meta}}", BuildMetaTags($"{BaseUrl}/", $"poems by {SiteName}", homeDescription, "website"))
             .Replace("{{schema}}", new WebSite()
             {
                 Url = new Uri(BaseUrl + "/"),
@@ -233,13 +221,11 @@ class Program
 
         File.WriteAllText("docs/index.html", finalIndexHtml);
 
-        // /best/ was a page of its own; it is one setting of the rating filter now. The url
-        // has been linked to from outside, so it keeps working and lands on the chronology
-        // it used to be a subset of.
+    // Redirect /best/, which the rating filter replaced
         Directory.CreateDirectory("docs/best");
         File.WriteAllText("docs/best/index.html", RedirectTemplate.Replace("{{target}}", BaseUrl + "/"));
 
-        RenderOtherPage("Other/about.md", AboutTemplate, $"{SiteName} | about", $"{SiteName} | about", author);
+        RenderOtherPage("Other/about.md", AboutTemplate, $"About | poems by {SiteName}", $"About | poems by {SiteName}", author);
         // RenderOtherPage("Other/FAQ.md");
         // RenderOtherPage("Other/Favorite Poems.md");
         // RenderOtherPage("Other/Why Poetry.md");
@@ -255,7 +241,6 @@ class Program
         GenerateSitemap();
         GenerateFeed(OrderedPoems);
 
-        // Playwright and ffmpeg run last: the html and the sitemap must not depend on them
         await RenderPdf("docs/culturing.pdf");
         //await RenderPdf("Submission.pdf", true, new DateTime(2021, 02, 01), new DateTime(2022, 10, 31));
         await RenderVideo();
@@ -297,8 +282,7 @@ class Program
         poem.Description = BuildDescription(lines.Skip(bodyStart));
         poem.Opening = BuildOpening(lines.Skip(bodyStart));
 
-        // Written out rather than left to markdown's "# ", so a title can never be read as
-        // markup. An untitled poem still needs an h1, for structure only.
+        // Written out rather than left to markdown's "# ", so a title is never read as markup
         string heading = titled
             ? $"<h1>{WebUtility.HtmlEncode(poem.Title)}</h1>"
             : $"<h1 class='visually-hidden'>{WebUtility.HtmlEncode(poem.Title)}</h1>";
@@ -311,8 +295,7 @@ class Program
             "<p class='url' style='margin:0;'><em><small><small>{{url}}</small></small></em></p>"
         });
 
-        // The blank line keeps markdown reading the tag line as its own block. Substituted on
-        // the second pass -- tags load only once every poem is parsed.
+        // The blank line keeps markdown reading the tag line as its own block
         lines.Add(string.Empty);
         lines.Add(TagLineToken);
 
@@ -322,7 +305,7 @@ class Program
         string contentHtml = md.Transform(content);
         string finalPoemHtml = ContentTemplate
             .Replace("{{content}}", contentHtml)
-            .Replace("{{title}}", $"{WebUtility.HtmlEncode(poem.Title)} | a poem by {SiteName}")
+            .Replace("{{title}}", $"{WebUtility.HtmlEncode(poem.Title)} | poems by {SiteName}")
             .Replace("{{navbar}}", NavbarTemplate)
             .Replace("{{review}}", ReviewMode ? "<script src=\"/review.js\"></script>" : string.Empty);
         string finalFileName = Slugify(poem.Title);
@@ -349,7 +332,6 @@ class Program
         PoemsByDate[key].Add(poem);
     }
 
-    // Built from the source lines before markdown runs, so there is no html to unpick
     static string BuildDescription(IEnumerable<string> bodyLines)
     {
         string text = string.Join(" ", bodyLines);
@@ -370,9 +352,7 @@ class Program
         return text;
     }
 
-    // The first line of verse, for the whisper a listing shows beside a title on hover.
-    // Cut hard at a length that still fits the row on a 1440 screen: this is a lure back
-    // into the poem, not a summary, and Description already carries the summary.
+    // The first line of verse, shown beside a title in a listing
     static string BuildOpening(IEnumerable<string> bodyLines)
     {
         string line = bodyLines
@@ -394,11 +374,11 @@ class Program
         return line;
     }
 
-    // The date under the title doubles as the breadcrumb, linking its archives
-    static string BuildDateLine(Poem poem)
+    // The date under a title, linking its archives. linkDay is false on the day archive itself
+    static string BuildDateLine(Poem poem, bool linkDay = true)
     {
         DateTime pub = poem.PublicationDate;
-        string day = poem.HasDayUrl
+        string day = poem.HasDayUrl && linkDay
             ? $"<a href=\"{poem.DatePath}\">{pub.ToString("dd")}</a>"
             : pub.ToString("dd");
 
@@ -492,7 +472,6 @@ class Program
         };
     }
 
-    // Titles carry characters filenames cannot, so separate on them rather than deleting them
     static string Slugify(string title)
     {
         StringBuilder unaccented = new StringBuilder();
@@ -508,8 +487,7 @@ class Program
         slug = Regex.Replace(slug, "-{2,}", "-");
         slug = slug.Trim('-');
 
-        // An all-numeric slug sits alongside the day directories under /yyyy/MM/ and could
-        // shadow one
+        // An all-numeric slug could shadow a day directory under /yyyy/MM/
         if (slug.Length == 0)
             slug = "untitled";
         else if (!slug.Any(char.IsLetter))
@@ -585,8 +563,7 @@ class Program
         File.WriteAllText(htmlpath, html);
     }
 
-    // Other/tags.tsv, keyed by url, most salient tag first. A renamed poem orphans its row,
-    // which must fail loudly rather than drop the poem out of its theme pages.
+    // Other/tags.tsv, keyed by url, most salient tag first
     static void LoadTags()
     {
         string path = "Other/tags.tsv";
@@ -617,8 +594,7 @@ class Program
         }
     }
 
-    // Theme hubs at /themes/<tag>/: the pages that can answer a search like "poems about
-    // grief", which an individual poem never can.
+    // Theme hubs at /themes/<tag>/, and the field of themes at /themes/
     static void RenderThemes()
     {
         Dictionary<string, List<Poem>> byTag = new Dictionary<string, List<Poem>>();
@@ -640,10 +616,6 @@ class Program
         foreach (string tag in byTag.Keys.Except(published).OrderBy(tag => tag))
             Console.WriteLine($"theme '{tag}' held back: {byTag[tag].Count} poems, needs {MinimumThemePoems}");
 
-        // The field on /themes/ carries each theme's weight in its size and its grey, so
-        // the shape of the collection is legible before a single number is read. The
-        // counts stay in the markup for crawlers and screen readers; index.css shows one
-        // only when you point at its theme.
         int fewest = published.Min(tag => byTag[tag].Count);
         int most = published.Max(tag => byTag[tag].Count);
 
@@ -661,7 +633,7 @@ class Program
                     + $"{byTag[tag].First().PublicationDate.Year} and {byTag[tag].Last().PublicationDate.Year}. Free to read in full.",
                 ThemeArchiveBody(byTag[tag]),
                 BuildThemeCrumbs(name, themePath),
-                titleOverride: $"Poems about {name} | {SiteName}",
+                titleText: char.ToUpperInvariant(name[0]) + name.Substring(1),
                 showTrail: false);
 
             index.AppendLine($"<div class=\"theme w{Weight(count, fewest, most)}\"><a href=\"{themePath}\">{WebUtility.HtmlEncode(name)}</a>"
@@ -674,16 +646,12 @@ class Program
             $"Every theme in the collection, from love to war. {Poems.Count} poems by {SiteName}, "
                 + $"grouped by what they are about.",
             $"<div class=\"theme-list\">{index}</div>",
-            BuildThemeCrumbs(null, null),
-            titleOverride: $"Themes | poems by {SiteName}");
+            BuildThemeCrumbs(null, null));
     }
 
-    // Tags are single lowercase words today, but a two-word tag would arrive hyphenated
     static string ThemeName(string tag) => tag.Replace('-', ' ');
 
-    // Nine steps of size and grey, on a log scale. Linear would be useless here: love has
-    // 384 poems and beauty 21, so on a straight ramp everything from myth downwards lands
-    // in the bottom two steps and the field flattens into one size with an outlier.
+    // Nine steps, on a log scale
     static int Weight(int count, int fewest, int most)
     {
         if (most <= fewest)
@@ -692,10 +660,7 @@ class Program
         return Math.Clamp((int)Math.Round(1 + t * 8), 1, 9);
     }
 
-    // The years a page spans, as a rail beside it: a jump to each, and bright where the
-    // writing was dense, so the rail is a shape as well as a set of links. Shared by the home
-    // chronology and the theme hubs, which are the two pages long enough to need one. Newest
-    // first, matching the order of everything they sit beside.
+    // A rail of year anchors, newest first, weighted by how many poems each year holds
     static string YearRail(List<KeyValuePair<int, int>> yearsNewestFirst)
     {
         int fewest = yearsNewestFirst.Min(year => year.Value);
@@ -708,12 +673,7 @@ class Program
         return rail.ToString();
     }
 
-    // A theme hub gathers a hundred-odd poems spanning fifteen years, which is more than a
-    // flat list can hold. The years become a rail beside it and the poems group under year
-    // headings, so the rail is a shape as well as a set of jumps: a theme's history shows
-    // in which years are bright. The rail links anchors rather than /2026/, which would be
-    // a promise the year archive does not keep -- it holds that year's poems, not this
-    // theme's.
+    // A theme's poems, grouped under year headings beside a year rail
     static string ThemeArchiveBody(List<Poem> poems)
     {
         List<IGrouping<int, Poem>> byYear = poems
@@ -721,23 +681,19 @@ class Program
             .OrderByDescending(group => group.Key)
             .ToList();
 
-        // One year is no rail; the flat list already says everything it would
+        // One year needs no rail
         if (byYear.Count < 2)
-            return $"<div class=\"theme-columns\">{ArchivePoemLinks(poems)}</div>";
+            return $"<div class=\"theme-columns\">{ArchivePoemLinks(poems, withOpening: false)}</div>";
 
         string rail = YearRail(byYear
             .Select(group => new KeyValuePair<int, int>(group.Key, group.Count()))
             .ToList());
 
-        // No stem in the body, but the years are marked: the sections are separated by white
-        // space alone otherwise, and a gap does not say what it is a gap for. Plain text
-        // rather than a link -- /2026/ holds that year's poems, not this theme's, which is
-        // the same promise the rail declines to make.
         var list = new StringBuilder("<div class=\"railed-body\">");
         foreach (IGrouping<int, Poem> group in byYear)
         {
             list.Append($"<section class=\"year\" id=\"year-{group.Key}\"><h3 class=\"year-mark\">{group.Key}</h3><div class=\"theme-columns\">");
-            list.Append(ArchivePoemLinks(group));
+            list.Append(ArchivePoemLinks(group, withOpening: false));
             list.Append("</div></section>");
         }
         list.Append("</div>");
@@ -757,8 +713,7 @@ class Program
         return crumbs;
     }
 
-    // Year, month and day index pages. Without them /2026/ and /2026/08/ are dead ends and
-    // the homepage is the only path into any poem.
+    // Year, month and day index pages
     static void RenderArchives()
     {
         foreach (IGrouping<int, Poem> yearGroup in Poems.GroupBy(poem => poem.PublicationDate.Year).OrderBy(group => group.Key))
@@ -772,13 +727,12 @@ class Program
                 int month = monthGroup.Key;
                 string monthPath = $"/{year}/{month.ToString("D2")}/";
                 yearBody.AppendLine($"<div class=\"node\"><h3><a href=\"{monthPath}\">{Months[month]}</a></h3><div class=\"leaves\">");
-                yearBody.Append(ArchivePoemLinks(monthGroup));
+                yearBody.Append(ArchivePoemLinks(monthGroup, withOpening: true));
                 yearBody.AppendLine("</div></div>");
 
                 var monthBody = new StringBuilder();
 
-                // A month can straddle the day-url cutoff, so let each date decide whether it
-                // has an archive of its own to link to
+                // A month can straddle the day-url cutoff, so each date decides for itself
                 foreach (IGrouping<DateTime, Poem> dayGroup in monthGroup.GroupBy(poem => poem.PublicationDate.Date).OrderByDescending(group => group.Key))
                 {
                     DateTime day = dayGroup.Key;
@@ -787,17 +741,20 @@ class Program
                     string dayPath = $"/{year}/{month.ToString("D2")}/{day.ToString("dd")}/";
 
                     monthBody.AppendLine($"<div class=\"node\"><h3>{BuildDateLine(dayGroup.First())}</h3><div class=\"leaves\">");
-                    monthBody.Append(ArchivePoemLinks(dayGroup));
+                    monthBody.Append(ArchivePoemLinks(dayGroup, withOpening: true));
                     monthBody.AppendLine("</div></div>");
 
                     if (hasDayArchive)
                     {
+                        // Built as a single chronology node, its <h1> hidden behind the date
                         WriteListPage(
                             dayPath,
                             dayLabel,
                             $"The {dayGroup.Count()} poems culturing published on {dayLabel}.",
-                            ArchivePoemLinks(dayGroup),
-                            BuildCrumbs(day, false, dayLabel, dayPath));
+                            $"<div class=\"node\"><h3>{BuildDateLine(dayGroup.First(), linkDay: false)}</h3>"
+                                + $"<div class=\"leaves\">{ArchivePoemLinks(dayGroup, withOpening: true)}</div></div>",
+                            BuildCrumbs(day, false, dayLabel, dayPath),
+                            hideHeading: true);
                     }
                 }
 
@@ -823,22 +780,16 @@ class Program
         }
     }
 
-    // Poems/Prologue is named by title rather than by date, so the sort is explicit;
-    // reversing first leaves poems sharing a date in the order the chronology puts them,
-    // since OrderByDescending is stable.
-    static string ArchivePoemLinks(IEnumerable<Poem> poems)
+    // Reversed first so that, the sort being stable, poems sharing a date keep chronology order
+    static string ArchivePoemLinks(IEnumerable<Poem> poems, bool withOpening)
     {
         var html = new StringBuilder();
         foreach (Poem poem in poems.Reverse().OrderByDescending(poem => poem.PublicationDate))
-            html.AppendLine(PoemRow(poem, withOpening: false));
+            html.AppendLine(PoemRow(poem, withOpening));
         return html.ToString();
     }
 
-    // One row of a listing. The opening line rides along only on the home chronology, the one
-    // page built for browsing, where index.css holds it out of flow and fades it in under the
-    // pointer. Everywhere else it would be a thousand lines of markup nobody asked to see:
-    // the archives and the title index are for finding a poem you already have in mind, not
-    // for being tempted by one.
+    // One row of a listing
     static string PoemRow(Poem poem, bool withOpening)
     {
         string opening = withOpening && poem.Opening.Length > 0
@@ -847,17 +798,11 @@ class Program
         return $"<div class=\"{poem.RatingClass}\">{poem.Link}{opening}</div>";
     }
 
-    // Pagination leaves the navbar for the poem's own left and right margins, where there
-    // is room to name the neighbour instead of saying "prev". The chevron is drawn rather
-    // than typed: a glyph would take the body face's weight and read as punctuation.
     static string EdgeChevron(string kind) =>
         $"<svg class=\"edge-mark\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">"
         + $"<path d=\"{(kind == "prev" ? "M14.5 5 8 12l6.5 7" : "M9.5 5 16 12l-6.5 7")}\"/></svg>";
 
-    // For every position in the sequence, the nearest poem on each side that meets the tier.
-    // Written for positions rather than for members, because a poem below the tier is still
-    // shown normally -- so an unrated poem read while filtering to two stars still needs the
-    // two-star poems either side of it to page to.
+    // For every position in the sequence, the nearest poem on each side that meets the tier
     static (int[] previous, int[] next) NeighbourChain(List<Poem> ordered, int tier)
     {
         var previous = new int[ordered.Count];
@@ -882,9 +827,7 @@ class Program
         return (previous, next);
     }
 
-    // The unfiltered pair keeps the id. review.js drives the arrow keys off #previous and
-    // #next, and three elements answering to one id is three answers to getElementById;
-    // content.js finds the others by tier instead.
+    // Only the unfiltered pair carries an id; the others are found by tier
     static string EdgeId(string kind, int tier) => tier == 0
         ? $" id=\"{(kind == "prev" ? "previous" : "next")}\""
         : string.Empty;
@@ -897,21 +840,15 @@ class Program
             + $" rel=\"{kind}\" href=\"{neighbour.UrlPath}\">{inner}</a>";
     }
 
-    // The ends of a chain: the slot stays occupied so the poem keeps its margins, but it
-    // emits no link and carries no title to point at. The tighter the filter the sooner this
-    // happens -- at two stars the chain is 215 poems long, not 1132.
+    // The ends of a chain: the slot stays occupied, but emits no link
     static string EdgeDisabled(string kind, int tier) =>
         $"<span{EdgeId(kind, tier)} class=\"edge edge-{kind} edge-disabled\" data-edge=\"{kind}\""
         + $" data-tier=\"{tier}\" aria-hidden=\"true\">{EdgeChevron(kind)}</span>";
 
-    // Punctuation is dropped so "A poem" and "A Platonist declares" sort together and
-    // "Am I Right?" lands under its own letter rather than after it.
+    // Punctuation dropped, so "Am I Right?" sorts under its own letter rather than after it
     static string SortKey(string title) => Regex.Replace(title, @"[^\w\s]", "");
 
-    // The alphabetical index, which used to be a column of 1128 titles beside the
-    // chronology on the home page. It is a wall next to a tree, and the home page is the
-    // tree; on a page of its own it can carry an alphabet rail and the home page can be
-    // only the chronology.
+    // The alphabetical index at /index/
     static void RenderTitleIndex()
     {
         const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -920,16 +857,14 @@ class Program
         foreach (Poem poem in Poems.OrderBy(poem => SortKey(poem.Title), StringComparer.OrdinalIgnoreCase))
         {
             char first = SortKey(poem.Title).TrimStart().FirstOrDefault();
-            // A title opening on a digit still needs a home; "other" collects them, and
-            // the tilde sorts it last without needing a second pass.
+            // Titles opening on a digit collect under the tilde, which sorts last
             string letter = char.IsLetter(first) ? char.ToUpperInvariant(first).ToString() : "~";
             if (!byLetter.ContainsKey(letter))
                 byLetter[letter] = new List<Poem>();
             byLetter[letter].Add(poem);
         }
 
-        // Every letter appears whether or not it has poems: the rail is a fixed shape you
-        // learn once, and a missing L would move every letter after it.
+        // Every letter appears, whether or not it has poems
         var rail = new StringBuilder("<nav class=\"rail\" aria-label=\"Jump to a letter\">");
         foreach (char letter in alphabet)
             rail.Append(byLetter.ContainsKey(letter.ToString())
@@ -959,30 +894,29 @@ class Program
             {
                 new KeyValuePair<string, string>(SiteName, "/"),
                 new KeyValuePair<string, string>("index", "/index/")
-            },
-            titleOverride: $"Index | poems by {SiteName}");
+            });
     }
 
-    // The year pages pass titleText separately so the <title> reads "2026 | poems by
-    // culturing" rather than repeating "poems" on both sides of the bar
-    static void WriteListPage(string urlPath, string heading, string description, string body, List<KeyValuePair<string, string>> crumbs, string titleText = null, string titleOverride = null, bool showTrail = true)
+    // titleText names a page in <title> where its visible heading would read wrong there
+    static void WriteListPage(string urlPath, string heading, string description, string body, List<KeyValuePair<string, string>> crumbs, string titleText = null, bool showTrail = true, bool hideHeading = false)
     {
         titleText = titleText ?? heading;
-        string fullTitle = titleOverride ?? $"{titleText} | poems by {SiteName}";
-        // The site name leaves the visible trail: the wordmark in the navbar is the same link
-        // a few words to its left. And a trail with nothing left in it but the page you are
-        // already on is not a trail, so /themes/ and /index/ get none at all. Both crumbs stay
-        // in the BreadcrumbList below, which wants the root and the leaf.
+        string fullTitle = $"{titleText} | poems by {SiteName}";
+        // The site name and the page itself are dropped from the visible trail; the
+        // BreadcrumbList below keeps the whole chain
         List<KeyValuePair<string, string>> visible = crumbs.Skip(1).ToList();
-        string trail = visible.Count < 2
+        if (visible.Count > 0 && visible[visible.Count - 1].Value == urlPath)
+            visible.RemoveAt(visible.Count - 1);
+
+        string trail = visible.Count == 0
             ? string.Empty
-            : string.Join(" &rsaquo; ", visible.Select((crumb, i) => i == visible.Count - 1
-                ? WebUtility.HtmlEncode(crumb.Key)
-                : $"<a href=\"{crumb.Value}\">{WebUtility.HtmlEncode(crumb.Key)}</a>"));
+            : string.Join(" &rsaquo; ", visible.Select(crumb =>
+                $"<a href=\"{crumb.Value}\">{WebUtility.HtmlEncode(crumb.Key)}</a>"));
 
         string html = ArchiveTemplate
             .Replace("{{navbar}}", SimpleNavbarTemplate)
             .Replace("{{title}}", WebUtility.HtmlEncode(fullTitle))
+            .Replace("{{headingClass}}", hideHeading ? "visually-hidden" : string.Empty)
             .Replace("{{heading}}", WebUtility.HtmlEncode(heading))
             .Replace("{{breadcrumb}}", !showTrail || trail.Length == 0 ? string.Empty : $"<p class=\"breadcrumb\"><small>{trail}</small></p>")
             .Replace("{{content}}", body)
@@ -1002,8 +936,7 @@ class Program
         ListPageUrls.Add(urlPath);
     }
 
-    // GitHub Pages cannot serve a 301, so a renamed url gets a stub carrying a meta refresh
-    // and a rel=canonical to its new home. See Other/redirects.txt.
+    // A renamed url gets a stub carrying a meta refresh. See Other/redirects.txt
     static void RenderRedirects()
     {
         string listPath = "Other/redirects.txt";
@@ -1058,7 +991,7 @@ class Program
                 new XAttribute("version", "2.0"),
                 new XAttribute(XNamespace.Xmlns + "atom", atom),
                 new XElement("channel",
-                    new XElement("title", $"{SiteName} | poems"),
+                    new XElement("title", $"poems by {SiteName}"),
                     new XElement("link", BaseUrl + "/"),
                     new XElement("description", description),
                     new XElement("language", "en-us"),
@@ -1223,19 +1156,12 @@ class Program
         allPoemsHtml.AppendLine("</body>\n</html>");
         File.WriteAllText("docs/pdf/all_poems.html", allPoemsHtml.ToString());
 
-        // Print media is set before the navigation rather than after it. This page is three
-        // megabytes of poems and lays out to something over a thousand pages; arriving in
-        // screen media and switching afterwards is laying the whole book out twice, once in
-        // a form nobody will ever see. Everything the screen adds -- the atmosphere layers,
-        // the fixed pagination in the margins -- is absent from the first layout this way.
+        // Set before the navigation, so the book is laid out once and in print media only
         await page.EmulateMediaAsync(new PageEmulateMediaOptions { Media = Media.Print });
 
         await page.GotoAsync("/pdf/all_poems.html");
 
-        // Strip Navbar, pagination and Creative Commons links/images via JavaScript in the
-        // browser. The pagination is per-poem and position: fixed, which Chromium repeats on
-        // every page of a paginated document -- print css already hides it, and this takes
-        // the elements out of the tree so they cost nothing to hide.
+        // Take the navbar, pagination and Creative Commons links out of the tree
         await page.EvaluateAsync(@"() => {
             const elements = document.querySelectorAll('.navbar, .edge, img[src*=\'cc.png\'], a[href*=\'creativecommons\']');
             elements.forEach(el => el.remove());
@@ -1484,8 +1410,7 @@ class Program
         File.WriteAllText(filepath, xmlString, new UTF8Encoding(false));
     }
 
-    // The review server has no way back from a poem's url to its source file, so the build
-    // hands it the mapping. Lands in Output/, never in docs/.
+    // Maps each poem url back to its source file, for the review server
     static void WriteReviewManifest(List<Poem> ordered)
     {
         if (!ReviewMode)

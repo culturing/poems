@@ -6,9 +6,6 @@ the source file under Poems/ directly on behalf of the widget in Scripts/review.
 
     dotnet run -- review        # build with the widget, and write the manifest
     python Tools/review-server.py
-
-Temporary: delete Tools/, Scripts/review.js and the {{review}} line in
-Templates/content.html when the pass is done.
 """
 
 import json

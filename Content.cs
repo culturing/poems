@@ -10,7 +10,7 @@ class Content
     public string Link { get; set; }
     public DateTime PublicationDate { get; set; }
     public string FilePath { get; set; }
-    // Where the poem was read from; FilePath is where it was written to. Review mode only.
+    // Where the poem was read from; FilePath is where it was written to. Review mode only
     public string SourcePath { get; set; }
     public string FileName => Path.GetFileName(Path.GetDirectoryName(FilePath));
     public int Page { get; set; }
@@ -18,21 +18,17 @@ class Content
 
 class Poem : Content
 {
-    // One leading asterisk per level in the source file. common.css says what a fourth
-    // level would have to look like, should the scale ever need one.
+    // One leading asterisk per level in the source file
     public const int MaxRating = 2;
 
     public int Rating { get; set; } = 0;
 
-    // /best/, the chronology and the pdf's bestOnly filter ask a yes/no question
     public bool Bold => Rating > 0;
 
     // Used for <meta name="description">, Open Graph and the RSS feed
     public string Description { get; set; }
 
-    // The poem's opening line, shown beside its title in a listing on hover. Short enough
-    // to sit on one row; a poem that opens on an epigraph or a blank line falls back to
-    // the first line that carries words.
+    // The poem's opening line, shown beside its title in a listing on hover
     public string Opening { get; set; } = string.Empty;
 
     // Theme tags from Other/tags.tsv, most salient first
@@ -48,8 +44,7 @@ class Poem : Content
 
     public string UrlPath => $"{DatePath}{FileName}/";
 
-    // Emitted for every poem, unrated included: a stylesheet has no sensible default to
-    // fall back on. The ramp lives in common.css, and its paper twin in toc.css.
+    // The ramp lives in common.css, and its paper twin in toc.css
     public string RatingClass => $"rated-{Rating}";
 }
 

@@ -1,9 +1,6 @@
 /* -- generated: node Tools/weathering.js -- do not hand-edit ------------------
-   The lintel and the vine rooted in its fracture. Geometry is seeded (6180) and
-   reproducible; regenerating with the same seed yields byte-identical output.
-   --vine-root carries both the fracture and the growth in one image so the two can
-   never drift apart. The layer hangs at bottom: -10px, which is what puts every
-   stem exactly on the navbar's lower edge. */
+   Seeded (6180): the same seed yields byte-identical output. The layer hangs at
+   bottom: -10px, which is what puts every stem on the navbar's lower edge. */
 .navbar {
     --stone-grain: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' seed='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='180' height='180' filter='url(%23g)' opacity='0.055'/></svg>");
     --vine-stem: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='20' viewBox='0 0 64 20'><path d='M0,10C1.3,10.1 5.3,10.6 8,10.8C10.7,11 13.3,11.1 16,11.1C18.7,11.1 21.3,11 24,10.8C26.7,10.6 29.3,10.3 32,10C34.7,9.7 37.3,9.4 40,9.2C42.7,9 45.3,8.9 48,8.9C50.7,8.9 53.3,9 56,9.2C58.7,9.4 62.7,9.9 64,10' fill='none' stroke='%23414d3b' stroke-width='0.9' stroke-linecap='round' opacity='0.85'/></svg>");
@@ -15,36 +12,20 @@
 }
 /* -- end generated ----------------------------------------------------------- */
 
-/* Sticky, so only the poem moves. top: 0 rather than the 1rem that would keep the
-   slab's inset while stuck: at 1rem the gap above it is transparent, and lines of
-   the poem would scroll up through the strip between the lintel and the top of the
-   window. Flush is the honest version -- the bar keeps its left and right inset,
-   and the content underneath it shares that inset exactly, so nothing ever slides
-   past its edges either.
-
-   z-index: 0 opens the stacking context that keeps the two weathering layers at
-   -1 behind the labels; being positioned, the whole bar still paints above the
-   in-flow content scrolling under it. */
+/* top: 0 rather than 1rem: the gap above a stuck slab is transparent, and the poem
+   would scroll up through it. z-index: 0 opens the stacking context that holds the
+   two weathering layers at -1, behind the labels */
 .navbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 0; }
 .nav-group-left, .nav-group-main, .nav-group-pagination, .nav-group-right { display: flex; align-items: center; }
-/* index.css pads every div by 4px to space the listing rows, and the nav groups nest
-   three deep, so a listing page's bar came out 48px tall against a poem page's 36px.
-   That did not matter until the fracture, which is drawn to a fixed 36px and would
-   otherwise appear to start halfway down the slab on half the site. .navbar div beats
-   a bare div on specificity, so this holds wherever index.css loads. */
+/* index.css pads every div by 4px, and the nav groups nest three deep, which made a
+   listing page's bar 48px against a poem page's 36px -- and the fracture is drawn to
+   a fixed 36px. .navbar div beats a bare div, so this holds wherever index.css loads */
 .navbar, .navbar div { padding-bottom: 0; }
-/* The vine hangs BASE px below the navbar box and the layout has to know about it.
-   Listing pages are what forced this: index.css starts both columns flush to the
-   top -- #container-chronology h3:first-child has padding-top: 0 by design -- so
-   the first heading came up under the leaves. 1.5rem is the 10px of overhang plus
-   air. Poem pages absorb it without moving: #container-parent is flex: 1 and
-   centres what it holds in whatever space is left. */
+/* The 10px of vine overhang below the navbar box, plus air */
 .navbar { margin-bottom: 1.5rem; }
 
-/* The lintel. A slab a shade above the paper, lit along its top edge and shadowed
-   along its bottom, with grain over it. Both weathering layers sit at z-index -1
-   inside the stacking context .navbar opens, which puts them behind every label
-   without touching .nav at all -- and keeps dropdown.css's z-index: 100 working. */
+/* The lintel: a slab lit along its top edge and shadowed along its bottom, grain over
+   it. At -1 inside the context .navbar opens, so it stays behind every label */
 .navbar::before {
     content: "";
     position: absolute;
@@ -55,19 +36,11 @@
     pointer-events: none;
 }
 
-/* The fracture, and what got in through it. Percentages rather than pixels: the
-   images never scale, so no leaf is ever distorted, and a background positioned by
-   percentage cannot overflow its box, so none of this can force a scrollbar.
-   The -10px matches BASE in Tools/weathering.js and is load-bearing: it is what
-   puts the stem of all five images on the navbar's lower edge at once.
-
-   The last layer is the apron. The slab is opaque and hides whatever scrolls under
-   it, but the vine is not -- it is leaves on nothing, and once the bar went sticky
-   the poem showed through the gaps between them. This layer is transparent for the
-   38px the slab covers and paper for the 10px below it, so the text disappears
-   cleanly at the leaf tips instead of flickering between them. 38px is not the
-   navbar's height: it is this box's own height less the overhang, which is where
-   the navbar's lower edge falls whatever the bar measures. */
+/* The fracture, and what got in through it. Positioned by percentage, so nothing
+   scales and nothing can overflow the box. The -10px matches BASE in
+   Tools/weathering.js and is load-bearing: it lands all five stems on the navbar's
+   lower edge at once. The last layer is the apron -- transparent for the 38px the
+   slab covers, paper for the 10px below, so text disappears cleanly at the leaf tips */
 .navbar::after {
     content: "";
     position: absolute;
@@ -86,25 +59,19 @@
     pointer-events: none;
 }
 
-/* 0.82rem rather than the inherited size: capitals at a lowercase face's size read a good
-   deal larger than the text they sit above. Without the tracking, inscriptional capitals
-   close "home best themes about" into one word. */
+/* 0.82rem rather than the inherited size: capitals read larger than the text they sit
+   above. Without the tracking they close into one word */
 .nav, .dropbtn { font-family: 'Cinzel', Georgia, serif; font-weight: 400; font-size: 0.82rem; letter-spacing: 0.14em; }
 /* Wider left and right: the gap between words has to beat the tracking between letters */
 .nav { padding: 0.5rem 0.6rem; text-decoration: none; color: var(--muted); }
 .nav:hover { background-color: var(--hover); color: var(--ink); }
-/* First and last poem: keeps the pagination slot occupied without emitting a dead link */
+/* First and last poem: keeps the pagination slot occupied without a dead link */
 .nav-disabled { opacity: 0.35; }
 .nav-disabled:hover { background-color: transparent; }
 
-/* Each word is a block, the blocks have been in the wall a long time, and the wall
-   has moved. Everything here is under 0.6deg and under 2px: past that it stops
-   reading as settlement and starts reading as a broken stylesheet. Two of the
-   labels have had their tracking opened a thousandth as the joint widened.
-
-   These take effect because every .nav is a flex item and so blockified -- on a
-   bare inline <a> a transform is ignored outright. .dropbtn stands in for the
-   contact link, since transforming .dropdown itself would carry the menu with it. */
+/* The settling. These take effect only because every .nav is a flex item and so
+   blockified; on a bare inline <a> a transform is ignored outright. .dropbtn stands in
+   for the contact link, since transforming .dropdown would carry the menu with it */
 .nav-group-main .nav:nth-child(1) { transform: translateY(0.5px) rotate(-0.4deg); }
 .nav-group-main .nav:nth-child(2) { transform: translateY(-0.5px) rotate(0.25deg); letter-spacing: 0.155em; }
 .nav-group-main .nav:nth-child(3) { transform: translateY(1.5px) rotate(0.55deg); }
@@ -120,13 +87,10 @@
     .navbar { flex-wrap: wrap; }
     .nav-group-left, .nav-group-main, .nav-group-right { display: contents; }
     .nav-group-pagination { flex-basis: 100%; justify-content: space-between; order: 1; }
-    /* "themes" pushed the row onto two lines; both of these are in the browser menu anyway */
+    /* "themes" pushed the row onto two lines */
     #print, #pdf { display: none !important; }
-    /* The bar is two rows here and the vine has no single baseline left to follow,
-       so the growth is dropped rather than redrawn. The slab has no such problem --
-       it is a gradient, and stretches to whatever height the rows come to.
-       display: contents above also dissolves the groups, which takes the settling
-       nth-child selectors with it; the labels stand straight on a phone. */
+    /* Two rows, so the vine has no single baseline left to follow. display: contents
+       above also dissolves the groups and with them the settling selectors */
     .navbar::after { display: none; }
     /* no vine here, so no overhang to leave room for */
     .navbar { margin-bottom: 0.75rem; }

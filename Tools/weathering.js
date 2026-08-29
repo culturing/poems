@@ -1,35 +1,19 @@
 /* Generates the navbar's weathering: a fractured lintel with a vine rooted in the
    fracture. Run `node Tools/weathering.js` and paste the block it prints over the
-   generated section at the top of Styles/navbar.css.
+   generated section at the top of Styles/navbar-cinzel.css.
 
-   Why generated rather than hand-drawn: the geometry is a few hundred coordinates
-   and has to stay reproducible. Every random draw comes from one seeded PRNG, so
-   the same SEED always yields the same bar -- change it only to reroll the whole
-   thing deliberately.
-
-   Why background images rather than one inline SVG: the navbar is a flex row whose
-   width is the viewport's, and an SVG stretched to that width distorts every leaf.
-   Backgrounds positioned by percentage never scale and never overflow their box, so
-   the growth spreads with the bar while each leaf keeps its shape.
-
-   The one number everything depends on:
-
-     BASE is the distance from the bottom of every generated image to the vine's
-     stem. navbar.css hangs the layer at `bottom: -BASE`, so a stem drawn at
-     H - BASE lands on the navbar's lower edge in all five images at once, and the
-     leaves that lie across the stem hang into the BASE px underneath it. Change it
-     here and change `bottom` and `height` on .navbar::after to match. */
+   Every random draw comes off one seeded PRNG, so the same SEED yields the same bar.
+   Anything inserted above an existing draw shifts every number after it; new parts go
+   at the end of the file. See DESIGN.md. */
 
 const SEED = 6180;
 const BAR  = 36;   // 0.5rem padding x2 + the 1.25rem line-height inherited from body
-const BASE = 10;   // stem sits this far above each image's bottom edge; a leaf lying
-                   // across the stem needs half its length of clearance under it, and at
-                   // 6 the largest of them were being cut off square by the image edge
+const BASE = 10;   // stem sits this far above each image's bottom edge, and a leaf lying
+                   // across it hangs into the gap. navbar-cinzel.css hangs the layer at
+                   // bottom: -BASE, so change `bottom` and `height` there to match
 const H    = BAR + BASE + 2;   // 2px of slack above the bar for the tallest tendril
 
-/* Green is the first hue on this site besides the rose in common.css. The two
-   alternates below were both drawn and both work: GREY reads as wrought iron and
-   keeps the palette strictly neutral, ROSE reads as the growth dried out. */
+/* GREY and ROSE are drawn, working alternates; set C to pick one */
 const GREEN = { stem: '#5c6a51', deep: '#414d3b', leaf: '#4d5b44', lit: '#78866b' };
 const GREY  = { stem: '#3a3a3a', deep: '#2b2b2b', leaf: '#343434', lit: '#4e4e4e' };
 const ROSE  = { stem: '#7c565a', deep: '#5a3f42', leaf: '#6b4b4f', lit: '#9c6c72' };
@@ -63,8 +47,6 @@ function smooth(pts) {
 
 /* -- the parts -------------------------------------------------------------- */
 
-// A slimmer almond than the first draft: at 0.52 half-width the silhouettes read
-// as berries once they overlap.
 const LEAF = 'M0,0C0.28,-0.36 0.76,-0.42 1,0C0.76,0.42 0.28,0.36 0,0Z';
 
 function leaf(x, y, size, deg, rnd, alpha = 1) {
@@ -73,7 +55,7 @@ function leaf(x, y, size, deg, rnd, alpha = 1) {
   return `<path d='${LEAF}' fill='${fill}' opacity='${o}' transform='translate(${n(x)},${n(y)}) rotate(${Math.round(deg)}) scale(${n(size)})'/>`;
 }
 
-/* A tendril leaves the stem, climbs, and curls in on itself as it runs out of reach. */
+/* A tendril leaves the stem, climbs, and curls in on itself as it runs out of reach */
 function tendril(x, y, len, curlDir, rnd) {
   const pts = [[x, y]];
   let cx = x, cy = y, ang = -Math.PI / 2 + (rnd() - 0.5) * 0.7;
@@ -88,18 +70,13 @@ function tendril(x, y, len, curlDir, rnd) {
   return { d: smooth(pts), tip: pts[steps], mid: pts[3] };
 }
 
-/* Growth clustered around rootX and thinning with distance from it, because the
-   seed entered at one place and has been working outward from it ever since. */
+/* Growth clustered around rootX, thinning with distance from it */
 function growth(w, rootX, density, spread, rnd) {
   const y = H - BASE;
   let out = '';
 
-  /* The stem thickens where the vine is oldest. Both of its ends fade to nothing
-     over the outer 16%, because the continuous hairline underneath it is a
-     repeating tile whose phase at any given viewport width is unknowable -- a hard
-     end would show as a step where the two lines meet at slightly different
-     heights, which is exactly what the first render did. Faded, the same mismatch
-     reads as the stem thickening, which is what a vine does anyway. */
+  /* Both ends fade to nothing over the outer 16%, so they never meet the repeating
+     hairline underneath at a visible step */
   const seg = [];
   for (let x = -2; x <= w + 2; x += 11) seg.push([x, y + Math.sin(x * 0.09) * 0.85 + (rnd() - 0.5) * 0.7]);
   out += `<defs><linearGradient id='s'>` +
@@ -110,8 +87,7 @@ function growth(w, rootX, density, spread, rnd) {
   out += `<path d='${smooth(seg)}' fill='none' stroke='url(%23s)' stroke-width='${n(1.1 + density * 0.7)}' stroke-linecap='round'/>`;
   const stemY = px => seg[Math.max(0, Math.min(seg.length - 1, Math.round((px + 2) / 11)))][1];
 
-  /* 14px apart minimum. At 9 the tendrils overlapped into a single blobby mass
-     that read as moss rather than as a vine. */
+  /* Tendrils are kept 14px apart minimum */
   const count = Math.round(2 + density * 7);
   const used = [];
   for (let i = 0; i < count; i++) {
@@ -146,8 +122,7 @@ function growth(w, rootX, density, spread, rnd) {
   return out;
 }
 
-/* Midpoint displacement: a fracture is self-similar at every scale, which is why
-   it never looks right drawn by hand. */
+/* Midpoint displacement: a fracture is self-similar at every scale */
 function crackPoints(a, b, rough, rnd, depth) {
   let pts = [a, b];
   for (let d = 0; d < depth; d++) {
@@ -165,8 +140,7 @@ function crackPoints(a, b, rough, rnd, depth) {
 
 const poly = pts => pts.map((p, i) => `${i ? 'L' : 'M'}${n(p[0])},${n(p[1])}`).join('');
 
-/* Drawn twice: the opening in shadow, and half a pixel up-left the chipped edge
-   catching what light there is. That offset is the whole illusion. */
+/* Drawn twice: the opening in shadow, and half a pixel up-left the chipped edge */
 function fracture(enterX, exitX, rnd) {
   const main = crackPoints([enterX, 2], [exitX, H - BASE], 8, rnd, 5);
   const paths = [main];
@@ -185,9 +159,7 @@ function fracture(enterX, exitX, rnd) {
     out += `<path d='${poly(p)}' fill='none' stroke='%23000' stroke-width='${w}' stroke-linejoin='round' opacity='0.92'/>`;
   });
 
-  /* A fracture opens wider the further it has run, so the lower stretch is drawn
-     again over itself at nearly twice the width. Widening the whole path instead
-     just reads as a drawn line. */
+  /* The lower stretch is drawn again over itself at nearly twice the width */
   const lower = main.slice(Math.floor(main.length * 0.42));
   out += `<path d='${poly(lower)}' fill='none' stroke='%23000' stroke-width='1.8' stroke-linejoin='round' stroke-linecap='round' opacity='0.9'/>`;
   out += `<path d='${poly(lower.map(q => [q[0] - 0.7, q[1] - 0.7]))}' fill='none' stroke='rgba(245,245,245,0.13)' stroke-width='0.7' stroke-linejoin='round'/>`;
@@ -204,11 +176,8 @@ function fracture(enterX, exitX, rnd) {
 
 const rnd = mulberry32(SEED);
 
-/* Inside a quoted CSS url() only three characters actually have to be escaped:
-   the closing quote, %, and # (which would start a fragment). Angle brackets are
-   left raw -- encoding them as %3C/%3E is the usual habit and it triples the size
-   of every tag for nothing. Attributes are single-quoted throughout so the double
-   quote never appears at all. */
+/* Inside a quoted CSS url() only the closing quote, % and # have to be escaped.
+   Angle brackets are left raw, and SVG attributes are single-quoted throughout */
 function svg(w, h, body) {
   const s = `<svg xmlns='http://www.w3.org/2000/svg' width='${w}' height='${h}' viewBox='0 0 ${w} ${h}'>${body}</svg>`;
   return 'url("data:image/svg+xml,' + s
@@ -217,8 +186,7 @@ function svg(w, h, body) {
     .replace(/#/g, '%23') + '")';
 }
 
-/* The stem is the rule the navbar never had. One tile, seamless because the wave's
-   period divides the tile width exactly. */
+/* One tile, seamless because the wave's period divides the tile width exactly */
 function stemTile() {
   const w = 64, h = BASE * 2;
   const pts = [];
@@ -226,8 +194,7 @@ function stemTile() {
   return svg(w, h, `<path d='${smooth(pts)}' fill='none' stroke='${C.deep}' stroke-width='0.9' stroke-linecap='round' opacity='0.85'/>`);
 }
 
-/* Stone: a slab a shade above the paper, with grain. Tiled, so it costs one tile
-   whatever the viewport does. */
+/* Stone grain, tiled, so it costs one tile whatever the viewport does */
 function grainTile() {
   return svg(180, 180,
     `<filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' seed='3'/>` +
@@ -235,36 +202,22 @@ function grainTile() {
     `<rect width='180' height='180' filter='url(%23g)' opacity='0.055'/>`);
 }
 
-/* The fracture and the growth share one image, which is the point of the whole
-   design: the vine is not near the crack, it is in it. Rooting them in separate
-   layers would let them drift apart at some viewport width and the causation --
-   the stone failed, so the seed got in -- would quietly stop reading. */
+/* The fracture and the growth share one image, so the two can never drift apart */
 const ROOT_W = 182, ROOT_X = 76;
 const root = svg(ROOT_W, H, fracture(120, ROOT_X, rnd) + growth(ROOT_W, ROOT_X, 1.3, 48, rnd));
 
-/* Three more clusters carry the growth rightward, each thinner than the last.
-   Percentages, not pixels, so the spacing opens with the viewport. */
+/* Three more clusters carry the growth rightward, each thinner than the last */
 const mid    = svg(132, H, growth(132, 60, 0.62, 56, rnd));
 const late   = svg(120, H, growth(120, 52, 0.38, 52, rnd));
 
-/* The runner: one growth that ignores the falloff entirely and reaches past
-   everything else, out where the bar is otherwise still just a wall. Asymmetry is
-   the whole of it -- a second one at the far left for balance would kill the
-   effect outright. */
+/* One growth that ignores the falloff and reaches past everything else */
 const runner = svg(96, H, growth(96, 40, 0.26, 46, rnd));
 
-/* A finer flaw for the contact tablet in dropdown.css. It enters at the tablet's
-   top edge, under the lintel's own fracture, and runs out partway down -- which is
-   why the image is deliberately shorter than the menu it sits in: a crack that
-   stopped exactly at the bottom edge would read as a drawn border.
-
-   Drawn last on purpose. Every draw comes off one sequential PRNG, so anything
-   inserted above this line would shift every number after it and redraw the whole
-   navbar. New parts go here. */
+/* A finer flaw for the contact tablet in dropdown-cinzel.css. The image is
+   deliberately shorter than the menu it sits in, so the crack runs out partway down */
 function flaw(w, h, rnd) {
-  /* Weighted well under the lintel's fracture. The bar is ~1300px of stone and the
-     tablet about 110 -- the same stroke on both makes the small one read as a
-     scratch drawn over the labels rather than a flaw inside them. */
+  /* Weighted well under the lintel's fracture: the bar is ~1300px of stone, the
+     tablet about 110 */
   const main = crackPoints([w * 0.62, 0], [w * 0.34, h - 5], 6, rnd, 4);
   let out = `<path d='${poly(main.map(q => [q[0] - 0.5, q[1] - 0.5]))}' fill='none' stroke='rgba(245,245,245,0.075)' stroke-width='0.45' stroke-linejoin='round'/>`;
   out += `<path d='${poly(main)}' fill='none' stroke='%23000' stroke-width='0.6' stroke-linejoin='round' opacity='0.62'/>`;
@@ -280,11 +233,8 @@ function flaw(w, h, rnd) {
 const stoneFlaw = svg(92, 72, flaw(92, 72, rnd));
 
 const out = `/* -- generated: node Tools/weathering.js -- do not hand-edit ------------------
-   The lintel and the vine rooted in its fracture. Geometry is seeded (${SEED}) and
-   reproducible; regenerating with the same seed yields byte-identical output.
-   --vine-root carries both the fracture and the growth in one image so the two can
-   never drift apart. The layer hangs at bottom: -${BASE}px, which is what puts every
-   stem exactly on the navbar's lower edge. */
+   Seeded (${SEED}): the same seed yields byte-identical output. The layer hangs at
+   bottom: -${BASE}px, which is what puts every stem on the navbar's lower edge. */
 .navbar {
     --stone-grain: ${grainTile()};
     --vine-stem: ${stemTile()};

@@ -1,31 +1,13 @@
-/* Cinzel sets the navbar and nothing else; Quattrocento sets everything else, poems included.
-   The third file is Greek, and wears the Quattrocento name rather than its own.
-
-   Cinzel is built from the upstream variable font with fontTools: a static instance pinned at
-   the axis value below, subset to the range that follows it, then compressed. Rebuilding it
-   means redoing all three steps -- a differently-pinned instance would change the weight of
-   every nav label. The unicode-ranges are generated rather than transcribed, and disjoint by
-   design. */
+/* Cinzel sets the navbar, Quattrocento everything else. The third file is Greek and wears
+   the Quattrocento name rather than its own. The unicode-ranges are generated, and
+   disjoint; see DESIGN.md before rebuilding any of these */
 
 /* -- the site ----------------------------------------------------------------- */
 
-/* A 2048 upem cut carrying its own hinting -- not built from the v2.000 TTFs sitting beside
-   it in this directory, which are upstream's 1000 upem. That difference is deliberate and was
-   measured: at 16px the 1000 upem cut renders less evenly, its x-height landing on 7.34px
-   where the hint program rounds neighbouring glyphs opposite ways and the line shimmers.
-   2048 is a power of two, so unit-to-pixel conversion adds no rounding of its own. Re-hinting
-   the 1000 upem cut with ttfautohint was tried and measured worse than either, so that is not
-   the way back if these ever need rebuilding.
-
-   This cut covers 230 codepoints, fewer than the ranges below declare -- dagger, minus,
-   per-mille and the carons among them. A character inside the range but absent from the font
-   drops through to Georgia rather than failing visibly, so the mismatch is quiet rather than
-   harmless. Nothing written so far uses one; the micro sign is the only near miss, and it is
-   routed to the Greek face on purpose. The real 700 is
-   here because without it the browser fakes bold from the regular, which is visibly not the
-   same letterforms. The family ships no italic, so every italic on the site is a slant the
-   browser computes -- a deliberate trade. Program.cs names this family for the PDF folios,
-   which come from the installed font rather than from here. */
+/* A 2048 upem cut, not the v2.000 TTFs sitting beside it in this directory. It covers 230
+   codepoints, fewer than the ranges below declare; a character inside a range but absent
+   from the font drops through to Georgia. No italic ships, so every italic on the site is
+   a computed slant */
 @font-face {
   font-family: 'Quattrocento';
   font-style: normal;
@@ -43,14 +25,8 @@
 }
 
 /* Alegreya's Greek, wearing the Quattrocento name so it resolves per character on the same
-   line. Quattrocento covers latin and latin-ext only -- its cmap reaches the Greek block for
-   the micro sign alone, and that codepoint is dropped from the ranges above so the two faces
-   never contend for a character.
-
-   Two exact weights, never the range '400 700': a range overlaps the regular's exact 400 and,
-   being declared later, wins the weight match outright, dropping every 400 on the site to the
-   browser's default serif while bold carries on working. The bold block serves a Greek word in
-   a title at regular weight, which is a far smaller fault than one arriving in Times. */
+   line. Two exact weights, never the range '400 700', which would overlap the regular's
+   exact 400 above and, declared later, win the match outright */
 @font-face {
   font-family: 'Quattrocento';
   font-style: normal;
@@ -69,9 +45,8 @@
 
 /* -- the navbar --------------------------------------------------------------- */
 
-/* Roman inscriptional capitals, pinned at 400: the navbar never goes bold and never leans,
-   and with no heavier cut in the file a stray font-weight elsewhere cannot embolden it.
-   Cinzel has no true lowercase -- the small letters are small capitals. */
+/* Pinned at 400, so a stray font-weight cannot embolden the bar. Cinzel has no true
+   lowercase -- the small letters are small capitals */
 @font-face {
   font-family: 'Cinzel';
   font-style: normal;

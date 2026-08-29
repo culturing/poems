@@ -2,8 +2,6 @@
 
 This is a living tree of poems.
 
-I have always been a poet, and I have often shared my work. But this is an experiment. I have eschewed traditional publishing in favor of self-publishing here. These poems are all connected and rooted in my life. To clip one here and there, to rearrange them into topical collections, would make me very sad. They have grown organically, in order, as I present them here.
-
 Poems grow out of other poems, as lives grow out of other lives. Cut off from their source, they wither and die. Here is your chance to view them together in their natural habitat.
 
 The name "culturing" comes from a surprising source. In "On the Origin of Species", Darwin notices differences between birds kept "under culture" and birds left in the wild. The phrase "under culture" troubles me. I don't want to be *under* culture. I want to *culture*. I want to participate in culture, to *make* culture. Thus "culturing" is the perfect manifesto for my poetry project.

@@ -1,57 +1,37 @@
+/* The pool of light is off on poem and about pages; the vignette stays */
+:root:has(#content.poem),
+:root:has(#content.about) { --glow: 0; --shade: 0 }
+
 #container { display: flex; flex-direction: row; justify-content: center; }
 #container-parent { display: flex; flex-direction: column; justify-content: center; flex: 1; }
 
-/* Verse wants more air between lines than a listing does; unitless, so it follows a size
-   change. Scoped to .poem because the about, 404 and faq pages load this stylesheet too and
-   use #content for prose that should keep body's tighter leading.
+/* Unitless, so it follows a size change. Scoped to .poem: the about, 404 and faq pages
+   load this stylesheet for prose and keep body's tighter leading */
+#content.poem { line-height: 1.5; font-size: 1rem; }
 
-   1.62 rather than the 1.3 it was: a poem read in a pool of light on a black ground needs
-   more room between lines than one on paper, or the descenders of one line and the ascenders
-   of the next close the gap and the stanza reads as a block. */
-#content.poem { line-height: 1.62; font-size: 1.06rem; }
+body { padding-bottom: 0; }
 
-/* Left on #content rather than .poem so the about and 404 headings keep it too. 1.3 leading
-   because a long title wrapping at the column's leading opens a gap under it. */
-#content h1 { padding-top: 2rem; font-size: 1.42rem; font-weight: 700; line-height: 1.3; }
-/* The url is print-only apparatus. pdf used to be hidden here because the navbar carried it
-   on listing pages only; it is a main nav item on every page now, so it stays. */
+/* On #content rather than .poem, so the about and 404 headings keep it too */
+#content h1 { font-size: 1.42rem; font-weight: 700; line-height: 1.3; }
+/* Print-only apparatus */
 .url { display: none; }
 
-/* The date above the poem and the themes below it are apparatus, not the poem: both muted,
-   both wearing the same <em><small><small>.
-
-   Cinzel, as in the navbar and on the date headings of a listing -- it marks everything on
-   the site that labels the writing rather than being it, so a reader learns the distinction
-   once and it holds everywhere. font-style is reset because the family ships no italic and
-   the <em> around both would otherwise have the browser compute a slant, which on an
-   inscriptional roman reads as a mistake rather than as emphasis. The tracking is what makes
-   small capitals legible at this size; without it they close into a single grey mark.
-
-   Both selectors reach past the <em>: font-style inherits, so a declaration has to sit on an
-   element inside it to win. */
+/* The date above the poem and the themes below it. font-style is reset because Cinzel
+   ships no italic; both selectors reach past the <em>, since font-style inherits */
 #content time, .tags em { font-family: 'Cinzel', Georgia, serif; font-style: normal; letter-spacing: 0.18em; }
 #content time, .tags { color: var(--muted); }
 #content time a, .tags a { color: var(--muted); text-decoration: none; }
 #content time a:hover, .tags a:hover { color: var(--accent); }
-/* Flush against the last line, by the same amount the date sits under the title. :has()
-   zeroes whatever the poem ends on, so a closing blockquote is not pulled up by a fixed
-   offset. */
+/* :has() zeroes whatever the poem ends on, so the tags sit flush against the last line */
 .tags { margin: 0; }
 #content > *:has(+ .tags) { margin-bottom: 0; }
 blockquote { margin: 0; font-size: small; font-style: italic; }
-/* Set away from the quotation and muted, so it does not read as the epigraph's last line */
 figcaption { text-align: right; font-size: small; margin-top: 0.25rem; color: var(--muted); }
 figure { max-width: 400px; }
 
 /* -- pagination ------------------------------------------------------------------- */
 
-/* Out of the navbar and into the margins the poem was leaving empty anyway. The gain is
-   the neighbour's name: "prev" told you a poem existed, this tells you which one, which is
-   the difference between paging and following a sequence.
-
-   Fixed and vertically centred, so they sit level with the poem however long it is, and
-   dark enough at rest to be found only when looked for -- the poem is what the page is
-   for, and these are two chevrons in the dark until you go looking. */
+/* Fixed and vertically centred, so they sit level with the poem however long it is */
 .edge { position: fixed; top: 50%; transform: translateY(-50%); display: flex; flex-direction: row; align-items: center; gap: 0.85rem; text-decoration: none; z-index: 3; max-width: 15%; }
 .edge-prev { left: 1.5rem; }
 .edge-next { right: 1.5rem; flex-direction: row; }
@@ -59,25 +39,15 @@ figure { max-width: 400px; }
 .edge-mark { fill: none; stroke: #3a3a3a; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; flex: none; transition: stroke 0.35s ease; }
 .edge:hover .edge-mark { stroke: var(--accent); }
 
-/* The name of the next poem is the reveal: the chevron is always there, the title arrives
-   when you approach it. Never wrapped -- a two-line title in a 15% margin is a paragraph
-   in the corner of the page. */
-/* padding-right buys room for the italic overhang. A serif italic leans past its advance
-   width -- an f or a y most of all -- and overflow: hidden cuts at the box edge, not at the
-   ink, so a title ending in one lost the tail of its last letter to a clean vertical slice
-   that read as a truncation bug rather than as a glyph. min-width lets the label shrink
-   below its content when a long title really does need the ellipsis, which a flex item
-   otherwise refuses to do. */
+/* padding-right buys room for the italic overhang, which overflow: hidden would cut at
+   the box edge; min-width lets a flex item shrink below its content to the ellipsis */
 .edge-label { font-size: 0.8rem; font-style: italic; color: var(--whisper); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; padding-right: 0.25em; opacity: 0; transition: opacity 0.35s ease; }
 .edge:hover .edge-label { opacity: 1; color: var(--muted); }
 
-/* First and last poem: the chevron stays so the margins keep their shape, at a grey that
-   reads as absent rather than as unvisited */
+/* First and last poem: the chevron stays, so the margins keep their shape */
 .edge-disabled .edge-mark { stroke: #262626; }
 
-/* All three tiers ship with every poem and css shows one. The poem itself never filters --
-   you can read anything at any setting -- so this only decides which sequence the chevrons
-   walk: at two stars they step between the 215, skipping whatever sits between. */
+/* All three tiers ship with every poem; this shows the reader's */
 .edge[data-tier="1"], .edge[data-tier="2"] { display: none; }
 html.tier-1 .edge[data-tier="0"], html.tier-2 .edge[data-tier="0"] { display: none; }
 html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: flex; }
@@ -101,21 +71,16 @@ html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: fl
     /* Narrow screens sit the poem at the top rather than centring it */
     #container-parent { flex: none; }
 
-    /* The poem does not wrap on a phone -- it scrolls sideways, so the poet's line breaks
-       survive a 390px screen. The one thing missing was any sign that it does: this fades
-       the long lines out at the right edge instead of cutting them, which is the same
-       gesture the licence band makes at the foot of the page. */
+    /* The poem scrolls sideways here rather than wrapping, so long lines fade out at the
+       right edge instead of being cut */
     #container::after { content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 2.5rem; pointer-events: none; background: linear-gradient(to right, rgba(10, 10, 10, 0), var(--paper)); }
 
-    /* No margins left to sit in, so the chevrons rejoin the flow under the poem, ordered
-       there rather than moved -- they are before #container-parent in the markup so that a
-       screen reader meets the pagination with the poem, not after the licence badge. Both
-       carry their titles: there is no hover on a phone, and a chevron alone would never say
-       where it goes. 0.75rem of padding on a 0.8rem label clears the 44px target. */
+    /* No margins left to sit in, so the chevrons rejoin the flow under the poem. They are
+       ordered rather than moved: in the markup they precede #container-parent, so a screen
+       reader meets the pagination with the poem */
     .navbar { order: 1; }
     #container-parent { order: 2; }
-    /* Only one edge shows at a time on the ends of the sequence, and even in the middle the
-       two sit on separate rows, so each can have most of the width rather than half of it. */
+    /* Separate rows, so each can have most of the width rather than half of it */
     .edge { order: 3; position: static; transform: none; max-width: 88%; padding: 0.75rem 0; }
     #license { order: 4; }
     .edge-prev { align-self: flex-start; }
@@ -127,45 +92,43 @@ html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: fl
 
 @media only print
 {
-    /* 1. Map height to the 'printable area' defined by your C# margins (the 1in box) */
-    /* We must zero out default margins so they don't add to the C# margins */
+    /* Map height to the printable area inside the 1in margins RenderPdf sets, zeroing
+       the defaults so they do not add to them */
     html, body {
         height: 100%;
         margin: 0 !important;
         padding: 0 !important;
     }
 
-    /* 2. Force the parent to fill that exact printable area so Flexbox can center */
+    /* Fill that printable area exactly, so flex can centre in it */
     #container-parent {
         min-height: 100% !important;
         height: auto !important;
         margin: 0 !important;
-        /* Ensure centering is active */
         justify-content: center !important;
     }
 
-    /* 3. Show URL, and drop the themes: the pdf is built through this stylesheet, and
-          theme links do not belong in the book. The date stays, and it goes black --
-          --muted is a grey chosen against a near-black ground, and on white it prints faint. */
+    /* The date goes black: --muted is chosen against a near-black ground and prints faint */
     .url { display: block; }
     .tags { display: none !important; }
     #content time, #content time a { color: black; }
+    /* Quattrocento italic, taking the slant from the <em> it is wrapped in. The tracking
+       goes back with the face: it was there to open Cinzel's small capitals up */
+    #content time { font-family: Quattrocento, Georgia, serif; font-style: italic; letter-spacing: normal; }
 
-    /* 4. The Ghost Page Killer: Remove bottom margin from the very last element */
-    /* This ensures 100% height + 1em margin doesn't equal 100% + 1em (overflow) */
-    /* The themes are display:none above but still the last child */
+    /* No bottom margin on the last element: 100% height plus 1em overflows onto a ghost
+       page. The themes are display: none above but still the last child */
     #content > *:last-child, .url:last-child, #content > *:has(+ .tags:last-child) {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
 
-    /* 5. Safety to prevent internal breaks */
     #content {
         page-break-inside: avoid;
         break-inside: avoid;
     }
 
-    /* 6. The pdf is set from this stylesheet, and its measure is the page, not the screen */
+    /* The measure here is the page, not the screen */
     #content.poem { line-height: 1.3; font-size: 1rem; }
     #content h1 { font-size: 1.17rem; }
 }

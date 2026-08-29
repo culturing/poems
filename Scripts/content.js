@@ -5,9 +5,7 @@ document.onkeydown = function(e) {
     if (!id)
         return;
 
-    // Every poem carries three pairs, one per rating tier, and only the reader's is shown.
-    // The arrow keys have to walk the same sequence the chevrons do, so the tier is read off
-    // <html> rather than the pair being found by id -- only the unfiltered pair has one.
+    // The tier is read off <html>: only the unfiltered pair carries an id
     var tier = (document.documentElement.className.match(/tier-(\d)/) || [])[1] || "0";
     var link = document.querySelector('.edge[data-edge="' + id + '"][data-tier="' + tier + '"]');
 

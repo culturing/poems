@@ -1,9 +1,5 @@
-/* Rating widget for the manual review pass. Emitted onto poem pages only by
-   "dotnet run -- review", refuses to run anywhere but localhost, and writes nothing itself --
-   Tools/review-server.py does, on 5501.
-
-   Temporary: delete this file, Tools/ and the {{review}} line in Templates/content.html when
-   the pass is done. */
+/* Rating widget for the manual review pass, emitted onto poem pages only by
+   "dotnet run -- review". Writes nothing itself: Tools/review-server.py does, on 5501 */
 (function () {
     'use strict';
 

@@ -1,29 +1,10 @@
-/* The wordmark is the home link, so "home" leaves the row: a site's name in the top left
-   corner already means home, and the slot it frees is what "index" now occupies. Cinzel
-   only here and on the date headings -- it is a Roman inscriptional face, and a page of it
-   would be a monument rather than a poem.
-
-   Tracking is what makes Cinzel work at 11px. Its lowercase is small capitals, which set
-   tightly enough to blur into a single shape at nav sizes; 0.26em opens them back up. The
-   wordmark takes more still, at 0.44em, because it is read as a name rather than a word. */
-/* Sticky, with the paper carried up with it. The bar sits on a transparent ground otherwise
-   and titles scroll through the labels; the fill is inset by the same 1rem the body pads by,
-   so the band and the content underneath it share an edge and nothing slides past the side.
-
-   The gradient rather than a flat fill is the same gesture the licence badge makes at the
-   foot of the page: a line of poetry passing under the bar fades out over the last 12px
-   instead of being cut through the middle of its letters. z-index keeps it over the stem and
-   the fixed pagination, both of which would otherwise cross it. */
+/* Sticky, with the paper carried up with it: the negative margins pull the fill back out
+   through the body's 1rem padding, which the inner padding then puts back. The gradient
+   fades a line of verse out over the last 12px instead of cutting it */
 .navbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 50; margin: -1rem -1rem 1.5rem -1rem; padding: 1rem 1rem 0 1rem; background: linear-gradient(to bottom, var(--paper) 0, var(--paper) calc(100% - 12px), transparent 100%); }
 .nav-group-left, .nav-group-right { display: flex; align-items: center; }
 
-/* The filter replaces /best/, which was one of its three settings kept as a page of its own.
-   It sits beside the wordmark rather than among the links on the right, because it is not a
-   place you can go -- it changes what every other link leads to, and belongs with the name of
-   the thing it is changing.
-
-   Hidden until the script that drives it has run, so it is never a control that does nothing;
-   without javascript the whole site is simply unfiltered, which is the honest fallback. */
+/* Hidden until the script driving it has run, so it is never a control that does nothing */
 .tiers { display: none; }
 html.js .tiers { display: inline-block; }
 
@@ -42,30 +23,24 @@ html.tier-2 .tier-btn[data-tier="2"] { color: var(--ink); }
 .wordmark:hover { color: var(--ink); }
 
 .nav { font-family: 'Cinzel', Georgia, serif; font-size: 0.69rem; letter-spacing: 0.26em; padding: 0.5rem 0.75rem; text-decoration: none; color: var(--muted); }
-/* Grey, not rose: the accent belongs to the poems and to the breadcrumbs above an
-   archive, and the navbar sits on every page of the site */
 .nav:hover { background-color: var(--hover); color: var(--ink); }
 
 @media only screen and (max-width : 512px)
 {
-    /* The wordmark centres over the row rather than sitting beside it: five labels and a
-       name do not fit on 390px, and the name is the one that can afford to move. */
+    /* The wordmark centres over the row rather than sitting beside it */
     .navbar { flex-direction: column; align-items: stretch; }
     .nav-group-right { width: 100%; justify-content: space-between; }
     .wordmark { padding-bottom: 0.75rem; }
-    /* 0.9rem of vertical padding on a 0.69rem label is a 44px target, which is the floor
-       for a thumb. The horizontal padding goes instead -- space-between spaces them. */
+    /* 0.9rem on a 0.69rem label is a 44px thumb target; space-between does the rest */
     .nav { padding: 0.9rem 0; }
 
-    /* Six labels do not fit across 390px, and the 2MB book is the one nobody is downloading
-       on a phone. It is still reachable from every desktop page and from the browser menu. */
+    /* Six labels do not fit across 390px */
     #pdf { display: none !important; }
 
     /* The wordmark and the filter share the top row, centred together */
     .nav-group-left { width: 100%; justify-content: center; }
 
-    /* Two rows of navigation is most of a phone screen before a poem starts, so the bar
-       gives up the top edge here and scrolls away with the page. */
+    /* Two rows of labels, so the bar gives up the top edge and scrolls with the page */
     .navbar { position: static; margin: 0; padding: 0; background: none; }
 }
 
