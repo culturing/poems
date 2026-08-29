@@ -881,7 +881,8 @@ class Program
         rail.Append("</nav>");
 
         var body = new StringBuilder(rail.ToString());
-        body.Append("<div class=\"letters\">");
+        // tabindex, so the script in archive.html can hand it the page keys once it scrolls
+        body.Append("<div class=\"letters\" tabindex=\"-1\">");
         foreach (KeyValuePair<string, List<Poem>> group in byLetter)
         {
             string id = group.Key == "~" ? "letter-other" : $"letter-{group.Key}";

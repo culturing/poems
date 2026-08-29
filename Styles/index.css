@@ -195,6 +195,31 @@ h1 { margin: 0; }
     body:has(.railed .theme-columns) .year-rail { position: static; }
 }
 
+/* -- /index/ holds still ---------------------------------------------------------- */
+
+/* The same window as a theme's page, with .letters as the list that scrolls: the title and
+   the alphabet stay put above it */
+@media only screen and (min-width : 512.01px) and (min-height : 32rem)
+{
+    html:has(.letters) { overflow: hidden; }
+    body:has(.letters) { height: 100vh; }
+
+    /* The chain from the body down to the list. Every box on it is a flex item that has to be
+       allowed to shrink below its content; miss one and the overflow lands on the page */
+    body:has(.letters) #container-parent { min-height: 0; padding-bottom: 0; }
+    body:has(.letters) #container { flex: 1; min-height: 0; }
+    body:has(.letters) #container-chronology { display: flex; flex-direction: column; min-height: 0; }
+    /* The list is the only thing that gives; the alphabet would otherwise be squeezed into
+       fewer rows than it needs */
+    body:has(.letters) h1, body:has(.letters) .rail { flex: 0 0 auto; }
+    /* The 7rem the page held for the fade band moves here, the band now lying over the foot
+       of the list. outline: none, since the script in archive.html focuses it */
+    body:has(.letters) .letters { flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 7rem; scrollbar-width: thin; scrollbar-color: var(--rule) transparent; outline: none; }
+
+    /* Nothing above the top edge of the list for a letter to clear */
+    body:has(.letters) .letter { scroll-margin-top: 0; }
+}
+
 @media only screen and (max-width : 512px)
 {
     /* No pointer, so nothing here can be asked for: the opening line goes and the count
