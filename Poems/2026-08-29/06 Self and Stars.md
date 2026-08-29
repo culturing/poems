@@ -1,4 +1,4 @@
-*Self and Stars
+**Self and Stars
 29 August 2026
 
 The mother grips her son with a love
@@ -42,4 +42,4 @@ that devour the crop or sow salt in the field.
 
 What then is revealed? Only pain, and the labor
 of reducing it, the truth of our concourse here
-on the earth, on the land between self and stars.
+on the earth, in the land between self and stars.

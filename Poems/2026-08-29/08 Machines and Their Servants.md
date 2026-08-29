@@ -31,7 +31,7 @@ to live out our human potential.
 What is the answer to the call
 of the earth, if not smug desolation,
 the paving-over of nature with the concrete
-of fixed ideas and mechanical ingenuity.
+of fixed ideas and mechanical ingenuity?
 The answer is life, lived well. The answer
 is self-understanding and the corresponding knowledge
 of others, allowing for connection and hope.
@@ -42,7 +42,7 @@ The answer is thinking again.
 ---
 
 All of this has been said before, but now
-it gains a new urgency, as I am myself infected
+it gains a new urgency, as I myself am infected
 by the urge to sublate. This cold toxin,
 contagious and ill-advised, fills this poem with pain.
 But I name now this pain, and accept it
