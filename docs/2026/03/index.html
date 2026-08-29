@@ -198,5 +198,25 @@
             </div>
         </div>
     </div>
+    <script>
+    // A hub's list is the only thing on the site that scrolls inside the page, and the page
+    // keys act on whatever holds focus, so the list is given it
+    (function () {
+        var list = document.querySelector(".railed-body");
+        if (!list || !list.querySelector(".theme-columns")) return;
+
+        function take() {
+            // The stylesheet decides whether the list scrolls at all; below its breakpoints
+            // the page is what scrolls, and focus here would take the keys off it
+            if (list.scrollHeight > list.clientHeight) list.focus({ preventScroll: true });
+        }
+
+        take();
+
+        // After the click, not during it: the jump that follows puts focus on the body
+        var rail = document.querySelector(".year-rail");
+        if (rail) rail.addEventListener("click", function () { setTimeout(take, 0); });
+    })();
+    </script>
 </body>
 </html>

@@ -689,7 +689,9 @@ class Program
             .Select(group => new KeyValuePair<int, int>(group.Key, group.Count()))
             .ToList());
 
-        var list = new StringBuilder("<div class=\"railed-body\">");
+        // Focusable for the script in archive.html, and out of the tab order: the list is
+        // links, and tabbing through them scrolls it anyway
+        var list = new StringBuilder("<div class=\"railed-body\" tabindex=\"-1\">");
         foreach (IGrouping<int, Poem> group in byYear)
         {
             list.Append($"<section class=\"year\" id=\"year-{group.Key}\"><h3 class=\"year-mark\">{group.Key}</h3><div class=\"theme-columns\">");

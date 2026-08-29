@@ -275,7 +275,9 @@ turns the page into a grid of rules.
 
 `#container-parent` uses `overflow-x: clip` rather than `hidden`, because a hidden axis would
 make it a scroll container and the sticky year rail inside would start measuring itself against
-that box instead of the window.
+that box instead of the window. The clip box is pulled a few pixels wider than the content it
+holds, since the stem's dot sits outside the node it belongs to and on a phone the node begins
+at the clip edge, which sliced every dot down the middle.
 
 ## The rating filter
 
@@ -415,9 +417,34 @@ A hub is a reference, not a reading column: three columns of titles beside the r
 one column three times as long, and no stem in the body — the rail is the heading, and a second
 set of years beside it would say it twice.
 
-Rail anchors land flush against the navbar, exactly. Less and the date lands behind the bar;
-more and the gap fills with the tail of the group above. The node carries 2rem of bottom
-padding, so at flush that padding sits under the bar and the previous title is above it.
+A hub is the one page that does not scroll. The page is exactly the window and the list
+alone moves inside it, so the title saying which theme this is and the rail saying which years
+it holds are both still there at the foot of a hundred titles. A rail that scrolls away is a
+rail you have to scroll back for, and a set of jumps you have to go and find is most of the way
+to not having them. It was sticky before, which held it against the navbar but let the title go
+and left the rail's own position dependent on how far down the page you were.
+
+The fade band is fixed to the foot of the window and now lies over the foot of the list rather
+than the foot of the page, which is the same thing to look at and says the same thing: there is
+more below. The 7rem the page reserved to end clear of it moves onto the list. The scrollbar is
+the one piece of chrome this cannot suppress, so it is thinned and put in the grey of the rules,
+rather than left as a lit strip down a dark page.
+
+Short windows keep the ordinary page scroll: divided, they would leave the list a slot of two
+or three rows, which is worse than a title that scrolls away.
+
+The page keys act on whatever holds focus, and a page that does not scroll is a page where they
+do nothing at all. So the list takes focus as soon as it has something to scroll, and takes it
+back after a rail jump, which hands it to the body on the way past. It is not in the tab order:
+the list is nothing but links, and tabbing through them scrolls it anyway. Focus here is a
+place for the keys to land rather than something asked for, so it is not drawn; a ring the size
+of the page would be the loudest thing on it.
+
+Rail anchors land flush against the top of whatever is scrolling. In the window that is the top
+of the list, with nothing above it to clear. In the short-window fallback it is the navbar,
+exactly: less and the date lands behind the bar, more and the gap fills with the tail of the
+group above. The node carries 2rem of bottom padding, so at flush that padding sits under the
+bar and the previous title is above it.
 
 On phones the rail goes entirely. Laid flat it was two rows of years above every list, which is
 most of a phone screen spent on navigation before a single title — and jump-to-year matters
@@ -436,6 +463,11 @@ because the rule beneath the rail runs the full measure and an alphabet stopping
 read as a list that had run out; the gap is now a floor the letters never close below. Wrapped,
 on a phone, `space-between` would justify the last row across the page as well, which reads as
 a gappy line rather than as the end of the alphabet — so it falls back to `flex-start` there.
+
+On a phone the letter leaves the gutter and heads its own row, ruled across in the way a year
+is ruled across a hub. A single character reserving a column costs the titles the width of two
+or three words, which on 390px is the difference between a title on one line and a title on
+two, and the whole page is titles.
 
 Sorting drops punctuation, so "A poem" and "A Platonist declares" sort together and "Am I
 Right?" lands under its own letter rather than after it. A title opening on a digit still needs

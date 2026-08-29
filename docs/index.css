@@ -7,6 +7,10 @@ a:hover { color: var(--accent); }
 /* clip rather than hidden: a hidden axis makes this a scroll container, which the sticky
    year rail inside would then measure itself against instead of the window */
 #container-parent { display: flex; flex-direction: column; flex: 1; padding-bottom: 7rem; overflow-x: clip; }
+/* The stem's dot hangs 4px left of the node, and on a narrow screen the node starts at the clip
+   edge. The padding pulls the clip box out by more than the dot needs and the margin puts the
+   content back where it was, so the dot has room and nothing moves */
+#container-parent { padding-left: 6px; margin-left: -6px; }
 #container-chronology { width: 100%; max-width: 42rem; }
 
 /* The fade band at the foot. Fixed, and paired with the padding above, so the end of a
@@ -164,6 +168,33 @@ h1 { margin: 0; }
     .theme-list .w7 { font-size: 1.34rem; }
 }
 
+/* -- a theme's page holds still --------------------------------------------------- */
+
+/* The page is the window and .railed-body alone scrolls. Keyed on the columns rather than on
+   .railed, which the home chronology carries too */
+@media only screen and (min-width : 512.01px) and (min-height : 32rem)
+{
+    html:has(.railed .theme-columns) { overflow: hidden; }
+    body:has(.railed .theme-columns) { height: 100vh; }
+
+    /* The chain from the body down to the list. Every box on it is a flex item that has to be
+       allowed to shrink below its content; miss one and the overflow lands on the page */
+    body:has(.railed .theme-columns) #container-parent { min-height: 0; padding-bottom: 0; }
+    body:has(.railed .theme-columns) #container { flex: 1; min-height: 0; }
+    body:has(.railed .theme-columns) #container-chronology { display: flex; flex-direction: column; min-height: 0; }
+    body:has(.railed .theme-columns) .railed { flex: 1; min-height: 0; }
+    /* stretch, since .railed aligns to flex-start for the rail's sake. The 7rem the page held
+       for the fade band moves here, the band now lying over the foot of the list */
+    body:has(.railed .theme-columns) .railed-body { align-self: stretch; min-height: 0; overflow-y: auto; padding-bottom: 7rem; scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
+    /* Focused by the script in archive.html, so the page keys have something to act on */
+    body:has(.railed .theme-columns) .railed-body { outline: none; }
+
+    /* Nothing above the top edge of the list to clear, and no scroll left for the rail to
+       hold itself against */
+    body:has(.railed .theme-columns) .railed-body .year { scroll-margin-top: 0; }
+    body:has(.railed .theme-columns) .year-rail { position: static; }
+}
+
 @media only screen and (max-width : 512px)
 {
     /* No pointer, so nothing here can be asked for: the opening line goes and the count
@@ -176,7 +207,10 @@ h1 { margin: 0; }
     /* Wrapped, space-between would justify the last row too, which reads as a gappy line
        rather than as the end of the alphabet */
     .rail { justify-content: flex-start; column-gap: 1rem; }
-    .letter { grid-template-columns: 1.75rem minmax(0, 1fr); gap: 1rem; }
+    /* The gutter goes and the letter heads its own row, ruled across as .year-mark is */
+    .letter { display: block; }
+    .letter-mark { display: flex; align-items: center; gap: 1rem; padding-bottom: 0.9rem; }
+    .letter-mark::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
     /* Laid flat the rail was two rows of years above every list */
     .railed { display: block; }
     .year-rail { display: none; }

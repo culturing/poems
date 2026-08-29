@@ -94,7 +94,7 @@
             <div id="container-chronology" class="archive">
                 
                 <h1 class="">Poems about solitude</h1>
-                <div class="railed"><nav class="year-rail" aria-label="Jump to a year"><a class="w8" href="#year-2026">2026</a><a class="w9" href="#year-2025">2025</a><a class="w5" href="#year-2024">2024</a><a class="w7" href="#year-2023">2023</a><a class="w6" href="#year-2022">2022</a><a class="w4" href="#year-2019">2019</a><a class="w4" href="#year-2018">2018</a><a class="w3" href="#year-2017">2017</a><a class="w3" href="#year-2016">2016</a><a class="w4" href="#year-2015">2015</a><a class="w1" href="#year-2010">2010</a></nav><div class="railed-body"><section class="year" id="year-2026"><h3 class="year-mark">2026</h3><div class="theme-columns"><div class="rated-2"><a href="/2026/08/29/toward-sunset/">Toward Sunset</a></div>
+                <div class="railed"><nav class="year-rail" aria-label="Jump to a year"><a class="w8" href="#year-2026">2026</a><a class="w9" href="#year-2025">2025</a><a class="w5" href="#year-2024">2024</a><a class="w7" href="#year-2023">2023</a><a class="w6" href="#year-2022">2022</a><a class="w4" href="#year-2019">2019</a><a class="w4" href="#year-2018">2018</a><a class="w3" href="#year-2017">2017</a><a class="w3" href="#year-2016">2016</a><a class="w4" href="#year-2015">2015</a><a class="w1" href="#year-2010">2010</a></nav><div class="railed-body" tabindex="-1"><section class="year" id="year-2026"><h3 class="year-mark">2026</h3><div class="theme-columns"><div class="rated-2"><a href="/2026/08/29/toward-sunset/">Toward Sunset</a></div>
 <div class="rated-1"><a href="/2026/08/17/the-habit-of-silence/">The Habit of Silence</a></div>
 <div class="rated-1"><a href="/2026/08/17/other-skies/">Other Skies</a></div>
 <div class="rated-2"><a href="/2026/06/12/the-stag-returns/">The Stag Returns</a></div>
@@ -223,5 +223,25 @@
             </div>
         </div>
     </div>
+    <script>
+    // A hub's list is the only thing on the site that scrolls inside the page, and the page
+    // keys act on whatever holds focus, so the list is given it
+    (function () {
+        var list = document.querySelector(".railed-body");
+        if (!list || !list.querySelector(".theme-columns")) return;
+
+        function take() {
+            // The stylesheet decides whether the list scrolls at all; below its breakpoints
+            // the page is what scrolls, and focus here would take the keys off it
+            if (list.scrollHeight > list.clientHeight) list.focus({ preventScroll: true });
+        }
+
+        take();
+
+        // After the click, not during it: the jump that follows puts focus on the body
+        var rail = document.querySelector(".year-rail");
+        if (rail) rail.addEventListener("click", function () { setTimeout(take, 0); });
+    })();
+    </script>
 </body>
 </html>
