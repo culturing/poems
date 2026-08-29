@@ -530,6 +530,16 @@ so submitting it competes with the pages themselves. It stays linked from the na
 `_`-prefixed paths. `og-image.png` is the card link previews use; 1920x1080 is near enough the
 1.91:1 Open Graph ratio.
 
+Stylesheet and script urls carry `?v=<hash>`, eight hex characters of the file's SHA-256, added
+to the templates as they are read. The site sits behind Cloudflare, which holds `/common.css`
+for four hours on the origin's `max-age`; the html is revalidated far sooner, so a deploy that
+changed a stylesheet without changing its url served new markup against the old css until the
+edge expired. Fingerprinting the url means changed bytes are a new url and a guaranteed miss,
+and unchanged bytes keep the cache. The fonts are left alone deliberately: their urls appear
+both in the `@font-face` rules and in the `<link rel=preload>` above them, and a version on one
+and not the other would preload a file the css never asks for. This assumes Cloudflare caches
+on the full url, which is the default — a rule that ignores query strings would defeat it.
+
 ## The book
 
 The PDF is built through the same stylesheets, over a local server, by Playwright. Playwright

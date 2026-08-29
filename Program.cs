@@ -14,6 +14,7 @@ using System.Text;
 using System.Text.Json;
 using System.Net;
 using System.Xml.Linq;
+using System.Security.Cryptography;
 using System.Globalization;
 using Schema.NET;
 
@@ -32,12 +33,17 @@ class Program
     static bool ReviewMode = false;
 
     static Markdown md = new Markdown();
-    static string IndexTemplate = File.ReadAllText("Templates/index.html");
-    static string AboutTemplate = File.ReadAllText("Templates/about.html");
-    static string ContentTemplate = File.ReadAllText("Templates/content.html");
-    static string ArchiveTemplate = File.ReadAllText("Templates/archive.html");
-    static string RedirectTemplate = File.ReadAllText("Templates/redirect.html");
-    static string NotFoundTemplate = File.ReadAllText("Templates/404.html");
+
+    // Declared ahead of the templates, so it is initialised before VersionAssets runs over them
+    static readonly Regex AssetReference =
+        new Regex(@"(?<=(?:href|src)=[""'])/(?<file>[\w.-]+\.(?:css|js))(?=[""'])", RegexOptions.Compiled);
+
+    static string IndexTemplate = VersionAssets(File.ReadAllText("Templates/index.html"));
+    static string AboutTemplate = VersionAssets(File.ReadAllText("Templates/about.html"));
+    static string ContentTemplate = VersionAssets(File.ReadAllText("Templates/content.html"));
+    static string ArchiveTemplate = VersionAssets(File.ReadAllText("Templates/archive.html"));
+    static string RedirectTemplate = VersionAssets(File.ReadAllText("Templates/redirect.html"));
+    static string NotFoundTemplate = VersionAssets(File.ReadAllText("Templates/404.html"));
     static string FaqTemplate = File.ReadAllText("Templates/faq.html");
     static string PdfCopyrightTemplate = File.ReadAllText("Templates/pdf/copyright.html");
     static string PdfEpigraphTemplate = File.ReadAllText("Templates/pdf/epigraph.html");
@@ -1434,6 +1440,23 @@ class Program
             ["poems"] = poems
         }, new JsonSerializerOptions { WriteIndented = false }));
         Console.WriteLine($"review manifest: {poems.Count} poems -> Output/review-map.json");
+    }
+
+    // Fingerprints every stylesheet and script a template links, against the edge cache;
+    // see DESIGN.md
+    static string VersionAssets(string html) => AssetReference.Replace(html, match =>
+    {
+        string name = match.Groups["file"].Value;
+        string source = File.Exists($"Styles/{name}") ? $"Styles/{name}" : $"Scripts/{name}";
+        // review.js is absent outside the review pass, and the fingerprint buys it nothing there
+        return File.Exists(source) ? $"/{name}?v={AssetHash(source)}" : match.Value;
+    });
+
+    // Eight hex characters of the file's SHA-256
+    static string AssetHash(string path)
+    {
+        using SHA256 sha = SHA256.Create();
+        return Convert.ToHexString(sha.ComputeHash(File.ReadAllBytes(path))).Substring(0, 8).ToLowerInvariant();
     }
 
     static void CopyFilesToDocs()

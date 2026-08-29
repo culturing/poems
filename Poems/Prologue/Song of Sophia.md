@@ -3,8 +3,9 @@
 
 #### I. Akrasia
 
-    When there were no depths, I was brought forth,
+<div style="font-family: Cinzel; white-space: pre">    When there were no depths, I was brought forth,
         When there were no springs abounding with water.
+</div>
 
 Time slipped, fell
 through black holes
@@ -47,8 +48,9 @@ HEY*
 
 #### II. Nostoi
 
-    Does not wisdom cry out,
+<div style="font-family: Cinzel; white-space: pre">    Does not wisdom cry out,
         And understanding lift up her voice?
+</div>
 
 Thunder roars,
 and as a man who pants for water
@@ -62,8 +64,9 @@ So too I flee the wasteland.
 
 #### III. Paideia
 
-    To you, O men, I call,
+<div style="font-family: Cinzel; white-space: pre">    To you, O men, I call,
         and my voice is to the sons of men.
+</div>
 
 I gaze upon a field grown ripe with wheat
 and feel the warmth of rosy-fingered Dawn
