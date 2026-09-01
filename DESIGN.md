@@ -361,6 +361,18 @@ On phones the poem does not wrap — it scrolls sideways, so the poet's line bre
 the right edge instead of being cut, which is the same gesture the licence band makes at the
 foot of the page.
 
+The fade needs somewhere to go, though: without it the longest line ends flush with the right
+edge and its last word sits under the gradient at the far end of the scroll, permanently dimmed
+with no way to read it. So the lines carry the fade's own width as trailing padding. It is on
+the lines rather than on the scroll box because a scroll container's end padding is left out of
+the scrollable width, and `min-width: max-content` is what makes each line's box as wide as its
+text, so that padding is width the reader can actually reach. The rule is the exception: its
+measure is the screen, not the poem.
+
+No scrollbar on the poem either. A horizontal bar under a poem is a control on a page that has
+none, it would sit against the licence band, and the fade already says the same thing more
+quietly.
+
 ## The licence band
 
 The other end of the sticky pair: the navbar holds the top of the window, this holds the foot,
@@ -585,11 +597,11 @@ file, so the build hands it the mapping; it lands in `Output/`, never in `docs/`
 `Scripts/review.js`, `Tools/` and the `{{review}}` line in `Templates/content.html` when the
 pass is done.
 
-## Motion and accessibility
+## Accessibility
 
-Everything that fades in on this site — the opening line beside a title, a theme's count —
-shares one duration. Anyone who has asked their system for less motion gets the end state with
-no transition rather than no reveal at all.
+Nothing on this site moves. The reveals — the opening line beside a title, a theme's count, a
+pagination label — go straight to their end state on hover, so there is no motion for
+`prefers-reduced-motion` to reduce and no rule answering it.
 
 `.visually-hidden` content is reachable by crawlers and screen readers and absent from the
 visual design.

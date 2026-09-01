@@ -36,12 +36,12 @@ figure { max-width: 400px; }
 .edge-prev { left: 1.5rem; }
 .edge-next { right: 1.5rem; flex-direction: row; }
 
-.edge-mark { fill: none; stroke: #3a3a3a; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; flex: none; transition: stroke 0.35s ease; }
+.edge-mark { fill: none; stroke: #3a3a3a; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 .edge:hover .edge-mark { stroke: var(--accent); }
 
 /* padding-right buys room for the italic overhang, which overflow: hidden would cut at
    the box edge; min-width lets a flex item shrink below its content to the ellipsis */
-.edge-label { font-size: 0.8rem; font-style: italic; color: var(--whisper); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; padding-right: 0.25em; opacity: 0; transition: opacity 0.35s ease; }
+.edge-label { font-size: 0.8rem; font-style: italic; color: var(--whisper); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; padding-right: 0.25em; opacity: 0; }
 .edge:hover .edge-label { opacity: 1; color: var(--muted); }
 
 /* First and last poem: the chevron stays, so the margins keep their shape */
@@ -67,7 +67,16 @@ html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: fl
 @media only screen and (max-width : 512px)
 {
     #container { justify-content: flex-start; position: relative; }
-    #content:not(.wrap) { white-space: nowrap; overflow-x: auto; min-width: 0; }
+    /* Two properties for one hidden scrollbar: WebKit answers to neither scrollbar-width nor
+       anything else standard */
+    #content:not(.wrap) { white-space: nowrap; overflow-x: auto; min-width: 0; scrollbar-width: none; }
+    #content:not(.wrap)::-webkit-scrollbar { display: none; }
+
+    /* The fade's own width, as scrollable width past the end of the longest line. It is on
+       the lines rather than on #content, whose end padding the engines leave out of the
+       scrollable width; max-content is what makes each line's box as wide as its text, so
+       the padding lands outside the text rather than inside the container */
+    #content:not(.wrap) > *:not(hr) { min-width: max-content; padding-right: 2.5rem; }
     /* Narrow screens sit the poem at the top rather than centring it */
     #container-parent { flex: none; }
 
