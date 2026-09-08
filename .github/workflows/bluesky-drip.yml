@@ -1,0 +1,35 @@
+name: Bluesky drip
+
+on:
+  schedule:
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Print the post without sending it
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bluesky
+
+jobs:
+  drip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Post the next poem
+        env:
+          BLUESKY_HANDLE: culturing.bsky.social
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: node .github/scripts/post.mjs drip
+

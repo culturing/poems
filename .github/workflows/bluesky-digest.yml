@@ -1,0 +1,44 @@
+name: Bluesky digest
+
+on:
+  push:
+    branches: [main]
+    paths: [docs/feed.xml]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Print the post without sending it
+        type: boolean
+        default: true
+      since:
+        description: Commit to diff the feed against
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bluesky
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Post digest
+        env:
+          BLUESKY_HANDLE: culturing.bsky.social
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_EVENT_BEFORE: ${{ github.event.inputs.since || github.event.before }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: node .github/scripts/post.mjs digest
+

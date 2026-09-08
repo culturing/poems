@@ -605,3 +605,41 @@ pagination label — go straight to their end state on hover, so there is no mot
 
 `.visually-hidden` content is reachable by crawlers and screen readers and absent from the
 visual design.
+
+## Bluesky
+
+Poems arrive in batches: 959 of them across 101 drops, a mean of 9.5 a drop and over half
+carrying ten or more. A post per poem on push would fire seventeen at once, so the account
+carries two kinds of post instead. A drop gets one digest linking that day's archive, and a
+cron job posts one individual poem a day. Output runs at about 1.1 poems a day, so the daily
+post keeps pace rather than running dry.
+
+Neither job writes to the repository. What has been posted is read back from the account
+itself: `com.atproto.repo.listRecords` walks the posts back to `SINCE` and collects every url
+they link, and the drip posts the oldest poem absent from that set. A ledger file would have
+meant a commit a day, and the account is the more reliable record anyway — a post that
+succeeded while its commit failed would have left the two disagreeing.
+
+The drip takes its candidates from `docs/sitemap.xml`, whose order is build order and so keeps
+a day's poems in file order; the days themselves are sorted oldest first. Title and description
+come from the chosen poem's own `og:` tags. `SINCE` also holds the backlog out: without it the
+first run would reach back to 2010 and take years to arrive at the present.
+
+The digest instead diffs `docs/feed.xml` between the pushed commits and takes the guids only
+the newer side has. The feed already holds the finished url, title and description, so nothing
+reimplements `Slugify` or `BuildDescription` outside C#. A rebuild that adds no poems changes
+`lastBuildDate` and the page bodies but no guids, and posts nothing.
+
+Hashtags come from `Other/tags.tsv`, written in the same commit as the poems and ordered most
+salient first; the first two become the post's tags. Ratings come from the day archive, which
+wraps each link in its `rated-` class — a poem page carries no rating of its own. `MIN_RATING`
+gates the drip and sits at 0. At 1 it would drop the third of poems that are unrated and cut
+supply below one a day.
+
+`[skip bsky]` in any commit message of a push suppresses that push's digest; dispatching a
+workflow by hand ignores the marker. `Other/bluesky-skip.txt`, one url path a line, holds a
+poem back from the drip. Neither helps with a retitle: the slug changes, so the poem reads as
+one that has never been posted.
+
+The scripts are node with no dependencies. `Poems.csproj` globs `**/*.cs`, so a C# helper
+anywhere in the tree would be compiled into the site build.
