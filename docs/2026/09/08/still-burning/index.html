@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="/quattrocento-bold-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/quattrocento-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/cinzel-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" type="text/css" href="/fonts.css?v=752e0976" />
+    <link rel="stylesheet" type="text/css" href="/common.css?v=a485dc39" />
+    <link rel="stylesheet" type="text/css" href="/navbar.css?v=39602403" />
+    <link rel="stylesheet" type="text/css" href="/content.css?v=0dec47cd" />
+    <link rel="stylesheet" type="text/css" href="/dropdown.css?v=e434f676" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="poems by culturing" href="/feed.xml" />
+    <title>Still Burning | poems by culturing</title>
+    <link rel="canonical" href="https://poems.culturing.net/2026/09/08/still-burning/" />
+    <meta name="description" content="Fire dances in the swirling wind and in my heart, awoken now and still burning." />
+    <meta name="author" content="culturing" />
+    <meta property="og:site_name" content="culturing" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Still Burning | poems by culturing" />
+    <meta property="og:description" content="Fire dances in the swirling wind and in my heart, awoken now and still burning." />
+    <meta property="og:url" content="https://poems.culturing.net/2026/09/08/still-burning/" />
+    <meta property="og:image" content="https://poems.culturing.net/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Still Burning | poems by culturing" />
+    <meta name="twitter:description" content="Fire dances in the swirling wind and in my heart, awoken now and still burning." />
+    <meta name="twitter:image" content="https://poems.culturing.net/og-image.png" />
+    <meta property="article:published_time" content="2026-09-08" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"CreativeWork","name":"Still Burning","description":"Fire dances in the swirling wind and in my heart, awoken now and still burning.","additionalType":"https://schema.org/Poem","url":"https://poems.culturing.net/2026/09/08/still-burning/","author":{"@type":"Person","name":"culturing","sameAs":["https://bsky.app/profile/culturing.bsky.social","https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ","https://github.com/culturing"],"url":"https://poems.culturing.net","publishingPrinciples":"https://poems.culturing.net/about/"},"copyrightHolder":{"@type":"Person","name":"culturing","sameAs":["https://bsky.app/profile/culturing.bsky.social","https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ","https://github.com/culturing"],"url":"https://poems.culturing.net","publishingPrinciples":"https://poems.culturing.net/about/"},"copyrightYear":2026,"dateModified":"2026-09-08","datePublished":"2026-09-08","genre":"Poem","headline":"Still Burning","inLanguage":"en-us","isAccessibleForFree":true,"keywords":"desire, love, nature","publishingPrinciples":"https://poems.culturing.net/about/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"culturing","item":"https://poems.culturing.net/"},{"@type":"ListItem","position":2,"name":"2026","item":"https://poems.culturing.net/2026/"},{"@type":"ListItem","position":3,"name":"September","item":"https://poems.culturing.net/2026/09/"},{"@type":"ListItem","position":4,"name":"08","item":"https://poems.culturing.net/2026/09/08/"},{"@type":"ListItem","position":5,"name":"Still Burning","item":"https://poems.culturing.net/2026/09/08/still-burning/"}]}]</script>
+</head>
+<body>
+    <script>
+// Runs at the top of the body, before any listing has been parsed, so the filter is applied
+// in the first paint rather than after one. Delegated from the document because the buttons
+// below it do not exist yet when this executes.
+(function () {
+    var root = document.documentElement;
+    root.className += " js";
+
+    var tier = "0";
+    try { tier = localStorage.getItem("tier") || "0"; } catch (e) { }
+    if (tier !== "1" && tier !== "2") tier = "0";
+    root.classList.add("tier-" + tier);
+
+    document.addEventListener("click", function (e) {
+        var button = e.target.closest && e.target.closest(".tier-btn");
+        if (!button) return;
+        var chosen = button.getAttribute("data-tier");
+        root.classList.remove("tier-0", "tier-1", "tier-2");
+        root.classList.add("tier-" + chosen);
+        try { localStorage.setItem("tier", chosen); } catch (e) { }
+
+        // <details> has no idea the choice was made inside it
+        var panel = button.closest("details");
+        if (panel) panel.open = false;
+    });
+})();
+</script>
+<div class="navbar">
+    <div class="nav-group-left">
+        <a class="wordmark" href="/">poems</a>
+        <details class="dropdown dropdown-left tiers">
+            <summary class="nav dropbtn" aria-label="Filter poems by rating">
+                <span class="tier-name" data-tier="0">good</span>
+                <span class="tier-name" data-tier="1">better</span>
+                <span class="tier-name" data-tier="2">best</span>
+            </summary>
+            <div class="dropdown-content">
+                <button type="button" class="tier-btn" data-tier="0">good</button>
+                <button type="button" class="tier-btn" data-tier="1">better</button>
+                <button type="button" class="tier-btn" data-tier="2">best</button>
+            </div>
+        </details>
+    </div>
+    <div class="nav-group-right">
+        <a class="nav" href="/index/">index</a>
+        <a class="nav" href="/themes/">themes</a>
+        <a class="nav" href="/about/">about</a>
+        <a id="pdf" class="nav" href="/culturing.pdf">pdf</a>
+        <details class="dropdown">
+            <summary class="nav dropbtn">contact</summary>
+            <div class="dropdown-content">
+                <a id="bsky" href="https://bsky.app/profile/culturing.bsky.social" target="_blank" rel="noopener">bsky</a>
+                <a id="youtube" href="https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ" target="_blank" rel="noopener">youtube</a>
+                <a id="email" href="mailto:author@culturing.net">email</a>
+            </div>
+        </details>
+    </div>
+</div>
+
+    <a id="previous" class="edge edge-prev" data-edge="prev" data-tier="0" rel="prev" href="/2026/09/08/from-kananaskis/"><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 8 12l6.5 7"/></svg><span class="edge-label">From Kananaskis</span></a><a class="edge edge-prev" data-edge="prev" data-tier="1" rel="prev" href="/2026/09/08/from-kananaskis/"><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 8 12l6.5 7"/></svg><span class="edge-label">From Kananaskis</span></a><a class="edge edge-prev" data-edge="prev" data-tier="2" rel="prev" href="/2026/09/08/from-kananaskis/"><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 8 12l6.5 7"/></svg><span class="edge-label">From Kananaskis</span></a>
+    <a id="next" class="edge edge-next" data-edge="next" data-tier="0" rel="next" href="/2026/09/08/waitress/"><span class="edge-label">Waitress</span><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 16 12l-6.5 7"/></svg></a><a class="edge edge-next" data-edge="next" data-tier="1" rel="next" href="/2026/09/08/waitress/"><span class="edge-label">Waitress</span><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 16 12l-6.5 7"/></svg></a><a class="edge edge-next" data-edge="next" data-tier="2" rel="next" href="/2026/09/08/bikini-preview/"><span class="edge-label">Bikini Preview</span><svg class="edge-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 16 12l-6.5 7"/></svg></a>
+    <div id="container-parent">
+        <div id="container">
+            <div id="content" class="poem">
+                <h1>Still Burning</h1>  
+
+<p style='margin:0;'><em><small><small><time datetime="2026-09-08"><a href="/2026/09/08/">08</a> <a href="/2026/09/">September</a> <a href="/2026/">2026</a></time></small></small></em></p>  
+
+<p class='url' style='margin:0;'><em><small><small>https://poems.culturing.net/2026/09/08/still-burning/</small></small></em></p>  
+
+<p>Fire dances in the swirling wind<br />
+and in my heart, awoken now<br />
+and still burning.  </p>
+
+<p class='tags'><em><small><small><a href="/themes/desire/">desire</a> &middot; <a href="/themes/love/">love</a> &middot; <a href="/themes/nature/">nature</a></small></small></em></p>
+            </div>
+        </div>
+    </div>
+    <a id="license" rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/cc.png" /></a>
+</body>
+<script type="text/javascript" src='/content.js?v=23cbc60e'></script>
+
+</html>
