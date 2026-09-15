@@ -77,6 +77,11 @@ html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: fl
        scrollable width; max-content is what makes each line's box as wide as its text, so
        the padding lands outside the text rather than inside the container */
     #content:not(.wrap) > *:not(hr) { min-width: max-content; padding-right: 2.5rem; }
+
+    /* An epigraph is prose, so it wraps to the screen instead of joining the sideways
+       scroll. min-width releases it from the rule above; the margins come off so the
+       wrapped measure is the screen's */
+    #content:not(.wrap) > figure { white-space: normal; min-width: 0; max-width: calc(100vw - 2rem); margin-left: 0; margin-right: 0; }
     /* Narrow screens sit the poem at the top rather than centring it */
     #container-parent { flex: none; }
 

@@ -369,6 +369,14 @@ the scrollable width, and `min-width: max-content` is what makes each line's box
 text, so that padding is width the reader can actually reach. The rule is the exception: its
 measure is the screen, not the poem.
 
+An epigraph is the exception to the exception. It is prose, not verse, so its line breaks are
+the browser's and nothing is lost by moving them: on a phone it wraps to the screen rather than
+joining the sideways scroll, where a long quotation would otherwise be one line the reader has
+to drag through. The figure's default indents come off so the wrapped measure is the full
+screen, and the cap is `100vw` less the body's padding rather than a percentage, because the
+percentage would resolve against the scroll container, which is as wide as the poem's longest
+line and not as wide as the screen.
+
 No scrollbar on the poem either. A horizontal bar under a poem is a control on a page that has
 none, it would sit against the licence band, and the fade already says the same thing more
 quietly.
