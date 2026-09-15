@@ -611,19 +611,45 @@ visual design.
 Poems arrive in batches: 959 of them across 101 drops, a mean of 9.5 a drop and over half
 carrying ten or more. A post per poem on push would fire seventeen at once, so the account
 carries two kinds of post instead. A drop gets one digest linking that day's archive, and a
-cron job posts one individual poem a day. Output runs at about 1.1 poems a day, so the daily
-post keeps pace rather than running dry.
+cron job posts one individual poem a day.
 
 Neither job writes to the repository. What has been posted is read back from the account
-itself: `com.atproto.repo.listRecords` walks the posts back to `SINCE` and collects every url
-they link, and the drip posts the oldest poem absent from that set. A ledger file would have
-meant a commit a day, and the account is the more reliable record anyway — a post that
-succeeded while its commit failed would have left the two disagreeing.
+itself: `com.atproto.repo.listRecords` walks the posts back to `ACCOUNT_START` and collects
+every url they link, and the drip posts the oldest poem absent from that set. A ledger file
+would have meant a commit a day, and the account is the more reliable record anyway — a post
+that succeeded while its commit failed would have left the two disagreeing.
 
 The drip takes its candidates from `docs/sitemap.xml`, whose order is build order and so keeps
 a day's poems in file order; the days themselves are sorted oldest first. Title and description
-come from the chosen poem's own `og:` tags. `SINCE` also holds the backlog out: without it the
-first run would reach back to 2010 and take years to arrive at the present.
+come from the chosen poem's own `og:` tags.
+
+`SINCE` splits those candidates into two queues. Output runs at about 1.1 poems a day, so the
+poems from `SINCE` on usually keep the daily slot filled; when they do not, the drip falls back
+to the backlog behind `SINCE` and posts the oldest poem there, walking forward from 2010 until
+that queue empties too. New work always takes the slot ahead of the backlog, so reaching back
+to 2010 costs the present nothing. A backlog post carries its year in the heading and in the
+card title, so it does not read as new work.
+
+The read-back has its own constant. `ACCOUNT_START` is the account's first post and holds the
+walk's floor; `SINCE` only divides the queues. They are the same date today, but bounding the
+read-back by the divider would mean that moving the divider forward hid earlier posts and
+re-posted the backlog poems among them.
+
+Because nothing predates `ACCOUNT_START`, that floor never actually stops the walk — it runs to
+the end of the record set every time. A partial set is indistinguishable from a complete one and
+would re-post whatever the missing pages held, so `postedUris` throws rather than return one. A
+failed job asks to be looked at; a quietly duplicated post does not.
+
+What bounds the walk is the pager rather than a page count. A count would have had to be raised
+as the account grew, and the raise would have been due the one time nobody was watching. The two
+guards instead describe the ways a pager fails: a cursor that comes back twice is going nowhere,
+and a wall-clock deadline catches one that advances forever. Both are clear of any history this
+account will hold, so neither needs revisiting.
+
+Reading every post each run is the price of keying on urls, and worth it. Resuming from the
+newest drip post instead would make the walk a single page, but three things put a poem behind
+that mark and expect it to still post: a url released from `bluesky-skip.txt`, a retitle that
+changes a slug, and a lowered `MIN_RATING`. The url set handles all three by construction.
 
 The digest instead diffs `docs/feed.xml` between the pushed commits and takes the guids only
 the newer side has. The feed already holds the finished url, title and description, so nothing
@@ -633,8 +659,8 @@ reimplements `Slugify` or `BuildDescription` outside C#. A rebuild that adds no 
 Hashtags come from `Other/tags.tsv`, written in the same commit as the poems and ordered most
 salient first; the first two become the post's tags. Ratings come from the day archive, which
 wraps each link in its `rated-` class — a poem page carries no rating of its own. `MIN_RATING`
-gates the drip and sits at 0. At 1 it would drop the third of poems that are unrated and cut
-supply below one a day.
+gates both queues and sits at 0. At 1 it would drop the third of poems that are unrated, which
+the backlog now has the depth to absorb.
 
 `[skip bsky]` in any commit message of a push suppresses that push's digest; dispatching a
 workflow by hand ignores the marker. `Other/bluesky-skip.txt`, one url path a line, holds a

@@ -19,8 +19,11 @@ const TAGS_PATH = "Other/tags.tsv";
 const SKIP_PATH = "Other/bluesky-skip.txt";
 const THUMB_PATH = "docs/og-image.png";
 
-// Poems published before this are not posted, and no post older than it is read back.
+// Poems published before this are the backlog, posted only once the new queue is empty.
 const SINCE = "2026-09-07";
+
+// No post older than this is read back.
+const ACCOUNT_START = "2026-09-07";
 
 const POST_LIMIT = 300;
 const TAG_COUNT = 2;
@@ -79,10 +82,11 @@ function parseFeed(xml) {
 
 const pathOf = url => url.slice(BASE_URL.length);
 const datePathOf = url => pathOf(url).replace(/[^/]+\/$/, "");
+const yearOf = url => pathOf(url).slice(1, 5);
 
 // Sitemap order is build order, which keeps a day's poems in file order; the sort puts the
-// days themselves oldest first.
-function poemUrls() {
+// days themselves oldest first. `fresh` holds poems from SINCE on, `backlog` those behind it.
+function poemQueues() {
   const entries = [];
   for (const [, loc] of readFileSync(SITEMAP_PATH, "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)) {
     const match = pathOf(loc).match(POEM_PATH);
@@ -90,10 +94,14 @@ function poemUrls() {
     entries.push({ url: loc, date: `${match[1]}-${match[2]}-${match[3] ?? "01"}`, index: entries.length });
   }
 
-  return entries
-    .filter(entry => entry.date >= SINCE)
+  const ordered = list => list
     .sort((a, b) => a.date.localeCompare(b.date) || a.index - b.index)
     .map(entry => entry.url);
+
+  return {
+    fresh: ordered(entries.filter(entry => entry.date >= SINCE)),
+    backlog: ordered(entries.filter(entry => entry.date < SINCE))
+  };
 }
 
 function poemContent(url) {
@@ -170,15 +178,22 @@ function compose({ heading, body, tags, url }) {
   return `${heading}\n\n${truncate(body, POST_LIMIT - graphemes(frame))}\n\n${tagLine}${url}`;
 }
 
-function poemPost({ url, title, description, tags }, thumb) {
+// A backlog poem carries its year, so it does not read as new work.
+function poemPost({ url, title, description, tags }, thumb, archive) {
   const hashtags = tags.slice(0, TAG_COUNT).map(hashtag).filter(Boolean);
+  const year = yearOf(url);
   return buildRecord({
-    text: compose({ heading: title, body: description, tags: hashtags, url }),
+    text: compose({
+      heading: archive ? `${title} · ${year}` : title,
+      body: description,
+      tags: hashtags,
+      url
+    }),
     linkUri: url,
     tags: hashtags,
     embed: externalEmbed({
       uri: url,
-      title: `${title} | a poem by ${SITE_NAME}`,
+      title: archive ? `${title} | a ${year} poem by ${SITE_NAME}` : `${title} | a poem by ${SITE_NAME}`,
       description,
       thumb
     })
@@ -251,7 +266,7 @@ function skipRequested(before, after) {
 }
 
 const isDryRun = args => args["dry-run"] === true || process.env.DRY_RUN === "true";
-const sinceIso = () => `${SINCE}T00:00:00.000Z`;
+const accountStartIso = () => `${ACCOUNT_START}T00:00:00.000Z`;
 
 async function digest(args) {
   const dryRun = isDryRun(args);
@@ -289,7 +304,7 @@ async function digest(args) {
   }
 
   const session = dryRun ? null : await openSession();
-  const posted = session ? await postedUris(session, { since: sinceIso() }) : new Set();
+  const posted = session ? await postedUris(session, { since: accountStartIso() }) : new Set();
 
   for (const items of groups.slice(0, MAX_DIGESTS)) {
     const url = BASE_URL + datePathOf(items[0].url);
@@ -311,23 +326,28 @@ async function digest(args) {
 async function drip(args) {
   const dryRun = isDryRun(args);
   const session = dryRun ? null : await openSession();
-  const posted = session ? await postedUris(session, { since: sinceIso() }) : new Set();
+  const posted = session ? await postedUris(session, { since: accountStartIso() }) : new Set();
   const skipped = loadSkips();
   const tags = loadTags();
 
-  const next = poemUrls().find(url => {
-    if (posted.has(url) || skipped.has(pathOf(url))) return false;
-    return ratingOf(url) >= MIN_RATING;
-  });
+  const eligible = url =>
+    !posted.has(url) && !skipped.has(pathOf(url)) && ratingOf(url) >= MIN_RATING;
+
+  const queues = poemQueues();
+  const fresh = queues.fresh.find(eligible);
+  const next = fresh ?? queues.backlog.find(eligible);
 
   if (!next) {
     console.log("nothing left to post");
     return;
   }
 
+  const archive = fresh === undefined;
+  if (archive) console.log("no new poems left; posting from the backlog");
+
   const entry = { url: next, ...poemContent(next), tags: tags.get(pathOf(next)) ?? [] };
   const thumb = session ? await uploadThumb(session, THUMB_PATH) : null;
-  const record = poemPost(entry, thumb);
+  const record = poemPost(entry, thumb, archive);
   report(record);
   if (dryRun) return;
 

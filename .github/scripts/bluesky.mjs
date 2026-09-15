@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 
 const ENTRYWAY = "https://bsky.social";
 const POST_COLLECTION = "app.bsky.feed.post";
+const WALK_TIMEOUT_MS = 300_000;
 const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
 
 async function xrpc(host, method, nsid, { body, query, jwt, contentType } = {}) {
@@ -117,12 +118,17 @@ export async function createPost(session, record) {
 }
 
 // Every url this account has linked back to `since`, from both the card and the link facets.
-// Records come newest first, so a record older than `since` ends the walk.
-export async function postedUris(session, { since, maxPages = 40 } = {}) {
+// Records come newest first, so a record older than `since` ends the walk, and so does a page
+// that carries no cursor. A partial set is indistinguishable from a complete one and would
+// re-post whatever it missed, so the walk throws rather than return one: a cursor that repeats
+// is a pager going nowhere, and the deadline catches one that advances forever.
+export async function postedUris(session, { since, timeoutMs = WALK_TIMEOUT_MS } = {}) {
   const uris = new Set();
+  const seen = new Set();
+  const deadline = Date.now() + timeoutMs;
   let cursor;
 
-  for (let page = 0; page < maxPages; page++) {
+  for (;;) {
     const query = { repo: session.did, collection: POST_COLLECTION, limit: "100" };
     if (cursor) query.cursor = cursor;
     const data = await xrpc(session.host, "GET", "com.atproto.repo.listRecords", { query, jwt: session.jwt });
@@ -139,7 +145,9 @@ export async function postedUris(session, { since, maxPages = 40 } = {}) {
     }
 
     cursor = data.cursor;
-    if (!cursor || (data.records ?? []).length === 0) break;
+    if (!cursor || (data.records ?? []).length === 0) return uris;
+    if (seen.has(cursor)) throw new Error(`the post walk stalled: cursor ${cursor} came back twice`);
+    seen.add(cursor);
+    if (Date.now() > deadline) throw new Error(`the post walk passed ${timeoutMs}ms over ${seen.size} pages`);
   }
-  return uris;
 }
