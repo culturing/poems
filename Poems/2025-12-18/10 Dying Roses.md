@@ -32,7 +32,7 @@ and both our hearts must travel on
 and not get stuck in wistful hoping,
 dreaming dreams that cannot be. You will get free,
 I have no doubt, but when? It's too late now
-to pretend I don't care, but I just cannot keep on
+to pretend I don't care, but I cannot just keep on
 standing there, with a bouquet of dying roses.
 
 ***

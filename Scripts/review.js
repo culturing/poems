@@ -34,6 +34,10 @@
         '#review .r-msg.warn{color:#dd8b94}',
         '#review a{color:#8a8a8a;text-decoration:none}',
         '#review a:hover{color:#f5f5f5}',
+        '#review.dragging{opacity:.85}',
+        '#review .r-grip{align-self:center;cursor:grab;color:#4a4a4a;' +
+        'letter-spacing:.1em;user-select:none;touch-action:none}',
+        '#review.dragging .r-grip{cursor:grabbing}',
         '@media print{#review{display:none}}'
     ].join('');
 
@@ -44,6 +48,7 @@
     var bar = document.createElement('div');
     bar.id = 'review';
     bar.innerHTML =
+        '<span class="r-grip" title="drag to move">⋮⋮</span>' +
         '<span class="r-count">&hellip;</span>' +
         '<span class="r-sep"></span>' +
         '<span class="r-buttons"></span>' +
@@ -57,6 +62,66 @@
     var elButtons = bar.querySelector('.r-buttons');
     var elNext = bar.querySelector('.r-next');
     var elMsg = bar.querySelector('.r-msg');
+
+    /* ---- dragging -------------------------------------------------------------- */
+
+    var POSITION_KEY = 'review-bar-position';
+
+    function place(left, top) {
+        var box = bar.getBoundingClientRect();
+        left = Math.min(Math.max(left, 4), Math.max(4, window.innerWidth - box.width - 4));
+        top = Math.min(Math.max(top, 4), Math.max(4, window.innerHeight - box.height - 4));
+        bar.style.left = left + 'px';
+        bar.style.top = top + 'px';
+        bar.style.bottom = 'auto';
+        bar.style.transform = 'none';
+        return { left: left, top: top };
+    }
+
+    function restore() {
+        try {
+            var saved = JSON.parse(localStorage.getItem(POSITION_KEY));
+            if (saved) place(saved.left, saved.top);
+        } catch (err) { /* no saved position */ }
+    }
+
+    var grip = bar.querySelector('.r-grip');
+    var origin = null;
+
+    grip.addEventListener('pointerdown', function (e) {
+        var box = bar.getBoundingClientRect();
+        origin = { x: e.clientX - box.left, y: e.clientY - box.top };
+        grip.setPointerCapture(e.pointerId);
+        bar.classList.add('dragging');
+        e.preventDefault();
+    });
+
+    grip.addEventListener('pointermove', function (e) {
+        if (!origin) return;
+        place(e.clientX - origin.x, e.clientY - origin.y);
+    });
+
+    function endDrag(e) {
+        if (!origin) return;
+        origin = null;
+        bar.classList.remove('dragging');
+        if (grip.hasPointerCapture(e.pointerId)) grip.releasePointerCapture(e.pointerId);
+        try {
+            localStorage.setItem(POSITION_KEY, JSON.stringify({
+                left: parseFloat(bar.style.left),
+                top: parseFloat(bar.style.top)
+            }));
+        } catch (err) { /* storage unavailable */ }
+    }
+
+    grip.addEventListener('pointerup', endDrag);
+    grip.addEventListener('pointercancel', endDrag);
+
+    window.addEventListener('resize', function () {
+        if (bar.style.top) place(parseFloat(bar.style.left), parseFloat(bar.style.top));
+    });
+
+    restore();
 
     var msgTimer = null;
     function say(text, warn) {

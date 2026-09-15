@@ -5,10 +5,10 @@ Gwen sees the world in white,
 and the hearts of people glitter
 even at airports (which may
 or may not be totally depraved).
-She has eyes for the goodness everywhere
+She has eyes for goodness everywhere
 and loves it, in spite of some
 evidence to the contrary. She will
-let me borrow those eyes, here,
+let me borrow those eyes
 for a moment, as I remember
 how hope feels, and how time's passing
 cannot extinguish that feeling
