@@ -26,6 +26,7 @@ const SINCE = "2026-09-07";
 const ACCOUNT_START = "2026-09-07";
 
 const POST_LIMIT = 300;
+const GENERIC_TAG = "poetry";
 const TAG_COUNT = 2;
 const MAX_DIGESTS = 3;
 const MIN_RATING = 0;
@@ -141,6 +142,12 @@ function loadSkips() {
 
 const hashtag = tag => tag.replace(/[^a-z0-9]/gi, "");
 
+// GENERIC_TAG leads so the post reaches the platform-wide poetry feeds, then the topical tags.
+function hashtags(tags) {
+  const list = tags.slice(0, TAG_COUNT).map(hashtag).filter(Boolean);
+  return [GENERIC_TAG, ...list.filter(tag => tag.toLowerCase() !== GENERIC_TAG)];
+}
+
 // Poem pages carry no rating; the day archive wraps each link in its rated- class.
 function ratingOf(url) {
   const archive = `docs${datePathOf(url)}index.html`;
@@ -180,17 +187,17 @@ function compose({ heading, body, tags, url }) {
 
 // A backlog poem carries its year, so it does not read as new work.
 function poemPost({ url, title, description, tags }, thumb, archive) {
-  const hashtags = tags.slice(0, TAG_COUNT).map(hashtag).filter(Boolean);
+  const tagList = hashtags(tags);
   const year = yearOf(url);
   return buildRecord({
     text: compose({
       heading: archive ? `${title} · ${year}` : title,
       body: description,
-      tags: hashtags,
+      tags: tagList,
       url
     }),
     linkUri: url,
-    tags: hashtags,
+    tags: tagList,
     embed: externalEmbed({
       uri: url,
       title: archive ? `${title} | a ${year} poem by ${SITE_NAME}` : `${title} | a poem by ${SITE_NAME}`,
@@ -204,17 +211,17 @@ function digestPost(items, thumb) {
   const label = dateLabel(items[0].pubDate);
   const url = BASE_URL + datePathOf(items[0].url);
   const noun = items.length === 1 ? "poem" : "poems";
-  const hashtags = topTags(items.map(item => item.tags ?? []), TAG_COUNT).map(hashtag).filter(Boolean);
+  const tagList = hashtags(topTags(items.map(item => item.tags ?? []), TAG_COUNT));
 
   return buildRecord({
     text: compose({
       heading: `${items.length} new ${noun} · ${label}`,
       body: items.map(item => item.title).join(" · "),
-      tags: hashtags,
+      tags: tagList,
       url
     }),
     linkUri: url,
-    tags: hashtags,
+    tags: tagList,
     embed: externalEmbed({
       uri: url,
       title: `${label} | poems by ${SITE_NAME}`,
