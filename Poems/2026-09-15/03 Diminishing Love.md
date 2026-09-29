@@ -29,4 +29,4 @@ that some women use love to abuse, and all will
 when they feel under siege. I will arm myself,
 ready to battle with words and to pull away
 when the need arrives. I will not be made small,
-not for love or any other compensatory hope.
+not for love or any other compensation.

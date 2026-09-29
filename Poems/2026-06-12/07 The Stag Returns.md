@@ -12,6 +12,6 @@ he says, do not linger here under
 the false impression that you might belong
 at last in this forest. It is no home,
 it offers no rest. A voice echoes
-which once had been silent, and he sees
-his purpose served. He moves on,
+which once had been silent, and
+his purpose is served. He moves on,
 after pausing to soak the sound in.

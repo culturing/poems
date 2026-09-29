@@ -9,7 +9,7 @@ would crave solitude and find her world depressing.
 It was my role to encourage, like Jesus would,
 and it almost ruined my life. Her mother misunderstood
 and accused me to my face of vulgar intentions.
-No father was in the picture, and I can assume
+The father was gone, and I can assume
 the mother had reasons to mistrust men on sight. Even so,
 false accusations could have haunted me, followed me,
 if the story had reached the news. So what could I do
