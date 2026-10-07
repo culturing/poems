@@ -41,22 +41,18 @@ class SitemapGenerator
             new XElement(ns + "urlset",
                 sitemapNodes.Select(node =>
                     new XElement(ns + "url",
-                        // Required: <loc>
                         new XElement(ns + "loc", node.Url),
 
-                        // Optional: <lastmod>
                         node.LastModified.HasValue ?
                             new XElement(ns + "lastmod", node.LastModified.Value.ToString("o")) :
-                            null, // LINQ to XML conveniently skips null elements
+                            null, // LINQ to XML skips null elements
 
-                        // Optional: <changefreq>
                         node.ChangeFrequency.HasValue ?
                             new XElement(ns + "changefreq", node.ChangeFrequency.Value.ToString().ToLowerInvariant()) :
                             null,
 
-                        // Optional: <priority>
                         node.Priority.HasValue ?
-                            new XElement(ns + "priority", node.Priority.Value.ToString("0.0", CultureInfo.InvariantCulture)) : // Use InvariantCulture for decimal formatting
+                            new XElement(ns + "priority", node.Priority.Value.ToString("0.0", CultureInfo.InvariantCulture)) : // A comma-decimal culture would write 0,5
                             null
                     )
                 )

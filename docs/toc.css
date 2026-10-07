@@ -1,5 +1,5 @@
 body {
-    font-family: Quattrocento;
+    font-family: Alegreya;
     background-color: white;
     color: black;
     line-height: 1.25rem;
@@ -21,6 +21,7 @@ h1 {
     align-items: baseline;
     justify-content: space-between;
     padding: 0 1rem 0 1rem;
+    font-variant-numeric: lining-nums tabular-nums;
 }
 
 .toc-section {
@@ -37,8 +38,8 @@ h1 {
     background-color: rgb(225, 225, 225);
 }
 
-/* The rating ramp in common.css, inverted for paper. The floor stays a solid reading
-   grey: half these rows sit on a stripe */
+/* common.css's rating ramp, inverted for paper; change the two together. The floor stays
+   a solid reading grey, since half these rows sit on a stripe */
 .rated-0 { color: #5a5a5a; }
 .rated-1 { color: #2e2e2e; }
 .rated-2 { color: #000000; }

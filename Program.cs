@@ -29,7 +29,6 @@ class Program
     // Poems after this date live at /yyyy/MM/dd/slug/, earlier ones at /yyyy/MM/slug/
     static public readonly DateTime DayUrlCutoff = new DateTime(2026, 03, 04);
 
-    // Set by "dotnet run -- review"
     static bool ReviewMode = false;
 
     static Markdown md = new Markdown();
@@ -63,7 +62,7 @@ class Program
     static List<Analysis> Analyses { get; set; } = new List<Analysis>();
     static Dictionary<string, List<Analysis>> AnalysesByDate = new Dictionary<string, List<Analysis>>();
     static Dictionary<string, IEnumerable<Analysis>> FilteredAnalysesByDate;
-    static XFont Font = new XFont("Quattrocento", 12.0);
+    static XFont Font = new XFont("Alegreya", 12.0);
     public static List<string> Months = new List<string> { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
     static async Task Main(string[] args)
@@ -76,7 +75,6 @@ class Program
 
         CleanupPrevious();
     
-    // Parse Poems
         foreach (string dirpath in Directory.EnumerateDirectories("Poems"))
         {
             if (Path.GetFileName(dirpath) == "Purgatory")
@@ -90,16 +88,6 @@ class Program
 
         LoadTags();
 
-    // Parse Analyses
-        // foreach (string dirpath in Directory.EnumerateDirectories("Analyses"))
-        // {            
-        //     foreach (string filepath in Directory.EnumerateFiles(dirpath))
-        //     {
-        //         AddAnalysis(filepath);
-        //     }
-        // }
-
-    // Build Chronology
         var chronology = new StringBuilder();
         Dictionary<int, int> poemsPerYear = Poems.GroupBy(poem => poem.PublicationDate.Year)
             .ToDictionary(group => group.Key, group => group.Count());
@@ -108,7 +96,6 @@ class Program
 
         foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => DateTime.Parse(kvp.Key)))
         {
-            // The first node of each year carries that year's anchor
             int year = kvp.Value.First().PublicationDate.Year;
             string anchor = string.Empty;
             if (year != lastYear)
@@ -128,7 +115,6 @@ class Program
 
         Dictionary<string, PageHash> hashes = SitemapGenerator.GetHashes();
 
-    // Set previous and next links
         Person author = BuildAuthor();
         List<Poem> OrderedPoems = Poems.OrderBy(poem => poem.PublicationDate).ToList();
 
@@ -184,8 +170,7 @@ class Program
                 Name = poem.Title,
                 Headline = poem.Title,
                 Description = poem.Description,
-                // Schema.NET has no Poem class
-                AdditionalType = new Uri("https://schema.org/Poem"),
+                AdditionalType = new Uri("https://schema.org/Poem"), // Schema.NET has no Poem class
                 Author = author,
                 CopyrightHolder = author,
                 CopyrightYear = poem.PublicationDate.Year,
@@ -227,14 +212,11 @@ class Program
 
         File.WriteAllText("docs/index.html", finalIndexHtml);
 
-    // Redirect /best/, which the rating filter replaced
+        // /best/ became the rating filter
         Directory.CreateDirectory("docs/best");
         File.WriteAllText("docs/best/index.html", RedirectTemplate.Replace("{{target}}", BaseUrl + "/"));
 
         RenderOtherPage("Other/about.md", AboutTemplate, $"About | poems by {SiteName}", $"About | poems by {SiteName}", author);
-        // RenderOtherPage("Other/FAQ.md");
-        // RenderOtherPage("Other/Favorite Poems.md");
-        // RenderOtherPage("Other/Why Poetry.md");
 
         RenderArchives();
         RenderTitleIndex();
@@ -248,7 +230,6 @@ class Program
         GenerateFeed(OrderedPoems);
 
         await RenderPdf("docs/culturing.pdf");
-        //await RenderPdf("Submission.pdf", true, new DateTime(2021, 02, 01), new DateTime(2022, 10, 31));
         await RenderVideo();
     }
 
@@ -261,7 +242,6 @@ class Program
         filename = Regex.Replace(filename, "^[0-9][0-9] ", "");
         poem.Title = filename;
 
-        // One leading asterisk per level
         int stars = lines[0].Length - lines[0].TrimStart('*').Length;
         if (stars > Poem.MaxRating)
             throw new InvalidOperationException($"{filepath} opens with {stars} asterisks; the scale runs to {Poem.MaxRating}");
@@ -277,9 +257,8 @@ class Program
             titled = true;
             bodyStart = 2;
         }
-        catch(FormatException)
+        catch(FormatException) // Untitled: the date is the first line, and the title stays the filename
         {
-            // Untitled poem: the date is the first line and the title comes from the filename
             poem.PublicationDate = System.DateTime.Parse(lines[0]);
             titled = false;
             bodyStart = 1;
@@ -330,7 +309,6 @@ class Program
 
         Poems.Add(poem);
 
-    // Sort for chronology
         DateTime pub = poem.PublicationDate;
         string key = $"{pub.Day.ToString("D2")} {Months[pub.Month]} {pub.Year}";
         if (!PoemsByDate.ContainsKey(key))
@@ -358,7 +336,6 @@ class Program
         return text;
     }
 
-    // The first line of verse, shown beside a title in a listing
     static string BuildOpening(IEnumerable<string> bodyLines)
     {
         string line = bodyLines
@@ -380,7 +357,7 @@ class Program
         return line;
     }
 
-    // The date under a title, linking its archives. linkDay is false on the day archive itself
+    // linkDay is false on the day archive, so the page does not link to itself
     static string BuildDateLine(Poem poem, bool linkDay = true)
     {
         DateTime pub = poem.PublicationDate;
@@ -533,7 +510,6 @@ class Program
 
         Analyses.Add(analysis);
 
-    // Sort for chronology
         string key = $"{Months[analysis.PublicationDate.Month]} {analysis.PublicationDate.Year}";
         if (!AnalysesByDate.ContainsKey(key))
             AnalysesByDate[key] = new List<Analysis>();
@@ -569,7 +545,7 @@ class Program
         File.WriteAllText(htmlpath, html);
     }
 
-    // Other/tags.tsv, keyed by url, most salient tag first
+    // Keyed by url, most salient tag first
     static void LoadTags()
     {
         string path = "Other/tags.tsv";
@@ -600,7 +576,6 @@ class Program
         }
     }
 
-    // Theme hubs at /themes/<tag>/, and the field of themes at /themes/
     static void RenderThemes()
     {
         Dictionary<string, List<Poem>> byTag = new Dictionary<string, List<Poem>>();
@@ -657,7 +632,6 @@ class Program
 
     static string ThemeName(string tag) => tag.Replace('-', ' ');
 
-    // Nine steps, on a log scale
     static int Weight(int count, int fewest, int most)
     {
         if (most <= fewest)
@@ -666,7 +640,6 @@ class Program
         return Math.Clamp((int)Math.Round(1 + t * 8), 1, 9);
     }
 
-    // A rail of year anchors, newest first, weighted by how many poems each year holds
     static string YearRail(List<KeyValuePair<int, int>> yearsNewestFirst)
     {
         int fewest = yearsNewestFirst.Min(year => year.Value);
@@ -679,7 +652,6 @@ class Program
         return rail.ToString();
     }
 
-    // A theme's poems, grouped under year headings beside a year rail
     static string ThemeArchiveBody(List<Poem> poems)
     {
         List<IGrouping<int, Poem>> byYear = poems
@@ -687,7 +659,6 @@ class Program
             .OrderByDescending(group => group.Key)
             .ToList();
 
-        // One year needs no rail
         if (byYear.Count < 2)
             return $"<div class=\"theme-columns\">{ArchivePoemLinks(poems, withOpening: false)}</div>";
 
@@ -721,7 +692,6 @@ class Program
         return crumbs;
     }
 
-    // Year, month and day index pages
     static void RenderArchives()
     {
         foreach (IGrouping<int, Poem> yearGroup in Poems.GroupBy(poem => poem.PublicationDate.Year).OrderBy(group => group.Key))
@@ -754,7 +724,6 @@ class Program
 
                     if (hasDayArchive)
                     {
-                        // Built as a single chronology node, its <h1> hidden behind the date
                         WriteListPage(
                             dayPath,
                             dayLabel,
@@ -762,7 +731,7 @@ class Program
                             $"<div class=\"node\"><h3>{BuildDateLine(dayGroup.First(), linkDay: false)}</h3>"
                                 + $"<div class=\"leaves\">{ArchivePoemLinks(dayGroup, withOpening: true)}</div></div>",
                             BuildCrumbs(day, false, dayLabel, dayPath),
-                            hideHeading: true);
+                            hideHeading: true); // The node's date says the same words
                     }
                 }
 
@@ -788,16 +757,15 @@ class Program
         }
     }
 
-    // Reversed first so that, the sort being stable, poems sharing a date keep chronology order
     static string ArchivePoemLinks(IEnumerable<Poem> poems, bool withOpening)
     {
         var html = new StringBuilder();
+        // Reversed first so that, the sort being stable, poems sharing a date keep chronology order
         foreach (Poem poem in poems.Reverse().OrderByDescending(poem => poem.PublicationDate))
             html.AppendLine(PoemRow(poem, withOpening));
         return html.ToString();
     }
 
-    // One row of a listing
     static string PoemRow(Poem poem, bool withOpening)
     {
         string opening = withOpening && poem.Opening.Length > 0
@@ -835,7 +803,7 @@ class Program
         return (previous, next);
     }
 
-    // Only the unfiltered pair carries an id; the others are found by tier
+    // An id must be unique, so only tier 0 carries one; content.js finds the rest by data-tier
     static string EdgeId(string kind, int tier) => tier == 0
         ? $" id=\"{(kind == "prev" ? "previous" : "next")}\""
         : string.Empty;
@@ -848,7 +816,7 @@ class Program
             + $" rel=\"{kind}\" href=\"{neighbour.UrlPath}\">{inner}</a>";
     }
 
-    // The ends of a chain: the slot stays occupied, but emits no link
+    // The chevron stays at the ends of a chain, so the margins keep their shape
     static string EdgeDisabled(string kind, int tier) =>
         $"<span{EdgeId(kind, tier)} class=\"edge edge-{kind} edge-disabled\" data-edge=\"{kind}\""
         + $" data-tier=\"{tier}\" aria-hidden=\"true\">{EdgeChevron(kind)}</span>";
@@ -856,7 +824,6 @@ class Program
     // Punctuation dropped, so "Am I Right?" sorts under its own letter rather than after it
     static string SortKey(string title) => Regex.Replace(title, @"[^\w\s]", "");
 
-    // The alphabetical index at /index/
     static void RenderTitleIndex()
     {
         const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -872,7 +839,7 @@ class Program
             byLetter[letter].Add(poem);
         }
 
-        // Every letter appears, whether or not it has poems
+        // Empty letters stay, so the rail never changes shape
         var rail = new StringBuilder("<nav class=\"rail\" aria-label=\"Jump to a letter\">");
         foreach (char letter in alphabet)
             rail.Append(byLetter.ContainsKey(letter.ToString())
@@ -945,7 +912,7 @@ class Program
         ListPageUrls.Add(urlPath);
     }
 
-    // A renamed url gets a stub carrying a meta refresh. See Other/redirects.txt
+    // GitHub Pages cannot serve a 301, so each old url gets a meta-refresh stub
     static void RenderRedirects()
     {
         string listPath = "Other/redirects.txt";
@@ -1060,7 +1027,6 @@ class Program
             Tagged = false
         };
 
-    // Add title
         pdfRenderOptions.Path = $"Output/Pdfs/Title.pdf";
         await page.GotoAsync("/pdf/title.html");
         await page.PdfAsync(pdfRenderOptions);
@@ -1070,7 +1036,6 @@ class Program
         }
         pdf.Outlines.Add("Title", pdf.Pages[pdf.PageCount - 1]);
 
-    // Add copyright
         string copyrightHtml = PdfCopyrightTemplate.Replace("{{year}}", DateTime.Now.ToString("yyyy"));
         string copyrightPath = $"docs/pdf/copyright.html";
         File.WriteAllText(copyrightPath, copyrightHtml);
@@ -1084,7 +1049,6 @@ class Program
         }
         pdf.Outlines.Add("Copyright", pdf.Pages[pdf.PageCount - 1]);
 
-    // Add epigraph
         string epigraphHtml = PdfEpigraphTemplate.Replace("{{year}}", DateTime.Now.ToString("yyyy"));
         string epigraphPath = $"docs/pdf/epigraph.html";
         File.WriteAllText(epigraphPath, epigraphHtml);
@@ -1098,7 +1062,6 @@ class Program
         }
         pdf.Outlines.Add("Epigraph", pdf.Pages[pdf.PageCount - 1]);
 
-    // Add about
         pdfRenderOptions.Path = $"Output/Pdfs/About.pdf";
         await page.GotoAsync("/about/index.html");
         await page.PdfAsync(pdfRenderOptions);
@@ -1108,7 +1071,7 @@ class Program
         }
         pdf.Outlines.Add("About", pdf.Pages[pdf.PageCount - 1]);
         
-    // Add temporary table of contents
+        // A placeholder, replaced once the poems' page numbers are known
         int tableOfContentsStart = pdf.PageCount;
         int tableOfContentsPageCount = 0;
         await RenderTableOfContents(page);
@@ -1118,7 +1081,6 @@ class Program
             MergePdfs(tableOfContentsPdf, pdf);
         }
 
-    // Add poems
         PdfOutline contentsOutline = pdf.Outlines.Add("Contents", pdf.Pages[tableOfContentsStart]);
         PdfOutline poemsOutline = pdf.Outlines.Add("Poems", pdf.Pages[pdf.PageCount - 1]);
 
@@ -1170,13 +1132,12 @@ class Program
 
         await page.GotoAsync("/pdf/all_poems.html");
 
-        // Take the navbar, pagination and Creative Commons links out of the tree
+        // Removed, not hidden: Chromium repeats position: fixed elements on every printed page
         await page.EvaluateAsync(@"() => {
             const elements = document.querySelectorAll('.navbar, .edge, img[src*=\'cc.png\'], a[href*=\'creativecommons\']');
             elements.forEach(el => el.remove());
         }");
 
-        // Instantly measure physical DOM height to determine accurate PDF page spanning
         var jsCode = @"() => {
             let counts =[];
             let elements = document.querySelectorAll('.poem-page');
@@ -1186,8 +1147,7 @@ class Program
                 let mb = parseFloat(style.marginBottom) || 0;
                 let height = el.getBoundingClientRect().height + mt + mb;
                 
-                // 11in page - 2in margins = 9in printable height. 9in * 96 DPI = 864 pixels.
-                let pages = Math.ceil(height / 864);
+                let pages = Math.ceil(height / 864); // 9in of printable height at 96px an inch
                 if (pages === 0) pages = 1;
                 counts.push(pages);
             }
@@ -1215,7 +1175,6 @@ class Program
             }
         }
 
-    // Render final table of contents
         string tocPath = await RenderTableOfContents(page);
         using (PdfDocument tableOfContentsPdf = PdfReader.Open(tocPath, PdfDocumentOpenMode.Import))
         {
@@ -1231,7 +1190,6 @@ class Program
             poemsOutline.DestinationPage = pdf.Pages[tableOfContentsStart + tableOfContentsPdf.PageCount];
         }
 
-    // Add index
         string indexPath = await RenderPdfIndex(page, bestOnly, start, end);
         using (PdfDocument indexPdf = PdfReader.Open(indexPath, PdfDocumentOpenMode.Import))
         {
@@ -1443,8 +1401,7 @@ class Program
         Console.WriteLine($"review manifest: {poems.Count} poems -> Output/review-map.json");
     }
 
-    // Fingerprints every stylesheet and script a template links, against the edge cache;
-    // see DESIGN.md
+    // Fonts are left out on purpose; see DESIGN.md
     static string VersionAssets(string html) => AssetReference.Replace(html, match =>
     {
         string name = match.Groups["file"].Value;
@@ -1453,7 +1410,6 @@ class Program
         return File.Exists(source) ? $"/{name}?v={AssetHash(source)}" : match.Value;
     });
 
-    // Eight hex characters of the file's SHA-256
     static string AssetHash(string path)
     {
         using SHA256 sha = SHA256.Create();
@@ -1465,7 +1421,6 @@ class Program
         List<string> filesToCopy = new List<string>();
         // toc.css ships too: RenderPdf loads it as /toc.css over the local server
         filesToCopy.AddRange(Directory.GetFiles("Styles"));
-        // review.js belongs to the review pass only
         filesToCopy.AddRange(Directory.GetFiles("Scripts")
             .Where(file => ReviewMode || Path.GetFileName(file) != "review.js"));
 
@@ -1474,7 +1429,7 @@ class Program
             File.Copy(file, $"docs/{Path.GetFileName(file)}");
         }
 
-        // The card link previews use; 1920x1080 is near enough the 1.91:1 Open Graph ratio
+        // 1920x1080 is near enough the 1.91:1 Open Graph ratio
         File.Copy("culturing.png", "docs/og-image.png", true);
 
         // Stops GitHub Pages running the content through Jekyll, which drops _-prefixed paths

@@ -1,5 +1,3 @@
-/* -- palette --------------------------------------------------------------------- */
-
 :root {
     --void:   #050505;
     --paper:  rgb(10, 10, 10);
@@ -13,48 +11,19 @@
     --accent-soft: #dd8b9420;
     --hover:  rgba(232, 232, 232, 0.14);
 
-    /* Alphas: the strength of the light, and how hard the edges close. Zeroed for
-       print and forced-colors below */
-    --glow:  0.055;
-    --shade: 0.55;
-
     /* The height of the sticky navbar: 1rem of its top padding over a 2.25rem row.
        Anything scrolled to by anchor clears this */
     --bar: 3.25rem;
 }
 
+/* Print keeps the browser's 16px, so the book's pagination does not move */
+@media screen { html { font-size: 106.25%; } }
+
 /* Full-height flex column, so #container-parent takes the space between navbar and licence.
-   relative anchors the atmosphere layers to the page; isolation keeps them in their own
-   stacking context */
-body { font-family: Quattrocento; background-color: var(--paper); color: var(--ink); line-height: 1.25rem; margin: 0; padding: 1rem; box-sizing: border-box; min-height: 100vh; display: flex; flex-direction: column; position: relative; isolation: isolate; }
+   No stacking context here: on the thousand-page book it can stop the PDF build finishing */
+body { font-family: Alegreya; background-color: var(--paper); color: var(--ink); line-height: 1.25rem; margin: 0; padding: 1rem; box-sizing: border-box; min-height: 100vh; display: flex; flex-direction: column; }
 
-/* -- atmosphere ------------------------------------------------------------------ */
-
-/* The pool of light and the vignette: two gradients in one layer, the vignette first in
-   the list so the pool sits over it */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    /* background:
-        radial-gradient(ellipse 78vw 64vh at 34% 34%, rgba(255, 255, 255, var(--glow)) 0%, rgba(255, 255, 255, 0) 66%),
-        radial-gradient(ellipse 92vw 88vh at 42% 46%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, var(--shade)) 100%); */
-}
-
-/* The grain, on its own layer because it multiplies over both gradients above */
-/* body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.045;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-} */
-
-/* Everything the page says rides above both layers */
+/* Each its own stacking context, so the fade band inside #container-parent stays under #license */
 .navbar, #container-parent, #license, .edge { position: relative; z-index: 1; }
 
 a { color: var(--ink); text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 2px; }
@@ -63,8 +32,8 @@ h3 a, #content time a { text-decoration: none; }
 h3 a:hover, #content time a:hover { color: var(--accent); }
 h1, h3 { margin: 0; }
 
-/* The rating ramp, on listing rows only. Pinned to --ink at the top and #b0b0b0 at the
-   floor, so moving --ink moves the middle step with it. Its paper twin is in toc.css */
+/* Below #b0b0b0 a title reads as dimmed rather than quiet. When you change this ramp,
+   update its paper twin in toc.css */
 .rated-0 a { color: #b0b0b0; }
 .rated-1 a { color: #cccccc; }
 .rated-2 a { color: var(--ink); }
@@ -73,21 +42,12 @@ h1, h3 { margin: 0; }
    back out through the body's 1rem padding, which the inner padding then puts back */
 #license { position: sticky; bottom: 0; margin: 0 -1rem; padding: 0.75rem 1rem 0 1rem; background: linear-gradient(to bottom, transparent 0, var(--paper) 14px); }
 
-/* Reachable by crawlers and screen readers, absent from the visual design */
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
-
-@media (forced-colors: active)
-{
-    body::before, body::after { display: none; }
-}
 
 @media only print
 {
-    /* Print stacks and centres poem pages itself, so the screen flex column is undone,
-       along with the stacking context the book cannot afford. content: none rather than
-       display: none, so the atmosphere layers are never generated at all */
-    body { background-color: white; color: black; display: block; min-height: 0; position: static; isolation: auto; }
-    body::before, body::after { content: none; display: none; }
+    /* Print stacks and centres poem pages itself, so the screen flex column is undone */
+    body { background-color: white; color: black; display: block; min-height: 0; }
     a { text-decoration-color: black; color: black; }
     .navbar, #license, .edge { display: none; }
 }

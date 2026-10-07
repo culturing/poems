@@ -27,20 +27,17 @@ a:hover { color: var(--accent); }
     background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.85) 52%, var(--void) 100%);
 }
 
-/* -- the stem ------------------------------------------------------------------ */
-
 /* The line is a border on the node itself, so consecutive nodes abut into one stroke.
    The dot is filled with --paper, since the border runs behind it */
 .node { position: relative; border-left: 1px solid var(--rule); padding: 0 0 2rem 2.75rem; }
 .node::before { content: ""; position: absolute; left: -4px; top: 0.4rem; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1px solid var(--muted); }
 .node::after { content: ""; position: absolute; left: 6px; top: 0.72rem; width: 1.5rem; height: 1px; background: var(--rule); }
 
-/* Cinzel here and in the navbar, and nowhere else */
-.node > h3 { font-family: 'Cinzel', Georgia, serif; font-size: 0.69rem; font-weight: 400; letter-spacing: 0.24em; color: var(--muted); }
+.node > h3 { font-size: 1rem; font-weight: 400; font-style: italic; color: var(--muted); }
 .node > h3 a { color: var(--muted); }
 .node > h3 a:hover { color: var(--ink); }
 
-.leaves { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; }
+.leaves { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; font-size: 1.06rem; }
 /* fit-content keeps the row as wide as its title, so the hover target is the title alone */
 .leaves > div { position: relative; width: fit-content; max-width: 100%; }
 
@@ -59,9 +56,6 @@ a:hover { color: var(--accent); }
 }
 .leaves > div:hover .opening { opacity: 1; }
 
-/* -- the rating filter ----------------------------------------------------------- */
-
-/* The filter is a class on <html>: every listing row already carries its rating */
 html.tier-1 .rated-0,
 html.tier-2 .rated-0,
 html.tier-2 .rated-1 { display: none; }
@@ -74,17 +68,12 @@ html.tier-2 .node:not(:has(.rated-2)),
 html.tier-2 .year:not(:has(.rated-2)),
 html.tier-2 .letter:not(:has(.rated-2)) { display: none; }
 
-/* -- archives and headings ------------------------------------------------------ */
-
 h1 { margin: 0; }
 .archive h1 { padding: 0 0 2rem 0; font-size: 1.5em; color: var(--ink); }
 .archive .breadcrumb { margin: 0; padding-bottom: 0.6rem; color: var(--muted); }
 .archive .breadcrumb a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
 .archive .breadcrumb a:hover { text-decoration-color: var(--accent); }
 
-/* -- /themes/ -------------------------------------------------------------------- */
-
-/* Nine steps of size and grey carry the counts. Alphabetical, not sorted by size */
 .theme-list { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 2.5rem 3rem; max-width: 56rem; margin: 0 auto; padding: 2rem 0; }
 /* Grown to the full height and centred in it; safe centring, so a field taller than the
    window still starts at the top rather than overflowing off both ends */
@@ -107,31 +96,26 @@ h1 { margin: 0; }
 .theme-list .w7 { font-size: 1.54rem; } .theme-list .w8 { font-size: 1.78rem; }
 .theme-list .w9 { font-size: 2.1rem; }
 
-/* -- a theme's own page ---------------------------------------------------------- */
-
+.railed { display: flex; flex-direction: row; align-items: flex-start; gap: 3.5rem; }
 /* Greys only, no size: a column of numbers that changed size would never settle into a
    straight edge to read down */
-.railed { display: flex; flex-direction: row; align-items: flex-start; gap: 3.5rem; }
-.year-rail { position: sticky; top: calc(var(--bar) + 1.5rem); flex: 0 0 4rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.85rem; border-right: 1px solid var(--rule); padding-right: 1.4rem; font-size: 0.8rem; font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
+.year-rail { position: sticky; top: calc(var(--bar) + 1.5rem); flex: 0 0 4rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.85rem; border-right: 1px solid var(--rule); padding-right: 1.4rem; font-size: 0.8rem; font-variant-numeric: lining-nums tabular-nums; letter-spacing: 0.05em; }
 .year-rail a:hover { color: var(--accent); }
 .railed-body { flex: 1; min-width: 0; }
 /* Flush against the navbar, exactly: the node's own 2rem of bottom padding is then what
    sits under the bar, with the previous title above it and out of sight */
 .railed-body .node, .railed-body .year { scroll-margin-top: var(--bar); }
 
-.theme-columns { columns: 3; column-gap: 3.5rem; }
+.theme-columns { columns: 3; column-gap: 3.5rem; font-size: 1.06rem; }
 .theme-columns > div { break-inside: avoid; padding-bottom: 0.55rem; }
 .year { padding-bottom: 2.25rem; }
 
-/* The same Cinzel label the stem puts on a date, ruled across the columns beneath */
-.year-mark { display: flex; align-items: center; gap: 1rem; font-family: 'Cinzel', Georgia, serif; font-size: 0.69rem; font-weight: 400; letter-spacing: 0.24em; color: var(--muted); padding-bottom: 1.2rem; }
+.year-mark { display: flex; align-items: center; gap: 1rem; font-size: 1rem; font-weight: 400; font-style: italic; color: var(--muted); padding-bottom: 1.2rem; }
 .year-mark::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
-
-/* -- /index/ ---------------------------------------------------------------------- */
 
 /* space-between, so the alphabet runs the full measure of the rule beneath it; the gap
    is a floor the letters never close below rather than the spacing */
-.rail { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.9rem 0.6rem; padding-bottom: 1.2rem; margin-bottom: 2.6rem; border-bottom: 1px solid var(--rule); font-family: 'Cinzel', Georgia, serif; font-size: 0.78rem; letter-spacing: 0.1em; }
+.rail { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.9rem 0.6rem; padding-bottom: 1.2rem; margin-bottom: 2.6rem; border-bottom: 1px solid var(--rule); font-size: 1rem; font-style: italic; letter-spacing: 0.04em; }
 .rail a { color: var(--muted); }
 .rail a:hover { color: var(--accent); }
 .rail-empty { color: var(--rule); }
@@ -139,8 +123,8 @@ h1 { margin: 0; }
 .letters { display: flex; flex-direction: column; gap: 2.8rem; }
 /* Flush against the navbar, as the year rail lands */
 .letter { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1.5rem; scroll-margin-top: var(--bar); }
-.letter-mark { margin: 0; font-family: 'Cinzel', Georgia, serif; font-size: 1rem; font-weight: 400; color: var(--whisper); }
-.letter-list { columns: 3; column-gap: 2.5rem; }
+.letter-mark { margin: 0; font-size: 1.375rem; font-weight: 400; font-style: italic; color: var(--whisper); }
+.letter-list { columns: 3; column-gap: 2.5rem; font-size: 1.06rem; }
 .letter-list > div { break-inside: avoid; padding-bottom: 0.45rem; }
 
 .archive .rail, .archive .letters { max-width: none; }
@@ -167,8 +151,6 @@ h1 { margin: 0; }
     .theme-list .w7 { font-size: 1.34rem; }
 }
 
-/* -- a theme's page holds still --------------------------------------------------- */
-
 /* The page is the window and .railed-body alone scrolls. Keyed on the columns rather than on
    .railed, which the home chronology carries too */
 @media only screen and (min-width : 512.01px) and (min-height : 32rem)
@@ -193,8 +175,6 @@ h1 { margin: 0; }
     body:has(.railed .theme-columns) .railed-body .year { scroll-margin-top: 0; }
     body:has(.railed .theme-columns) .year-rail { position: static; }
 }
-
-/* -- /index/ holds still ---------------------------------------------------------- */
 
 /* The same window as a theme's page, with .letters as the list that scrolls: the title and
    the alphabet stay put above it */

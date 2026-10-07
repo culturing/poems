@@ -22,7 +22,7 @@ const THUMB_PATH = "docs/og-image.png";
 // Poems published before this are the backlog, posted only once the new queue is empty.
 const SINCE = "2026-09-07";
 
-// No post older than this is read back.
+// No post older than this is read back. Kept apart from SINCE, so moving SINCE forward never hides earlier posts.
 const ACCOUNT_START = "2026-09-07";
 
 const POST_LIMIT = 300;

@@ -6,7 +6,7 @@ code can be read as code. Source of record: `Program.cs` builds the site, `Style
 
 ---
 
-## Palette and atmosphere
+## Palette
 
 Ground and text are the originals: a neutral near-black and a neutral near-white. Greys stay
 neutral with them — a violet-biased grey reads purple next to neutral text. One accent, rose,
@@ -21,65 +21,49 @@ below `--muted`, dark enough that a line of verse beside a title reads as an asi
 a second column. `--loam` sits between paper and raise, for the rare surface that needs to be
 off the ground without being lit.
 
-`--glow` and `--shade` are the two atmosphere dials, in one place because they are the whole
-look: the strength of the light the page is read by, and how hard the edges close. Both are
-alphas, and both are zeroed under print and forced colours.
-
-The page is lit rather than filled. A pool of light sits off centre, over the column that is
-actually being read, and a vignette closes the edges; between them the ground stops being one
-flat value and starts having a middle and an outside. Both are fixed, so the light stays where
-the eye is rather than scrolling away with the text. `body::before` carries light and shadow
-together, the vignette painted first so the pool sits on top of it; `body::after` carries the
-grain, which has to be its own layer because it multiplies over both. The grain is fractal
-noise at 0.75 — fine enough to read as paper tooth rather than static at any likely zoom — at
-4.5%, where it stops being visible as noise and only takes the flatness off.
-
-Poem pages switch the pool off (`content.css`, via `:has()` on the root) and keep the vignette.
-High-contrast and forced-colours modes get the page with the atmosphere off entirely: a
-vignette is decoration, and it is the one thing here that removes contrast.
-
 `body` is a full-height flex column so `#container-parent` can claim exactly the leftover
 space between the navbar and the licence badge; it replaced a hardcoded offset that only added
-up in quirks mode. `position: relative` is what lets the atmosphere layers anchor to the page
-rather than the viewport, and `isolation` opens a stacking context so they sit at z-index 0
-and 1 without reaching past the body for anything to paint over.
+up in quirks mode.
 
 ## Typography
 
-Cinzel sets the navbar and the date labels, and nothing else. It is a Roman inscriptional
-face — a page of it would be a monument rather than a poem — and it marks everything on the
-site that labels the writing rather than being it, so a reader learns the distinction once.
-It has no true lowercase; the small letters are small capitals, which close into a single grey
-mark without tracking. 0.26em on nav labels, 0.24em on date headings, 0.44em on the wordmark,
-which is read as a name rather than as a word.
+Alegreya sets the whole site: poems, titles, navbar and labels. It replaced a pairing of
+Quattrocento for the writing and Cinzel for everything that labels it; the trials are the
+"Poems by culturing font trials" canvas, and the Index and Chronology boards there are the
+spec. One family with a true italic does the work the second face did: labels — the navbar's
+rating filter, dates, year marks, the alphabet rail, letter marks — are set in italic and
+muted, so a reader still learns once what labels the writing rather than being it, without an
+inscriptional face that reads as a monument beside a poem.
 
-Quattrocento sets everything else, poems included. The Greek face is Alegreya's, wearing the
-Quattrocento name so it resolves per character on the same line.
+Lowercase nav labels at 0.875rem and 0.06em, the wordmark at 0.94rem and 0.12em, since it is
+read as a name rather than a word. Titles in a listing are 1.06rem, a step above body text,
+as on the canvas. On screen the root is 17px rather than 16px, so every rem is a step larger
+than on the canvas; print keeps 16px, so the book's pagination does not move.
+
+The date and themes on a poem page are 0.8rem on screen. `<small><small>` alone takes Alegreya
+to about 11px, which in grey on black is too small to read. The book keeps the nested smalls.
+
+Alegreya's default figures are old-style. Columns of numbers — the year rails, the book's
+contents — ask for lining, tabular figures, so a year sits level with the one above it.
 
 Font build notes:
 
-- Cinzel is a static instance built from the upstream variable font with fontTools, pinned at
-  the axis value in `fonts.css`, subset, then compressed. Rebuilding means redoing all three
-  steps — a differently-pinned instance changes the weight of every nav label. It ships at 400
-  only, so a stray `font-weight` elsewhere cannot embolden the bar.
-- Quattrocento is a 2048 upem cut carrying its own hinting, **not** built from the v2.000 TTFs
-  beside it in `Styles/`, which are upstream's 1000 upem. Measured: at 16px the 1000 upem cut
-  renders less evenly, its x-height landing on 7.34px where the hint program rounds
-  neighbouring glyphs opposite ways and the line shimmers. 2048 is a power of two, so
-  unit-to-pixel conversion adds no rounding of its own. Re-hinting the 1000 upem cut with
-  ttfautohint measured worse than either.
-- That cut covers 230 codepoints, fewer than the declared ranges. A character inside a range
-  but absent from the font drops through to Georgia rather than failing visibly. Nothing
-  written so far uses one; the micro sign is the near miss, and it is routed to the Greek face
-  on purpose. The real 700 is shipped because otherwise the browser fakes bold from the
-  regular. The family ships no italic, so every italic on the site is a computed slant — a
-  deliberate trade.
-- The Greek face declares two exact weights, never the range `400 700`: a range overlaps the
-  regular's exact 400 and, declared later, wins the weight match outright, dropping every 400
-  on the site to the browser's default serif while bold carries on working.
-- The unicode ranges are generated rather than transcribed, and disjoint by design.
-- `Program.cs` names Quattrocento for the PDF folios, which come from the installed font
-  rather than from `fonts.css`.
+- The three files are static instances of upstream's variable fonts (`google/fonts`,
+  `ofl/alegreya`, v2.009): roman at `wght` 400 and 700, italic at 400. Each is instanced with
+  fontTools, `usWeightClass` set to match, then subset and saved as woff2 and woff. There is no
+  bold italic; a bold inside an italic is synthesized.
+- The subset is Latin-1, Latin Extended-A, Greek and polytonic Greek, and the usual
+  punctuation, with layout features `kern liga ccmp locl mark mkmk onum lnum tnum pnum`.
+  `lnum` and `tnum` are kept for the year rails and the book's contents.
+- The `unicode-range` in `fonts.css` is the subset's own cmap, generated, so a declared range
+  never promises a glyph the file lacks. Greek is in the same file; the separate Greek face
+  that used to wear the Quattrocento name is gone.
+- 1000 upem, unhinted, as upstream ships it.
+- Cinzel stays in `fonts.css` for "Song of Sophia", which sets Wisdom's voice in it inline.
+  Nothing preloads it.
+- `Program.cs` names Alegreya for the PDF folios, which come from the installed font rather
+  than from `fonts.css`. The build machine needs Alegreya installed: static Regular, Bold,
+  Italic and Bold Italic instanced from the same variable fonts, unsubset.
 
 ## The navbar
 
@@ -126,84 +110,6 @@ The panel is right-aligned — contact is the last item in the row, and a panel 
 it would open off the edge of a narrow window. `--loam` rather than `--paper` so it is legibly
 a surface in front of the page and not a hole in it. Buttons and links share the panel: the
 filter's items do something rather than go somewhere, but they are the same object to a reader.
-
-### The weathered variant
-
-`Styles/navbar-cinzel.css` and `Styles/dropdown-cinzel.css` are the weathered treatment: a
-fractured stone lintel with a vine rooted in the fracture. Generated by
-`node Tools/weathering.js`, whose output is pasted over the generated block at the top of
-`navbar-cinzel.css`.
-
-- **Generated rather than hand-drawn** because the geometry is a few hundred coordinates and
-  has to stay reproducible. Every random draw comes off one seeded PRNG (`SEED = 6180`), so the
-  same seed always yields the same bar — byte-identical output. Change it only to reroll the
-  whole thing deliberately. Anything inserted above an existing draw shifts every number after
-  it and redraws the navbar; new parts go at the end of the file.
-- **Background images rather than one inline SVG** because the navbar is a flex row whose width
-  is the viewport's, and an SVG stretched to that width distorts every leaf. Backgrounds
-  positioned by percentage never scale and never overflow their box, so the growth spreads with
-  the bar while each leaf keeps its shape — and none of it can force a scrollbar.
-- **`BASE` is the one number everything depends on.** It is the distance from the bottom of
-  every generated image to the vine's stem. `navbar-cinzel.css` hangs the layer at
-  `bottom: -BASE`, so a stem drawn at `H - BASE` lands on the navbar's lower edge in all five
-  images at once, and leaves lying across the stem hang into the `BASE` px underneath. Change
-  it in `weathering.js` and change `bottom` and `height` on `.navbar::after` to match. At 6 the
-  largest leaves were cut off square by the image edge.
-- **The fracture and the growth share one image.** That is the point of the design: the vine is
-  not near the crack, it is in it. In separate layers they would drift apart at some viewport
-  width and the causation — the stone failed, so the seed got in — would quietly stop reading.
-- The stem's ends fade to nothing over the outer 16%, because the continuous hairline
-  underneath is a repeating tile whose phase at any viewport width is unknowable; a hard end
-  showed as a step where the two lines met at slightly different heights. Faded, the same
-  mismatch reads as the stem thickening, which is what a vine does anyway.
-- Tendrils are kept 14px apart minimum. At 9 they overlapped into a blobby mass that read as
-  moss rather than as a vine.
-- The fracture uses midpoint displacement: a crack is self-similar at every scale, which is why
-  it never looks right drawn by hand. It is drawn twice — the opening in shadow, and half a
-  pixel up-left the chipped edge catching what light there is. That offset is the whole
-  illusion. The lower stretch is drawn again over itself at nearly twice the width, because a
-  fracture opens wider the further it has run; widening the whole path just reads as a line.
-- The runner is one growth that ignores the falloff and reaches out where the bar is otherwise
-  still just a wall. The asymmetry is the whole of it — a second one at the far left for
-  balance would kill the effect.
-- Green is the first hue on the site besides the rose. `GREY` (wrought iron, strictly neutral)
-  and `ROSE` (the growth dried out) are drawn and working alternates in `weathering.js`.
-- Inside a quoted CSS `url()` only three characters have to be escaped: the closing quote, `%`,
-  and `#`. Angle brackets are left raw — encoding them is the usual habit and triples the size
-  of every tag for nothing. SVG attributes are single-quoted throughout so the double quote
-  never appears.
-- The labels are settled rather than straight: each word is a block, the blocks have been in
-  the wall a long time, and the wall has moved. Everything is under 0.6deg and under 2px; past
-  that it stops reading as settlement and starts reading as a broken stylesheet. Two labels
-  have their tracking opened a thousandth as the joint widened. The transforms take effect
-  because every `.nav` is a flex item and so blockified — on a bare inline `<a>` a transform is
-  ignored. `.dropbtn` stands in for the contact link, since transforming `.dropdown` would
-  carry the menu with it.
-- `.navbar, .navbar div { padding-bottom: 0 }` exists because `index.css` pads every div by 4px
-  to space listing rows and the nav groups nest three deep, so a listing page's bar came out
-  48px against a poem page's 36px. That only mattered once the fracture was drawn to a fixed
-  36px and appeared to start halfway down the slab on half the site.
-- `.navbar { margin-bottom: 1.5rem }` is the 10px of vine overhang plus air. Listing pages
-  forced it — `index.css` starts both columns flush to the top, so the first heading came up
-  under the leaves. Poem pages absorb it without moving.
-- The last layer of `.navbar::after` is an apron: the slab is opaque and hides what scrolls
-  under it, but the vine is leaves on nothing, and once the bar went sticky the poem showed
-  through the gaps. The layer is transparent for the 38px the slab covers and paper for the
-  10px below, so text disappears cleanly at the leaf tips. 38px is not the navbar's height —
-  it is the box's own height less the overhang.
-- On phones the bar is two rows and the vine has no single baseline to follow, so the growth is
-  dropped rather than redrawn. The slab is a gradient and stretches to whatever height the rows
-  come to. `display: contents` on the groups also dissolves the settling `nth-child` selectors,
-  so the labels stand straight there.
-- The dropdown panel is a fragment cut from the same block: same gradient, same grain, same lit
-  top edge and shadowed foot, and one fine flaw running down from where it meets the bar. It
-  takes the stone's vocabulary and none of the vine's — a second colony on a menu that appears
-  and disappears would say the wrong thing about how long any of this took. `--stone-grain` and
-  `--stone-flaw` are declared on `.navbar` and reach it by inheritance, so the tablet cannot
-  drift out of step with the bar it hangs from. The flaw image is deliberately shorter than the
-  menu: a crack stopping exactly at the bottom edge would read as a drawn border. The panel's
-  tilts run about half the amplitude of the bar's — three words in a column show a tilt far
-  more readily than eight in a row.
 
 ## Listings
 
@@ -336,16 +242,13 @@ there is no hover on a phone and a chevron alone would never say where it goes.
 ## Poem pages
 
 Verse wants more air between lines than a listing does: 1.62 rather than the 1.3 it was. A poem
-read in a pool of light on a black ground needs more room, or the descenders of one line and
+read on a black ground needs more room, or the descenders of one line and
 the ascenders of the next close the gap and the stanza reads as a block. Unitless, so it
 follows a size change, and scoped to `.poem` because the about, 404 and faq pages load the same
 stylesheet for prose that should keep body's tighter leading.
 
 The date above the poem and the themes below it are apparatus, not the poem: both muted, both
-in Cinzel, both wearing the same `<em><small><small>`. `font-style` is reset because the family
-ships no italic and the browser would otherwise compute a slant, which on an inscriptional
-roman reads as a mistake rather than as emphasis. Both selectors reach past the `<em>`, since
-`font-style` inherits and a declaration has to sit on an element inside it to win.
+italic, both wearing the same `<em><small><small>`.
 
 The theme chips are what link the hubs from every poem; without them `/themes/` is reachable
 from the navbar alone.
@@ -430,7 +333,7 @@ to read down. One year is no rail; the flat list already says everything it woul
 The rail links anchors rather than `/2026/`, which would be a promise the year archive does not
 keep — it holds that year's poems, not this theme's. The year marks in the body are plain text
 for the same reason. They exist at all because the sections are otherwise separated by white
-space alone, and a gap does not say what it is a gap for. The mark is the same Cinzel label the
+space alone, and a gap does not say what it is a gap for. The mark is the same italic label the
 stem puts on a date, with a rule carrying the eye across the full width of the columns beneath.
 
 A hub is a reference, not a reading column: three columns of titles beside the rail rather than
@@ -516,7 +419,7 @@ prefixed.
 
 Year, month and day archives exist because without them `/2026/` and `/2026/08/` are dead ends
 and the homepage is the only path into any poem. A day archive is one node of the chronology on
-a page of its own, so it is built as one — stem, dot, Cinzel date — rather than as a serif
+a page of its own, so it is built as one — stem, dot, italic date — rather than as a serif
 heading over a bare list. The `<h1>` stays for the outline and for search and steps out of the
 way, since the node's own date says the same words directly beneath it.
 
@@ -568,26 +471,21 @@ and ffmpeg run last in the build: the html and the sitemap must not depend on th
 Print media is emulated *before* navigation rather than after. The page is three megabytes of
 poems and lays out to something over a thousand pages; arriving in screen media and switching
 afterwards lays the whole book out twice, once in a form nobody will ever see. Everything the
-screen adds — the atmosphere layers, the fixed pagination in the margins — is absent from the
-first layout this way.
+screen adds, such as the fixed pagination in the margins, is absent from the first layout this
+way.
 
 The navbar, pagination and Creative Commons links are removed from the tree rather than only
 hidden: print css already hides them, and the pagination is `position: fixed`, which Chromium
 repeats on every page of a paginated document.
 
 Print undoes the screen's flex column, since print stacks poem pages directly in body and
-centres each one itself. `position` and `isolation` are undone too, and matter more than they
-look: a stacking context on body makes a thousand-page document one composited layer to be
-resolved against — on a poem page you would never notice, on the book it is the difference
-between a build that finishes and one that does not. The atmosphere layers use `content: none`
-rather than `display: none`, so the pseudo-elements are never generated at all; `display: none`
-still builds the box and, for the grain, still has an SVG filter attached, tiled and repeated
-per page.
+centres each one itself. Body carries no stacking context, screen or print: it makes a
+thousand-page document one composited layer to be resolved against — on a poem page you would
+never notice, on the book it is the difference between a build that finishes and one that does
+not.
 
-The book keeps the date it always had: Quattrocento italic, taking the slant from the `<em>` it
-is wrapped in, tracking back to normal. Cinzel small capitals are a screen gesture — they
-belong to a navbar and a set of date headings the PDF has none of, and set into a page of verse
-they read as a different book's running head. The url becomes visible (it is print-only
+The book sets the date as the screen does, Alegreya italic from the `<em>` it is wrapped in.
+The url becomes visible (it is print-only
 apparatus) and the theme links are dropped, since they do not belong in the book. The date goes
 black: `--muted` is chosen against a near-black ground and prints faint.
 

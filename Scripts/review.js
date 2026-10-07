@@ -11,14 +11,12 @@
     var state = null;
     var busy = false;
 
-    /* ---- chrome ---------------------------------------------------------------- */
-
     var css = [
         '#review{position:fixed;left:50%;bottom:1.25rem;transform:translateX(-50%);z-index:9999;',
         'display:flex;flex-wrap:nowrap;align-items:stretch;gap:.75rem;padding:.5rem .75rem;',
         'white-space:nowrap;',
         'background:#151515;border:1px solid #2b2b2b;border-radius:3px;',
-        'font-family:Quattrocento,Georgia,serif;font-size:.8rem;color:#8a8a8a;',
+        'font-family:Alegreya,Georgia,serif;font-size:.8rem;color:#8a8a8a;',
         'box-shadow:0 2px 14px rgba(0,0,0,.5)}',
         '#review button{font:inherit;font-size:.8rem;cursor:pointer;color:#8a8a8a;',
         'background:transparent;border:1px solid #2b2b2b;border-radius:2px;',
@@ -62,8 +60,6 @@
     var elButtons = bar.querySelector('.r-buttons');
     var elNext = bar.querySelector('.r-next');
     var elMsg = bar.querySelector('.r-msg');
-
-    /* ---- dragging -------------------------------------------------------------- */
 
     var POSITION_KEY = 'review-bar-position';
 
@@ -153,8 +149,6 @@
         elNext.href = state.nextUnreviewed || '#';
     }
 
-    /* ---- api ------------------------------------------------------------------- */
-
     function load() {
         fetch(API + '/api/poem?url=' + encodeURIComponent(url))
             .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
@@ -191,8 +185,6 @@
             .catch(function (err) { say(String(err.message || err), true); })
             .then(function () { busy = false; });
     }
-
-    /* ---- keyboard -------------------------------------------------------------- */
 
     function go(selector) {
         var a = document.querySelector(selector);

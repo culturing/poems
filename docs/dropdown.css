@@ -33,12 +33,10 @@
 /* Anchored to the left edge for the filter, which sits at the left end of the bar */
 .dropdown-left .dropdown-content { left: 0; right: auto; }
 
-/* Buttons and links share the panel: the filter's items act rather than navigate */
 .dropdown-content a,
 .dropdown-content button {
-    font-family: 'Cinzel', Georgia, serif;
-    font-size: 0.69rem;
-    letter-spacing: 0.26em;
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
     color: var(--muted);
     padding: 0.7rem 1.1rem;
     text-decoration: none;
@@ -46,7 +44,8 @@
     white-space: nowrap;
 }
 
-.dropdown-content button { width: 100%; text-align: left; background: none; border: 0; cursor: pointer; }
+.dropdown-content button { width: 100%; text-align: left; background: none; border: 0; cursor: pointer; font-family: inherit; }
+.tiers .dropdown-content button { font-style: italic; }
 .dropdown-content a:hover,
 .dropdown-content button:hover { background-color: var(--hover); color: var(--ink); }
 

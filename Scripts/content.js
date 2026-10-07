@@ -5,7 +5,7 @@ document.onkeydown = function(e) {
     if (!id)
         return;
 
-    // The tier is read off <html>: only the unfiltered pair carries an id
+    // Not by id: only the unfiltered pair carries one
     var tier = (document.documentElement.className.match(/tier-(\d)/) || [])[1] || "0";
     var link = document.querySelector('.edge[data-edge="' + id + '"][data-tier="' + tier + '"]');
 
