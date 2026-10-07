@@ -12,11 +12,9 @@ body { padding-bottom: 0; }
 .url { display: none; } /* Print-only */
 
 #content time, .tags { color: var(--muted); }
-@media screen { #content time, .tags small small { font-size: 0.8rem; } }
 #content time a, .tags a { color: var(--muted); text-decoration: none; }
 #content time a:hover, .tags a:hover { color: var(--accent); }
 /* :has() zeroes whatever the poem ends on, so the tags sit flush against the last line */
-.tags { margin: 0; }
 #content > *:has(+ .tags) { margin-bottom: 0; }
 blockquote { margin: 0; font-size: small; font-style: italic; }
 figcaption { text-align: right; font-size: small; margin-top: 0.25rem; color: var(--muted); }
@@ -27,13 +25,13 @@ figure { max-width: 400px; }
 .edge-prev { left: 1.5rem; }
 .edge-next { right: 1.5rem; flex-direction: row; }
 
-.edge-mark { fill: none; stroke: #3a3a3a; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.edge-mark { fill: none; stroke: var(--muted); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 .edge:hover .edge-mark { stroke: var(--accent); }
 
 /* padding-right buys room for the italic overhang, which overflow: hidden would cut at
    the box edge; min-width lets a flex item shrink below its content to the ellipsis */
-.edge-label { font-size: 0.8rem; font-style: italic; color: var(--whisper); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; padding-right: 0.25em; opacity: 0; }
-.edge:hover .edge-label { opacity: 1; color: var(--muted); }
+.edge-label { font-size: 0.8rem; font-style: italic; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; padding-right: 0.25em; opacity: 0; }
+.edge:hover .edge-label { opacity: 1; }
 
 /* First and last poem: the chevron stays, so the margins keep their shape */
 .edge-disabled .edge-mark { stroke: #262626; }

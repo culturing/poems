@@ -1,11 +1,9 @@
 :root {
-    --void:   #050505;
     --paper:  rgb(10, 10, 10);
     --loam:   #101010;
     --raise:  #151515;
     --ink:    rgb(232, 232, 232);
-    --muted:  #8a8a8a;
-    --whisper:#565656;
+    --muted:  #a0a0a0;
     --rule:   #2b2b2b;
     --accent: #dd8b94;
     --accent-soft: #dd8b9420;
@@ -23,7 +21,7 @@
    No stacking context here: on the thousand-page book it can stop the PDF build finishing */
 body { font-family: Alegreya; background-color: var(--paper); color: var(--ink); line-height: 1.25rem; margin: 0; padding: 1rem; box-sizing: border-box; min-height: 100vh; display: flex; flex-direction: column; }
 
-/* Each its own stacking context, so the fade band inside #container-parent stays under #license */
+/* Each its own stacking context, so the foot band inside #container-parent stays under #license */
 .navbar, #container-parent, #license, .edge { position: relative; z-index: 1; }
 
 a { color: var(--ink); text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 2px; }
@@ -32,15 +30,14 @@ h3 a, #content time a { text-decoration: none; }
 h3 a:hover, #content time a:hover { color: var(--accent); }
 h1, h3 { margin: 0; }
 
-/* Below #b0b0b0 a title reads as dimmed rather than quiet. When you change this ramp,
-   update its paper twin in toc.css */
-.rated-0 a { color: #b0b0b0; }
-.rated-1 a { color: #cccccc; }
-.rated-2 a { color: var(--ink); }
-
 /* The other end of the sticky pair in navbar.css. The negative side margins pull the fill
    back out through the body's 1rem padding, which the inner padding then puts back */
 #license { position: sticky; bottom: 0; margin: 0 -1rem; padding: 0.75rem 1rem 0 1rem; background: linear-gradient(to bottom, transparent 0, var(--paper) 14px); }
+
+.dateline, .url, .tags { margin: 0; font-style: italic; }
+.dateline, .tags { font-size: 0.85rem; }
+/* The book was paginated at the size of the two <small>s these replaced, each a step of 1/1.2 */
+@media print { .dateline, .url { font-size: calc(1em / 1.44); } }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 

@@ -16,12 +16,12 @@
         'display:flex;flex-wrap:nowrap;align-items:stretch;gap:.75rem;padding:.5rem .75rem;',
         'white-space:nowrap;',
         'background:#151515;border:1px solid #2b2b2b;border-radius:3px;',
-        'font-family:Alegreya,Georgia,serif;font-size:.8rem;color:#8a8a8a;',
+        'font-family:Alegreya,Georgia,serif;font-size:.8rem;color:#a0a0a0;',
         'box-shadow:0 2px 14px rgba(0,0,0,.5)}',
-        '#review button{font:inherit;font-size:.8rem;cursor:pointer;color:#8a8a8a;',
+        '#review button{font:inherit;font-size:.8rem;cursor:pointer;color:#a0a0a0;',
         'background:transparent;border:1px solid #2b2b2b;border-radius:2px;',
         'padding:.15rem .55rem;min-width:2.4rem}',
-        '#review button:hover{color:#f5f5f5;border-color:#8a8a8a}',
+        '#review button:hover{color:#f5f5f5;border-color:#a0a0a0}',
         '#review button:focus-visible{outline:2px solid #dd8b94;outline-offset:1px}',
         '#review button[aria-pressed="true"]{color:#0a0a0a;background:#f5f5f5;border-color:#f5f5f5}',
         '#review .r-count,#review .r-msg,#review .r-next{display:flex;align-items:center}',
@@ -30,10 +30,10 @@
         '#review .r-sep{width:1px;align-self:stretch;background:#2b2b2b}',
         '#review .r-msg{min-width:7.5rem}',
         '#review .r-msg.warn{color:#dd8b94}',
-        '#review a{color:#8a8a8a;text-decoration:none}',
+        '#review a{color:#a0a0a0;text-decoration:none}',
         '#review a:hover{color:#f5f5f5}',
         '#review.dragging{opacity:.85}',
-        '#review .r-grip{align-self:center;cursor:grab;color:#4a4a4a;' +
+        '#review .r-grip{align-self:center;cursor:grab;color:#a0a0a0;' +
         'letter-spacing:.1em;user-select:none;touch-action:none}',
         '#review.dragging .r-grip{cursor:grabbing}',
         '@media print{#review{display:none}}'

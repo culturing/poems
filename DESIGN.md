@@ -15,11 +15,10 @@ trail above an archive. Everything else — navbar, theme counts, ratings — is
 outside the writing competes with it. The rose is warmed slightly off the mauve it could be,
 so it reads as red rather than violet against a ground with no hue of its own.
 
-`--void`, `--loam` and `--whisper` are later additions. Two are ends the ramp already implied:
-`--void` is where a fade band lands once `--paper` has run out, and `--whisper` is one step
-below `--muted`, dark enough that a line of verse beside a title reads as an aside rather than
-a second column. `--loam` sits between paper and raise, for the rare surface that needs to be
-off the ground without being lit.
+`--loam` is a later addition. It sits between paper and raise, for the rare
+surface that needs to be off the ground without being lit. A `--whisper` grey below `--muted`
+once held the opening lines, theme counts and index letters; it was dropped because a grey that
+dim on this ground strained the eye, and those now take `--muted`.
 
 `body` is a full-height flex column so `#container-parent` can claim exactly the leftover
 space between the navbar and the licence badge; it replaced a hardcoded offset that only added
@@ -168,13 +167,16 @@ the floor stays a solid reading grey rather than going as light as the screen's 
 Every poem gets a `rated-N` class, unrated included: a stylesheet has no sensible default to
 fall back on.
 
-### The fade band
+### The foot band
 
-Long lists end in the dark rather than at a hard edge. Fixed, so it is a property of the window
-and not of the list, and paired with the padding above it so that scrolling to the end always
-leaves the last title clear of it — the band only ever covers ground the list has finished
-with. On desktop it is dropped for `/themes/`, where reserving its 7rem on a field that fits in
-one screen would only hold the field off centre.
+Listing pages carry a band at the foot of the window that mirrors the navbar: the same height
+(`--bar`), the same paper, and the same 12px fade, turned to face up, so a title passing under
+it fades rather than being cut. It replaced a 7rem gradient that ran down into `--void`; that
+long dimming across the bottom of every list was tiring to read against. Fixed, so it is a
+property of the window and not of the list, and the list keeps 7rem of padding below it, more
+than the band is tall, so scrolling to the end always leaves the last title clear. On desktop
+the padding is dropped for `/themes/`, where reserving it on a field that fits in one screen
+would only hold the field off centre.
 
 Listing pages underline nothing: they are almost entirely links, and underlining every one
 turns the page into a grid of rules.
@@ -320,7 +322,7 @@ that it looks grown. The counts stay in the markup for crawlers and screen reade
 forward only under the pointer, out of flow so a number appearing never reflows the field.
 
 A field wants air on all four sides, not only the two the column gives it, so the row grows to
-the full height between the navbar and the fade band and the field is centred in it: `/themes/`
+the full height between the navbar and the foot band and the field is centred in it: `/themes/`
 reads as one shape hanging in the window rather than as a list that started under the heading
 and stopped. Safe centring, so a field taller than the window still starts at the top.
 
@@ -347,7 +349,7 @@ rail you have to scroll back for, and a set of jumps you have to go and find is 
 to not having them. It was sticky before, which held it against the navbar but let the title go
 and left the rail's own position dependent on how far down the page you were.
 
-The fade band is fixed to the foot of the window and now lies over the foot of the list rather
+The foot band is fixed to the foot of the window and now lies over the foot of the list rather
 than the foot of the page, which is the same thing to look at and says the same thing: there is
 more below. The 7rem the page reserved to end clear of it moves onto the list. The scrollbar is
 the one piece of chrome this cannot suppress, so it is thinned and put in the grey of the rules,

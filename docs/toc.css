@@ -38,8 +38,8 @@ h1 {
     background-color: rgb(225, 225, 225);
 }
 
-/* common.css's rating ramp, inverted for paper; change the two together. The floor stays
-   a solid reading grey, since half these rows sit on a stripe */
-.rated-0 { color: #5a5a5a; }
-.rated-1 { color: #2e2e2e; }
-.rated-2 { color: #000000; }
+/* index.css's rating dots, set for paper; change the two together */
+.toc-poem > span:first-child { position: relative; padding-left: 1.75rem; }
+.toc-poem > span:first-child::before { content: ""; position: absolute; left: calc(1.15rem - 4px); top: calc(0.625rem - 2px); width: 4px; height: 4px; border-radius: 50%; color: #707070; background: currentColor; }
+.rated-1::before { box-shadow: -7px 0; }
+.rated-2::before { box-shadow: -7px 0, -14px 0; }

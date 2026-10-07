@@ -56,7 +56,7 @@ class Program
 
     const int MinimumThemePoems = 8;
 
-    const string TagLineToken = "<p class='tags'><em><small><small>{{tags}}</small></small></em></p>";
+    const string TagLineToken = "<p class='tags'>{{tags}}</p>";
     static Dictionary<string, List<Poem>> PoemsByDate = new Dictionary<string, List<Poem>>();
     static Dictionary<string, IEnumerable<Poem>> FilteredPoemsByDate;
     static List<Analysis> Analyses { get; set; } = new List<Analysis>();
@@ -89,9 +89,7 @@ class Program
         LoadTags();
 
         var chronology = new StringBuilder();
-        Dictionary<int, int> poemsPerYear = Poems.GroupBy(poem => poem.PublicationDate.Year)
-            .ToDictionary(group => group.Key, group => group.Count());
-        var yearsSeen = new List<KeyValuePair<int, int>>();
+        var yearsSeen = new List<int>();
         int lastYear = 0;
 
         foreach(KeyValuePair<string, List<Poem>> kvp in PoemsByDate.OrderByDescending(kvp => DateTime.Parse(kvp.Key)))
@@ -101,7 +99,7 @@ class Program
             if (year != lastYear)
             {
                 anchor = $" id=\"year-{year}\"";
-                yearsSeen.Add(new KeyValuePair<int, int>(year, poemsPerYear[year]));
+                yearsSeen.Add(year);
                 lastYear = year;
             }
 
@@ -276,8 +274,8 @@ class Program
         lines.InsertRange(0, new List<string>
         {
             heading,
-            $"<p style='margin:0;'><em><small><small>{BuildDateLine(poem)}</small></small></em></p>",
-            "<p class='url' style='margin:0;'><em><small><small>{{url}}</small></small></em></p>"
+            $"<p class='dateline'>{BuildDateLine(poem)}</p>",
+            "<p class='url'>{{url}}</p>"
         });
 
         // The blank line keeps markdown reading the tag line as its own block
@@ -491,7 +489,7 @@ class Program
         analysis.PublicationDate = System.DateTime.Parse(lines[2]);
         analysis.Title = lines[0];
         lines[0] = $"### {lines[0]}";
-        lines[2] = $"<p style='margin:0;'><em><small><small>{lines[2]}</small></small></em></p>";
+        lines[2] = $"<p class='dateline'>{lines[2]}</p>";
 
         string dirPath = $"docs/analysis/{analysis.PublicationDate.ToString("yyyy")}/{analysis.PublicationDate.ToString("MM")}/{analysis.PublicationDate.ToString("dd")}";
         
@@ -640,14 +638,11 @@ class Program
         return Math.Clamp((int)Math.Round(1 + t * 8), 1, 9);
     }
 
-    static string YearRail(List<KeyValuePair<int, int>> yearsNewestFirst)
+    static string YearRail(IEnumerable<int> yearsNewestFirst)
     {
-        int fewest = yearsNewestFirst.Min(year => year.Value);
-        int most = yearsNewestFirst.Max(year => year.Value);
-
         var rail = new StringBuilder("<nav class=\"year-rail\" aria-label=\"Jump to a year\">");
-        foreach (KeyValuePair<int, int> year in yearsNewestFirst)
-            rail.Append($"<a class=\"w{Weight(year.Value, fewest, most)}\" href=\"#year-{year.Key}\">{year.Key}</a>");
+        foreach (int year in yearsNewestFirst)
+            rail.Append($"<a href=\"#year-{year}\">{year}</a>");
         rail.Append("</nav>");
         return rail.ToString();
     }
@@ -662,9 +657,7 @@ class Program
         if (byYear.Count < 2)
             return $"<div class=\"theme-columns\">{ArchivePoemLinks(poems, withOpening: false)}</div>";
 
-        string rail = YearRail(byYear
-            .Select(group => new KeyValuePair<int, int>(group.Key, group.Count()))
-            .ToList());
+        string rail = YearRail(byYear.Select(group => group.Key));
 
         // Focusable for the script in archive.html, and out of the tab order: the list is
         // links, and tabbing through them scrolls it anyway
