@@ -6,11 +6,12 @@
     <link rel="preload" href="/alegreya-bold-webfont.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/alegreya-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/alegreya-italic-webfont.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" type="text/css" href="/fonts.css?v=b656d08c" />
-    <link rel="stylesheet" type="text/css" href="/common.css?v=c753a70f" />
-    <link rel="stylesheet" type="text/css" href="/navbar.css?v=cd09a2a9" />
-    <link rel="stylesheet" type="text/css" href="/content.css?v=dad85521" />
-    <link rel="stylesheet" type="text/css" href="/dropdown.css?v=648e88c6" />
+    <link rel="stylesheet" type="text/css" href="/fonts.css?v=e7846c27" />
+    <link rel="stylesheet" type="text/css" href="/common.css?v=e3441325" />
+    <link rel="stylesheet" type="text/css" href="/navbar.css?v=b5e4e053" />
+    <link rel="stylesheet" type="text/css" href="/content.css?v=bb8c6e83" />
+    <link rel="stylesheet" type="text/css" href="/edge.css?v=3ba9117b" />
+    <link rel="stylesheet" type="text/css" href="/dropdown.css?v=a9564e31" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="alternate" type="application/rss+xml" title="poems by culturing" href="/feed.xml" />
     <title>Vesta | poems by culturing</title>
@@ -31,33 +32,7 @@
     <script type="application/ld+json">[{"@context":"https://schema.org","@type":"CreativeWork","name":"Vesta","description":"Vesta, guardian of eternal fire, what life hath thou in a time like this? Lord Vulcan rules o\u0027er all, and we live by his flame, so what of yours? If winter\u2026","additionalType":"https://schema.org/Poem","url":"https://poems.culturing.net/2023/12/vesta/","author":{"@type":"Person","name":"culturing","sameAs":["https://bsky.app/profile/culturing.bsky.social","https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ","https://github.com/culturing"],"url":"https://poems.culturing.net","publishingPrinciples":"https://poems.culturing.net/about/"},"copyrightHolder":{"@type":"Person","name":"culturing","sameAs":["https://bsky.app/profile/culturing.bsky.social","https://www.youtube.com/channel/UCqOgJLPDUhKz9DZQivo99PQ","https://github.com/culturing"],"url":"https://poems.culturing.net","publishingPrinciples":"https://poems.culturing.net/about/"},"copyrightYear":2023,"dateModified":"2026-10-07","datePublished":"2023-12-18","genre":"Poem","headline":"Vesta","inLanguage":"en-us","isAccessibleForFree":true,"keywords":"anima, myth, hope, modernity","publishingPrinciples":"https://poems.culturing.net/about/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"culturing","item":"https://poems.culturing.net/"},{"@type":"ListItem","position":2,"name":"2023","item":"https://poems.culturing.net/2023/"},{"@type":"ListItem","position":3,"name":"December","item":"https://poems.culturing.net/2023/12/"},{"@type":"ListItem","position":4,"name":"Vesta","item":"https://poems.culturing.net/2023/12/vesta/"}]}]</script>
 </head>
 <body>
-    <script>
-// Runs at the top of the body, before any listing has been parsed, so the filter is applied
-// in the first paint rather than after one. Delegated from the document because the buttons
-// below it do not exist yet when this executes.
-(function () {
-    var root = document.documentElement;
-    root.className += " js";
-
-    var tier = "0";
-    try { tier = localStorage.getItem("tier") || "0"; } catch (e) { }
-    if (tier !== "1" && tier !== "2") tier = "0";
-    root.classList.add("tier-" + tier);
-
-    document.addEventListener("click", function (e) {
-        var button = e.target.closest && e.target.closest(".tier-btn");
-        if (!button) return;
-        var chosen = button.getAttribute("data-tier");
-        root.classList.remove("tier-0", "tier-1", "tier-2");
-        root.classList.add("tier-" + chosen);
-        try { localStorage.setItem("tier", chosen); } catch (e) { }
-
-        // <details> has no idea the choice was made inside it
-        var panel = button.closest("details");
-        if (panel) panel.open = false;
-    });
-})();
-</script>
+    <script src="/tiers.js?v=b819de1a"></script>
 <div class="navbar">
     <div class="nav-group-left">
         <a class="wordmark" href="/">poems</a>

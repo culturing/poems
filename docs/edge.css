@@ -1,0 +1,122 @@
+.edge {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+    z-index: 3;
+    max-width: 15%;
+}
+
+.edge-prev {
+    left: 1.5rem;
+}
+
+.edge-next {
+    right: 1.5rem;
+}
+
+.edge-mark {
+    fill: none;
+    stroke: var(--muted);
+    stroke-width: 1.1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex: none;
+}
+
+.edge:hover .edge-mark {
+    stroke: var(--accent);
+}
+
+/* padding-right keeps the italic overhang inside the overflow clip; min-width lets it shrink to the ellipsis */
+.edge-label {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    padding-right: 0.25em;
+    opacity: 0;
+}
+
+.edge:hover .edge-label {
+    opacity: 1;
+}
+
+.edge-disabled .edge-mark {
+    stroke: #262626;
+}
+
+.edge[data-tier="1"],
+.edge[data-tier="2"] {
+    display: none;
+}
+
+html.tier-1 .edge[data-tier="0"],
+html.tier-2 .edge[data-tier="0"] {
+    display: none;
+}
+
+html.tier-1 .edge[data-tier="1"],
+html.tier-2 .edge[data-tier="2"] {
+    display: flex;
+}
+
+@media only screen and (max-width : 1100px) {
+    .edge-label {
+        display: none;
+    }
+
+    .edge {
+        max-width: none;
+    }
+}
+
+@media only screen and (max-width : 512px) {
+
+    /* Ordered rather than moved, so a screen reader still meets the pagination before the poem */
+    .navbar {
+        order: 1;
+    }
+
+    #container-parent {
+        order: 2;
+    }
+
+    .edge {
+        order: 3;
+        position: static;
+        transform: none;
+        max-width: 88%;
+        padding: 0.75rem 0;
+    }
+
+    #license {
+        order: 4;
+    }
+
+    .edge-prev {
+        align-self: flex-start;
+    }
+
+    .edge-next {
+        align-self: flex-end;
+    }
+
+    .edge-label {
+        display: block;
+        opacity: 1;
+        color: var(--muted);
+    }
+
+    /* !important because the tier selectors above carry an attribute and outrank this */
+    .edge-disabled {
+        display: none !important;
+    }
+}

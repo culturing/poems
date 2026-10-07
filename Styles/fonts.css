@@ -1,34 +1,34 @@
 /* The unicode-ranges are generated from the subset; see DESIGN.md before rebuilding */
 
 @font-face {
-  font-family: 'Alegreya';
-  font-style: normal;
-  font-weight: 400;
-  src: url('alegreya-regular-webfont.woff2') format('woff2'), url('alegreya-regular-webfont.woff') format('woff');
-  unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-0148, U+014A-017F, U+0192, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D1, U+03D5-03D7, U+03F0, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2212, U+2215, U+2219, U+FB01-FB02;
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 400;
+    src: url('alegreya-regular-webfont.woff2') format('woff2'), url('alegreya-regular-webfont.woff') format('woff');
+    unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-0148, U+014A-017F, U+0192, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D1, U+03D5-03D7, U+03F0, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2212, U+2215, U+2219, U+FB01-FB02;
 }
 
 @font-face {
-  font-family: 'Alegreya';
-  font-style: italic;
-  font-weight: 400;
-  src: url('alegreya-italic-webfont.woff2') format('woff2'), url('alegreya-italic-webfont.woff') format('woff');
-  unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-0148, U+014A-017F, U+0192, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D1, U+03D5-03D7, U+03F0, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2212, U+2215, U+2219, U+FB01-FB02;
+    font-family: 'Alegreya';
+    font-style: italic;
+    font-weight: 400;
+    src: url('alegreya-italic-webfont.woff2') format('woff2'), url('alegreya-italic-webfont.woff') format('woff');
+    unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-0148, U+014A-017F, U+0192, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D1, U+03D5-03D7, U+03F0, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2212, U+2215, U+2219, U+FB01-FB02;
 }
 
 @font-face {
-  font-family: 'Alegreya';
-  font-style: normal;
-  font-weight: 700;
-  src: url('alegreya-bold-webfont.woff2') format('woff2'), url('alegreya-bold-webfont.woff') format('woff');
-  unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-0148, U+014A-017F, U+0192, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D1, U+03D5-03D7, U+03F0, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2212, U+2215, U+2219, U+FB01-FB02;
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 700;
+    src: url('alegreya-bold-webfont.woff2') format('woff2'), url('alegreya-bold-webfont.woff') format('woff');
+    unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-0148, U+014A-017F, U+0192, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D1, U+03D5-03D7, U+03F0, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2212, U+2215, U+2219, U+FB01-FB02;
 }
 
 /* "Song of Sophia" sets it inline */
 @font-face {
-  font-family: 'Cinzel';
-  font-style: normal;
-  font-weight: 400;
-  src: url('cinzel-regular-webfont.woff2') format('woff2'), url('cinzel-regular-webfont.woff') format('woff');
-  unicode-range: U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+010C, U+010E, U+0110, U+011A, U+0131-0133, U+0143, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+2215, U+FB01-FB02;
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 400;
+    src: url('cinzel-regular-webfont.woff2') format('woff2'), url('cinzel-regular-webfont.woff') format('woff');
+    unicode-range: U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+010C, U+010E, U+0110, U+011A, U+0131-0133, U+0143, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+2215, U+FB01-FB02;
 }

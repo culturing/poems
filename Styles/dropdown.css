@@ -1,25 +1,35 @@
-/* A <details>, so the panel clicks open and shut on every device and <summary> brings
-   the keyboard with it */
 .dropdown {
     position: relative;
     display: inline-block;
     padding: 0;
 }
 
-/* The disclosure triangle goes -- twice, because the two engines hide it differently */
 .dropbtn {
     display: block;
     list-style: none;
     cursor: pointer;
     color: var(--muted);
 }
-.dropbtn::-webkit-details-marker { display: none; }
-.dropbtn::marker { content: ""; }
-.dropbtn:hover { background-color: var(--hover); color: var(--ink); }
-.dropdown[open] > .dropbtn { color: var(--ink); }
 
-/* Right-aligned: contact is the last item in the row, and a panel hanging left from it
-   would open off the edge of a narrow window */
+/* The disclosure triangle goes twice, because the two engines hide it differently */
+.dropbtn::-webkit-details-marker {
+    display: none;
+}
+
+.dropbtn::marker {
+    content: "";
+}
+
+.dropbtn:hover {
+    background-color: var(--hover);
+    color: var(--ink);
+}
+
+.dropdown[open]>.dropbtn {
+    color: var(--ink);
+}
+
+/* Right-anchored: contact is last in the row, and a panel hanging left from it would open off a narrow window */
 .dropdown-content {
     position: absolute;
     top: 100%;
@@ -30,8 +40,10 @@
     min-width: 100%;
 }
 
-/* Anchored to the left edge for the filter, which sits at the left end of the bar */
-.dropdown-left .dropdown-content { left: 0; right: auto; }
+.dropdown-left .dropdown-content {
+    left: 0;
+    right: auto;
+}
 
 .dropdown-content a,
 .dropdown-content button {
@@ -44,21 +56,46 @@
     white-space: nowrap;
 }
 
-.dropdown-content button { width: 100%; text-align: left; background: none; border: 0; cursor: pointer; font-family: inherit; }
-.tiers .dropdown-content button { font-style: italic; }
-.dropdown-content a:hover,
-.dropdown-content button:hover { background-color: var(--hover); color: var(--ink); }
-
-@media only screen and (max-width : 512px)
-{
-    /* The row is spread to both margins here, so a right-anchored panel hangs off the edge */
-    .dropdown-content { right: auto; left: 50%; transform: translateX(-50%); }
-    .dropdown-left .dropdown-content { left: 50%; }
-    .dropdown-content a,
-    .dropdown-content button { padding: 0.85rem 1.1rem; }
+.dropdown-content button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-@media only print
-{
-    .dropdown { display: none; }
+.tiers .dropdown-content button {
+    font-style: italic;
+}
+
+.dropdown-content a:hover,
+.dropdown-content button:hover {
+    background-color: var(--hover);
+    color: var(--ink);
+}
+
+@media only screen and (max-width : 512px) {
+
+    /* The row is spread to both margins here, so a right-anchored panel hangs off the edge */
+    .dropdown-content {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dropdown-left .dropdown-content {
+        left: 50%;
+    }
+
+    .dropdown-content a,
+    .dropdown-content button {
+        padding: 0.85rem 1.1rem;
+    }
+}
+
+@media only print {
+    .dropdown {
+        display: none;
+    }
 }

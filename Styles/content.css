@@ -1,109 +1,135 @@
-#container { display: flex; flex-direction: row; justify-content: center; }
-#container-parent { display: flex; flex-direction: column; justify-content: center; flex: 1; }
-
-/* Unitless, so it follows a size change. Scoped to .poem: the about, 404 and faq pages
-   load this stylesheet for prose and keep body's tighter leading */
-#content.poem { line-height: 1.5; font-size: 1rem; }
-
-body { padding-bottom: 0; }
-
-/* On #content rather than .poem, so the about and 404 headings keep it too */
-#content h1 { font-size: 1.42rem; font-weight: 700; line-height: 1.3; }
-.url { display: none; } /* Print-only */
-
-#content time, .tags { color: var(--muted); }
-#content time a, .tags a { color: var(--muted); text-decoration: none; }
-#content time a:hover, .tags a:hover { color: var(--accent); }
-/* :has() zeroes whatever the poem ends on, so the tags sit flush against the last line */
-#content > *:has(+ .tags) { margin-bottom: 0; }
-blockquote { margin: 0; font-size: small; font-style: italic; }
-figcaption { text-align: right; font-size: small; margin-top: 0.25rem; color: var(--muted); }
-figure { max-width: 400px; }
-
-/* Fixed and vertically centred, so they sit level with the poem however long it is */
-.edge { position: fixed; top: 50%; transform: translateY(-50%); display: flex; flex-direction: row; align-items: center; gap: 0.85rem; text-decoration: none; z-index: 3; max-width: 15%; }
-.edge-prev { left: 1.5rem; }
-.edge-next { right: 1.5rem; flex-direction: row; }
-
-.edge-mark { fill: none; stroke: var(--muted); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; flex: none; }
-.edge:hover .edge-mark { stroke: var(--accent); }
-
-/* padding-right buys room for the italic overhang, which overflow: hidden would cut at
-   the box edge; min-width lets a flex item shrink below its content to the ellipsis */
-.edge-label { font-size: 0.8rem; font-style: italic; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; padding-right: 0.25em; opacity: 0; }
-.edge:hover .edge-label { opacity: 1; }
-
-/* First and last poem: the chevron stays, so the margins keep their shape */
-.edge-disabled .edge-mark { stroke: #262626; }
-
-/* All three tiers ship with every poem; this shows the reader's */
-.edge[data-tier="1"], .edge[data-tier="2"] { display: none; }
-html.tier-1 .edge[data-tier="0"], html.tier-2 .edge[data-tier="0"] { display: none; }
-html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: flex; }
-
-@media only screen and (min-width : 769px)
-{
-    #content { max-width: 61.8% }
+#container-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
 }
 
-@media only screen and (max-width : 1100px)
-{
-    /* Below this the margins are too narrow to hold a title beside the poem */
-    .edge-label { display: none; }
-    .edge { max-width: none; }
+/* Scoped to .poem: the about and 404 pages load this sheet and keep body's tighter leading */
+#content.poem {
+    line-height: 1.5;
+    font-size: 1rem;
 }
 
-@media only screen and (max-width : 512px)
-{
-    #container { justify-content: flex-start; position: relative; }
-    /* Two properties for one hidden scrollbar: WebKit answers to neither scrollbar-width nor
-       anything else standard */
-    #content:not(.wrap) { white-space: nowrap; overflow-x: auto; min-width: 0; scrollbar-width: none; }
-    #content:not(.wrap)::-webkit-scrollbar { display: none; }
-
-    /* The fade's own width, as scrollable width past the end of the longest line. It is on
-       the lines rather than on #content, whose end padding the engines leave out of the
-       scrollable width; max-content is what makes each line's box as wide as its text, so
-       the padding lands outside the text rather than inside the container */
-    #content:not(.wrap) > *:not(hr) { min-width: max-content; padding-right: 2.5rem; }
-
-    /* An epigraph is prose, so it wraps to the screen instead of joining the sideways
-       scroll. min-width releases it from the rule above; the margins come off so the
-       wrapped measure is the screen's */
-    #content:not(.wrap) > figure { white-space: normal; min-width: 0; max-width: calc(100vw - 2rem); margin-left: 0; margin-right: 0; }
-    /* Narrow screens sit the poem at the top rather than centring it */
-    #container-parent { flex: none; }
-
-    /* The poem scrolls sideways here rather than wrapping, so long lines fade out at the
-       right edge instead of being cut */
-    #container::after { content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 2.5rem; pointer-events: none; background: linear-gradient(to right, rgba(10, 10, 10, 0), var(--paper)); }
-
-    /* No margins left to sit in, so the chevrons rejoin the flow under the poem. They are
-       ordered rather than moved: in the markup they precede #container-parent, so a screen
-       reader meets the pagination with the poem */
-    .navbar { order: 1; }
-    #container-parent { order: 2; }
-    /* Separate rows, so each can have most of the width rather than half of it */
-    .edge { order: 3; position: static; transform: none; max-width: 88%; padding: 0.75rem 0; }
-    #license { order: 4; }
-    .edge-prev { align-self: flex-start; }
-    .edge-next { align-self: flex-end; }
-    .edge-label { display: block; opacity: 1; color: var(--muted); }
-    /* !important because the tier selectors above carry an attribute and outrank this */
-    .edge-disabled { display: none !important; }
+body {
+    padding-bottom: 0;
 }
 
-@media only print
-{
-    /* Map height to the printable area inside the 1in margins RenderPdf sets, zeroing
-       the defaults so they do not add to them */
-    html, body {
+#content h1 {
+    font-size: 1.42rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.url {
+    display: none;
+}
+
+#content time,
+.tags {
+    color: var(--muted);
+}
+
+#content time a,
+.tags a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+#content time a:hover,
+.tags a:hover {
+    color: var(--accent);
+}
+
+/* Zeroes whatever the poem ends on, so the tags sit flush against the last line */
+#content>*:has(+ .tags) {
+    margin-bottom: 0;
+}
+
+blockquote {
+    margin: 0;
+    font-size: small;
+    font-style: italic;
+}
+
+figcaption {
+    text-align: right;
+    font-size: small;
+    margin-top: 0.25rem;
+    color: var(--muted);
+}
+
+figure {
+    max-width: 400px;
+}
+
+@media only screen and (min-width : 769px) {
+    #content {
+        max-width: 61.8%
+    }
+}
+
+@media only screen and (max-width : 512px) {
+    #container {
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    /* WebKit answers to neither scrollbar-width nor anything else standard */
+    #content:not(.wrap) {
+        white-space: nowrap;
+        overflow-x: auto;
+        min-width: 0;
+        scrollbar-width: none;
+    }
+
+    #content:not(.wrap)::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Room for the fade past the longest line. On the lines, not #content: the engines leave a
+       scroller's end padding out of its scrollable width */
+    #content:not(.wrap)>*:not(hr) {
+        min-width: max-content;
+        padding-right: 2.5rem;
+    }
+
+    /* An epigraph is prose, so it wraps to the screen instead of joining the sideways scroll */
+    #content:not(.wrap)>figure {
+        white-space: normal;
+        min-width: 0;
+        max-width: calc(100vw - 2rem);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #container-parent {
+        flex: none;
+    }
+
+    #container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 2.5rem;
+        pointer-events: none;
+        background: linear-gradient(to right, rgba(10, 10, 10, 0), var(--paper));
+    }
+}
+
+@media only print {
+
+    /* Zeroed so the defaults do not add to the 1in margins PdfBook sets */
+    html,
+    body {
         height: 100%;
         margin: 0 !important;
         padding: 0 !important;
     }
 
-    /* Fill that printable area exactly, so flex can centre in it */
+    /* Fills the printable area exactly, so flex can centre in it */
     #container-parent {
         min-height: 100% !important;
         height: auto !important;
@@ -111,13 +137,24 @@ html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: fl
         justify-content: center !important;
     }
 
-    .url { display: block; }
-    .tags { display: none !important; }
-    #content time, #content time a { color: black; } /* --muted is chosen against a near-black ground and prints faint */
+    .url {
+        display: block;
+    }
 
-    /* No bottom margin on the last element: 100% height plus 1em overflows onto a ghost
-       page. The themes are display: none above but still the last child */
-    #content > *:last-child, .url:last-child, #content > *:has(+ .tags:last-child) {
+    .tags {
+        display: none !important;
+    }
+
+    /* --muted is chosen against a near-black ground and prints faint */
+    #content time,
+    #content time a {
+        color: black;
+    }
+
+    /* 100% height plus a last margin overflows onto a ghost page. The hidden tags are still the last child */
+    #content>*:last-child,
+    .url:last-child,
+    #content>*:has(+ .tags:last-child) {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
@@ -127,7 +164,12 @@ html.tier-1 .edge[data-tier="1"], html.tier-2 .edge[data-tier="2"] { display: fl
         break-inside: avoid;
     }
 
-    /* The measure here is the page, not the screen */
-    #content.poem { line-height: 1.3; font-size: 1rem; }
-    #content h1 { font-size: 1.17rem; }
+    #content.poem {
+        line-height: 1.3;
+        font-size: 1rem;
+    }
+
+    #content h1 {
+        font-size: 1.17rem;
+    }
 }

@@ -31,7 +31,7 @@ class Poem : Content
 
     public List<string> Tags { get; set; } = new List<string>(); // Most salient first
 
-    public bool HasDayUrl => PublicationDate > Program.DayUrlCutoff;
+    public bool HasDayUrl => PublicationDate > Site.DayUrlCutoff;
 
     // Serves as both the url prefix and the directory under docs/
     public string DatePath => HasDayUrl
@@ -40,7 +40,7 @@ class Poem : Content
 
     public string UrlPath => $"{DatePath}{FileName}/";
 
-    // When MaxRating changes, update the ramps in common.css and toc.css
+    // When MaxRating changes, update the rating dots in index.css and toc.css
     public string RatingClass => $"rated-{Rating}";
 }
 

@@ -1,47 +1,118 @@
-/* Sticky, with the paper carried up with it: the negative margins pull the fill back out
-   through the body's 1rem padding, which the inner padding then puts back. The gradient
-   fades a line of verse out over the last 12px instead of cutting it */
-.navbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 50; margin: -1rem -1rem 1.5rem -1rem; padding: 1rem 1rem 0 1rem; background: linear-gradient(to bottom, var(--paper) 0, var(--paper) calc(100% - 12px), transparent 100%); }
-.nav-group-left, .nav-group-right { display: flex; align-items: center; }
+/* The negative margins pull the fill out through the body's padding, which the inner padding puts back */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin: -1rem -1rem 1.5rem -1rem;
+    padding: 1rem 1rem 0 1rem;
+    background: linear-gradient(to bottom, var(--paper) 0, var(--paper) calc(100% - 12px), transparent 100%);
+}
+
+.nav-group-left,
+.nav-group-right {
+    display: flex;
+    align-items: center;
+}
 
 /* Hidden until the script driving it has run, so it is never a control that does nothing */
-.tiers { display: none; }
-html.js .tiers { display: inline-block; }
+.tiers {
+    display: none;
+}
 
-.tier-name { display: none; }
+html.js .tiers {
+    display: inline-block;
+}
+
+.tier-name {
+    display: none;
+}
+
 html.tier-0 .tier-name[data-tier="0"],
 html.tier-1 .tier-name[data-tier="1"],
-html.tier-2 .tier-name[data-tier="2"] { display: inline; }
+html.tier-2 .tier-name[data-tier="2"] {
+    display: inline;
+}
 
 html.tier-0 .tier-btn[data-tier="0"],
 html.tier-1 .tier-btn[data-tier="1"],
-html.tier-2 .tier-btn[data-tier="2"] { color: var(--ink); }
-
-.wordmark { font-size: 0.94rem; letter-spacing: 0.12em; color: var(--muted); text-decoration: none; padding: 0.5rem; }
-.wordmark:hover { color: var(--ink); }
-
-.nav { font-size: 0.875rem; letter-spacing: 0.06em; padding: 0.5rem 0.75rem; text-decoration: none; color: var(--muted); }
-.nav:hover { background-color: var(--hover); color: var(--ink); }
-.tiers .nav { font-style: italic; }
-
-@media only screen and (max-width : 512px)
-{
-    .navbar { flex-direction: column; align-items: stretch; }
-    .nav-group-right { width: 100%; justify-content: space-between; }
-    .wordmark { padding-bottom: 0.75rem; }
-    /* 0.9rem either side of the 1.25rem line is a 44px+ thumb target; space-between does the rest */
-    .nav { padding: 0.9rem 0; }
-
-    /* Six labels do not fit across 390px */
-    #pdf { display: none !important; }
-
-    .nav-group-left { width: 100%; justify-content: center; }
-
-    /* Two rows of labels, so the bar gives up the top edge and scrolls with the page */
-    .navbar { position: static; margin: 0; padding: 0; background: none; }
+html.tier-2 .tier-btn[data-tier="2"] {
+    color: var(--ink);
 }
 
-@media only print
-{
-    .navbar { display: none; }
+.wordmark {
+    font-size: 0.94rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.wordmark:hover {
+    color: var(--ink);
+}
+
+.nav {
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+.nav:hover {
+    background-color: var(--hover);
+    color: var(--ink);
+}
+
+.tiers .nav {
+    font-style: italic;
+}
+
+@media only screen and (max-width : 512px) {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-group-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .wordmark {
+        padding-bottom: 0.75rem;
+    }
+
+    /* 0.9rem either side of the 1.25rem line is a 44px+ thumb target */
+    .nav {
+        padding: 0.9rem 0;
+    }
+
+    /* Six labels do not fit across 390px */
+    #pdf {
+        display: none !important;
+    }
+
+    .nav-group-left {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Two rows of labels, so the bar gives up the top edge and scrolls with the page */
+    .navbar {
+        position: static;
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+}
+
+@media only print {
+    .navbar {
+        display: none;
+    }
 }

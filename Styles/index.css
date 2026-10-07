@@ -1,19 +1,32 @@
-/* Loaded after common.css, so this wins */
-a { text-decoration: none; }
-a:hover { color: var(--accent); }
+a {
+    text-decoration: none;
+}
 
-#container { display: flex; flex-direction: row; justify-content: center; }
-/* clip rather than hidden: a hidden axis makes this a scroll container, which the sticky
-   year rail inside would then measure itself against instead of the window */
-#container-parent { display: flex; flex-direction: column; flex: 1; padding-bottom: 7rem; overflow-x: clip; }
-/* The stem's dot hangs 4px left of the node, and on a narrow screen the node starts at the clip
-   edge. The padding pulls the clip box out by more than the dot needs and the margin puts the
-   content back where it was, so the dot has room and nothing moves */
-#container-parent { padding-left: 6px; margin-left: -6px; }
-#container-chronology { width: 100%; max-width: 42rem; }
+a:hover {
+    color: var(--accent);
+}
 
-/* The navbar's twin at the foot, its fill turned upside down. Fixed, and the padding above
-   is taller than it, so the end of a list always clears it */
+/* clip rather than hidden: hidden makes this a scroll container, which the sticky year rail would then measure against */
+#container-parent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: 7rem;
+    overflow-x: clip;
+}
+
+/* Pulls the clip edge out past the stem's dot, and puts the content back where it was */
+#container-parent {
+    padding-left: 6px;
+    margin-left: -6px;
+}
+
+#container-chronology {
+    width: 100%;
+    max-width: 42rem;
+}
+
+/* The navbar's twin at the foot. The 7rem padding above is taller than it, so a list's end clears it */
 #container-parent::after {
     content: "";
     position: fixed;
@@ -26,21 +39,65 @@ a:hover { color: var(--accent); }
     background: linear-gradient(to top, var(--paper) 0, var(--paper) calc(100% - 12px), transparent 100%);
 }
 
-/* The line is a border on the node itself, so consecutive nodes abut into one stroke.
-   The dot is filled with --paper, since the border runs behind it */
-.node { position: relative; border-left: 1px solid var(--rule); padding: 0 0 2rem 2.75rem; }
-.node::before { content: ""; position: absolute; left: -4px; top: 0.4rem; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1px solid var(--muted); }
-.node::after { content: ""; position: absolute; left: 6px; top: 0.72rem; width: 1.5rem; height: 1px; background: var(--rule); }
+.node {
+    position: relative;
+    border-left: 1px solid var(--rule);
+    padding: 0 0 2rem 2.75rem;
+}
 
-.node > h3 { font-size: 1rem; font-weight: 400; font-style: italic; color: var(--muted); }
-.node > h3 a { color: var(--muted); }
-.node > h3 a:hover { color: var(--ink); }
+.node::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 0.4rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1px solid var(--muted);
+}
 
-.leaves { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; font-size: 1.06rem; }
-/* fit-content keeps the row as wide as its title, so the hover target is the title alone */
-.leaves > div { position: relative; width: fit-content; max-width: 100%; }
+.node::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 0.72rem;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--rule);
+}
 
-/* Out of flow entirely: it takes no width, so nothing moves when it arrives */
+.node>h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.node>h3 a {
+    color: var(--muted);
+}
+
+.node>h3 a:hover {
+    color: var(--ink);
+}
+
+.leaves {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    font-size: 1.06rem;
+}
+
+/* fit-content, so the hover target is the title alone */
+.leaves>div {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+}
+
+/* Out of flow, so nothing moves when it appears */
 .opening {
     position: absolute;
     left: 100%;
@@ -53,187 +110,169 @@ a:hover { color: var(--accent); }
     opacity: 0;
     pointer-events: none;
 }
-.leaves > div:hover .opening { opacity: 1; }
 
-/* The rating as one to three dots before the title. The extra dots are shadows cast leftward,
-   so the dot nearest the title stays put. When you change these, update their paper twin in toc.css */
-.leaves > div::before, .letter-list > div::before, .theme-columns > div::before { content: ""; position: absolute; top: calc(0.625rem - 1px); width: 4px; height: 4px; border-radius: 50%; color: var(--muted); background: currentColor; }
-.rated-1::before { box-shadow: -7px 0; }
-.rated-2::before { box-shadow: -7px 0, -14px 0; }
-/* Hung in the node's padding, so every title keeps one left edge */
-.leaves > div::before { left: calc(-0.6rem - 4px); }
+.leaves>div:hover .opening {
+    opacity: 1;
+}
+
+/* The rating dots. When you change these, update their paper twin in toc.css */
+.leaves>div::before,
+.letter-list>div::before,
+.theme-columns>div::before {
+    content: "";
+    position: absolute;
+    top: calc(0.625rem - 1px);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    color: var(--muted);
+    background: currentColor;
+}
+
+.rated-1::before {
+    box-shadow: -7px 0;
+}
+
+.rated-2::before {
+    box-shadow: -7px 0, -14px 0;
+}
+
+.leaves>div::before {
+    left: calc(-0.6rem - 4px);
+}
+
+/* Inside the row: these lists scroll, and a scroller clips what hangs outside it */
+.theme-columns>div,
+.letter-list>div {
+    position: relative;
+    padding-left: 1.75rem;
+}
+
+.theme-columns>div::before,
+.letter-list>div::before {
+    left: calc(1.15rem - 4px);
+}
 
 html.tier-1 .rated-0,
 html.tier-2 .rated-0,
-html.tier-2 .rated-1 { display: none; }
+html.tier-2 .rated-1 {
+    display: none;
+}
 
-/* A group is hidden when none of its rows survive, so no heading is left standing alone */
 html.tier-1 .node:not(:has(.rated-1)):not(:has(.rated-2)),
 html.tier-1 .year:not(:has(.rated-1)):not(:has(.rated-2)),
 html.tier-1 .letter:not(:has(.rated-1)):not(:has(.rated-2)),
 html.tier-2 .node:not(:has(.rated-2)),
 html.tier-2 .year:not(:has(.rated-2)),
-html.tier-2 .letter:not(:has(.rated-2)) { display: none; }
+html.tier-2 .letter:not(:has(.rated-2)) {
+    display: none;
+}
 
-h1 { margin: 0; }
-.archive h1 { padding: 0 0 2rem 0; font-size: 1.5em; color: var(--ink); }
-.archive .breadcrumb { margin: 0; padding-bottom: 0.6rem; color: var(--muted); }
-.archive .breadcrumb a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
-.archive .breadcrumb a:hover { text-decoration-color: var(--accent); }
+.archive h1 {
+    padding: 0 0 2rem 0;
+    font-size: 1.5em;
+    color: var(--ink);
+}
 
-.theme-list { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 2.5rem 3rem; max-width: 56rem; margin: 0 auto; padding: 2rem 0; }
-/* Grown to the full height and centred in it; safe centring, so a field taller than the
-   window still starts at the top rather than overflowing off both ends */
-#container:has(.theme-list) { flex: 1; align-items: center; align-items: safe center; }
-.theme { position: relative; }
-.theme a { color: inherit; }
-.theme a:hover { color: var(--accent); }
+.archive .breadcrumb {
+    margin: 0;
+    padding-bottom: 0.6rem;
+    color: var(--muted);
+}
 
-/* Out of flow, so a count appearing never reflows the field */
-.theme .count { position: absolute; left: 100%; top: 0.1em; margin-left: 0.4rem; font-size: 0.62rem; color: var(--muted); font-variant-numeric: tabular-nums; opacity: 0; pointer-events: none; }
-.theme:hover .count { opacity: 1; }
+.archive .breadcrumb a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 3px;
+}
 
-.theme-list .w1 { font-size: 0.82rem; } .theme-list .w2 { font-size: 0.88rem; }
-.theme-list .w3 { font-size: 0.95rem; } .theme-list .w4 { font-size: 1.05rem; }
-.theme-list .w5 { font-size: 1.18rem; } .theme-list .w6 { font-size: 1.34rem; }
-.theme-list .w7 { font-size: 1.54rem; } .theme-list .w8 { font-size: 1.78rem; }
-.theme-list .w9 { font-size: 2.1rem; }
+.archive .breadcrumb a:hover {
+    text-decoration-color: var(--accent);
+}
 
-.railed { display: flex; flex-direction: row; align-items: flex-start; gap: 3.5rem; }
-/* No size steps: a column of numbers that changed size would never settle into a straight
-   edge to read down */
-.year-rail { position: sticky; top: calc(var(--bar) + 1.5rem); flex: 0 0 4rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.85rem; border-right: 1px solid var(--rule); padding-right: 1.4rem; font-size: 0.8rem; font-variant-numeric: lining-nums tabular-nums; letter-spacing: 0.05em; }
-.year-rail a { color: var(--muted); }
-.year-rail a:hover { color: var(--accent); }
+.railed {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3.5rem;
+}
+
+.year-rail {
+    position: sticky;
+    top: calc(var(--bar) + 1.5rem);
+    flex: 0 0 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+    border-right: 1px solid var(--rule);
+    padding-right: 1.4rem;
+    font-size: 0.8rem;
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: 0.05em;
+}
+
+.year-rail a {
+    color: var(--muted);
+}
+
+.year-rail a:hover {
+    color: var(--accent);
+}
+
 /* The tree's stem stands in for the rail's own rule */
-.stem .railed { gap: 0; }
-.stem .year-rail { border-right: 0; }
-.railed-body { flex: 1; min-width: 0; }
-/* Flush against the navbar, exactly: the node's own 2rem of bottom padding is then what
-   sits under the bar, with the previous title above it and out of sight */
-.railed-body .node, .railed-body .year { scroll-margin-top: var(--bar); }
-
-.theme-columns { columns: 3; column-gap: 3.5rem; font-size: 1.06rem; }
-/* The dots sit inside the row: these lists scroll, and a scroller clips what hangs outside it.
-   1.75rem holds three dots and the 0.6rem before the title */
-.theme-columns > div, .letter-list > div { position: relative; padding-left: 1.75rem; }
-.theme-columns > div::before, .letter-list > div::before { left: calc(1.15rem - 4px); }
-.theme-columns > div { break-inside: avoid; padding-bottom: 0.55rem; }
-.year { padding-bottom: 2.25rem; }
-
-.year-mark { display: flex; align-items: center; gap: 1rem; font-size: 1rem; font-weight: 400; font-style: italic; color: var(--muted); padding-bottom: 1.2rem; }
-.year-mark::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
-
-/* space-between, so the alphabet runs the full measure of the rule beneath it; the gap
-   is a floor the letters never close below rather than the spacing */
-.rail { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.9rem 0.6rem; padding-bottom: 1.2rem; margin-bottom: 2.6rem; border-bottom: 1px solid var(--rule); font-size: 1rem; font-style: italic; letter-spacing: 0.04em; }
-.rail a { color: var(--muted); }
-.rail a:hover { color: var(--accent); }
-.rail-empty { color: var(--rule); }
-
-.letters { display: flex; flex-direction: column; gap: 2.8rem; }
-/* Flush against the navbar, as the year rail lands */
-.letter { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1.5rem; scroll-margin-top: var(--bar); }
-.letter-mark { margin: 0; font-size: 1.375rem; font-weight: 400; font-style: italic; color: var(--muted); }
-.letter-list { columns: 3; column-gap: 2.5rem; font-size: 1.06rem; }
-.letter-list > div { break-inside: avoid; padding-bottom: 0.45rem; }
-
-.archive .rail, .archive .letters { max-width: none; }
-
-@media only screen and (min-width : 769px)
-{
-    /* No list to run off the screen, so the 7rem held below a list would only hold the field
-       off centre */
-    #container-parent:has(.theme-list) { padding-bottom: 0; }
-
-    /* /index/ and /themes/ are reference pages rather than reading columns */
-    #container-chronology:has(.letters), #container-chronology:has(.theme-list) { max-width: 64rem; }
-    #container-chronology:has(.railed) { max-width: 52rem; }
-    /* Narrow enough that a title and its opening line together sit about the middle */
-    #container-chronology:has(.stem) { max-width: 40rem; }
-    #container-chronology:has(.theme-columns) { max-width: 64rem; }
+.stem .railed {
+    gap: 0;
 }
 
-@media only screen and (max-width : 768.99px)
-{
-    .letter-list { columns: 2; }
-    .theme-columns { columns: 2; column-gap: 2.5rem; }
-    .theme-list { gap: 0.9rem 1.5rem; }
-    .theme-list .w9 { font-size: 1.7rem; }
-    .theme-list .w8 { font-size: 1.5rem; }
-    .theme-list .w7 { font-size: 1.34rem; }
+.stem .year-rail {
+    border-right: 0;
 }
 
-/* The page is the window and .railed-body alone scrolls. Keyed on the columns rather than on
-   .railed, which the home chronology carries too */
-@media only screen and (min-width : 512.01px) and (min-height : 32rem)
-{
-    html:has(.railed .theme-columns) { overflow: hidden; }
-    body:has(.railed .theme-columns) { height: 100vh; }
-
-    /* The chain from the body down to the list. Every box on it is a flex item that has to be
-       allowed to shrink below its content; miss one and the overflow lands on the page */
-    body:has(.railed .theme-columns) #container-parent { min-height: 0; padding-bottom: 0; }
-    body:has(.railed .theme-columns) #container { flex: 1; min-height: 0; }
-    body:has(.railed .theme-columns) #container-chronology { display: flex; flex-direction: column; min-height: 0; }
-    body:has(.railed .theme-columns) .railed { flex: 1; min-height: 0; }
-    /* stretch, since .railed aligns to flex-start for the rail's sake. The 7rem the page held
-       below a list moves here, the foot band now lying over the foot of the list */
-    body:has(.railed .theme-columns) .railed-body { align-self: stretch; min-height: 0; overflow-y: auto; padding-bottom: 7rem; scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
-    /* Focused by the script in archive.html, so the page keys have something to act on */
-    body:has(.railed .theme-columns) .railed-body { outline: none; }
-
-    /* Nothing above the top edge of the list to clear, and no scroll left for the rail to
-       hold itself against */
-    body:has(.railed .theme-columns) .railed-body .year { scroll-margin-top: 0; }
-    body:has(.railed .theme-columns) .year-rail { position: static; }
+.railed-body {
+    flex: 1;
+    min-width: 0;
 }
 
-/* The same window as a theme's page, with .letters as the list that scrolls: the title and
-   the alphabet stay put above it */
-@media only screen and (min-width : 512.01px) and (min-height : 32rem)
-{
-    html:has(.letters) { overflow: hidden; }
-    body:has(.letters) { height: 100vh; }
-
-    /* The chain from the body down to the list. Every box on it is a flex item that has to be
-       allowed to shrink below its content; miss one and the overflow lands on the page */
-    body:has(.letters) #container-parent { min-height: 0; padding-bottom: 0; }
-    body:has(.letters) #container { flex: 1; min-height: 0; }
-    body:has(.letters) #container-chronology { display: flex; flex-direction: column; min-height: 0; }
-    /* The list is the only thing that gives; the alphabet would otherwise be squeezed into
-       fewer rows than it needs */
-    body:has(.letters) h1, body:has(.letters) .rail { flex: 0 0 auto; }
-    /* The 7rem the page held below a list moves here, the foot band now lying over the foot
-       of the list. outline: none, since the script in archive.html focuses it */
-    body:has(.letters) .letters { flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 7rem; scrollbar-width: thin; scrollbar-color: var(--rule) transparent; outline: none; }
-
-    /* Nothing above the top edge of the list for a letter to clear */
-    body:has(.letters) .letter { scroll-margin-top: 0; }
+.railed-body .node,
+.railed-body .year {
+    scroll-margin-top: var(--bar);
 }
 
-@media only screen and (max-width : 512px)
-{
-    /* No pointer, so nothing here can be asked for: the opening line goes and the count
-       comes back as ordinary text */
-    .opening { display: none; }
-    .theme .count { position: static; opacity: 1; margin-left: 0.35rem; }
-    .theme-list { columns: 1; justify-content: flex-start; }
-    .letter-list { columns: 1; }
-    .theme-columns { columns: 1; }
-    /* Wrapped, space-between would justify the last row too, which reads as a gappy line
-       rather than as the end of the alphabet */
-    .rail { justify-content: flex-start; column-gap: 1rem; }
-    /* The gutter goes and the letter heads its own row, ruled across as .year-mark is */
-    .letter { display: block; }
-    .letter-mark { display: flex; align-items: center; gap: 1rem; padding-bottom: 0.9rem; }
-    .letter-mark::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
-    /* Laid flat the rail was two rows of years above every list */
-    .railed { display: block; }
-    .year-rail { display: none; }
+@media only screen and (min-width : 769px) {
+    #container-chronology:has(.railed) {
+        max-width: 52rem;
+    }
+
+    #container-chronology:has(.stem) {
+        max-width: 40rem;
+    }
+}
+
+@media only screen and (max-width : 512px) {
+    .opening {
+        display: none;
+    }
+
+    .railed {
+        display: block;
+    }
+
+    .year-rail {
+        display: none;
+    }
+
     /* The navbar is static here, so an anchor has nothing to sit below */
-    :root { --bar: 1rem; }
-    /* Three dots and the 0.6rem either side of them */
-    .node { padding-left: calc(1.2rem + 18px); }
-    .node::after { width: 1.25rem; }
+    :root {
+        --bar: 1rem;
+    }
+
+    .node {
+        padding-left: calc(1.2rem + 18px);
+    }
+
+    .node::after {
+        width: 1.25rem;
+    }
 }

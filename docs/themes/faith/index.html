@@ -6,11 +6,13 @@
     <link rel="preload" href="/alegreya-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/alegreya-bold-webfont.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/alegreya-italic-webfont.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" type="text/css" href="/fonts.css?v=b656d08c" />
-    <link rel="stylesheet" type="text/css" href="/common.css?v=c753a70f" />
-    <link rel="stylesheet" type="text/css" href="/navbar.css?v=cd09a2a9" />
-    <link rel="stylesheet" type="text/css" href="/index.css?v=11988c8a" />
-    <link rel="stylesheet" type="text/css" href="/dropdown.css?v=648e88c6" />
+    <link rel="stylesheet" type="text/css" href="/fonts.css?v=e7846c27" />
+    <link rel="stylesheet" type="text/css" href="/common.css?v=e3441325" />
+    <link rel="stylesheet" type="text/css" href="/navbar.css?v=b5e4e053" />
+    <link rel="stylesheet" type="text/css" href="/index.css?v=33614b79" />
+    <link rel="stylesheet" type="text/css" href="/themes.css?v=5297ac87" />
+    <link rel="stylesheet" type="text/css" href="/letters.css?v=ee725ea9" />
+    <link rel="stylesheet" type="text/css" href="/dropdown.css?v=a9564e31" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="alternate" type="application/rss+xml" title="poems by culturing" href="/feed.xml" />
     <title>Faith | poems by culturing</title>
@@ -30,33 +32,7 @@
     <script type="application/ld+json">[{"@context":"https://schema.org","@type":"CollectionPage","name":"Poems about faith","description":"155 poems about faith by culturing, written between 2015 and 2026. Free to read in full.","url":"https://poems.culturing.net/themes/faith/","inLanguage":"en-us","isAccessibleForFree":true},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"culturing","item":"https://poems.culturing.net/"},{"@type":"ListItem","position":2,"name":"themes","item":"https://poems.culturing.net/themes/"},{"@type":"ListItem","position":3,"name":"faith","item":"https://poems.culturing.net/themes/faith/"}]}]</script>
 </head>
 <body>
-    <script>
-// Runs at the top of the body, before any listing has been parsed, so the filter is applied
-// in the first paint rather than after one. Delegated from the document because the buttons
-// below it do not exist yet when this executes.
-(function () {
-    var root = document.documentElement;
-    root.className += " js";
-
-    var tier = "0";
-    try { tier = localStorage.getItem("tier") || "0"; } catch (e) { }
-    if (tier !== "1" && tier !== "2") tier = "0";
-    root.classList.add("tier-" + tier);
-
-    document.addEventListener("click", function (e) {
-        var button = e.target.closest && e.target.closest(".tier-btn");
-        if (!button) return;
-        var chosen = button.getAttribute("data-tier");
-        root.classList.remove("tier-0", "tier-1", "tier-2");
-        root.classList.add("tier-" + chosen);
-        try { localStorage.setItem("tier", chosen); } catch (e) { }
-
-        // <details> has no idea the choice was made inside it
-        var panel = button.closest("details");
-        if (panel) panel.open = false;
-    });
-})();
-</script>
+    <script src="/tiers.js?v=b819de1a"></script>
 <div class="navbar">
     <div class="nav-group-left">
         <a class="wordmark" href="/">poems</a>
@@ -253,29 +229,6 @@
             </div>
         </div>
     </div>
-    <script>
-    // A hub's list is the only thing on the site that scrolls inside the page, and the page
-    // keys act on whatever holds focus, so the list is given it
-    (function () {
-        var list = document.querySelector(".letters");
-        if (!list) {
-            var railed = document.querySelector(".railed-body");
-            if (railed && railed.querySelector(".theme-columns")) list = railed;
-        }
-        if (!list) return;
-
-        function take() {
-            // The stylesheet decides whether the list scrolls at all; below its breakpoints
-            // the page is what scrolls, and focus here would take the keys off it
-            if (list.scrollHeight > list.clientHeight) list.focus({ preventScroll: true });
-        }
-
-        take();
-
-        // After the click, not during it: the jump that follows puts focus on the body
-        var rail = document.querySelector(".year-rail, .rail");
-        if (rail) rail.addEventListener("click", function () { setTimeout(take, 0); });
-    })();
-    </script>
+    <script src="/archive.js?v=40b907ad"></script>
 </body>
 </html>

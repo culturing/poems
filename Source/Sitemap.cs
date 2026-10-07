@@ -10,7 +10,7 @@ using System.Security.Cryptography;
 
 namespace Poems;
 
-public enum SitemapChangeFrequency { Always, Hourly, Daily, Weekly, Monthly, Yearly, Never}
+public enum SitemapChangeFrequency { Always, Hourly, Daily, Weekly, Monthly, Yearly, Never }
 
 class SitemapNode
 {
@@ -18,11 +18,11 @@ class SitemapNode
     public DateTime? LastModified { get; set; }
     public SitemapChangeFrequency? ChangeFrequency { get; set; }
     public decimal? Priority { get; set; }
-    public SitemapNode(){}
+    public SitemapNode() { }
 
     public SitemapNode(Poem poem, DateTime lastMod)
     {
-        Url = Program.BaseUrl + poem.UrlPath;
+        Url = Site.BaseUrl + poem.UrlPath;
         LastModified = lastMod;
         ChangeFrequency = SitemapChangeFrequency.Yearly;
         Priority = 0.9M;
@@ -32,6 +32,11 @@ class SitemapNode
 class SitemapGenerator
 {
     static public JsonSerializerOptions JsonOptions = new JsonSerializerOptions { WriteIndented = true };
+    static public void Write(IEnumerable<Poem> poems, IEnumerable<string> listPageUrls)
+    {
+        File.WriteAllText("docs/sitemap.xml", GenerateXmlString(poems, listPageUrls), new UTF8Encoding(false));
+    }
+
     static public string GenerateXmlString(IEnumerable<Poem> poems, IEnumerable<string> listPageUrls)
     {
         List<SitemapNode> sitemapNodes = GetSitemapNodes(poems, listPageUrls);
@@ -73,7 +78,7 @@ class SitemapGenerator
             hashesJson = File.ReadAllText("hashes.json");
             hashes = JsonSerializer.Deserialize<Dictionary<string, PageHash>>(hashesJson);
         }
-        else 
+        else
         {
             hashes = new Dictionary<string, PageHash>();
         }
@@ -91,14 +96,14 @@ class SitemapGenerator
         {
             new SitemapNode
             {
-                Url = $"{Program.BaseUrl}/",
+                Url = $"{Site.BaseUrl}/",
                 LastModified = UpdateHash(hashes, "docs/index.html", "/", now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
             },
             new SitemapNode
             {
-                Url = $"{Program.BaseUrl}/about/",
+                Url = $"{Site.BaseUrl}/about/",
                 LastModified = UpdateHash(hashes, "docs/about/index.html", "/about/", now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 1.0M
@@ -110,7 +115,7 @@ class SitemapGenerator
         {
             nodes.Add(new SitemapNode
             {
-                Url = Program.BaseUrl + listPageUrl,
+                Url = Site.BaseUrl + listPageUrl,
                 LastModified = UpdateHash(hashes, $"docs{listPageUrl}index.html", listPageUrl, now),
                 ChangeFrequency = SitemapChangeFrequency.Monthly,
                 Priority = 0.5M
@@ -118,7 +123,7 @@ class SitemapGenerator
         }
 
         foreach (Poem poem in poems)
-        {            
+        {
             DateTime lastMod = UpdateHash(hashes, poem.FilePath, poem.UrlPath, now);
             nodes.Add(new SitemapNode(poem, lastMod));
         }
@@ -134,12 +139,12 @@ class SitemapGenerator
         string hash = GetHash(filePath);
         if (hashes.ContainsKey(urlPath))
         {
-            PageHash prevHash = hashes[urlPath];                
+            PageHash prevHash = hashes[urlPath];
             if (prevHash.Hash == hash)
             {
                 return prevHash.LastMod;
             }
-            else 
+            else
             {
                 hashes[urlPath] = new PageHash { Hash = hash, LastMod = now };
                 return now;

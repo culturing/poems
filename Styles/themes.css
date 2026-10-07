@@ -1,0 +1,219 @@
+.theme-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2.5rem 3rem;
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Safe centring, so a field taller than the window still starts at the top */
+#container:has(.theme-list) {
+    flex: 1;
+    align-items: center;
+    align-items: safe center;
+}
+
+.theme {
+    position: relative;
+}
+
+.theme a {
+    color: inherit;
+}
+
+.theme a:hover {
+    color: var(--accent);
+}
+
+/* Out of flow, so a count appearing never reflows the field */
+.theme .count {
+    position: absolute;
+    left: 100%;
+    top: 0.1em;
+    margin-left: 0.4rem;
+    font-size: 0.62rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.theme:hover .count {
+    opacity: 1;
+}
+
+.theme-list .w1 {
+    font-size: 0.82rem;
+}
+
+.theme-list .w2 {
+    font-size: 0.88rem;
+}
+
+.theme-list .w3 {
+    font-size: 0.95rem;
+}
+
+.theme-list .w4 {
+    font-size: 1.05rem;
+}
+
+.theme-list .w5 {
+    font-size: 1.18rem;
+}
+
+.theme-list .w6 {
+    font-size: 1.34rem;
+}
+
+.theme-list .w7 {
+    font-size: 1.54rem;
+}
+
+.theme-list .w8 {
+    font-size: 1.78rem;
+}
+
+.theme-list .w9 {
+    font-size: 2.1rem;
+}
+
+.theme-columns {
+    columns: 3;
+    column-gap: 3.5rem;
+    font-size: 1.06rem;
+}
+
+.theme-columns>div {
+    break-inside: avoid;
+    padding-bottom: 0.55rem;
+}
+
+.year {
+    padding-bottom: 2.25rem;
+}
+
+.year-mark {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+    padding-bottom: 1.2rem;
+}
+
+.year-mark::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+}
+
+@media only screen and (min-width : 769px) {
+
+    /* No list to run off the screen, so the 7rem held below one would only push the field off centre */
+    #container-parent:has(.theme-list) {
+        padding-bottom: 0;
+    }
+
+    #container-chronology:has(.theme-list),
+    #container-chronology:has(.theme-columns) {
+        max-width: 64rem;
+    }
+}
+
+@media only screen and (max-width : 768.99px) {
+    .theme-columns {
+        columns: 2;
+        column-gap: 2.5rem;
+    }
+
+    .theme-list {
+        gap: 0.9rem 1.5rem;
+    }
+
+    .theme-list .w9 {
+        font-size: 1.7rem;
+    }
+
+    .theme-list .w8 {
+        font-size: 1.5rem;
+    }
+
+    .theme-list .w7 {
+        font-size: 1.34rem;
+    }
+}
+
+/* The page is the window and .railed-body alone scrolls. Keyed on the columns, since the home chronology is .railed too */
+@media only screen and (min-width : 512.01px) and (min-height : 32rem) {
+    html:has(.railed .theme-columns) {
+        overflow: hidden;
+    }
+
+    body:has(.railed .theme-columns) {
+        height: 100vh;
+    }
+
+    /* Every flex item from the body down to the list must be allowed to shrink, or the overflow lands on the page */
+    body:has(.railed .theme-columns) #container-parent {
+        min-height: 0;
+        padding-bottom: 0;
+    }
+
+    body:has(.railed .theme-columns) #container {
+        flex: 1;
+        min-height: 0;
+    }
+
+    body:has(.railed .theme-columns) #container-chronology {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    body:has(.railed .theme-columns) .railed {
+        flex: 1;
+        min-height: 0;
+    }
+
+    /* stretch, since .railed aligns to flex-start for the rail's sake. outline: none, since archive.html focuses it */
+    body:has(.railed .theme-columns) .railed-body {
+        align-self: stretch;
+        min-height: 0;
+        overflow-y: auto;
+        padding-bottom: 7rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--rule) transparent;
+        outline: none;
+    }
+
+    body:has(.railed .theme-columns) .railed-body .year {
+        scroll-margin-top: 0;
+    }
+
+    body:has(.railed .theme-columns) .year-rail {
+        position: static;
+    }
+}
+
+@media only screen and (max-width : 512px) {
+    .theme .count {
+        position: static;
+        opacity: 1;
+        margin-left: 0.35rem;
+    }
+
+    .theme-list {
+        justify-content: flex-start;
+    }
+
+    .theme-columns {
+        columns: 1;
+    }
+}

@@ -1,8 +1,8 @@
 # Design notes
 
 Why the site looks and behaves the way it does. Kept here rather than in comments, so the
-code can be read as code. Source of record: `Program.cs` builds the site, `Styles/` sets it,
-`Scripts/` adds the two behaviours that need javascript.
+code can be read as code. Source of record: `Source/` builds the site, `Styles/` sets it,
+`Scripts/` adds the behaviours that need javascript.
 
 ---
 
@@ -60,7 +60,7 @@ Font build notes:
 - 1000 upem, unhinted, as upstream ships it.
 - Cinzel stays in `fonts.css` for "Song of Sophia", which sets Wisdom's voice in it inline.
   Nothing preloads it.
-- `Program.cs` names Alegreya for the PDF folios, which come from the installed font rather
+- `Source/PdfBook.cs` names Alegreya for the PDF folios, which come from the installed font rather
   than from `fonts.css`. The build machine needs Alegreya installed: static Regular, Bold,
   Italic and Bold Italic instanced from the same variable fonts, unsubset.
 
@@ -119,7 +119,7 @@ on a wrapper, so consecutive nodes abut into a single stroke and a page with no 
 a day archive, a one-year theme — simply has no stem, rather than a bare line down the side of
 a flat list. The dot is filled with `--paper` rather than left hollow, because the border runs
 behind it and would otherwise be drawn through its middle. `index.css` draws all of it;
-`Program.cs` only emits the nodes.
+the C# only emits the nodes.
 
 ### The opening line
 
@@ -491,7 +491,7 @@ The url becomes visible (it is print-only
 apparatus) and the theme links are dropped, since they do not belong in the book. The date goes
 black: `--muted` is chosen against a near-black ground and prints faint.
 
-`toc.css` ships to `docs/` because `RenderPdf` loads it as `/toc.css` over the local server.
+`toc.css` ships to `docs/` because `PdfBook` loads it as `/toc.css` over the local server.
 `review.js` ships only during a review pass.
 
 ## Review mode
