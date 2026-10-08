@@ -10,16 +10,26 @@
     if (tier !== "1" && tier !== "2") tier = "0";
     root.classList.add("tier-" + tier);
 
-    document.addEventListener("click", function (e) {
-        var button = e.target.closest && e.target.closest(".tier-btn");
-        if (!button) return;
-        var chosen = button.getAttribute("data-tier");
+    function choose(chosen) {
+        tier = chosen;
         root.classList.remove("tier-0", "tier-1", "tier-2");
         root.classList.add("tier-" + chosen);
         try { localStorage.setItem("tier", chosen); } catch (e) { }
+    }
+
+    document.addEventListener("click", function (e) {
+        var button = e.target.closest && e.target.closest(".tier-btn");
+        if (!button) return;
+        choose(button.getAttribute("data-tier"));
 
         // <details> has no idea the choice was made inside it
         var panel = button.closest("details");
         if (panel) panel.open = false;
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key !== "t" || e.ctrlKey || e.metaKey || e.altKey) return;
+        if (e.target.closest && e.target.closest("input, textarea, select, [contenteditable]")) return;
+        choose(String((Number(tier) + 1) % 3));
     });
 })();
