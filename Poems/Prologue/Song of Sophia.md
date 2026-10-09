@@ -3,7 +3,7 @@
 
 #### I. Akrasia
 
-<div style="font-family: Cinzel; white-space: pre">    When there were no depths, I was brought forth,
+<div class="cinzel-epigraph">    When there were no depths, I was brought forth,
         When there were no springs abounding with water.
 </div>
 
@@ -48,7 +48,7 @@ HEY*
 
 #### II. Nostoi
 
-<div style="font-family: Cinzel; white-space: pre">    Does not wisdom cry out,
+<div class="cinzel-epigraph">    Does not wisdom cry out,
         And understanding lift up her voice?
 </div>
 
@@ -64,7 +64,7 @@ So too I flee the wasteland.
 
 #### III. Paideia
 
-<div style="font-family: Cinzel; white-space: pre">    To you, O men, I call,
+<div class="cinzel-epigraph">    To you, O men, I call,
         and my voice is to the sons of men.
 </div>
 

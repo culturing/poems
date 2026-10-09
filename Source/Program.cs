@@ -98,8 +98,9 @@ class Program
             bodyStart = 1;
         }
 
-        poem.Description = Markup.BuildDescription(lines.Skip(bodyStart));
-        poem.Opening = Markup.BuildOpening(lines.Skip(bodyStart));
+        List<string> prose = Markup.OwnWords(lines.Skip(bodyStart)).ToList();
+        poem.Description = Markup.BuildDescription(prose);
+        poem.Opening = Markup.BuildOpening(prose);
 
         // Written out rather than left to markdown's "# ", so a title is never read as markup
         string heading = titled
@@ -280,7 +281,7 @@ class Program
         List<string> lines = File.ReadAllLines(filepath).ToList();
         string name = Path.GetFileNameWithoutExtension(filepath);
         string url = $"{Site.BaseUrl}/{name}/";
-        string description = Markup.BuildDescription(lines.Skip(1));
+        string description = Markup.BuildDescription(Markup.OwnWords(lines.Skip(1)));
 
         string html = template
             .Replace("{{content}}", md.Transform(string.Join("\n", lines)))

@@ -8,3 +8,10 @@
 #content.about {
     line-height: 1.5rem
 }
+
+/* The book prints these on its own epigraph page */
+@media print {
+    #content.about figure {
+        display: none;
+    }
+}

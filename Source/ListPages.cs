@@ -28,9 +28,7 @@ static class ListPages
             {
                 int month = monthGroup.Key;
                 string monthPath = $"/{year}/{month.ToString("D2")}/";
-                yearBody.AppendLine($"<div class=\"node\"><h3><a href=\"{monthPath}\">{Site.Months[month]}</a></h3><div class=\"leaves\">");
-                yearBody.Append(Markup.ArchivePoemLinks(monthGroup, withOpening: true));
-                yearBody.AppendLine("</div></div>");
+                yearBody.AppendLine($"<div class=\"node\"><h3><a href=\"{monthPath}\">{Site.Months[month]} {year}</a><small class=\"count\">{monthGroup.Count()}</small></h3></div>");
 
                 var monthBody = new StringBuilder();
 

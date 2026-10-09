@@ -6,6 +6,8 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using AngleSharp.Dom;
+using AngleSharp.Html.Parser;
 using Schema.NET;
 
 namespace Poems;
@@ -19,6 +21,18 @@ static class Markup
 
     public static string BuildOpening(IEnumerable<string> bodyLines) =>
         Truncate(bodyLines.Select(StripMarkup).FirstOrDefault(line => line.Length > 0) ?? string.Empty, 52);
+
+    // Epigraphs are someone else's words and section headings say nothing, so neither describes or opens a page
+    public static IEnumerable<string> OwnWords(IEnumerable<string> lines)
+    {
+        IDocument document = new HtmlParser().ParseDocument(string.Join("\n", lines));
+        foreach (IElement epigraph in document.QuerySelectorAll("figure, .cinzel-epigraph").ToList())
+            epigraph.Remove();
+
+        return document.Body.TextContent
+            .Split('\n')
+            .Where(line => !Regex.IsMatch(line, @"^\s*([IVXLC]+\.|#.*)\s*$"));
+    }
 
     static string StripMarkup(string text)
     {

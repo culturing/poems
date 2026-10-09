@@ -82,6 +82,16 @@ a:hover {
     color: var(--ink);
 }
 
+.node:not(:has(.leaves)) {
+    padding-bottom: 1.25rem;
+}
+
+.node>h3 .count {
+    margin-left: 0.5rem;
+    font-style: normal;
+    font-variant-numeric: tabular-nums;
+}
+
 .leaves {
     display: flex;
     flex-direction: column;
@@ -159,10 +169,10 @@ html.tier-2 .rated-1 {
     display: none;
 }
 
-html.tier-1 .node:not(:has(.rated-1)):not(:has(.rated-2)),
+html.tier-1 .node:has(.leaves):not(:has(.rated-1)):not(:has(.rated-2)),
 html.tier-1 .year:not(:has(.rated-1)):not(:has(.rated-2)),
 html.tier-1 .letter:not(:has(.rated-1)):not(:has(.rated-2)),
-html.tier-2 .node:not(:has(.rated-2)),
+html.tier-2 .node:has(.leaves):not(:has(.rated-2)),
 html.tier-2 .year:not(:has(.rated-2)),
 html.tier-2 .letter:not(:has(.rated-2)) {
     display: none;

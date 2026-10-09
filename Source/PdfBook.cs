@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Playwright;
 using PdfSharp.Drawing;
+using PdfSharp.Fonts;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 
@@ -15,7 +16,21 @@ namespace Poems;
 
 static class PdfBook
 {
-    static readonly XFont Font = new XFont("Alegreya", 12.0);
+    static readonly XFont Font = LoadFont();
+
+    static XFont LoadFont()
+    {
+        GlobalFontSettings.FontResolver = new AlegreyaResolver();
+        return new XFont("Alegreya", 12.0);
+    }
+
+    // PDFsharp reads neither the webfonts in Styles nor fonts installed for one user alone
+    class AlegreyaResolver : IFontResolver
+    {
+        public FontResolverInfo ResolveTypeface(string familyName, bool bold, bool italic) => new FontResolverInfo("Alegreya");
+
+        public byte[] GetFont(string faceName) => File.ReadAllBytes("Fonts/Alegreya-Regular.ttf");
+    }
 
     public static async Task Render(string outpath, List<Poem> poems, bool bestOnly = false, DateTime start = default, DateTime end = default)
     {
@@ -223,8 +238,9 @@ static class PdfBook
         using (XGraphics gfx = XGraphics.FromPdfPage(page))
         {
             double x = 0;
-            double y = page.Height - Font.Height - new XUnit(0.5, XGraphicsUnit.Inch);
-            double width = page.Width - new XUnit(0.5, XGraphicsUnit.Inch);
+            double margin = XUnit.FromInch(0.5).Point;
+            double y = page.Height.Point - Font.Height - margin;
+            double width = page.Width.Point - margin;
             double height = Font.Height;
             gfx.DrawString($"{pageNumber}", Font, XBrushes.Black, new XRect(x, y, width, height), XStringFormats.CenterRight);
         }

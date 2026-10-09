@@ -1,3 +1,4 @@
+console.log("Pro tip: use ⬅️➡️ to move previous/next, and press 't' to toggle between ratings.");
 console.log("Like looking under the hood? https://github.com/culturing/poems");
 
 document.onkeydown = function(e) {

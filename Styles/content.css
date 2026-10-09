@@ -63,6 +63,11 @@ figure {
     max-width: 400px;
 }
 
+.cinzel-epigraph {
+    font-family: Cinzel;
+    white-space: pre;
+}
+
 @media only screen and (min-width : 769px) {
     #content {
         max-width: 61.8%
