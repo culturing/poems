@@ -83,6 +83,14 @@ h3 {
     background: linear-gradient(to bottom, transparent 0, var(--paper) 14px);
 }
 
+@media only screen and (max-width : 512px) {
+    #license {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0.5rem;
+    }
+}
+
 .dateline,
 .url,
 .tags {

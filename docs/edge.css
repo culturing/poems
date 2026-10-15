@@ -1,3 +1,8 @@
+/* A box only on phones, where the pair shares a row; elsewhere each edge is fixed to its side */
+.edges {
+    display: contents;
+}
+
 .edge {
     position: fixed;
     top: 50%;
@@ -89,24 +94,23 @@ html.tier-2 .edge[data-tier="2"] {
         order: 2;
     }
 
-    .edge {
+    .edges {
         order: 3;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .edge {
         position: static;
         transform: none;
-        max-width: 88%;
+        min-width: 0;
+        max-width: calc(50% - 0.5rem);
         padding: 0.75rem 0;
     }
 
-    #license {
-        order: 4;
-    }
-
-    .edge-prev {
-        align-self: flex-start;
-    }
-
+    /* Not space-between: when prev is absent, next must still keep to the right */
     .edge-next {
-        align-self: flex-end;
+        margin-left: auto;
     }
 
     .edge-label {

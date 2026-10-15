@@ -9,7 +9,7 @@ static class Templates
 {
     // Declared ahead of the templates, so it is initialised before VersionAssets runs over them
     static readonly Regex AssetReference =
-        new Regex(@"(?<=(?:href|src)=[""'])/(?<file>[\w.-]+\.(?:css|js))(?=[""'])", RegexOptions.Compiled);
+        new Regex(@"(?<=(?:href|src|srcset)=[""'])/(?<file>[\w.-]+\.(?:css|js|svg))(?=[""'#])", RegexOptions.Compiled);
 
     public static readonly string Index = VersionAssets(File.ReadAllText("Templates/index.html"));
     public static readonly string About = VersionAssets(File.ReadAllText("Templates/about.html"));

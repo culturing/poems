@@ -68,6 +68,25 @@ figure {
     white-space: pre;
 }
 
+/* The navbar's twin at the foot: the same height, margin and fade, so the poem centres in the window.
+   When navbar.css changes these, change them here with it */
+@media only screen and (min-width : 513px) {
+    body:has(#content.poem) #container-parent {
+        margin-bottom: 1.5rem;
+    }
+
+    body:has(#content.poem)::after {
+        content: "";
+        flex: none;
+        position: sticky;
+        bottom: 0;
+        z-index: 2;
+        height: var(--bar);
+        margin: 0 -1rem;
+        background: linear-gradient(to top, var(--paper) 0, var(--paper) calc(100% - 12px), transparent 100%);
+    }
+}
+
 @media only screen and (min-width : 769px) {
     #content {
         max-width: 61.8%
@@ -75,11 +94,6 @@ figure {
 }
 
 @media only screen and (max-width : 512px) {
-    #container {
-        justify-content: flex-start;
-        position: relative;
-    }
-
     /* WebKit answers to neither scrollbar-width nor anything else standard */
     #content:not(.wrap) {
         white-space: nowrap;
@@ -92,11 +106,8 @@ figure {
         display: none;
     }
 
-    /* Room for the fade past the longest line. On the lines, not #content: the engines leave a
-       scroller's end padding out of its scrollable width */
     #content:not(.wrap)>*:not(hr) {
         min-width: max-content;
-        padding-right: 2.5rem;
     }
 
     /* An epigraph is prose, so it wraps to the screen instead of joining the sideways scroll */
@@ -112,15 +123,23 @@ figure {
         flex: none;
     }
 
-    #container::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 2.5rem;
-        pointer-events: none;
-        background: linear-gradient(to right, rgba(10, 10, 10, 0), var(--paper));
+    /* Only the poem scrolls; the bar and links hold still around it */
+    body:has(#content.poem) {
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    body:has(#content.poem) #container-parent {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        justify-content: flex-start;
+    }
+
+    /* Auto margins, not justify-content, so a poem taller than the screen still scrolls to its top */
+    body:has(#content.poem) #container {
+        margin: auto 0;
     }
 }
 
