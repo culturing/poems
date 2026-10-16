@@ -12,10 +12,10 @@
 
 This is a living tree of poems.
 
-Poems grow out of other poems, as organisms grow out of other organisms. Cut off from their source, they wither and die. Here is your chance to view them together in their natural habitat.
+Poems grow out of other poems, like organisms, and out of the life of their author. Cut off from their source, they wither and die. Here is your chance to view them in their natural habitat.
 
-The name "culturing" comes from Darwin. In "On the Origin of Species", he notices differences between birds kept "under culture" and birds left in the wild. The phrase "under culture" troubles me. I don't want to be *under* culture. I want to *culture*. I want to participate in culture, to *make* culture, to be a *culturer*. Thus "culturing" is the manifesto for my poetry project.
+The name "culturing" comes from Darwin. In "On the Origin of Species", he notices differences between birds kept "under culture" and birds left in the wild. The phrase "under culture" troubles me. I don't want to be like those birds *under* culture. I want to participate in culture, to *make* culture, to be a *culturer*. Thus "culturing" is my manifesto.
 
-I wouldn't mind <a href="mailto:author@culturing.net">hearing from you</a>. And please spread links to these poems far and wide.
+I wouldn't mind <a href="mailto:author@culturing.net">hearing from you</a>. Please spread these poems far and wide.
 
-There is more to come. Like Whitman, "hoping to cease not till death," I welcome you to my life's work in progress.
+There is more to come. Welcome to my life's work in progress.
