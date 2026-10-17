@@ -85,19 +85,22 @@ html.tier-2 .edge[data-tier="2"] {
 
 @media only screen and (max-width : 512px) {
 
-    /* Ordered rather than moved, so a screen reader still meets the pagination before the poem */
-    .navbar {
-        order: 1;
-    }
-
-    #container-parent {
-        order: 2;
-    }
-
+    /* Fixed, not sticky: Chrome on Android redraws a sticky foot a beat late as its address bar slides */
     .edges {
-        order: 3;
         display: flex;
         gap: 1rem;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        padding: 0 1rem;
+        background: linear-gradient(to bottom, transparent 0, var(--paper) 14px);
+    }
+
+    /* The body's own padding, plus the height of the fixed .edges row. When .edge's padding or the line height changes, change this */
+    body:has(.edges) {
+        padding-bottom: calc(1rem + 1.8rem + 1.25rem);
     }
 
     .edge {
@@ -105,7 +108,7 @@ html.tier-2 .edge[data-tier="2"] {
         transform: none;
         min-width: 0;
         max-width: calc(50% - 0.5rem);
-        padding: 0.75rem 0;
+        padding: 0.9rem 0; /* When .nav's padding in navbar.css changes, change this */
     }
 
     /* Not space-between: when prev is absent, next must still keep to the right */

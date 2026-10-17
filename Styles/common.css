@@ -29,6 +29,7 @@ body {
     padding: 1rem;
     box-sizing: border-box;
     min-height: 100vh;
+    min-height: 100svh; /* Measured with the phone's address bar showing, so a page that fits never scrolls */
     display: flex;
     flex-direction: column;
 }
@@ -84,10 +85,35 @@ h3 {
 }
 
 @media only screen and (max-width : 512px) {
+
+    /* Fixed, not sticky: Chrome on Android redraws a sticky foot a beat late as its address bar slides */
     #license {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
         display: flex;
         justify-content: center;
         padding-bottom: 0.5rem;
+    }
+
+    /* Each page title's ink starts 1rem below the links. The margins differ only to take back each title's half-leading */
+    .archive {
+        padding-top: calc(1rem + 2px);
+    }
+
+    #content.about h1 {
+        margin-top: calc(1rem - 3.6px);
+    }
+
+    #content.poem h1 {
+        margin-top: calc(1rem - 3.4px);
+    }
+
+    /* The body's own padding, plus the height of the fixed #license. When its padding or the line height changes, change this */
+    body:has(#license) {
+        padding-bottom: calc(1rem + 0.75rem + 1.25rem + 0.5rem);
     }
 }
 

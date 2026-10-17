@@ -123,23 +123,20 @@ figure {
         flex: none;
     }
 
-    /* Only the poem scrolls; the bar and links hold still around it */
-    body:has(#content.poem) {
-        height: 100vh;
-        height: 100dvh;
-        overflow: hidden;
-    }
-
     body:has(#content.poem) #container-parent {
         flex: 1;
-        min-height: 0;
-        overflow-y: auto;
         justify-content: flex-start;
     }
 
-    /* Auto margins, not justify-content, so a poem taller than the screen still scrolls to its top */
     body:has(#content.poem) #container {
         margin: auto 0;
+    }
+
+    /* Lifts a short poem to the screen's centre. Basis 0, so it takes only free space and a long poem gets none */
+    body:has(#content.poem) #container-parent::after {
+        content: "";
+        flex: 1 1 0;
+        max-height: 2.55rem; /* The header's 6.6rem less the 4.05rem held for .edges. When either changes, change this */
     }
 }
 

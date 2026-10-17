@@ -97,15 +97,17 @@ html.tier-2 .tier-btn[data-tier="2"] {
         display: none !important;
     }
 
+    /* The negative margin lets the tier button's thumb target run under the links' row, rather than shrink it */
     .nav-group-left {
         width: 100%;
         justify-content: center;
+        margin-bottom: -0.25rem;
     }
 
     /* Two rows of labels, so the bar gives up the top edge and scrolls with the page */
     .navbar {
         position: static;
-        margin: 0;
+        margin: -0.25rem 0 0 0;
         padding: 0;
         background: none;
     }
