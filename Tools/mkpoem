@@ -1,0 +1,3 @@
+#!/bin/sh
+# Lets bash run mkpoem.ps1 by name
+exec pwsh -NoProfile -File "$(dirname "$0")/mkpoem.ps1" "$@"

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HeyRed.MarkdownSharp;
 using Schema.NET;
@@ -33,7 +32,7 @@ class Program
             if (Path.GetFileName(dirpath) == "Purgatory")
                 continue;
 
-            foreach (string filepath in Directory.EnumerateFiles(dirpath))
+            foreach (string filepath in Directory.EnumerateFiles(dirpath, "*", SearchOption.AllDirectories))
                 poems.Add(AddPoem(filepath, reviewMode));
         }
 
@@ -70,11 +69,7 @@ class Program
     static Poem AddPoem(string filepath, bool reviewMode)
     {
         var poem = new Poem();
-        string filename = Path.GetFileNameWithoutExtension(filepath);
         List<string> lines = File.ReadAllLines(filepath).ToList();
-
-        filename = Regex.Replace(filename, "^[0-9][0-9] ", "");
-        poem.Title = filename;
 
         int stars = lines[0].Length - lines[0].TrimStart('*').Length;
         if (stars > Poem.MaxRating)
@@ -82,32 +77,17 @@ class Program
         poem.Rating = stars;
         lines[0] = lines[0].Substring(stars);
 
-        bool titled;
-        int bodyStart;
-        try
-        {
-            poem.PublicationDate = DateTime.Parse(lines[1]);
-            poem.Title = lines[0];
-            titled = true;
-            bodyStart = 2;
-        }
-        catch (FormatException) // Untitled: the date is the first line, and the title stays the filename
-        {
-            poem.PublicationDate = DateTime.Parse(lines[0]);
-            titled = false;
-            bodyStart = 1;
-        }
+        poem.Title = lines[0];
+        poem.PublicationDate = DateTime.Parse(lines[1]);
 
-        List<string> prose = Markup.OwnWords(lines.Skip(bodyStart)).ToList();
+        List<string> prose = Markup.OwnWords(lines.Skip(2)).ToList();
         poem.Description = Markup.BuildDescription(prose);
         poem.Opening = Markup.BuildOpening(prose);
 
         // Written out rather than left to markdown's "# ", so a title is never read as markup
-        string heading = titled
-            ? $"<h1>{WebUtility.HtmlEncode(poem.Title)}</h1>"
-            : $"<h1 class='visually-hidden'>{WebUtility.HtmlEncode(poem.Title)}</h1>";
+        string heading = $"<h1>{WebUtility.HtmlEncode(poem.Title)}</h1>";
 
-        lines.RemoveRange(0, bodyStart);
+        lines.RemoveRange(0, 2);
         lines.InsertRange(0, new List<string>
         {
             heading,

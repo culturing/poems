@@ -1,0 +1,3 @@
+#!/bin/sh
+# Lets bash run review.ps1 by name
+exec pwsh -NoProfile -File "$(dirname "$0")/review.ps1" "$@"

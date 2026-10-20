@@ -256,7 +256,7 @@ The theme chips are what link the hubs from every poem; without them `/themes/` 
 from the navbar alone.
 
 Titles are written out as `<h1>` rather than left to markdown's `# `, so a title can never be
-read as markup. An untitled poem still gets an `<h1>`, hidden, for structure.
+read as markup.
 
 The epigraph caption is set away from the quotation and muted, so it does not read as the
 epigraph's last line.
@@ -405,7 +405,7 @@ rail the theme hubs do — a jump to each year, bright where the writing was den
 to match the order of everything beside it. The first node of each year carries that year's
 anchor, so the rail lands on the date the year opens with rather than on a heading of its own.
 
-`Poems/Prologue` is named by title rather than by date, so archive sorts are explicit;
+Archives sort by date rather than trust the order folders are read in;
 reversing before `OrderByDescending` leaves poems sharing a date in the order the chronology
 puts them, since the sort is stable.
 
