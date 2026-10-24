@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HeyRed.MarkdownSharp;
 using Schema.NET;
@@ -79,6 +80,7 @@ class Program
 
         poem.Title = lines[0];
         poem.PublicationDate = DateTime.Parse(lines[1]);
+        filepath = NameAfterTitle(filepath, poem.Title);
 
         List<string> prose = Markup.OwnWords(lines.Skip(2)).ToList();
         poem.Description = Markup.BuildDescription(prose);
@@ -120,6 +122,35 @@ class Program
         poem.Link = $"<a href=\"{poem.UrlPath}\">{poem.Title}</a>";
 
         return poem;
+    }
+
+    // Keeps the leading number, which orders a day's poems
+    static string NameAfterTitle(string filepath, string title)
+    {
+        string name = FileSafe(title);
+        if (name.Length == 0)
+            return filepath;
+
+        string number = Regex.Match(Path.GetFileName(filepath), @"^\d+ ").Value;
+        string target = Path.Combine(Path.GetDirectoryName(filepath), number + name + Path.GetExtension(filepath));
+        if (target == filepath)
+            return filepath;
+
+        bool caseOnly = string.Equals(target, filepath, StringComparison.OrdinalIgnoreCase);
+        if (File.Exists(target) && !caseOnly)
+            throw new InvalidOperationException($"{filepath} would be renamed to {target}, which already exists");
+
+        File.Move(filepath, target);
+        Console.WriteLine($"renamed {filepath} to {Path.GetFileName(target)}");
+        return target;
+    }
+
+    static string FileSafe(string title)
+    {
+        string safe = title.Replace('/', '-').Replace('\\', '-');
+        // Windows' list rather than Path.GetInvalidFileNameChars, so the name is the same whatever OS builds
+        safe = new string(safe.Where(c => !"<>:\"|?*".Contains(c) && !char.IsControl(c)).ToArray());
+        return Regex.Replace(safe, @"\s+", " ").Trim().TrimEnd('.');
     }
 
     // Keyed by url, most salient tag first

@@ -2,6 +2,15 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "mkpoem",
+            "detail": "start a new poem in today's folder",
+            "command": "pwsh",
+            "type": "process",
+            "args": ["-NoProfile", "-File", "${workspaceFolder}/Tools/mkpoem.ps1"],
+            "presentation": { "reveal": "never", "close": true },
+            "problemMatcher": []
+        },
+        {
             "label": "review server",
             "detail": "rating editor for the manual review pass; build with: dotnet run -- review",
             "command": "python",
