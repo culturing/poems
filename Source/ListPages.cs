@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using Humanizer;
 using Schema.NET;
 
 namespace Poems;
@@ -48,7 +49,7 @@ static class ListPages
                         Write(
                             dayPath,
                             dayLabel,
-                            $"The {dayGroup.Count()} poems culturing published on {dayLabel}.",
+                            $"{Markup.PoemCount(dayGroup.Count()).Transform(To.SentenceCase)} published on {dayLabel}.",
                             $"<div class=\"node\"><h3>{Markup.BuildDateLine(dayGroup.First(), linkDay: false)}</h3>"
                                 + $"<div class=\"leaves\">{Markup.ArchivePoemLinks(dayGroup, withOpening: true)}</div></div>",
                             Markup.BuildCrumbs(day, false, dayLabel, dayPath),
@@ -59,7 +60,7 @@ static class ListPages
                 Write(
                     monthPath,
                     $"{Site.Months[month]} {year}",
-                    $"The {monthGroup.Count()} poems culturing published in {Site.Months[month]} {year}.",
+                    $"The {Markup.PoemCount(monthGroup.Count())} culturing published in {Site.Months[month]} {year}.",
                     monthBody.ToString(),
                     Markup.BuildCrumbs(monthGroup.First().PublicationDate, false, null, null));
             }
@@ -67,7 +68,7 @@ static class ListPages
             Write(
                 yearPath,
                 $"Poems from {year}",
-                $"The {yearGroup.Count()} poems culturing published in {year}.",
+                $"The {Markup.PoemCount(yearGroup.Count())} culturing published in {year}.",
                 yearBody.ToString(),
                 new List<Crumb> { new Crumb(Site.Name, "/"), new Crumb(year.ToString(), yearPath) },
                 year.ToString());
@@ -108,8 +109,8 @@ static class ListPages
             Write(
                 themePath,
                 $"Poems about {name}",
-                $"{count} poems about {name} by {Site.Name}, written between "
-                    + $"{byTag[tag].First().PublicationDate.Year} and {byTag[tag].Last().PublicationDate.Year}. Free to read in full.",
+                $"{count} poems about {name}, written between "
+                    + $"{byTag[tag].First().PublicationDate.Year} and {byTag[tag].Last().PublicationDate.Year}.",
                 ThemeArchiveBody(byTag[tag]),
                 ThemeCrumbs(name, themePath),
                 titleText: char.ToUpperInvariant(name[0]) + name.Substring(1),
@@ -122,8 +123,7 @@ static class ListPages
         Write(
             "/themes/",
             "Themes",
-            $"Every theme in the collection, from love to war. {poems.Count} poems by {Site.Name}, "
-                + $"grouped by what they are about.",
+            $"Every theme in the collection, from love to war. {poems.Count} poems.",
             $"<div class=\"theme-list\">{index}</div>",
             ThemeCrumbs(null, null));
     }

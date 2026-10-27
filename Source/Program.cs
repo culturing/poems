@@ -65,6 +65,7 @@ class Program
 
         await PdfBook.Render("docs/culturing.pdf", poems);
         await Video.Render();
+        File.WriteAllText("Output/build-finished", DateTime.Now.ToString("o")); // Tools/docs-server.cs reloads open pages when this changes
     }
 
     static Poem AddPoem(string filepath, bool reviewMode)
@@ -265,8 +266,7 @@ class Program
 
         string chronologyHtml = $"<div class=\"railed\">{Markup.YearRail(years)}<div class=\"railed-body\">{chronology}</div></div>";
 
-        int firstYear = poems.Min(poem => poem.PublicationDate.Year);
-        string description = $"A living tree of {poems.Count} poems by culturing, published in order since {firstYear}. Free to read in full.";
+        string description = $"A living tree of {poems.Count} poems.";
         string html = Templates.Index
             .Replace("{{chronology}}", chronologyHtml)
             .Replace("{{navbar}}", Templates.Navbar)

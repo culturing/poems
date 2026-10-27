@@ -491,8 +491,16 @@ The url becomes visible (it is print-only
 apparatus) and the theme links are dropped, since they do not belong in the book. The date goes
 black: `--muted` is chosen against a near-black ground and prints faint.
 
-`toc.css` ships to `docs/` because `PdfBook` loads it as `/toc.css` over the local server.
+`toc.css` ships to `docs/` because `PdfBook` loads it as `/toc.css` from `docs/`.
 `review.js` ships only during a review pass.
+
+## Serving
+
+`Tools/docs-server.cs` serves `docs/` on port 5500 the way GitHub Pages does: a folder answers
+with its `index.html`, and a missing page with `404.html`. `serve` (F6 in VS Code) starts it and
+opens the browser; `build` starts it too. Open pages reload once a build finishes, which the
+build marks by writing `Output/build-finished` as its last step. It leaves port 5500 alone when
+Live Server holds it.
 
 ## Review mode
 
@@ -501,9 +509,8 @@ black: `--muted` is chosen against a near-black ground and prints faint.
 file, so the build hands it the mapping; it lands in `Output/`, never in `docs/`.
 
 `Scripts/review.js` refuses to run anywhere but localhost and writes nothing itself —
-`Tools/review-server.py` does, on port 5501. The whole apparatus is temporary: delete
-`Scripts/review.js`, `Tools/` and the `{{review}}` line in `Templates/content.html` when the
-pass is done.
+`Tools/review-server.cs` does, on port 5501. `build -r` starts it hidden, logging to
+`Logs/review-server.log`; a plain `build` stops it, since its pages no longer carry the widget.
 
 ## Accessibility
 

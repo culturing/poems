@@ -2,15 +2,21 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AngleSharp" Version="1.8.4" />
+    <PackageReference Include="Humanizer.Core" Version="3.0.10" />
     <PackageReference Include="Markdown" Version="2.2.1" />
     <PackageReference Include="Microsoft.Playwright" Version="1.58.0" />
-    <PackageReference Include="PDFsharp" Version="6.2.0" />
+    <PackageReference Include="PDFsharp" Version="6.2.4" />
     <PackageReference Include="Schema.NET" Version="13.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.14" /> <!-- PDFsharp asks for 8.0.1, which has known vulnerabilities -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Tools/**" />
   </ItemGroup>
 
 </Project>

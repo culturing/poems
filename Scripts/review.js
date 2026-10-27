@@ -1,5 +1,5 @@
 /* Rating widget for the manual review pass, emitted onto poem pages only by
-   "dotnet run -- review". Writes nothing itself: Tools/review-server.py does, on 5501 */
+   "dotnet run -- review". Writes nothing itself: Tools/review-server.cs does, on 5501 */
 (function () {
     'use strict';
 

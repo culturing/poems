@@ -35,7 +35,7 @@ static class Output
     public static void CopyFilesToDocs(bool reviewMode)
     {
         List<string> filesToCopy = new List<string>();
-        // toc.css ships too: PdfBook loads it as /toc.css over the local server
+        // toc.css ships too: PdfBook loads it as /toc.css from docs/
         filesToCopy.AddRange(Directory.GetFiles("Styles"));
         filesToCopy.AddRange(Directory.GetFiles("Scripts")
             .Where(file => reviewMode || Path.GetFileName(file) != "review.js"));

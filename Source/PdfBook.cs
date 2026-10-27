@@ -16,6 +16,8 @@ namespace Poems;
 
 static class PdfBook
 {
+    const string Origin = "http://docs.invalid"; // Never resolved: ServeFromDocs answers every request
+
     static readonly XFont Font = LoadFont();
 
     static XFont LoadFont()
@@ -29,7 +31,7 @@ static class PdfBook
     {
         public FontResolverInfo ResolveTypeface(string familyName, bool bold, bool italic) => new FontResolverInfo("Alegreya");
 
-        public byte[] GetFont(string faceName) => File.ReadAllBytes("Fonts/Alegreya-Regular.ttf");
+        public byte[] GetFont(string faceName) => File.ReadAllBytes("PdfFonts/Alegreya-Regular.ttf");
     }
 
     public static async Task Render(string outpath, List<Poem> poems, bool bestOnly = false, DateTime start = default, DateTime end = default)
@@ -66,7 +68,8 @@ static class PdfBook
         {
             Args = new List<string> { "--disable-export-tagged-pdf" }
         });
-        IPage page = await browser.NewPageAsync(new BrowserNewPageOptions { BaseURL = "http://127.0.0.1:5500" });
+        IPage page = await browser.NewPageAsync(new BrowserNewPageOptions { BaseURL = Origin });
+        await page.RouteAsync($"{Origin}/**", ServeFromDocs);
 
         await AppendPage(page, pdf, "/pdf/title.html", "Title");
         await AppendPage(page, pdf, "/pdf/copyright.html", "Copyright");
@@ -86,7 +89,7 @@ static class PdfBook
         // Set before the navigation, so the book is laid out once and in print media only
         await page.EmulateMediaAsync(new PageEmulateMediaOptions { Media = Media.Print });
 
-        await page.GotoAsync("/pdf/all_poems.html");
+        await Open(page, "/pdf/all_poems.html");
 
         // Removed, not hidden: Chromium repeats position: fixed elements on every printed page
         await page.EvaluateAsync(@"() => {
@@ -178,9 +181,26 @@ static class PdfBook
     static async Task<string> Print(IPage page, string url, string pdfName)
     {
         string pdfPath = $"Output/Pdfs/{pdfName}.pdf";
-        await page.GotoAsync(url);
+        await Open(page, url);
         await page.PdfAsync(PdfOptions(pdfPath));
         return pdfPath;
+    }
+
+    // The load event does not wait for fonts, and Chromium prints text whose font is still loading as blank
+    static async Task Open(IPage page, string url)
+    {
+        await page.GotoAsync(url);
+        await page.EvaluateAsync("() => document.fonts.ready");
+    }
+
+    static Task ServeFromDocs(IRoute route)
+    {
+        string path = "docs" + Uri.UnescapeDataString(new Uri(route.Request.Url).AbsolutePath);
+        if (path.EndsWith("/"))
+            path += "index.html";
+        return File.Exists(path)
+            ? route.FulfillAsync(new RouteFulfillOptions { Path = path })
+            : route.FulfillAsync(new RouteFulfillOptions { Status = 404 });
     }
 
     static async Task AppendPage(IPage page, PdfDocument pdf, string url, string name)

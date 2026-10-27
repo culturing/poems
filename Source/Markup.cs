@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
+using Humanizer;
 using Schema.NET;
 
 namespace Poems;
@@ -16,6 +17,9 @@ record Crumb(string Name, string Url);
 
 static class Markup
 {
+    public static string PoemCount(int count) =>
+        "poem".ToQuantity(count, count == 1 ? ShowQuantityAs.Words : ShowQuantityAs.Numeric);
+
     public static string BuildDescription(IEnumerable<string> bodyLines) =>
         Truncate(StripMarkup(string.Join(" ", bodyLines)), 155);
 

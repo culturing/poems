@@ -5,7 +5,7 @@ Start a new poem in today's folder under Poems/, making the folder if needed, an
     mkpoem
 #>
 
-$root = Split-Path $PSScriptRoot -Parent
+$root = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $today = Get-Date
 $folder = Join-Path $root "Poems" $today.ToString("yyyy") $today.ToString("MM") $today.ToString("dd")
 New-Item -ItemType Directory -Force $folder | Out-Null
