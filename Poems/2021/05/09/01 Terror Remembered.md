@@ -3,10 +3,8 @@ Terror Remembered
 
 I.
 
-<figure>
-    <blockquote>To make us love our country, our country ought to be lovely.</blockquote>
-    <figcaption>Edmund Burke, <cite>Reflections on the Revolution in France</cite></figcaption>
-</figure>
+> To make us love our country, our country ought to be lovely.
+-- Edmund Burke, *Reflections on the Revolution in France*
 
 We who have known terror must know love,
 from the hearts of those who died and killed,
@@ -47,10 +45,8 @@ We will not live for less again.
 
 II.
 
-<figure>
-    <blockquote>But power, of some kind or other, will survive the shock in which manners and opinions perish, and it will find other and worse means for its support.</blockquote>
-    <figcaption>Edmund Burke, <cite>Reflections on the Revolution in France</cite></figcaption>
-</figure>
+> But power, of some kind or other, will survive the shock in which manners and opinions perish, and it will find other and worse means for its support.
+-- Edmund Burke, *Reflections on the Revolution in France*
 
 Burke
 We live here, slowly,
@@ -93,10 +89,8 @@ and do not dwell here for too long.
 
 III.
 
-<figure>
-    <blockquote>The usurpation...will hold power by arts similar to those by which it has acquired it.</blockquote>
-    <figcaption>Edmund Burke, <cite>Reflections on the Revolution in France</cite></figcaption>
-</figure>
+> The usurpation...will hold power by arts similar to those by which it has acquired it.
+-- Edmund Burke, *Reflections on the Revolution in France*
 
 Burke
 Terror is terrible,

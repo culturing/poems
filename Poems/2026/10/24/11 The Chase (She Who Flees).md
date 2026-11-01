@@ -1,13 +1,9 @@
 **The Chase (She Who Flees)
 24 October 2026
 
-<figure>
-    <blockquote>
-        Man is in love and loves what vanishes,<br/>
-        what more is there to say?
-    </blockquote>
-    <figcaption>Yeats, <cite>Nineteen Hundred and Nineteen</cite></figcaption>
-</figure>
+> Man is in love and loves what vanishes,
+> what more is there to say?
+-- Yeats, *Nineteen Hundred and Nineteen*
 
 Quite a lot, it turns out.
 A flame flickers in the breeze,

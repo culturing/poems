@@ -1,13 +1,9 @@
 Fuller Integration
 14 May 2026
 
-<figure>
-    <blockquote>
-        Man is in love and loves what vanishes,</br>
-        What more is there to say? 
-    </blockquote>
-    <figcaption>Yeats, <cite>Nineteen-Hundred and Nineteen</cite></figcaption>
-</figure>
+> Man is in love and loves what vanishes,
+> What more is there to say?
+-- Yeats, *Nineteen-Hundred and Nineteen*
 
 They cannot last, these dreams
 of love come down to roost

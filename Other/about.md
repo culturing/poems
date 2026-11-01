@@ -1,14 +1,10 @@
 # About
 
-<figure>
-    <blockquote>A man is only half understood when we know how everything in him came into being. If that were all, he could just as well have been dead years ago. As a living being he is not understood, for life does not have only a yesterday, nor is it explained by reducing today to yesterday. Life has also a tomorrow, and today is understood only when we can add to our knowledge of what was yesterday the beginnings of tomorrow.</blockquote>
-    <figcaption>Carl Jung, <cite>On the Psychology of the Unconscious</cite></figcaption>
-</figure>
+> A man is only half understood when we know how everything in him came into being. If that were all, he could just as well have been dead years ago. As a living being he is not understood, for life does not have only a yesterday, nor is it explained by reducing today to yesterday. Life has also a tomorrow, and today is understood only when we can add to our knowledge of what was yesterday the beginnings of tomorrow.
+-- Carl Jung, *On the Psychology of the Unconscious*
 
-<figure style="max-width:300px">
-    <blockquote>Man can suffer only a certain amount of culture without injury.</blockquote>
-    <figcaption>Ibid</figcaption>
-</figure>
+> Man can suffer only a certain amount of culture without injury.
+-- Ibid
 
 This is a living tree of poems.
 

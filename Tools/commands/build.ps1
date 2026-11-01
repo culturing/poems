@@ -12,6 +12,16 @@ something already does.
 param([Alias("r")][switch]$Review)
 
 $root = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
+
+$build = [System.Threading.Mutex]::new($false, "culturing-poems-build") # Two builds at once compile over each other and delete each other's docs/pdf
+try {
+    if (-not $build.WaitOne(0)) {
+        "another build is running; waiting for it to finish"
+        while (-not $build.WaitOne(500)) {} # In steps, since Ctrl+C cannot break into a .NET call
+    }
+}
+catch [System.Threading.AbandonedMutexException] {} # The other build died holding it; it is ours now
+
 Push-Location $root
 try {
     $server = Get-NetTCPConnection -LocalPort 5501 -State Listen -ErrorAction SilentlyContinue
@@ -50,4 +60,5 @@ try {
 }
 finally {
     Pop-Location
+    $build.ReleaseMutex()
 }

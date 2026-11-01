@@ -1,10 +1,8 @@
 *Memorandum
 05 February 2026
 
-<figure style="max-width:200px">
-    <blockquote>Pfft, too sappy!</blockquote>
-    <figcaption>Mr. Burns, <cite>The Simpsons S5E21</cite></figcaption>
-</figure>
+> Pfft, too sappy!
+-- Mr. Burns, *The Simpsons S5E21*
 
 *Memorandum Re: Delineation of Romantic Intentions*
 

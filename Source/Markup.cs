@@ -38,6 +38,41 @@ static class Markup
             .Where(line => !Regex.IsMatch(line, @"^\s*([IVXLC]+\.|#.*)\s*$"));
     }
 
+    // "> " lines are an epigraph's quote, where spaces after "> " indent and a bare ">" breaks a stanza,
+    // and a "-- " or "— " line right after them its caption, where *Work* is cited
+    public static List<string> ExpandEpigraphs(IReadOnlyList<string> lines)
+    {
+        var expanded = new List<string>();
+        int i = 0;
+        while (i < lines.Count)
+        {
+            if (!lines[i].StartsWith('>'))
+            {
+                expanded.Add(lines[i++]);
+                continue;
+            }
+
+            var quote = new List<string>();
+            while (i < lines.Count && lines[i].StartsWith('>'))
+                quote.Add(Regex.Replace(lines[i++], "^> ?", "").TrimEnd());
+
+            // Markdown leaves an HTML block alone only between blank lines
+            expanded.Add(string.Empty);
+            expanded.Add("<figure>");
+            expanded.Add($"<blockquote>{string.Concat(quote.Select(line => line.Length == 0 ? "<br/>" : $"<div>{line}</div>"))}</blockquote>");
+
+            Match caption = i < lines.Count ? Regex.Match(lines[i], @"^(--|—) (.*)") : Match.Empty;
+            if (caption.Success)
+            {
+                expanded.Add($"<figcaption>{Regex.Replace(caption.Groups[2].Value, @"\*([^*]+)\*", "<cite>$1</cite>")}</figcaption>");
+                i++;
+            }
+            expanded.Add("</figure>");
+            expanded.Add(string.Empty);
+        }
+        return expanded;
+    }
+
     static string StripMarkup(string text)
     {
         text = Regex.Replace(text, "<[^>]+>", " ");                     // inline html some poems carry

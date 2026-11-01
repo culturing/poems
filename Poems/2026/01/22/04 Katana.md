@@ -1,15 +1,11 @@
 Katana
 22 January 2026
 
-<figure style="max-width: 225px">
-    <blockquote>
-        Though pedantry denies,<br/>
-        It's plain the Bible means</br/>
-        That Solomon grew wise</br/>
-        While talking with his queens
-    </blockquote>
-    <figcaption>Yeats, <cite>On Woman</cite></figcaption>
-</figure>
+> Though pedantry denies,
+> It's plain the Bible means
+> That Solomon grew wise
+> While talking with his queens
+-- Yeats, *On Woman*
 
 It is a great gift to know that I can flatter you to no end,
 that you will cut through the false ones, receiving only the true.

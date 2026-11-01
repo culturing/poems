@@ -1,10 +1,8 @@
 The Quest for the Immortal Self
 21 February 2023
 
-<figure style="max-width:300px">
-    <blockquote>After all, it is you and I who are perfect, not the next world.</blockquote>
-    <figcaption>Allen Ginsberg, <cite>America</cite></figcaption>
-</figure>
+> After all, it is you and I who are perfect, not the next world.
+-- Allen Ginsberg, *America*
 
 Have we found it? I've looked
 under every belief, and found nothing.

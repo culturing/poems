@@ -1,10 +1,8 @@
 *The Pain of Reality
 07 February 2026
 
-<figure>
-    <blockquote>[S]he had no notion of the game she was playing...She was still in her nebulous infantile world and had not yet discovered the real world at all.</blockquote>
-    <figcaption>Jung, <cite>The Relations Between the Ego and the Unconscious</cite></figcaption>
-</figure>
+> [S]he had no notion of the game she was playing...She was still in her nebulous infantile world and had not yet discovered the real world at all.
+-- Jung, *The Relations Between the Ego and the Unconscious*
 
 What a strange pain you have caused me, and I do not know
 if you meant it, or if this is simply

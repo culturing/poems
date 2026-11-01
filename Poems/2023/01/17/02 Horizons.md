@@ -1,10 +1,8 @@
 Horizons
 17 January 2023
 
-<figure style="max-width:300px">
-    <blockquote>Where did we get the sponge that could wipe the horizon away?</blockquote>
-    <figcaption>Nietzsche, <cite>The Gay Science</cite></figcaption>
-</figure>
+> Where did we get the sponge that could wipe the horizon away?
+-- Nietzsche, *The Gay Science*
 
 From Cromwell it came, with vengeance,
 for days were not trusted

@@ -1,12 +1,8 @@
 **Nixon at the Threshold of the Lincoln Memorial
 13 January 2019
 
-<figure>
-    <blockquote>
-        Something that is completely clean can also be completely sterile
-    </blockquote>
-    <figcaption>Nixon, <cite><a href="https://www.nixonlibrary.gov/sites/default/files/virtuallibrary/recordings/dictabelts/DB075_01.mp3" target="_blank">Dictabelt 75</a></cite>, May 1970</figcaption>
-</figure>
+> Something that is completely clean can also be completely sterile
+-- Nixon, *<a href="https://www.nixonlibrary.gov/sites/default/files/virtuallibrary/recordings/dictabelts/DB075_01.mp3" target="_blank">Dictabelt 75</a>*, May 1970
 
 What language could there have been
 between that tiger, battle-scarred,

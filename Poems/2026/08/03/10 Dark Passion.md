@@ -1,10 +1,8 @@
 *Dark Passion
 03 August 2026
 
-<figure>
-    <blockquote>But there are things that happen between a man and a woman in the dark—that sort of make everything else seem—unimportant.</blockquote>
-    <figcaption>Tennessee Williams, <cite>A Streetcar Named Desire</cite></figcaption>
-</figure>
+> But there are things that happen between a man and a woman in the dark—that sort of make everything else seem—unimportant.
+-- Tennessee Williams, *A Streetcar Named Desire*
 
 
 I remember the surge of her, storming

@@ -1,14 +1,10 @@
 Initiation
 02 March 2026
 
-<figure>
-    <blockquote>
-        I might as yet have been a spreading flower<br/>
-        Fresh to myself, if I had self applied<br/>
-        Love to myself, and to no love beside.
-    </blockquote>
-    <figcaption>Shakespeare, <cite>A Lover's Complaint</cite> 75-77</figcaption>
-</figure>
+> I might as yet have been a spreading flower
+> Fresh to myself, if I had self applied
+> Love to myself, and to no love beside.
+-- Shakespeare, *A Lover's Complaint* 75-77
 
 The initiation is over, and now
 you can choose

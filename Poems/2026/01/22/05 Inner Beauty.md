@@ -1,13 +1,9 @@
 Inner Beauty
 22 January 2026
 
-<figure style="max-width: 225px">
-    <blockquote>
-        To be born woman is to know ...<br/>
-        That we must labor to be beautiful
-    </blockquote>
-    <figcaption>Yeats, <cite>Adam's Curse</cite></figcaption>
-</figure>
+> To be born woman is to know ...
+> That we must labor to be beautiful
+-- Yeats, *Adam's Curse*
 
 The labor is much appreciated, although it's not always required,
 because the thoughtful can remember and interpret at a glance,

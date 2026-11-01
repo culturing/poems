@@ -1,12 +1,8 @@
 Unauthorized thinking
 30 April 2022
 
-<figure>
-    <blockquote>
-        You'd make me laugh if it wasn't forbidden.
-    </blockquote>
-    <figcaption>Beckett, <cite>Waiting for Godot</cite></figcaption>
-</figure>
+> You'd make me laugh if it wasn't forbidden.
+-- Beckett, *Waiting for Godot*
 
 So I've discovered Plotinus.
 Have you never heard?

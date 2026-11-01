@@ -1,10 +1,8 @@
 *'Mid the Pines
 07 October 2026
 
-<figure>
-    <blockquote>We believe that some ideas are better than others, and we teach them.</blockquote>
-    <figcaption>Brad Lingo, President of Grove City College</figcaption>
-</figure>
+> We believe that some ideas are better than others, and we teach them.
+-- Brad Lingo, President of Grove City College
 
 We chose it because it felt like home,
 a tradition of enquiry and life within which

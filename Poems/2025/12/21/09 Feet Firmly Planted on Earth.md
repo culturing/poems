@@ -1,14 +1,8 @@
 **Feet Firmly Planted on Earth
 21 December 2025
 
-<figure>
-    <blockquote>
-        Was the urge of the unconscious perhaps only apparently reaching out towards the person, but in a deeper sense towards a god?
-    </blockquote>
-    <figcaption>
-        Carl Jung, <cite>The Relations Between The Ego And The Unconscious</cite>
-    </figcaption>
-</figure>
+> Was the urge of the unconscious perhaps only apparently reaching out towards the person, but in a deeper sense towards a god?
+-- Carl Jung, *The Relations Between The Ego And The Unconscious*
 
 Something feels off, and I cannot quite name it.
 One hopes for a final resolution, but one never comes.

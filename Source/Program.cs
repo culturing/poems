@@ -71,7 +71,7 @@ class Program
     static Poem AddPoem(string filepath, bool reviewMode)
     {
         var poem = new Poem();
-        List<string> lines = File.ReadAllLines(filepath).ToList();
+        List<string> lines = Markup.ExpandEpigraphs(File.ReadAllLines(filepath));
 
         int stars = lines[0].Length - lines[0].TrimStart('*').Length;
         if (stars > Poem.MaxRating)
@@ -289,7 +289,7 @@ class Program
 
     static void RenderOtherPage(string filepath, string template, string title, Person author)
     {
-        List<string> lines = File.ReadAllLines(filepath).ToList();
+        List<string> lines = Markup.ExpandEpigraphs(File.ReadAllLines(filepath));
         string name = Path.GetFileNameWithoutExtension(filepath);
         string url = $"{Site.BaseUrl}/{name}/";
         string description = Markup.BuildDescription(Markup.OwnWords(lines.Skip(1)));

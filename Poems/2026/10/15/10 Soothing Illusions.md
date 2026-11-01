@@ -1,14 +1,10 @@
 *Soothing Illusions
 15 October 2026
 
-<figure>
-    <blockquote>You won't feel a thing.</blockquote>
-    <figcaption><cite>Ancient Wisdom</cite></figcaption>
-</figure>
-<figure>
-    <blockquote>Everything is going to be okay.</blockquote>
-    <figcaption><cite>Ibid.</cite></figcaption>
-</figure>
+> You won't feel a thing.
+-- *Ancient Wisdom*
+> Everything is going to be okay.
+-- *Ibid.*
 
 There is a class of statements
 that we only say when they are false,

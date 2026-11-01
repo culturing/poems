@@ -1,10 +1,9 @@
 **Inside You, Dormant
 21 February 2026
 
-<figure>
-    <blockquote>The way is not in the sky. <br/>The way is in the heart.</blockquote>
-    <figcaption>Buddha, <cite>Dhammapada</cite></figcaption>
-</figure>
+> The way is not in the sky.
+> The way is in the heart.
+-- Buddha, *Dhammapada*
 
 The strength you seek
 is inside you, dormant,

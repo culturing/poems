@@ -1,15 +1,11 @@
 Remember The Ladies
 16 January 2026
 
-<figure>
-    <blockquote>I desire you would Remember the Ladies, and be more generous and favourable to them than your ancestors. Do not put such unlimited power into the hands of the Husbands. Remember all Men would be tyrants if they could.</blockquote>
-    <figcaption>Abigail Adams, letter to John Adams, March 31, 1776</figcaption>
-</figure>
+> I desire you would Remember the Ladies, and be more generous and favourable to them than your ancestors. Do not put such unlimited power into the hands of the Husbands. Remember all Men would be tyrants if they could.
+-- Abigail Adams, letter to John Adams, March 31, 1776
 
-<figure>
-    <blockquote>We are obliged to go fair, and softly, and in Practice you know We are the subjects. We have only the Name of Masters, and rather than give up this, which would completely subject Us to the Despotism of the Petticoat, I hope General Washington, and all our brave Heroes would fight.</blockquote>
-    <figcaption>John Adams, letter to Abigail Adams, April 14, 1776</figcaption>
-</figure>
+> We are obliged to go fair, and softly, and in Practice you know We are the subjects. We have only the Name of Masters, and rather than give up this, which would completely subject Us to the Despotism of the Petticoat, I hope General Washington, and all our brave Heroes would fight.
+-- John Adams, letter to Abigail Adams, April 14, 1776
 
 I would find an Abigail, with wit enough
 to make me doubt myself, and love enough

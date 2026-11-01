@@ -1,12 +1,8 @@
 Spelunking II
 13 April 2026
 
-<figure>
-    <blockquote>
-        When good things are unraveling, bad things come undone.
-    </blockquote>
-    <figcaption>Jars of Clay, <cite>Boys (Lesson One)</cite>
-</figure>
+> When good things are unraveling, bad things come undone.
+-- Jars of Clay, *Boys (Lesson One)*
 
 You went spelunking
 into my heart

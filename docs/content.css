@@ -52,6 +52,10 @@ blockquote {
     font-style: italic;
 }
 
+blockquote div {
+    white-space: pre-wrap;
+}
+
 figcaption {
     text-align: right;
     font-size: small;
@@ -60,6 +64,7 @@ figcaption {
 }
 
 figure {
+    width: fit-content;
     max-width: 400px;
 }
 

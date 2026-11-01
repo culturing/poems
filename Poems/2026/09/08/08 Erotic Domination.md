@@ -1,14 +1,10 @@
 **Erotic Domination
 08 September 2026
 
-<figure>
-    <blockquote>...pulled my trigger, now he's dead.</blockquote>
-    <figcaption>Queen, <cite>Bohemian Rhapsody</cite></figcaption>
-</figure>
-<figure>
-    <blockquote>We are the only ones that give birth to men.</blockquote>
-    <figcaption>Plutarch, <cite>Sayings of Spartan Women</cite></figcaption>
-</figure>
+> ...pulled my trigger, now he's dead.
+-- Queen, *Bohemian Rhapsody*
+> We are the only ones that give birth to men.
+-- Plutarch, *Sayings of Spartan Women*
 
 The family eros ensures control, decides in advance
 who can love, and when, and how. It determines

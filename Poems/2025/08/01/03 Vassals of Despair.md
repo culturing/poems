@@ -1,13 +1,9 @@
 *Vassals of Despair
 01 August 2025
 
-<figure>
-    <blockquote>
-        <div>God slays Himself with every leaf that flies,</div>
-        <div>And hell is more than half of paradise.</div>
-    </blockquote>
-    <figcaption>E.A. Robinson, <cite>Luke Havergal</cite></figcaption>
-</figure>
+> God slays Himself with every leaf that flies,
+> And hell is more than half of paradise.
+-- E.A. Robinson, *Luke Havergal*
 
 What is our theme? Alert
 while others dream, we see through all?

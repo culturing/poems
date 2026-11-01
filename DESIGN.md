@@ -259,7 +259,14 @@ Titles are written out as `<h1>` rather than left to markdown's `# `, so a title
 read as markup.
 
 The epigraph caption is set away from the quotation and muted, so it does not read as the
-epigraph's last line.
+epigraph's last line. The figure is `fit-content`, so the caption ends where the quotation
+does; as wide as the poem, a short quotation over a long line left its caption stranded at the
+far side, and poems used to carry their own widths to pull it back.
+
+Source files write an epigraph as `> ` lines with a `-- ` caption under them, `*Work*` for a
+cited title, and `Markup.ExpandEpigraphs` builds the figure before markdown sees it. Each
+quoted line becomes its own `div` under `white-space: pre-wrap`, so a verse epigraph keeps its
+breaks and indents, a bare `>` breaks a stanza, and a long line still wraps.
 
 On phones the poem does not wrap — it scrolls sideways, so the poet's line breaks survive a
 390px screen. The one thing missing was any sign that it does, so the long lines fade out at
@@ -274,10 +281,9 @@ the scrollable width, and `min-width: max-content` is what makes each line's box
 text, so that padding is width the reader can actually reach. The rule is the exception: its
 measure is the screen, not the poem.
 
-An epigraph is the exception to the exception. It is prose, not verse, so its line breaks are
-the browser's and nothing is lost by moving them: on a phone it wraps to the screen rather than
-joining the sideways scroll, where a long quotation would otherwise be one line the reader has
-to drag through. The figure's default indents come off so the wrapped measure is the full
+An epigraph is the exception to the exception. Its breaks are kept where the source gives
+them, but a line too long for the screen wraps rather than joining the sideways scroll, where
+a prose quotation would otherwise be one line the reader has to drag through. The figure's default indents come off so the wrapped measure is the full
 screen, and the cap is `100vw` less the body's padding rather than a percentage, because the
 percentage would resolve against the scroll container, which is as wide as the poem's longest
 line and not as wide as the screen.

@@ -1,18 +1,13 @@
 *Perfect Timing
 29 August 2026
 
-<figure>
-    <blockquote>Being crazy about a woman like that is always the right thing to do.</blockquote>
-    <figcaption><cite>The Last Picture Show</cite></figcaption>
-</figure>
+> Being crazy about a woman like that is always the right thing to do.
+-- *The Last Picture Show*
 
-<figure>
-    <blockquote style="white-space: pre">
-        Be gracious
-            you woman-maddening
-                bull-god.</blockquote>
-    <figcaption>Homer, <cite>Hymn to Dionysus</cite></figcaption>
-</figure>
+> Be gracious
+>     you woman-maddening
+>         bull-god.
+-- Homer, *Hymn to Dionysus*
 
 Time passes. We still remain.
 In the aftermath of passion, what hope

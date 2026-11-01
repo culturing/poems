@@ -1,12 +1,8 @@
 *The Sacred Feminine
 30 June 2026
 
-<figure>
-    <blockquote>
-        If I could only turn back the clock to when God and her were born.
-    </blockquote>
-    <figcaption>Bob Dylan, <cite>Shelter From the Storm</cite></figcaption>
-</figure>
+> If I could only turn back the clock to when God and her were born.
+-- Bob Dylan, *Shelter From the Storm*
 
 The pantheon expands to make room
 for the sacred feminine, the divine

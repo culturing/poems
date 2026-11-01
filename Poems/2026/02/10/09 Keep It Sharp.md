@@ -1,10 +1,8 @@
 Keep It Sharp
 10 February 2026
 
-<figure style="max-width: 300px;">
-    <blockquote>My apologies. I have caused you undue vexation by speaking so incomprehensibly.</blockquote>
-    <figcaption>Constance, <cite>Fire Emblem: Three Houses</cite></figcaption>
-</figure>
+> My apologies. I have caused you undue vexation by speaking so incomprehensibly.
+-- Constance, *Fire Emblem: Three Houses*
 
 No, I am still misunderstanding.
 You have cast yourself as the thing

@@ -1,17 +1,11 @@
 *No Day But Today
 18 December 2025
 
-<figure>
-    <blockquote>
-        <div>We all must live our lives</div>
-        <div>Always feeling</div>
-        <div>Always thinking</div>
-        <div>The moment has arrived</div>
-    </blockquote>
-    <figcaption>
-        Tracy Chapman, <cite>If Not Now...</cite>
-    </figcaption>
-</figure>
+> We all must live our lives
+> Always feeling
+> Always thinking
+> The moment has arrived
+-- Tracy Chapman, *If Not Now...*
 
 The masks come off, and all is revealed
 as macabre somnambulance, dreaming vexed

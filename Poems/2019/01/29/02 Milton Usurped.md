@@ -1,13 +1,9 @@
 *Milton Usurped
 29 January 2019
 
-<figure>
-    <blockquote>
-        <div>I can’t go to Paradise no more.</div>
-        <div>I killed a man back there.</div>
-    </blockquote>
-    <figcaption>Bob Dylan, <cite>Spirit on the Water</cite></figcaption>
-</figure>
+> I can’t go to Paradise no more.
+> I killed a man back there.
+-- Bob Dylan, *Spirit on the Water*
 
 But what is to be made of Milton’s hearse?
 One victim of the newborn myth of books,
