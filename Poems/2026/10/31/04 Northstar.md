@@ -6,5 +6,5 @@ like the last hope for sailors stranded
 who long to go home...northstar
 shine brighter, consume the chaff,
 burn hearts into form, until loveliness
-enters and dwells...then when we know you well,
+enters and dwells...then when all know you well,
 stay, and give us your story to tell.

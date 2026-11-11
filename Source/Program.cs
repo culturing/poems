@@ -60,7 +60,8 @@ class Program
         if (reviewMode)
             Output.WriteReviewManifest(ordered);
         Output.CopyFilesToDocs(reviewMode);
-        SitemapGenerator.Write(poems, ListPages.Urls);
+        if (!reviewMode)
+            SitemapGenerator.Write(poems, ListPages.Urls); // It rewrites hashes.json, and review pages would hash as changed
         Feed.Write(ordered);
 
         await PdfBook.Render("docs/culturing.pdf", poems);

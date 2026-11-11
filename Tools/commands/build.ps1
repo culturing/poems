@@ -2,7 +2,7 @@
 <#
 Build the site, the PDF and the video, stopping the review server if it is running.
 With -r, build in review mode instead, then start the review server, hidden, unless it is
-already running. It logs to Logs/review-server.log. Either way, serve docs/ afterwards unless
+already running on its current code. It logs to Logs/review-server.log. Either way, serve docs/ afterwards unless
 something already does.
 
     build
@@ -26,6 +26,14 @@ Push-Location $root
 try {
     $server = Get-NetTCPConnection -LocalPort 5501 -State Listen -ErrorAction SilentlyContinue
     if ($Review) {
+        # Only when stale, since the review server runs this build itself after an edit
+        $id = $server.OwningProcess | Select-Object -Unique
+        if ($server -and (Get-Item Tools/review-server.cs).LastWriteTime -gt (Get-Process -Id $id).StartTime) {
+            Stop-Process -Id $id
+            $server = $null
+            "review server stopped, since its code has changed"
+        }
+
         dotnet run -c Release -- review
         if ($LASTEXITCODE -ne 0) {
             exit $LASTEXITCODE
