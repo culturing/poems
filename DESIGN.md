@@ -518,6 +518,10 @@ file, so the build hands it the mapping; it lands in `Output/`, never in `docs/`
 `Tools/review-server.cs` does, on port 5501. `build -r` starts it hidden, logging to
 `Logs/review-server.log`; a plain `build` stops it, since its pages no longer carry the widget.
 
+`build -re` (`dotnet run -- review edit`) also makes the title and text editable in the page.
+The manifest records the mode, so the server refuses text edits without it and its own
+rebuilds keep it.
+
 ## Accessibility
 
 Nothing on this site moves. The reveals — the opening line beside a title, a theme's count, a

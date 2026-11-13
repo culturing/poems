@@ -22,8 +22,13 @@ class Program
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
         bool reviewMode = args.Contains("review");
+        bool editMode = reviewMode && args.Contains("edit");
         if (reviewMode)
-            Console.WriteLine("review mode: poem pages carry the rating widget, and Output/review-map.json is written");
+            Console.WriteLine("review mode: poem pages carry the rating widget, and Output/review-map.json is written" +
+                (editMode ? "; their text is editable" : ""));
+        string reviewScript = !reviewMode ? string.Empty
+            : editMode ? "<script src=\"/review.js\" data-edit></script>"
+            : "<script src=\"/review.js\"></script>";
 
         Output.CleanupPrevious();
 
@@ -34,7 +39,7 @@ class Program
                 continue;
 
             foreach (string filepath in Directory.EnumerateFiles(dirpath, "*", SearchOption.AllDirectories))
-                poems.Add(AddPoem(filepath, reviewMode));
+                poems.Add(AddPoem(filepath, reviewScript));
         }
 
         LoadTags(poems);
@@ -58,7 +63,7 @@ class Program
         File.WriteAllText("docs/404.html", Templates.NotFound.Replace("{{navbar}}", Templates.Navbar));
 
         if (reviewMode)
-            Output.WriteReviewManifest(ordered);
+            Output.WriteReviewManifest(ordered, editMode);
         Output.CopyFilesToDocs(reviewMode);
         if (!reviewMode)
             SitemapGenerator.Write(poems, ListPages.Urls); // It rewrites hashes.json, and review pages would hash as changed
@@ -69,7 +74,7 @@ class Program
         File.WriteAllText("Output/build-finished", DateTime.Now.ToString("o")); // Tools/docs-server.cs reloads open pages when this changes
     }
 
-    static Poem AddPoem(string filepath, bool reviewMode)
+    static Poem AddPoem(string filepath, string reviewScript)
     {
         var poem = new Poem();
         List<string> lines = Markup.ExpandEpigraphs(File.ReadAllLines(filepath));
@@ -108,7 +113,7 @@ class Program
             .Replace("{{content}}", md.Transform(content))
             .Replace("{{title}}", $"{WebUtility.HtmlEncode(poem.Title)} | poems by {Site.Name}")
             .Replace("{{navbar}}", Templates.Navbar)
-            .Replace("{{review}}", reviewMode ? "<script src=\"/review.js\"></script>" : string.Empty);
+            .Replace("{{review}}", reviewScript);
         string finalFileName = Markup.Slugify(poem.Title);
 
         string dirPath = $"docs{poem.DatePath}".TrimEnd('/') + $"/{finalFileName}";

@@ -80,7 +80,7 @@ static class Output
     }
 
     // Maps each poem url back to its source file, for the review server
-    public static void WriteReviewManifest(List<Poem> ordered)
+    public static void WriteReviewManifest(List<Poem> ordered, bool edit)
     {
         var poems = ordered.Select((poem, i) => new Dictionary<string, object>
         {
@@ -95,6 +95,7 @@ static class Output
         File.WriteAllText("Output/review-map.json", JsonSerializer.Serialize(new Dictionary<string, object>
         {
             ["max"] = Poem.MaxRating,
+            ["edit"] = edit, // So the review server's rebuilds keep the mode
             ["poems"] = poems
         }, new JsonSerializerOptions { WriteIndented = false }));
         Console.WriteLine($"review manifest: {poems.Count} poems -> Output/review-map.json");

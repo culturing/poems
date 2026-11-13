@@ -20,7 +20,7 @@ string progressPath = Path.Combine(root, "Tools", "review-progress.json");
 string tagsPath = Path.Combine(root, "Other", "tags.tsv");
 
 Lock gate = new();
-Manifest manifest = new(0, []);
+Manifest manifest = new(0, false, []);
 Dictionary<string, ManifestPoem> byUrl = [];
 DateTime manifestWritten = default;
 Dictionary<string, DateTime> textSavedAt = [];
@@ -74,6 +74,8 @@ app.MapGet("/api/text", (string? url) => Guarded(() =>
 
 app.MapPost("/api/text", (TextRequest request) => Guarded(() =>
 {
+    if (!manifest.Edit)
+        return Error(403, "text is editable only after build -re");
     if (request.Url is null || !byUrl.TryGetValue(request.Url, out ManifestPoem? poem))
         return Error(404, $"no poem at {request.Url}");
 
@@ -103,11 +105,11 @@ app.MapPost("/api/text", (TextRequest request) => Guarded(() =>
 
 app.MapGet("/api/build", () => Results.Json(new { running = rebuild.Running, failed = rebuild.Failed }));
 
-app.MapPost("/api/build", () =>
+app.MapPost("/api/build", () => Guarded(() =>
 {
-    rebuild.Request();
+    rebuild.Request(manifest.Edit);
     return Results.Json(new { running = true });
-});
+}));
 
 string spread = string.Join("  ", manifest.Poems
     .GroupBy(poem => poem.Rating)
@@ -227,7 +229,7 @@ PoemState? State(string url, bool changed = false)
 
 class MissingManifest() : Exception("Output/review-map.json is missing. Build in review mode first:\n    build -r");
 
-record Manifest(int Max, List<ManifestPoem> Poems);
+record Manifest(int Max, bool Edit, List<ManifestPoem> Poems);
 
 record ManifestPoem(int I, string Url, string Title, int Rating, string Src);
 
@@ -309,12 +311,13 @@ static class Tags
     }
 }
 
-// Runs build -r; a request made while it runs gets one more build when it ends
+// Runs build -r, or -re when editing; a request made while it runs gets one more build when it ends
 sealed class Rebuild(string root)
 {
     readonly Lock gate = new();
     Process? running;
     bool again;
+    string mode = "-r";
 
     public bool Failed { get; private set; }
 
@@ -323,10 +326,11 @@ sealed class Rebuild(string root)
         get { lock (gate) return running is not null; }
     }
 
-    public void Request()
+    public void Request(bool edit)
     {
         lock (gate)
         {
+            mode = edit ? "-re" : "-r";
             if (running is null)
                 Start();
             else
@@ -339,7 +343,7 @@ sealed class Rebuild(string root)
         var info = new ProcessStartInfo("pwsh") { WorkingDirectory = root, CreateNoWindow = true };
         info.ArgumentList.Add("-NoProfile");
         info.ArgumentList.Add("-Command");
-        info.ArgumentList.Add("& ./Tools/commands/build.ps1 -r *> Logs/review-build.log; exit $LASTEXITCODE");
+        info.ArgumentList.Add($"& ./Tools/commands/build.ps1 {mode} *> Logs/review-build.log; exit $LASTEXITCODE");
 
         Directory.CreateDirectory(Path.Combine(root, "Logs"));
         var process = new Process { StartInfo = info, EnableRaisingEvents = true };

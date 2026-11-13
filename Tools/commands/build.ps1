@@ -2,14 +2,17 @@
 <#
 Build the site, the PDF and the video, stopping the review server if it is running.
 With -r, build in review mode instead, then start the review server, hidden, unless it is
-already running on its current code. It logs to Logs/review-server.log. Either way, serve docs/ afterwards unless
-something already does.
+already running on its current code. It logs to Logs/review-server.log. With -re, review mode also
+makes the poem text editable in the page. Either way, serve docs/ afterwards unless something already does.
 
     build
     build -r
+    build -re
 #>
 
-param([Alias("r")][switch]$Review)
+param([Alias("r")][switch]$Review, [Alias("re")][switch]$Edit)
+
+$Review = $Review -or $Edit
 
 $root = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 
@@ -34,7 +37,7 @@ try {
             "review server stopped, since its code has changed"
         }
 
-        dotnet run -c Release -- review
+        dotnet run -c Release -- review $(if ($Edit) { "edit" })
         if ($LASTEXITCODE -ne 0) {
             exit $LASTEXITCODE
         }

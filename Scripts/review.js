@@ -1,10 +1,13 @@
 /* Rating and text editor for the manual review pass, emitted onto poem pages only by
-   "dotnet run -- review". Writes nothing itself: Tools/review-server.cs does, on 5501 */
+   "dotnet run -- review", and carrying data-edit with "review edit". Writes nothing itself:
+   Tools/review-server.cs does, on 5501 */
 (function () {
     'use strict';
 
     var LOCAL = ['localhost', '127.0.0.1', '[::1]'];
     if (LOCAL.indexOf(location.hostname) === -1) return;
+
+    var EDIT = document.currentScript.hasAttribute('data-edit');
 
     var API = 'http://127.0.0.1:5501';
     var url = location.pathname;
@@ -412,9 +415,12 @@
         if (dirty()) { e.preventDefault(); e.returnValue = ''; }
     });
 
-    call('/api/text?url=' + encodeURIComponent(url))
-        .then(function (j) { begin(j.text); })
-        .catch(function () { elSave.hidden = true; });
+    if (EDIT)
+        call('/api/text?url=' + encodeURIComponent(url))
+            .then(function (j) { begin(j.text); })
+            .catch(function () { elSave.hidden = true; });
+    else
+        elSave.hidden = true;
 
     function go(selector) {
         var a = document.querySelector(selector);
