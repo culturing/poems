@@ -3,4 +3,4 @@ Dignity III
 
 Dignity
 is giving
-from abundance
+from abundance.
