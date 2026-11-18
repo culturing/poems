@@ -7,6 +7,6 @@ to seeing this through. She waters
 concealed buds until blossoms
 break through the film and entice
 to laughter all those hidden energies
-under the soil. It was worthy of toil.
+under the soil. It was worth the toil.
 In the aftermath, let her find rest
 until spring comes again.

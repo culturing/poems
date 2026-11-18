@@ -5,4 +5,4 @@ Antheia knows the way
 over babbling streams,
 and wanders softly
 on her way back
-from the source of things.
+from the sources of things.
