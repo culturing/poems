@@ -1,4 +1,4 @@
-**Some Kind of Answer
+*Some Kind of Answer
 15 November 2026
 
 The shepherds wait in an empty field

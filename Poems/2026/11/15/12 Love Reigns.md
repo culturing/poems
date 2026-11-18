@@ -1,4 +1,4 @@
-**Love Reigns
+*Love Reigns
 15 November 2026
 
 Point the finger at the past

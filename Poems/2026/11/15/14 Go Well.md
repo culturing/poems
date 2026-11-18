@@ -1,4 +1,4 @@
-**Go Well
+*Go Well
 15 November 2026
 
 I will not forget you, Antheia,
