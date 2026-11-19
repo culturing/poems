@@ -1,8 +1,7 @@
 **Wander Softly
 18 November 2026
 
-Antheia knows the way
-over babbling streams,
-and wanders softly
-on her way back
-from the sources of things.
+Antheia knows her way
+over babbling streams.
+She wanders softly
+to the sources of things.
