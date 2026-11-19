@@ -1504,8 +1504,8 @@
     "LastMod": "2026-11-01T02:45:49.0886358Z"
   },
   "/": {
-    "Hash": "428cd180e2ec6443e61a87797b49f56be2d65b77f63b2cdbe3283277d0c4bdcd",
-    "LastMod": "2026-11-19T00:51:10.1227195Z"
+    "Hash": "3fcb8d216e0f7a756c481162ae5eeff19040dd398f24b3f6cace08ebca3d66de",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/best/": {
     "Hash": "4b2fea01fe17c8de5f2b36ca0d368bfafdaca794fb8e042146d384905380b855",
@@ -5340,8 +5340,8 @@
     "LastMod": "2026-10-27T22:28:48.9671206Z"
   },
   "/themes/anima/": {
-    "Hash": "1924c0b109162b0016e8bea7a37ddcc5cda8591c18b7ab378024a0d10bbf827c",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "aeac14b947b922857d4c090e9a583f1a46cb719b2a1911a938bad0ef96935d60",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/themes/beauty/": {
     "Hash": "e5ef4a53b812c82312e84002b55e0aa897063e4ad58f2cc4cb126dae9bdbe2f7",
@@ -5420,12 +5420,12 @@
     "LastMod": "2026-11-16T00:38:07.1233438Z"
   },
   "/themes/myth/": {
-    "Hash": "035ac376bf3d4a0011e126835a7c4a536f362003f314b54f46b1efe63ca2d701",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "edbee368a2495256683b85aa446cb3602ee9aae2016693980ecfff34f723937d",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/themes/nature/": {
-    "Hash": "af86b1b62cda172be8d50223ecbc463e0d03a11e192761461af2d3357db362a0",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "47a29fbe02585db4789ffc82f7ad4aad9620847f40e8488c6ba2a42c79953810",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/themes/philosophy/": {
     "Hash": "a28d6a9d5ff646a07f47698bbbae6b4910207e0c3b25f41d858c5ca237c46644",
@@ -5476,8 +5476,8 @@
     "LastMod": "2026-11-01T02:45:49.0886358Z"
   },
   "/index/": {
-    "Hash": "13290b74c4a1b7f41223bec547f6b0e0b82674887e8fbdd1a3d6599c7b16b642",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "6d5c983e68cc45457523253a9663d3da09e8ed890af47b907fe694a83c648592",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/08/29/": {
     "Hash": "1439a8f05697411680482765df3430efd8a7023cdf494f305337cece98a5e87d",
@@ -5984,8 +5984,8 @@
     "LastMod": "2026-11-11T23:05:27.1555702Z"
   },
   "/2026/11/": {
-    "Hash": "857250af8b8cf97f826601dbde4228e4d3a587e67dd4fae8f8a1b2541eb5ea19",
-    "LastMod": "2026-11-19T00:51:10.1227195Z"
+    "Hash": "5aabfd85cb89e846f2ec626fabf097c739aaacdd31c493476f6de9ef18cd5e8b",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/11/two-icebergs/": {
     "Hash": "445331c4f58df755079eda39103e9da397f5f24e7e06c7d3cf9e0681442eb2a7",
@@ -6072,55 +6072,59 @@
     "LastMod": "2026-11-18T22:49:44.4547223Z"
   },
   "/2026/11/15/in-search-of-home/": {
-    "Hash": "b9b4a84c2ce44a0a1930243d132c543af0809c6c331b71afed3f7117982034a4",
-    "LastMod": "2026-11-18T22:49:44.4547223Z"
+    "Hash": "5c4c43846f34127568435f23a789fb27dcd74d8b11b355c1ae6df45dcd9d01dc",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/15/lost-wandering/": {
-    "Hash": "d7aba419507f147d2f3faedbfe41dcbb5601ec664586a2340d6de84998cdac84",
-    "LastMod": "2026-11-18T22:49:44.4547223Z"
+    "Hash": "9346cb991c9c9e61674e0cd032183d69216581ffe015dcdc334677f7121f07af",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/15/love-reigns/": {
-    "Hash": "2db176279c855a00a95abae3a080eb83909a866c60ba77855fee4bd3a1a207bd",
-    "LastMod": "2026-11-18T22:49:44.4547223Z"
+    "Hash": "e8099ab4da80b39380167a0423e86c280f5ec377d6d82336476db38676468583",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/15/some-kind-of-answer/": {
-    "Hash": "3897465f1fc39e9f2210d8cb75b16441c8f758472cf540be1348b8bad538cddf",
-    "LastMod": "2026-11-18T22:49:44.4547223Z"
+    "Hash": "7a27938187adc52bf2983a6732c628ecb007bfbbfbf0a1a6cf9a8775082a0a06",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/15/go-well/": {
-    "Hash": "4568f10ab62065526c58d6c3edb7ff9ecb144c3d9f8f2ccb3f1c43ec4e16d46e",
-    "LastMod": "2026-11-18T22:49:44.4547223Z"
+    "Hash": "a14a695d0623694af906b9700d03e3cdb9320284a3b60bdc9027af8b7debfb33",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/18/": {
-    "Hash": "193c67db94a4104f3e66f2639e2774cf77c99919a2bbd3ec6b6f8edd4b938a2b",
-    "LastMod": "2026-11-19T00:51:10.1227195Z"
+    "Hash": "ebb42864977f10b3489618e8fe9e3dc308bfd99b22d954afe0ce868dd5980104",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/18/her-shadow/": {
-    "Hash": "015079566cb83eb8dedd68b73773cf0b416541546b539611d7b789148f176fa9",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "fb301edb0ff90a9f60b23f4285701f4ad7c2021ebc23fd8f8e99747276504586",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/18/green-snake/": {
-    "Hash": "8cc7bdebd32f5beb16a0eddc95aa6114a9d5dd8053ae9fd026f9734fbbe14fe6",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "064ff3746af77d5b5466e62588f73214cc499393dc96ef49283724ebaf60cb41",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/18/matador/": {
-    "Hash": "b2aff98edf2d1cf2bb7b9428f92ab100a443682ca136f9d3a11993906e09c938",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "fb835e927d6bd76272e136d3a1ea5e37518df15a6e5b1d6e4f0fed1269117982",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/18/fallow-hearts/": {
-    "Hash": "6b1b26ddbdd166b2f8f268a22fa79b48e46c65495767dd97ac3bb68926cfb9b7",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "80b094c16b61c9adf3fdd70368f59eda0e91a347c8f6352274eacc3fdc016492",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/18/diabolical-hope/": {
-    "Hash": "cc00a15851fa0d3fe44001bf13c804b420af557f5bffccc3050429411bae4dd8",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "85e66749b6d2fdde98e3b0a80ca1f29464d938c057f1fc07c14eb118ecbdb977",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/18/not-every-man/": {
-    "Hash": "dd01a79c432097e84c1630f3cf307594f4913b14350dbb8cbe38b41af40a15a4",
-    "LastMod": "2026-11-18T22:43:34.969102Z"
+    "Hash": "4b0e66ffd866f1bd95d89d038e6700c5b88c2654468b4397e78008b51960ff53",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   },
   "/2026/11/18/wander-softly/": {
     "Hash": "f1c8e68a30652eb5a1be74d8e9433b44e5350b1975a97e224599724184907236",
     "LastMod": "2026-11-19T00:51:10.1227195Z"
+  },
+  "/2026/11/18/babbling-streams/": {
+    "Hash": "be96da074f5390e26d10baf0967bcdd22d5539d790b02b4d54c7b93e8631014d",
+    "LastMod": "2026-11-19T01:39:38.1815263Z"
   }
 }
