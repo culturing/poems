@@ -119,9 +119,7 @@ figure {
     #content:not(.wrap)>figure {
         white-space: normal;
         min-width: 0;
-        max-width: calc(100vw - 2rem);
-        margin-left: 0;
-        margin-right: 0;
+        max-width: calc(100vw - 2rem - 80px); /* Leaves room for the browser's 40px figure margins */
     }
 
     #container-parent {
