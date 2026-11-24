@@ -63,9 +63,13 @@ figcaption {
     color: var(--muted);
 }
 
+/* Zero width and a full-width minimum: the figure adds nothing to the column's width, so the poem sets it */
 figure {
-    width: fit-content;
-    max-width: 400px;
+    display: grid;
+    grid-template-columns: fit-content(min(100%, 400px));
+    width: 0;
+    min-width: calc(100% - 40px); /* Less the browser's left margin */
+    margin-right: 0;
 }
 
 .cinzel-epigraph {
@@ -111,15 +115,13 @@ figure {
         display: none;
     }
 
-    #content:not(.wrap)>*:not(hr) {
+    /* An epigraph is prose, so it wraps to the screen instead of joining the sideways scroll */
+    #content:not(.wrap)>*:not(hr, figure) {
         min-width: max-content;
     }
 
-    /* An epigraph is prose, so it wraps to the screen instead of joining the sideways scroll */
     #content:not(.wrap)>figure {
         white-space: normal;
-        min-width: 0;
-        max-width: calc(100vw - 2rem - 80px); /* Leaves room for the browser's 40px figure margins */
     }
 
     #container-parent {

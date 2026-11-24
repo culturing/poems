@@ -4,4 +4,4 @@
 Two icebergs meet
 underwater, scour
 submerged weight, and gaze
-across salty dark waters.
+across dark salty waters.

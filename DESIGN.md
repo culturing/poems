@@ -259,9 +259,13 @@ Titles are written out as `<h1>` rather than left to markdown's `# `, so a title
 read as markup.
 
 The epigraph caption is set away from the quotation and muted, so it does not read as the
-epigraph's last line. The figure is `fit-content`, so the caption ends where the quotation
+epigraph's last line. Its one grid column is `fit-content`, so the caption ends where the quotation
 does; as wide as the poem, a short quotation over a long line left its caption stranded at the
 far side, and poems used to carry their own widths to pull it back.
+
+An epigraph is never wider than its poem. The figure's width is zero, so it adds nothing to the
+column's width, which the poem's lines alone decide; a full-width minimum then stretches it
+back across that column, and a long quotation wraps inside it.
 
 Source files write an epigraph as `> ` lines with a `-- ` caption under them, `*Work*` for a
 cited title, and `Markup.ExpandEpigraphs` builds the figure before markdown sees it. Each
@@ -283,10 +287,9 @@ measure is the screen, not the poem.
 
 An epigraph is the exception to the exception. Its breaks are kept where the source gives
 them, but a line too long for the screen wraps rather than joining the sideways scroll, where
-a prose quotation would otherwise be one line the reader has to drag through. The figure's default indents come off so the wrapped measure is the full
-screen, and the cap is `100vw` less the body's padding rather than a percentage, because the
-percentage would resolve against the scroll container, which is as wide as the poem's longest
-line and not as wide as the screen.
+a prose quotation would otherwise be one line the reader has to drag through. It needs nothing
+of its own for this: the full-width minimum resolves against the scroll box, which is as wide
+as the screen, so on a phone the epigraph is as wide as the poem or the screen, whichever is narrower.
 
 No scrollbar on the poem either. A horizontal bar under a poem is a control on a page that has
 none, it would sit against the licence band, and the fade already says the same thing more
@@ -505,7 +508,9 @@ black: `--muted` is chosen against a near-black ground and prints faint.
 `Tools/docs-server.cs` serves `docs/` on port 5500 the way GitHub Pages does: a folder answers
 with its `index.html`, and a missing page with `404.html`. `serve` (F6 in VS Code) starts it and
 opens the browser; `build` starts it too. Open pages reload once a build finishes, which the
-build marks by writing `Output/build-finished` as its last step. It leaves port 5500 alone when
+build marks by writing `Output/build-finished` as its last step. Each page asks every second
+rather than holding a request open until then, since a browser opens at most six connections to
+one host, and six waiting tabs would stall every new page. It leaves port 5500 alone when
 Live Server holds it.
 
 ## Review mode

@@ -11,13 +11,19 @@ using Microsoft.AspNetCore.StaticFiles;
 
 const int Port = 5500;
 const string ReloadScript = """
-    <script>(function wait() { fetch('/__reload').then(() => location.reload(), () => setTimeout(wait, 1000)); })();</script>
+    <script>(function () {
+        let seen;
+        setInterval(() => fetch('/__build').then(r => r.text()).then(built => {
+            if (seen === undefined) seen = built;
+            else if (built && built !== seen) location.reload();
+        }, () => {}), 1000);
+    })();</script>
     """;
 
 string root = Path.GetDirectoryName(ScriptDirectory())!;
 string docs = Path.Combine(root, "docs") + Path.DirectorySeparatorChar;
 var contentTypes = new FileExtensionContentTypeProvider();
-var builds = new BuildWatcher(Path.Combine(root, "Output", "build-finished"));
+string marker = Path.Combine(root, "Output", "build-finished");
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder();
 builder.Logging.SetMinimumLevel(LogLevel.Warning);
@@ -29,11 +35,8 @@ app.Use((context, next) =>
     return next();
 });
 
-app.MapGet("/__reload", async (CancellationToken aborted) =>
-{
-    await builds.Finished.WaitAsync(aborted);
-    return Results.Ok();
-});
+// Asked each second, not held open, since a browser opens at most six connections to a host
+app.MapGet("/__build", () => File.Exists(marker) ? File.GetLastWriteTimeUtc(marker).Ticks.ToString() : "");
 
 app.MapGet("/{**path}", (HttpContext context) =>
 {
@@ -66,26 +69,3 @@ IResult Serve(string path, int status)
 }
 
 static string ScriptDirectory([CallerFilePath] string path = "") => Path.GetDirectoryName(path)!;
-
-// The build writes its marker last. Polled, since every build deletes and remakes Output/
-class BuildWatcher
-{
-    readonly Timer poll;
-    DateTime seen;
-    TaskCompletionSource finished = new(TaskCreationOptions.RunContinuationsAsynchronously);
-
-    public BuildWatcher(string marker)
-    {
-        seen = File.GetLastWriteTimeUtc(marker);
-        poll = new Timer(_ =>
-        {
-            DateTime written = File.GetLastWriteTimeUtc(marker);
-            if (!File.Exists(marker) || written == seen)
-                return;
-            seen = written;
-            Interlocked.Exchange(ref finished, new(TaskCreationOptions.RunContinuationsAsynchronously)).SetResult();
-        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
-    }
-
-    public Task Finished => finished.Task;
-}
